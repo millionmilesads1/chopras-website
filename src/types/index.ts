@@ -1,0 +1,57 @@
+export type MenuItem = {
+  id: string
+  name: string
+  nameNl?: string
+  price: number
+  description: string
+  descriptionNl?: string
+  category: MenuCategory
+  dietary: DietaryTag[]
+  image?: string
+  featured?: boolean
+}
+
+export type MenuCategory =
+  | 'starters'
+  | 'soups'
+  | 'mains-chicken'
+  | 'mains-lamb'
+  | 'mains-veg'
+  | 'indo-chinese'
+  | 'tandoori'
+  | 'biryani'
+  | 'breads'
+  | 'rice-sides'
+  | 'desserts'
+  | 'drinks'
+
+export type DietaryTag = 'veg' | 'vegan' | 'halal' | 'spicy' | 'mild' | 'glutenFree'
+
+export type BlogPost = {
+  slug: string
+  title: string
+  metaTitle: string
+  metaDescription: string
+  h1: string
+  primaryKeyword: string
+  language: 'en' | 'nl'
+  excerpt: string
+  content: string
+  publishedAt: string
+  readingTime: number
+}
+
+export type Vacancy = {
+  id: string
+  title: string
+  type: 'FULL_TIME' | 'PART_TIME' | 'OTHER'
+  hours: string
+  description: string
+  requirements: string[]
+  benefits: string[]
+}
+
+export type FaqItem = {
+  question: string
+  answer: string
+}

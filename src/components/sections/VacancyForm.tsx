@@ -1,0 +1,161 @@
+'use client'
+
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+
+type VacancyFormData = {
+  name: string
+  email: string
+  phone?: string
+  position: string
+  languages?: string
+  message?: string
+}
+
+export default function VacancyForm() {
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<VacancyFormData>()
+
+  async function onSubmit(data: VacancyFormData) {
+    try {
+      const res = await fetch('/api/job-application', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      setStatus(res.ok ? 'success' : 'error')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  const field =
+    'bg-white/10 border border-white/20 text-white placeholder:text-white/40 rounded-xl px-4 py-3 w-full focus:outline-none focus:border-[#D4AF37]'
+  const lbl = 'text-white/80 text-sm font-medium mb-1 block'
+  const errMsg = 'text-red-300 text-xs mt-1'
+
+  if (status === 'success') {
+    return (
+      <div className="text-center py-12 max-w-2xl mx-auto">
+        <p className="text-white text-xl font-heading font-semibold">
+          Thank you for your application! We will be in touch soon.
+        </p>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="max-w-2xl mx-auto space-y-5">
+      {status === 'error' && (
+        <div className="bg-red-500/20 border border-red-400/30 rounded-xl px-4 py-3">
+          <p className="text-red-300 text-sm text-center">
+            Something went wrong. Please email us at info@chopras.nl.
+          </p>
+        </div>
+      )}
+
+      <div>
+        <label className={lbl}>Full Name</label>
+        <input
+          type="text"
+          {...register('name', { required: 'Name is required' })}
+          className={field}
+          placeholder="Your full name"
+        />
+        {errors.name && <p className={errMsg}>{errors.name.message}</p>}
+      </div>
+
+      <div>
+        <label className={lbl}>Email Address</label>
+        <input
+          type="email"
+          {...register('email', {
+            required: 'Email is required',
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: 'Enter a valid email address',
+            },
+          })}
+          className={field}
+          placeholder="your@email.com"
+        />
+        {errors.email && <p className={errMsg}>{errors.email.message}</p>}
+      </div>
+
+      <div>
+        <label className={lbl}>
+          Phone Number{' '}
+          <span className="text-white/40 font-normal">(optional)</span>
+        </label>
+        <input
+          type="tel"
+          {...register('phone')}
+          className={field}
+          placeholder="+31 6 12345678"
+        />
+      </div>
+
+      <div>
+        <label className={lbl}>Position Applying For</label>
+        <select
+          {...register('position', { required: 'Please select a position' })}
+          className={field}
+        >
+          <option value="" className="bg-[#1B2B5E] text-white">
+            Select a position
+          </option>
+          <option value="Kitchen Chef" className="bg-[#1B2B5E] text-white">
+            Kitchen Chef
+          </option>
+          <option value="Front-of-House Server" className="bg-[#1B2B5E] text-white">
+            Front-of-House Server
+          </option>
+          <option value="Event and Catering Assistant" className="bg-[#1B2B5E] text-white">
+            Event and Catering Assistant
+          </option>
+        </select>
+        {errors.position && <p className={errMsg}>{errors.position.message}</p>}
+      </div>
+
+      <div>
+        <label className={lbl}>
+          Languages Spoken{' '}
+          <span className="text-white/40 font-normal">(optional)</span>
+        </label>
+        <input
+          type="text"
+          {...register('languages')}
+          className={field}
+          placeholder="e.g. Dutch, English, Hindi"
+        />
+      </div>
+
+      <div>
+        <label className={lbl}>
+          Cover Note{' '}
+          <span className="text-white/40 font-normal">(optional)</span>
+        </label>
+        <textarea
+          {...register('message')}
+          className={`${field} resize-none`}
+          rows={5}
+          placeholder="Tell us a little about yourself and why you want to work at Chopras"
+        />
+      </div>
+
+      <div className="pt-2">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold w-full md:w-auto disabled:opacity-60 hover:bg-[#c9a230] transition-colors"
+        >
+          {isSubmitting ? 'Sending...' : 'Send My Application'}
+        </button>
+      </div>
+    </form>
+  )
+}

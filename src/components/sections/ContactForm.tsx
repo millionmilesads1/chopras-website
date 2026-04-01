@@ -1,0 +1,143 @@
+'use client'
+
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+
+type ContactFormData = {
+  name: string
+  email: string
+  phone?: string
+  subject: string
+  message: string
+}
+
+export default function ContactForm() {
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>()
+
+  async function onSubmit(data: ContactFormData) {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      setStatus(res.ok ? 'success' : 'error')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  const field =
+    'bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 w-full focus:outline-none focus:border-[#1B2B5E] text-[#1A1A1A]'
+  const lbl = 'text-[#1A1A1A] text-sm font-medium mb-1 block'
+  const errMsg = 'text-red-500 text-xs mt-1'
+
+  if (status === 'success') {
+    return (
+      <div className="text-center py-12 max-w-2xl mx-auto">
+        <p className="text-[#1B2B5E] text-xl font-heading font-semibold">
+          Thank you for your message. We will be in touch shortly.
+        </p>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="max-w-2xl mx-auto space-y-5">
+      {status === 'error' && (
+        <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+          <p className="text-red-600 text-sm text-center">
+            Something went wrong. Please call us directly on +31 6 30645930.
+          </p>
+        </div>
+      )}
+
+      <div>
+        <label className={lbl}>Name</label>
+        <input
+          type="text"
+          {...register('name', { required: 'Name is required' })}
+          className={field}
+          placeholder="Your name"
+        />
+        {errors.name && <p className={errMsg}>{errors.name.message}</p>}
+      </div>
+
+      <div>
+        <label className={lbl}>Email Address</label>
+        <input
+          type="email"
+          {...register('email', {
+            required: 'Email is required',
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: 'Enter a valid email address',
+            },
+          })}
+          className={field}
+          placeholder="your@email.com"
+        />
+        {errors.email && <p className={errMsg}>{errors.email.message}</p>}
+      </div>
+
+      <div>
+        <label className={lbl}>
+          Phone Number{' '}
+          <span className="text-gray-400 font-normal">(optional)</span>
+        </label>
+        <input
+          type="tel"
+          {...register('phone')}
+          className={field}
+          placeholder="+31 6 12345678"
+        />
+      </div>
+
+      <div>
+        <label className={lbl}>Subject</label>
+        <select
+          {...register('subject', { required: 'Please select a subject' })}
+          className={field}
+        >
+          <option value="">Select a subject</option>
+          <option value="Table Reservation">Table Reservation</option>
+          <option value="Catering Enquiry">Catering Enquiry</option>
+          <option value="Event Booking">Event Booking</option>
+          <option value="General Question">General Question</option>
+          <option value="Press and Media">Press and Media</option>
+          <option value="Other">Other</option>
+        </select>
+        {errors.subject && <p className={errMsg}>{errors.subject.message}</p>}
+      </div>
+
+      <div>
+        <label className={lbl}>Message</label>
+        <textarea
+          {...register('message', {
+            required: 'Message is required',
+            minLength: { value: 10, message: 'Message must be at least 10 characters' },
+          })}
+          className={`${field} resize-none`}
+          rows={5}
+          placeholder="How can we help you?"
+        />
+        {errors.message && <p className={errMsg}>{errors.message.message}</p>}
+      </div>
+
+      <div className="pt-2">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="bg-[#1B2B5E] text-white px-8 py-4 rounded-full font-bold disabled:opacity-60 hover:bg-[#0F1F4B] transition-colors"
+        >
+          {isSubmitting ? 'Sending...' : 'Send Message'}
+        </button>
+      </div>
+    </form>
+  )
+}
