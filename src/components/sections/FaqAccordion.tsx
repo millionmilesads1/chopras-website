@@ -1,39 +1,55 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
+import { Plus, Minus } from 'lucide-react'
 import { homeFaqs } from '@/lib/faq-data'
+
+const INITIAL_COUNT = 8
 
 export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [showAll, setShowAll] = useState(false)
+
+  const visibleFaqs = showAll ? homeFaqs : homeFaqs.slice(0, INITIAL_COUNT)
 
   return (
     <div className="max-w-3xl mx-auto">
-      {homeFaqs.map((faq, index) => (
-        <div key={index} className="border-b border-gray-200">
+      {visibleFaqs.map((faq, index) => (
+        <div key={index} className="border-b border-gray-100 py-5">
           <button
             type="button"
-            className="flex justify-between items-center w-full py-4 text-left cursor-pointer"
+            className="flex justify-between items-center w-full text-left cursor-pointer"
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
             aria-expanded={openIndex === index}
           >
-            <span className="font-semibold text-[#1A1A1A] text-base pr-4">
+            <span className="font-body font-medium text-[#1A1A1A] text-base pr-4">
               {faq.question}
             </span>
-            <ChevronDown
-              size={20}
-              className={`text-[#1B2B5E] flex-shrink-0 transition-transform duration-200 ${
-                openIndex === index ? 'rotate-180' : ''
-              }`}
-            />
+            {openIndex === index ? (
+              <Minus size={18} className="text-[#D4AF37] flex-shrink-0 transition-transform duration-200" />
+            ) : (
+              <Plus size={18} className="text-[#D4AF37] flex-shrink-0 transition-transform duration-200" />
+            )}
           </button>
           {openIndex === index && (
-            <div className="text-gray-600 text-sm leading-relaxed pb-4">
+            <div className="font-body text-[#1A1A1A]/70 text-sm leading-relaxed pt-3 pb-1">
               {faq.answer}
             </div>
           )}
         </div>
       ))}
+
+      {!showAll && homeFaqs.length > INITIAL_COUNT && (
+        <div className="text-center mt-8">
+          <button
+            type="button"
+            onClick={() => setShowAll(true)}
+            className="font-body font-semibold text-sm uppercase tracking-widest text-[#1B2B5E] border border-[#1B2B5E]/30 px-8 py-3 hover:bg-[#1B2B5E] hover:text-white transition-all duration-300 cursor-pointer"
+          >
+            Show More Questions
+          </button>
+        </div>
+      )}
     </div>
   )
 }

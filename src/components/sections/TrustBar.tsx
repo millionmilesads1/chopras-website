@@ -1,33 +1,29 @@
-import { ShieldCheck, Flame, Leaf, CalendarDays, ParkingCircle } from 'lucide-react'
+import { ShieldCheck, Flame, CalendarDays, ParkingCircle, Star } from 'lucide-react'
+import { getTranslations, type Locale } from '@/lib/useTranslations'
 
-const items = [
-  { icon: ShieldCheck, label: '100% Halal Certified' },
-  { icon: Flame, label: 'Spices Ground Fresh from India' },
-  { icon: Leaf, label: 'Vegetarian and Vegan Options' },
-  { icon: CalendarDays, label: 'Private Event Hall' },
-  { icon: ParkingCircle, label: 'Free Parking at Leyweg' },
-]
+export default function TrustBar({ locale = 'en' }: { locale?: Locale }) {
+  const tr = getTranslations(locale)
 
-export default function TrustBar() {
+  const items = [
+    { icon: ShieldCheck, label: tr.common.halalCertified },
+    { icon: Flame, label: tr.common.freshSpices },
+    { icon: CalendarDays, label: 'Open Tue\u2013Sun' },
+    { icon: ParkingCircle, label: tr.common.freeParking },
+    { icon: Star, label: tr.common.privateHall },
+  ]
+
   return (
-    <section className="bg-[#1B2B5E] py-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {items.map(({ icon: Icon, label }, i) => (
-            <div
-              key={i}
-              className={`flex flex-col items-center gap-2 text-center ${
-                i === 4 ? 'col-span-2 md:col-span-1' : ''
-              }`}
-            >
-              <Icon size={28} className="text-[#D4AF37]" />
-              <span className="text-[#D4AF37] font-bold text-sm leading-tight">
-                {label}
-              </span>
-            </div>
-          ))}
-        </div>
+    <div className="bg-[#1B2B5E] py-4">
+      <div className="flex gap-8 md:gap-16 justify-start md:justify-center overflow-x-auto px-6 md:px-0 no-scrollbar">
+        {items.map(({ icon: Icon, label }, i) => (
+          <div key={i} className="flex items-center gap-2 flex-shrink-0">
+            <Icon size={16} className="text-[#D4AF37]" />
+            <span className="font-body text-xs text-white/70 uppercase tracking-wider whitespace-nowrap">
+              {label}
+            </span>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   )
 }

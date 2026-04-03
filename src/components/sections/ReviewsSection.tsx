@@ -1,49 +1,80 @@
+'use client'
+
 import { Star } from 'lucide-react'
+import { useInView } from '@/hooks/useInView'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 export default function ReviewsSection({ locale = 'en' }: { locale?: Locale }) {
   const tr = getTranslations(locale)
+  const { ref: headerRef, inView: headerInView } = useInView()
+  const { ref: cardsRef, inView: cardsInView } = useInView()
 
   const reviews = [
-    { name: tr.home.review1Name, stars: 5, text: tr.home.review1Text },
-    { name: tr.home.review2Name, stars: 5, text: tr.home.review2Text },
-    { name: tr.home.review3Name, stars: 5, text: tr.home.review3Text },
+    { name: tr.home.review1Name, text: tr.home.review1Text },
+    { name: tr.home.review2Name, text: tr.home.review2Text },
+    { name: tr.home.review3Name, text: tr.home.review3Text },
   ]
 
   return (
-    <section className="bg-[#1B2B5E] py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-white text-center mb-2">
+    <section className="bg-[#FFFAF5] py-24 px-6 md:px-16">
+      {/* Header */}
+      <div
+        ref={headerRef}
+        className={`text-center transition-all duration-700 ease-out ${headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
+        <p className="font-body text-[#D4AF37] text-xs uppercase tracking-widest mb-4">
+          What Guests Say
+        </p>
+        <h2 className="font-heading font-semibold text-[#1B2B5E] text-4xl md:text-5xl">
           {tr.home.reviewsH2}
         </h2>
-        <p className="text-center text-[#D4AF37]/80 mb-10">{tr.home.reviewsSub}</p>
+        <p className="font-body text-[#1A1A1A]/60 mt-3">{tr.home.reviewsSub}</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reviews.map((review) => (
-            <div key={review.name} className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="flex gap-1 mb-3">
-                {Array.from({ length: review.stars }).map((_, i) => (
-                  <Star key={i} size={18} className="text-[#D4AF37] fill-[#D4AF37]" />
-                ))}
-              </div>
-              <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                &ldquo;{review.text}&rdquo;
-              </p>
-              <p className="font-semibold text-[#1A1A1A] text-sm"> -  {review.name}</p>
-            </div>
+        {/* Aggregate rating */}
+        <div className="flex items-center justify-center gap-2 mt-6">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} size={20} className="text-[#D4AF37] fill-[#D4AF37]" />
           ))}
+          <span className="font-body text-[#1A1A1A]/60 text-sm ml-2">
+            4.7 out of 5 &middot; 83 Google reviews
+          </span>
         </div>
+      </div>
 
-        <div className="text-center mt-10">
-          <a
-            href="https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#D4AF37] underline underline-offset-4 hover:text-[#D4AF37]/80 transition-colors"
+      {/* Review cards */}
+      <div
+        ref={cardsRef}
+        className={`grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 transition-all duration-700 ease-out ${cardsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
+        {reviews.map((review, i) => (
+          <div
+            key={review.name}
+            className={`bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${i === 1 ? 'delay-100' : i === 2 ? 'delay-200' : ''}`}
           >
-            {tr.home.reviewsLink}
-          </a>
-        </div>
+            <div className="flex gap-1">
+              {Array.from({ length: 5 }).map((_, j) => (
+                <Star key={j} size={14} className="text-[#D4AF37] fill-[#D4AF37]" />
+              ))}
+            </div>
+            <p className="font-body text-[#1A1A1A]/80 text-base italic leading-relaxed mt-4">
+              &ldquo;{review.text}&rdquo;
+            </p>
+            <p className="font-body font-semibold text-[#1B2B5E] text-sm mt-6">{review.name}</p>
+            <p className="font-body text-[#1A1A1A]/40 text-xs mt-1">Google Review</p>
+          </div>
+        ))}
+      </div>
+
+      {/* CTA link */}
+      <div className="text-center mt-12">
+        <a
+          href="https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-body font-semibold text-sm uppercase tracking-widest text-[#1B2B5E] underline-offset-4 hover:underline"
+        >
+          {tr.home.reviewsLink}
+        </a>
       </div>
     </section>
   )
