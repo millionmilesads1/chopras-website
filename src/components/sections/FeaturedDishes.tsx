@@ -2,173 +2,239 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useInView } from '@/hooks/useInView'
-import { getTranslations, type Locale } from '@/lib/useTranslations'
+import { useState } from 'react'
+import { type Locale } from '@/lib/useTranslations'
 
-type FeaturedDish = {
+type Category = 'All' | 'Starters' | 'Tandoori' | 'Curries' | 'Biryani' | 'Street Food'
+
+type Dish = {
   id: string
   name: string
-  label?: string
+  category: Exclude<Category, 'All'>
   image: string
   price: string
+  isChefsFavourite?: boolean
+  isHalal?: boolean
 }
 
-const topRow: [FeaturedDish, FeaturedDish, FeaturedDish] = [
+const DISHES: Dish[] = [
+  // Starters
   {
-    id: 'butter-chicken',
-    name: 'Butter Chicken',
-    label: "Chef's Favourite",
-    image: '/images/dishes/butter-chicken.webp',
-    price: '\u20ac18.50',
+    id: 'onion-bhaji',
+    name: 'Onion Bhaji',
+    category: 'Starters',
+    image: '/images/dishes/onion-bhaji.webp',
+    price: '€8.50',
   },
   {
-    id: 'lamb-biryani',
-    name: 'Lamb Biryani',
-    image: '/images/dishes/muton-biryani.webp',
-    price: '\u20ac21.50',
+    id: 'veg-samosa',
+    name: 'Samosa',
+    category: 'Starters',
+    image: '/images/dishes/veg-samosa.webp',
+    price: '€7.50',
   },
   {
-    id: 'chopras-non-veg-platter',
-    name: "Chopra's Non Veg Platter",
-    image: '/images/dishes/chopras-non-veg-platter.webp',
-    price: '\u20ac30.00',
+    id: 'pani-puri',
+    name: 'Pani Puri',
+    category: 'Starters',
+    image: '/images/dishes/pani-puri.webp',
+    price: '€8.50',
   },
-]
-
-const bottomRow: [FeaturedDish, FeaturedDish, FeaturedDish] = [
+  {
+    id: 'chicken-seekh-kebab',
+    name: 'Chicken Seekh Kebab',
+    category: 'Starters',
+    image: '/images/dishes/chicken-seekh-kebab.webp',
+    price: '€20.50',
+  },
+  // Tandoori
   {
     id: 'paneer-tikka',
     name: 'Paneer Tikka',
+    category: 'Tandoori',
     image: '/images/dishes/paneer-tikka.webp',
-    price: '\u20ac18.00',
+    price: '€18.00',
+    isChefsFavourite: true,
   },
   {
     id: 'chicken-tikka',
     name: 'Chicken Tikka',
+    category: 'Tandoori',
     image: '/images/dishes/chicken-tikka.webp',
-    price: '\u20ac20.50',
+    price: '€20.50',
+  },
+  {
+    id: 'tandoori-chicken',
+    name: 'Tandoori Chicken',
+    category: 'Tandoori',
+    image: '/images/dishes/tandoori-chicken.webp',
+    price: '€22.50',
+  },
+  {
+    id: 'chicken-malai-tikka',
+    name: 'Chicken Malai Tikka',
+    category: 'Tandoori',
+    image: '/images/dishes/chicken-malai-tikka.webp',
+    price: '€20.50',
+  },
+  // Curries
+  {
+    id: 'butter-chicken',
+    name: 'Butter Chicken',
+    category: 'Curries',
+    image: '/images/dishes/butter-chicken.webp',
+    price: '€18.50',
+    isChefsFavourite: true,
   },
   {
     id: 'mutton-rogan-josh',
     name: 'Mutton Rogan Josh',
+    category: 'Curries',
     image: '/images/dishes/mutton-rogan-josh.webp',
-    price: '\u20ac21.50',
+    price: '€21.50',
+  },
+  {
+    id: 'dal-makhani',
+    name: 'Dal Makhani',
+    category: 'Curries',
+    image: '/images/dishes/dal-makhani.webp',
+    price: '€16.00',
+  },
+  {
+    id: 'chilli-paneer',
+    name: 'Chilli Paneer',
+    category: 'Curries',
+    image: '/images/dishes/chilli-paneer.webp',
+    price: '€16.00',
+  },
+  // Biryani
+  {
+    id: 'chicken-biryani',
+    name: 'Chicken Biryani',
+    category: 'Biryani',
+    image: '/images/dishes/chicken-biryani.webp',
+    price: '€18.50',
+  },
+  {
+    id: 'lamb-biryani',
+    name: 'Lamb Biryani',
+    category: 'Biryani',
+    image: '/images/dishes/muton-biryani.webp',
+    price: '€21.50',
+    isChefsFavourite: true,
+  },
+  // Street Food
+  {
+    id: 'pani-puri-street',
+    name: 'Pani Puri',
+    category: 'Street Food',
+    image: '/images/dishes/pani-puri.webp',
+    price: '€8.50',
+  },
+  {
+    id: 'samosa-chaat',
+    name: 'Samosa Chaat',
+    category: 'Street Food',
+    image: '/images/dishes/samosa-chaat.webp',
+    price: '€9.50',
+  },
+  {
+    id: 'papdi-chaat',
+    name: 'Papdi Chaat',
+    category: 'Street Food',
+    image: '/images/dishes/papdi-chaat.webp',
+    price: '€9.00',
+  },
+  {
+    id: 'aloo-tikki',
+    name: 'Aloo Tikki',
+    category: 'Street Food',
+    image: '/images/dishes/aloo-tikki.webp',
+    price: '€8.50',
   },
 ]
 
-function DishCard({
-  dish,
-  className,
-  aspectClass,
-  delay,
-}: {
-  dish: FeaturedDish
-  className?: string
-  aspectClass: string
-  delay: string
-}) {
-  return (
-    <div
-      className={`relative overflow-hidden rounded-2xl group cursor-pointer ${aspectClass} ${className ?? ''} ${delay}`}
-    >
-      <Image
-        src={dish.image}
-        alt={`${dish.name} at Chopras Indian Restaurant Den Haag`}
-        fill
-        className="object-cover transition-transform duration-500 group-hover:scale-105"
-        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-      />
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-      {/* Ring on hover */}
-      <div className="absolute inset-0 ring-1 ring-[#D4AF37]/0 group-hover:ring-[#D4AF37]/50 rounded-2xl transition-all duration-300" />
-      {/* Text */}
-      <div className="absolute bottom-0 left-0 p-4 md:p-6">
-        {dish.label && (
-          <span className="font-body text-[#D4AF37] text-xs uppercase tracking-widest block mb-1">
-            {dish.label}
-          </span>
-        )}
-        <h3 className="font-heading font-semibold text-white text-xl md:text-2xl leading-tight">
-          {dish.name}
-        </h3>
-        <p className="font-body text-white/70 text-sm mt-1">{dish.price}</p>
-      </div>
-    </div>
-  )
-}
+const CATEGORIES: Category[] = ['All', 'Starters', 'Tandoori', 'Curries', 'Biryani', 'Street Food']
 
 export default function FeaturedDishes({ locale = 'en' }: { locale?: Locale }) {
-  const tr = getTranslations(locale)
+  const [activeCategory, setActiveCategory] = useState<Category>('All')
   const base = `/${locale}`
-  const { ref: headerRef, inView: headerInView } = useInView()
-  const { ref: topRef, inView: topInView } = useInView()
-  const { ref: bottomRef, inView: bottomInView } = useInView()
+
+  const visibleDishes =
+    activeCategory === 'All' ? DISHES : DISHES.filter((d) => d.category === activeCategory)
 
   return (
-    <section className="bg-[#1B2B5E] py-24 px-6 md:px-16">
+    <section
+      style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 60%, #0F1040 100%)' }}
+      className="py-20 px-6 md:px-16 overflow-hidden"
+    >
       {/* Header */}
-      <div
-        ref={headerRef}
-        className={`mb-12 transition-all duration-700 ease-out ${headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-      >
-        <p className="font-body text-[#D4AF37] text-xs uppercase tracking-widest mb-3">
-          From Our Kitchen
-        </p>
-        <h2 className="font-heading font-semibold text-[#FFFAF5] text-5xl md:text-6xl">
-          {tr.home.featuredH2}
+      <div>
+        <p className="text-xs uppercase tracking-widest text-[#D4AF37]">FROM OUR KITCHEN</p>
+        <h2 className="font-heading text-4xl md:text-5xl text-white font-semibold mt-2">
+          Our Most Loved Indian Dishes in Den Haag
         </h2>
-        <p className="font-body text-white/60 text-lg mt-3">{tr.home.featuredSub}</p>
+        <p className="text-white/50 text-sm mt-3">
+          Butter Chicken Den Haag · Biryani Den Haag · and 87 more dishes, all made fresh daily.
+        </p>
       </div>
 
-      {/* Top row: large card (60%) + two stacked cards (40%) */}
-      <div
-        ref={topRef}
-        className={`grid grid-cols-1 lg:grid-cols-5 gap-4 transition-all duration-700 ease-out ${topInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-      >
-        {/* Large featured card */}
-        <div className="lg:col-span-3">
-          <DishCard
-            dish={topRow[0]}
-            aspectClass="aspect-video lg:aspect-[4/3]"
-            delay=""
-          />
-        </div>
-        {/* Two stacked smaller cards */}
-        <div className="lg:col-span-2 grid grid-rows-2 gap-4">
-          <DishCard
-            dish={topRow[1]}
-            aspectClass="aspect-square"
-            delay="delay-100"
-          />
-          <DishCard
-            dish={topRow[2]}
-            aspectClass="aspect-square"
-            delay="delay-200"
-          />
-        </div>
-      </div>
-
-      {/* Bottom row: three equal cards */}
-      <div
-        ref={bottomRef}
-        className={`grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 transition-all duration-700 ease-out ${bottomInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-      >
-        {bottomRow.map((dish, i) => (
-          <DishCard
-            key={dish.id}
-            dish={dish}
-            aspectClass="aspect-[3/4]"
-            delay={i === 0 ? '' : i === 1 ? 'delay-100' : 'delay-200'}
-          />
+      {/* Category tabs */}
+      <div className="flex gap-3 mt-8 overflow-x-auto scrollbar-hide pb-2">
+        {CATEGORIES.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setActiveCategory(cat)}
+            className={
+              activeCategory === cat
+                ? 'bg-[#D4AF37] text-[#1A1A1A] px-5 py-2 rounded-full text-sm font-semibold cursor-pointer whitespace-nowrap flex-none'
+                : 'border border-white/20 text-white/60 px-5 py-2 rounded-full text-sm hover:border-white/40 hover:text-white transition-all cursor-pointer whitespace-nowrap flex-none'
+            }
+          >
+            {cat}
+          </button>
         ))}
       </div>
 
-      {/* CTA */}
-      <div className="text-center mt-12">
+      {/* Dish cards — horizontal scroll */}
+      <div className="flex gap-4 mt-8 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+        {visibleDishes.map((dish) => (
+          <div key={dish.id} className="flex-none w-48 snap-start group cursor-pointer">
+            {/* Square image container */}
+            <div className="relative w-48 h-48 rounded-2xl overflow-hidden">
+              <Image
+                src={dish.image}
+                alt={`${dish.name} at Chopras Indian Restaurant Den Haag`}
+                fill
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                sizes="192px"
+              />
+              {/* Bottom vignette */}
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent" />
+              {/* Halal badge */}
+              {dish.isHalal && (
+                <div className="absolute top-2 right-2 bg-[#D4AF37] text-[#1A1A1A] text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                  Halal
+                </div>
+              )}
+            </div>
+            {/* Text below image */}
+            <div className="mt-3 px-1">
+              <h3 className="text-white font-medium text-sm leading-tight">{dish.name}</h3>
+              <p className="text-[#D4AF37] text-sm font-semibold mt-0.5">{dish.price}</p>
+              {dish.isChefsFavourite && (
+                <p className="text-white/40 text-xs mt-0.5">Chef&apos;s Favourite</p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Explore Menu CTA */}
+      <div className="mt-10 text-center">
         <Link
           href={`${base}/menu`}
-          className="inline-block border-2 border-[#D4AF37] text-[#D4AF37] px-10 py-4 text-sm uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#1B2B5E] transition-all duration-300 font-body font-semibold"
+          className="inline-block border-2 border-[#D4AF37] text-[#D4AF37] px-10 py-4 text-sm uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#1B2B5E] transition-all duration-300 font-semibold"
         >
           Explore Full Menu &rarr;
         </Link>
