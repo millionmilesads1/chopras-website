@@ -1,0 +1,79 @@
+import type { Metadata } from 'next'
+import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
+import '@/styles/globals.css'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import { type Locale } from '@/lib/useTranslations'
+import { RESTAURANT, SITE_URL } from '@/lib/constants'
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+  adjustFontFallback: false,
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-dm-sans',
+  display: 'optional',
+})
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Chopras Indian Restaurant Den Haag | Authentic Indian Food',
+    template: '%s | Chopras Indian Restaurant Den Haag',
+  },
+  description:
+    'Authentic Indian restaurant in Den Haag serving fresh curries, tandoori, chaat and biryani. Halal certified. Vegetarian and vegan options. Open Tuesday to Sunday.',
+  authors: [{ name: RESTAURANT.name }],
+  creator: RESTAURANT.name,
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'website',
+    siteName: RESTAURANT.name,
+  },
+  twitter: { card: 'summary_large_image' },
+}
+
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'nl' }]
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Chopras Indian Restaurant',
+  url: 'https://chopras.nl',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://chopras.nl/en/menu',
+    'query-input': 'required name=search_term_string',
+  },
+}
+
+export default function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode
+  params: { locale: Locale }
+}) {
+  return (
+    <html lang={params.locale} className={`${cormorant.variable} ${dmSans.variable}`}>
+      <body className="bg-brand-bg text-brand-text font-body antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Header locale={params.locale} />
+        <main>{children}</main>
+        <Footer locale={params.locale} />
+      </body>
+    </html>
+  )
+}

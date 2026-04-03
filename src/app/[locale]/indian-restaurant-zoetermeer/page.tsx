@@ -1,0 +1,168 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import JsonLd from '@/components/seo/JsonLd'
+import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { getTranslations, type Locale } from '@/lib/useTranslations'
+
+type Props = { params: { locale: Locale } }
+
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'nl' }]
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = params
+  const titles = {
+    en: 'Indian Restaurant Near Zoetermeer | Chopras in Den Haag',
+    nl: 'Indiaas Restaurant bij Zoetermeer | Chopras in Den Haag',
+  }
+  const descriptions = {
+    en: 'Looking for an Indian restaurant near Zoetermeer? Chopras in Den Haag is 20 minutes away. Authentic Indian food, halal certified, open Tue–Sun. Reserve your table.',
+    nl: 'Op zoek naar een Indiaas restaurant bij Zoetermeer? Chopras in Den Haag is 20 minuten rijden. Authentiek Indiaas eten, halal gecertificeerd, open di–zo.',
+  }
+  return {
+    title: titles[locale], description: descriptions[locale],
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/indian-restaurant-zoetermeer`,
+      languages: { en: `${SITE_URL}/en/indian-restaurant-zoetermeer`, nl: `${SITE_URL}/nl/indian-restaurant-zoetermeer`, 'x-default': `${SITE_URL}/en/indian-restaurant-zoetermeer` },
+    },
+  }
+}
+
+export default function IndianRestaurantZoetermeerPage({ params }: Props) {
+  const { locale } = params
+  const tr = getTranslations(locale)
+  const base = `/${locale}`
+  const isNl = locale === 'nl'
+
+  const restaurantSchema = {
+    '@context': 'https://schema.org', '@type': ['LocalBusiness', 'Restaurant'], name: RESTAURANT.name,
+    url: `${SITE_URL}/${locale}/indian-restaurant-zoetermeer`,
+    telephone: RESTAURANT.contact.phone, email: RESTAURANT.contact.email,
+    address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode },
+    geo: { '@type': 'GeoCoordinates', latitude: RESTAURANT.address.coordinates.lat, longitude: RESTAURANT.address.coordinates.lng },
+    servesCuisine: ['North Indian', 'Indian Street Food'], priceRange: RESTAURANT.priceRange,
+    openingHoursSpecification: [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '15:00', closes: '22:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday', 'Sunday'], opens: '13:00', closes: '22:00' },
+    ],
+    areaServed: ['Zoetermeer', 'Den Haag', 'South Holland'],
+  }
+
+  return (
+    <>
+      <JsonLd data={restaurantSchema as Record<string, unknown>} />
+
+      <section className="bg-[#1B2B5E] py-20 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+            {isNl ? 'Indiaas Restaurant bij Zoetermeer  -  Chopras in Den Haag, 20 Minuten Rijden' : 'Indian Restaurant Near Zoetermeer  -  Chopras in Den Haag, 20 Minutes Away'}
+          </h1>
+          <p className="text-white/75 text-lg md:text-xl max-w-3xl mx-auto">
+            {isNl ? 'Authentiek Noord-Indiaas eten, volledig halal gecertificeerd, open dinsdag tot en met zondag. Leyweg 986, Den Haag  -  een directe verbinding vanuit Zoetermeer via de A12.' : 'Authentic North Indian food, fully halal certified, open Tuesday to Sunday. Leyweg 986, Den Haag  -  a direct connection from Zoetermeer via the A12.'}
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-[#FFFAF5] py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+            {isNl ? 'Van Zoetermeer naar Leyweg' : 'From Zoetermeer to Leyweg'}
+          </h2>
+          <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
+            {isNl ? (
+              <>
+                <p>Zoetermeer ligt direct ten oosten van Den Haag, verbonden via de A12-snelweg en meerdere tramlijnen. Chopras op Leyweg 986 is doorgaans 20 minuten met de auto vanuit het centrum van Zoetermeer  -  rechtstreeks via de A12 richting Den Haag, afslag Leyweg.</p>
+                <p>Per openbaar vervoer verbindt de Randstadrail (tram/metro) Zoetermeer rechtstreeks met het centrum van Den Haag, van waaruit busverbindingen naar Leyweg beschikbaar zijn. De totale reistijd is doorgaans 30 tot 40 minuten afhankelijk van de vertrektijd.</p>
+                <p>Zoetermeer heeft een van de grootste Zuid-Aziatische gemeenschappen in de regio Den Haag  -  Hindoestaanse families, Pakistaanse en Indiase expats, en een groeiende generatie tweede- en derde-generatie Nederlanders met een Indiase eettraditie thuis. Voor hen is Chopras de dichtst bij gelegen authentieke optie met de gecertificeerde halalstatus die de gemeenschap vereist.</p>
+                <p>Parkeren op Leyweg is gratis en royaal beschikbaar  -  een relevant punt voor Zoetermeerse families die met meerdere mensen komen en de parkeerstress van het stadscentrum willen vermijden.</p>
+              </>
+            ) : (
+              <>
+                <p>Zoetermeer lies directly east of Den Haag, connected via the A12 motorway and several tram lines. Chopras at Leyweg 986 is typically 20 minutes by car from central Zoetermeer  -  straight via the A12 towards Den Haag, exit Leyweg.</p>
+                <p>By public transport, the Randstadrail connects Zoetermeer directly to central Den Haag, from where bus connections to Leyweg are available. Total travel time is typically 30 to 40 minutes depending on departure time.</p>
+                <p>Zoetermeer has one of the largest South Asian communities in the Den Haag region  -  Hindustani families, Pakistani and Indian expats, and a growing second and third generation of Dutch people with an Indian food tradition at home. For them, Chopras is the nearest authentic option with the certified halal status that the community requires.</p>
+                <p>Parking at Leyweg is free and generously available  -  a relevant point for Zoetermeer families arriving in groups who want to avoid the parking stress of city centres.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+            {isNl ? 'Wat Zoetermeerse Bezoekers bij Chopras Bestellen' : 'What Zoetermeer Visitors Order at Chopras'}
+          </h2>
+          <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
+            {isNl ? (
+              <>
+                <p>De Dal Makhani en Butter Chicken zijn de vaste keuzes voor Hindoestaanse families uit Zoetermeer  -  gerechten die thuis worden bereid maar die bij Chopras een restaurantkwaliteit hebben die de thuisversie moeilijk evenaart. Langzame garing, verse kruiden, de juiste verhouding room en boter.</p>
+                <p>Families die voor de eerste keer komen voor een speciale gelegenheid  -  verjaardag, jubileum, Eid-diner  -  kiezen vaak voor biryani als centrepiece van de tafel. Het is het gerecht dat het meest overtuigt dat de rit de moeite waard was.</p>
+                <p>De private evenementenhal wordt regelmatig geboekt door families en gemeenschappen uit Zoetermeer voor grotere bijeenkomsten  -  wanneer de afstand te groot is voor een spontane avond uit maar ruimschoots de moeite waard voor een geplande gelegenheid.</p>
+              </>
+            ) : (
+              <>
+                <p>Dal Makhani and Butter Chicken are the consistent choices for Hindustani families from Zoetermeer  -  dishes that are cooked at home but that at Chopras have a restaurant quality that the home version struggles to match. Slow cooking, fresh spices, the right ratio of cream and butter.</p>
+                <p>Families visiting for a special occasion for the first time  -  birthday, anniversary, Eid dinner  -  often choose biryani as the centrepiece of the table. It is the dish that most convincingly makes the journey feel worthwhile.</p>
+                <p>The private event hall is regularly booked by families and communities from Zoetermeer for larger gatherings  -  when the distance is too far for a spontaneous evening out but well worth the journey for a planned occasion.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FFFAF5] py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+            {isNl ? 'Praktische Informatie voor Bezoekers uit Zoetermeer' : 'Practical Information for Zoetermeer Visitors'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            {(isNl ? [
+              { title: 'Afstand', desc: 'Circa 20 minuten rijden vanuit centraal Zoetermeer via de A12.' },
+              { title: 'Openbaar Vervoer', desc: 'Randstadrail naar Den Haag Centrum, daarna bus naar Leyweg. Circa 30–40 minuten totaal.' },
+              { title: 'Parkeren', desc: 'Gratis parkeren in het winkelgebied Leyweg. Geen parkeerstress.' },
+              { title: 'Openingstijden', desc: 'Dinsdag–vrijdag: 15:00–22:00. Zaterdag–zondag: 13:00–22:00. Maandag gesloten.' },
+            ] : [
+              { title: 'Distance', desc: 'Approximately 20 minutes by car from central Zoetermeer via the A12.' },
+              { title: 'Public Transport', desc: 'Randstadrail to Den Haag Centrum, then bus to Leyweg. Approximately 30–40 minutes total.' },
+              { title: 'Parking', desc: 'Free parking in the Leyweg shopping area. No parking stress.' },
+              { title: 'Opening Hours', desc: 'Tuesday–Friday: 15:00–22:00. Saturday–Sunday: 13:00–22:00. Closed Monday.' },
+            ]).map((item) => (
+              <div key={item.title} className="bg-white rounded-xl p-5 border-l-4 border-[#D4AF37]">
+                <h3 className="font-heading text-lg text-[#1B2B5E] mb-1">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href={`${base}/contact`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
+              {tr.common.reserve}
+            </a>
+            <Link href={`${base}/menu`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
+              {tr.common.viewMenu}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FFFAF5] py-12">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-2xl text-[#1B2B5E] mb-6">
+            {isNl ? 'Ook Nabij Den Haag' : 'Also Serving These Areas Near Den Haag'}
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link href={`${base}/indian-restaurant-rijswijk`} className="flex-1 bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-[#D4AF37] transition-colors">
+              <p className="font-heading text-[#1B2B5E] font-bold">{isNl ? 'Indiaas Restaurant bij Rijswijk' : 'Indian Restaurant Near Rijswijk'}</p>
+              <p className="text-gray-600 text-sm mt-1">{isNl ? 'Chopras bedient ook Rijswijk' : 'Chopras also serves Rijswijk'}</p>
+            </Link>
+            <Link href={`${base}/indian-restaurant-delft`} className="flex-1 bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-[#D4AF37] transition-colors">
+              <p className="font-heading text-[#1B2B5E] font-bold">{isNl ? 'Indiaas Restaurant bij Delft' : 'Indian Restaurant Near Delft'}</p>
+              <p className="text-gray-600 text-sm mt-1">{isNl ? 'Chopras bedient ook Delft' : 'Chopras also serves Delft'}</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}

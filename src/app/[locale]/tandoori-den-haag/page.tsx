@@ -1,0 +1,127 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import JsonLd from '@/components/seo/JsonLd'
+import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { getTranslations, type Locale } from '@/lib/useTranslations'
+
+type Props = { params: { locale: Locale } }
+
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'nl' }]
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = params
+  const titles = {
+    en: 'Tandoori in Den Haag | Chopras  -  Authentic Tandoor-Fired Dishes',
+    nl: 'Tandoori in Den Haag | Chopras  -  Authentieke Tandoor-Gerechten',
+  }
+  const descriptions = {
+    en: 'Authentic tandoori dishes at Chopras Den Haag. Chicken tikka, seekh kebab and tandoori naan straight from our clay oven. Halal certified. Leyweg 986, Den Haag.',
+    nl: 'Authentieke tandoori gerechten bij Chopras Den Haag. Chicken tikka, seekh kebab en tandoori naan recht uit onze kleioven. Halal gecertificeerd. Leyweg 986, Den Haag.',
+  }
+  return {
+    title: titles[locale], description: descriptions[locale],
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/tandoori-den-haag`,
+      languages: { en: `${SITE_URL}/en/tandoori-den-haag`, nl: `${SITE_URL}/nl/tandoori-den-haag`, 'x-default': `${SITE_URL}/en/tandoori-den-haag` },
+    },
+  }
+}
+
+export default function TandooriPage({ params }: Props) {
+  const { locale } = params
+  const tr = getTranslations(locale)
+  const base = `/${locale}`
+  const isNl = locale === 'nl'
+
+  const restaurantSchema = {
+    '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name,
+    address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode },
+    telephone: RESTAURANT.contact.phone, servesCuisine: 'Indian', priceRange: RESTAURANT.priceRange,
+  }
+
+  const pageFaqs = [
+    { question: isNl ? 'Is de tandoori bij Chopras halal?' : 'Is the tandoori at Chopras halal?', answer: isNl ? 'Ja. Alle kip en lam bij Chopras zijn halal gecertificeerd. De tandoor-kip, seekh kebab en alle andere vleesgerechten zijn volledig halal.' : 'Yes. All chicken and lamb at Chopras are halal certified. The tandoori chicken, seekh kebab, and all other meat dishes are fully halal.' },
+    { question: isNl ? 'Wat zijn de populairste tandoori gerechten bij Chopras?' : 'What are the most popular tandoori dishes at Chopras?', answer: isNl ? 'De meest bestelde tandoori gerechten zijn Chicken Tikka (€16.50), Seekh Kebab (€17.50) en Paneer Tikka (€15.50).' : 'The most popular tandoori dishes are Chicken Tikka (€16.50), Seekh Kebab (€17.50), and Paneer Tikka (€15.50).' },
+    { question: isNl ? 'Op welke temperatuur werkt de tandoor bij Chopras?' : 'What temperature does the tandoor at Chopras operate at?', answer: isNl ? 'De tandoor bij Chopras werkt op circa 400°C. Die droge, intense hitte is wat de kenmerkende verschroeide buitenkant en sappige kern van tandoori gerechten geeft.' : 'The tandoor at Chopras operates at around 400°C. That dry, intense heat is what gives tandoori dishes their characteristic charred exterior and juicy interior.' },
+  ]
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: pageFaqs.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  }
+
+  return (
+    <>
+      <JsonLd data={restaurantSchema as Record<string, unknown>} />
+      <JsonLd data={faqSchema as Record<string, unknown>} />
+
+      <section className="bg-[#1B2B5E] py-20 text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+            {isNl ? 'Tandoori in Den Haag  -  Recht uit de Kleioven' : 'Tandoori in Den Haag  -  Straight from the Clay Oven'}
+          </h1>
+          <p className="text-white/75 text-lg">{isNl ? '400°C. Houtskool. Echte tandoor. Leyweg 986, Den Haag.' : '400°C. Charcoal. Real tandoor. Leyweg 986, Den Haag.'}</p>
+        </div>
+      </section>
+
+      <section className="bg-[#FFFAF5] py-16">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="font-heading text-3xl text-[#1B2B5E] mb-8">
+            {isNl ? 'De Tandoor bij Chopras' : 'The Tandoor at Chopras'}
+          </h2>
+          <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
+            {isNl ? (
+              <>
+                <p>De tandoor is een Indiase kleioven die bij temperaturen van ongeveer 400°C werkt. Het is de reden waarom tandoori kip een karakteristieke verschroeide buitenkant heeft met een sappige, geurige kern  -  die combinatie kan niet worden bereikt in een gewone oven of pan.</p>
+                <p>Bij Chopras wordt de tandoor uren voor de service aangestoken. De kip wordt van tevoren gemarineerd met verse kruiden en yoghurt, dan gehangen in de oven om te garen. De hitte is droog en intense  -  het vocht verdampt snel, de kruiden karamelliseren, en het vlees behoudt zijn sappen van binnenuit.</p>
+                <p>Onze tandoori gerechten zijn halal gecertificeerd. Elke portie wordt vers bereid wanneer u bestelt.</p>
+              </>
+            ) : (
+              <>
+                <p>The tandoor is an Indian clay oven that operates at temperatures of around 400°C. It is the reason why tandoori chicken has a characteristic charred exterior with a juicy, fragrant core  -  that combination cannot be achieved in a regular oven or pan.</p>
+                <p>At Chopras, the tandoor is fired up hours before service. The chicken is marinated overnight with fresh spices and yogurt, then hung in the oven to cook. The heat is dry and intense  -  moisture evaporates fast, the spices caramelise, and the meat retains its juices from within.</p>
+                <p>Our tandoori dishes are halal certified. Every portion is freshly prepared when you order.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="font-heading text-3xl text-[#1B2B5E] mb-8">
+            {isNl ? 'Tandoori Gerechten op Ons Menu' : 'Tandoori Dishes on Our Menu'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            {[
+              { name: isNl ? 'Chicken Tikka' : 'Chicken Tikka', price: '€16.50', desc: isNl ? 'Gemarineerde kipdelen, 24 uur in yoghurt en kruiden, direct van de tandoor' : 'Marinated chicken pieces, 24 hours in yogurt and spices, straight from the tandoor' },
+              { name: isNl ? 'Seekh Kebab' : 'Seekh Kebab', price: '€17.50', desc: isNl ? 'Gemalen lam met gember, knoflook en verse kruiden, geroosterd op metalen pennen' : 'Minced lamb with ginger, garlic and fresh spices, grilled on metal skewers' },
+              { name: isNl ? 'Paneer Tikka' : 'Paneer Tikka', price: '€15.50', desc: isNl ? 'Verse paneer gemarineerd in yoghurt en kruiden, geroosterd in de tandoor' : 'Fresh paneer marinated in yogurt and spices, grilled in the tandoor' },
+              { name: isNl ? 'Tandoori Naan' : 'Tandoori Naan', price: '€3.50', desc: isNl ? 'Platbrood gebakken op de muur van de tandoor' : 'Flatbread baked against the wall of the tandoor' },
+            ].map((item) => (
+              <div key={item.name} className="bg-[#FFFAF5] rounded-xl p-5 border-l-4 border-[#D4AF37]">
+                <h3 className="font-heading text-lg text-[#1B2B5E] mb-1">{item.name}  -  {item.price}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href={`${base}/contact`} className="bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
+              {tr.common.reserve}
+            </a>
+            <Link href={`${base}/menu`} className="border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
+              {tr.common.viewMenu}
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}

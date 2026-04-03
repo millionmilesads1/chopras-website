@@ -1,0 +1,192 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import JsonLd from '@/components/seo/JsonLd'
+import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { type Locale } from '@/lib/useTranslations'
+
+type Props = { params: { locale: Locale } }
+
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'nl' }]
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = params
+  const titles = {
+    en: 'Indian Buffet in Den Haag | Chopras  -  Event Catering and Group Dining',
+    nl: 'Indiaas Buffet Den Haag | Chopras  -  Evenement Catering en Groepsdiner',
+  }
+  const descriptions = {
+    en: 'Book an Indian buffet in Den Haag at Chopras for your event. Fresh curries, tandoori, biryani and street food for groups of 25 to 200. Halal certified. Get a quote.',
+    nl: 'Boek een Indiaas buffet in Den Haag bij Chopras voor uw evenement. Verse curry, tandoori, biryani en street food voor groepen van 25 tot 200 personen. Halal gecertificeerd.',
+  }
+  return {
+    title: titles[locale], description: descriptions[locale],
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/indian-buffet-den-haag`,
+      languages: { en: `${SITE_URL}/en/indian-buffet-den-haag`, nl: `${SITE_URL}/nl/indian-buffet-den-haag`, 'x-default': `${SITE_URL}/en/indian-buffet-den-haag` },
+    },
+  }
+}
+
+export default function IndianBuffetPage({ params }: Props) {
+  const { locale } = params
+  const base = `/${locale}`
+  const isNl = locale === 'nl'
+
+  const restaurantSchema = {
+    '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name,
+    address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode },
+    telephone: RESTAURANT.contact.phone, url: RESTAURANT.contact.website, servesCuisine: 'Indian', priceRange: RESTAURANT.priceRange,
+  }
+
+  const cateringSchema = {
+    '@context': 'https://schema.org', '@type': 'CateringService',
+    name: isNl ? 'Chopras Indiaas Restaurant  -  Buffet Catering' : 'Chopras Indian Restaurant  -  Buffet Catering',
+    provider: { '@type': 'Restaurant', name: RESTAURANT.name, telephone: RESTAURANT.contact.phone, address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode } },
+    areaServed: RESTAURANT.serviceAreas.map((area) => ({ '@type': 'City', name: area })),
+  }
+
+  const faqItems = isNl ? [
+    { q: 'Wat is de minimale groepsgrootte voor een Indiaas buffet bij Chopras?', a: 'De minimale groepsgrootte voor buffetcatering is 15 personen. Voor kleinere groepen raden wij aan direct het restaurant te boeken. Voor evenementen op externe locaties geldt een minimum van 25 gasten.' },
+    { q: 'Kan het buffet ook op onze locatie worden geserveerd?', a: 'Ja. Chopras verzorgt volledige cateringservice op locatie door heel Den Haag, Rijswijk, Delft, Zoetermeer en Voorburg. Neem contact met ons op met uw locatiegegevens en wij beoordelen de opbouwvereisten.' },
+    { q: 'Is het buffeteten halal?', a: 'Ja, volledig. Alle vleesgerechten bij Chopras-buffetevenementen zijn afkomstig van halal-gecertificeerde leveranciers. Halal-naleving is geen extra optie  -  het is de standaard voor elk evenement dat wij cateren.' },
+    { q: 'Hoe ver van tevoren moet ik boeken?', a: 'Wij raden aan 1 à 2 weken van tevoren te boeken voor weekevenementen. Weekboekingen zijn vaak met minder opzegtermijn mogelijk. Voor grote evenementen van 100+ gasten is 3 à 4 weken van tevoren aanbevolen.' },
+    { q: 'Kan ik het buffetmenu aanpassen?', a: 'Ja. Elke buffetboeking omvat een menuoverlegesprek met ons team. U kunt de gerechten, dieetvereisten en eventuele culturele wensen opgeven. Het standaardmenu op deze pagina is een representatief sjabloon.' },
+  ] : [
+    { q: 'What is the minimum group size for a Chopras Indian buffet?', a: 'The minimum group size for buffet catering is 15 people. For smaller groups we recommend booking the restaurant directly. For events at external venues, a minimum of 25 guests applies.' },
+    { q: 'Can you do the buffet at our venue?', a: 'Yes. Chopras provides full off-site catering across Den Haag, Rijswijk, Delft, Zoetermeer and surrounding areas. We bring the kitchen to you.' },
+    { q: 'Is the buffet food halal?', a: 'Yes, completely. All meat dishes served at Chopras buffet events are sourced from halal-certified suppliers. Halal compliance is the standard for every event we cater.' },
+    { q: 'How far in advance should I book?', a: 'We recommend booking 1 to 2 weeks in advance for weekend events. For large events of 100+ guests, 3 to 4 weeks ahead is recommended.' },
+    { q: 'Can I customise the buffet menu?', a: 'Yes. Every buffet booking includes a menu consultation call. You can specify dishes, dietary requirements, and any cultural preferences. The standard menu is a representative template.' },
+  ]
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  }
+
+  return (
+    <>
+      <JsonLd data={restaurantSchema as Record<string, unknown>} />
+      <JsonLd data={cateringSchema as Record<string, unknown>} />
+      <JsonLd data={faqSchema as Record<string, unknown>} />
+
+      <section className="bg-[#1B2B5E] py-20 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+            {isNl ? 'Indiaas Buffet in Den Haag  -  Een Spread Die Iedereen Bedient' : 'Indian Buffet in Den Haag  -  A Spread That Feeds Everyone and Forgets Nobody'}
+          </h1>
+          <p className="text-white/75 text-lg md:text-xl">
+            {isNl ? 'Vanaf 15 gasten tot 200. Verse curry, biryani, tandoori en street food. Halal gecertificeerd. Leyweg 986 en locaties door Den Haag.' : 'From 15 guests to 200. Fresh curries, biryani, tandoori and street food. Halal certified. Leyweg 986 and venues across Den Haag.'}
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-[#FFFAF5] py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+            {isNl ? 'Waarom Indiase Keuken Perfect Is voor een Buffet' : 'Why Indian Cuisine is Perfect for Buffet'}
+          </h2>
+          <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
+            {isNl ? (
+              <>
+                <p>Indiaas eten is de meest praktische keuze voor een buffet met een grote groep  -  en de redenen zijn structureel, niet alleen een kwestie van smaak. Een standaard Indiaas buffet dekt tegelijkertijd halal-, vegetarische, veganistische en glutenvrije vereisten zonder speciale aanpassing. Dal, chana masala, groente biryani, palak paneer  -  dit zijn geen concessies of alternatieven. Dit is het echte eten dat iedereen aan tafel eet.</p>
+                <p>Indiase eetcultuur ontwikkelde zich over millennia in een context van extreme dieetdiversiteit  -  religieuze beperkingen, regionale landbouwverschillen, seizoensgebonden beschikbaarheid. De keuken ontwikkelde zich om enorme aantallen mensen met radicaal verschillende vereisten te voeden vanuit één set gerechten. Een buffet is de natuurlijke uitbreiding van deze traditie.</p>
+                <p>Dan is er de visuele dimensie. De kleuren van Indiase keuken op een buffettafel zijn werkelijk prachtig  -  kurkumageel dal, diep baksteenrood butter chicken, levendig groen palak paneer, karamelbruin biryani bezaaid met saffraan. De tafel zelf wordt een middelpunt.</p>
+                <p>Indiase gerechten houden ook uitzonderlijk goed bij een buffet. Curry&apos;s gaan niet achteruit onder warmhoudlampen zoals geroosterd vlees of gefrituurd eten. Ze blijven uitstekend gedurende langere serviceperioden.</p>
+              </>
+            ) : (
+              <>
+                <p>Indian food is the most practical choice for a large group buffet  -  and the reasons are structural, not just preference. A standard Indian buffet naturally and simultaneously covers halal, vegetarian, vegan and gluten-free requirements without any special accommodation. Dal, chana masala, vegetable biryani, palak paneer  -  these are not concessions or alternatives. They are the actual food that everyone at the table eats.</p>
+                <p>Indian food culture evolved over millennia in a context of extreme dietary diversity  -  religious restrictions, regional agricultural differences, seasonal availability. The cuisine developed to feed enormous numbers of people with radically different requirements from a single set of dishes. A buffet is the natural extension of this tradition.</p>
+                <p>Then there is the visual dimension. The colours of Indian cuisine on a buffet table are genuinely stunning  -  turmeric-yellow dal, deep brick-red butter chicken, vibrant green palak paneer, caramel-brown biryani flecked with saffron. The table itself becomes a centrepiece.</p>
+                <p>Indian food also holds exceptionally well on a buffet. Curries do not degrade under heat lamps the way roasted meats or fried foods do. They remain excellent for extended service periods.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-4">
+            {isNl ? 'Wat Is Inbegrepen bij een Chopras Indiaas Buffet' : 'What Is Included in a Chopras Indian Buffet'}
+          </h2>
+          <p className="text-[#1A1A1A] mb-10 text-lg">
+            {isNl ? 'Onderstaande spread is representatief. Elk buffet wordt afgestemd op uw evenement tijdens een menuoverleg.' : 'The following is a representative spread. Every buffet is tailored to your event during a menu consultation.'}
+          </p>
+          <div className="space-y-6">
+            {[
+              {
+                title: isNl ? 'Chaat en Starters Station' : 'Chaat and Starters Station',
+                desc: isNl ? 'Pani puri met zowel muntwater als tamarindwater, samosa met verse groene chutney, papdi chaat, uienbhaji en masalapapad. Het starters station doet het sociale werk van het doorbreken van het ijs bij aanvang van de service.' : 'Pani puri with mint and tamarind water, samosa with fresh green chutney, papdi chaat, onion bhaji, and masala papad. The starters station does the social work of breaking the ice at the start of service.',
+              },
+              {
+                title: isNl ? 'Curryselectie  -  4 tot 6 Curry\'s' : 'Curry Selection  -  4 to 6 Curries',
+                desc: isNl ? 'Butter chicken (universele publiekslievelingen), dal makhani (waar vegetariërs en vleesliefhebbers beiden meerdere keren op terugkomen), paneer gerecht, veganistische optie (chana masala of aloo curry) en lamsvlees voor groepen van 50+.' : 'Butter chicken (the universal crowd-pleaser), dal makhani (that vegetarians and meat-eaters both return to multiple times), a paneer dish, a vegan option (chana masala or aloo curry), and a lamb dish for groups of 50+.',
+              },
+              {
+                title: 'Biryani',
+                desc: isNl ? 'Zowel groente biryani als kip biryani geserveerd als centrepieces vanuit grote potten, met raita erbij. De geur als de deksels eraf gaan bepaalt de toon voor de hele avond.' : 'Both veg biryani and chicken biryani served as centrepiece dishes from large pots, with raita alongside. The fragrance when the lids come off sets the tone for the entire evening.',
+              },
+              {
+                title: isNl ? 'Brood' : 'Breads',
+                desc: isNl ? 'Knoflooknaan, plain naan en roti  -  vers gebakken in batches gedurende de gehele service en continu aangevuld zodat gasten altijd warm brood hebben.' : 'Garlic naan, plain naan, and roti  -  baked fresh in batches throughout service and replenished continuously so guests always have warm bread.',
+              },
+              {
+                title: isNl ? 'Desserts' : 'Desserts',
+                desc: isNl ? 'Gulab jamun in warme suikersiroop, moong dal halwa en kulfi  -  Indiaas ijs in individuele porties. Het desserstation biedt een duidelijk en bevredigend afsluiting van de maaltijd.' : 'Gulab jamun in warm sugar syrup, moong dal halwa, and kulfi  -  Indian ice cream in individual portions. A clear and satisfying close to the meal.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-[#FFFAF5] rounded-xl p-6 border-l-4 border-[#D4AF37]">
+                <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">{item.title}</h3>
+                <p className="text-[#1A1A1A] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#1B2B5E] py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-white mb-10">
+            {isNl ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
+          </h2>
+          <div className="space-y-4">
+            {faqItems.map(({ q, a }) => (
+              <details key={q} className="border-l-4 border-[#D4AF37] bg-white/10 rounded-r-xl">
+                <summary className="px-6 py-4 cursor-pointer text-white font-bold text-lg list-none">{q}</summary>
+                <p className="px-6 pb-5 pt-2 text-white/80 leading-relaxed">{a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FFFAF5] py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+            {isNl ? 'Vraag uw Indiase Buffetofferte aan' : 'Get Your Indian Buffet Quote'}
+          </h2>
+          <p className="text-[#1A1A1A] text-lg leading-relaxed mb-8 max-w-2xl">
+            {isNl ? 'Elk buffet begint met een gesprek. Vertel ons uw datum, uw gastenlijst en eventuele dieetvereisten  -  wij stellen een voorstel op dat is afgestemd op uw evenement.' : 'Every buffet starts with a conversation. Tell us your date, your guest count, and any dietary requirements  -  we will put together a proposal tailored to your event.'}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link href={`${base}/catering#catering-form`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
+              {isNl ? 'Offerte Aanvragen' : 'Get a Buffet Quote'}
+            </Link>
+            <a href={`tel:${RESTAURANT.contact.phone}`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
+              {RESTAURANT.contact.phoneDisplay}
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
