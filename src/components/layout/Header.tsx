@@ -129,7 +129,7 @@ export default function Header({ locale }: { locale: Locale }) {
   }
 
   function handleMouseLeave() {
-    closeTimeoutRef.current = setTimeout(() => setOpenDropdown(null), 150)
+    closeTimeoutRef.current = setTimeout(() => setOpenDropdown(null), 300)
   }
 
   return (
@@ -207,14 +207,15 @@ export default function Header({ locale }: { locale: Locale }) {
                   {/* Always rendered  -  visibility controlled by opacity/pointer-events for CSS transitions */}
                   <div
                     className={cn(
-                      'absolute top-full left-0 mt-1 bg-[#1B2B5E] border border-white/10 rounded-2xl shadow-2xl shadow-black/30 py-2 min-w-[200px] z-50 transition-all duration-150',
+                      'absolute top-full left-0 mt-0 pt-2 min-w-[200px] z-50 transition-all duration-200',
                       isOpen
-                        ? 'opacity-100 translate-y-0 pointer-events-auto'
-                        : 'opacity-0 -translate-y-2 pointer-events-none'
+                        ? 'opacity-100 translate-y-0 pointer-events-auto visible'
+                        : 'opacity-0 -translate-y-1 pointer-events-none invisible'
                     )}
-                    onMouseEnter={() => handleMouseEnter(key)}
-                    onMouseLeave={handleMouseLeave}
                   >
+                    {/* Invisible bridge - prevents gap between trigger and panel from firing onMouseLeave */}
+                    <div className="absolute -top-2 left-0 right-0 h-2 bg-transparent" />
+                    <div className="bg-[#1B2B5E] border border-white/10 rounded-2xl shadow-2xl shadow-black/30 py-2">
                     {links.map(({ label: linkLabel, href: linkHref }) => (
                       <Link
                         key={linkHref}
@@ -224,6 +225,7 @@ export default function Header({ locale }: { locale: Locale }) {
                         {linkLabel}
                       </Link>
                     ))}
+                    </div>
                   </div>
                 </div>
               )
