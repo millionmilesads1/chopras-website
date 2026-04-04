@@ -31,11 +31,15 @@ export default function FaqAccordion() {
               <Plus size={18} className="text-[#D4AF37] flex-shrink-0 transition-transform duration-200" />
             )}
           </button>
-          {openIndex === index && (
+          <div
+            className="overflow-hidden transition-all duration-300"
+            style={{ maxHeight: openIndex === index ? '500px' : '0px' }}
+            aria-hidden={openIndex !== index}
+          >
             <div className="font-body text-[#1A1A1A]/70 text-sm leading-relaxed pt-3 pb-1">
               {faq.answer}
             </div>
-          )}
+          </div>
         </div>
       ))}
 

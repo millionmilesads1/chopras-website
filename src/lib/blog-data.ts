@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Come and Find Out for Yourself</h2>
 
-<p>The best Indian restaurant in Den Haag  -  and we are confident enough to say it directly  -  is at Leyweg 986, 2545 GW Den Haag. Open Tuesday through Friday from 15:00, Saturday and Sunday from 13:00. You can <a href="https://chopras.nl/en/menu">view the full menu</a> before you come, or simply arrive and trust the kitchen. The Indian restaurant Leyweg address is easy to reach by tram and has free parking nearby. If you want to make a reservation or ask about group bookings, visit the <a href="https://chopras.nl/en/contact">contact page</a>. We look forward to cooking for you.</p>
+<p>The best Indian restaurant in Den Haag  -  and we are confident enough to say it directly  -  is at Leyweg 986, 2545 GW Den Haag. Open Tuesday to Sunday from 16:30 to 22:30. You can <a href="https://chopras.nl/en/menu">view the full menu</a> before you come, or simply arrive and trust the kitchen. The Indian restaurant Leyweg address is easy to reach by tram and has free parking nearby. If you want to make a reservation or ask about group bookings, visit the <a href="https://chopras.nl/en/contact">contact page</a>. We look forward to cooking for you.</p>
 `,
   },
   {
@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>If you are Muslim and looking for Indian food in Den Haag that you can eat with complete confidence  -  this is your restaurant. The owners are Muslim. The certification is real and maintained. The food is the food you know from home, or the food you have been searching for since arriving in the Netherlands. Families, couples, large groups gathering for Eid or any occasion  -  everyone is welcome here, and the kitchen is ready for you.</p>
 
-<p>Chopras is open Tuesday through Friday from 15:00, and Saturday through Sunday from 13:00, at Leyweg 986, 2545 GW Den Haag. You can <a href="https://chopras.nl/en/menu">view the complete menu</a> to plan your visit, or get in touch directly through the <a href="https://chopras.nl/en/contact">contact page</a> if you have any questions about our sourcing, certification, or any specific dish. We are happy to answer every question.</p>
+<p>Chopras is open Tuesday to Sunday from 16:30 to 22:30, at Leyweg 986, 2545 GW Den Haag. You can <a href="https://chopras.nl/en/menu">view the complete menu</a> to plan your visit, or get in touch directly through the <a href="https://chopras.nl/en/contact">contact page</a> if you have any questions about our sourcing, certification, or any specific dish. We are happy to answer every question.</p>
 `,
   },
   {
@@ -429,7 +429,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Reserveren bij Chopras</h2>
 
-<p>Chopras is open van dinsdag tot en met vrijdag vanaf 15:00 uur en in het weekend vanaf 13:00 uur. Op maandag is het restaurant gesloten. Op vrijdag- en zaterdagavond is reserveren sterk aanbevolen  -  het restaurant raakt snel vol, met name in de weekends. Bel +31 6 30645930 of gebruik de <a href="https://chopras.nl/en/contact">contactpagina</a> om een tafel te reserveren.</p>
+<p>Chopras is open van dinsdag tot en met zondag vanaf 16:30 uur tot 22:30 uur. Op maandag is het restaurant gesloten. Op vrijdag- en zaterdagavond is reserveren sterk aanbevolen  -  het restaurant raakt snel vol, met name in de weekends. Bel +31 6 30645930 of gebruik de <a href="https://chopras.nl/en/contact">contactpagina</a> om een tafel te reserveren.</p>
 
 <p>Het adres is Leyweg 986, 2545 GW Den Haag. Er is gratis parkeren beschikbaar in het omliggende winkelgebied  -  een aanzienlijk voordeel ten opzichte van restaurants in het centrum van Den Haag. Bekijk het <a href="https://chopras.nl/en/menu">volledige menu</a> voordat je komt, of vertrouw simpelweg op de keuken. Je zult niet teleurgesteld zijn.</p>
 
@@ -488,7 +488,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Butter chicken bij Chopras kost €18,50 en wordt geserveerd met een keuze uit gewone rijst of gewone naan. We raden aan er een knoflooknaan (€4) bij te bestellen  -  het knoflookboter op de naan combineert perfect met de butter chicken saus. Een mangolassi (€6) maakt de maaltijd compleet.</p>
 
-<p>Het gerecht is beschikbaar elke dag dat Chopras open is: dinsdag tot en met vrijdag vanaf 15:00 uur, zaterdag en zondag vanaf 13:00 uur. Maandag is het restaurant gesloten.</p>
+<p>Het gerecht is beschikbaar elke dag dat Chopras open is: dinsdag tot en met zondag vanaf 16:30 uur tot 22:30 uur. Maandag is het restaurant gesloten.</p>
 
 <p>Bekijk de <a href="https://chopras.nl/en/butter-chicken-den-haag">volledige pagina over butter chicken bij Chopras</a> voor meer informatie, of ga direct naar het <a href="https://chopras.nl/en/menu">complete menu</a>. Reserveer een tafel via de contactpagina of bel +31 6 30645930.</p>
 `,

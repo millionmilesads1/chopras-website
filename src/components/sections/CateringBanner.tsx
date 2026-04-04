@@ -32,9 +32,9 @@ export default function CateringBanner({ locale = 'en' }: { locale?: Locale }) {
           Events &amp; Catering
         </p>
         <h2 className="font-heading font-semibold italic text-white text-5xl md:text-6xl leading-tight">
-          Planning an Event
+          Indian Catering Den Haag
           <br />
-          in Den Haag?
+          — Plan Your Event
         </h2>
         <p className="font-body text-white/80 text-xl mt-6 leading-relaxed">
           {tr.home.cateringP.split('.')[0]}.
@@ -61,9 +61,10 @@ export default function CateringBanner({ locale = 'en' }: { locale?: Locale }) {
 
         {/* Quick facts */}
         <div className="flex flex-wrap gap-8 justify-center mt-10">
-          <span className="font-body text-white/60 text-sm">25 to 80 guests</span>
+          <span className="font-body text-white/60 text-sm">Indian Buffet Den Haag</span>
+          <span className="font-body text-white/60 text-sm">Party Venue Den Haag</span>
           <span className="font-body text-white/60 text-sm">Halal Certified</span>
-          <span className="font-body text-white/60 text-sm">Den Haag &amp; Surrounding Areas</span>
+          <span className="font-body text-white/60 text-sm">25–80 Guests</span>
         </div>
       </div>
     </section>

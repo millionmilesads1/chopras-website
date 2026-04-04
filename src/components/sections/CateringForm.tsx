@@ -38,8 +38,8 @@ export default function CateringForm() {
   }
 
   const field =
-    'bg-white/10 border border-white/20 text-white placeholder:text-white/40 rounded-xl px-4 py-3 w-full focus:outline-none focus:border-[#D4AF37]'
-  const lbl = 'text-white/80 text-sm font-medium mb-1 block'
+    'bg-white/10 border border-white/30 rounded-xl px-5 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[#D4AF37] focus:bg-white/15 transition-all w-full'
+  const lbl = 'text-white/70 text-sm font-medium mb-2 block'
   const errMsg = 'text-red-300 text-xs mt-1'
 
   if (status === 'success') {
@@ -192,11 +192,11 @@ export default function CateringForm() {
         />
       </div>
 
-      <div className="pt-2">
+      <div className="mt-6">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold w-full md:w-auto disabled:opacity-60 hover:bg-[#c9a230] transition-colors"
+          className="w-full bg-[#D4AF37] text-[#1A1A1A] py-5 font-semibold uppercase tracking-widest text-sm hover:bg-[#F5D36A] transition-all disabled:opacity-60"
         >
           {isSubmitting ? 'Sending...' : 'Send My Catering Enquiry'}
         </button>

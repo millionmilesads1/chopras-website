@@ -8,7 +8,7 @@
     "phone": "+31 6 30645930",
     "email": "info@chopras.nl",
     "address": "Leyweg 986, 2545 GW Den Haag",
-    "openTimes": "Open dinsdag tot en met zondag",
+    "openTimes": "Open dinsdag tot en met zondag, 16:30 tot 22:30",
     "closed": "Gesloten",
     "halalCertified": "100% Halal Gecertificeerd",
     "freshSpices": "Verse Kruiden Rechtstreeks uit India",
@@ -54,8 +54,10 @@
       "saturday": "Zaterdag",
       "sunday": "Zondag",
       "mondayClosed": "Gesloten",
-      "weekdayHours": "15:00 – 22:00",
-      "weekendHours": "13:00 – 22:00"
+      "tuesdayToSunday": "Dinsdag tot en met zondag",
+      "tuesdayToSundayHours": "16:30 – 22:30",
+      "weekdayHours": "16:30 – 22:30",
+      "weekendHours": "16:30 – 22:30"
     },
     "footer": {
       "tagline": "Authentiek Indiaas Streetfood in Den Haag sinds 2023",
@@ -70,8 +72,8 @@
       "copyright": "© 2025 Chopras Indiaas Restaurant Den Haag. Alle rechten voorbehouden.",
       "allergenNote": "Allergeninformatie beschikbaar op aanvraag.",
       "tripAdvisor": "★ Schrijf een recensie op TripAdvisor",
-      "openHours": "Open di–vr: 15:00–22:00",
-      "openWeekend": "Za–zo: 13:00–22:00",
+      "openHours": "Open di–zo: 16:30–22:30",
+      "openWeekend": "Di–zo: 16:30–22:30",
       "closedMonday": "Maandag gesloten"
     }
   },
@@ -88,7 +90,7 @@
     "heroH1": "Chopras Indiaas Restaurant",
     "heroSub": "Vers uit de tandoor. Kruiden uit India. Gemaakt met liefde op Leyweg.",
     "storyH2": "Een Stukje India, Hier in Den Haag",
-    "storyP1": "Chopras opende in 2023 op Leyweg in Den Haag met één enkel doel: Indiaas eten serveren zoals het bedoeld is. De kruiden komen rechtstreeks uit India en worden elke ochtend vers gemalen in onze eigen keuken  -  niet uit een zakje, niet van een leveranciersmengsel. De tandoor brandt al uren voordat de eerste gast binnenkomt. De recepten komen uit keukens in Delhi, Mumbai en Rajasthan, meegenomen zonder aanpassing.",
+    "storyP1": "Arun Chopra opende Chopras Indiaas Restaurant op Leyweg in Den Haag in 2023 met één duidelijk doel: Indiaas eten serveren zoals het bedoeld is te zijn. De kruiden komen rechtstreeks uit India en worden elke ochtend vers gemalen in onze eigen keuken  -  niet uit een zakje, niet van een leveranciersmengsel. De tandoor brandt al uren voordat de eerste gast binnenkomt. De recepten komen uit keukens in Delhi, Mumbai en Rajasthan, meegenomen zonder aanpassing.",
     "storyP2": "Elk gerecht hier is het echte werk  -  niet aangepast, niet vereenvoudigd, niet afgestemd op een Europees gehemelte. De butter chicken is opgebouwd zoals in Delhi: eerst de kip in de tandoor, dan een langzame tomaten-roomsaus met kruiden die gisteren nog heel waren en vanmorgen zijn gemalen. De pani puri arriveert zoals op een straathoek in Mumbai  -  ijskoude vulling, knapperige schaal, één explosieve hap die je meteen opnieuw wilt nemen.",
     "storyP3": "Den Haag heeft een lange band met Zuid-Aziatisch eten  -  de grootste Hindoestaanse gemeenschap van Nederland woont hier, en zij weten het verschil tussen een compromis en het echte werk. Chopras is gebouwd voor dat publiek en voor iedereen die wil eten zoals het in India smaakt. We proberen niet iedereen te bedienen. We proberen goed te koken. Kom lekker eten.",
     "storyP4": "De tandoor die wij gebruiken bereikt 480 graden. Die temperatuur is niet instelbaar - het is wat naan zijn bruine randjes geeft en chicken tikka zijn rokerige korst. Dat kun je niet nadoen in een gewone oven en dat zouden we ook niet proberen. Elke ochtend voor de service wordt de tandoor aangestoken. Elke avond na de service wordt hij schoongemaakt. Die discipline is het verschil tussen een restaurant en een keuken die toevallig eten serveert.",
@@ -130,8 +132,8 @@
     "heroH1": "Indiaas Restaurant Menu in Den Haag",
     "heroSub": "89 gerechten dagelijks vers bereid. Elke kruid uit India. Volledig halal gecertificeerd. Open dinsdag tot en met zondag.",
     "breadcrumb": "Menu",
-    "hoursWeekday": "Open di–vr 15:00–22:00",
-    "hoursWeekend": "Za–zo 13:00–22:00 · Ma Gesloten",
+    "hoursWeekday": "Open di–zo 16:30–22:30",
+    "hoursWeekend": "Open di–zo 16:30–22:30",
     "allergenTitle": "Allergeneninformatie",
     "allergenText": "Heb je allergieën of dieetwensen? Laat het ons weten voor je bestelt. Wij verwerken noten, zuivel, gluten en andere veelvoorkomende allergenen in onze keuken. Allergeneninformatie is altijd beschikbaar  -  vraag er gewoon naar. Wettelijk verplichte informatie op basis van EU-verordening Nr. 1169/2011.",
     "ctaH2": "Klaar om te Bestellen?",

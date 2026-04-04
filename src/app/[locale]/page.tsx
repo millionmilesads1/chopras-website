@@ -89,10 +89,15 @@ const restaurantSchema = {
   },
   sameAs: [
     'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
+    'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
+    'https://www.facebook.com/choprasrestaurant',
+    'https://www.instagram.com/choprasrestaurant',
+    'https://www.youtube.com/@choprasrestaurant',
   ],
   suitableForDiet: 'https://schema.org/HalalDiet',
   logo: 'https://chopras.nl/wp-content/uploads/2025/11/Chopras-logo-main-500-x-300-px7.png',
   '@id': 'https://chopras.nl/#restaurant',
+  founder: { '@type': 'Person', name: 'Arun Chopra', jobTitle: 'Founder', url: 'https://chopras.nl/en' },
 }
 
 export default function LocaleHomePage({ params }: Props) {
@@ -115,6 +120,15 @@ export default function LocaleHomePage({ params }: Props) {
     <>
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
       <JsonLd data={faqSchema as Record<string, unknown>} />
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Arun Chopra',
+        jobTitle: 'Founder',
+        worksFor: { '@type': 'Restaurant', name: 'Chopras Indian Restaurant', url: 'https://chopras.nl' },
+        url: 'https://chopras.nl/en',
+        sameAs: ['https://chopras.nl/en'],
+      } as Record<string, unknown>} />
 
       {/* 1 — Hero */}
       <HeroSection locale={locale} />

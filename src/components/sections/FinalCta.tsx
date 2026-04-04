@@ -10,7 +10,10 @@ export default function FinalCta({ locale = 'en' }: { locale?: Locale }) {
   const { ref, inView } = useInView()
 
   return (
-    <section className="bg-gradient-to-b from-[#1B2B5E] to-[#0F1F3D] py-24 px-6 text-center">
+    <section
+      className="py-24 px-6 text-center"
+      style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 50%, #0F1040 100%)' }}
+    >
       <div
         ref={ref}
         className={`transition-all duration-700 ease-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}

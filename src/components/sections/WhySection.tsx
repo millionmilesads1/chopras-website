@@ -1,127 +1,105 @@
 'use client'
 
 import Link from 'next/link'
-import { Flame, Users, Calendar, ShieldCheck, Sparkles, Clock } from 'lucide-react'
-import { useInView } from '@/hooks/useInView'
+import { Flame, Users, CalendarDays, Shield, Clock } from 'lucide-react'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
-  const tr = getTranslations(locale)
+  const t = getTranslations(locale)
   const base = `/${locale}`
-  const { ref: headerRef, inView: headerInView } = useInView()
-  const { ref: gridRef, inView: gridInView } = useInView()
 
   return (
-    <section className="bg-[#1A1A1A] py-24 px-6 md:px-16">
+    <section className="bg-white py-24 px-6 md:px-16">
       {/* Header */}
-      <div
-        ref={headerRef}
-        className={`text-center mb-16 transition-all duration-700 ease-out ${headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-      >
-        <p className="font-body text-[#D4AF37] text-xs uppercase tracking-widest mb-4">
+      <div className="text-center">
+        <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium">
           Why Chopras
         </p>
-        <h2 className="font-heading font-semibold text-[#FFFAF5] text-5xl">
-          {tr.home.whyH2}
+        <h2 className="font-heading text-5xl md:text-6xl font-semibold text-[#1B2B5E] mt-3 max-w-3xl mx-auto">
+          {t.home.whyH2}
         </h2>
       </div>
 
-      {/* Bento grid */}
-      <div
-        ref={gridRef}
-        className={`grid grid-cols-12 gap-4 max-w-7xl mx-auto transition-all duration-700 ease-out ${gridInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-      >
-        {/* Card 1 — large, col-span-7, row-span-2 */}
-        <div className="col-span-12 md:col-span-7 md:row-span-2 bg-[#1B2B5E] rounded-3xl p-8 md:p-10 flex flex-col justify-between min-h-[320px] md:min-h-[420px]">
-          <div>
-            <Flame size={36} className="text-[#D4AF37]" />
-            <h3 className="font-heading font-semibold text-white text-3xl md:text-4xl mt-6 leading-tight">
-              {tr.home.why1H3}
-            </h3>
-            <p className="font-body text-white/70 text-base mt-4 leading-relaxed">
-              {tr.home.why1P}
-            </p>
+      {/* Three feature cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-7xl mx-auto">
+        {/* Card 1 */}
+        <div className="flex flex-col items-start">
+          <div className="w-14 h-14 rounded-2xl bg-[#1B2B5E]/5 flex items-center justify-center mb-6">
+            <Flame className="w-7 h-7 text-[#1B2B5E]" />
           </div>
+          <div className="w-10 h-0.5 bg-[#D4AF37] mb-5" />
+          <h3 className="font-heading text-2xl font-semibold text-[#1B2B5E] leading-tight">
+            {t.home.why1H3}
+          </h3>
+          <p className="text-[#1A1A1A]/60 text-base leading-relaxed mt-4">
+            {t.home.why1P}
+          </p>
         </div>
 
-        {/* Card 2 — gold, col-span-5 */}
-        <div className="col-span-12 md:col-span-5 bg-[#D4AF37] rounded-3xl p-8 flex flex-col justify-between min-h-[200px]">
-          <Users size={28} className="text-[#1B2B5E]" />
-          <div>
-            <h3 className="font-heading font-semibold text-[#1B2B5E] text-2xl md:text-3xl mt-4 leading-tight">
-              {tr.home.why2H3}
-            </h3>
-            <p className="font-body text-[#1B2B5E]/80 text-sm mt-2 leading-relaxed line-clamp-3">
-              {tr.home.why2P}
-            </p>
+        {/* Card 2 */}
+        <div className="flex flex-col items-start md:border-l md:border-[#1B2B5E]/10 md:pl-8">
+          <div className="w-14 h-14 rounded-2xl bg-[#1B2B5E]/5 flex items-center justify-center mb-6">
+            <Users className="w-7 h-7 text-[#1B2B5E]" />
           </div>
+          <div className="w-10 h-0.5 bg-[#D4AF37] mb-5" />
+          <h3 className="font-heading text-2xl font-semibold text-[#1B2B5E] leading-tight">
+            {t.home.why2H3}
+          </h3>
+          <p className="text-[#1A1A1A]/60 text-base leading-relaxed mt-4">
+            {t.home.why2P}
+          </p>
         </div>
 
-        {/* Card 3 — warm white, col-span-5 */}
-        <div className="col-span-12 md:col-span-5 bg-[#FFFAF5] rounded-3xl p-8 flex flex-col justify-between min-h-[200px]">
-          <Calendar size={28} className="text-[#1B2B5E]" />
-          <div>
-            <h3 className="font-heading font-semibold text-[#1B2B5E] text-2xl md:text-3xl mt-4 leading-tight">
-              {tr.home.why3H3}
-            </h3>
-            <p className="font-body text-[#1A1A1A]/70 text-sm mt-2 leading-relaxed line-clamp-3">
-              {tr.home.why3P}
-            </p>
-            <Link
-              href={`${base}/catering`}
-              className="font-body text-[#1B2B5E] text-xs uppercase font-semibold tracking-wider mt-4 block hover:underline underline-offset-4"
-            >
-              Explore catering &rarr;
-            </Link>
+        {/* Card 3 */}
+        <div className="flex flex-col items-start md:border-l md:border-[#1B2B5E]/10 md:pl-8">
+          <div className="w-14 h-14 rounded-2xl bg-[#1B2B5E]/5 flex items-center justify-center mb-6">
+            <CalendarDays className="w-7 h-7 text-[#1B2B5E]" />
           </div>
+          <div className="w-10 h-0.5 bg-[#D4AF37] mb-5" />
+          <h3 className="font-heading text-2xl font-semibold text-[#1B2B5E] leading-tight">
+            {t.home.why3H3}
+          </h3>
+          <p className="text-[#1A1A1A]/60 text-base leading-relaxed mt-4">
+            {t.home.why3P}
+          </p>
+          <Link
+            href={`${base}/catering`}
+            className="text-[#1B2B5E] text-sm font-semibold uppercase tracking-wider underline-offset-4 hover:underline mt-4 block"
+          >
+            Explore Catering →
+          </Link>
         </div>
+      </div>
 
-        {/* Card 4 — wide trust bar, col-span-12 */}
-        <div className="col-span-12 bg-[#D4AF37]/10 border border-[#D4AF37]/20 rounded-3xl p-6 md:p-8">
-          {/* Desktop: horizontal flex */}
-          <div className="hidden md:flex items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <ShieldCheck size={24} className="text-[#D4AF37] flex-shrink-0" />
-              <span className="font-heading text-[#FFFAF5] text-2xl">100% Halal Certified</span>
+      {/* Bottom trust bar */}
+      <div className="max-w-7xl mx-auto mt-20">
+        <div
+          className="rounded-3xl p-8"
+          style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 100%)' }}
+        >
+          <div className="flex items-center justify-between flex-wrap gap-6">
+            {/* Trust signals */}
+            <div className="flex flex-wrap gap-6">
+              <div className="flex items-center gap-3">
+                <Shield className="w-5 h-5 text-[#D4AF37] flex-shrink-0" />
+                <span className="text-white text-sm font-medium">100% Halal Certified</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Flame className="w-5 h-5 text-[#D4AF37] flex-shrink-0" />
+                <span className="text-white text-sm font-medium">Freshly Ground Spices Daily</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-[#D4AF37] flex-shrink-0" />
+                <span className="text-white text-sm font-medium">Open Tue to Sun 16:30 to 22:30</span>
+              </div>
             </div>
-            <div className="w-px h-12 bg-white/20" />
-            <div className="flex items-center gap-3">
-              <Sparkles size={24} className="text-[#D4AF37] flex-shrink-0" />
-              <span className="font-heading text-[#FFFAF5] text-2xl">
-                Freshly Ground Spices Daily
-              </span>
-            </div>
-            <div className="w-px h-12 bg-white/20" />
-            <div className="flex items-center gap-3">
-              <Clock size={24} className="text-[#D4AF37] flex-shrink-0" />
-              <span className="font-heading text-[#FFFAF5] text-2xl">Open Tuesday to Sunday</span>
-            </div>
-            <Link
-              href={`${base}/contact`}
-              className="bg-[#D4AF37] text-[#1A1A1A] px-6 py-3 font-body font-semibold text-sm uppercase tracking-widest hover:bg-[#C49B2A] transition-all duration-300 flex-shrink-0"
-            >
-              Reserve Now &rarr;
-            </Link>
-          </div>
-          {/* Mobile: 2x2 grid */}
-          <div className="grid grid-cols-2 gap-4 md:hidden">
-            <div className="flex items-center gap-2">
-              <ShieldCheck size={18} className="text-[#D4AF37] flex-shrink-0" />
-              <span className="font-body text-[#FFFAF5] text-sm">100% Halal</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Sparkles size={18} className="text-[#D4AF37] flex-shrink-0" />
-              <span className="font-body text-[#FFFAF5] text-sm">Fresh Spices Daily</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock size={18} className="text-[#D4AF37] flex-shrink-0" />
-              <span className="font-body text-[#FFFAF5] text-sm">Tue&ndash;Sun Open</span>
-            </div>
+
+            {/* CTA */}
             <Link
               href={`${base}/contact`}
-              className="bg-[#D4AF37] text-[#1A1A1A] px-4 py-2 font-body font-semibold text-xs uppercase tracking-widest text-center"
+              className="bg-[#D4AF37] text-[#1A1A1A] px-8 py-3.5 rounded-full text-sm font-semibold uppercase tracking-widest hover:bg-[#F5D36A] transition-all whitespace-nowrap"
             >
-              Reserve &rarr;
+              Reserve a Table →
             </Link>
           </div>
         </div>

@@ -4,18 +4,24 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { menuCategories, menuItems } from '@/lib/menu-data'
 import type { DietaryTag } from '@/types'
+import AddToCartButton from '@/components/cart/AddToCartButton'
 
 function formatPrice(price: number): string {
   return price % 1 === 0 ? `€${price}` : `€${price.toFixed(2)}`
 }
 
-const dietaryBadgeConfig: Record<DietaryTag, { label: string; className: string }> = {
-  veg: { label: 'Veg', className: 'bg-green-100 text-green-800' },
-  vegan: { label: 'Vegan', className: 'bg-emerald-100 text-emerald-800' },
-  halal: { label: 'Halal', className: 'bg-teal-100 text-teal-800' },
-  spicy: { label: 'Spicy', className: 'bg-red-100 text-red-700' },
-  mild: { label: 'Mild', className: 'bg-blue-100 text-blue-700' },
-  glutenFree: { label: 'Gluten Free', className: 'bg-yellow-100 text-yellow-800' },
+type BadgeConfig = { label: string; className: string }
+
+const primaryBadgeConfig: Partial<Record<DietaryTag, BadgeConfig>> = {
+  veg: { label: 'Veg', className: 'bg-green-500 text-white' },
+  vegan: { label: 'Vegan', className: 'bg-emerald-600 text-white' },
+  halal: { label: 'Halal', className: 'bg-[#D4AF37] text-[#1A1A1A]' },
+}
+
+function getPrimaryBadge(dietary: DietaryTag[]): BadgeConfig | null {
+  const priority: DietaryTag[] = ['veg', 'vegan', 'halal']
+  const match = priority.find((tag) => dietary.includes(tag))
+  return match ? (primaryBadgeConfig[match] ?? null) : null
 }
 
 export default function MenuPageClient() {
@@ -57,7 +63,6 @@ export default function MenuPageClient() {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
-  // Auto-scroll the active tab into view in the nav bar
   useEffect(() => {
     if (!navRef.current) return
     const activeBtn = navRef.current.querySelector<HTMLButtonElement>(
@@ -77,7 +82,7 @@ export default function MenuPageClient() {
       >
         <div
           ref={navRef}
-          className="flex gap-2 px-4 py-3 overflow-x-auto"
+          className="flex gap-2 px-6 py-4 overflow-x-auto"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {menuCategories.map((category) => (
@@ -85,10 +90,10 @@ export default function MenuPageClient() {
               key={category.id}
               data-category={category.id}
               onClick={() => scrollToCategory(category.id)}
-              className={`rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors min-h-[44px] ${
+              className={`whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-medium transition-all min-h-[44px] ${
                 activeCategory === category.id
-                  ? 'bg-[#1B2B5E] text-white'
-                  : 'bg-gray-100 text-gray-600 hover:bg-[#1B2B5E]/10'
+                  ? 'bg-[#D4AF37] text-[#1A1A1A] font-semibold'
+                  : 'border border-[#1B2B5E]/20 text-[#1A1A1A]/60 hover:border-[#1B2B5E]/50'
               }`}
             >
               {category.shortLabel}
@@ -98,97 +103,89 @@ export default function MenuPageClient() {
       </nav>
 
       {/* Category sections */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 pb-16">
         {menuCategories.map((category) => {
           const dishes = menuItems.filter((item) => item.category === category.id)
           return (
             <section key={category.id} id={category.id} className="scroll-mt-36">
               {/* Section header */}
-              <div className="py-8">
-                <h2 className="text-2xl md:text-3xl font-heading text-[#1B2B5E]">
+              <div className="py-10">
+                <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-3">
+                  {category.labelNl}
+                </p>
+                <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E]">
                   {category.label}
                 </h2>
-                <p className="text-sm text-gray-400 italic">{category.labelNl}</p>
-                <div className="border-b-2 border-[#D4AF37] w-16 mt-2" />
+                <div className="border-b-2 border-[#D4AF37] w-16 mt-4" />
               </div>
 
               {/* Dish grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {dishes.map((item) => (
-                  <article
-                    key={item.id}
-                    className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200"
-                  >
-                    {/* Image area */}
-                    {item.image ? (
-                      <div className="relative h-48">
-                        <Image
-                          src={item.image}
-                          alt={`${item.name} at Chopras Indian Restaurant Den Haag`}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        />
-                      </div>
-                    ) : (
-                      <div className="h-48 bg-gradient-to-br from-[#1B2B5E]/5 to-[#D4AF37]/10 flex items-center justify-center">
-                        <span className="font-heading text-[#1B2B5E]/40 text-lg text-center px-4">
-                          {item.name}
-                        </span>
-                      </div>
-                    )}
-
-                    {/* Card body */}
-                    <div className="p-4">
-                      {/* Dietary badges */}
-                      <div className="flex flex-wrap gap-1 mb-3">
-                        {item.dietary.map((tag) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {dishes.map((item) => {
+                  const badge = getPrimaryBadge(item.dietary)
+                  return (
+                    <article
+                      key={item.id}
+                      className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group"
+                    >
+                      {/* Image */}
+                      <div className="aspect-[4/3] relative overflow-hidden">
+                        {item.image ? (
+                          <Image
+                            src={item.image}
+                            alt={`${item.name} at Chopras Indian Restaurant Den Haag`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-[#1B2B5E]/5 to-[#D4AF37]/10 flex items-center justify-center">
+                            <span className="font-heading text-[#1B2B5E]/40 text-base text-center px-4">
+                              {item.name}
+                            </span>
+                          </div>
+                        )}
+                        {badge && (
                           <span
-                            key={tag}
-                            className={`text-xs px-2 py-0.5 rounded-full font-medium ${dietaryBadgeConfig[tag].className}`}
+                            className={`absolute top-3 left-3 text-xs px-2 py-0.5 rounded-full font-semibold uppercase ${badge.className}`}
                           >
-                            {dietaryBadgeConfig[tag].label}
+                            {badge.label}
                           </span>
-                        ))}
+                        )}
                       </div>
 
-                      {/* Name + price */}
-                      <div className="flex justify-between items-start gap-2">
-                        <h3 className="text-base font-heading font-semibold text-[#1A1A1A]">
+                      {/* Card body */}
+                      <div className="p-5">
+                        <h3 className="font-heading text-xl text-[#1A1A1A] font-semibold leading-tight">
                           {item.name}
                         </h3>
-                        <span className="text-[#1B2B5E] font-bold text-base whitespace-nowrap">
-                          {formatPrice(item.price)}
-                        </span>
-                      </div>
-
-                      {/* English description */}
-                      <p className="text-sm text-gray-600 leading-relaxed mt-1">{item.description}</p>
-
-                      {/* Dutch description */}
-                      {item.descriptionNl && (
-                        <p className="text-xs text-gray-400 italic leading-relaxed mt-2">
-                          {item.descriptionNl}
+                        <p className="text-[#1A1A1A]/60 text-sm mt-1 leading-relaxed line-clamp-2">
+                          {item.description}
                         </p>
-                      )}
-                    </div>
-                  </article>
-                ))}
+                        <div className="flex items-center justify-between mt-3">
+                          <p className="text-[#D4AF37] font-semibold text-lg font-heading">
+                            {formatPrice(item.price)}
+                          </p>
+                          <AddToCartButton
+                            dish={{
+                              id: item.id,
+                              name: item.name,
+                              price: item.price,
+                              category: item.category,
+                              image: item.image,
+                              isHalal: item.dietary.includes('halal'),
+                              isVeg: item.dietary.includes('veg') || item.dietary.includes('vegan'),
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </article>
+                  )
+                })}
               </div>
             </section>
           )
         })}
-
-        {/* Allergen Notice */}
-        <div className="border border-amber-200 bg-amber-50 rounded-xl p-6 mx-4 lg:mx-0 mt-12">
-          <h3 className="font-semibold text-amber-900">Allergen Information</h3>
-          <p className="text-amber-800 text-sm mt-2">
-            Allergen information is available on request. Please inform our staff of any allergies
-            or dietary requirements before ordering. This is required under EU Food Information for
-            Consumers Regulation No. 1169/2011. Our kitchen handles nuts, dairy, gluten, and other
-            common allergens.
-          </p>
-        </div>
       </div>
     </div>
   )

@@ -29,11 +29,15 @@ export default function CateringFaqAccordion() {
               }`}
             />
           </button>
-          {openIndex === index && (
+          <div
+            className="overflow-hidden transition-all duration-300"
+            style={{ maxHeight: openIndex === index ? '500px' : '0px' }}
+            aria-hidden={openIndex !== index}
+          >
             <div className="text-gray-600 text-sm leading-relaxed pb-4">
               {faq.answer}
             </div>
-          )}
+          </div>
         </div>
       ))}
     </div>

@@ -33,8 +33,8 @@ export default function ContactForm() {
   }
 
   const field =
-    'bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 w-full focus:outline-none focus:border-[#1B2B5E] text-[#1A1A1A]'
-  const lbl = 'text-[#1A1A1A] text-sm font-medium mb-1 block'
+    'border border-gray-200 rounded-xl px-5 py-4 text-[#1A1A1A] focus:outline-none focus:border-[#D4AF37] transition-all w-full bg-white'
+  const lbl = 'text-[#1A1A1A]/70 text-sm font-medium mb-2 block'
   const errMsg = 'text-red-500 text-xs mt-1'
 
   if (status === 'success') {
@@ -129,11 +129,11 @@ export default function ContactForm() {
         {errors.message && <p className={errMsg}>{errors.message.message}</p>}
       </div>
 
-      <div className="pt-2">
+      <div className="mt-4">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-[#1B2B5E] text-white px-8 py-4 rounded-full font-bold disabled:opacity-60 hover:bg-[#0F1F4B] transition-colors"
+          className="bg-[#D4AF37] text-[#1A1A1A] w-full py-5 font-semibold uppercase tracking-widest hover:bg-[#F5D36A] transition-all disabled:opacity-60"
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>

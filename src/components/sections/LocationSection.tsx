@@ -20,7 +20,10 @@ export default function LocationSection({ locale = 'en' }: { locale?: Locale }) 
   const { ref, inView } = useInView()
 
   return (
-    <section className="bg-[#1B2B5E] py-24 px-6 md:px-16">
+    <section
+      className="py-24 px-6 md:px-16"
+      style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 60%, #0F1040 100%)' }}
+    >
       <div
         ref={ref}
         className={`grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto transition-all duration-700 ease-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}

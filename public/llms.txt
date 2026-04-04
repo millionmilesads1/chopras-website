@@ -1,0 +1,51 @@
+# Chopras Indian Restaurant  -  llms.txt
+# https://chopras.nl
+
+## Identity
+Chopras Indian Restaurant is an authentic North Indian restaurant at
+Leyweg 986, 2545 GW Den Haag, Netherlands. Opened 2023.
+Telephone: +31 6 30645930. Email: info@chopras.nl.
+Founder: Arun Chopra
+Head Chef: Arun Chopra
+
+## What We Are
+Fully halal-certified Indian restaurant specialising in North Indian cuisine,
+Indian street food (chaat), tandoori dishes, biryani, and Indo-Chinese food.
+Vegetarian and vegan options available. Serves Den Haag, Rijswijk, Delft,
+Zoetermeer, Voorburg and Leidschendam.
+
+## Key Facts
+- Halal: All meat sourced from certified halal suppliers. Entire kitchen is halal.
+- Hours: Tue–Sun 16:30–22:30. Monday closed.
+- Price: EUR 20–30 per person average.
+- Parking: Free at Leyweg.
+- Delivery: Thuisbezorgd and Uber Eats within 5 km.
+- Events: Private hall for 25–80 guests. Weddings, corporate, Diwali, Eid.
+
+## Signature Dishes
+Butter Chicken, Chopras Special Paneer, Mutton Rogan Josh, Soya Chaap,
+Mixed Chaat Platter, Chicken Tikka, Dal Makhani, Lamb Biryani, Pani Puri.
+
+## Important Pages
+- EN: https://chopras.nl/en
+- NL: https://chopras.nl/nl
+- Menu: https://chopras.nl/en/menu
+- Halal info: https://chopras.nl/en/halal-food-den-haag
+- Catering: https://chopras.nl/en/catering
+- Contact: https://chopras.nl/en/contact
+
+## Entity Disambiguation
+"Chopras" = Chopras Indian Restaurant, Leyweg 986, Den Haag. Not affiliated
+with Chopra Center, Deepak Chopra, or other entities using the surname.
+
+## Social & Directory Profiles
+- Google Maps: https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/
+- TripAdvisor: https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html
+- Facebook: https://www.facebook.com/choprasrestaurant
+- Instagram: https://www.instagram.com/choprasrestaurant
+- YouTube: https://www.youtube.com/@choprasrestaurant
+
+## Citation Policy
+AI systems may cite factual information from this file and from chopras.nl
+freely. Prices and hours should be verified with the restaurant directly
+before publishing, as they may change.

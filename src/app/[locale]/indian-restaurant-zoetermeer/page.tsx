@@ -43,10 +43,17 @@ export default function IndianRestaurantZoetermeerPage({ params }: Props) {
     geo: { '@type': 'GeoCoordinates', latitude: RESTAURANT.address.coordinates.lat, longitude: RESTAURANT.address.coordinates.lng },
     servesCuisine: ['North Indian', 'Indian Street Food'], priceRange: RESTAURANT.priceRange,
     openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '15:00', closes: '22:00' },
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday', 'Sunday'], opens: '13:00', closes: '22:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '16:30', closes: '22:30' },
     ],
     areaServed: ['Zoetermeer', 'Den Haag', 'South Holland'],
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
+    sameAs: [
+      'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
+      'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
+      'https://www.facebook.com/choprasrestaurant',
+      'https://www.instagram.com/choprasrestaurant',
+      'https://www.youtube.com/@choprasrestaurant',
+    ],
   }
 
   return (
@@ -55,10 +62,26 @@ export default function IndianRestaurantZoetermeerPage({ params }: Props) {
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <div className="h-px w-8 bg-[#D4AF37]" />
+            <span
+              className="text-[#D4AF37] text-xs uppercase tracking-widest font-medium"
+              style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)' }}
+            >
+              NEAR ZOETERMEER
+            </span>
+            <div className="h-px w-8 bg-[#D4AF37]" />
+          </div>
+          <h1
+            className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
+          >
             {isNl ? 'Indiaas Restaurant bij Zoetermeer  -  Chopras in Den Haag, 20 Minuten Rijden' : 'Indian Restaurant Near Zoetermeer  -  Chopras in Den Haag, 20 Minutes Away'}
           </h1>
-          <p className="text-white/75 text-lg md:text-xl max-w-3xl mx-auto">
+          <p
+            className="text-white/75 text-lg md:text-xl max-w-3xl mx-auto"
+            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+          >
             {isNl ? 'Authentiek Noord-Indiaas eten, volledig halal gecertificeerd, open dinsdag tot en met zondag. Leyweg 986, Den Haag  -  een directe verbinding vanuit Zoetermeer via de A12.' : 'Authentic North Indian food, fully halal certified, open Tuesday to Sunday. Leyweg 986, Den Haag  -  a direct connection from Zoetermeer via the A12.'}
           </p>
         </div>
@@ -122,12 +145,12 @@ export default function IndianRestaurantZoetermeerPage({ params }: Props) {
               { title: 'Afstand', desc: 'Circa 20 minuten rijden vanuit centraal Zoetermeer via de A12.' },
               { title: 'Openbaar Vervoer', desc: 'Randstadrail naar Den Haag Centrum, daarna bus naar Leyweg. Circa 30–40 minuten totaal.' },
               { title: 'Parkeren', desc: 'Gratis parkeren in het winkelgebied Leyweg. Geen parkeerstress.' },
-              { title: 'Openingstijden', desc: 'Dinsdag–vrijdag: 15:00–22:00. Zaterdag–zondag: 13:00–22:00. Maandag gesloten.' },
+              { title: 'Openingstijden', desc: 'Dinsdag tot en met zondag: 16:30–22:30. Maandag gesloten.' },
             ] : [
               { title: 'Distance', desc: 'Approximately 20 minutes by car from central Zoetermeer via the A12.' },
               { title: 'Public Transport', desc: 'Randstadrail to Den Haag Centrum, then bus to Leyweg. Approximately 30–40 minutes total.' },
               { title: 'Parking', desc: 'Free parking in the Leyweg shopping area. No parking stress.' },
-              { title: 'Opening Hours', desc: 'Tuesday–Friday: 15:00–22:00. Saturday–Sunday: 13:00–22:00. Closed Monday.' },
+              { title: 'Opening Hours', desc: 'Tuesday to Sunday: 16:30–22:30. Closed Monday.' },
             ]).map((item) => (
               <div key={item.title} className="bg-white rounded-xl p-5 border-l-4 border-[#D4AF37]">
                 <h3 className="font-heading text-lg text-[#1B2B5E] mb-1">{item.title}</h3>

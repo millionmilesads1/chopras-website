@@ -43,10 +43,17 @@ export default function IndianRestaurantDelftPage({ params }: Props) {
     geo: { '@type': 'GeoCoordinates', latitude: RESTAURANT.address.coordinates.lat, longitude: RESTAURANT.address.coordinates.lng },
     servesCuisine: ['North Indian', 'Indian Street Food'], priceRange: RESTAURANT.priceRange,
     openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '15:00', closes: '22:00' },
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday', 'Sunday'], opens: '13:00', closes: '22:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '16:30', closes: '22:30' },
     ],
     areaServed: ['Delft', 'Den Haag', 'South Holland'],
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
+    sameAs: [
+      'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
+      'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
+      'https://www.facebook.com/choprasrestaurant',
+      'https://www.instagram.com/choprasrestaurant',
+      'https://www.youtube.com/@choprasrestaurant',
+    ],
   }
 
   return (
@@ -55,10 +62,26 @@ export default function IndianRestaurantDelftPage({ params }: Props) {
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <div className="h-px w-8 bg-[#D4AF37]" />
+            <span
+              className="text-[#D4AF37] text-xs uppercase tracking-widest font-medium"
+              style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)' }}
+            >
+              NEAR DELFT
+            </span>
+            <div className="h-px w-8 bg-[#D4AF37]" />
+          </div>
+          <h1
+            className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
+          >
             {isNl ? 'Indiaas Restaurant bij Delft  -  Chopras in Den Haag, 15 Minuten Rijden' : 'Indian Restaurant Near Delft  -  Chopras in Den Haag, 15 Minutes Away'}
           </h1>
-          <p className="text-white/75 text-lg md:text-xl max-w-3xl mx-auto">
+          <p
+            className="text-white/75 text-lg md:text-xl max-w-3xl mx-auto"
+            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+          >
             {isNl ? 'Authentiek Noord-Indiaas eten, volledig halal gecertificeerd, open dinsdag tot en met zondag. Leyweg 986, Den Haag  -  direct bereikbaar vanuit Delft per auto of openbaar vervoer.' : 'Authentic North Indian food, fully halal certified, open Tuesday to Sunday. Leyweg 986, Den Haag  -  directly accessible from Delft by car or public transport.'}
           </p>
         </div>
@@ -120,12 +143,12 @@ export default function IndianRestaurantDelftPage({ params }: Props) {
               { title: 'Afstand', desc: 'Circa 15 minuten rijden vanuit het centrum van Delft via de A13. Directe route zonder stad in.' },
               { title: 'Openbaar Vervoer', desc: 'Tram- en busverbindingen van Delft via Den Haag Centraal naar Leyweg  -  circa 25 minuten.' },
               { title: 'Parkeren', desc: 'Gratis parkeren in het winkelgebied Leyweg. Veel eenvoudiger dan parkeren in het centrum.' },
-              { title: 'Openingstijden', desc: 'Dinsdag–vrijdag: 15:00–22:00. Zaterdag–zondag: 13:00–22:00. Maandag gesloten.' },
+              { title: 'Openingstijden', desc: 'Dinsdag tot en met zondag: 16:30–22:30. Maandag gesloten.' },
             ] : [
               { title: 'Distance', desc: 'Approximately 15 minutes by car from central Delft via the A13. Direct route without entering the city centre.' },
               { title: 'Public Transport', desc: 'Tram and bus connections from Delft via Den Haag Centraal to Leyweg  -  approximately 25 minutes.' },
               { title: 'Parking', desc: 'Free parking in the Leyweg shopping area. Much simpler than parking in city centres.' },
-              { title: 'Opening Hours', desc: 'Tuesday–Friday: 15:00–22:00. Saturday–Sunday: 13:00–22:00. Closed Monday.' },
+              { title: 'Opening Hours', desc: 'Tuesday to Sunday: 16:30–22:30. Closed Monday.' },
             ]).map((item) => (
               <div key={item.title} className="bg-white rounded-xl p-5 border-l-4 border-[#D4AF37]">
                 <h3 className="font-heading text-lg text-[#1B2B5E] mb-1">{item.title}</h3>

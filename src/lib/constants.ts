@@ -18,12 +18,12 @@ export const RESTAURANT = {
   },
   hours: [
     { day: 'Monday', dayNl: 'Maandag', open: false },
-    { day: 'Tuesday', dayNl: 'Dinsdag', open: true, from: '15:00', to: '22:00' },
-    { day: 'Wednesday', dayNl: 'Woensdag', open: true, from: '15:00', to: '22:00' },
-    { day: 'Thursday', dayNl: 'Donderdag', open: true, from: '15:00', to: '22:00' },
-    { day: 'Friday', dayNl: 'Vrijdag', open: true, from: '15:00', to: '22:00' },
-    { day: 'Saturday', dayNl: 'Zaterdag', open: true, from: '13:00', to: '22:00' },
-    { day: 'Sunday', dayNl: 'Zondag', open: true, from: '13:00', to: '22:00' },
+    { day: 'Tuesday', dayNl: 'Dinsdag', open: true, from: '16:30', to: '22:30' },
+    { day: 'Wednesday', dayNl: 'Woensdag', open: true, from: '16:30', to: '22:30' },
+    { day: 'Thursday', dayNl: 'Donderdag', open: true, from: '16:30', to: '22:30' },
+    { day: 'Friday', dayNl: 'Vrijdag', open: true, from: '16:30', to: '22:30' },
+    { day: 'Saturday', dayNl: 'Zaterdag', open: true, from: '16:30', to: '22:30' },
+    { day: 'Sunday', dayNl: 'Zondag', open: true, from: '16:30', to: '22:30' },
   ],
   social: {
     tripadvisor: 'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805',

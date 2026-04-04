@@ -41,6 +41,14 @@ const restaurantSchema = {
   telephone: RESTAURANT.contact.phone, url: RESTAURANT.contact.website,
   servesCuisine: 'Indian', priceRange: RESTAURANT.priceRange,
   hasMenu: 'https://chopras.nl/menu',
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
+  sameAs: [
+    'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
+    'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
+    'https://www.facebook.com/choprasrestaurant',
+    'https://www.instagram.com/choprasrestaurant',
+    'https://www.youtube.com/@choprasrestaurant',
+  ],
 }
 
 const pageFaqs = [
@@ -73,12 +81,28 @@ export default function ButterChickenPage({ params }: Props) {
       {/* HERO */}
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <div className="h-px w-8 bg-[#D4AF37]" />
+            <span
+              className="text-[#D4AF37] text-xs uppercase tracking-widest font-medium"
+              style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)' }}
+            >
+              OUR DISHES
+            </span>
+            <div className="h-px w-8 bg-[#D4AF37]" />
+          </div>
+          <h1
+            className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
+          >
             {isNl
               ? 'Butter Chicken in Den Haag  -  Het Echte Werk bij Chopras'
               : 'Butter Chicken in Den Haag  -  The Real Thing at Chopras'}
           </h1>
-          <p className="text-white/75 text-lg md:text-xl">
+          <p
+            className="text-white/75 text-lg md:text-xl"
+            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+          >
             {isNl
               ? 'Langzaam gegaard. Vers gemalen kruiden. Halal gecertificeerd. Leyweg 986, Den Haag.'
               : 'Slow-cooked. Freshly ground spices. Halal certified. Leyweg 986, Den Haag.'}

@@ -51,15 +51,31 @@ export default function IndianTakeawayPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name, address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode }, telephone: RESTAURANT.contact.phone, servesCuisine: 'Indian' } as Record<string, unknown>} />
+      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name, address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode }, telephone: RESTAURANT.contact.phone, servesCuisine: 'Indian', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' }, sameAs: ['https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html', 'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/', 'https://www.facebook.com/choprasrestaurant', 'https://www.instagram.com/choprasrestaurant', 'https://www.youtube.com/@choprasrestaurant'] } as Record<string, unknown>} />
       <JsonLd data={faqSchema as Record<string, unknown>} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <div className="h-px w-8 bg-[#D4AF37]" />
+            <span
+              className="text-[#D4AF37] text-xs uppercase tracking-widest font-medium"
+              style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)' }}
+            >
+              INDIAN TAKEAWAY DEN HAAG
+            </span>
+            <div className="h-px w-8 bg-[#D4AF37]" />
+          </div>
+          <h1
+            className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
+          >
             {isNl ? 'Indiaas Eten Afhalen of Bestellen in Den Haag' : 'Indian Takeaway and Delivery in Den Haag'}
           </h1>
-          <p className="text-white/75 text-lg">
+          <p
+            className="text-white/75 text-lg"
+            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+          >
             {isNl ? 'Afhalen bij Leyweg 986 of bezorging via Thuisbezorgd en Uber Eats.' : 'Collect from Leyweg 986 or delivery via Thuisbezorgd and Uber Eats.'}
           </p>
         </div>
@@ -104,8 +120,7 @@ export default function IndianTakeawayPage({ params }: Props) {
             </h3>
             <ul className="text-gray-700 space-y-1">
               <li>{isNl ? 'Maandag: Gesloten' : 'Monday: Closed'}</li>
-              <li>{isNl ? 'Dinsdag – Vrijdag: 15:00 – 22:00' : 'Tuesday – Friday: 15:00 – 22:00'}</li>
-              <li>{isNl ? 'Zaterdag – Zondag: 13:00 – 22:00' : 'Saturday – Sunday: 13:00 – 22:00'}</li>
+              <li>{isNl ? 'Dinsdag – Zondag: 16:30 – 22:30' : 'Tuesday – Sunday: 16:30 – 22:30'}</li>
             </ul>
           </div>
         </div>

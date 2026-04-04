@@ -13,14 +13,14 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
 
   return (
     <section className="bg-[#FFFAF5] py-24 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
         {/* LEFT: Image stack */}
         <div
           ref={imgRef}
-          className={`relative transition-all duration-700 ease-out ${imgInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className={`sticky top-24 self-start max-w-[480px] relative transition-all duration-700 ease-out ${imgInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
             <Image
               src="/images/restaurant/people-enjoying-food---best.png"
               alt="Guests enjoying dinner at Chopras Indian Restaurant Den Haag"
@@ -30,7 +30,7 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
             />
           </div>
           {/* Floating dish image — overlaps bottom-right corner */}
-          <div className="absolute -bottom-6 -right-6 w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden border-4 border-[#FFFAF5] shadow-xl">
+          <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-2xl overflow-hidden border-4 border-[#FFFAF5] shadow-xl">
             <Image
               src="/images/dishes/butter-chicken.webp"
               alt="Butter Chicken at Chopras Indian Restaurant"
@@ -68,6 +68,9 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
             </span>
             <span className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#1B2B5E] rounded-full px-6 py-3 font-body text-sm">
               89 Dishes &middot; 12 Categories
+            </span>
+            <span className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#1B2B5E] rounded-full px-6 py-3 font-body text-sm">
+              Indian Street Food Den Haag
             </span>
           </div>
 

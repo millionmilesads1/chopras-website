@@ -39,6 +39,14 @@ export default function CorporateEventsPage({ params }: Props) {
     url: RESTAURANT.contact.website, telephone: RESTAURANT.contact.phone, email: RESTAURANT.contact.email,
     address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, addressLocality: RESTAURANT.address.city, postalCode: RESTAURANT.address.postcode, addressCountry: 'NL' },
     servesCuisine: RESTAURANT.cuisines, priceRange: RESTAURANT.priceRange,
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
+    sameAs: [
+      'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
+      'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
+      'https://www.facebook.com/choprasrestaurant',
+      'https://www.instagram.com/choprasrestaurant',
+      'https://www.youtube.com/@choprasrestaurant',
+    ],
   }
 
   const serviceSchema = {
@@ -101,10 +109,23 @@ export default function CorporateEventsPage({ params }: Props) {
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-heading text-4xl md:text-6xl text-white leading-tight">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <div className="h-px w-8 bg-[#D4AF37]" />
+            <span
+              className="text-[#D4AF37] text-xs uppercase tracking-widest font-medium"
+              style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)' }}
+            >
+              CORPORATE EVENTS
+            </span>
+            <div className="h-px w-8 bg-[#D4AF37]" />
+          </div>
+          <h1
+            className="font-heading text-4xl md:text-6xl text-white leading-tight"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
+          >
             {isNl ? 'Zakelijke Evenementen in Den Haag  -  Indiase Catering en Privélocatie bij Chopras' : 'Corporate Events in Den Haag  -  Indian Catering and Private Venue at Chopras'}
           </h1>
-          <p className="text-xl text-white/75 mt-6 leading-relaxed">
+          <p className="text-xl text-white/75 mt-6 leading-relaxed" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}>
             {isNl ? 'Teamdiners. Klantentertainment. Productlanceringen. Conferentiecatering. Voor 15 tot 120 gasten in Den Haag.' : 'Team dinners. Client entertainment. Product launches. Conference catering. For 15 to 120 guests across Den Haag.'}
           </p>
           <Link href={`${base}/catering#catering-form`} className="inline-block mt-8 bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors">

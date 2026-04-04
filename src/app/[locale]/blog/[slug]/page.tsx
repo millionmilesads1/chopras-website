@@ -24,9 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `${SITE_URL}/${locale}/blog/${post.slug}`,
       languages: {
-        en: `${SITE_URL}/en/blog/${post.slug}`,
-        nl: `${SITE_URL}/nl/blog/${post.slug}`,
-        'x-default': `${SITE_URL}/en/blog/${post.slug}`,
+        [post.language]: `${SITE_URL}/${post.language}/blog/${post.slug}`,
+        'x-default': post.language === 'en'
+          ? `${SITE_URL}/en/blog/${post.slug}`
+          : `${SITE_URL}/en/blog`,
       },
     },
   }
@@ -52,7 +53,7 @@ export default function LocaleBlogPostPage({ params }: Props) {
     headline: post.h1, description: post.metaDescription,
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
-    author: { '@type': 'Organization', name: 'Chopras Indian Restaurant' },
+    author: { '@type': 'Person', name: 'Arun Chopra', jobTitle: 'Founder', url: 'https://chopras.nl/en' },
     publisher: {
       '@type': 'Organization',
       name: 'Chopras Indian Restaurant',

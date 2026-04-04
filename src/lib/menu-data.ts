@@ -17,8 +17,8 @@ export const categoryLabels: Record<MenuCategory, { label: string; labelNl: stri
     labelNl: 'Indiase Soepen in Den Haag',
   },
   tandoori: {
-    label: 'Tandoori in Den Haag — Clay Oven Grill Specialties',
-    labelNl: 'Indiase Tandoori Gerechten in Den Haag — Specialiteiten uit de Kleistenen Oven',
+    label: 'Tandoori in Den Haag  -  Clay Oven Grill Specialties',
+    labelNl: 'Indiase Tandoori Gerechten in Den Haag  -  Specialiteiten uit de Kleistenen Oven',
   },
   'mains-veg': {
     label: 'Vegetarian Indian Curries in Den Haag',
@@ -66,7 +66,7 @@ export const menuItems: MenuItem[] = [
     price: 8,
     category: 'starters',
     dietary: ['veg', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Onion-Bhaji_converted-scaled.webp',
+    image: '/images/dishes/onion-bhaji.webp',
     description:
       'Crispy onion fritters seasoned with authentic Indian spices, deep fried to golden perfection and served with fresh mint and tangy tamarind chutney. A popular Indian street food starter in Den Haag for lovers of crunchy, mildly spicy snacks.',
     descriptionNl:
@@ -78,7 +78,7 @@ export const menuItems: MenuItem[] = [
     price: 8,
     category: 'starters',
     dietary: ['halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Veg-Samosa_converted.webp',
+    image: '/images/dishes/veg-samosa.webp',
     description:
       'Crisp triangular samosas stuffed with a flavourful mix of spiced potatoes, chickpeas or minced meat, fried until perfectly crunchy. A classic Indian starter in Den Haag enjoyed for its bold flavours and mildly spicy filling.',
     descriptionNl:
@@ -91,7 +91,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['veg', 'halal'],
     featured: true,
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Samosa-Chaat_converted.webp',
+    image: '/images/dishes/samosa-chaat.webp',
     description:
       'A crushed samosa topped with cool yogurt, chickpeas, fresh mint, coriander, tamarind chutney and mild spices. A sweet, tangy and mildly spicy Indian chaat dish that is highly popular in Den Haag.',
     descriptionNl:
@@ -104,7 +104,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['veg', 'halal'],
     featured: true,
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Pani-Puri_converted.webp',
+    image: '/images/dishes/pani-puri.webp',
     description:
       'Crispy hollow puris filled with spicy potato and chickpea mix served with tangy mint and tamarind water. A famous Indian street food snack loved in Den Haag for its burst of spicy and refreshing flavours.',
     descriptionNl:
@@ -116,7 +116,7 @@ export const menuItems: MenuItem[] = [
     price: 8,
     category: 'starters',
     dietary: ['veg', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Dahi-Puri_converted.webp',
+    image: '/images/dishes/dahi-puri.webp',
     description:
       'Crispy puris filled with potatoes and chickpeas topped with cool yogurt, mint, tamarind chutney and mild Indian spices. A perfect balance of creamy, sweet, tangy and mild spice loved by chaat lovers in Den Haag.',
     descriptionNl:
@@ -128,7 +128,7 @@ export const menuItems: MenuItem[] = [
     price: 8,
     category: 'starters',
     dietary: ['veg', 'vegan', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Aloo-Tikki_converted.webp',
+    image: '/images/dishes/aloo-tikki.webp',
     description:
       'Golden shallow fried potato patties seasoned with aromatic Indian spices, served with mint and tamarind chutney. A mildly spicy and flavour packed vegetarian favourite in Den Haag.',
     descriptionNl:
@@ -140,7 +140,7 @@ export const menuItems: MenuItem[] = [
     price: 8,
     category: 'starters',
     dietary: ['veg', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Papdi-Chaat_converted.webp',
+    image: '/images/dishes/papdi-chaat.webp',
     description:
       'Crispy flour crackers topped with potatoes, chickpeas, yogurt, mint chutney, tamarind chutney and mild Indian spices. A sweet, spicy and tangy chaat experience loved across Den Haag.',
     descriptionNl:
@@ -153,7 +153,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['veg', 'halal'],
     featured: true,
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Mixed-Chaat_converted-scaled.webp',
+    image: '/images/dishes/mixed-chaat.webp',
     description:
       'A flavourful chaat platter featuring samosa, aloo tikki, crushed papdi, yogurt, mint and tamarind chutney with mild Indian spices. A sweet, spicy and crunchy street food favourite in Den Haag.',
     descriptionNl:
@@ -165,7 +165,7 @@ export const menuItems: MenuItem[] = [
     price: 3.5,
     category: 'starters',
     dietary: ['veg', 'vegan', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Plain-Papad_converted-scaled.webp',
+    image: '/images/dishes/plain-papad.webp',
     description:
       'Thin and crispy roasted lentil cracker lightly seasoned for a mild and crunchy Indian snack experience. A popular light starter in Den Haag.',
     descriptionNl:
@@ -177,7 +177,7 @@ export const menuItems: MenuItem[] = [
     price: 5,
     category: 'starters',
     dietary: ['veg', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Masala-Papad_converted-scaled.webp',
+    image: '/images/dishes/masala-papad.webp',
     description:
       'Crispy lentil cracker topped with onions, tomatoes, coriander and mild Indian spices offering a fresh, slightly spicy and crunchy start to your Indian meal.',
     descriptionNl:
@@ -191,7 +191,7 @@ export const menuItems: MenuItem[] = [
     price: 7.5,
     category: 'soups',
     dietary: ['veg', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Tomato-Soup_converted-scaled.webp',
+    image: '/images/dishes/tomato-soup.webp',
     description:
       'A creamy tomato based Indian soup made with fresh tomatoes, mild spices, herbs and a smooth buttery texture. A warm, mildly spiced comfort starter popular among Indian food lovers in Den Haag and perfect for dine-in, takeaway and delivery.',
     descriptionNl:
@@ -203,7 +203,7 @@ export const menuItems: MenuItem[] = [
     price: 7.5,
     category: 'soups',
     dietary: ['veg', 'vegan', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Dal-Soup_converted-scaled.webp',
+    image: '/images/dishes/dal-soup.webp',
     description:
       'A classic Indian yellow lentil soup slow cooked with garlic, ginger, mild spices and herbs for a comforting and lightly spiced flavour. A healthy and nourishing vegetarian soup loved by guests in Den Haag.',
     descriptionNl:
@@ -215,7 +215,7 @@ export const menuItems: MenuItem[] = [
     price: 7.5,
     category: 'soups',
     dietary: ['veg', 'vegan', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Manchow-soup_converted-scaled.webp',
+    image: '/images/dishes/manchow-soup.webp',
     description:
       'A Indo-Chinese vegetable soup made with mixed vegetables, crispy noodles, soy, garlic, ginger and medium Asian spices for a warm, slightly spicy flavour. A popular fusion soup in Den Haag known for its bold taste.',
     descriptionNl:
@@ -227,7 +227,7 @@ export const menuItems: MenuItem[] = [
     price: 8.5,
     category: 'soups',
     dietary: ['halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Chicken-Soup_converted-scaled.webp',
+    image: '/images/dishes/chicken-soup.webp',
     description:
       'A flavourful Indian style chicken soup made with shredded chicken, garlic, ginger, herbs and mild spices for a warm comforting taste. A light and protein rich starter enjoyed by families in Den Haag.',
     descriptionNl:
@@ -241,7 +241,7 @@ export const menuItems: MenuItem[] = [
     price: 18,
     category: 'tandoori',
     dietary: ['veg', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Paneer-Tikka_converted.webp',
+    image: '/images/dishes/paneer-tikka.webp',
     description:
       'Soft Indian paneer cubes marinated in yogurt, ginger, garlic, lemon and mild spices then grilled in the clay tandoor with onions and peppers. A mildly spicy vegetarian tandoori favourite in Den Haag with smoky and rich flavours.',
     descriptionNl:
@@ -254,7 +254,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['veg', 'halal'],
     featured: true,
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Malai-Soya-Chap_converted-scaled.webp',
+    image: '/images/dishes/malai-soya-chap.webp',
     description:
       'Tender soya chaap pieces marinated in creamy yogurt, cashew paste, mild spices and herbs then grilled in the tandoor for a soft, rich and lightly spiced finish. A popular vegetarian tandoori speciality in Den Haag.',
     descriptionNl:
@@ -266,7 +266,7 @@ export const menuItems: MenuItem[] = [
     price: 18,
     category: 'tandoori',
     dietary: ['veg', 'halal', 'spicy'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Soya-chaap-Achari_converted-scaled.webp',
+    image: '/images/dishes/soya-chaap-achari.webp',
     description:
       'Soya chaap marinated in Indian pickle spices, mustard, lemon, yogurt and medium hot flavours then grilled in the tandoor for a tangy and spicy finish. A bold vegetarian tandoori dish loved in Den Haag.',
     descriptionNl:
@@ -278,7 +278,7 @@ export const menuItems: MenuItem[] = [
     price: 24.5,
     category: 'tandoori',
     dietary: ['halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Tandoori-Prawns_converted.webp',
+    image: '/images/dishes/tandoori-prawns.webp',
     description:
       'Fresh prawns or fish fillets marinated in yogurt, lemon, garlic, ginger and medium Indian spices then roasted in the clay tandoor for a smoky and juicy seafood tandoori flavour. A premium choice for seafood lovers in Den Haag.',
     descriptionNl:
@@ -291,7 +291,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal', 'spicy'],
     featured: true,
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Tandoori-Chicken_converted.webp',
+    image: '/images/dishes/tandoori-chicken.webp',
     description:
       'Chicken on the bone marinated overnight in yogurt, lemon, garlic, ginger and medium hot Indian spices then grilled in the tandoor for a smoky and slightly spicy flavour. A classic Indian tandoori dish enjoyed widely in Den Haag.',
     descriptionNl:
@@ -303,7 +303,7 @@ export const menuItems: MenuItem[] = [
     price: 20.5,
     category: 'tandoori',
     dietary: ['halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Chicken-Tikka_converted.webp',
+    image: '/images/dishes/chicken-tikka.webp',
     description:
       'Boneless chicken fillets marinated in yogurt, lemon, garlic, ginger and medium Indian spices then roasted in the tandoor for a juicy, smoky and slightly spicy tandoori flavour. A top choice for grilled chicken lovers in Den Haag.',
     descriptionNl:
@@ -315,7 +315,7 @@ export const menuItems: MenuItem[] = [
     price: 20.5,
     category: 'tandoori',
     dietary: ['halal', 'mild'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Chicken-Malai-Tikka_converted-scaled.webp',
+    image: '/images/dishes/chicken-malai-tikka.webp',
     description:
       'Creamy boneless chicken pieces marinated with yogurt, cream, cheese, garlic, ginger and mild spices then grilled in the tandoor for a rich and tender finish. A mild, smooth and flavourful tandoori favourite in Den Haag.',
     descriptionNl:
@@ -328,7 +328,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     image:
-      'https://chopras.nl/wp-content/uploads/2025/11/Chicken-Hariyali-Tikka_converted-scaled.webp',
+      '/images/dishes/chicken-hariyali-tikka.webp',
     description:
       'Green marinated boneless chicken blended with spinach, coriander, mint, yogurt, garlic, ginger and medium spices then tandoor grilled for a fresh and lightly spicy flavour. A popular herbal tandoori option in Den Haag.',
     descriptionNl:
@@ -340,7 +340,7 @@ export const menuItems: MenuItem[] = [
     price: 20.5,
     category: 'tandoori',
     dietary: ['halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Chicken-Lasooni-Tikka_converted.webp',
+    image: '/images/dishes/chicken-lasooni-tikka.webp',
     description:
       'Garlic rich tandoori chicken marinated in yogurt, lemon, fresh garlic paste, ginger and mild to medium spices then roasted in the tandoor. A bold and aromatic tandoori speciality loved in Den Haag.',
     descriptionNl:
@@ -352,7 +352,7 @@ export const menuItems: MenuItem[] = [
     price: 22.5,
     category: 'tandoori',
     dietary: ['halal', 'spicy'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Mutton-Seekh-Kebab_converted.webp',
+    image: '/images/dishes/mutton-seekh-kebab.webp',
     description:
       'Minced lamb blended with onions, coriander, herbs, garlic, ginger and medium spices then grilled on skewers in the clay oven for a smoky, spicy and juicy finish. A signature kebab dish in Den Haag.',
     descriptionNl:
@@ -365,7 +365,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     image:
-      'https://chopras.nl/wp-content/uploads/2025/11/Chicken-Seekh-Kebab_converted-scaled.webp',
+      '/images/dishes/chicken-seekh-kebab.webp',
     description:
       'Minced chicken mixed with onions, coriander, herbs, garlic, ginger and mild to medium spices then grilled on skewers in the tandoor for a juicy and mildly spicy kebab flavour. A popular grilled chicken choice in Den Haag.',
     descriptionNl:
@@ -378,7 +378,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     featured: true,
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Chopras-Non-Veg-Platter_converted.webp',
+    image: '/images/dishes/chopras-non-veg-platter.webp',
     description:
       "A premium tandoori platter featuring chicken tikka, malai tikka, hariyali tikka, seekh kebab and tandoori chicken, marinated with a blend of mild to medium Indian spices then roasted in the tandoor. The perfect mixed grill to taste the best tandoori flavours in Den Haag.",
     descriptionNl:
@@ -392,7 +392,7 @@ export const menuItems: MenuItem[] = [
     price: 18.5,
     category: 'mains-veg',
     dietary: ['veg', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Dal-Makhani_converted-scaled.webp',
+    image: '/images/dishes/dal-makhani.webp',
     description:
       'A rich black lentil curry slow cooked with butter, cream, garlic, tomatoes and mild to medium Indian spices for a silky, creamy flavour. A signature vegetarian Indian curry in Den Haag, served with your choice of plain rice or plain naan.',
     descriptionNl:
@@ -404,7 +404,7 @@ export const menuItems: MenuItem[] = [
     price: 15,
     category: 'mains-veg',
     dietary: ['veg', 'halal'],
-    image: 'https://chopras.nl/wp-content/uploads/2025/11/Dal-Tadka-1_converted-scaled.webp',
+    image: '/images/dishes/dal-tadka.webp',
     description:
       'A yellow lentil curry tempered with cumin, garlic, onions, turmeric and mild Indian spices. A light, healthy and warming vegetarian curry enjoyed across Den Haag, served with your choice of plain rice or plain naan.',
     descriptionNl:
@@ -416,6 +416,7 @@ export const menuItems: MenuItem[] = [
     price: 15,
     category: 'mains-veg',
     dietary: ['veg', 'vegan', 'halal'],
+    image: '/images/dishes/rajma-masala.webp',
     description:
       'Kidney beans cooked in a rich tomato-based curry with garlic, ginger and mild spices for a hearty and comforting vegetarian dish. A North Indian classic enjoyed in Den Haag, served with plain rice or naan.',
     descriptionNl:
@@ -427,6 +428,7 @@ export const menuItems: MenuItem[] = [
     price: 15,
     category: 'mains-veg',
     dietary: ['veg', 'vegan', 'halal'],
+    image: '/images/dishes/channa-masala.webp',
     description:
       'Tender chickpeas slow cooked in a spiced tomato and onion gravy with garlic, ginger, cumin, coriander and medium Indian spices. A bold, protein-rich vegetarian curry loved in Den Haag, served with plain rice or naan.',
     descriptionNl:
@@ -438,6 +440,7 @@ export const menuItems: MenuItem[] = [
     price: 15,
     category: 'mains-veg',
     dietary: ['veg', 'vegan', 'halal'],
+    image: '/images/dishes/aloo-gobhi.webp',
     description:
       'Potatoes and cauliflower dry cooked with turmeric, cumin, ginger, garlic and mild spices for a comforting and earthy vegetarian dish. A simple and authentic North Indian favourite in Den Haag.',
     descriptionNl:
@@ -449,6 +452,7 @@ export const menuItems: MenuItem[] = [
     price: 15,
     category: 'mains-veg',
     dietary: ['veg', 'vegan', 'halal'],
+    image: '/images/dishes/aloo-jeera.webp',
     description:
       'Potatoes sautéed with cumin seeds, mild spices and fresh herbs for a light and aromatic vegetarian side dish. A classic North Indian comfort dish enjoyed in Den Haag.',
     descriptionNl:
@@ -460,6 +464,7 @@ export const menuItems: MenuItem[] = [
     price: 15,
     category: 'mains-veg',
     dietary: ['veg', 'vegan', 'halal'],
+    image: '/images/dishes/mixed-veg.webp',
     description:
       'Seasonal vegetables cooked in a spiced tomato and onion gravy with garlic, ginger and mild Indian spices. A wholesome and flavourful vegetarian curry enjoyed in Den Haag.',
     descriptionNl:
@@ -471,6 +476,7 @@ export const menuItems: MenuItem[] = [
     price: 16,
     category: 'mains-veg',
     dietary: ['veg', 'vegan', 'halal'],
+    image: '/images/dishes/bhandi-masala.webp',
     description:
       'Tender okra cooked with onions, tomatoes, garlic, ginger and medium Indian spices for a flavourful and slightly spicy vegetarian dish. A popular choice among vegetarians in Den Haag.',
     descriptionNl:
@@ -482,6 +488,7 @@ export const menuItems: MenuItem[] = [
     price: 16,
     category: 'mains-veg',
     dietary: ['veg', 'vegan', 'halal'],
+    image: '/images/dishes/baingan-bharta.webp',
     description:
       'Smoky roasted aubergine mashed and cooked with onions, tomatoes, garlic, ginger and medium spices. A rustic and deeply flavoured vegetarian North Indian dish enjoyed in Den Haag.',
     descriptionNl:
@@ -515,6 +522,7 @@ export const menuItems: MenuItem[] = [
     price: 18,
     category: 'mains-veg',
     dietary: ['veg', 'halal', 'mild'],
+    image: '/images/dishes/shahi-paneer.webp',
     description:
       'Paneer cubes cooked in a rich, aromatic Mughal-style gravy of cream, cashews, onions and mild spices. A royal and indulgent vegetarian curry with a silky texture, loved across Den Haag.',
     descriptionNl:
@@ -527,6 +535,7 @@ export const menuItems: MenuItem[] = [
     category: 'mains-veg',
     dietary: ['veg', 'halal', 'mild'],
     featured: true,
+    image: '/images/dishes/paneer-butter-masala.webp',
     description:
       'Soft paneer cubes simmered in a buttery, creamy tomato sauce with mild spices and fresh herbs. A classic and comforting vegetarian Indian curry that is one of the most popular dishes in Den Haag.',
     descriptionNl:
@@ -538,6 +547,7 @@ export const menuItems: MenuItem[] = [
     price: 18,
     category: 'mains-veg',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/palak-paneer.webp',
     description:
       'Fresh paneer cubes in a smooth, spiced spinach sauce with garlic, ginger and mild spices. A classic North Indian vegetarian curry with earthy and aromatic flavours enjoyed in Den Haag.',
     descriptionNl:
@@ -561,10 +571,11 @@ export const menuItems: MenuItem[] = [
     category: 'mains-veg',
     dietary: ['veg', 'halal'],
     featured: true,
+    image: '/images/dishes/chopras-special-paneer.webp',
     description:
-      "Fresh paneer cubes in a rich, special sauce infused with authentic North Indian spices and herbs. Chopras' signature paneer dish — one of the most popular and distinctive dishes on the menu in Den Haag.",
+      "Fresh paneer cubes in a rich, special sauce infused with authentic North Indian spices and herbs. Chopras' signature paneer dish  -  one of the most popular and distinctive dishes on the menu in Den Haag.",
     descriptionNl:
-      "Verse paneerblokjes in een rijke, speciale saus doordrenkt met authentieke Noord-Indiase specerijen en kruiden. Chopras' signature paneergerecht — een van de populairste en meest onderscheidende gerechten op het menu in Den Haag.",
+      "Verse paneerblokjes in een rijke, speciale saus doordrenkt met authentieke Noord-Indiase specerijen en kruiden. Chopras' signature paneergerecht  -  een van de populairste en meest onderscheidende gerechten op het menu in Den Haag.",
   },
 
   // ─── CHICKEN MAINS ───────────────────────────────────────────────────────
@@ -575,6 +586,7 @@ export const menuItems: MenuItem[] = [
     category: 'mains-chicken',
     dietary: ['halal', 'mild'],
     featured: true,
+    image: '/images/dishes/butter-chicken.webp',
     description:
       'Tender chicken slow cooked in a rich, creamy tomato sauce with butter, cream and mild Indian spices. A timeless classic and one of the most loved Indian dishes in Den Haag, perfect for all palates including children.',
     descriptionNl:
@@ -586,6 +598,7 @@ export const menuItems: MenuItem[] = [
     price: 18.5,
     category: 'mains-chicken',
     dietary: ['halal'],
+    image: '/images/dishes/chicken-tikka-masala.webp',
     description:
       'Grilled chicken tikka pieces simmered in a smooth, mildly spiced tomato and cream masala sauce. A restaurant classic that balances smoky tandoor flavour with a rich and satisfying curry, enjoyed widely in Den Haag.',
     descriptionNl:
@@ -597,6 +610,7 @@ export const menuItems: MenuItem[] = [
     price: 18.5,
     category: 'mains-chicken',
     dietary: ['halal', 'spicy'],
+    image: '/images/dishes/kadai-chicken.webp',
     description:
       'Chicken cooked in a traditional kadhai (wok) with tomatoes, capsicum, onions and freshly ground kadhai spices. A bold and aromatic curry with robust flavours, popular among spice lovers in Den Haag.',
     descriptionNl:
@@ -619,6 +633,7 @@ export const menuItems: MenuItem[] = [
     price: 20,
     category: 'mains-chicken',
     dietary: ['halal'],
+    image: '/images/dishes/chicken-handi.webp',
     description:
       'Chicken slow cooked in a sealed clay pot with yogurt, cream, aromatic spices and herbs. The pot cooking method locks in moisture and flavour for an exceptionally tender and aromatic result. A specialty at Chopras in Den Haag.',
     descriptionNl:
@@ -642,6 +657,7 @@ export const menuItems: MenuItem[] = [
     category: 'biryani',
     dietary: ['halal'],
     featured: true,
+    image: '/images/dishes/chicken-biryani.webp',
     description:
       'Fragrant basmati rice slow cooked with tender spiced chicken, fried onions, saffron and whole aromatic spices. A complete one-pot meal served with raita, and one of the most popular dishes at Chopras in Den Haag.',
     descriptionNl:
@@ -656,6 +672,7 @@ export const menuItems: MenuItem[] = [
     category: 'mains-lamb',
     dietary: ['halal', 'spicy'],
     featured: true,
+    image: '/images/dishes/mutton-rogan-josh.webp',
     description:
       'Slow-braised mutton in a robust Kashmiri sauce with whole spices, dried chillies and aromatic herbs. A rich, deeply spiced and intensely flavoured curry that is a must-try for meat lovers in Den Haag.',
     descriptionNl:
@@ -678,6 +695,7 @@ export const menuItems: MenuItem[] = [
     price: 21.5,
     category: 'biryani',
     dietary: ['halal'],
+    image: '/images/dishes/muton-biryani.webp',
     description:
       'Aromatic basmati rice slow cooked with tender spiced lamb, fried onions, saffron and whole spices. A complete and indulgent biryani experience served with raita, loved by lamb biryani fans in Den Haag.',
     descriptionNl:
@@ -692,10 +710,11 @@ export const menuItems: MenuItem[] = [
     category: 'indo-chinese',
     dietary: ['veg', 'halal', 'spicy'],
     featured: true,
+    image: '/images/dishes/chilli-paneer.webp',
     description:
-      'Crispy paneer pieces tossed in a bold Indo-Chinese sauce with green chillies, peppers, onions and soy. One of the most ordered dishes at Chopras in Den Haag — addictively spicy and full of flavour.',
+      'Crispy paneer pieces tossed in a bold Indo-Chinese sauce with green chillies, peppers, onions and soy. One of the most ordered dishes at Chopras in Den Haag  -  addictively spicy and full of flavour.',
     descriptionNl:
-      'Knapperige paneer stukjes gebakken in een uitgesproken Indo-Chinese saus met groene pepers, paprika, ui en sojasaus. Een van de meest bestelde gerechten bij Chopras in Den Haag — verslavend pittig en vol smaak.',
+      'Knapperige paneer stukjes gebakken in een uitgesproken Indo-Chinese saus met groene pepers, paprika, ui en sojasaus. Een van de meest bestelde gerechten bij Chopras in Den Haag  -  verslavend pittig en vol smaak.',
   },
   {
     id: 'chilli-chicken',
@@ -704,6 +723,7 @@ export const menuItems: MenuItem[] = [
     category: 'indo-chinese',
     dietary: ['halal', 'spicy'],
     featured: true,
+    image: '/images/dishes/chilli-chicken.webp',
     description:
       'Crispy chicken pieces tossed in a bold Indo-Chinese sauce with green chillies, peppers, onions and soy. A fiery and flavourful Indo-Chinese favourite served at Chopras in Den Haag.',
     descriptionNl:
@@ -715,6 +735,7 @@ export const menuItems: MenuItem[] = [
     price: 14,
     category: 'indo-chinese',
     dietary: ['veg', 'vegan', 'halal'],
+    image: '/images/dishes/veg-noodles.webp',
     description:
       'Stir-fried noodles with mixed vegetables, soy sauce, garlic, ginger and Indo-Chinese spices. A light and flavourful plant-based noodle dish enjoyed in Den Haag.',
     descriptionNl:
@@ -737,6 +758,7 @@ export const menuItems: MenuItem[] = [
     price: 13,
     category: 'indo-chinese',
     dietary: ['veg', 'vegan', 'halal'],
+    image: '/images/dishes/veg-fried-rice.webp',
     description:
       'Wok-fried basmati rice with mixed vegetables, soy sauce, garlic and spring onions. A light and satisfying Indo-Chinese rice dish enjoyed in Den Haag.',
     descriptionNl:
@@ -748,6 +770,7 @@ export const menuItems: MenuItem[] = [
     price: 15,
     category: 'indo-chinese',
     dietary: ['halal'],
+    image: '/images/dishes/chicken-fried-rice.webp',
     description:
       'Wok-fried basmati rice with chicken pieces, soy sauce, garlic and spring onions. A classic and satisfying Indo-Chinese rice dish popular in Den Haag.',
     descriptionNl:
@@ -783,6 +806,7 @@ export const menuItems: MenuItem[] = [
     price: 16,
     category: 'biryani',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/veg-biryani.webp',
     description:
       'Fragrant basmati rice slow cooked with seasonal vegetables, fried onions, saffron and whole aromatic spices. A complete and satisfying vegetarian biryani served with raita, loved in Den Haag.',
     descriptionNl:
@@ -796,6 +820,7 @@ export const menuItems: MenuItem[] = [
     price: 3,
     category: 'breads',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/tandoori-roti.webp',
     description:
       'Thin whole wheat bread baked fresh in the tandoor. Light, healthy and perfect with any curry. A classic Indian bread staple in Den Haag.',
     descriptionNl:
@@ -807,6 +832,7 @@ export const menuItems: MenuItem[] = [
     price: 3.5,
     category: 'breads',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/onion-tandoori-roti.webp',
     description:
       "Thin whole wheat tandoor bread topped with chopped onions and fresh coriander. A flavourful twist on the classic roti, enjoyed with curries in Den Haag.",
     descriptionNl:
@@ -818,6 +844,7 @@ export const menuItems: MenuItem[] = [
     price: 3.5,
     category: 'breads',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/garlic-roti.webp',
     description:
       'Thin whole wheat bread baked in the tandoor with fresh garlic and herbs. Aromatic and flavourful, it pairs beautifully with any dish on the menu in Den Haag.',
     descriptionNl:
@@ -829,6 +856,7 @@ export const menuItems: MenuItem[] = [
     price: 3.5,
     category: 'breads',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/missi-roti.webp',
     description:
       'A spiced whole wheat and chickpea flour bread baked in the tandoor with cumin, onions and herbs. A North Indian bread with a distinctive flavour, popular in Den Haag.',
     descriptionNl:
@@ -840,6 +868,7 @@ export const menuItems: MenuItem[] = [
     price: 4,
     category: 'breads',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/laccha-paratha.webp',
     description:
       'Multi-layered flaky whole wheat bread cooked on the tawa with butter. A rich, crispy and indulgent North Indian bread loved in Den Haag for its texture and buttery flavour.',
     descriptionNl:
@@ -851,6 +880,7 @@ export const menuItems: MenuItem[] = [
     price: 4,
     category: 'breads',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/mint-paratha.webp',
     description:
       'Flaky layered paratha infused with fresh mint leaves for a cool and aromatic flavour. A refreshing Indian bread option enjoyed in Den Haag.',
     descriptionNl:
@@ -862,6 +892,7 @@ export const menuItems: MenuItem[] = [
     price: 5,
     category: 'breads',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/aloo-paratha.webp',
     description:
       'Whole wheat bread stuffed with spiced potato filling, cooked on the tawa with butter. A hearty and satisfying North Indian breakfast bread also served as a side in Den Haag.',
     descriptionNl:
@@ -873,6 +904,7 @@ export const menuItems: MenuItem[] = [
     price: 3,
     category: 'breads',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/plain-naan.webp',
     description:
       'Soft leavened white flour bread baked fresh in the tandoor. The classic Indian bread, perfectly suited to soak up any curry in Den Haag.',
     descriptionNl:
@@ -884,6 +916,7 @@ export const menuItems: MenuItem[] = [
     price: 4,
     category: 'breads',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/garlic-naan.webp',
     description:
       'Soft tandoor naan topped with fresh garlic and coriander. Aromatic, flavourful and one of the most popular breads ordered in Den Haag.',
     descriptionNl:
@@ -895,6 +928,7 @@ export const menuItems: MenuItem[] = [
     price: 5,
     category: 'breads',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/cheese-naan.webp',
     description:
       'Soft tandoor naan stuffed with melted cheese. Rich, indulgent and a favourite with both adults and children in Den Haag.',
     descriptionNl:
@@ -917,6 +951,7 @@ export const menuItems: MenuItem[] = [
     price: 3.5,
     category: 'breads',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/butter-naan.webp',
     description:
       'Classic tandoor naan brushed with melted butter for a soft, rich and comforting finish. Simple and perfect with any curry in Den Haag.',
     descriptionNl:
@@ -930,6 +965,7 @@ export const menuItems: MenuItem[] = [
     price: 4,
     category: 'rice-sides',
     dietary: ['veg', 'vegan', 'halal', 'glutenFree'],
+    image: '/images/dishes/steamed-rice.webp',
     description:
       'Plain steamed basmati rice. Light, fluffy and the perfect accompaniment to any curry on the menu in Den Haag.',
     descriptionNl:
@@ -941,6 +977,7 @@ export const menuItems: MenuItem[] = [
     price: 5,
     category: 'rice-sides',
     dietary: ['veg', 'halal', 'glutenFree'],
+    image: '/images/dishes/jeera-rice.webp',
     description:
       'Basmati rice tempered with cumin seeds and ghee for a light, aromatic and flavourful rice dish. A classic North Indian rice loved in Den Haag.',
     descriptionNl:
@@ -952,6 +989,7 @@ export const menuItems: MenuItem[] = [
     price: 3.5,
     category: 'rice-sides',
     dietary: ['veg', 'halal', 'glutenFree'],
+    image: '/images/dishes/mixed-raita.webp',
     description:
       'Cooling yogurt with grated cucumber, fresh mint, cumin and mild spices. A refreshing side dish that balances the heat of any spicy curry in Den Haag.',
     descriptionNl:
@@ -987,6 +1025,7 @@ export const menuItems: MenuItem[] = [
     price: 6,
     category: 'desserts',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/gulab-jamun.webp',
     description:
       "Soft milk-solid dumplings soaked in rose-flavoured sugar syrup. Served warm, this is one of India's most beloved sweets and a favourite at Chopras in Den Haag.",
     descriptionNl:
@@ -998,10 +1037,11 @@ export const menuItems: MenuItem[] = [
     price: 7,
     category: 'desserts',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/moong-dal-halwa.webp',
     description:
-      'A rich, slow-cooked Indian sweet made from split yellow lentils, ghee, sugar and cardamom. Dense, fragrant and deeply satisfying — a traditional North Indian dessert served at Chopras in Den Haag.',
+      'A rich, slow-cooked Indian sweet made from split yellow lentils, ghee, sugar and cardamom. Dense, fragrant and deeply satisfying  -  a traditional North Indian dessert served at Chopras in Den Haag.',
     descriptionNl:
-      'Een rijk, langzaam gekookt Indiaas snoepje gemaakt van gespleten gele linzen, ghee, suiker en kardemom. Dicht, geurig en diep bevredigend — een traditioneel Noord-Indiaas dessert geserveerd bij Chopras in Den Haag.',
+      'Een rijk, langzaam gekookt Indiaas snoepje gemaakt van gespleten gele linzen, ghee, suiker en kardemom. Dicht, geurig en diep bevredigend  -  een traditioneel Noord-Indiaas dessert geserveerd bij Chopras in Den Haag.',
   },
   {
     id: 'kulfi',
@@ -1009,6 +1049,7 @@ export const menuItems: MenuItem[] = [
     price: 6,
     category: 'desserts',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/malai-kulfi.webp',
     description:
       'Traditional Indian ice cream made from condensed milk, cream and cardamom. Dense, creamy and intensely flavoured, available in various flavours at Chopras in Den Haag.',
     descriptionNl:
@@ -1023,10 +1064,11 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     featured: true,
+    image: '/images/dishes/mango-lassi.webp',
     description:
-      'Thick and creamy yogurt drink blended with sweet mango pulp. Refreshing, smooth and utterly satisfying — a crowd favourite at Chopras in Den Haag.',
+      'Thick and creamy yogurt drink blended with sweet mango pulp. Refreshing, smooth and utterly satisfying  -  a crowd favourite at Chopras in Den Haag.',
     descriptionNl:
-      'Dik en romig yoghurtdrankje gemengd met zoete mangopulp. Verfrissend, glad en absoluut bevredigend — een publieksfavoriet bij Chopras in Den Haag.',
+      'Dik en romig yoghurtdrankje gemengd met zoete mangopulp. Verfrissend, glad en absoluut bevredigend  -  een publieksfavoriet bij Chopras in Den Haag.',
   },
   {
     id: 'sweet-lassi',
@@ -1034,6 +1076,7 @@ export const menuItems: MenuItem[] = [
     price: 5,
     category: 'drinks',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/sweet-lassi.webp',
     description:
       'Chilled yogurt drink blended with sugar and cardamom. Light, cooling and a perfect companion to any spicy dish in Den Haag.',
     descriptionNl:
@@ -1045,6 +1088,7 @@ export const menuItems: MenuItem[] = [
     price: 5,
     category: 'drinks',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/salted-lassi.webp',
     description:
       "Savoury yogurt drink with cumin, salt and fresh herbs. A traditional and refreshing Indian drink that pairs perfectly with rich curries in Den Haag.",
     descriptionNl:
@@ -1067,6 +1111,7 @@ export const menuItems: MenuItem[] = [
     price: 4,
     category: 'drinks',
     dietary: ['veg', 'halal'],
+    image: '/images/dishes/indian-masala-tea.webp',
     description:
       'Spiced Indian tea brewed with ginger, cardamom, cloves, cinnamon and milk. Warming, aromatic and a perfect way to start or end your meal at Chopras in Den Haag.',
     descriptionNl:

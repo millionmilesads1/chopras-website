@@ -63,7 +63,7 @@ export const homeFaqs: FaqItem[] = [
   },
   {
     question: "Is there a dress code for dining?",
-    answer: "No strict dress code — come as you are! For cultural and festival events, guests are welcome to wear ethnic attire to fully immerse themselves in the vibrant, festive atmosphere at Chopras Indian Restaurant in Den Haag."
+    answer: "No strict dress code  -  come as you are! For cultural and festival events, guests are welcome to wear ethnic attire to fully immerse themselves in the vibrant, festive atmosphere at Chopras Indian Restaurant in Den Haag."
   },
   {
     question: "Is parking available near the restaurant?",
@@ -119,7 +119,7 @@ export const homeFaqs: FaqItem[] = [
   },
   {
     question: "What are your opening hours?",
-    answer: "Chopras Indian Restaurant is open Tuesday to Sunday from 4:30 PM to 10:30 PM. We are closed on Mondays. Come visit us in Den Haag to enjoy authentic Indian street food and flavourful dishes."
+    answer: "Chopras Indian Restaurant is open Tuesday to Sunday from 16:30 to 22:30. We are closed on Mondays. Come visit us in Den Haag to enjoy authentic Indian street food and flavourful dishes."
   },
   {
     question: "How can I contact the restaurant for queries or reservations?",
@@ -134,7 +134,7 @@ export const deliveryFaqs: FaqItem[] = [
   },
   {
     question: "How can I order online for delivery or pick-up?",
-    answer: "Ordering is easy! Get your favourite Indian dishes delivered right to your door through Thuisbezorgd or Uber Eats. Prefer to pick up your meal? Just call us at +31 6 30645930 or stop by the restaurant — we will have it ready and waiting for you."
+    answer: "Ordering is easy! Get your favourite Indian dishes delivered right to your door through Thuisbezorgd or Uber Eats. Prefer to pick up your meal? Just call us at +31 6 30645930 or stop by the restaurant  -  we will have it ready and waiting for you."
   },
   {
     question: "Which delivery platforms are you available on?",
@@ -142,7 +142,7 @@ export const deliveryFaqs: FaqItem[] = [
   },
   {
     question: "What are your delivery times and service areas?",
-    answer: "We offer delivery across most of Den Haag, typically from 4:30 PM to 10:00 PM, Tuesday through Sunday. We conveniently deliver within a 5 km radius of our restaurant, so you can enjoy fresh, authentic Indian cuisine right at your doorstep."
+    answer: "We offer delivery across most of Den Haag, typically from 4:30 PM to 10:30 PM, Tuesday through Sunday. We conveniently deliver within a 5 km radius of our restaurant, so you can enjoy fresh, authentic Indian cuisine right at your doorstep."
   },
   {
     question: "How is takeaway food packaged?",

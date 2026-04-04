@@ -6,6 +6,7 @@ export default function TrustBar({ locale = 'en' }: { locale?: Locale }) {
 
   const items = [
     { icon: ShieldCheck, label: tr.common.halalCertified },
+    { icon: ShieldCheck, label: 'Halal Food Den Haag' },
     { icon: Flame, label: tr.common.freshSpices },
     { icon: CalendarDays, label: 'Open Tue\u2013Sun' },
     { icon: ParkingCircle, label: tr.common.freeParking },
@@ -13,7 +14,13 @@ export default function TrustBar({ locale = 'en' }: { locale?: Locale }) {
   ]
 
   return (
-    <div className="bg-[#1B2B5E] py-4">
+    <div
+      className="py-4"
+      style={{
+        background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 100%)',
+        borderTop: '1px solid rgba(212,175,55,0.2)',
+      }}
+    >
       <div className="flex gap-8 md:gap-16 justify-start md:justify-center overflow-x-auto px-6 md:px-0 no-scrollbar">
         {items.map(({ icon: Icon, label }, i) => (
           <div key={i} className="flex items-center gap-2 flex-shrink-0">
