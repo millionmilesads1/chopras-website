@@ -1,384 +1,545 @@
-# SEO Full Audit Report — Chopras Indian Restaurant (chopras.nl)
-
-**Audit Date:** 2026-04-03  
-**Auditor:** Claude Code SEO Audit System (8 specialist subagents)  
-**Business Type:** Brick-and-mortar + Service Area Restaurant (Indian, Den Haag, Netherlands)  
-**Framework:** Next.js 14 App Router, TypeScript, Tailwind CSS, bilingual EN/NL
-
----
-
-## Overall SEO Health Score: 63 / 100
-
-| Category | Weight | Score | Weighted |
-|----------|--------|-------|---------|
-| Technical SEO | 22% | 62 | 13.6 |
-| Content Quality | 23% | 74 | 17.0 |
-| On-Page SEO | 20% | 65 | 13.0 |
-| Schema / Structured Data | 10% | 52 | 5.2 |
-| Performance (CWV) | 10% | 58 | 5.8 |
-| AI Search Readiness | 10% | 64 | 6.4 |
-| Images | 5% | 30 | 1.5 |
-| **Total** | | | **62.5** |
+# Full SEO Audit Report - Chopras Indian Restaurant
+**Site:** https://chopras.nl
+**Date:** 2026-04-05
+**Previous Audit:** 2026-04-04 (score: 68 / 100)
+**Framework:** Next.js 14 App Router, i18n (en/nl), SSG
+**Auditors:** 7 specialist subagents (Technical, Content, Schema, Sitemap, Performance, GEO, Local SEO)
 
 ---
 
 ## Executive Summary
 
-The site has a well-structured Next.js 14 architecture, clean bilingual routing, and genuinely strong blog content. The foundation is solid. However, it has several critical issues that must be fixed before any ranking progress is possible:
+### Overall SEO Health Score: 73 / 100  (+5 from prior audit)
+
+| Category | Weight | Score | Weighted | Prior | Delta |
+|---|---|---|---|---|---|
+| Technical SEO | 22% | 81 | 17.8 | 71 | +10 |
+| Content Quality | 23% | 79 | 18.2 | 74 | +5 |
+| On-Page SEO | 20% | 75 | 15.0 | 72 | +3 |
+| Schema / Structured Data | 10% | 72 | 7.2 | 65 | +7 |
+| Performance (CWV) | 10% | 38 | 3.8 | 35 | +3 |
+| AI Search Readiness (GEO) | 10% | 83 | 8.3 | 79 | +4 |
+| Local SEO | 5% | 63 | 3.15 | 61 | +2 |
+| **Total** | | | **73 / 100** | 68 | **+5** |
+
+### Business Type Detected
+Brick-and-mortar restaurant. North Indian / Halal / Street Food. Den Haag, Netherlands. Service-area business for catering (Den Haag, Rijswijk, Delft, Zoetermeer, Voorburg, Leidschendam, Westland).
+
+### Fixes Applied Since Prior Audit (9 confirmed)
+
+| Fix | File | Status |
+|---|---|---|
+| SearchAction removed from WebSite schema | `src/app/[locale]/layout.tsx` | FIXED |
+| Both fonts now `display: 'swap'` | `src/app/[locale]/layout.tsx` | FIXED |
+| `adjustFontFallback: false` removed from Cormorant | `src/app/[locale]/layout.tsx` | FIXED |
+| HSTS + 4 security headers added | `next.config.mjs` | FIXED |
+| Checkout noindex layout added | `src/app/[locale]/checkout/layout.tsx` | FIXED |
+| Order-confirmation noindex layout added | `src/app/[locale]/order-confirmation/layout.tsx` | FIXED |
+| robots.txt: checkout/order-confirmation disallowed | `public/robots.txt` | FIXED |
+| OAI-SearchBot added to robots.txt | `public/robots.txt` | FIXED |
+| Ghost sitemap-page entry removed | `src/app/sitemap.ts` | FIXED |
+| Em dashes removed from MeetTheFounder | `src/components/home/MeetTheFounder.tsx` | FIXED |
+| Blog related posts locale-filtered | `src/app/[locale]/blog/[slug]/page.tsx` | FIXED |
+| Blog author attribution (Arun Chopra) | `src/app/[locale]/blog/[slug]/page.tsx` | FIXED |
+| Tandoor temperature inconsistency fixed | `src/i18n/en.json`, `nl.json` | FIXED |
+| RSL 1.0 license line added | `public/llms.txt` | FIXED |
+| `public/logo.png` now exists | `public/logo.png` | FIXED |
 
 ### Top 5 Critical Issues
+1. **240-frame JPEG canvas hero (14 MB)** - destroys LCP; canvas is not a valid LCP candidate; 14 MB on mount with 300vh scroll lock; unchanged since prior audit
+2. **OG image file missing: `/public/og/home-og.jpg` does not exist** - every page and blog post serves a 404 to AI crawlers and social preview scrapers
+3. **Restaurant schema `logo` and `image` use WordPress CDN URL** - `constants.ts:31` still points to a WordPress upload path that will 404 in production; `public/logo.png` exists and should replace it
+4. **Thuisbezorgd and Uber Eats still under old name "Red Fort Indian Street Food"** - NAP mismatch actively suppresses local pack positions; live conversion leak on menu page
+5. **`schema.ts` is an empty placeholder** - violates CLAUDE.md architecture; `aggregateRating` hardcoded in 15+ files with no update mechanism
 
-1. **JobPosting schema expired** — `validThrough: '2025-12-31'` is in the past. Google has already stopped showing the vacancy page in job rich results.
-2. **Delivery URLs link to a different brand** — Thuisbezorgd and Uber Eats links on the menu and takeaway pages point to "Red Fort Indian Street Food", not Chopras. This damages entity coherence for AI search and is a conversion failure.
-3. **OG image file missing** — `/og/home-og.jpg` is declared in metadata but `public/og/` does not exist. Every social media share of the site produces a blank card.
-4. **Google Maps embed broken** — The iframe uses Place ID `0x0:0x0` (a placeholder). The embed does not connect to the real Google Business Profile.
-5. **No `llms.txt`** — AI crawlers (ChatGPT, Perplexity, Claude) receive no structured identity signal about the restaurant.
-
-### Top 5 Quick Wins (under 30 min each)
-
-1. Change `redirect('/en')` to `permanentRedirect('/en')` in `src/app/page.tsx`
-2. Update `validThrough` from `'2025-12-31'` to `'2026-12-31'` in `src/app/[locale]/vacancy/page.tsx`
-3. Add `poster="/images/hero/hero-poster.webp"` to the `<video>` tag in `HeroSection.tsx`
-4. Fix `acceptsReservations: 'True'` → `acceptsReservations: true` in homepage schema
-5. Add 4 security headers to `next.config.mjs`
+### Top 5 Quick Wins (under 30 minutes each)
+1. Fix `RESTAURANT.logo` in `constants.ts:31` to `https://chopras.nl/logo.png` (1-line change; propagates to all downstream schema)
+2. Add `'Westland'` to `areaServed` array in `src/app/[locale]/page.tsx:83` (1-line change)
+3. Fix `hasMenu` to be locale-aware: `hasMenu: \`${SITE_URL}/${locale}/menu\`` in `page.tsx` (move schema inside component)
+4. Add Monday-closed `OpeningHoursSpecification` to homepage schema (3-line addition)
+5. Add `Content-Security-Policy` header to `next.config.mjs`
 
 ---
 
-## Section 1 — Technical SEO (Score: 62/100)
+## 1. Technical SEO - Score: 81 / 100  (prior: 71, +10)
 
-### 1.1 Redirect Chain
+### Confirmed Fixed Since Prior Audit
+- `SearchAction` / `potentialAction` removed from WebSite schema - `src/app/[locale]/layout.tsx:55-60`
+- `font-display: swap` on Cormorant Garamond - `src/app/[locale]/layout.tsx:18`
+- `font-display: swap` on DM Sans - `src/app/[locale]/layout.tsx:25`
+- `adjustFontFallback: false` removed from Cormorant - `src/app/[locale]/layout.tsx:13-19`
+- HSTS: `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload` - `next.config.mjs:51`
+- X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy - `next.config.mjs:52-55`
+- Checkout noindex: `robots: { index: false, follow: false }` - `src/app/[locale]/checkout/layout.tsx:3-7`
+- Order-confirmation noindex - `src/app/[locale]/order-confirmation/layout.tsx:3-7`
+- robots.txt disallows all checkout and order-confirmation paths - `public/robots.txt:5-8`
+- OAI-SearchBot `Allow: /` added - `public/robots.txt:29-30`
+- Ghost `sitemap-page` entry removed - `src/app/sitemap.ts`
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| R1 | Root `/` → `/en` uses 307 Temporary redirect, not 308 Permanent. Google treats this as reversible and does not fully consolidate PageRank. | **Critical** | `src/app/page.tsx`, `src/middleware.ts` |
+### Passing
+- Canonical tags: every page exports `alternates.canonical` correctly
+- Hreflang: every page has `en`, `nl`, and `x-default` (pointing to `en`) - consistent across 19+ pages
+- 18 legacy flat-URL redirects in `next.config.mjs` all use `permanent: true` (308), no redirect chains
+- Middleware correctly 308s locale-less paths to `/en/...`
+- `poweredByHeader: false` suppresses server fingerprinting
+- AVIF/WebP image formats correctly configured
+- `next/image` used consistently - no raw `<img>` tags found
+- GPTBot, ClaudeBot, PerplexityBot, Google-Extended, anthropic-ai, OAI-SearchBot all explicitly allowed
 
-**Fix `src/app/page.tsx`:**
-```ts
-import { permanentRedirect } from 'next/navigation'
-export default function RootPage() { permanentRedirect('/en') }
-```
+### Issues
 
-**Fix `src/middleware.ts` (line 28):**
-```ts
-return NextResponse.redirect(new URL(`/en${pathname === '/' ? '' : pathname}`, request.url), 308)
-```
+**CRITICAL - Canvas hero kills LCP**
+`src/components/sections/HeroSection.tsx:50-57`
+240 JPEG frames (14 MB total) loaded via `new window.Image()` on mount with no lazy loading or priority. The LCP element is a `<canvas>` - not a valid LCP candidate. Googlebot falls back to the largest text block. The `height: '300vh'` scroll container locks 300 viewport-heights of scroll before any other content is reachable. Expected LCP on 4G: 8-15 seconds (Poor band). Completely unchanged from prior audit.
 
-### 1.2 Security Headers
+**HIGH - No Content-Security-Policy header**
+`next.config.mjs:47-58`
+No `Content-Security-Policy` header. XSS protection absent for Google Maps embeds and GoHighLevel forms. Five security headers were added in this session; CSP was not included.
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| SH1 | No HTTP security headers configured. Missing: X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy. | **Critical** | `next.config.mjs` |
+**HIGH - Logo URL in `constants.ts` still points to WordPress CDN**
+`src/lib/constants.ts:31`
+`logo: 'https://chopras.nl/wp-content/uploads/2025/11/Chopras-logo-main-500-x-300-px7.png'` - a WordPress media path that will 404 once WordPress is no longer serving at that domain. `public/logo.png` exists and should replace this. All downstream schema references update automatically once `constants.ts` is changed.
 
-**Fix — add to `next.config.mjs`:**
-```js
-async headers() {
-  return [{
-    source: '/(.*)',
-    headers: [
-      { key: 'X-Frame-Options', value: 'DENY' },
-      { key: 'X-Content-Type-Options', value: 'nosniff' },
-      { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-      { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
-    ],
-  }]
-},
-```
+**HIGH - `hasMenu` in Restaurant schema is not locale-aware**
+`src/app/[locale]/page.tsx:81`
+`hasMenu: 'https://chopras.nl/menu'` triggers a 301 redirect for all Google crawlers. The Restaurant schema is declared as a module-level `const` outside the page component and does not have access to `locale`. The object must be moved inside `LocaleHomePage` to use `hasMenu: \`${SITE_URL}/${locale}/menu\``.
 
-### 1.3 Hreflang
+**MEDIUM - Blog hreflang incomplete for Dutch-only posts**
+`src/app/[locale]/blog/[slug]/page.tsx:26-31`
+When `post.language === 'nl'`, the `languages` object sets `x-default` to `/en/blog` (the listing page). For NL-only posts, `x-default` should point to the NL post URL, not the EN blog index.
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| H2 | Blog posts generate hreflang for both EN and NL locales, but posts are language-specific. A Dutch post served at `/en/blog/` is a content/locale mismatch. | **High** | `src/app/[locale]/blog/[slug]/page.tsx` |
+**LOW - robots.txt disallow paths missing trailing slashes**
+`public/robots.txt:5-8`
+`Disallow: /en/checkout` (no trailing slash). Some crawlers may not match `/en/checkout/` (with slash) or `?` variants. Defence in depth warrants trailing slashes. Low severity because noindex metadata is also in place.
 
-### 1.4 Schema URL Values
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| CA2 | `url` and `hasMenu` in Restaurant schema hardcoded to `https://chopras.nl` (root, triggers redirect). Should point to locale-prefixed canonical URLs. | **Medium** | `src/app/[locale]/page.tsx` lines 58, 75 |
-
-### 1.5 URL Structure
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| U1 | Several CTAs use raw `<a>` instead of Next.js `<Link>`, causing full page reloads. | **Medium** | `src/app/[locale]/page.tsx:243`, `src/app/[locale]/blog/[slug]/page.tsx:124` |
-| U2 | Blog post body links use locale-less paths (`/menu`, `/contact`) — Googlebot follows a redirect on each. | **Medium** | `src/lib/blog-data.ts` |
-
-### 1.6 Internal Linking
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| IL1 | Contact page "Reserve a Table" CTA links back to itself (`${base}/contact`). | **Medium** | `src/app/[locale]/contact/page.tsx:192` |
-
-### 1.7 AI Crawler Robots
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| C1 | No explicit rules for AI crawlers (GPTBot, ClaudeBot, PerplexityBot). Currently all allowed via wildcard — a policy decision to make explicit. | **Low** | `public/robots.txt` |
-
-### 1.8 IndexNow
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| IN1 | IndexNow not implemented. Bing/Yandex receive no instant notification on new content. | **Low** | New deploy hook needed |
+**LOW - IndexNow not implemented**
+No `indexnow*.txt` key file in `/public/`. Supported by Bing and Yandex for instant re-crawl on content changes.
 
 ---
 
-## Section 2 — Content Quality (Score: 74/100)
+## 2. Content Quality - Score: 79 / 100  (prior: 74, +5)
 
-### 2.1 E-E-A-T
+### Confirmed Fixed Since Prior Audit
+- Em dashes removed from MeetTheFounder.tsx (lines 38, 63, 79 - all replaced with ` - `)
+- Blog related posts locale-filtered: `.filter((p) => p.slug !== post.slug && p.language === locale)` - `src/app/[locale]/blog/[slug]/page.tsx:50`
+- Blog author attribution: `author: { '@type': 'Person', name: 'Arun Chopra', ... }` - `src/app/[locale]/blog/[slug]/page.tsx:58`
+- Tandoor temperature fixed in `en.json:96` (now "around 400 degrees C") and `nl.json:96` (now "ongeveer 400 graden C")
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| EE1 | No named chef or owner anywhere on the site. Google QRG requires attributable expertise for restaurant content. | **High** | `src/i18n/en.json`, `src/app/[locale]/page.tsx` story section |
-| EE2 | Halal certification claimed but certifying body (HIC, ISWA, etc.) never named. | **High** | `src/lib/faq-data.ts:33`, `src/app/[locale]/halal-food-den-haag/page.tsx` |
-| EE3 | 3 hardcoded reviews (Priya S., Mark van der Berg, Fatima K.) — not sourced from verified platforms. | **Medium** | `src/i18n/en.json` review keys |
-| EE4 | No About page exists. The story section is ~110 words. | **Medium** | New file: `src/app/[locale]/about/page.tsx` |
+### E-E-A-T Summary
 
-### 2.2 Thin Content
+| Dimension | Score |
+|---|---|
+| Experience | 17 / 20 |
+| Expertise | 19 / 25 |
+| Authoritativeness | 17 / 25 |
+| Trustworthiness | 22 / 30 |
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| TC1 | Location pages (Rijswijk, Delft, Zoetermeer) pass the doorway test but share near-identical body structure. Need one genuinely unique element per city. | **High** | `src/app/[locale]/indian-restaurant-*/page.tsx` |
-| TC2 | `indian-takeaway-den-haag` has ~120 words of body content. Minimum for a service page is ~800 words. | **High** | `src/app/[locale]/indian-takeaway-den-haag/page.tsx` |
-| TC3 | Delivery links point to "redfort-indian-street-food" / "red-fort-indian-street-food" on Thuisbezorgd and Uber Eats — a different brand name. | **Critical** | `src/app/[locale]/menu/page.tsx:122-133`, `src/app/[locale]/indian-takeaway-den-haag/page.tsx:58,61` |
+### Strengths
+- `MeetTheFounder.tsx` provides genuine first-person founder narrative with specific culinary origins (Delhi, Mumbai, Rajasthan)
+- Butter chicken page: overnight yogurt marinade, 45-minute tomato reduction, Moti Mahal historical attribution, actual price (18.50 EUR)
+- Tandoor temperature claim (400 degrees C) is now consistent across all pages
+- Halal landing page provides unusually precise compliance detail including cross-contamination and alcohol-in-cooking
+- Allergen notice cites EU Regulation 1169/2011
+- Location pages (Rijswijk, Delft, Zoetermeer) show genuine local knowledge
 
-### 2.3 Duplicate Content / Keyword Cannibalization
+### Issues
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| DC1 | Blog posts are served at both `/en/blog/[slug]` and `/nl/blog/[slug]` with identical content regardless of the post's `language` field. | **Critical** | `src/app/[locale]/blog/[slug]/page.tsx:10-14,44` |
-| DC2 | `/indian-food-netherlands` exists as both a programmatic page AND a blog post — direct keyword cannibalization. | **Critical** | `src/lib/blog-data.ts` (slug 'indian-food-netherlands'), `src/app/[locale]/indian-food-netherlands/page.tsx` |
+**P0 - Wrong Thuisbezorgd URL (critical conversion leak)**
+`src/app/[locale]/menu/page.tsx:143`
+`href="https://www.thuisbezorgd.nl/en/menu/redfort-indian-street-food"` sends users to a competitor. Active conversion leak on the highest-traffic transactional page. The correct Chopras Thuisbezorgd URL must be obtained from the operator.
 
-### 2.4 Title Tags and Meta Descriptions
+**P1 - Thin content: tandoori-den-haag (~180 words of editorial prose)**
+`src/app/[locale]/tandoori-den-haag/page.tsx:106-118`
+Three short paragraphs before the dish card grid. No FAQ section rendered despite FAQ data in the file. Well below the 800-word service page minimum.
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| MT1 | Blog post meta titles contain hardcoded "2025" year that will become stale. | **Medium** | `src/lib/blog-data.ts:7,310` |
-| MT2 | Vacancy meta description: "fastest growing Indian restaurant in Den Haag" — unverifiable superlative claim. | **Medium** | `src/app/[locale]/vacancy/page.tsx:21-22` |
-| MT3 | JobPosting `validThrough: '2025-12-31'` expired. Google suppresses these from Jobs search. | **Critical** | `src/app/[locale]/vacancy/page.tsx:43,50,58` |
+**P1 - Thin content: biryani-den-haag (~210 words)**
+`src/app/[locale]/biryani-den-haag/page.tsx:107-119`
+FAQ schema is generated (lines 59-68) but no visible FAQ section rendered in JSX. Inconsistent with all other dish pages.
 
-### 2.5 Homepage Content Depth
+**P1 - No halal certification body named**
+`src/app/[locale]/halal-food-den-haag/page.tsx:55-66`, `src/lib/faq-data.ts:34`
+"Certified halal suppliers" stated everywhere but the certifying authority is never named. Required for trust verification under QRG.
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| CD1 | Story section is ~110 words — far below what the layout space offers. Should be 250–300 words with specific founding details. | **Medium** | `src/i18n/en.json`, `src/i18n/nl.json` story keys |
-| CD2 | Menu page has no server-rendered editorial text — only the client-side `MenuPageClient` component. Google cannot index menu item details without JS execution. | **Medium** | `src/app/[locale]/menu/page.tsx` |
+**P1 - No privacy policy page**
+No privacy policy, cookie policy, or terms route exists under `src/app/[locale]/`. Required under GDPR (Netherlands) and a QRG trust signal. The site collects personal data via multiple GHL forms.
 
-### 2.6 FAQ Schema Volume
+**P1 - No visible author byline on blog posts**
+`src/app/[locale]/blog/[slug]/page.tsx`
+Author "Arun Chopra" is in the BlogPosting JSON-LD but there is no visible byline in the rendered HTML. QRG Experience signal requires a visible human author, not just machine-readable metadata.
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| FQ1 | `homeFaqs` has 28 questions injected into FAQPage schema. Google recommends ≤10 for optimal rich results. Some answers list 30+ dishes. | **Medium** | `src/lib/faq-data.ts`, `src/app/[locale]/page.tsx:86-93` |
+**P2 - FAQ content quality issues**
+`src/lib/faq-data.ts:6,14,18-19,86-91`
+American English spellings ("flavors", "cozy", "recognized") throughout home FAQ answers. Unverified claims: "Kids Menu with surprise toys" (line 18-19), loyalty/membership programme with "exclusive discounts" (lines 86-91). Neither claim is corroborated anywhere else in the codebase.
 
-### 2.7 Opening Hours Discrepancy
+**P2 - Gluten-free claim without cross-contamination caveat**
+`src/lib/faq-data.ts:38`
+Claims dishes are "naturally gluten-free" in a kitchen that produces wheat-based flatbreads.
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| HR1 | FAQ answer for opening hours states "4:30 PM to 10:30 PM" but schema and `constants.ts` say 15:00–22:00. AI systems will cite conflicting times. | **High** | `src/lib/faq-data.ts` (hours answer) |
+**P2 - No blog author field in BlogPost data type**
+`src/lib/blog-data.ts`
+Author is hardcoded in the page component, not a property on the data type. No visible byline rendered for readers.
 
----
+**P2 - Internal linking gaps**
+Halal page mentions Nikah/Walima but does not link to `/indian-wedding-catering-den-haag`. Dish pages do not cross-link to each other or to blog posts.
 
-## Section 3 — Schema / Structured Data (Score: 52/100)
-
-### 3.1 Critical Schema Errors
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| SD1 | `acceptsReservations: 'True'` — should be boolean `true`. String "True" is invalid per schema.org. | **Critical** | `src/app/[locale]/page.tsx:76` |
-| SD2 | All three JobPosting schemas have `validThrough: '2025-12-31'` (expired) and `datePosted: '2025-01-01'`. Google will not show rich results. | **Critical** | `src/app/[locale]/vacancy/page.tsx:43,50,58` |
-| SD3 | JobPosting schemas are missing the `description` property — required by Google for job rich results. | **Critical** | `src/app/[locale]/vacancy/page.tsx` |
-| SD4 | Menu `url` property is `https://chopras.nl/menu` — a non-existent locale-less path. Should be `https://chopras.nl/en/menu`. | **Critical** | `src/app/[locale]/menu/page.tsx` |
-| SD5 | Location page `url` on Delft page set to the landing page URL instead of the restaurant's primary URL. | **Critical** | `src/app/[locale]/indian-restaurant-delft/page.tsx` |
-
-### 3.2 Missing High-Value Schema
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| SM1 | `schema.ts` is an empty placeholder. All schema is duplicated across 20+ page files — violates CLAUDE.md architecture rule. | **High** | `src/lib/schema.ts` |
-| SM2 | `aggregateRating` missing from all Restaurant schema blocks. Required for star display in Google search results and AI Overviews. | **High** | `src/app/[locale]/page.tsx`, contact page, location pages |
-| SM3 | `sameAs` array missing from all Restaurant schemas — TripAdvisor URL exists in `constants.ts` but is never used in schema. | **High** | `src/app/[locale]/page.tsx:53-78` |
-| SM4 | No `WebSite` schema anywhere on the site. Needed for Sitelinks Search Box eligibility. | **High** | `src/app/[locale]/layout.tsx` |
-| SM5 | Blog posts use `Article` instead of `BlogPosting`. Missing `image`, `dateModified`, `mainEntityOfPage`, `publisher.logo`. | **High** | `src/app/[locale]/blog/[slug]/page.tsx` |
-| SM6 | `logo` property missing from Restaurant schema on homepage (logo URL is in `constants.ts`). | **Medium** | `src/app/[locale]/page.tsx` |
-| SM7 | `currenciesAccepted: "EUR"` and `paymentAccepted` missing from Restaurant schema. | **Medium** | `src/app/[locale]/page.tsx` |
-| SM8 | FAQPage schema missing from 8+ pages that render FAQ accordions (halal, wedding catering, corporate events, butter chicken, party venue, etc.). | **Medium** | All programmatic pages with FAQ sections |
-| SM9 | BreadcrumbList missing from catering, biryani, halal, wedding catering, party venue, and all other programmatic pages. | **Medium** | Multiple page files |
-| SM10 | No `@id` property on any Restaurant schema block — needed for Google Knowledge Panel entity disambiguation. | **Medium** | All schema blocks |
-| SM11 | `openingHoursSpecification` missing from contact page Restaurant schema block. | **Low** | `src/app/[locale]/contact/page.tsx` |
-| SM12 | `EventVenue` schema on party venue page missing `url` and `maximumAttendeeCapacity: 80`. | **Low** | `src/app/[locale]/party-venue-den-haag/page.tsx` |
-
-### 3.3 Schema Type Inconsistencies
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| ST1 | Catering page uses `FoodEstablishment` instead of `Restaurant` — less specific type. | **Medium** | `src/app/[locale]/catering/page.tsx` |
-| ST2 | Location pages use `['LocalBusiness', 'Restaurant']` array; homepage uses `'Restaurant'` alone. Should be consistent. | **Medium** | Location page files |
+**P3 - Hardcoded English allergen string on menu page**
+`src/app/[locale]/menu/page.tsx:110`
+"Allergen information available on request" is hardcoded in English regardless of locale.
 
 ---
 
-## Section 4 — Sitemap (Score: 75/100)
+## 3. Schema / Structured Data - Score: 72 / 100  (prior: 65, +7)
 
-### 4.1 Sitemap Issues
+### Confirmed Fixed Since Prior Audit
+- SearchAction / potentialAction removed from global WebSite schema - `src/app/[locale]/layout.tsx:55-60`
+- BlogPosting author "Arun Chopra" added - `src/app/[locale]/blog/[slug]/page.tsx:58`
+- BlogPosting publisher logo dimensions corrected to `width: 512, height: 512` - `src/app/[locale]/blog/[slug]/page.tsx:63`
+- Homepage Restaurant block now has `@id: 'https://chopras.nl/#restaurant'` - `src/app/[locale]/page.tsx:100`
+- Arun Chopra Person schema block added to homepage with `worksFor` linkage
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| SI1 | Blog sitemap generates URLs for both locales for every post regardless of the post's `language` field. Dutch posts get an `/en/blog/` URL. | **Medium** | `src/app/sitemap.ts:41-48` |
-| SI2 | Static pages use `lastModified: new Date()` — emits today's date on every build, causing Google to distrust the `lastmod` field entirely. | **Medium** | `src/app/sitemap.ts:34` |
-| SI3 | `generateStaticParams` in blog post page generates both locale paths for every post, serving identical content at both URLs. | **Medium** | `src/app/[locale]/blog/[slug]/page.tsx:10-14` |
-| SI4 | Location pages are at priority `0.7`, same as blog posts — should be `0.8` given high-intent local search value. | **Low** | `src/app/sitemap.ts` |
+### What IS Implemented
+- **Homepage:** Restaurant (full, with `@id`), FAQPage (29 questions), Person (Arun Chopra)
+- **Menu page:** Menu / MenuSection / MenuItem, BreadcrumbList
+- **Blog posts:** BlogPosting (with author), BreadcrumbList
+- **Catering page:** FoodEstablishment (should be Restaurant), BreadcrumbList
+- **Contact page:** Restaurant, BreadcrumbList
+- **Party venue:** EventVenue, FAQPage
+- **Landing pages:** Restaurant, FAQPage on most
+- **Global layout:** WebSite (clean, no broken SearchAction)
 
----
+### Issues
 
-## Section 5 — Performance / Core Web Vitals (Score: 58/100)
+**CRITICAL - schema.ts is still a placeholder**
+`src/lib/schema.ts:1`
+CLAUDE.md mandates "All schema markup generated through /src/lib/schema.ts". Currently contains only `// placeholder`. All schema scattered as inline literals across 15+ page files. `aggregateRating` (`ratingValue: '4.7'`, `reviewCount: '83'`) is hardcoded in at least 15 places with no update mechanism.
 
-### 5.1 LCP — HIGH RISK
+**HIGH - Restaurant `logo` and `image` use WordPress CDN URL (will 404)**
+`src/app/[locale]/page.tsx:59,99`
+Both point to `https://chopras.nl/wp-content/uploads/2025/11/...`. `public/logo.png` now exists. The BlogPosting publisher logo correctly references `https://chopras.nl/logo.png`. The Restaurant entity is inconsistent.
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| LCP1 | Hero `<video>` has no `poster` attribute. Without it, the browser renders a black frame until the first video frame decodes — unpredictable LCP timing. | **High** | `src/components/sections/HeroSection.tsx` |
-| LCP2 | `preload="auto"` on the hero video competes with render-critical resources during LCP window. | **High** | `src/components/sections/HeroSection.tsx` |
-| LCP3 | No mobile hero image — on small screens the above-fold area is a plain dark div; LCP candidate becomes the font-rendered H1. | **High** | `src/components/sections/HeroSection.tsx` |
-| LCP4 | `style={{ willChange: 'transform' }}` inline style on video violates CLAUDE.md and provides no performance benefit. | **Low** | `src/components/sections/HeroSection.tsx` |
+**HIGH - Restaurant `@id` missing from contact and catering page schemas**
+`src/app/[locale]/contact/page.tsx:40`, `src/app/[locale]/catering/page.tsx:44`
+Neither carries `'@id': 'https://chopras.nl/#restaurant'`. Without a shared `@id`, Google cannot treat all blocks as the same entity.
 
-### 5.2 CLS — MEDIUM RISK
+**HIGH - FoodEstablishment should be Restaurant on catering page**
+`src/app/[locale]/catering/page.tsx:46`
+`FoodEstablishment` is a generic supertype. Google's Restaurant rich result requires `@type: 'Restaurant'`.
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| CLS1 | Both fonts use `display: 'swap'` — font swap on Cormorant Garamond headings causes CLS. Use `adjustFontFallback: 'Georgia'` in `next/font` config, change DM Sans to `display: 'optional'`. | **Medium** | `src/app/[locale]/layout.tsx` |
-| CLS2 | Dead `src/app/globals.css` file with conflicting `font-family: Arial` body rule — if accidentally imported, overrides all brand fonts. Delete this file. | **Medium** | `src/app/globals.css` |
+**HIGH - OpeningHoursSpecification missing Monday-closed entry**
+`src/app/[locale]/page.tsx:73-80` and all location pages
+Only open days listed. Add: `{ '@type': 'OpeningHoursSpecification', dayOfWeek: 'Monday', opens: '00:00', closes: '00:00' }`.
 
-### 5.3 Bundle Size
+**HIGH - Person schema has no `@id` or `sameAs`**
+`src/app/[locale]/page.tsx:126`
+No `@id` (e.g. `https://chopras.nl/#arun-chopra`). No `sameAs` linking to any external identity graph. Google cannot consolidate BlogPosting author, homepage Person block, and founder reference into a single Knowledge Graph entity.
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| BS1 | `framer-motion` v12 is in `package.json` but used nowhere in the codebase. May add up to 30 kB gzipped to the shared chunk. | **Medium** | `package.json` |
+**MEDIUM - BlogPosting `dateModified` always equals `datePublished`**
+`src/app/[locale]/blog/[slug]/page.tsx:57`
+Both set to `post.publishedAt`. Add optional `updatedAt` field to `BlogPost` type.
 
-### 5.4 Image Optimization Config
+**MEDIUM - Menu schema `url` missing locale**
+`src/app/[locale]/menu/page.tsx:45`
+`url: 'https://chopras.nl/menu'` - should be `https://chopras.nl/${locale}/menu`.
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| IC1 | `images.formats` not set — Next.js won't serve AVIF. `images.minimumCacheTTL` defaults to 60 seconds (too aggressive). | **Low** | `next.config.mjs` |
-| IC2 | `FeaturedDishes` images missing `sizes` prop — browser fetches incorrectly sized srcset. | **Low** | `src/components/sections/FeaturedDishes.tsx` |
+**MEDIUM - WebSite schema missing `@id` and `inLanguage`**
+`src/app/[locale]/layout.tsx:55-60`
+Both `/en` and `/nl` pages emit identical WebSite schema with no language signal. Add `'@id': 'https://chopras.nl/#website'` and `inLanguage: params.locale`.
 
----
+**MEDIUM - BlogPosting image is a generic OG fallback pointing to a missing file**
+`src/app/[locale]/blog/[slug]/page.tsx:67`
+`image: '${SITE_URL}/og/home-og.jpg'` - this file does not exist in `public/og/`. Both the broken URL and the lack of per-post images are issues.
 
-## Section 6 — AI Search Readiness / GEO (Score: 64/100)
+**MEDIUM - aggregateRating hardcoded across 15+ files**
+`src/app/[locale]/page.tsx:84`, `catering/page.tsx:62`, `contact/page.tsx:55`, and 12+ landing pages
+No single source of truth. When the review count changes, every file must be updated manually.
 
-### 6.1 Critical GEO Gaps
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| GEO1 | No `llms.txt` file. AI crawlers receive no structured identity signal. | **Critical** | `public/llms.txt` (create new) |
-| GEO2 | Delivery URLs link to "Red Fort Indian Street Food" — a different brand. AI entity disambiguation will attribute this outbound link to the wrong entity. | **Critical** | `src/app/[locale]/menu/page.tsx:122-133` |
-| GEO3 | Opening hours discrepancy: FAQ says 4:30 PM, schema says 15:00. AI systems cite conflicting times. | **High** | `src/lib/faq-data.ts` |
-| GEO4 | No `sameAs` in any Restaurant schema — prevents AI systems from resolving "Chopras Den Haag" to the TripAdvisor/Google Maps entity. | **High** | `src/app/[locale]/page.tsx:53-78` |
-| GEO5 | `suitableForDiet: HalalDiet` absent from homepage schema (only on halal page). Most common AI query about this restaurant. | **High** | `src/app/[locale]/page.tsx` |
-| GEO6 | No YouTube channel linked (strongest AI citation correlation signal at ~0.737). | **Medium** | `src/lib/constants.ts` social object |
-| GEO7 | No Facebook or Instagram social presence linked anywhere. AI brand mention density is weak. | **Medium** | `src/lib/constants.ts` |
-| GEO8 | No Dutch-language long-form blog content — Dutch AI queries ("beste Indiase restaurant Den Haag") have no Dutch prose to cite. | **Medium** | `src/lib/blog-data.ts` |
-
----
-
-## Section 7 — Local SEO (Score: 61/100)
-
-### 7.1 GBP Signals
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| LS1 | Google Maps embed uses placeholder Place ID `0x0:0x0` — iframe is not connected to the actual GBP listing. | **Critical** | `src/components/sections/LocationSection.tsx:27` |
-| LS2 | No direct link to leave a Google review anywhere on the site. | **High** | `src/components/sections/ReviewsSection.tsx:39` |
-| LS3 | Reviews CTA links to a Google search URL, not the direct GBP place page. | **Medium** | `src/components/sections/ReviewsSection.tsx:39` |
-
-### 7.2 Schema Local Signals
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| LS4 | `aggregateRating` missing — blocks star display in local pack and AI Overviews. | **High** | `src/app/[locale]/page.tsx` |
-| LS5 | No `@id: "https://chopras.nl/#restaurant"` on any schema block — prevents Knowledge Panel association. | **Medium** | All schema blocks |
-| LS6 | Location pages schema uses `['LocalBusiness', 'Restaurant']` array inconsistently vs homepage `'Restaurant'`. | **Medium** | Location page files |
-
-### 7.3 Citations and Directories
-
-| ID | Issue | Severity | External |
-|----|-------|----------|---------|
-| LS7 | Not listed on eet.nu (largest Dutch restaurant directory). | **High** | eet.nu |
-| LS8 | No Facebook Business Page linked — major citation gap. | **High** | facebook.com |
-| LS9 | Not listed on Zomato Netherlands — strong Indian restaurant vertical. | **Medium** | zomato.com |
-| LS10 | No Foursquare listing. | **Low** | foursquare.com |
-
-### 7.4 Location Page Opportunities
-
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| LS11 | No cross-links between Rijswijk, Delft, and Zoetermeer pages. | **Low** | Location page files |
-| LS12 | `voorburg` and `leidschendam` are named service areas but have no dedicated pages. | **Low** | New pages if warranted |
+**Note on FAQPage**
+FAQPage rich results are restricted by Google post-August 2023 for commercial sites. Keeping the markup is correct for GEO (AI citation) purposes.
 
 ---
 
-## Section 8 — Images (Score: 30/100)
+## 4. Sitemap - Score: 85 / 100  (prior: 80, +5)
 
-### 8.1 Critical Image Gaps
+### Confirmed Fixed
+- Ghost `sitemap-page` entry removed - `src/app/sitemap.ts`. All 19 entries in `staticPages` have verified corresponding `page.tsx` files.
 
-| ID | Issue | Severity | Location |
-|----|-------|----------|---------|
-| IM1 | `public/og/home-og.jpg` declared in metadata but the entire `public/og/` folder does not exist. All social shares produce blank cards. | **Critical** | `src/app/[locale]/page.tsx:47`, `public/og/` (create) |
-| IM2 | 18 of 19 routes have no `openGraph.images` set at all. | **Critical** | All page files |
-| IM3 | Hero `<video>` has no `poster` image — no static image on hero for social crawlers or mobile users. | **High** | `src/components/sections/HeroSection.tsx` |
-| IM4 | 8 of 14 featured dishes have no image (Butter Chicken, Biryani, Paneer Butter Masala, Mutton Rogan Josh, Chopra Special Paneer, Chilli Paneer, Chilli Chicken, Mango Lassi). | **High** | `src/lib/menu-data.ts` |
-| IM5 | 4 homepage/catering placeholder divs with text labels instead of real images. | **High** | `src/app/[locale]/page.tsx:136,210`, `src/app/[locale]/catering/page.tsx:131,165` |
+### URL Inventory
+- 19 static pages x 2 locales = 38 URLs
+- 8 English blog posts + 2 Dutch blog posts = 10 URLs
+- **Total: 48 URLs** (well under the 50,000 limit)
 
-### 8.2 Schema and Alt Text
+### Passing
+- URL format correct: `https://chopras.nl/{locale}/{slug}`
+- Blog posts correctly language-scoped
+- Blog posts use real `publishedAt` dates for `lastModified`
+- Checkout and order-confirmation correctly excluded
+- No sitemap index needed at current scale
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| IM6 | No `ImageObject` type used in any schema block. Blog `Article` schema missing `image` property. | **High** | `src/app/[locale]/blog/[slug]/page.tsx` |
-| IM7 | No image sitemap — food photography not exposed to Google Images. | **Medium** | `src/app/sitemap.ts` |
+### Still Open
 
-### 8.3 Asset Optimization
+**INFO - Deprecated `changeFrequency` and `priority` fields present**
+`src/app/sitemap.ts:8-26`
+Google ignores both fields entirely. Recommend removing both from all entries to simplify maintenance.
 
-| ID | Issue | Severity | File |
-|----|-------|----------|------|
-| IM8 | Logo served from external WordPress CDN (`chopras.nl/wp-content/uploads/...`). No local fallback. | **Medium** | `src/lib/constants.ts:31` |
-| IM9 | `FeaturedDishes` images missing `sizes` prop — incorrect srcset generation. | **Low** | `src/components/sections/FeaturedDishes.tsx` |
-
-### 8.4 Image Generation Plan
-
-These assets need to be created (see ACTION-PLAN.md for prompts):
-
-| Asset | Dimensions | Priority |
-|-------|-----------|---------|
-| `public/og/home-og.jpg` | 1200×630 | Critical |
-| `public/og/catering-og.jpg` | 1200×630 | Critical |
-| `public/og/menu-og.jpg` | 1200×630 | Critical |
-| `public/images/hero/hero-poster.webp` | 1920×1080 | High |
-| `public/images/hero/hero-mobile.webp` | 828×1792 | High |
-| `public/images/dishes/butter-chicken.webp` | 800×600 | High |
-| `public/images/dishes/chicken-biryani.webp` | 800×600 | High |
-| `public/images/dishes/paneer-butter-masala.webp` | 800×600 | High |
-| `public/images/dishes/mutton-rogan-josh.webp` | 800×600 | High |
-| `public/images/dishes/chopra-special-paneer.webp` | 800×600 | Medium |
-| `public/images/dishes/chilli-paneer.webp` | 800×600 | Medium |
-| `public/images/dishes/chilli-chicken.webp` | 800×600 | Medium |
-| `public/images/dishes/mango-lassi.webp` | 800×600 | Medium |
-| `public/images/restaurant/interior.webp` | 1200×900 | High |
-| `public/images/catering/event-hall.webp` | 1200×900 | High |
-| `public/og/blog-og.jpg` | 1200×630 | Medium |
+**LOW - All 19 static pages share one identical `lastmod` date**
+`src/app/sitemap.ts:8-26`
+Every entry carries `lastMod: '2026-04-03'`. Google recognises synthetic identical timestamps and discounts the signal.
 
 ---
 
-## Appendix A — Build Output Summary
+## 5. Performance (Core Web Vitals) - Score: 38 / 100  (prior: 35, +3)
 
-- 67 static pages generated successfully
-- 0 TypeScript errors
-- First Load JS: homepage 108 kB, menu 115 kB, shared baseline 87.3 kB
-- `framer-motion` dependency present but unused — remove for ~30 kB savings
+### Confirmed Fixed
+- `font-display: swap` on DM Sans - `src/app/[locale]/layout.tsx:25`
+- `adjustFontFallback: false` removed from Cormorant - restores size-adjusted fallback, reduces CLS
+- Image optimisation config: AVIF/WebP, 30-day TTL, correct `deviceSizes` - `next.config.mjs:4-8`
+- Five security headers added
 
-## Appendix B — Files Audited
+### Issues
 
-Core architecture: `src/app/layout.tsx`, `src/app/[locale]/layout.tsx`, `src/app/page.tsx`, `src/middleware.ts`, `next.config.mjs`, `tailwind.config.ts`, `package.json`, `public/robots.txt`, `src/app/sitemap.ts`
+**CRITICAL - Canvas hero 240-frame LCP killer - completely unresolved**
+`src/components/sections/HeroSection.tsx:50-57`
+`useEffect` unconditionally calls `FRAMES.forEach` and constructs 240 `new window.Image()` objects on mount. All 240 JPEGs (14 MB) begin fetching in parallel immediately, saturating the browser's connection pool. `<canvas>` is not an LCP candidate. The browser falls back to the `<h1>` text as LCP. The `height: '300vh'` scroll container at line 100 also locks 300 viewport-heights before any other content is reachable.
 
-Data files: `src/lib/constants.ts`, `src/lib/blog-data.ts`, `src/lib/menu-data.ts`, `src/lib/faq-data.ts`, `src/lib/schema.ts`, `src/lib/useTranslations.ts`, `src/i18n/en.json`, `src/i18n/nl.json`
+**HIGH - `public/images/` directory is 361 MB of raw unoptimised assets**
+`public/images/` (361 MB on disk)
+Files in `/public` bypass Next.js image optimisation entirely - served verbatim at source resolution and file size. Only `<Image>` component renders via `/_next/image` receive AVIF/WebP conversion. Any direct URL reference to `/images/...` delivers raw PNGs.
 
-All 19 page routes in `src/app/[locale]/`
+**HIGH - `blur-sm` filter on scroll animations causes GPU layer thrashing**
+`src/components/sections/WhySection.tsx:65,79`, `src/components/sections/StorySection.tsx:21,60`
+`filter: blur()` forces the browser to paint the element into its own compositing layer on every animation frame. Nine section components use this pattern. Replace with `opacity` + `translateY` only.
 
-Components: `Header.tsx`, `Footer.tsx`, `HeroSection.tsx`, `FeaturedDishes.tsx`, `ReviewsSection.tsx`, `TrustBar.tsx`, `LocationSection.tsx`, `FaqAccordion.tsx`, `MenuPageClient.tsx`
+**HIGH - No `Cache-Control` header for `/public/images/` static assets**
+`next.config.mjs:47-58`
+The headers rule applies only security headers. `/public` files are served with `max-age=0, must-revalidate` by default. `minimumCacheTTL` applies only to `/_next/image`. Repeat visitors re-download the 14 MB frame set on every visit.
+
+**MEDIUM - No `priority` prop on above-fold StorySection image**
+`src/components/sections/StorySection.tsx:27-33`
+`fill` image with no `priority` attribute - Next.js defaults to `loading="lazy"`, suppressing the preload link and delaying LCP on desktop viewports where this image is above the fold.
+
+**MEDIUM - `logo.png` used as favicon/apple-icon with no size differentiation**
+`src/app/[locale]/layout.tsx:45-48`
+All three icon slots point to the same `/logo.png`. Separate `src/app/icon.png` and `src/app/apple-icon.png` files exist in the repo but are not referenced - the layout hardcodes `/logo.png` for all three.
+
+**MEDIUM - `useInView` hook lacks `rootMargin` pre-trigger buffer**
+`src/hooks/useInView.ts:4`
+`threshold: 0.1` with no `rootMargin` means elements only begin animating when 10% has entered the viewport. Adding `rootMargin: '0px 0px -50px 0px'` would fire the observer before the element enters view.
+
+**MEDIUM - Inline `style` prop in HeroSection violates CLAUDE.md**
+`src/components/sections/HeroSection.tsx:107-110`
+Gradient overlay uses an inline `style` prop. CLAUDE.md rule: "Never use inline styles - always Tailwind classes".
+
+### Positive
+- No third-party analytics, chat widgets, or GTM - significant TBT benefit
+- `next/image` used consistently with descriptive `alt` on all checked usages
+- AVIF/WebP image formats configured
+- Font preloading handled automatically by Next.js font system
+
+---
+
+## 6. GEO / AI Search Readiness - Score: 83 / 100  (prior: 79, +4)
+
+### Confirmed Fixed
+- RSL 1.0 license line in `public/llms.txt:3` (`> License: RSL 1.0`)
+- OAI-SearchBot `Allow: /` in `public/robots.txt:29-30`
+- SearchAction removed from global WebSite schema
+- BlogPosting author attribution (Arun Chopra, jobTitle, url)
+- Entity disambiguation block present in llms.txt (lines 38-40)
+
+### AI Crawler Access Status
+
+| Bot | Status |
+|---|---|
+| GPTBot | Explicitly allowed |
+| OAI-SearchBot | Explicitly allowed (newly added) |
+| ClaudeBot | Explicitly allowed |
+| anthropic-ai | Explicitly allowed |
+| PerplexityBot | Explicitly allowed |
+| Google-Extended | Explicitly allowed |
+| Googlebot | Explicitly allowed |
+| CCBot (training) | Allowed by wildcard (not explicitly blocked) |
+| Bingbot | Allowed by wildcard |
+
+### llms.txt Assessment
+Well-structured and machine-readable. RSL 1.0 correctly placed. Entity disambiguation section explicitly separates Chopras from Deepak Chopra and the Chopra Center. Dense with citation-ready facts: full address, telephone, email, hours, price range, delivery platforms, event capacity range, named founder.
+**Gaps:** No LinkedIn or Wikidata entry in Social section. No `last-modified` field.
+
+### Platform-Specific Scores
+| Platform | Score | Primary Gap |
+|---|---|---|
+| Google AI Overview | 81/100 | Broken OG image, static reviewCount, wp-content logo |
+| ChatGPT | 79/100 | No Person sameAs, no Wikidata, broken BlogPosting image |
+| Perplexity | 85/100 | Strong llms.txt; weakened by static reviewCount cross-reference risk |
+| Bing Copilot | 76/100 | No Person sameAs, no LinkedIn |
+
+### Issues
+
+**HIGH - OG image file missing from disk**
+`src/app/[locale]/blog/[slug]/page.tsx:67`, `src/app/[locale]/page.tsx`
+`image: 'https://chopras.nl/og/home-og.jpg'` - the `public/og/` directory is empty. Every page and blog post is serving a broken image URL to AI crawlers and social preview scrapers.
+
+**HIGH - Person schema has no `sameAs` array**
+`src/app/[locale]/page.tsx:124-132`
+The standalone Person block for Arun Chopra has no `sameAs`. Without at minimum a LinkedIn URL, Google and Bing cannot associate this Person node with any external identity graph.
+
+**MEDIUM - Person schema `url` links to homepage, not a dedicated /about page**
+`src/app/[locale]/page.tsx:101`, `src/app/[locale]/blog/[slug]/page.tsx:58`
+No `/about` or `/en/about` route exists. AI systems resolving this URL land on the homepage, which is not a biographical document.
+
+**MEDIUM - `dateModified` equals `datePublished` on all blog posts**
+`src/app/[locale]/blog/[slug]/page.tsx:57`
+Freshness scoring and AI citation preference favour recently modified content. Any content update is invisible to crawlers.
+
+**MEDIUM - Restaurant `logo` and `image` use WordPress CDN URL**
+`src/app/[locale]/page.tsx:59,99`
+Will 404 in production. `public/logo.png` exists and should replace both fields.
+
+**LOW - Wikidata / Wikipedia entity missing for Chopras and Arun Chopra**
+No `sameAs` Wikidata link in Restaurant or Person schema. Highest-leverage unresolved item for ChatGPT and Google AI Overview citation eligibility. External action required.
+
+**LOW - llms.txt has no LinkedIn or Wikidata entry in Social section**
+`public/llms.txt:43-47`
+LinkedIn is absent from the social section. Relevant for Arun Chopra Person entity.
+
+**LOW - CCBot (training crawler) not explicitly blocked**
+`public/robots.txt`
+The wildcard `Allow: /` permits CCBot (Common Crawl training dataset). If the goal is to permit AI search but restrict training scraping, add `User-agent: CCBot` / `Disallow: /`.
+
+---
+
+## 7. Local SEO - Score: 63 / 100  (prior: 61, +2)
+
+### Confirmed Fixed
+- `suitableForDiet: https://schema.org/HalalDiet` added to homepage and halal page schemas
+- `@id: https://chopras.nl/#restaurant'` added to homepage schema
+- Founder Person schema block added to homepage with `worksFor` linkage
+- Footer sources all NAP from `constants.ts` with no hardcoded divergence
+- Location pages exist for Rijswijk, Delft, and Zoetermeer with `OpeningHoursSpecification`, `geo`, and `areaServed`
+
+### NAP Consistency Check
+
+| Source | Name | Consistent? |
+|---|---|---|
+| `constants.ts` | Chopras Indian Restaurant | Reference |
+| Homepage schema | Chopras Indian Restaurant | YES |
+| Contact page schema | Chopras Indian Restaurant | YES |
+| Footer HTML | Chopras Indian Restaurant | YES |
+| Rijswijk / Delft / Zoetermeer schemas | Chopras Indian Restaurant | YES |
+| Thuisbezorgd deeplink | **Red Fort Indian Street Food** | **MISMATCH** |
+| Uber Eats deeplink | **Red Fort Indian Street Food** | **MISMATCH** |
+
+### Issues
+
+**CRITICAL - Delivery platform NAP mismatch: old brand name in live deeplinks**
+`src/app/[locale]/indian-takeaway-den-haag/page.tsx:92-95`
+Both Thuisbezorgd (`/redfort-indian-street-food`) and Uber Eats (`/red-fort-indian-street-food/...`) URLs use the old brand name. A comment acknowledges this as a TODO. Users clicking these links are sent to a competitor-named entity. Operator must rename both platform listings.
+
+**CRITICAL - `areaServed` missing "Westland" in homepage schema**
+`src/app/[locale]/page.tsx:83`
+Homepage `areaServed` has 6 values; `constants.ts:44` lists 7. "Westland" is absent. One-line fix.
+
+**HIGH - No Monday-closed `OpeningHoursSpecification` in any schema**
+`src/app/[locale]/page.tsx:73-80`, all location pages, `src/app/[locale]/contact/page.tsx` (no OHS at all)
+Only open days listed. Without an explicit closed-day spec, search engines may infer Monday as having unspecified hours, causing incorrect Knowledge Panel display.
+
+**HIGH - No dedicated location pages for Voorburg, Leidschendam, or Westland**
+`src/app/[locale]/` directory
+Three of seven declared `serviceAreas` have no `page.tsx`. The footer `NEAR_YOU_LINKS` also does not link to these three areas. Per Whitespark 2026, dedicated service pages are the number 1 local organic ranking factor.
+
+**HIGH - Halal certification body never named**
+`src/app/[locale]/halal-food-den-haag/page.tsx:55-66`
+"Certified halal suppliers" stated but no certifying body named. No `hasCredential` in schema.
+
+**HIGH - Coordinates at 4 decimal places (11-metre precision)**
+`src/lib/constants.ts:11`
+`lat: 52.0583, lng: 4.2932` - Google recommends 5+ decimal places (1-metre precision) for restaurant-level accuracy. Fix: verify against GBP and update (approximately `52.05831, 4.29320`).
+
+**HIGH - Schema `url` in homepage block points to root domain, not locale-specific URL**
+`src/app/[locale]/page.tsx:60`
+`url: 'https://chopras.nl'` is the bare root. The canonical for the EN homepage is `https://chopras.nl/en`. Disconnect between schema `url` and `alternates.canonical`.
+
+**MEDIUM - No "Write a Google Review" deeplink anywhere**
+No page contains `https://search.google.com/local/writereview?placeid=PLACE_ID`. Requires operator to supply GBP Place ID.
+
+**MEDIUM - No Dutch Tier 1 citation directory listings in `sameAs`**
+`src/app/[locale]/page.tsx:91-97`
+`sameAs` contains TripAdvisor, Google Maps, Facebook, Instagram, YouTube. No Yelp.nl, ANWB, Nationale Bedrijvengids, Goudengids.nl, or Thuisafgehaald.
+
+**MEDIUM - Contact page schema missing `openingHoursSpecification` and `areaServed`**
+`src/app/[locale]/contact/page.tsx:40-63`
+The contact page is typically the highest-traffic local landing page yet its schema omits hours, area served, servesCuisine, and suitableForDiet.
+
+**LOW - Maps embed on contact page hidden on mobile**
+`src/app/[locale]/contact/page.tsx:196`
+`hidden lg:block` makes the embed invisible on mobile. Google crawls mobile-first. A mobile-visible embed would strengthen the GBP signal.
+
+**LOW - Maps embed URL does not use CID-based place ID**
+`src/app/[locale]/contact/page.tsx:198`
+Embed targets an address query string, not a verified GBP place ID. Using the `!1s` parameter pins the embed to the verified listing.
+
+---
+
+## 8. On-Page SEO - Score: 75 / 100  (prior: 72, +3)
+
+### What Improved
+- Checkout and order-confirmation now have `robots: noindex` (no transactional pages in index)
+- SearchAction removed (eliminates Rich Results Test failure signal)
+- Blog related posts locale-filtered (no more cross-locale broken links)
+- Blog author attribution in schema
+- Author visible in JSON-LD (but not as a rendered HTML byline)
+
+### Issues
+
+**HIGH - `hasMenu` URL is not locale-aware**
+`src/app/[locale]/page.tsx:81`
+See Technical section. Affects every visitor landing on either locale homepage.
+
+**MEDIUM - Blog hreflang `x-default` incorrect for NL-only posts**
+`src/app/[locale]/blog/[slug]/page.tsx:29`
+`x-default` points to `/en/blog` (listing page) for Dutch posts. Should point to the NL post URL or be omitted.
+
+**MEDIUM - No visible author byline on blog articles**
+`src/app/[locale]/blog/[slug]/page.tsx`
+Author is in JSON-LD only. QRG Experience dimension requires a visible, human-attributable byline in the rendered HTML.
+
+**MEDIUM - Hardcoded English allergen string on `/nl/menu`**
+`src/app/[locale]/menu/page.tsx:110`
+Dutch visitors see an English string ("Allergen information available on request") embedded inside a localised page.
+
+**LOW - Heading hierarchy on location pages**
+`src/app/[locale]/indian-restaurant-rijswijk/page.tsx:174`
+"Also Near Den Haag" section is H2 but is logically a subsection. Change to H3.
+
+---
+
+## CLAUDE.md Compliance
+
+| Rule | Status |
+|---|---|
+| No em dashes | PASS - violations in MeetTheFounder.tsx fixed |
+| No contractions | PASS - no contractions found in audited files |
+| App Router only | PASS |
+| Data in /src/lib files | FAIL - schema.ts is `// placeholder`; schema inline in 15+ page files |
+| Next.js Image always | PASS |
+| Server Components by default | PARTIAL FAIL - many sections are `'use client'` for `useInView` only |
+| TypeScript strict | PASS - no `any` types found |
+| Never hardcode restaurant data | FAIL - `aggregateRating` hardcoded in 15+ files; logo URL hardcoded in constants.ts as broken CDN path |
+| Never use inline styles | FAIL - `HeroSection.tsx:107-110` uses inline `style` prop |
+
+---
+
+## What Is Already Working Well
+
+- Clean i18n architecture with hreflang and x-default correctly set on every page
+- 18 legacy redirects all 308ing to locale-prefixed URLs, no chains
+- HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy all now set
+- Checkout and order-confirmation correctly noindexed and disallowed in robots.txt
+- Halal landing page is genuinely above-average for both GEO and local SEO
+- Blog content is high-quality, specific, and non-generic
+- Static generation means AI crawlers read all content without JS
+- llms.txt present, well-structured, RSL 1.0 licensed, with entity disambiguation
+- All major AI crawlers explicitly allowed in robots.txt (including OAI-SearchBot)
+- No third-party scripts loading anywhere (significant TBT benefit)
+- AVIF/WebP image formats, font subsetting, `next/image` throughout
+- BlogPosting schema now has correct author attribution
+- Homepage Restaurant entity now has consistent `@id`

@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { getRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import CateringForm from '@/components/catering/CateringForm'
 import CateringFaqAccordion from '@/components/sections/CateringFaqAccordion'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
@@ -41,47 +42,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const cateringSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FoodEstablishment',
-  name: 'Chopras Indian Restaurant',
-  url: 'https://chopras.nl',
-  telephone: '+31630645930',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Leyweg 986',
-    addressLocality: 'Den Haag',
-    postalCode: '2545 GW',
-    addressCountry: 'NL',
-  },
-  areaServed: [
-    { '@type': 'City', name: 'Den Haag' }, { '@type': 'City', name: 'Rijswijk' },
-    { '@type': 'City', name: 'Delft' }, { '@type': 'City', name: 'Zoetermeer' },
-    { '@type': 'City', name: 'Voorburg' }, { '@type': 'City', name: 'Leidschendam' },
-  ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
-  sameAs: [
-    'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-    'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
-    'https://www.facebook.com/choprasrestaurant',
-    'https://www.instagram.com/choprasrestaurant',
-    'https://www.youtube.com/@choprasrestaurant',
-  ],
-}
-
 export default function LocaleCateringPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
   const base = `/${locale}`
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-      { '@type': 'ListItem', position: 2, name: tr.common.nav.catering, item: `${SITE_URL}/${locale}/catering` },
-    ],
-  }
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+    { name: tr.common.nav.catering, item: `${SITE_URL}/${locale}/catering` },
+  ])
 
   const eventTypes = [
     { Icon: Heart, label: 'Weddings' },
@@ -127,8 +96,8 @@ export default function LocaleCateringPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={cateringSchema as Record<string, unknown>} />
-      <JsonLd data={breadcrumbSchema as Record<string, unknown>} />
+      <JsonLd data={getRestaurantSchema(locale)} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* SECTION 1  -  HERO */}
       <section className="relative min-h-[60vh] flex items-center justify-center">

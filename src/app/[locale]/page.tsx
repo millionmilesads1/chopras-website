@@ -11,9 +11,10 @@ import ReviewsSection from '@/components/sections/ReviewsSection'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import LocationSection from '@/components/sections/LocationSection'
 import FinalCta from '@/components/sections/FinalCta'
-import { homeFaqs } from '@/lib/faq-data'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { SITE_URL } from '@/lib/constants'
+import { getRestaurantSchema, getFounderSchema, getFaqPageSchema } from '@/lib/schema'
+import { homeFaqs } from '@/lib/faq-data'
 
 type Props = { params: { locale: Locale } }
 
@@ -52,84 +53,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const restaurantSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Restaurant',
-  name: 'Chopras Indian Restaurant',
-  image: 'https://chopras.nl/wp-content/uploads/2025/11/Chopras-logo-main-500-x-300-px7.png',
-  url: 'https://chopras.nl',
-  telephone: '+31630645930',
-  email: 'info@chopras.nl',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Leyweg 986',
-    addressLocality: 'Den Haag',
-    postalCode: '2545 GW',
-    addressCountry: 'NL',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: 52.0583, longitude: 4.2932 },
-  servesCuisine: ['Indian', 'North Indian', 'Street Food', 'Indo-Chinese', 'Halal'],
-  priceRange: '\u20ac\u20ac',
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '16:30',
-      closes: '22:30',
-    },
-  ],
-  hasMenu: 'https://chopras.nl/menu',
-  acceptsReservations: true,
-  areaServed: ['Den Haag', 'Rijswijk', 'Delft', 'Zoetermeer', 'Voorburg', 'Leidschendam'],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.7',
-    reviewCount: '83',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  sameAs: [
-    'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-    'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
-    'https://www.facebook.com/choprasrestaurant',
-    'https://www.instagram.com/choprasrestaurant',
-    'https://www.youtube.com/@choprasrestaurant',
-  ],
-  suitableForDiet: 'https://schema.org/HalalDiet',
-  logo: 'https://chopras.nl/wp-content/uploads/2025/11/Chopras-logo-main-500-x-300-px7.png',
-  '@id': 'https://chopras.nl/#restaurant',
-  founder: { '@type': 'Person', name: 'Arun Chopra', jobTitle: 'Founder', url: 'https://chopras.nl/en' },
-}
-
 export default function LocaleHomePage({ params }: Props) {
   const { locale } = params
 
   // Suppress unused variable warning  -  translations available to child components via prop
   void getTranslations(locale)
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: homeFaqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-    })),
-  }
-
   return (
     <>
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
-      <JsonLd data={faqSchema as Record<string, unknown>} />
-      <JsonLd data={{
-        '@context': 'https://schema.org',
-        '@type': 'Person',
-        name: 'Arun Chopra',
-        jobTitle: 'Founder and Head Chef',
-        description: 'Arun Chopra founded Chopras Indian Restaurant in Den Haag in 2023 with the mission to serve authentic North Indian cuisine exactly as it is eaten in India.',
-        worksFor: { '@type': 'Restaurant', name: 'Chopras Indian Restaurant', url: 'https://chopras.nl' },
-        url: 'https://chopras.nl/en',
-      } as Record<string, unknown>} />
+      <JsonLd data={getRestaurantSchema(locale)} />
+      <JsonLd data={getFounderSchema()} />
+      <JsonLd data={getFaqPageSchema(homeFaqs)} />
 
       {/* 1  -  Hero */}
       <HeroSection locale={locale} />

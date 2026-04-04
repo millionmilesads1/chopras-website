@@ -8,7 +8,7 @@ export const RESTAURANT = {
     country: 'Netherlands',
     countryCode: 'NL',
     full: 'Leyweg 986, 2545 GW Den Haag, Netherlands',
-    coordinates: { lat: 52.0583, lng: 4.2932 },
+    coordinates: { lat: 52.04874, lng: 4.27684 },
   },
   contact: {
     phone: '+31630645930',
@@ -28,7 +28,10 @@ export const RESTAURANT = {
   social: {
     tripadvisor: 'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805',
   },
-  logo: 'https://chopras.nl/wp-content/uploads/2025/11/Chopras-logo-main-500-x-300-px7.png',
+  googlePlaceId: 'ChIJDUXdqSuxxUcRa6FxjpzGMvk',
+  googleMapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJDUXdqSuxxUcRa6FxjpzGMvk',
+  reviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJDUXdqSuxxUcRa6FxjpzGMvk',
+  logo: 'https://chopras.nl/logo.png',
   cuisines: ['North Indian', 'Indo-Chinese', 'Indian Street Food'],
   features: [
     'Halal Certified',

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { SITE_URL } from '@/lib/constants'
+import { getLocalRestaurantSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -35,26 +36,11 @@ export default function IndianRestaurantZoetermeerPage({ params }: Props) {
   const base = `/${locale}`
   const isNl = locale === 'nl'
 
-  const restaurantSchema = {
-    '@context': 'https://schema.org', '@type': ['LocalBusiness', 'Restaurant'], name: RESTAURANT.name,
-    url: `${SITE_URL}/${locale}/indian-restaurant-zoetermeer`,
-    telephone: RESTAURANT.contact.phone, email: RESTAURANT.contact.email,
-    address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode },
-    geo: { '@type': 'GeoCoordinates', latitude: RESTAURANT.address.coordinates.lat, longitude: RESTAURANT.address.coordinates.lng },
-    servesCuisine: ['North Indian', 'Indian Street Food'], priceRange: RESTAURANT.priceRange,
-    openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '16:30', closes: '22:30' },
-    ],
-    areaServed: ['Zoetermeer', 'Den Haag', 'South Holland'],
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
-    sameAs: [
-      'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-      'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
-      'https://www.facebook.com/choprasrestaurant',
-      'https://www.instagram.com/choprasrestaurant',
-      'https://www.youtube.com/@choprasrestaurant',
-    ],
-  }
+  const restaurantSchema = getLocalRestaurantSchema(
+    locale,
+    ['Zoetermeer', 'Den Haag', 'South Holland'],
+    `${SITE_URL}/${locale}/indian-restaurant-zoetermeer`,
+  )
 
   return (
     <>
@@ -171,9 +157,9 @@ export default function IndianRestaurantZoetermeerPage({ params }: Props) {
 
       <section className="bg-[#FFFAF5] py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-2xl text-[#1B2B5E] mb-6">
+          <h3 className="font-heading text-2xl text-[#1B2B5E] mb-6">
             {isNl ? 'Ook Nabij Den Haag' : 'Also Serving These Areas Near Den Haag'}
-          </h2>
+          </h3>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href={`${base}/indian-restaurant-rijswijk`} className="flex-1 bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-[#D4AF37] transition-colors">
               <p className="font-heading text-[#1B2B5E] font-bold">{isNl ? 'Indiaas Restaurant bij Rijswijk' : 'Indian Restaurant Near Rijswijk'}</p>

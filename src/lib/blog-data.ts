@@ -12,6 +12,7 @@ export const blogPosts: BlogPost[] = [
     language: 'en',
     publishedAt: '2025-03-15',
     readingTime: 5,
+    author: 'Arun Chopra',
     excerpt:
       'Den Haag has Indian restaurants. What it did not have  -  until Chopras opened on Leyweg in 2023  -  was one that got it completely right.',
     content: `
@@ -73,6 +74,7 @@ export const blogPosts: BlogPost[] = [
     language: 'en',
     publishedAt: '2025-04-02',
     readingTime: 5,
+    author: 'Arun Chopra',
     excerpt:
       'The word halal on a menu does not always mean what it should. Here is what to actually look for  -  and why Chopras in Den Haag gets it right.',
     content: `
@@ -133,6 +135,7 @@ export const blogPosts: BlogPost[] = [
     language: 'nl',
     publishedAt: '2025-04-10',
     readingTime: 5,
+    author: 'Arun Chopra',
     excerpt:
       'Wat serveren we op ons feest? De eeuwige vraag. Indiaas catering van Chopras in Den Haag is het antwoord dat iedereen blij maakt.',
     content: `
@@ -204,6 +207,7 @@ export const blogPosts: BlogPost[] = [
     language: 'en',
     publishedAt: '2025-04-20',
     readingTime: 5,
+    author: 'Arun Chopra',
     excerpt:
       'Vegetarian does not mean compromise. At Chopras in Den Haag, the plant-based menu is where some of the most extraordinary dishes on the menu actually live.',
     content: `
@@ -256,6 +260,7 @@ export const blogPosts: BlogPost[] = [
     language: 'en',
     publishedAt: '2025-05-01',
     readingTime: 5,
+    author: 'Arun Chopra',
     excerpt:
       'Real Indian street food is loud, messy, explosive with flavour and completely unlike anything else. Chopras in Den Haag serves the real thing.',
     content: `
@@ -314,6 +319,7 @@ export const blogPosts: BlogPost[] = [
     language: 'en' as const,
     publishedAt: '2025-05-15',
     readingTime: 6,
+    author: 'Arun Chopra',
     excerpt: 'Indian food has been part of the Netherlands for longer than most people realise. Here is everything you need to know about finding and eating it well.',
     content: `
 <p>Indian food has been embedded in Dutch daily life for longer than most Dutch people realise. The story does not begin with a restaurant opening in Amsterdam in the 1990s. It begins in Suriname, in the 1870s, when the Dutch colonial government brought indentured workers from the Bhojpuri-speaking regions of what is now Uttar Pradesh and Bihar to replace the labour freed by emancipation. These Hindustani workers brought their food traditions  -  the slow-cooked dals, the roti, the rice and curry combinations, the use of whole spices  -  that became embedded in Surinamese life over the following century.</p>
@@ -381,6 +387,7 @@ export const blogPosts: BlogPost[] = [
     language: 'nl' as const,
     publishedAt: '2025-05-20',
     readingTime: 5,
+    author: 'Arun Chopra',
     excerpt: 'Den Haag heeft veel Indiase restaurants. Maar welk is echt het beste? Wij geven je een eerlijk antwoord.',
     content: `
 <p>Den Haag heeft een lange geschiedenis met Indiaas eten. De Hindoestaanse gemeenschap  -  nakomelingen van Surinaamse migranten met roots in Noord-India  -  heeft de smaak en de verwachtingen van deze stad gevormd. Een restaurant dat hier succesvol wil zijn met Indiaas eten, moet het echt goed doen. De stamgasten weten precies wat verse kruiden smaken, hoe een echte dal ruikt, en of de biryani werkelijk in de dum-techniek bereid is of gewoon rijst met een kleur erover.</p>
@@ -446,6 +453,7 @@ export const blogPosts: BlogPost[] = [
     language: 'nl' as const,
     publishedAt: '2025-06-01',
     readingTime: 5,
+    author: 'Arun Chopra',
     excerpt: 'Butter chicken is het meest bestelde Indiase gerecht ter wereld. Maar de meeste versies vallen tegen. Zo herken je een echte.',
     content: `
 <p>Butter chicken  -  murgh makhani in het Hindi  -  is het meest bestelde Indiase gerecht ter wereld. Het staat op de kaart van vrijwel elk Indiaas restaurant in Nederland. Het is het gerecht dat mensen bestellen als ze voor het eerst Indiaas eten. En het is het gerecht dat, als het goed gemaakt wordt, iemand voor de rest van hun leven overtuigt van de kwaliteit van de Indiase keuken.</p>
@@ -503,6 +511,7 @@ export const blogPosts: BlogPost[] = [
     language: 'en' as const,
     publishedAt: '2025-10-01',
     readingTime: 6,
+    author: 'Arun Chopra',
     excerpt: 'Diwali is about more than lights and fireworks. The food is half the celebration. Here is how to get it right in Den Haag.',
     content: `
 <p>Diwali is described most often by its lights  -  the diyas flickering on windowsills, the fireworks, the candles in every room of the house. But for anyone who grew up with the festival, the food is equally central. The mithai boxes arriving from relatives. The smell of ghee heating on the stove for halwa. The gathering of family around a table set with more dishes than the surface can reasonably hold. The lights are what Diwali looks like. The food is what it feels like.</p>
@@ -564,6 +573,7 @@ export const blogPosts: BlogPost[] = [
     language: 'en' as const,
     publishedAt: '2025-06-15',
     readingTime: 7,
+    author: 'Arun Chopra',
     excerpt: 'Indian street food is one of the most extraordinary cuisines in the world. Here is everything you need to know before you order.',
     content: `
 <p>Indian street food is not a reduced version of Indian restaurant food. It is a completely separate culinary tradition  -  different philosophy, different techniques, different logic entirely. Restaurant Indian food is about slow-cooked depth: hours-long sauces, marinated proteins, the sustained heat of a tandoor. Street food is about immediate impact: bold flavours that arrive all at once, contrasting textures in a single mouthful, sweetness and sourness and spice and cream all present simultaneously in something you eat in two bites standing up.</p>

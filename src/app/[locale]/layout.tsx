@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
 import '@/styles/globals.css'
 import Header from '@/components/layout/Header'
@@ -9,6 +9,7 @@ import ScrollToTop from '@/components/ScrollToTop'
 import DisableScrollRestoration from '@/components/DisableScrollRestoration'
 import { type Locale } from '@/lib/useTranslations'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { getWebSiteSchema } from '@/lib/schema'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -16,15 +17,19 @@ const cormorant = Cormorant_Garamond({
   style: ['normal', 'italic'],
   variable: '--font-cormorant',
   display: 'swap',
-  adjustFontFallback: false,
 })
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-dm-sans',
-  display: 'optional',
+  display: 'swap',
 })
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -42,22 +47,15 @@ export const metadata: Metadata = {
     siteName: RESTAURANT.name,
   },
   twitter: { card: 'summary_large_image' },
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+    shortcut: '/logo.png',
+  },
 }
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'nl' }]
-}
-
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Chopras Indian Restaurant',
-  url: 'https://chopras.nl',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: 'https://chopras.nl/en/menu',
-    'query-input': 'required name=search_term_string',
-  },
 }
 
 export default function LocaleLayout({
@@ -67,6 +65,8 @@ export default function LocaleLayout({
   children: React.ReactNode
   params: { locale: Locale }
 }) {
+  const websiteSchema = getWebSiteSchema(params.locale)
+
   return (
     <html lang={params.locale} className={`${cormorant.variable} ${dmSans.variable}`}>
       <body className="bg-brand-bg text-brand-text font-body antialiased">

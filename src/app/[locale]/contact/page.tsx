@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { MapPin, Phone, Mail, Clock, Bus, Car } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { getRestaurantSchema } from '@/lib/schema'
 import ContactForm from '@/components/contact/ContactForm'
 import TrustBar from '@/components/sections/TrustBar'
 import ReservationForm from '@/components/contact/ReservationForm'
@@ -37,34 +38,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const restaurantSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Restaurant',
-  name: 'Chopras Indian Restaurant',
-  url: 'https://chopras.nl',
-  telephone: '+31630645930',
-  email: 'info@chopras.nl',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Leyweg 986',
-    addressLocality: 'Den Haag',
-    postalCode: '2545 GW',
-    addressCountry: 'NL',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: 52.0583, longitude: 4.2932 },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
-  sameAs: [
-    'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-    'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
-    'https://www.facebook.com/choprasrestaurant',
-    'https://www.instagram.com/choprasrestaurant',
-    'https://www.youtube.com/@choprasrestaurant',
-  ],
-}
-
 export default function LocaleContactPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
+  const restaurantSchema = getRestaurantSchema(locale)
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -195,7 +172,7 @@ export default function LocaleContactPage({ params }: Props) {
               {/* Map  -  hidden on mobile */}
               <div className="rounded-3xl overflow-hidden hidden lg:block" style={{ height: '280px' }}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.2!2d4.2765!3d52.0583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47890e3caeb27bfd%3A0x8c0b2b2a5c3e4f9a!2sLeyweg%20986%2C%202545%20GW%20Den%20Haag!5e0!3m2!1sen!2snl!4v1680000000000!5m2!1sen!2snl"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2457.8!2d4.2742654!3d52.0487367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b12ba9dd450d%3A0xf932c69c8e71a16b!2sChopras%20Indian%20Restaurant%20Den%20Haag!5e0!3m2!1sen!2snl!4v1744000000000!5m2!1sen!2snl"
                   width="100%"
                   height="280"
                   style={{ border: 0 }}

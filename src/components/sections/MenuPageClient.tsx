@@ -137,21 +137,22 @@ export default function MenuPageClient() {
                       className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group"
                     >
                       {/* Image */}
-                      <div className="aspect-[4/3] relative overflow-hidden">
-                        {item.image ? (
+                      <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-[#1B2B5E]/5 to-[#D4AF37]/10">
+                        {/* Fallback always rendered behind the image */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="font-heading text-4xl text-[#1B2B5E]/20">
+                            {item.name.charAt(0)}
+                          </span>
+                        </div>
+                        {item.image && (
                           <Image
                             src={item.image}
                             alt={`${item.name} at Chopras Indian Restaurant Den Haag`}
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                            onError={(e) => { e.currentTarget.style.display = 'none' }}
                           />
-                        ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-[#1B2B5E]/5 to-[#D4AF37]/10 flex items-center justify-center">
-                            <span className="font-heading text-[#1B2B5E]/40 text-base text-center px-4">
-                              {item.name}
-                            </span>
-                          </div>
                         )}
                         {badge && (
                           <span
@@ -167,7 +168,7 @@ export default function MenuPageClient() {
                         <h3 className="font-heading text-xl text-[#1A1A1A] font-semibold leading-tight">
                           {item.name}
                         </h3>
-                        <p className="text-[#1A1A1A]/60 text-sm mt-1 leading-relaxed line-clamp-2">
+                        <p className="text-[#1A1A1A]/60 text-sm mt-1 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
                           {item.description}
                         </p>
                         <div className="flex items-center justify-between mt-3">

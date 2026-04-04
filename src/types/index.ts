@@ -35,6 +35,7 @@ export type BlogPost = {
   h1: string
   primaryKeyword: string
   language: 'en' | 'nl'
+  author: string
   excerpt: string
   content: string
   publishedAt: string

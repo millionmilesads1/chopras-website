@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { blogPosts } from '@/lib/blog-data'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { SITE_URL } from '@/lib/constants'
+import { getBlogPostingSchema, getBreadcrumbSchema } from '@/lib/schema'
 
 type Props = { params: { locale: Locale; slug: string } }
 
@@ -46,38 +47,18 @@ export default function LocaleBlogPostPage({ params }: Props) {
 
   const tr = getTranslations(locale)
   const base = `/${locale}`
-  const relatedPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 2)
-
-  const articleJsonLd = {
-    '@context': 'https://schema.org', '@type': 'BlogPosting',
-    headline: post.h1, description: post.metaDescription,
-    datePublished: post.publishedAt,
-    dateModified: post.publishedAt,
-    author: { '@type': 'Person', name: 'Arun Chopra', jobTitle: 'Founder', url: 'https://chopras.nl/en' },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Chopras Indian Restaurant',
-      url: 'https://chopras.nl',
-      logo: { '@type': 'ImageObject', url: 'https://chopras.nl/logo.png' },
-    },
-    url: `${SITE_URL}/${locale}/blog/${post.slug}`,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/${locale}/blog/${post.slug}` },
-    image: `${SITE_URL}/og/home-og.jpg`,
-  }
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-      { '@type': 'ListItem', position: 2, name: tr.common.nav.blog, item: `${SITE_URL}/${locale}/blog` },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}/${locale}/blog/${post.slug}` },
-    ],
-  }
+  const relatedPosts = blogPosts
+    .filter((p) => p.slug !== post.slug && p.language === locale)
+    .slice(0, 2)
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getBlogPostingSchema(post, locale)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: tr.common.nav.blog, item: `${SITE_URL}/${locale}/blog` },
+        { name: post.title, item: `${SITE_URL}/${locale}/blog/${post.slug}` },
+      ])) }} />
 
       {/* Hero */}
       <section className="bg-[#1B2B5E] py-20">
@@ -96,9 +77,11 @@ export default function LocaleBlogPostPage({ params }: Props) {
             </span>
           )}
 
-          <h1 className="font-heading text-3xl md:text-5xl text-white max-w-4xl leading-tight mb-8">
+          <h1 className="font-heading text-3xl md:text-5xl text-white max-w-4xl leading-tight mb-4">
             {post.h1}
           </h1>
+
+          <p className="text-white/60 text-sm mb-6">By {post.author} · Founder, Chopras Indian Restaurant</p>
 
           <div className="flex flex-wrap items-center gap-4 text-white/60 text-sm">
             <span>{formatDate(post.publishedAt, locale)}</span>

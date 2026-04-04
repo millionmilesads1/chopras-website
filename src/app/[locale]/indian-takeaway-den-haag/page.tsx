@@ -88,11 +88,10 @@ export default function IndianTakeawayPage({ params }: Props) {
               <div className="text-4xl mb-4">🏠</div>
               <h3 className="font-heading text-xl text-[#1B2B5E] mb-2">{isNl ? 'Bezorging' : 'Delivery'}</h3>
               <p className="text-gray-600 text-sm mb-4">{isNl ? 'Via Thuisbezorgd of Uber Eats, binnen 5 km van Leyweg' : 'Via Thuisbezorgd or Uber Eats, within 5km of Leyweg'}</p>
-              {/* TODO: Client must update Thuisbezorgd listing name from "Red Fort Indian Street Food" to "Chopras Indian Restaurant" and update this URL */}
-              <a href="https://www.thuisbezorgd.nl/en/menu/redfort-indian-street-food" target="_blank" rel="noopener noreferrer" className="block bg-[#1B2B5E] text-[#D4AF37] px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#0F1F4B] transition-colors mb-2">
+              <a href="https://www.thuisbezorgd.nl/menu/chopras-indian-street-food" target="_blank" rel="noopener noreferrer" className="block bg-[#1B2B5E] text-[#D4AF37] px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#0F1F4B] transition-colors mb-2">
                 {tr.menu.thuisbezorgd}
               </a>
-              <a href="https://www.ubereats.com/nl-en/store/red-fort-indian-street-food/kFKhBtR-W3OkJyl2f6QmUg" target="_blank" rel="noopener noreferrer" className="block border border-[#1B2B5E] text-[#1B2B5E] px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1B2B5E]/5 transition-colors">
+              <a href="https://www.ubereats.com/nl/store/chopras-indian-restaurant/kFKhBtR-W3OkJyl2f6QmUg" target="_blank" rel="noopener noreferrer" className="block border border-[#1B2B5E] text-[#1B2B5E] px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1B2B5E]/5 transition-colors">
                 {tr.menu.ubereats}
               </a>
             </div>

@@ -7,6 +7,7 @@ import MenuHeroSection from '@/components/sections/MenuHeroSection'
 import { menuCategories, menuItems } from '@/lib/menu-data'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { SITE_URL } from '@/lib/constants'
+import { getMenuSchema, getBreadcrumbSchema } from '@/lib/schema'
 
 type Props = { params: { locale: Locale } }
 
@@ -38,45 +39,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const menuSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Menu',
-  name: 'Chopras Indian Restaurant Menu',
-  url: 'https://chopras.nl/menu',
-  hasMenuSection: menuCategories.map((category) => ({
-    '@type': 'MenuSection',
-    name: category.label,
-    hasMenuItem: menuItems
-      .filter((item) => item.category === category.id)
-      .map((item) => ({
-        '@type': 'MenuItem',
-        name: item.name,
-        description: item.description,
-        offers: { '@type': 'Offer', price: item.price.toFixed(2), priceCurrency: 'EUR' },
-      })),
-  })),
-}
-
 export default function LocaleMenuPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
   const base = `/${locale}`
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-      { '@type': 'ListItem', position: 2, name: tr.common.nav.menu, item: `${SITE_URL}/${locale}/menu` },
-    ],
-  }
+  const menuSections = menuCategories.map((category) => ({
+    name: category.label,
+    items: menuItems
+      .filter((item) => item.category === category.id)
+      .map((item) => ({ name: item.name, description: item.description, price: item.price })),
+  }))
 
   const statPills = ['89 Dishes', '12 Categories', '100% Halal', 'Vegetarian Options', 'Fresh Daily']
 
   return (
     <>
-      <JsonLd data={menuSchema} />
-      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={getMenuSchema(locale, menuSections)} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: tr.common.nav.menu, item: `${SITE_URL}/${locale}/menu` },
+      ])} />
 
       {/* HERO  -  scroll-scrubbed butter chicken animation */}
       <MenuHeroSection locale={locale} />
@@ -107,7 +90,7 @@ export default function LocaleMenuPage({ params }: Props) {
               <p className="font-semibold text-[#1A1A1A] text-sm">{tr.menu.allergenTitle}</p>
               <p className="text-[#1A1A1A]/70 text-sm mt-1 leading-relaxed">{tr.menu.allergenText}</p>
               <p className="text-[#D4AF37] text-xs font-medium mt-3 uppercase tracking-widest">
-                Allergen information available on request
+                {tr.menu.allergenRequest}
               </p>
             </div>
           </div>
@@ -140,7 +123,7 @@ export default function LocaleMenuPage({ params }: Props) {
               Reserve a Table
             </Link>
             <a
-              href="https://www.thuisbezorgd.nl/en/menu/redfort-indian-street-food"
+              href="https://www.thuisbezorgd.nl/menu/chopras-indian-street-food"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block border-2 border-[#D4AF37] text-[#D4AF37] px-8 py-4 uppercase tracking-widest text-sm hover:bg-[#D4AF37] hover:text-[#1A1A1A] transition-all"

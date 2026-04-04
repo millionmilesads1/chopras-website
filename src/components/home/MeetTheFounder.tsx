@@ -1,12 +1,21 @@
+'use client'
+
 import Image from 'next/image'
+import { useInView } from '@/hooks/useInView'
 
 export default function MeetTheFounder() {
+  const { ref: photoRef, inView: photoInView } = useInView()
+  const { ref: textRef, inView: textInView } = useInView()
+
   return (
     <section className="bg-[#FFFAF5] py-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT  -  Photo */}
-        <div className="relative">
+        <div
+          ref={photoRef}
+          className={`relative transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${photoInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        >
           <div className="relative aspect-[3/4] max-w-[420px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
               src="/images/restaurant/people-enjoying-food---best.png"
@@ -33,7 +42,10 @@ export default function MeetTheFounder() {
         </div>
 
         {/* RIGHT  -  Story */}
-        <div>
+        <div
+          ref={textRef}
+          className={`transition-all duration-[800ms] delay-100 ease-[cubic-bezier(0.32,0.72,0,1)] ${textInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        >
           {/* Label pill */}
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="h-px w-8 bg-[#D4AF37]" />
@@ -48,7 +60,7 @@ export default function MeetTheFounder() {
           </h2>
 
           <blockquote className="font-heading text-xl md:text-2xl text-[#1B2B5E] italic leading-relaxed border-l-4 border-[#D4AF37] pl-6 mt-8 mb-6">
-            &ldquo;I did not open a restaurant. I opened a kitchen &mdash; the same
+            &ldquo;I did not open a restaurant. I opened a kitchen - the same
             kitchen I grew up watching my mother cook in. The spices are
             the same. The fire is the same. The only thing that changed
             is the address.&rdquo;
@@ -62,7 +74,7 @@ export default function MeetTheFounder() {
               Not made mild for a European palate. The real thing.
             </p>
             <p>
-              Every recipe at Chopras comes from memory &mdash; from kitchens in
+              Every recipe at Chopras comes from memory - from kitchens in
               Delhi, from street corners in Mumbai, from family tables in
               Rajasthan. Arun grinds the spices fresh every morning himself
               because he knows that the moment you open a packet, something

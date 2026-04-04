@@ -2,6 +2,14 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
+Disallow: /en/checkout
+Disallow: /en/checkout/
+Disallow: /nl/checkout
+Disallow: /nl/checkout/
+Disallow: /en/order-confirmation
+Disallow: /en/order-confirmation/
+Disallow: /nl/order-confirmation
+Disallow: /nl/order-confirmation/
 Sitemap: https://chopras.nl/sitemap.xml
 
 User-agent: GPTBot
@@ -20,4 +28,7 @@ User-agent: anthropic-ai
 Allow: /
 
 User-agent: Googlebot
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /

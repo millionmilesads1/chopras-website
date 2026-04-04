@@ -3,6 +3,7 @@
 import { Star } from 'lucide-react'
 import { useInView } from '@/hooks/useInView'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import { RESTAURANT } from '@/lib/constants'
 
 export default function ReviewsSection({ locale = 'en' }: { locale?: Locale }) {
   const tr = getTranslations(locale)
@@ -65,10 +66,19 @@ export default function ReviewsSection({ locale = 'en' }: { locale?: Locale }) {
         ))}
       </div>
 
-      {/* CTA link */}
-      <div className="text-center mt-12">
+      {/* CTA buttons */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
         <a
-          href="https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/"
+          href={RESTAURANT.reviewUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1A1A1A] px-8 py-4 rounded-full font-body font-semibold uppercase tracking-widest text-sm hover:bg-[#F5D36A] transition-all duration-200"
+        >
+          <Star className="w-4 h-4" />
+          Write a Google Review
+        </a>
+        <a
+          href={RESTAURANT.googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="font-body font-semibold text-sm uppercase tracking-widest text-[#1B2B5E] underline-offset-4 hover:underline"

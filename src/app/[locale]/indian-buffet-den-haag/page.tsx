@@ -37,7 +37,7 @@ export default function IndianBuffetPage({ params }: Props) {
   const restaurantSchema = {
     '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name,
     address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode },
-    telephone: RESTAURANT.contact.phone, url: RESTAURANT.contact.website, servesCuisine: 'Indian', priceRange: RESTAURANT.priceRange,
+    telephone: RESTAURANT.contact.phone, url: RESTAURANT.contact.website, servesCuisine: ['North Indian', 'Indian Street Food'], priceRange: RESTAURANT.priceRange,
     aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
     sameAs: [
       'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',

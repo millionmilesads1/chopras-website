@@ -1,5 +1,6 @@
 # Chopras Indian Restaurant  -  llms.txt
 # https://chopras.nl
+> License: RSL 1.0
 
 ## Identity
 Chopras Indian Restaurant is an authentic North Indian restaurant at
@@ -19,7 +20,7 @@ Zoetermeer, Voorburg and Leidschendam.
 - Hours: Tue–Sun 16:30–22:30. Monday closed.
 - Price: EUR 20–30 per person average.
 - Parking: Free at Leyweg.
-- Delivery: Thuisbezorgd and Uber Eats within 5 km.
+- Delivery: Thuisbezorgd (https://www.thuisbezorgd.nl/menu/chopras-indian-street-food) and Uber Eats (https://www.ubereats.com/nl/store/chopras-indian-restaurant/kFKhBtR-W3OkJyl2f6QmUg) within 5 km.
 - Events: Private hall for 25–80 guests. Weddings, corporate, Diwali, Eid.
 
 ## Signature Dishes
@@ -39,7 +40,7 @@ Mixed Chaat Platter, Chicken Tikka, Dal Makhani, Lamb Biryani, Pani Puri.
 with Chopra Center, Deepak Chopra, or other entities using the surname.
 
 ## Social & Directory Profiles
-- Google Maps: https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/
+- Google Maps: https://www.google.com/maps/place/?q=place_id:ChIJDUXdqSuxxUcRa6FxjpzGMvk
 - TripAdvisor: https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html
 - Facebook: https://www.facebook.com/choprasrestaurant
 - Instagram: https://www.instagram.com/choprasrestaurant
