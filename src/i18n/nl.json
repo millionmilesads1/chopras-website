@@ -69,7 +69,7 @@
       "serviceAreas": "Servicegebieden",
       "contact": "Contact",
       "servingAcross": "Authentiek Indiaas eten en catering in heel:",
-      "copyright": "© 2025 Chopras Indiaas Restaurant Den Haag. Alle rechten voorbehouden.",
+      "copyright": "© {year} Chopras Indiaas Restaurant Den Haag. Alle rechten voorbehouden.",
       "allergenNote": "Allergeninformatie beschikbaar op aanvraag.",
       "tripAdvisor": "★ Schrijf een recensie op TripAdvisor",
       "openHours": "Open di–zo: 16:30–22:30",
@@ -126,7 +126,16 @@
     "ctaH2": "Klaar voor Echt Indiaas Eten?",
     "ctaSub": "Jouw tafel staat klaar op Leyweg 986, Den Haag. Open dinsdag tot en met zondag.",
     "ctaMenu": "Bekijk Volledig Menu",
-    "eventPills": ["Bruiloften", "Zakelijke Evenementen", "Verjaardagsfeesten", "Diwali-vieringen", "Babyshowers", "Buurtactiviteiten"]
+    "eventPills": ["Bruiloften", "Zakelijke Evenementen", "Verjaardagsfeesten", "Diwali-vieringen", "Babyshowers", "Buurtactiviteiten"],
+    "founderLabel": "Ontmoet de Oprichter",
+    "founderH2": "De Man Achter Elk Gerecht",
+    "founderQuote": "Ik heb geen restaurant geopend. Ik heb een keuken geopend  -  dezelfde keuken als waar ik mijn moeder zag koken. De kruiden zijn hetzelfde. Het vuur is hetzelfde. Het enige wat veranderd is, is het adres.",
+    "founderP1": "Arun Chopra verhuisde naar Den Haag met één obsessie: dat ergens in deze stad iemand Indiaas eten zou kunnen eten zoals het werkelijk gegeten wordt in India. Niet aangepast. Niet vereenvoudigd. Niet mild gemaakt voor een Europees gehemelte. Het echte werk.",
+    "founderP2": "Elk recept bij Chopras komt uit het geheugen  -  uit keukens in Delhi, van straathoeken in Mumbai, van familietafels in Rajasthan. Arun maalt de kruiden elke ochtend zelf vers omdat hij weet dat zodra je een zakje opent, er al iets verloren gaat.",
+    "founderP3": "Als je bij Chopras eet, eet je niet in een restaurant. Je eet aan iemands tafel. Dat is de enige maatstaf waaraan Arun ooit heeft gekookt.",
+    "founderStat1": "Opgericht 2023 · Leyweg, Den Haag",
+    "founderStat2": "Noord-Indiaas · Streetfood · Tandoor",
+    "founderSignature": "Arun Chopra · Oprichter & Hoofdchef"
   },
   "menu": {
     "heroH1": "Indiaas Restaurant Menu in Den Haag",

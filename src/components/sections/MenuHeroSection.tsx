@@ -104,7 +104,7 @@ export default function MenuHeroSection({ locale = 'en' }: { locale?: Locale }) 
     <div ref={containerRef} style={{ height: '300vh' }}>
       <div className="sticky top-0 h-screen overflow-hidden">
 
-        {/* Canvas — butter chicken frames rendered here */}
+        {/* Canvas  -  butter chicken frames rendered here */}
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
         {/* Gradient overlay */}

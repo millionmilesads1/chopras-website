@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
-import { ChevronDown } from 'lucide-react'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 const FRAME_COUNT = 240
@@ -20,7 +19,6 @@ export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
   const currentFrameRef = useRef(0)
   const rafIdRef = useRef(0)
 
-  // Draw a single frame with object-fit: cover behaviour
   const drawFrame = useCallback((index: number) => {
     const canvas = canvasRef.current
     if (!canvas) return
@@ -38,11 +36,9 @@ export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
 
     let sx = 0, sy = 0, sw = iw, sh = ih
     if (imgAspect > canvasAspect) {
-      // image is wider — crop sides
       sw = ih * canvasAspect
       sx = (iw - sw) / 2
     } else {
-      // image is taller — crop top/bottom
       sh = iw / canvasAspect
       sy = (ih - sh) / 2
     }
@@ -50,7 +46,6 @@ export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
     ctx.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch)
   }, [])
 
-  // Preload all frames; draw frame 0 as soon as it lands
   useEffect(() => {
     FRAMES.forEach((src, i) => {
       const img = new window.Image()
@@ -62,7 +57,6 @@ export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
     })
   }, [drawFrame])
 
-  // Keep canvas sized to the viewport
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
@@ -76,7 +70,6 @@ export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
     return () => window.removeEventListener('resize', resize)
   }, [drawFrame])
 
-  // Map scroll position → frame index
   useEffect(() => {
     const onScroll = () => {
       const container = containerRef.current
@@ -104,90 +97,102 @@ export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
 
   return (
     <>
-      {/*
-        Outer div is tall (300vh) — this is the scroll budget.
-        Inner div is sticky so it stays pinned while we scroll through it.
-      */}
       <div ref={containerRef} style={{ height: '300vh' }}>
         <div className="sticky top-0 h-screen overflow-hidden">
 
-          {/* Canvas — frames rendered here */}
           <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
-          {/* Gradient overlay */}
           <div
             className="absolute inset-0"
             style={{
               background:
-                'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%)',
+                'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%)',
             }}
           />
 
           {/* Hero content */}
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8">
-            <div className="inline-flex items-center gap-2 mb-6">
-              <div className="h-px w-8 bg-[#D4AF37]" />
-              <span
-                className="text-[#D4AF37] text-xs uppercase tracking-widest font-medium"
-                style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)' }}
-              >
-                {tr.home.heroLabel} &middot; EST. 2023
-              </span>
-              <div className="h-px w-8 bg-[#D4AF37]" />
-            </div>
 
-            <h1
-              className="font-heading font-bold text-[#FFFAF5] leading-none"
-              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
-            >
-              <span className="block text-5xl md:text-6xl lg:text-8xl">Chopras</span>
-              <span className="block italic font-light text-4xl md:text-5xl lg:text-6xl mt-2">
+            {/* Eyebrow pill */}
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#D4AF37] font-medium mb-8 backdrop-blur-sm">
+              <span className="inline-block w-1 h-1 rounded-full bg-[#D4AF37]" />
+              {tr.home.heroLabel} &middot; Est. 2023
+            </span>
+
+            <h1 className="font-heading font-bold text-[#FFFAF5] leading-none">
+              <span className="block text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[7rem] tracking-tight">Chopras</span>
+              <span className="block italic font-light text-4xl md:text-5xl lg:text-6xl mt-2 text-white/90">
                 Indian Restaurant
               </span>
             </h1>
 
-            <div className="w-16 h-px bg-[#D4AF37] mx-auto my-6" />
+            <div className="flex items-center gap-3 my-7">
+              <div className="w-10 h-px bg-[#D4AF37]/60" />
+              <span className="text-[#D4AF37] text-sm">✦</span>
+              <div className="w-10 h-px bg-[#D4AF37]/60" />
+            </div>
 
-            <p
-              className="font-body font-light text-lg text-white/80 max-w-md text-center leading-relaxed"
-              style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
-            >
-              Authentic Indian food in Den Haag — fresh from the tandoor,
-              <br />
+            <p className="font-body font-light text-lg text-white/70 max-w-md text-center leading-relaxed">
+              Authentic Indian food in Den Haag  -  fresh from the tandoor,
               spices from India, made with love on Leyweg.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 mt-10 justify-center">
+              {/* Primary CTA  -  button-in-button */}
               <Link
                 href={`${base}/contact`}
-                className="bg-[#D4AF37] text-[#1A1A1A] font-semibold px-8 py-4 text-sm uppercase tracking-widest hover:bg-[#C49B2A] transition-all duration-300 min-h-[48px] flex items-center justify-center"
+                className="group relative inline-flex items-center gap-3 rounded-full bg-[#D4AF37] pl-7 pr-2 py-2 text-[#1A1A1A] text-sm font-semibold uppercase tracking-widest transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#e8c84a] active:scale-[0.98] min-h-[48px]"
               >
-                Reserve a Table &rarr;
+                Reserve a Table
+                <span className="inline-flex w-9 h-9 items-center justify-center rounded-full bg-black/10 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" strokeWidth="1.5" stroke="currentColor">
+                    <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
               </Link>
+
+              {/* Secondary CTA */}
               <Link
                 href={`${base}/menu`}
-                className="border border-white/40 text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all backdrop-blur-sm min-h-[48px] flex items-center justify-center"
+                className="group inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/5 pl-7 pr-2 py-2 text-white text-sm uppercase tracking-widest transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-white/50 hover:bg-white/10 active:scale-[0.98] min-h-[48px] backdrop-blur-sm"
               >
                 {tr.common.viewMenu}
+                <span className="inline-flex w-9 h-9 items-center justify-center rounded-full bg-white/10 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" strokeWidth="1.5" stroke="currentColor">
+                    <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
               </Link>
             </div>
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
-            <span className="font-body text-xs text-white/40 uppercase tracking-widest">Scroll</span>
-            <ChevronDown size={24} className="text-white/50 animate-bounce" />
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            <span className="font-body text-[10px] text-white/35 uppercase tracking-[0.2em]">Scroll</span>
+            <svg width="18" height="24" viewBox="0 0 18 24" fill="none" strokeWidth="1" stroke="rgba(255,255,255,0.4)" className="animate-bounce">
+              <rect x="1" y="1" width="16" height="22" rx="8" />
+              <line x1="9" y1="5" x2="9" y2="10" strokeLinecap="round" />
+            </svg>
           </div>
         </div>
       </div>
 
-      {/* Mobile floating CTA */}
-      <Link
-        href={`${base}/contact`}
-        className="fixed bottom-4 left-4 right-4 z-50 md:hidden block bg-[#D4AF37] text-[#1A1A1A] text-center font-semibold py-4 shadow-xl text-sm uppercase tracking-widest"
-      >
-        {tr.common.reserve}
-      </Link>
+      {/* Mobile floating CTA  -  double-bezel pill */}
+      <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
+        <div className="rounded-full bg-[#D4AF37]/10 p-1.5 ring-1 ring-[#D4AF37]/20">
+          <Link
+            href={`${base}/contact`}
+            className="group flex items-center justify-between rounded-full bg-[#D4AF37] pl-6 pr-2 py-2 text-[#1A1A1A] text-sm font-semibold uppercase tracking-widest shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]"
+          >
+            {tr.common.reserve}
+            <span className="inline-flex w-9 h-9 items-center justify-center rounded-full bg-black/10">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" strokeWidth="1.5" stroke="currentColor">
+                <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+          </Link>
+        </div>
+      </div>
     </>
   )
 }

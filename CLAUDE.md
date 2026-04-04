@@ -1,4 +1,18 @@
-# CLAUDE.md — Chopras Indian Restaurant Website
+# CLAUDE.md - Chopras Indian Restaurant Website
+
+## ABSOLUTE WRITING RULES - NEVER VIOLATE
+
+1. NEVER use em dashes (the — character) anywhere in any file.
+   Replace with: hyphen-space-hyphen ( - ) or rewrite the sentence.
+   This applies to: TSX files, JSON files, MD files, TXT files,
+   component copy, translation strings, blog content, everywhere.
+
+2. NEVER use contractions (don't, can't, won't, it's, we've, they're).
+   Always write in full: do not, cannot, will not, it is, we have,
+   they are.
+
+3. These rules apply to ALL content generated for this project
+   without exception.
 
 ## Project
 Next.js 14 App Router website for Chopras Indian Restaurant, Den Haag.

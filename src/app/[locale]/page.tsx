@@ -4,6 +4,7 @@ import HeroSection from '@/components/sections/HeroSection'
 import TrustBar from '@/components/sections/TrustBar'
 import FeaturedDishes from '@/components/sections/FeaturedDishes'
 import StorySection from '@/components/sections/StorySection'
+import MeetTheFounder from '@/components/home/MeetTheFounder'
 import WhySection from '@/components/sections/WhySection'
 import CateringBanner from '@/components/sections/CateringBanner'
 import ReviewsSection from '@/components/sections/ReviewsSection'
@@ -103,7 +104,7 @@ const restaurantSchema = {
 export default function LocaleHomePage({ params }: Props) {
   const { locale } = params
 
-  // Suppress unused variable warning — translations available to child components via prop
+  // Suppress unused variable warning  -  translations available to child components via prop
   void getTranslations(locale)
 
   const faqSchema = {
@@ -124,34 +125,37 @@ export default function LocaleHomePage({ params }: Props) {
         '@context': 'https://schema.org',
         '@type': 'Person',
         name: 'Arun Chopra',
-        jobTitle: 'Founder',
+        jobTitle: 'Founder and Head Chef',
+        description: 'Arun Chopra founded Chopras Indian Restaurant in Den Haag in 2023 with the mission to serve authentic North Indian cuisine exactly as it is eaten in India.',
         worksFor: { '@type': 'Restaurant', name: 'Chopras Indian Restaurant', url: 'https://chopras.nl' },
         url: 'https://chopras.nl/en',
-        sameAs: ['https://chopras.nl/en'],
       } as Record<string, unknown>} />
 
-      {/* 1 — Hero */}
+      {/* 1  -  Hero */}
       <HeroSection locale={locale} />
 
-      {/* 2 — Trust Bar */}
+      {/* 2  -  Trust Bar */}
       <TrustBar locale={locale} />
 
-      {/* 3 — Featured Dishes */}
+      {/* 3  -  Featured Dishes */}
       <FeaturedDishes locale={locale} />
 
-      {/* 4 — Story / About */}
+      {/* 4  -  Story / About */}
       <StorySection locale={locale} />
 
-      {/* 5 — Why Chopras */}
+      {/* 5  -  Meet the Founder */}
+      <MeetTheFounder />
+
+      {/* 6  -  Why Chopras */}
       <WhySection locale={locale} />
 
-      {/* 6 — Catering Banner */}
+      {/* 7  -  Catering Banner */}
       <CateringBanner locale={locale} />
 
-      {/* 7 — Reviews */}
+      {/* 8  -  Reviews */}
       <ReviewsSection locale={locale} />
 
-      {/* 8 — FAQ */}
+      {/* 9  -  FAQ */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
@@ -164,10 +168,10 @@ export default function LocaleHomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* 9 — Location */}
+      {/* 10  -  Location */}
       <LocationSection locale={locale} />
 
-      {/* 10 — Final CTA */}
+      {/* 11  -  Final CTA */}
       <FinalCta locale={locale} />
     </>
   )

@@ -7,7 +7,7 @@ import {
 } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
-import CateringForm from '@/components/sections/CateringForm'
+import CateringForm from '@/components/catering/CateringForm'
 import CateringFaqAccordion from '@/components/sections/CateringFaqAccordion'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -130,7 +130,7 @@ export default function LocaleCateringPage({ params }: Props) {
       <JsonLd data={cateringSchema as Record<string, unknown>} />
       <JsonLd data={breadcrumbSchema as Record<string, unknown>} />
 
-      {/* SECTION 1 — HERO */}
+      {/* SECTION 1  -  HERO */}
       <section className="relative min-h-[60vh] flex items-center justify-center">
         <Image
           src="/images/catering/wedding-celebrations---1.png"
@@ -187,7 +187,7 @@ export default function LocaleCateringPage({ params }: Props) {
         </div>
       </section>
 
-      {/* SECTION 2 — SERVICE OVERVIEW */}
+      {/* SECTION 2  -  SERVICE OVERVIEW */}
       <section className="bg-[#FFFAF5] py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -218,7 +218,7 @@ export default function LocaleCateringPage({ params }: Props) {
         </div>
       </section>
 
-      {/* SECTION 3 — EVENT TYPES */}
+      {/* SECTION 3  -  EVENT TYPES */}
       <section
         className="py-20 md:py-28 px-6 md:px-16"
         style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 60%, #0F1040 100%)' }}
@@ -246,7 +246,7 @@ export default function LocaleCateringPage({ params }: Props) {
         </div>
       </section>
 
-      {/* SECTION 4 — EVENT HALL */}
+      {/* SECTION 4  -  EVENT HALL */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -290,7 +290,7 @@ export default function LocaleCateringPage({ params }: Props) {
         </div>
       </section>
 
-      {/* SECTION 5 — WHY CHOPRAS CATERING */}
+      {/* SECTION 5  -  WHY CHOPRAS CATERING */}
       <section
         className="py-20 md:py-28 px-6 md:px-16"
         style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 60%, #0F1040 100%)' }}
@@ -319,7 +319,7 @@ export default function LocaleCateringPage({ params }: Props) {
         </div>
       </section>
 
-      {/* SECTION 6 — FAQ */}
+      {/* SECTION 6  -  FAQ */}
       <section className="bg-[#FFFAF5] py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -336,7 +336,7 @@ export default function LocaleCateringPage({ params }: Props) {
         </div>
       </section>
 
-      {/* SECTION 7 — CATERING FORM */}
+      {/* SECTION 7  -  CATERING FORM */}
       <section
         id="catering-form"
         className="py-20 md:py-28 px-6 md:px-16"

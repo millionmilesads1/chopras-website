@@ -2,9 +2,11 @@ import type { Metadata } from 'next'
 import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
 import '@/styles/globals.css'
 import Header from '@/components/layout/Header'
+import TopBar from '@/components/layout/TopBar'
 import Footer from '@/components/layout/Footer'
 import CartDrawer from '@/components/cart/CartDrawer'
 import ScrollToTop from '@/components/ScrollToTop'
+import DisableScrollRestoration from '@/components/DisableScrollRestoration'
 import { type Locale } from '@/lib/useTranslations'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
 
@@ -72,10 +74,12 @@ export default function LocaleLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        <DisableScrollRestoration />
         <ScrollToTop />
+        <TopBar />
         <Header locale={params.locale} />
         <CartDrawer locale={params.locale} />
-        <main>{children}</main>
+        <main className="pt-[100px]">{children}</main>
         <Footer locale={params.locale} />
       </body>
     </html>

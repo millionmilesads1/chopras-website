@@ -29,6 +29,13 @@ export default function MenuPageClient() {
   const navRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // Prevent this component from triggering scroll restoration
+    window.scrollTo(0, 0)
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+  }, [])
+
+  useEffect(() => {
     const visibleSections = new Set<string>()
 
     const observer = new IntersectionObserver(
@@ -77,28 +84,29 @@ export default function MenuPageClient() {
     <div className="bg-[#FFFAF5]">
       {/* Sticky category navigation */}
       <nav
-        className="sticky top-16 md:top-20 z-40 bg-white shadow-sm border-b border-gray-100"
+        className="sticky top-[100px] z-30 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm"
         aria-label="Menu categories"
       >
-        <div
-          ref={navRef}
-          className="flex gap-2 px-6 py-4 overflow-x-auto"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {menuCategories.map((category) => (
-            <button
-              key={category.id}
-              data-category={category.id}
-              onClick={() => scrollToCategory(category.id)}
-              className={`whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-medium transition-all min-h-[44px] ${
-                activeCategory === category.id
-                  ? 'bg-[#D4AF37] text-[#1A1A1A] font-semibold'
-                  : 'border border-[#1B2B5E]/20 text-[#1A1A1A]/60 hover:border-[#1B2B5E]/50'
-              }`}
-            >
-              {category.shortLabel}
-            </button>
-          ))}
+        <div ref={navRef} className="w-full overflow-x-auto scrollbar-hide py-2">
+          <div className="flex gap-2 px-6 md:px-16 min-w-max mx-auto">
+            {menuCategories.map((category) => (
+              <button
+                key={category.id}
+                data-category={category.id}
+                onClick={() => scrollToCategory(category.id)}
+                className={`
+                  flex-none whitespace-nowrap px-5 py-2.5 rounded-full
+                  text-sm font-medium transition-all duration-200
+                  ${activeCategory === category.id
+                    ? 'bg-[#D4AF37] text-[#1A1A1A] font-semibold shadow-sm'
+                    : 'bg-white border border-gray-200 text-[#1A1A1A]/60 hover:border-[#D4AF37]/50 hover:text-[#1A1A1A]'
+                  }
+                `}
+              >
+                {category.shortLabel}
+              </button>
+            ))}
+          </div>
         </div>
       </nav>
 

@@ -164,7 +164,20 @@ export default function Footer({ locale }: { locale: Locale }) {
       {/* Bottom bar */}
       <div className="bg-brand-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <p className="text-center text-sm text-white">{tr.common.footer.copyright}</p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-2">
+            <p className="text-white/40 text-xs">
+              &copy; {new Date().getFullYear()} Chopras Indian Restaurant Den Haag. All rights reserved.
+            </p>
+            <a
+              href="https://milliongloballeads.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-[#D4AF37] text-xs transition-colors duration-200"
+            >
+              Developed by{' '}
+              <span className="font-semibold">MGL</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

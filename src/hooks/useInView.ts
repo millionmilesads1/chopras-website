@@ -6,17 +6,25 @@ export function useInView(threshold = 0.1) {
   const [inView, setInView] = useState(false)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true)
-          observer.disconnect()
-        }
-      },
-      { threshold }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
+    // Wait 400ms before starting to observe
+    // This gives ScrollToTop time to reset position
+    // so animations only fire when user actually scrolls
+    const initTimer = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setInView(true)
+            observer.disconnect()
+          }
+        },
+        { threshold }
+      )
+      if (ref.current) observer.observe(ref.current)
+    }, 400)
+
+    return () => {
+      clearTimeout(initTimer)
+    }
   }, [threshold])
 
   return { ref, inView }

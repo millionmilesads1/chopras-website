@@ -104,15 +104,15 @@ export default function LocaleContactPage({ params }: Props) {
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
       <JsonLd data={breadcrumbSchema as Record<string, unknown>} />
 
-      {/* SECTION 1 — RESERVATION SPLIT */}
+      {/* SECTION 1  -  RESERVATION SPLIT */}
       <section
-        className="pt-24 pb-0"
+        className="pb-0"
         style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 60%, #0F1040 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh] items-start gap-0">
 
-            {/* LEFT — GHL Form */}
+            {/* LEFT  -  GHL Form */}
             <div className="bg-white rounded-t-3xl lg:rounded-l-3xl lg:rounded-r-none p-8 md:p-10 shadow-2xl">
               <div className="inline-flex items-center gap-2 mb-3">
                 <div className="h-px w-8 bg-[#D4AF37]" />
@@ -130,7 +130,7 @@ export default function LocaleContactPage({ params }: Props) {
               <ReservationForm />
             </div>
 
-            {/* RIGHT — Contact Details */}
+            {/* RIGHT  -  Contact Details */}
             <div className="bg-transparent text-white p-8 md:p-10 flex flex-col justify-start gap-8">
 
               {/* Restaurant info card */}
@@ -192,7 +192,7 @@ export default function LocaleContactPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* Map — hidden on mobile */}
+              {/* Map  -  hidden on mobile */}
               <div className="rounded-3xl overflow-hidden hidden lg:block" style={{ height: '280px' }}>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.2!2d4.2765!3d52.0583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47890e3caeb27bfd%3A0x8c0b2b2a5c3e4f9a!2sLeyweg%20986%2C%202545%20GW%20Den%20Haag!5e0!3m2!1sen!2snl!4v1680000000000!5m2!1sen!2snl"
@@ -212,7 +212,7 @@ export default function LocaleContactPage({ params }: Props) {
         </div>
       </section>
 
-      {/* SECTION 2 — QUICK ACTION CARDS */}
+      {/* SECTION 2  -  QUICK ACTION CARDS */}
       <section className="bg-[#FFFAF5] py-16 px-6 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {quickCards.map(({ Icon, title, body, cta, href }) => (
@@ -236,7 +236,7 @@ export default function LocaleContactPage({ params }: Props) {
         </div>
       </section>
 
-      {/* SECTION 3 — CONTACT FORM */}
+      {/* SECTION 3  -  CONTACT FORM */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-2xl mx-auto text-center mb-10">
           <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">

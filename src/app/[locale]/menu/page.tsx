@@ -78,7 +78,7 @@ export default function LocaleMenuPage({ params }: Props) {
       <JsonLd data={menuSchema} />
       <JsonLd data={breadcrumbSchema} />
 
-      {/* HERO — scroll-scrubbed butter chicken animation */}
+      {/* HERO  -  scroll-scrubbed butter chicken animation */}
       <MenuHeroSection locale={locale} />
 
       {/* STAT PILLS */}

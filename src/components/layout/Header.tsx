@@ -137,14 +137,14 @@ export default function Header({ locale }: { locale: Locale }) {
       {/* ─── Fixed Header Bar ─── */}
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-sm border-b border-white/[0.08]',
+          'fixed top-9 left-0 right-0 z-40 transition-all duration-300 backdrop-blur-sm border-b border-white/[0.08]',
           scrolled ? 'h-14 shadow-lg shadow-black/20' : 'h-16'
         )}
         style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between gap-4">
 
-          {/* GROUP 1 — Logo */}
+          {/* GROUP 1  -  Logo */}
           <Link href={base} className="flex-shrink-0" onClick={() => setMobileOpen(false)}>
             <Image
               src={RESTAURANT.logo}
@@ -156,7 +156,7 @@ export default function Header({ locale }: { locale: Locale }) {
             />
           </Link>
 
-          {/* GROUP 2 — Nav (lg+) */}
+          {/* GROUP 2  -  Nav (lg+) */}
           <nav className="hidden lg:flex items-center gap-1 flex-shrink-0">
             {NAV_LINKS.map(({ label, href }) => {
               const isActive = pathname === href
@@ -204,7 +204,7 @@ export default function Header({ locale }: { locale: Locale }) {
                     />
                   </button>
 
-                  {/* Always rendered — visibility controlled by opacity/pointer-events for CSS transitions */}
+                  {/* Always rendered  -  visibility controlled by opacity/pointer-events for CSS transitions */}
                   <div
                     className={cn(
                       'absolute top-full left-0 mt-1 bg-[#1B2B5E] border border-white/10 rounded-2xl shadow-2xl shadow-black/30 py-2 min-w-[200px] z-50 transition-all duration-150',
@@ -230,14 +230,14 @@ export default function Header({ locale }: { locale: Locale }) {
             })}
           </nav>
 
-          {/* GROUP 3 — Right actions */}
+          {/* GROUP 3  -  Right actions */}
           <div className="flex items-center gap-2 flex-shrink-0">
-            {/* EN/NL — desktop */}
+            {/* EN/NL  -  desktop */}
             <div className="hidden lg:block">
               <LanguageSwitcher locale={locale} />
             </div>
 
-            {/* Order Online — desktop */}
+            {/* Order Online  -  desktop */}
             <Link
               href={`${base}/menu`}
               className="hidden lg:flex items-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/15 transition-all duration-200 whitespace-nowrap"
@@ -246,7 +246,7 @@ export default function Header({ locale }: { locale: Locale }) {
               Order Online
             </Link>
 
-            {/* Cart — desktop */}
+            {/* Cart  -  desktop */}
             <button
               onClick={openCart}
               aria-label={`Open cart, ${totalItems} item${totalItems !== 1 ? 's' : ''}`}
@@ -260,7 +260,7 @@ export default function Header({ locale }: { locale: Locale }) {
               )}
             </button>
 
-            {/* Reserve a Table — desktop */}
+            {/* Reserve a Table  -  desktop */}
             <Link
               href={`${base}/contact`}
               className="hidden lg:inline-flex items-center bg-[#D4AF37] text-[#1A1A1A] px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F5D36A] transition-all duration-200 whitespace-nowrap"
@@ -268,7 +268,7 @@ export default function Header({ locale }: { locale: Locale }) {
               {tr.common.reserve}
             </Link>
 
-            {/* Cart — mobile */}
+            {/* Cart  -  mobile */}
             <button
               onClick={openCart}
               aria-label={`Open cart, ${totalItems} item${totalItems !== 1 ? 's' : ''}`}
@@ -282,7 +282,7 @@ export default function Header({ locale }: { locale: Locale }) {
               )}
             </button>
 
-            {/* Hamburger — mobile */}
+            {/* Hamburger  -  mobile */}
             <button
               className="lg:hidden p-2 text-white"
               onClick={() => setMobileOpen((v) => !v)}

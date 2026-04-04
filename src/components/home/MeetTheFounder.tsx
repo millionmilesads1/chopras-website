@@ -1,0 +1,101 @@
+import Image from 'next/image'
+
+export default function MeetTheFounder() {
+  return (
+    <section className="bg-[#FFFAF5] py-24 px-6 md:px-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        {/* LEFT  -  Photo */}
+        <div className="relative">
+          <div className="relative aspect-[3/4] max-w-[420px] rounded-3xl overflow-hidden shadow-2xl">
+            <Image
+              src="/images/restaurant/people-enjoying-food---best.png"
+              alt="Arun Chopra  -  Founder of Chopras Indian Restaurant Den Haag"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/70 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <p className="font-heading text-2xl text-white font-semibold">
+                Arun Chopra
+              </p>
+              <p className="text-[#D4AF37] text-sm font-medium mt-1 uppercase tracking-widest">
+                Founder · Chopras Indian Restaurant
+              </p>
+            </div>
+          </div>
+
+          {/* Gold quote mark  -  floats outside the photo card */}
+          <div className="absolute -top-4 -left-4 w-14 h-14 bg-[#D4AF37] rounded-2xl flex items-center justify-center shadow-lg z-10">
+            <span className="font-heading text-3xl text-[#1A1A1A] font-bold leading-none">&ldquo;</span>
+          </div>
+        </div>
+
+        {/* RIGHT  -  Story */}
+        <div>
+          {/* Label pill */}
+          <div className="inline-flex items-center gap-2 mb-4">
+            <div className="h-px w-8 bg-[#D4AF37]" />
+            <span className="text-[#D4AF37] text-xs uppercase tracking-widest font-medium">
+              Meet the Founder
+            </span>
+            <div className="h-px w-8 bg-[#D4AF37]" />
+          </div>
+
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] font-semibold leading-tight mt-3">
+            The Man Behind<br />Every Dish
+          </h2>
+
+          <blockquote className="font-heading text-xl md:text-2xl text-[#1B2B5E] italic leading-relaxed border-l-4 border-[#D4AF37] pl-6 mt-8 mb-6">
+            &ldquo;I did not open a restaurant. I opened a kitchen &mdash; the same
+            kitchen I grew up watching my mother cook in. The spices are
+            the same. The fire is the same. The only thing that changed
+            is the address.&rdquo;
+          </blockquote>
+
+          <div className="text-[#1A1A1A]/70 text-base leading-relaxed space-y-4 mt-6">
+            <p>
+              Arun Chopra moved to Den Haag with one obsession: that somewhere
+              in this city, someone should be able to eat Indian food the way
+              it is actually eaten in India. Not adapted. Not simplified.
+              Not made mild for a European palate. The real thing.
+            </p>
+            <p>
+              Every recipe at Chopras comes from memory &mdash; from kitchens in
+              Delhi, from street corners in Mumbai, from family tables in
+              Rajasthan. Arun grinds the spices fresh every morning himself
+              because he knows that the moment you open a packet, something
+              is already lost.
+            </p>
+            <p>
+              When you eat at Chopras, you are not eating at a restaurant.
+              You are eating at someone&apos;s table. That is the only standard
+              Arun has ever cooked to.
+            </p>
+          </div>
+
+          {/* Stat pills */}
+          <div className="flex gap-4 flex-wrap mt-8">
+            <span className="bg-[#1B2B5E] text-white rounded-full px-6 py-3 text-sm font-medium">
+              Est. 2023 · Leyweg, Den Haag
+            </span>
+            <span className="bg-[#D4AF37]/10 border border-[#D4AF37]/40 text-[#1B2B5E] rounded-full px-6 py-3 text-sm font-medium">
+              North Indian · Street Food · Tandoor
+            </span>
+          </div>
+
+          {/* Signature line */}
+          <div className="mt-8 flex items-center gap-4">
+            <div className="h-px flex-1 bg-[#1B2B5E]/10" />
+            <p className="text-[#1A1A1A]/40 text-xs uppercase tracking-widest">
+              Arun Chopra · Founder &amp; Head Chef
+            </p>
+            <div className="h-px flex-1 bg-[#1B2B5E]/10" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+  )
+}
