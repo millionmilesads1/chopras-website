@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { menuCategories, menuItems } from '@/lib/menu-data'
 import type { DietaryTag } from '@/types'
 import AddToCartButton from '@/components/cart/AddToCartButton'
+import { useInView } from '@/hooks/useInView'
 
 function formatPrice(price: number): string {
   return price % 1 === 0 ? `€${price}` : `€${price.toFixed(2)}`
@@ -22,6 +23,81 @@ function getPrimaryBadge(dietary: DietaryTag[]): BadgeConfig | null {
   const priority: DietaryTag[] = ['veg', 'vegan', 'halal']
   const match = priority.find((tag) => dietary.includes(tag))
   return match ? (primaryBadgeConfig[match] ?? null) : null
+}
+
+function DishGrid({ dishes }: { dishes: typeof menuItems }) {
+  const { ref, inView } = useInView()
+  return (
+    <div
+      ref={ref}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+    >
+      {dishes.map((item, index) => {
+        const badge = getPrimaryBadge(item.dietary)
+        return (
+          <article
+            key={item.id}
+            style={{ transitionDelay: `${(index % 8) * 50}ms` }}
+            className={`bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-500 ease-out group ${
+              inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}
+          >
+            {/* Image */}
+            <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-[#1B2B5E]/5 to-[#D4AF37]/10">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-heading text-4xl text-[#1B2B5E]/20">
+                  {item.name.charAt(0)}
+                </span>
+              </div>
+              {item.image && (
+                <Image
+                  src={item.image}
+                  alt={`${item.name} at Chopras Indian Restaurant Den Haag`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                  onError={(e) => { e.currentTarget.style.display = 'none' }}
+                />
+              )}
+              {badge && (
+                <span
+                  className={`absolute top-3 left-3 text-xs px-2 py-0.5 rounded-full font-semibold uppercase ${badge.className}`}
+                >
+                  {badge.label}
+                </span>
+              )}
+            </div>
+
+            {/* Card body */}
+            <div className="p-5">
+              <h3 className="font-heading text-xl text-[#1A1A1A] font-semibold leading-tight">
+                {item.name}
+              </h3>
+              <p className="text-[#1A1A1A]/60 text-sm mt-1 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
+                {item.description}
+              </p>
+              <div className="flex items-center justify-between mt-3">
+                <p className="text-[#D4AF37] font-semibold text-lg font-heading">
+                  {formatPrice(item.price)}
+                </p>
+                <AddToCartButton
+                  dish={{
+                    id: item.id,
+                    name: item.name,
+                    price: item.price,
+                    category: item.category,
+                    image: item.image,
+                    isHalal: item.dietary.includes('halal'),
+                    isVeg: item.dietary.includes('veg') || item.dietary.includes('vegan'),
+                  }}
+                />
+              </div>
+            </div>
+          </article>
+        )
+      })}
+    </div>
+  )
 }
 
 export default function MenuPageClient() {
@@ -119,7 +195,7 @@ export default function MenuPageClient() {
               {/* Section header */}
               <div className="py-10">
                 <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-3">
-                  {category.labelNl}
+                  {category.shortLabel}
                 </p>
                 <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E]">
                   {category.label}
@@ -128,70 +204,7 @@ export default function MenuPageClient() {
               </div>
 
               {/* Dish grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {dishes.map((item) => {
-                  const badge = getPrimaryBadge(item.dietary)
-                  return (
-                    <article
-                      key={item.id}
-                      className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group"
-                    >
-                      {/* Image */}
-                      <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-[#1B2B5E]/5 to-[#D4AF37]/10">
-                        {/* Fallback always rendered behind the image */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="font-heading text-4xl text-[#1B2B5E]/20">
-                            {item.name.charAt(0)}
-                          </span>
-                        </div>
-                        {item.image && (
-                          <Image
-                            src={item.image}
-                            alt={`${item.name} at Chopras Indian Restaurant Den Haag`}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-500"
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                            onError={(e) => { e.currentTarget.style.display = 'none' }}
-                          />
-                        )}
-                        {badge && (
-                          <span
-                            className={`absolute top-3 left-3 text-xs px-2 py-0.5 rounded-full font-semibold uppercase ${badge.className}`}
-                          >
-                            {badge.label}
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Card body */}
-                      <div className="p-5">
-                        <h3 className="font-heading text-xl text-[#1A1A1A] font-semibold leading-tight">
-                          {item.name}
-                        </h3>
-                        <p className="text-[#1A1A1A]/60 text-sm mt-1 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
-                          {item.description}
-                        </p>
-                        <div className="flex items-center justify-between mt-3">
-                          <p className="text-[#D4AF37] font-semibold text-lg font-heading">
-                            {formatPrice(item.price)}
-                          </p>
-                          <AddToCartButton
-                            dish={{
-                              id: item.id,
-                              name: item.name,
-                              price: item.price,
-                              category: item.category,
-                              image: item.image,
-                              isHalal: item.dietary.includes('halal'),
-                              isVeg: item.dietary.includes('veg') || item.dietary.includes('vegan'),
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </article>
-                  )
-                })}
-              </div>
+              <DishGrid dishes={dishes} />
             </section>
           )
         })}

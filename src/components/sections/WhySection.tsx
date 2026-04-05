@@ -62,7 +62,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
         {/* Section header */}
         <div
           ref={headRef}
-          className={`mb-14 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${headInView ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-8 blur-sm'}`}
+          className={`mb-14 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${headInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#D4AF37] font-medium">
             <span className="inline-block w-1 h-1 rounded-full bg-[#D4AF37]" />
@@ -76,7 +76,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
         {/* Asymmetric Bento Grid */}
         <div
           ref={gridRef}
-          className={`grid grid-cols-1 md:grid-cols-12 gap-4 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${gridInView ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-10 blur-sm'}`}
+          className={`grid grid-cols-1 md:grid-cols-12 gap-4 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${gridInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           {/* Hero card  -  col-span-7 row-span-2 */}
           <div className="md:col-span-7 md:row-span-2 rounded-[2rem] bg-[#1B2B5E]/[0.03] p-2 ring-1 ring-[#1B2B5E]/[0.06]">
@@ -152,7 +152,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
         {/* Trust strip */}
         <div
           ref={stripRef}
-          className={`mt-6 transition-all duration-700 delay-150 ease-[cubic-bezier(0.32,0.72,0,1)] ${stripInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          className={`mt-6 transition-all duration-500 delay-150 ease-[cubic-bezier(0.32,0.72,0,1)] ${stripInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           <div
             className="rounded-2xl p-1.5 ring-1 ring-white/10"

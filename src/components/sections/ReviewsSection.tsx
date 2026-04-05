@@ -21,7 +21,7 @@ export default function ReviewsSection({ locale = 'en' }: { locale?: Locale }) {
       {/* Header */}
       <div
         ref={headerRef}
-        className={`text-center transition-all duration-700 ease-out ${headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        className={`text-center transition-all duration-500 ease-out ${headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       >
         <p className="font-body text-[#D4AF37] text-xs uppercase tracking-widest mb-4">
           What Guests Say
@@ -45,7 +45,7 @@ export default function ReviewsSection({ locale = 'en' }: { locale?: Locale }) {
       {/* Review cards */}
       <div
         ref={cardsRef}
-        className={`grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 transition-all duration-700 ease-out ${cardsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        className={`grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 transition-all duration-500 ease-out ${cardsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       >
         {reviews.map((review, i) => (
           <div

@@ -17,7 +17,7 @@ export default function FinalCta({ locale = 'en' }: { locale?: Locale }) {
       {/* Double-bezel outer shell */}
       <div
         ref={ref}
-        className={`max-w-4xl mx-auto rounded-[2.5rem] bg-white/[0.04] p-2 ring-1 ring-white/10 transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-12 blur-sm'}`}
+        className={`max-w-4xl mx-auto rounded-[2.5rem] bg-white/[0.04] p-2 ring-1 ring-white/10 transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       >
         <div className="rounded-[calc(2.5rem-0.5rem)] bg-white/[0.03] px-10 py-16 md:px-20 md:py-20 text-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
 
@@ -28,13 +28,13 @@ export default function FinalCta({ locale = 'en' }: { locale?: Locale }) {
           </div>
 
           <h2
-            className={`font-heading font-semibold italic text-white text-5xl md:text-6xl lg:text-7xl leading-tight transition-all duration-[900ms] delay-100 ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-8 blur-sm'}`}
+            className={`font-heading font-semibold italic text-white text-5xl md:text-6xl lg:text-7xl leading-tight transition-all duration-[900ms] delay-100 ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
             {tr.home.ctaH2}
           </h2>
 
           <p
-            className={`font-body text-white/55 text-lg md:text-xl mt-6 max-w-xl mx-auto leading-relaxed transition-all duration-[900ms] delay-150 ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-6 blur-sm'}`}
+            className={`font-body text-white/55 text-lg md:text-xl mt-6 max-w-xl mx-auto leading-relaxed transition-all duration-[900ms] delay-150 ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
             {tr.home.ctaSub}
           </p>

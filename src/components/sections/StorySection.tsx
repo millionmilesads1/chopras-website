@@ -18,7 +18,7 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
         {/* LEFT: Double-bezel image */}
         <div
           ref={imgRef}
-          className={`sticky top-[108px] self-start transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${imgInView ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-10 blur-sm'}`}
+          className={`sticky top-[108px] self-start transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${imgInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           {/* Outer shell */}
           <div className="rounded-[2rem] bg-[#1B2B5E]/[0.04] p-2 ring-1 ring-[#1B2B5E]/[0.07]">
@@ -57,7 +57,7 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
         {/* RIGHT: Story copy */}
         <div
           ref={textRef}
-          className={`transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] delay-100 ${textInView ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-10 blur-sm'}`}
+          className={`transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] delay-100 ${textInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#D4AF37] font-medium mb-6">
             <span className="inline-block w-1 h-1 rounded-full bg-[#D4AF37]" />

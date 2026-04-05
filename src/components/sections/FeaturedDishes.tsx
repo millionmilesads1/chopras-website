@@ -59,7 +59,7 @@ export default function FeaturedDishes({ locale = 'en' }: { locale?: Locale }) {
         {/* Header */}
         <div
           ref={headRef}
-          className={`flex flex-col md:flex-row md:items-end justify-between gap-6 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${headInView ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-8 blur-sm'}`}
+          className={`flex flex-col md:flex-row md:items-end justify-between gap-6 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${headInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#D4AF37] font-medium mb-5">
@@ -97,7 +97,7 @@ export default function FeaturedDishes({ locale = 'en' }: { locale?: Locale }) {
         {/* Dish cards  -  double-bezel */}
         <div
           ref={scrollRef}
-          className={`flex gap-4 mt-8 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${scrollInView ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-6 blur-sm'}`}
+          className={`flex gap-4 mt-8 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${scrollInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           {visibleDishes.map((dish) => (
             <div key={dish.id} className="flex-none w-52 snap-start">
@@ -107,7 +107,7 @@ export default function FeaturedDishes({ locale = 'en' }: { locale?: Locale }) {
                     src={dish.image}
                     alt={`${dish.name} at Chopras Indian Restaurant Den Haag`}
                     fill
-                    className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+                    className="object-cover object-center transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
                     sizes="220px"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />

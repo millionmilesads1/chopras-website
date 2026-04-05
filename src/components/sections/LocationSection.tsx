@@ -60,7 +60,7 @@ export default function LocationSection({ locale = 'en' }: { locale?: Locale }) 
     >
       <div
         ref={ref}
-        className={`max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-10 blur-sm'}`}
+        className={`max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       >
         {/* LEFT: Info card  -  double-bezel */}
         <div className="rounded-[2rem] bg-white/[0.04] p-2 ring-1 ring-white/10">

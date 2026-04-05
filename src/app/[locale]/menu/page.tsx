@@ -51,7 +51,7 @@ export default function LocaleMenuPage({ params }: Props) {
       .map((item) => ({ name: item.name, description: item.description, price: item.price })),
   }))
 
-  const statPills = ['89 Dishes', '12 Categories', '100% Halal', 'Vegetarian Options', 'Fresh Daily']
+  const statPills = [`${menuItems.length} Dishes`, `${menuCategories.length} Categories`, '100% Halal', 'Vegetarian Options', 'Fresh Daily']
 
   return (
     <>

@@ -24,7 +24,7 @@ export default function CateringBanner({ locale = 'en' }: { locale?: Locale }) {
       {/* Double-bezel content container */}
       <div
         ref={ref}
-        className={`relative z-10 max-w-2xl mx-auto transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-10 blur-sm'}`}
+        className={`relative z-10 max-w-2xl mx-auto transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       >
         <div className="rounded-[2rem] bg-white/[0.04] p-2 ring-1 ring-white/10">
           <div className="rounded-[calc(2rem-0.5rem)] bg-white/[0.04] px-10 py-12 md:px-14 md:py-14 text-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
