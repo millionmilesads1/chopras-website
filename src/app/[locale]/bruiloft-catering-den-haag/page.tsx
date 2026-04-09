@@ -169,8 +169,8 @@ export default function BruiloftCateringPage({ params }: Props) {
             <Link href={`${base}/menu`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
               {tr.common.viewMenu}
             </Link>
-            <Link href={`${base}/zaal-huren-den-haag`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
-              {isNl ? 'Zaal Huren' : 'Venue Hire'}
+            <Link href={`${base}/feestzaal-den-haag`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
+              {isNl ? 'Feestzaal Huren voor Bruiloft Den Haag' : 'Bruiloft Venue Hire Den Haag'}
             </Link>
           </div>
         </div>

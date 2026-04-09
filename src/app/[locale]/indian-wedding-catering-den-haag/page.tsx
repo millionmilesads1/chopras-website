@@ -233,9 +233,9 @@ export default function IndianWeddingCateringPage({ params }: Props) {
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Diwali' : 'Diwali'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiase Diwali-diner' : 'Indian Diwali dinner'}</p>
             </Link>
-            <Link href={`${base}/party-venue-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
-              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Feestzaal' : 'Party Venue'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Verhuur van evenementenruimte' : 'Event venue rental'}</p>
+            <Link href={`${base}/feestzaal-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Feestzaal' : 'Event Space'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Feestzaal huren voor bruiloft Den Haag' : 'Event space rental for weddings Den Haag'}</p>
             </Link>
           </div>
           <div className="text-center space-y-4">

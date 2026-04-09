@@ -111,7 +111,7 @@ export default function Header({ locale }: { locale: Locale }) {
         { label: 'Bruiloft Catering', href: `${base}/bruiloft-catering-den-haag` },
         { label: 'Zaal Huren Den Haag', href: `${base}/zaal-huren-den-haag` },
         { label: 'Evenementenruimte', href: `${base}/evenementenruimte-den-haag` },
-        { label: 'Party Venue Den Haag', href: `${base}/party-venue-den-haag` },
+        { label: 'Feestzaal Huren Den Haag', href: `${base}/feestzaal-den-haag` },
         { label: 'Indian Buffet Den Haag', href: `${base}/indian-buffet-den-haag` },
       ],
     },

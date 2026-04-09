@@ -16,6 +16,10 @@ const nextConfig = {
   poweredByHeader: false,
   async redirects() {
     return [
+      // Page consolidation
+      { source: '/en/party-venue-den-haag', destination: '/en/feestzaal-den-haag', permanent: true },
+      { source: '/nl/party-venue-den-haag', destination: '/nl/feestzaal-den-haag', permanent: true },
+
       // Old flat URLs → new locale URLs
       { source: '/menu', destination: '/en/menu', permanent: true },
       { source: '/catering', destination: '/en/catering', permanent: true },

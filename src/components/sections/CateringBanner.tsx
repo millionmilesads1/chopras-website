@@ -60,10 +60,10 @@ export default function CateringBanner({ locale = 'en' }: { locale?: Locale }) {
                 </span>
               </Link>
               <Link
-                href={`${base}/catering`}
+                href={`${base}/feestzaal-den-haag`}
                 className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 pl-7 pr-2 py-2 text-white text-sm uppercase tracking-widest transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-white/40 hover:bg-white/10 active:scale-[0.98]"
               >
-                View Event Hall
+                Feestzaal Huren
                 <span className="inline-flex w-9 h-9 items-center justify-center rounded-full bg-white/10 transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" strokeWidth="1.5" stroke="currentColor">
                     <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" strokeLinecap="round" strokeLinejoin="round"/>

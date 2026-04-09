@@ -226,9 +226,9 @@ export default function CorporateEventsPage({ params }: Props) {
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Bruiloft' : 'Wedding'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiase bruiloftscatering' : 'Indian wedding catering'}</p>
             </Link>
-            <Link href={`${base}/party-venue-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
-              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Feestzaal' : 'Party Venue'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Evenementenruimte huren' : 'Event space for rent'}</p>
+            <Link href={`${base}/feestzaal-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Feestzaal' : 'Event Space'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Zakelijk evenement feestzaal Den Haag' : 'Business event space Den Haag'}</p>
             </Link>
             <Link href={`${base}/indian-birthday-catering-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Verjaardag' : 'Birthday'}</p>
