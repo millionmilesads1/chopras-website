@@ -32,3 +32,6 @@ Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
+
+User-agent: Omgilibot
+Allow: /

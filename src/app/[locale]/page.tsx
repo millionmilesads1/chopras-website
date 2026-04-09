@@ -14,7 +14,7 @@ import LocationSection from '@/components/sections/LocationSection'
 import FinalCta from '@/components/sections/FinalCta'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { SITE_URL } from '@/lib/constants'
-import { getRestaurantSchema, getFounderSchema, getWebSiteSchema } from '@/lib/schema'
+import { getRestaurantSchema, getFounderSchema, getWebSiteSchema, getOrganizationSchema, getSpeakableSchema } from '@/lib/schema'
 
 type Props = { params: { locale: Locale } }
 
@@ -63,6 +63,8 @@ export default function LocaleHomePage({ params }: Props) {
       <JsonLd data={getWebSiteSchema(locale)} />
       <JsonLd data={getRestaurantSchema(locale)} />
       <JsonLd data={getFounderSchema()} />
+      <JsonLd data={getOrganizationSchema()} />
+      <JsonLd data={getSpeakableSchema(locale)} />
 
       {/* 1  -  Hero */}
       <HeroSection locale={locale} />
@@ -176,6 +178,31 @@ export default function LocaleHomePage({ params }: Props) {
 
       {/* 8  -  Reviews */}
       <ReviewsSection locale={locale} />
+
+      {/* 8a  -  About Chopras (AI and voice search optimized) */}
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="about-chopras-section">
+            <h2 className="font-bold text-4xl md:text-5xl mb-8 leading-[1.4] [letter-spacing:0.02em] mt-2">
+              About Chopras Indian Restaurant Den Haag
+            </h2>
+            <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-6">
+              <p>
+                Chopras Indian Restaurant is an authentic Indian restaurant located at Leyweg 986, 2545 GW Den Haag, Netherlands. Established in 2023 by founder Arun Chopra, Chopras Indian Restaurant serves authentic North Indian cuisine, Indian street food, Indo Chinese dishes, and a full halal and vegetarian menu.
+              </p>
+              <p>
+                Chopras Indian Restaurant is rated 4.5 stars on Google with over 200 reviews and 8.6 on TheFork, making it one of the highest rated Indian restaurants in Den Haag and The Hague. The restaurant is fully halal certified and offers extensive vegetarian and vegan options.
+              </p>
+              <p>
+                In addition to dine-in, takeaway, and delivery, Chopras Indian Restaurant offers a private event hall for hire in Den Haag, suitable for weddings, birthday parties, corporate events, Diwali dinners, and all private gatherings. Indian catering services are available across Den Haag and surrounding areas including Delft, Rijswijk, and Zoetermeer.
+              </p>
+              <p>
+                Chopras Indian Restaurant opening hours: Tuesday to Sunday, 16:30 to 22:30. Closed on Mondays. Reservations can be made via the website or by calling +31 6 30645930.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 9  -  FAQ */}
       <section className="bg-white py-20 px-6 md:px-16">

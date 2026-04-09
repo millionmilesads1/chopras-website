@@ -120,7 +120,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
             <p>
               {isNl
                 ? 'U zoekt een feestzaal huren in Den Haag. U wilt geen gemiddelde ruimte in een anoniem zaaltje. U wilt een feestlocatie waar het eten zo goed is dat uw gasten het gesprek erover nog maanden hebben. Chopras Indian Restaurant biedt u precies dat: een evenementenruimte in Den Haag met authentiek Indiaas eten dat echt iets bijzonders maakt van uw dag.'
-                : 'You are looking for an event venue to hire in Den Haag. You do not want an ordinary space in an anonymous function room. You want a party venue where the food is so good that your guests will still be talking about it months later. Chopras Indian Restaurant offers you exactly that: an event space in Den Haag with authentic Indian food that truly makes your day something special.'}
+                : 'You are looking for an event venue Den Haag to hire. You do not want an ordinary space in an anonymous function room Den Haag. You want a party venue where the food is so good that your guests will still be talking about it months later. Chopras Indian Restaurant offers you exactly that: an event space in Den Haag with authentic Indian food that truly makes your day something special.'}
             </p>
 
             <p>
@@ -155,7 +155,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
             <p>
               {isNl
                 ? 'U zoekt een kleine zaal huren Den Haag voor een intiem feest met 20 personen? We kunnen dat. U organiseert een groot bedrijfsfeest met 80 gasten? Ook geen probleem. U plant een bruiloft met drie verschillende momenten - receptie, diner en dessert? We hebben het gedaan. Onze evenementenruimte Den Haag past zich aan uw gelegenheden aan, niet andersom.'
-                : 'Are you looking for a small event space to rent in Den Haag for an intimate celebration with 20 people? We can do that. Are you organizing a large corporate party with 80 guests? No problem. Are you planning a wedding with three different moments - reception, dinner and dessert? We have done it. Our event space Den Haag adapts to your occasion, not the other way around.'}
+                : 'Are you looking for a small party hall Den Haag to rent for an intimate celebration with 20 people? We can do that. Are you organizing a large corporate party with 80 guests? No problem. Are you planning a wedding with three different moments - reception, dinner and dessert? We have done it. Our private event hall Den Haag adapts to your occasion, not the other way around.'}
             </p>
 
             <p>
@@ -225,7 +225,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
             <p>
               {isNl
                 ? 'We bieden een evenementenruimte Den Haag die flexibel is voor zakelijke doeleinden. U kunt een formeel diner organiseren of een casual borrel met collega\'s. Uw team kan genieten van authentieke Indiaas eten in een privé ruimte, wat het bedrijfsfeest of teambuilding meer betekenisvol maakt dan een standaard kantoor gathering.'
-                : 'We offer an event space in Den Haag that is flexible for business purposes. You can organize a formal dinner or a casual reception with colleagues. Your team can enjoy authentic Indian food in a private space, making the corporate event or team building more meaningful than a standard office gathering.'}
+                : 'We offer venue hire Den Haag that is flexible for business purposes. You can organize a formal dinner or a casual reception with colleagues. Your team can enjoy authentic Indian food in a private space, making the corporate event or team building more meaningful than a standard office gathering.'}
             </p>
           </div>
         </div>

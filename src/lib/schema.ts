@@ -334,3 +334,53 @@ export function getCateringServiceSchema(locale: Locale): Record<string, unknown
     areaServed: RESTAURANT.serviceAreas.map((area) => ({ '@type': 'City', name: area })),
   }
 }
+
+// ---------------------------------------------------------------------------
+// Organization schema (for AI discoverability and entity recognition)
+// ---------------------------------------------------------------------------
+
+export function getOrganizationSchema(): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+    name: RESTAURANT.name,
+    url: SITE_URL,
+    logo: RESTAURANT.logo,
+    foundingDate: '2023',
+    founder: {
+      '@type': 'Person',
+      name: 'Arun Chopra',
+    },
+    description: 'Chopras Indian Restaurant is Den Haag\'s best authentic Indian restaurant serving North Indian food, halal dishes, vegetarian and vegan options, Indian street food, Indo Chinese cuisine, and event catering with a private event hall.',
+    address: ADDRESS,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: RESTAURANT.contact.phone,
+      contactType: 'reservations',
+      availableLanguage: ['English', 'Dutch', 'Hindi'],
+    },
+    sameAs: [
+      'https://share.google/HA9e9y2DYSLGiJGYS',
+      'https://www.tripadvisor.nl/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
+      'https://www.thefork.nl/restaurant/chopras-indian-restaurant-r825662',
+    ],
+  }
+}
+
+// ---------------------------------------------------------------------------
+// WebPage Speakable schema (for voice search and AI assistant discoverability)
+// ---------------------------------------------------------------------------
+
+export function getSpeakableSchema(locale: Locale): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}/${locale}/#speakable`,
+    url: `${SITE_URL}/${locale}`,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'h2', '.about-chopras-section'],
+    },
+  }
+}
