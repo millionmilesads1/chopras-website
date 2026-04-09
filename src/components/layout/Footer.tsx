@@ -34,9 +34,13 @@ export default function Footer({ locale }: { locale: Locale }) {
     { label: 'Corporate Events', href: `${base}/corporate-events-den-haag` },
     { label: 'Diwali Dinner', href: `${base}/diwali-dinner-den-haag` },
     { label: 'Bruiloft Catering', href: `${base}/bruiloft-catering-den-haag` },
-    { label: 'Zaal Huren Den Haag', href: `${base}/zaal-huren-den-haag` },
-    { label: 'Evenementenruimte', href: `${base}/evenementenruimte-den-haag` },
+  ]
+
+  const FEESTZAAL_LINKS = [
     { label: 'Feestzaal Huren Den Haag', href: `${base}/feestzaal-den-haag` },
+    { label: 'Zaal Huren Den Haag', href: `${base}/zaal-huren-den-haag` },
+    { label: 'Evenementenruimte Den Haag', href: `${base}/evenementenruimte-den-haag` },
+    { label: 'Party Venue Den Haag', href: `${base}/feestzaal-den-haag` },
   ]
 
   const NEAR_YOU_LINKS = [
@@ -68,7 +72,7 @@ export default function Footer({ locale }: { locale: Locale }) {
     <footer className="text-white" style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}>
       {/* Main grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-9 gap-8">
           {/* Column 1  -  Brand */}
           <div className="flex flex-col gap-4 lg:col-span-2">
             <Link href={base}>
@@ -137,6 +141,22 @@ export default function Footer({ locale }: { locale: Locale }) {
             </h3>
             <ul className="flex flex-col gap-2">
               {CATERING_LINKS.map(({ label, href }) => (
+                <li key={href}>
+                  <Link href={href} className="text-sm text-gray-300 hover:text-white transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4b  -  Feestzaal */}
+          <div>
+            <h3 className="font-heading text-base font-semibold mb-4 text-[#D4AF37]">
+              Feestzaal
+            </h3>
+            <ul className="flex flex-col gap-2">
+              {FEESTZAAL_LINKS.map(({ label, href }) => (
                 <li key={href}>
                   <Link href={href} className="text-sm text-gray-300 hover:text-white transition-colors">
                     {label}

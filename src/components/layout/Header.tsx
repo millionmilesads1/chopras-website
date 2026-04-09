@@ -70,6 +70,8 @@ export default function Header({ locale }: { locale: Locale }) {
     { label: tr.common.nav.contact, href: `${base}/contact` },
   ]
 
+  const FEESTZAAL_LINK = { label: 'Feestzaal', href: `${base}/feestzaal-den-haag` }
+
   const DROPDOWNS = [
     {
       key: 'dishes',
@@ -109,9 +111,6 @@ export default function Header({ locale }: { locale: Locale }) {
         { label: 'Corporate Events', href: `${base}/corporate-events-den-haag` },
         { label: 'Diwali Dinner', href: `${base}/diwali-dinner-den-haag` },
         { label: 'Bruiloft Catering', href: `${base}/bruiloft-catering-den-haag` },
-        { label: 'Zaal Huren Den Haag', href: `${base}/zaal-huren-den-haag` },
-        { label: 'Evenementenruimte', href: `${base}/evenementenruimte-den-haag` },
-        { label: 'Feestzaal Huren Den Haag', href: `${base}/feestzaal-den-haag` },
         { label: 'Indian Buffet Den Haag', href: `${base}/indian-buffet-den-haag` },
       ],
     },
@@ -196,6 +195,19 @@ export default function Header({ locale }: { locale: Locale }) {
                 </Link>
               )
             })}
+
+            {/* Feestzaal - Standalone top-level link with gold accent */}
+            <Link
+              href={FEESTZAAL_LINK.href}
+              className={cn(
+                'px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 whitespace-nowrap border',
+                pathname === FEESTZAAL_LINK.href
+                  ? 'text-[#D4AF37] border-[#D4AF37] bg-[#D4AF37]/10'
+                  : 'text-[#D4AF37] border-[#D4AF37]/60 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5'
+              )}
+            >
+              {FEESTZAAL_LINK.label}
+            </Link>
 
             {DROPDOWNS.map(({ key, label, links }) => {
               const isActive = links.some((l) => pathname.startsWith(l.href))
@@ -373,6 +385,20 @@ export default function Header({ locale }: { locale: Locale }) {
               </Link>
             )
           })}
+
+          {/* Feestzaal - Standalone top-level link with gold accent */}
+          <Link
+            href={FEESTZAAL_LINK.href}
+            onClick={() => setMobileOpen(false)}
+            className={cn(
+              'block px-4 py-3 text-base font-medium rounded-xl transition-all duration-150 border-b-2 border-[#D4AF37]/40 mb-1',
+              pathname === FEESTZAAL_LINK.href
+                ? 'text-[#D4AF37] bg-[#D4AF37]/10'
+                : 'text-[#D4AF37] hover:bg-[#D4AF37]/5'
+            )}
+          >
+            {FEESTZAAL_LINK.label}
+          </Link>
 
           {DROPDOWNS.map(({ key, label: groupLabel, links }) => (
             <div key={key} className="mt-1">
