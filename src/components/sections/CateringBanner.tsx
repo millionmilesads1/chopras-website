@@ -34,10 +34,10 @@ export default function CateringBanner({ locale = 'en' }: { locale?: Locale }) {
               Events &amp; Catering
             </span>
 
-            <h2 className="font-semibold italic text-4xl md:text-5xl lg:text-6xl leading-[1.08]">
+            <h2 className="font-semibold italic text-4xl md:text-5xl lg:text-6xl leading-[1.4] [letter-spacing:0.02em] mt-2 mb-6">
               Indian Catering Den Haag
               <br />
-              <span className="text-[#D4AF37]/90"> -  Plan Your Event</span>
+              <span className="text-[#D4AF37]/90"> - Plan Your Event</span>
             </h2>
 
             <p className="font-body text-white/70 text-base md:text-lg mt-7 leading-relaxed max-w-lg mx-auto">

@@ -64,7 +64,7 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
             Our Story
           </span>
 
-          <h2 className="font-semibold text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.07]">
+          <h2 className="font-semibold text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.4] [letter-spacing:0.02em] mt-2 mb-6">
             {tr.home.storyH2}
           </h2>
 

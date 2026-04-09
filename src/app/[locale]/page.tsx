@@ -72,8 +72,8 @@ export default function LocaleHomePage({ params }: Props) {
       {/* 1b  -  Why Chopras is Den Haag Best */}
       <section className="py-20 px-6 md:px-16 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-10 leading-tight">
-            Why Chopras Indian Restaurant is Rated Den Haag best
+          <h2 className="font-bold text-4xl md:text-5xl mb-6 leading-[1.4] [letter-spacing:0.02em] mt-2">
+            Why Chopras Indian Restaurant is Rated Den Haag&apos;s Best
           </h2>
           <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-6">
             <p>
@@ -101,8 +101,8 @@ export default function LocaleHomePage({ params }: Props) {
       {/* 1c  -  Ratings and Social Proof */}
       <section className="py-20 px-6 md:px-16 bg-[#FFFAF5]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-12 leading-tight">
-            Den Haag most Loved Indian Restaurant - What Our Guests Say About Chopras Indian Restaurant
+          <h2 className="font-bold text-4xl md:text-5xl mb-6 leading-[1.4] [letter-spacing:0.02em] mt-2">
+            Den Haag&apos;s Most Loved Indian Restaurant - What Our Guests Say
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
             <div className="bg-white rounded-lg p-8 shadow-sm">
@@ -184,7 +184,7 @@ export default function LocaleHomePage({ params }: Props) {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <p className="font-body text-[#D4AF37] text-xs uppercase tracking-widest mb-4">FAQ</p>
-            <h2 className="font-semibold text-4xl">
+            <h2 className="font-semibold text-4xl mb-6 leading-[1.4] [letter-spacing:0.02em] mt-2">
               {getTranslations(locale).home.faqH2}
             </h2>
           </div>

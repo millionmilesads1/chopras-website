@@ -55,8 +55,8 @@ export default function MeetTheFounder() {
             <div className="h-px w-8 bg-[#D4AF37]" />
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-semibold leading-tight mt-3">
-            The Man Behind<br />Every Dish
+          <h2 className="text-3xl md:text-4xl font-semibold leading-[1.4] [letter-spacing:0.02em] mt-2 mb-6">
+            The Man Behind Every Dish
           </h2>
 
           <blockquote className="font-heading text-xl md:text-2xl text-[#1B2B5E] italic leading-relaxed border-l-4 border-[#D4AF37] pl-6 mt-8 mb-6">
