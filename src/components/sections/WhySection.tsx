@@ -68,7 +68,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
             <span className="inline-block w-1 h-1 rounded-full bg-[#D4AF37]" />
             Why Chopras
           </span>
-          <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-semibold text-[#1B2B5E] mt-5 max-w-2xl leading-[1.05]">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-semibold mt-5 max-w-2xl leading-[1.05]">
             {t.home.whyH2}
           </h2>
         </div>

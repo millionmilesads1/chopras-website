@@ -26,7 +26,7 @@ export default function ReviewsSection({ locale = 'en' }: { locale?: Locale }) {
         <p className="font-body text-[#D4AF37] text-xs uppercase tracking-widest mb-4">
           What Guests Say
         </p>
-        <h2 className="font-heading font-semibold text-[#1B2B5E] text-4xl md:text-5xl">
+        <h2 className="font-semibold text-4xl md:text-5xl">
           {tr.home.reviewsH2}
         </h2>
         <p className="font-body text-[#1A1A1A]/60 mt-3">{tr.home.reviewsSub}</p>

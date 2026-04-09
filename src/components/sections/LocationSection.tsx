@@ -71,7 +71,7 @@ export default function LocationSection({ locale = 'en' }: { locale?: Locale }) 
               Find Us
             </span>
 
-            <h2 className="font-heading font-semibold text-white text-4xl md:text-5xl leading-tight mb-10">
+            <h2 className="font-semibold text-4xl md:text-5xl leading-tight mb-10">
               {tr.home.locationH2}
             </h2>
 

@@ -55,7 +55,7 @@ export default function MeetTheFounder() {
             <div className="h-px w-8 bg-[#D4AF37]" />
           </div>
 
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] font-semibold leading-tight mt-3">
+          <h2 className="text-4xl md:text-5xl font-semibold leading-tight mt-3">
             The Man Behind<br />Every Dish
           </h2>
 

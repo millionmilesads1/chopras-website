@@ -28,7 +28,7 @@ export default function FinalCta({ locale = 'en' }: { locale?: Locale }) {
           </div>
 
           <h2
-            className={`font-heading font-semibold italic text-white text-5xl md:text-6xl lg:text-7xl leading-tight transition-all duration-[900ms] delay-100 ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+            className={`font-semibold italic text-5xl md:text-6xl lg:text-7xl leading-tight transition-all duration-[900ms] delay-100 ease-[cubic-bezier(0.32,0.72,0,1)] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
             {tr.home.ctaH2}
           </h2>
