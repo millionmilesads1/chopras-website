@@ -120,7 +120,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
             <p>
               {isNl
                 ? 'U zoekt een feestzaal huren in Den Haag. U wilt geen gemiddelde ruimte in een anoniem zaaltje. U wilt een feestlocatie waar het eten zo goed is dat uw gasten het gesprek erover nog maanden hebben. Chopras Indian Restaurant biedt u precies dat: een evenementenruimte in Den Haag met authentiek Indiaas eten dat echt iets bijzonders maakt van uw dag.'
-                : 'You are looking for an event venue Den Haag to hire. You do not want an ordinary space in an anonymous function room Den Haag. You want a party venue where the food is so good that your guests will still be talking about it months later. Chopras Indian Restaurant offers you exactly that: an event space in Den Haag with authentic Indian food that truly makes your day something special.'}
+                : 'You are looking for an event venue Den Haag to hire. You do not want an ordinary space in an anonymous function room Den Haag. You want a party venue Den Haag where the food is so good that your guests will still be talking about it months later. Chopras Indian Restaurant offers you exactly that: an event space in Den Haag with authentic Indian food that truly makes your day something special.'}
             </p>
 
             <p>
