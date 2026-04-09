@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Complete vegan menu at Chopras in Den Haag. Plant-based curries, biryani, tandoori. All vegetables. No meat, dairy or eggs.',
-    nl: 'Volledig veganistisch menu bij Chopras in Den Haag. Plantaardige curry\'s, biryani, tandoori. Geen vlees, zuivel of eieren.',
+    nl: 'Volledig veganistisch menu bij Chopras in Den Haag. Plantaardige curry&apos;s, biryani, tandoori. Geen vlees, zuivel of eieren.',
   }
   return {
     title: titles[locale],
@@ -38,15 +38,15 @@ export default function VeganMenuPage({ params }: Props) {
   const isNl = locale === 'nl'
 
   const faqItems = isNl ? [
-    { q: 'Is het veganistische menu echt volledig plantaardig?', a: 'Ja. Alle gerechten op het Chopras veganistische menu bevatten geen vlees, vis, zuivel of eieren. Dit geldt voor curry\'s, biryani, tandoori, en alle bijgerechten. Volledig veganistisch, altijd.' },
-    { q: 'Welke veganistische gerechten zijn het populairst?', a: 'Dal makhani, chana masala, aloo gobi, en vegetable biryani zijn de meest bestelde gerechten. Ze zijn rijkgevuld, smaakvol, en voldoend voor een volledige maaltijd. Voor meer ervaren eters: baingan bharta en okra fry.' },
-    { q: 'Kan ik het veganistische menu online bestellen?', a: 'Ja. Bestel via Thuisbezorgd of Uber Eats. Al het eten wordt bereid zonder zuivel, boter of eieren. Volledige ketenduidelijkheid van keuken tot deur.' },
-    { q: 'Zijn de naan broodjes ook veganistisch?', a: 'Ja. We bakken veganistische naan broodjes vers in de tandoor. Dit geldt voor garlic naan, plain naan en alle andere broodsoorten. Geen melk of boter, puur plantaardig.' },
+    { question: 'Is het veganistische menu echt volledig plantaardig?', answer: 'Ja. Alle gerechten op het Chopras veganistische menu bevatten geen vlees, vis, zuivel of eieren. Dit geldt voor curry&apos;s, biryani, tandoori, en alle bijgerechten. Volledig veganistisch, altijd.' },
+    { question: 'Welke veganistische gerechten zijn het populairst?', answer: 'Dal makhani, chana masala, aloo gobi, en vegetable biryani zijn de meest bestelde gerechten. Ze zijn rijkgevuld, smaakvol, en voldoend voor een volledige maaltijd. Voor meer ervaren eters: baingan bharta en okra fry.' },
+    { question: 'Kan ik het veganistische menu online bestellen?', answer: 'Ja. Bestel via Thuisbezorgd of Uber Eats. Al het eten wordt bereid zonder zuivel, boter of eieren. Volledige ketenduidelijkheid van keuken tot deur.' },
+    { question: 'Zijn de naan broodjes ook veganistisch?', answer: 'Ja. We bakken veganistische naan broodjes vers in de tandoor. Dit geldt voor garlic naan, plain naan en alle andere broodsoorten. Geen melk of boter, puur plantaardig.' },
   ] : [
-    { q: 'Is the vegan menu truly completely plant-based?', a: 'Yes. All dishes on the Chopras vegan menu contain no meat, fish, dairy or eggs. This applies to curries, biryani, tandoori, and all side dishes. Completely vegan, always.' },
-    { q: 'Which vegan dishes are most popular?', a: 'Dal makhani, chana masala, aloo gobi, and vegetable biryani are the most ordered dishes. They are rich, flavorful, and satisfying as a complete meal. For more experienced eaters: baingan bharta and okra fry.' },
-    { q: 'Can I order the vegan menu online?', a: 'Yes. Order via Thuisbezorgd or Uber Eats. All food is prepared without dairy, butter or eggs. Full chain integrity from kitchen to door.' },
-    { q: 'Are the naan breads also vegan?', a: 'Yes. We bake vegan naan fresh in the tandoor. This applies to garlic naan, plain naan and all other bread types. No milk or butter, purely plant-based.' },
+    { question: 'Is the vegan menu truly completely plant-based?', answer: 'Yes. All dishes on the Chopras vegan menu contain no meat, fish, dairy or eggs. This applies to curries, biryani, tandoori, and all side dishes. Completely vegan, always.' },
+    { question: 'Which vegan dishes are most popular?', answer: 'Dal makhani, chana masala, aloo gobi, and vegetable biryani are the most ordered dishes. They are rich, flavorful, and satisfying as a complete meal. For more experienced eaters: baingan bharta and okra fry.' },
+    { question: 'Can I order the vegan menu online?', answer: 'Yes. Order via Thuisbezorgd or Uber Eats. All food is prepared without dairy, butter or eggs. Full chain integrity from kitchen to door.' },
+    { question: 'Are the naan breads also vegan?', answer: 'Yes. We bake vegan naan fresh in the tandoor. This applies to garlic naan, plain naan and all other bread types. No milk or butter, purely plant-based.' },
   ]
 
   return (
@@ -134,10 +134,10 @@ export default function VeganMenuPage({ params }: Props) {
             {faqItems.map((item, idx) => (
               <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
                 <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.q}
+                  {item.question}
                   <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
                 </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
+                <p className="text-[#1A1A1A] mt-4">{item.answer}</p>
               </details>
             ))}
           </div>
