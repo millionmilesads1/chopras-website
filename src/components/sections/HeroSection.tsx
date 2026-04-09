@@ -1,117 +1,32 @@
 'use client'
 
-import { useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
-
-const FRAME_COUNT = 240
-const FRAMES = Array.from({ length: FRAME_COUNT }, (_, i) =>
-  `/images/hero-frames/ezgif-frame-${String(i + 1).padStart(3, '0')}.jpg`
-)
 
 export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
   const tr = getTranslations(locale)
   const base = `/${locale}`
 
-  const containerRef = useRef<HTMLDivElement>(null)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const imagesRef = useRef<(HTMLImageElement | null)[]>(Array(FRAME_COUNT).fill(null))
-  const currentFrameRef = useRef(0)
-  const rafIdRef = useRef(0)
-
-  const drawFrame = useCallback((index: number) => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-    const img = imagesRef.current[index]
-    if (!img?.complete || !img.naturalWidth) return
-
-    const cw = canvas.width
-    const ch = canvas.height
-    const iw = img.naturalWidth
-    const ih = img.naturalHeight
-    const canvasAspect = cw / ch
-    const imgAspect = iw / ih
-
-    let sx = 0, sy = 0, sw = iw, sh = ih
-    if (imgAspect > canvasAspect) {
-      sw = ih * canvasAspect
-      sx = (iw - sw) / 2
-    } else {
-      sh = iw / canvasAspect
-      sy = (ih - sh) / 2
-    }
-
-    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch)
-  }, [])
-
-  useEffect(() => {
-    FRAMES.forEach((src, i) => {
-      const img = new window.Image()
-      img.onload = () => {
-        imagesRef.current[i] = img
-        if (i === 0) drawFrame(0)
-      }
-      img.src = src
-    })
-  }, [drawFrame])
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-      drawFrame(currentFrameRef.current)
-    }
-    resize()
-    window.addEventListener('resize', resize)
-    return () => window.removeEventListener('resize', resize)
-  }, [drawFrame])
-
-  useEffect(() => {
-    const onScroll = () => {
-      const container = containerRef.current
-      if (!container) return
-
-      const rect = container.getBoundingClientRect()
-      const scrollable = rect.height - window.innerHeight
-      const scrolled = -rect.top
-      const progress = Math.max(0, Math.min(1, scrolled / scrollable))
-      const frameIndex = Math.min(FRAME_COUNT - 1, Math.floor(progress * FRAME_COUNT))
-
-      if (frameIndex !== currentFrameRef.current) {
-        currentFrameRef.current = frameIndex
-        cancelAnimationFrame(rafIdRef.current)
-        rafIdRef.current = requestAnimationFrame(() => drawFrame(frameIndex))
-      }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      cancelAnimationFrame(rafIdRef.current)
-    }
-  }, [drawFrame])
-
   return (
     <>
-      <div ref={containerRef} style={{ height: '300vh' }}>
-        <div className="sticky top-0 h-screen overflow-hidden">
+      <div className="relative h-screen overflow-hidden">
+        {/* Background video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        >
+          <source src="https://res.cloudinary.com/dllsnz1uz/video/upload/v1775769823/hero-video_e0kxxg.mov" type="video/mp4" />
+        </video>
 
-          <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/45" />
 
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%)',
-            }}
-          />
-
-          {/* Hero content */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8">
+        {/* Hero content */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8">
 
             {/* Eyebrow pill */}
             <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#D4AF37] font-medium mb-8 backdrop-blur-sm">
@@ -163,16 +78,15 @@ export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
                 </span>
               </Link>
             </div>
-          </div>
+        </div>
 
-          {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-            <span className="font-body text-[10px] text-white/35 uppercase tracking-[0.2em]">Scroll</span>
-            <svg width="18" height="24" viewBox="0 0 18 24" fill="none" strokeWidth="1" stroke="rgba(255,255,255,0.4)" className="animate-bounce">
-              <rect x="1" y="1" width="16" height="22" rx="8" />
-              <line x1="9" y1="5" x2="9" y2="10" strokeLinecap="round" />
-            </svg>
-          </div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+          <span className="font-body text-[10px] text-white/35 uppercase tracking-[0.2em]">Scroll</span>
+          <svg width="18" height="24" viewBox="0 0 18 24" fill="none" strokeWidth="1" stroke="rgba(255,255,255,0.4)" className="animate-bounce">
+            <rect x="1" y="1" width="16" height="22" rx="8" />
+            <line x1="9" y1="5" x2="9" y2="10" strokeLinecap="round" />
+          </svg>
         </div>
       </div>
 
