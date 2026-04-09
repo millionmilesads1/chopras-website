@@ -19,7 +19,7 @@ export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
           playsInline
           preload="metadata"
         >
-          <source src="https://res.cloudinary.com/dllsnz1uz/video/upload/v1775769823/hero-video_e0kxxg.mov" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dllsnz1uz/video/upload/v1775769823/hero-video_e0kxxg.mp4" type="video/mp4" />
         </video>
 
         {/* Dark overlay */}
