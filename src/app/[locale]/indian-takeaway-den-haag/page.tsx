@@ -13,8 +13,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
   const titles = {
-    en: 'Indian Takeaway Den Haag | Chopras  -  Order Online or Collect',
-    nl: 'Indiaas Afhalen Den Haag | Chopras  -  Online Bestellen of Afhalen',
+    en: 'Indian Takeaway Den Haag | Chopras Indian Restaurant',
+    nl: 'Indiaas Afhalen Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
     en: 'Order Indian takeaway in Den Haag from Chopras. Delivery via Thuisbezorgd and Uber Eats, or collect from Leyweg 986. Halal certified. Authentic Indian food.',
@@ -109,6 +109,43 @@ export default function IndianTakeawayPage({ params }: Props) {
               <li>{isNl ? 'Maandag: Gesloten' : 'Monday: Closed'}</li>
               <li>{isNl ? 'Dinsdag – Zondag: 16:30 – 22:30' : 'Tuesday – Sunday: 16:30 – 22:30'}</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNAL LINKS SECTION */}
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10">
+            {isNl ? 'Ontdek Populaire Gerechten' : 'Explore Popular Dishes'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <a href={`/${locale}/menu`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Menu' : 'Menu'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Bekijk het volledige menu van Chopras' : 'View our complete menu'}</p>
+            </a>
+            <a href={`/${locale}/butter-chicken-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Butter Chicken' : 'Butter Chicken'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Langzaam gegaard in roomsaus' : 'Slow-cooked in cream sauce'}</p>
+            </a>
+            <a href={`/${locale}/biryani-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Biryani' : 'Biryani'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Geurige rijst met vlees of groente' : 'Fragrant rice with meat or vegetables'}</p>
+            </a>
+            <a href={`/${locale}/chaat-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Chaat' : 'Chaat'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiaans streetfood voor takeaway' : 'Indian street food perfect for takeaway'}</p>
+            </a>
+          </div>
+          <div className="mt-8 text-center space-y-4">
+            <p className="text-[#1A1A1A] text-base">
+              <a href={`/${locale}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
+                {isNl ? 'Chopras Indiaas Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
+              </a>
+            </p>
+            <p className="text-[#1A1A1A] text-base">
+              {isNl ? 'Haal Indiaans eten direct af of laat het bezorgen in Den Haag via' : 'Collect Indian takeaway or delivery in Den Haag via'} <a href="https://www.thuisbezorgd.nl/menu/chopras-indian-street-food" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{tr.menu.thuisbezorgd}</a> {isNl ? 'of' : 'or'} <a href="https://www.ubereats.com/nl/store/chopras-indian-restaurant/kFKhBtR-W3OkJyl2f6QmUg" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{tr.menu.ubereats}</a>.
+            </p>
           </div>
         </div>
       </section>

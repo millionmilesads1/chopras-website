@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { SITE_URL } from '@/lib/constants'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -41,6 +41,34 @@ export default function ButterChickenPage({ params }: Props) {
   const base = `/${locale}`
   const isNl = locale === 'nl'
 
+  const butterChickenFaqs = isNl ? [
+    {
+      question: 'Serveer je butter chicken bij Chopras Indian Restaurant in Den Haag?',
+      answer: 'Ja. Chopras Indian Restaurant serveert authentieke butter chicken dagelijks. Onze butter chicken wordt gemaakt van een nacht gemarineerde tandoor-kip, vers ingedikt in tomaten en room, met kruiden die diezelfde ochtend zijn gemalen. Het is op basis van het originele recept uit Oud-Delhi van Moti Mahal.'
+    },
+    {
+      question: 'Wat maakt de butter chicken van Chopras Indian Restaurant speciaal?',
+      answer: 'De butter chicken van Chopras Indian Restaurant is speciaal omdat we elk detail goed doen. Tandoor-gemarineerde kip wordt langzaam bereid in een rijke tomaten- en roomsaus, met kruiden die vers gemalen zijn, echte room en boter, niet uit een pot. We starten met vers gemarineerde kip de avond van tevoren, niet een uur eerder. Dit creëert authentieke smaak.'
+    },
+    {
+      question: 'Waar vind ik de beste butter chicken in Den Haag?',
+      answer: 'Chopras Indian Restaurant op Leyweg 986 serveert de beste authentieke butter chicken in Den Haag. We serveren murgh makhani op dezelfde manier als in India - gemaakt met verse tomaten, volledige room en gemarineerde tandoor-kip. Kom binnen en smak het verschil.'
+    }
+  ] : [
+    {
+      question: 'Does Chopras Indian Restaurant serve butter chicken in Den Haag?',
+      answer: 'Yes. Chopras Indian Restaurant serves authentic butter chicken daily. Our butter chicken is made from overnight-marinated tandoor chicken, slow-cooked in a rich tomato and cream sauce, with spices freshly ground that morning. It is based on the original recipe from Old Delhi at Moti Mahal.'
+    },
+    {
+      question: 'What makes Chopras Indian Restaurant butter chicken special?',
+      answer: 'Chopras Indian Restaurant butter chicken is special because we get every detail right. Tandoor-marinated chicken is slow-cooked in a rich tomato and cream sauce, with spices freshly ground, real cream and butter, not from a jar. We start with fresh marinated chicken the evening before, not an hour earlier. This creates authentic flavour.'
+    },
+    {
+      question: 'Where can I find the best butter chicken in Den Haag?',
+      answer: 'Chopras Indian Restaurant on Leyweg 986 serves the best authentic butter chicken in Den Haag. We serve murgh makhani the way it is made in India - made with fresh tomatoes, full-fat cream and marinated tandoor chicken. Come in and taste the difference.'
+    }
+  ]
+
   return (
     <>
       <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/butter-chicken-den-haag`)} />
@@ -48,6 +76,7 @@ export default function ButterChickenPage({ params }: Props) {
         { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
         { name: isNl ? 'Butter Chicken Den Haag' : 'Butter Chicken Den Haag', item: `${SITE_URL}/${locale}/butter-chicken-den-haag` },
       ])} />
+      <JsonLd data={getFaqPageSchema(butterChickenFaqs)} />
 
       {/* HERO */}
       <section className="bg-[#1B2B5E] py-20 text-center">
@@ -177,19 +206,51 @@ export default function ButterChickenPage({ params }: Props) {
               ? 'Bezoek Chopras voor Butter Chicken in Den Haag'
               : 'Visit Chopras for Butter Chicken in Den Haag'}
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <Link
               href={`${base}/contact`}
               className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center"
             >
               {tr.common.reserve}
-            </a>
+            </Link>
             <Link
               href={`${base}/menu`}
               className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center"
             >
               {tr.common.viewMenu}
             </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link href={`${base}/biryani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Biryani' : 'Biryani'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Ontdek onze biryani in Den Haag' : 'Learn about our biryani in Den Haag'}</p>
+            </Link>
+            <Link href={`${base}/tandoori-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Tandoori' : 'Tandoori'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Onze tandoori-specialiteiten in Den Haag' : 'Our tandoori specialities in Den Haag'}</p>
+            </Link>
+            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Vegetarisch' : 'Vegetarian'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Dal Makhani Den Haag' : 'Dal Makhani Den Haag'}</p>
+            </Link>
+            <Link href={`${base}/mutton-rogan-josh-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Lam Curry' : 'Lamb Curry'}</p>
+              <p className="text-[#1B2B5E] font-semibold">mutton rogan josh Den Haag</p>
+            </Link>
+            <Link href={`${base}/catering`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Catering' : 'Catering'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Wilt u dit gerecht voor uw evenement? Indiaas catering Den Haag' : 'Want this dish at your event? Indian catering Den Haag'}</p>
+            </Link>
+          </div>
+          <div className="mt-8 text-center space-y-4">
+            <p className="text-[#1A1A1A] text-base">
+              <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
+                {isNl ? 'Chopras Indiaas Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
+              </Link>
+            </p>
+            <p className="text-[#1A1A1A] text-base">
+              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een reservering' : 'book a table at Chopras Indian Restaurant Den Haag'}</Link>.
+            </p>
           </div>
         </div>
       </section>

@@ -12,6 +12,19 @@ function formatPrice(price: number): string {
   return price % 1 === 0 ? `€${price}` : `€${price.toFixed(2)}`
 }
 
+function renderDishTitle(name: string) {
+  const match = name.match(/^(.+?)\s*(\([^)]+\))$/)
+  if (!match) return name
+
+  const [, mainName, variant] = match
+  return (
+    <>
+      {mainName}{' '}
+      <span style={{ fontSize: '0.8em' }}>{variant}</span>
+    </>
+  )
+}
+
 function VegetarianBadge() {
   return (
     <Leaf
@@ -71,8 +84,8 @@ function DishGrid({ dishes }: { dishes: typeof menuItems }) {
 
             {/* Card body */}
             <div className="p-5">
-              <h3 className="font-heading text-xl text-[#1A1A1A] font-semibold leading-tight">
-                {item.name}
+              <h3 className="font-heading text-xl text-[#1A1A1A] font-semibold leading-tight whitespace-nowrap">
+                {renderDishTitle(item.name)}
               </h3>
               <p className="text-[#1A1A1A]/60 text-sm mt-1 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
                 {item.description}
@@ -201,7 +214,7 @@ export default function MenuPageClient() {
                 <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-3">
                   {category.shortLabel}
                 </p>
-                <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E]">
+                <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#C7A348]">
                   {category.label}
                 </h2>
                 <div className="border-b-2 border-[#D4AF37] w-16 mt-4" />

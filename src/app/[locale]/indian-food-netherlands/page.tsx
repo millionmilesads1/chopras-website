@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -13,8 +14,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
   const titles = {
-    en: 'Indian Food in the Netherlands | The Complete Guide  -  Chopras Den Haag',
-    nl: 'Indiaas Eten in Nederland | De Complete Gids  -  Chopras Den Haag',
+    en: 'Indian Food in the Netherlands | Chopras Indian Restaurant',
+    nl: 'Indiaas Eten in Nederland | Chopras Indian Restaurant',
   }
   const descriptions = {
     en: 'Everything you need to know about Indian food in the Netherlands. The best cities, what to order, halal options, vegetarian cuisine. Chopras in Den Haag is your starting point.',
@@ -123,6 +124,10 @@ export default function IndianFoodNetherlandsPage({ params }: Props) {
   return (
     <>
       <JsonLd data={articleSchema as Record<string, unknown>} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Indiaas Eten Nederland' : 'Indian Food Netherlands', item: `${SITE_URL}/${locale}/indian-food-netherlands` },
+      ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

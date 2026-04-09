@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { SITE_URL } from '@/lib/constants'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -14,8 +14,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
   const titles = {
-    en: 'Biryani in Den Haag | Chopras  -  Chicken, Lamb and Veg Biryani',
-    nl: 'Biryani in Den Haag | Chopras  -  Kip, Lam en Groente Biryani',
+    en: 'Biryani in Den Haag | Chopras Indian Restaurant',
+    nl: 'Biryani in Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
     en: 'Authentic biryani in Den Haag at Chopras. Fragrant basmati rice slow-cooked with chicken, lamb or vegetables. Halal certified. Open Tue–Sun on Leyweg.',
@@ -37,6 +37,34 @@ export default function BiryaniPage({ params }: Props) {
   const base = `/${locale}`
   const isNl = locale === 'nl'
 
+  const biryanisFaqs = isNl ? [
+    {
+      question: 'Serveer je biryani bij Chopras Indian Restaurant in Den Haag?',
+      answer: 'Ja. Chopras Indian Restaurant serveert kip-biryani, lam-biryani en groente-biryani dagelijks. Alle biryani wordt langzaam bereid vanaf het begin in onze tandoor-stijl oven en gegaard totdat elke graankorrel volledig verzadigd is met de smaken van gemarineerde vlees, vers gemalen kruiden en echte saffraan.'
+    },
+    {
+      question: 'Welke soorten biryani biedt Chopras Indian Restaurant aan?',
+      answer: 'Chopras Indian Restaurant biedt drie soorten biryani aan. Kipbiryani gemaakt van een nacht gemarineerde tender tandoor-kip. Lambiryani gemaakt van malse lamschouder. Groentebiryani gemaakt van seizoensgroenten. Alle drie worden op dezelfde manier bereid - gelaagd en langzaam gegaard in onze tandoor-oven tot de rijst alle kruiden heeft opgenomen.'
+    },
+    {
+      question: 'Waar vind ik de beste biryani in Den Haag?',
+      answer: 'Chopras Indian Restaurant op Leyweg 986 serveert de beste authentieke biryani in Den Haag. Wij serveren biryani op dezelfde manier als in India - gegaard in een traditionele tandoor-oven van dichtbij, niet in een pan of een snelkookpan. Kom binnen en voel het verschil.'
+    }
+  ] : [
+    {
+      question: 'Do you serve biryani at Chopras Indian Restaurant in Den Haag?',
+      answer: 'Yes. Chopras Indian Restaurant serves chicken biryani, lamb biryani, and vegetable biryani daily. All biryani is slow-cooked from the start in our tandoor-style oven and finished until every grain of rice is fully saturated with the flavours of marinated meat, freshly ground spices, and real saffron.'
+    },
+    {
+      question: 'What types of biryani does Chopras Indian Restaurant offer?',
+      answer: 'Chopras Indian Restaurant offers three types of biryani. Chicken biryani made from overnight-marinated tender tandoor chicken. Lamb biryani made from tender lamb shoulder. Vegetable biryani made from seasonal vegetables. All three are prepared the same way - layered and slow-cooked in our tandoor oven until the rice has absorbed all the spices.'
+    },
+    {
+      question: 'Where can I find the best biryani in Den Haag?',
+      answer: 'Chopras Indian Restaurant on Leyweg 986 serves the best authentic biryani in Den Haag. We serve biryani the way it is meant to be served in India - cooked in a traditional tandoor oven up close, not in a pan or pressure cooker. Come in and feel the difference.'
+    }
+  ]
+
   return (
     <>
       <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/biryani-den-haag`)} />
@@ -44,6 +72,7 @@ export default function BiryaniPage({ params }: Props) {
         { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
         { name: isNl ? 'Biryani Den Haag' : 'Biryani Den Haag', item: `${SITE_URL}/${locale}/biryani-den-haag` },
       ])} />
+      <JsonLd data={getFaqPageSchema(biryanisFaqs)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -113,12 +142,53 @@ export default function BiryaniPage({ params }: Props) {
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href={`${base}/contact`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
+            <Link href={`${base}/contact`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
               {tr.common.reserve}
-            </a>
+            </Link>
             <Link href={`${base}/menu`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
               {tr.common.viewMenu}
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNAL LINKS SECTION */}
+      <section className="bg-[#FFFAF5] py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8 text-center">
+            {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <Link href={`${base}/tandoori-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Tandoori' : 'Tandoori'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Ontdek onze tandoori-specialiteiten in Den Haag' : 'Discover our tandoori specialities in Den Haag'}</p>
+            </Link>
+            <Link href={`${base}/butter-chicken-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Boter Kip' : 'Butter Chicken'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Het verhaal achter onze boter kip' : 'The story behind our butter chicken'}</p>
+            </Link>
+            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Vegetarisch' : 'Vegetarian'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Dal Makhani Den Haag' : 'Dal Makhani Den Haag'}</p>
+            </Link>
+            <Link href={`${base}/mutton-rogan-josh-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Lam Curry' : 'Lamb Curry'}</p>
+              <p className="text-[#1B2B5E] font-semibold">try our lamb rogan josh in Den Haag</p>
+            </Link>
+            <Link href={`${base}/catering`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Catering' : 'Catering'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Wilt u dit gerecht voor uw evenement? Indiaas catering Den Haag' : 'Want this dish at your event? Indian catering Den Haag'}</p>
+            </Link>
+          </div>
+          <div className="text-center space-y-4">
+            <p className="text-[#1A1A1A] text-base">
+              <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
+                {isNl ? 'Chopras Indiaas Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
+              </Link>
+            </p>
+            <p className="text-[#1A1A1A] text-base">
+              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'} <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een reservering' : 'book a table at Chopras Indian Restaurant Den Haag'}</Link>.
+            </p>
           </div>
         </div>
       </section>

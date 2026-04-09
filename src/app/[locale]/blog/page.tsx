@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
   const titles = {
-    en: 'Indian Food Blog Den Haag | Chopras  -  Recipes, Stories and Tips',
-    nl: 'Indiaas Eten Blog Den Haag | Chopras  -  Recepten, Verhalen en Tips',
+    en: 'Indian Food Blog Den Haag | Chopras Indian Restaurant',
+    nl: 'Indiaas Eten Blog Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
     en: 'Discover Indian food stories, restaurant guides, catering tips and street food guides from Chopras Indian Restaurant in Den Haag.',

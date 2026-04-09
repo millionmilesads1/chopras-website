@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { SITE_URL } from '@/lib/constants'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -14,15 +14,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
   const titles = {
-    en: 'Halal Food Den Haag | Chopras  -  Certified Indian Restaurant',
-    nl: 'Halal Eten Den Haag | Chopras  -  Gecertificeerd Indiaas Restaurant',
+    en: 'Halal Food Den Haag | Chopras Indian Restaurant',
+    nl: 'Halal Eten Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Looking for halal food in Den Haag? Chopras is a fully halal-certified Indian restaurant on Leyweg. Authentic curries, biryani and street food. Open Tue–Sun.',
-    nl: 'Op zoek naar halal eten in Den Haag? Chopras is een volledig halal-gecertificeerd Indiaas restaurant op Leyweg. Authentieke curry, biryani en street food. Open di–zo.',
+    en: 'Fully halal-certified Indian restaurant in Den Haag. Authentic curries, biryani, tandoori and street food from Chopras on Leyweg 986. Open daily.',
+    nl: 'Volledig halal-gecertificeerd Indiaas restaurant in Den Haag. Authentieke curry, biryani, tandoori en street food van Chopras op Leyweg 986. Dagelijks open.',
   }
   return {
-    title: titles[locale], description: descriptions[locale],
+    title: titles[locale],
+    description: descriptions[locale],
     alternates: {
       canonical: `${SITE_URL}/${locale}/halal-food-den-haag`,
       languages: { en: `${SITE_URL}/en/halal-food-den-haag`, nl: `${SITE_URL}/nl/halal-food-den-haag`, 'x-default': `${SITE_URL}/en/halal-food-den-haag` },
@@ -57,6 +58,7 @@ export default function HalalFoodPage({ params }: Props) {
         { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
         { name: isNl ? 'Halal Eten Den Haag' : 'Halal Food Den Haag', item: `${SITE_URL}/${locale}/halal-food-den-haag` },
       ])} />
+      <JsonLd data={getFaqPageSchema(faqItems)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,6 +153,43 @@ export default function HalalFoodPage({ params }: Props) {
                 <p className="px-6 pb-5 pt-2 text-white/80 leading-relaxed">{a}</p>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNAL LINKS SECTION */}
+      <section className="bg-[#FFFAF5] py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10">
+            {isNl ? 'Ontdek Halal Gerechten' : 'Explore Halal Dishes'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link href={`${base}/butter-chicken-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Butter Chicken' : 'Butter Chicken'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'De beroemde roomkip van Chopras' : 'Chopras famous butter chicken'}</p>
+            </Link>
+            <Link href={`${base}/tandoori-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Tandoori' : 'Tandoori'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Gegrilde specialiteiten' : 'Grilled specialities'}</p>
+            </Link>
+            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Dal Makhani' : 'Dal Makhani'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Langzaam gemaakte linzenmix' : 'Slow-cooked lentil medley'}</p>
+            </Link>
+            <Link href={`${base}/biryani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Biryani' : 'Biryani'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Geurige rijst specialiteit' : 'Fragrant rice speciality'}</p>
+            </Link>
+          </div>
+          <div className="mt-8 text-center space-y-4">
+            <p className="text-[#1A1A1A] text-base">
+              <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
+                {isNl ? 'Chopras Halal Restaurant Den Haag - volledige halal certificering' : 'Chopras Halal Restaurant Den Haag - fully halal certified'}
+              </Link>
+            </p>
+            <p className="text-[#1A1A1A] text-base">
+              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een reservering' : 'book a table at Chopras'}</Link>.
+            </p>
           </div>
         </div>
       </section>

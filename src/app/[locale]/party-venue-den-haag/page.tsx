@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
-import { type Locale } from '@/lib/useTranslations'
+import { getFaqPageSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
 
@@ -13,15 +14,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
   const titles = {
-    en: 'Party Venue Den Haag | Hire Chopras Event Hall  -  Indian Theme and Catering',
-    nl: 'Feestlocatie Den Haag | Huur Chopras Evenementenhal  -  Indiase Sfeer en Catering',
+    en: 'Party Venue Den Haag | Chopras Indian Restaurant',
+    nl: 'Feestlocatie Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Looking for a party venue in Den Haag? Hire Chopras private event hall for 25 to 80 guests. Vibrant Indian décor, full catering included, professional staff. Get a quote.',
-    nl: 'Op zoek naar een feestlocatie in Den Haag? Huur de privé-evenementenhal van Chopras voor 25 tot 80 gasten. Levendige Indiase inrichting, volledige catering inbegrepen, professioneel personeel.',
+    en: 'Hire Chopras private event hall in Den Haag for 25 to 80 guests. Indian decor, full catering included, professional staff. Perfect for weddings, parties and corporate events.',
+    nl: 'Huur de privé-evenementenhal van Chopras in Den Haag voor 25 tot 80 gasten. Indiase inrichting, volledige catering, professioneel personeel. Ideaal voor bruiloften, feesten en zakelijke evenementen.',
   }
   return {
-    title: titles[locale], description: descriptions[locale],
+    title: titles[locale],
+    description: descriptions[locale],
     alternates: {
       canonical: `${SITE_URL}/${locale}/party-venue-den-haag`,
       languages: { en: `${SITE_URL}/en/party-venue-den-haag`, nl: `${SITE_URL}/nl/party-venue-den-haag`, 'x-default': `${SITE_URL}/en/party-venue-den-haag` },
@@ -31,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function PartyVenuePage({ params }: Props) {
   const { locale } = params
+  const tr = getTranslations(locale)
   const base = `/${locale}`
   const isNl = locale === 'nl'
 
@@ -96,17 +99,13 @@ export default function PartyVenuePage({ params }: Props) {
   ]
 
   const faqItems = isNl ? [
-    { q: 'Wat is de capaciteit van de feestlocatie bij Chopras?', a: 'De privé-evenementenhal bij Chopras biedt ruimte aan 25 tot 80 gasten afhankelijk van de opstelling. Een zittend diner aan ronde tafels werkt het best voor tot 60 gasten. Een staande receptie of cocktailformaat bereikt comfortabel 80.' },
-    { q: 'Is catering inbegrepen bij de zaalhuur?', a: 'Ja. Catering is standaard inbegrepen bij elke evenementenboeking bij Chopras  -  het is geen aparte kostenpost. U kiest het menuformaat (buffet of bediening op bord) en wij stellen het menu samen rondom uw evenement en gastenlijst.' },
-    { q: 'Mogen wij onze eigen taart en decoraties meebrengen?', a: 'Ja  -  u bent van harte welkom om uw eigen taart, bloemen, ballonnen en persoonlijke accenten mee te brengen. Laat ons van tevoren weten als u iets meebrengt dat koeling of speciale behandeling vereist.' },
-    { q: 'Hoe ver van tevoren moeten wij boeken?', a: 'Wij raden aan minimaal 2 weken van tevoren te boeken voor weekdagevenementen en 3 à 4 weken voor weekenddatums. Zaterdagavonden zijn snel vol. Voor grote evenementen van 60+ gasten is 4 à 6 weken van tevoren raadzaam.' },
-    { q: 'Is de feestlocatie rolstoeltoegankelijk?', a: 'Het hoofdrestaurant op Leyweg 986 is volledig rolstoeltoegankelijk. De evenementenhal bevindt zich op de bovenverdieping en is momenteel niet rolstoeltoegankelijk. Als toegankelijkheid essentieel is voor uw evenement, neem dan contact met ons op voordat u boekt.' },
+    { q: 'Kan ik een evenementenruimte huren bij Chopras Indian Restaurant in Den Haag?', a: 'Ja. Chopras Indian Restaurant heeft een privé-evenementenhal beschikbaar voor huur in Den Haag. Deze is geschikt voor verjaardagen, zakelijke evenementen, bruiloften, jubileums en alle vieringen.' },
+    { q: 'Hoeveel gasten kan de evenementenhal van Chopras Indian Restaurant herbergen?', a: 'De privé-evenementenhal van Chopras Indian Restaurant Den Haag kan groepen van verschillende grootte herbergen. Neem rechtstreeks contact met ons op om capaciteit voor uw specifieke evenement te bespreken.' },
+    { q: 'Welke gelegenheden kan ik organiseren bij Chopras Indian Restaurant Den Haag?', a: 'U kunt verjaardagen, jubileums, bruiloften, bruiloft, zakelijke diners, Diwali-feesten, teambuilding-evenementen, productlanceringen en privébijeenkomsten organiseren bij Chopras Indian Restaurant Den Haag.' },
   ] : [
-    { q: 'What is the capacity of the party venue at Chopras?', a: 'The private event hall at Chopras accommodates between 25 and 80 guests depending on the layout. A seated dinner at round tables works best for up to 60 guests. A standing reception comfortably reaches 80.' },
-    { q: 'Is catering included in the venue hire?', a: 'Yes. Catering is included as standard with every event hire at Chopras  -  it is not a separate cost. You choose the menu format and we build the menu around your event and guest list.' },
-    { q: 'Can we bring our own cake and decorations?', a: 'Yes  -  you are welcome to bring your own cake, flowers, balloons, and table decorations. Please let us know in advance if you are bringing anything that requires refrigeration or special handling.' },
-    { q: 'How far in advance should we book?', a: 'We recommend booking at least 2 weeks in advance for weekday events and 3 to 4 weeks for weekend dates. Saturday evenings book up quickly. For large events of 60+ guests, 4 to 6 weeks ahead is advisable.' },
-    { q: 'Is the party venue wheelchair accessible?', a: 'The main restaurant at Leyweg 986 is fully wheelchair accessible. The private event hall is located upstairs and is not currently wheelchair accessible. If accessibility is essential for your event, please contact us before booking.' },
+    { q: 'Can I hire an event space at Chopras Indian Restaurant in Den Haag?', a: 'Yes. Chopras Indian Restaurant has a private event hall available for hire in Den Haag. It is suitable for birthdays, corporate events, weddings, anniversaries, and all celebrations.' },
+    { q: 'How many guests can the Chopras Indian Restaurant event hall accommodate?', a: 'The private event hall at Chopras Indian Restaurant Den Haag can accommodate groups of various sizes. Contact us directly to discuss capacity for your specific event.' },
+    { q: 'What occasions can I host at Chopras Indian Restaurant Den Haag?', a: 'You can host birthdays, anniversaries, weddings, bruiloft, corporate dinners, Diwali parties, team building events, product launches, and private gatherings at Chopras Indian Restaurant Den Haag.' },
   ]
 
   const faqSchema = {
@@ -122,6 +121,10 @@ export default function PartyVenuePage({ params }: Props) {
   return (
     <>
       <JsonLd data={eventVenueSchema as Record<string, unknown>} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Party Venue Den Haag' : 'Party Venue Den Haag', item: `${SITE_URL}/${locale}/party-venue-den-haag` },
+      ])} />
       <JsonLd data={faqSchema as Record<string, unknown>} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">

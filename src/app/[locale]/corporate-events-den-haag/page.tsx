@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
-import { type Locale } from '@/lib/useTranslations'
+import { getBreadcrumbSchema } from '@/lib/schema'
+import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
 
@@ -13,8 +14,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
   const titles = {
-    en: 'Corporate Events Den Haag | Chopras  -  Catering and Private Event Space',
-    nl: 'Zakelijke Evenementen Den Haag | Chopras  -  Catering en Privé-Evenementenruimte',
+    en: 'Corporate Events Den Haag | Chopras Indian Restaurant',
+    nl: 'Zakelijke Evenementen Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
     en: 'Corporate event catering and private venue hire in Den Haag at Chopras. Authentic Indian catering for team dinners, product launches and networking events. Get a quote.',
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function CorporateEventsPage({ params }: Props) {
   const { locale } = params
+  const tr = getTranslations(locale)
   const base = `/${locale}`
   const isNl = locale === 'nl'
 
@@ -105,6 +107,10 @@ export default function CorporateEventsPage({ params }: Props) {
     <>
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
       <JsonLd data={serviceSchema as Record<string, unknown>} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Zakelijke Evenementen' : 'Corporate Events', item: `${SITE_URL}/${locale}/corporate-events-den-haag` },
+      ])} />
       <JsonLd data={faqSchema as Record<string, unknown>} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">

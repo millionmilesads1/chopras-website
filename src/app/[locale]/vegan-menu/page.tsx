@@ -1,0 +1,167 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import JsonLd from '@/components/seo/JsonLd'
+import { SITE_URL } from '@/lib/constants'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getTranslations, type Locale } from '@/lib/useTranslations'
+
+type Props = { params: { locale: Locale } }
+
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'nl' }]
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = params
+  const titles = {
+    en: 'Vegan Menu Den Haag | Chopras Indian Restaurant',
+    nl: 'Veganistisch Menu Den Haag | Chopras Indian Restaurant',
+  }
+  const descriptions = {
+    en: 'Complete vegan menu at Chopras in Den Haag. Plant-based curries, biryani, tandoori. All vegetables. No meat, dairy or eggs.',
+    nl: 'Volledig veganistisch menu bij Chopras in Den Haag. Plantaardige curry\'s, biryani, tandoori. Geen vlees, zuivel of eieren.',
+  }
+  return {
+    title: titles[locale],
+    description: descriptions[locale],
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/vegan-menu`,
+      languages: { en: `${SITE_URL}/en/vegan-menu`, nl: `${SITE_URL}/nl/vegan-menu`, 'x-default': `${SITE_URL}/en/vegan-menu` },
+    },
+  }
+}
+
+export default function VeganMenuPage({ params }: Props) {
+  const { locale } = params
+  const tr = getTranslations(locale)
+  const base = `/${locale}`
+  const isNl = locale === 'nl'
+
+  const faqItems = isNl ? [
+    { q: 'Is het veganistische menu echt volledig plantaardig?', a: 'Ja. Alle gerechten op het Chopras veganistische menu bevatten geen vlees, vis, zuivel of eieren. Dit geldt voor curry\'s, biryani, tandoori, en alle bijgerechten. Volledig veganistisch, altijd.' },
+    { q: 'Welke veganistische gerechten zijn het populairst?', a: 'Dal makhani, chana masala, aloo gobi, en vegetable biryani zijn de meest bestelde gerechten. Ze zijn rijkgevuld, smaakvol, en voldoend voor een volledige maaltijd. Voor meer ervaren eters: baingan bharta en okra fry.' },
+    { q: 'Kan ik het veganistische menu online bestellen?', a: 'Ja. Bestel via Thuisbezorgd of Uber Eats. Al het eten wordt bereid zonder zuivel, boter of eieren. Volledige ketenduidelijkheid van keuken tot deur.' },
+    { q: 'Zijn de naan broodjes ook veganistisch?', a: 'Ja. We bakken veganistische naan broodjes vers in de tandoor. Dit geldt voor garlic naan, plain naan en alle andere broodsoorten. Geen melk of boter, puur plantaardig.' },
+  ] : [
+    { q: 'Is the vegan menu truly completely plant-based?', a: 'Yes. All dishes on the Chopras vegan menu contain no meat, fish, dairy or eggs. This applies to curries, biryani, tandoori, and all side dishes. Completely vegan, always.' },
+    { q: 'Which vegan dishes are most popular?', a: 'Dal makhani, chana masala, aloo gobi, and vegetable biryani are the most ordered dishes. They are rich, flavorful, and satisfying as a complete meal. For more experienced eaters: baingan bharta and okra fry.' },
+    { q: 'Can I order the vegan menu online?', a: 'Yes. Order via Thuisbezorgd or Uber Eats. All food is prepared without dairy, butter or eggs. Full chain integrity from kitchen to door.' },
+    { q: 'Are the naan breads also vegan?', a: 'Yes. We bake vegan naan fresh in the tandoor. This applies to garlic naan, plain naan and all other bread types. No milk or butter, purely plant-based.' },
+  ]
+
+  return (
+    <>
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/vegan-menu`)} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Veganistisch Menu' : 'Vegan Menu', item: `${SITE_URL}/${locale}/vegan-menu` },
+      ])} />
+      <JsonLd data={getFaqPageSchema(faqItems)} />
+
+      <section className="bg-[#1B2B5E] py-20 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <div className="h-px w-8 bg-[#D4AF37]" />
+            <span className="text-[#D4AF37] text-xs uppercase tracking-widest font-medium" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)' }}>
+              100% PLANT-BASED
+            </span>
+            <div className="h-px w-8 bg-[#D4AF37]" />
+          </div>
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+            {isNl ? 'Veganistisch Menu - Volledig Plantaardig' : 'Vegan Menu - Completely Plant-Based'}
+          </h1>
+          <p className="text-white/75 text-lg md:text-xl" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}>
+            {isNl ? 'Geen vlees, vis, zuivel of eieren. Alle groenten en kruiden. Chopras in Den Haag.' : 'No meat, fish, dairy or eggs. Pure vegetables and spices. Chopras in Den Haag.'}
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-[#FFFAF5] py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+            {isNl ? 'Het Veganistische Menu Uitgelegd' : 'The Vegan Menu Explained'}
+          </h2>
+          <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
+            {isNl ? (
+              <>
+                <p>Het veganistische menu van Chopras is niet een aparte optie met beperkte keuzes. Het is een volledige, smakelijke menukaart bereid volledig plantaardig. Geen verborgen ingrediënten, geen vlees- of zuivelbouillon, geen eieren in sauzen. Dit is hoe deze gerechten in traditionele Indiase vegetarische keukens worden bereid.</p>
+                <p>Elke curry, elke biryani, elk brood wordt bereid zonder dierlijke producten. De smaak is niet verminderd of gewijzigd voor veganisten. Dit is authentieke Indiase plantaardige keuken, niet aangepast eten voor niet-veganisten.</p>
+                <p>Voor veganen en vegetariërs in Den Haag betekent dit dat ze dezelfde kwaliteit en smaak krijgen als iedereen. Geen aparte menu, geen compromissen. Plantaardig, smaakvol, altijd.</p>
+              </>
+            ) : (
+              <>
+                <p>The vegan menu at Chopras is not a limited option with reduced choices. It is a complete, flavorful menu prepared entirely plant-based. No hidden ingredients, no meat or dairy broth, no eggs in sauces. This is how these dishes are prepared in traditional Indian vegetarian kitchens.</p>
+                <p>Every curry, every biryani, every bread is prepared without animal products. The flavor is not diminished or modified for vegans. This is authentic Indian plant-based cuisine, not modified food for non-vegans.</p>
+                <p>For vegans and vegetarians in Den Haag, this means they get the same quality and taste as everyone else. No separate menu, no compromises. Plant-based, flavorful, always.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+            {isNl ? 'Populaire Gerechten op het Veganistische Menu' : 'Popular Dishes on the Vegan Menu'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            {(isNl ? [
+              { title: 'Dal en Linzen', items: 'Dal makhani, dal tadka, chana masala, rajma, toor dal' },
+              { title: 'Groente Curry\'s', items: 'Aloo gobi, baingan bharta, okra fry, cauliflower tikka, mixed vegetable curry' },
+              { title: 'Biryani en Rijst', items: 'Vegetable biryani, mushroom biryani, yellow rice, jeera rice' },
+              { title: 'Brood en Bijgerechten', items: 'Garlic naan, plain naan, roti, papadum, plantaardige raita' },
+            ] : [
+              { title: 'Lentils and Beans', items: 'Dal makhani, dal tadka, chana masala, rajma, toor dal' },
+              { title: 'Vegetable Curries', items: 'Aloo gobi, baingan bharta, okra fry, cauliflower tikka, mixed vegetable curry' },
+              { title: 'Biryani and Rice', items: 'Vegetable biryani, mushroom biryani, yellow rice, jeera rice' },
+              { title: 'Breads and Sides', items: 'Garlic naan, plain naan, roti, papadum, vegan raita' },
+            ]).map((item) => (
+              <div key={item.title} className="bg-[#FFFAF5] rounded-xl p-6 border-l-4 border-[#D4AF37]">
+                <h3 className="font-heading text-xl text-[#1B2B5E] mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.items}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FFFAF5] py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+            {isNl ? 'Veganistisch Menu FAQ' : 'Vegan Menu FAQ'}
+          </h2>
+          <div className="space-y-4">
+            {faqItems.map((item, idx) => (
+              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
+                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
+                  {item.q}
+                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+            {isNl ? 'Veganistisch Menu Bestellen' : 'Order Vegan Menu'}
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href={`${base}/contact`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
+              {tr.common.reserve}
+            </a>
+            <Link href={`${base}/menu`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
+              {tr.common.viewMenu}
+            </Link>
+            <Link href={`${base}/indian-food-delivery-den-haag`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
+              {isNl ? 'Bezorging' : 'Delivery'}
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}

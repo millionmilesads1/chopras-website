@@ -119,10 +119,9 @@ export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
               {tr.home.heroLabel} &middot; Est. 2023
             </span>
 
-            <h1 className="font-heading font-bold text-[#FFFAF5] leading-none">
-              <span className="block text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[7rem] tracking-tight">Chopras</span>
-              <span className="block italic font-light text-4xl md:text-5xl lg:text-6xl mt-2 text-white/90">
-                Indian Restaurant
+            <h1 className="font-heading font-bold text-[#FFFAF5] leading-tight max-w-5xl mx-auto">
+              <span className="block text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight">
+                Den Haag best Indian Restaurant - Chopras Indian Restaurant, Authentic Food, Real Spices
               </span>
             </h1>
 

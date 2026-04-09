@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
-import { type Locale } from '@/lib/useTranslations'
+import { getBreadcrumbSchema } from '@/lib/schema'
+import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
 
@@ -13,8 +14,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
   const titles = {
-    en: 'Indian Buffet in Den Haag | Chopras  -  Event Catering and Group Dining',
-    nl: 'Indiaas Buffet Den Haag | Chopras  -  Evenement Catering en Groepsdiner',
+    en: 'Indian Buffet in Den Haag | Chopras Indian Restaurant',
+    nl: 'Indiaas Buffet Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
     en: 'Book an Indian buffet in Den Haag at Chopras for your event. Fresh curries, tandoori, biryani and street food for groups of 25 to 200. Halal certified. Get a quote.',
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function IndianBuffetPage({ params }: Props) {
   const { locale } = params
+  const tr = getTranslations(locale)
   const base = `/${locale}`
   const isNl = locale === 'nl'
 
@@ -83,6 +85,10 @@ export default function IndianBuffetPage({ params }: Props) {
     <>
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
       <JsonLd data={cateringSchema as Record<string, unknown>} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Indiaas Buffet' : 'Indian Buffet', item: `${SITE_URL}/${locale}/indian-buffet-den-haag` },
+      ])} />
       <JsonLd data={faqSchema as Record<string, unknown>} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
@@ -208,6 +214,43 @@ export default function IndianBuffetPage({ params }: Props) {
             <a href={`tel:${RESTAURANT.contact.phone}`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
               {RESTAURANT.contact.phoneDisplay}
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNAL LINKS SECTION */}
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10">
+            {isNl ? 'Ontdek Meer van Onze Gerechten' : 'Explore More of Our Dishes'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link href={`${base}/butter-chicken-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Butter Chicken' : 'Butter Chicken'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Slow-cooked butter chicken in Den Haag' : 'Slow-cooked butter chicken in Den Haag'}</p>
+            </Link>
+            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Dal Makhani' : 'Dal Makhani'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Gemaakte linzenmix, roomsaus, garlic naan' : 'Slow-cooked lentils in cream sauce'}</p>
+            </Link>
+            <Link href={`${base}/biryani-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Biryani' : 'Biryani'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Geurige rijst-gerecht in Den Haag' : 'Fragrant rice dish in Den Haag'}</p>
+            </Link>
+            <Link href={`${base}/catering`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Catering' : 'Catering'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiaas buffetcatering voor evenementen' : 'Indian catering for your events'}</p>
+            </Link>
+          </div>
+          <div className="mt-8 text-center space-y-4">
+            <p className="text-[#1A1A1A] text-base">
+              <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
+                {isNl ? 'Chopras Indiaas Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
+              </Link>
+            </p>
+            <p className="text-[#1A1A1A] text-base">
+              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een reservering' : 'book a table at Chopras Indian Restaurant Den Haag'}</Link>.
+            </p>
           </div>
         </div>
       </section>

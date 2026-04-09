@@ -7,7 +7,7 @@ import {
 } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
-import { getCateringServiceSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getCateringServiceSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import CateringForm from '@/components/catering/CateringForm'
 import CateringFaqAccordion from '@/components/sections/CateringFaqAccordion'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
@@ -21,12 +21,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
   const titles = {
-    en: 'Indian Catering Den Haag | Chopras  -  Weddings, Events & Private Dining',
-    nl: 'Indiaas Catering Den Haag | Chopras  -  Bruiloften, Evenementen & Privédining',
+    en: 'Indian Catering Den Haag | Chopras Indian Restaurant',
+    nl: 'Indiaas Catering Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Authentic Indian catering in Den Haag for weddings, corporate events, birthdays and parties. Halal certified. Serving Den Haag, Rijswijk, Delft and more. Get a quote today.',
-    nl: 'Authentieke Indiase catering in Den Haag voor bruiloften, zakelijke evenementen, verjaardagen en feesten. Halal gecertificeerd. Actief in Den Haag, Rijswijk, Delft en omgeving. Vraag vandaag een offerte aan.',
+    en: 'Authentic Indian catering in Den Haag for weddings, corporate events, birthdays and parties. Halal certified. Serving Den Haag, Rijswijk, Delft and more.',
+    nl: 'Authentieke Indiase catering in Den Haag voor bruiloften, zakelijke evenementen, verjaardagen en feesten. Halal gecertificeerd. Actief in Den Haag, Rijswijk, Delft.',
   }
   return {
     title: titles[locale],
@@ -46,6 +46,16 @@ export default function LocaleCateringPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
   const base = `/${locale}`
+
+  const cateringFaqs = locale === 'nl' ? [
+    { question: 'Verzorgt Chopras Indian Restaurant catering in Den Haag?', answer: 'Ja. Chopras Indian Restaurant verzorgt volledige Indiase catering in heel Den Haag voor verjaardagen, bruiloften, zakelijke evenementen, Diwali diners en privéfeesten. Neem contact op voor uw vereisten.' },
+    { question: 'Voor welke evenementen verzorgt Chopras Indian Restaurant catering?', answer: 'Chopras Indian Restaurant verzorgt catering voor verjaardagen, jubileums, bruiloften, bruiloft, zakelijke diners, Diwali vieringen, Holi evenementen en alle privébijeenkomsten in Den Haag en omgeving.' },
+    { question: 'Hoe boek ik Indiase catering in Den Haag?', answer: 'Bezoek de cateringpagina op chopras.nl of bel Chopras Indian Restaurant direct op Leyweg 986, Den Haag. Wij stellen een aangepast menu en offerte samen voor uw evenement.' },
+  ] : [
+    { question: 'Does Chopras Indian Restaurant cater in Den Haag?', answer: 'Yes. Chopras Indian Restaurant provides full Indian catering across Den Haag for birthdays, weddings, corporate events, Diwali dinners, and private parties. Contact us to discuss your requirements.' },
+    { question: 'What events does Chopras Indian Restaurant cater for?', answer: 'Chopras Indian Restaurant caters for birthdays, anniversaries, weddings, bruiloft, corporate dinners, Diwali celebrations, Holi events, and all private gatherings in Den Haag and surrounding areas.' },
+    { question: 'How do I book Indian catering in Den Haag?', answer: 'Visit the catering page on chopras.nl or call Chopras Indian Restaurant directly at Leyweg 986, Den Haag. We will create a custom menu and quote for your event.' },
+  ]
 
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
@@ -98,6 +108,7 @@ export default function LocaleCateringPage({ params }: Props) {
     <>
       <JsonLd data={getCateringServiceSchema(locale)} />
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={getFaqPageSchema(cateringFaqs)} />
 
       {/* SECTION 1  -  HERO */}
       <section className="relative min-h-[60vh] flex items-center justify-center">
@@ -284,6 +295,69 @@ export default function LocaleCateringPage({ params }: Props) {
                 <p className="text-white/70 text-base leading-relaxed">{body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5.5  -  POPULAR DISHES */}
+      <section className="bg-[#FFFAF5] py-20 md:py-28 px-6 md:px-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E] mb-12 text-center">
+            Popular Dishes for Catering
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <Link href={`${base}/butter-chicken-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Chicken Curry</p>
+              <p className="text-[#1B2B5E] font-semibold">Butter chicken Den Haag</p>
+            </Link>
+            <Link href={`${base}/mutton-rogan-josh-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Lamb Curry</p>
+              <p className="text-[#1B2B5E] font-semibold">our mutton rogan josh Den Haag</p>
+            </Link>
+            <Link href={`${base}/biryani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Biryani</p>
+              <p className="text-[#1B2B5E] font-semibold">Authentic biryani Den Haag</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5.6  -  RELATED PAGES */}
+      <section className="bg-white py-20 md:py-28 px-6 md:px-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E] mb-12 text-center">
+            Catering Options for Every Occasion
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <Link href={`${base}/indian-wedding-catering-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Weddings</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">Indian wedding catering Den Haag</p>
+            </Link>
+            <Link href={`${base}/indian-birthday-catering-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Birthdays</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">Birthday catering Den Haag</p>
+            </Link>
+            <Link href={`${base}/corporate-events-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Corporate</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">Corporate events catering Den Haag</p>
+            </Link>
+            <Link href={`${base}/diwali-dinner-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Celebrations</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">Diwali dinner catering Den Haag</p>
+            </Link>
+            <Link href={`${base}/bruiloft-catering-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Bruiloft</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">Bruiloft catering Den Haag</p>
+            </Link>
+            <Link href={`${base}/zaal-huren-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Venue</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">Zaal huren Den Haag</p>
+            </Link>
+          </div>
+          <div className="text-center space-y-4 max-w-2xl mx-auto">
+            <p className="text-[#1A1A1A] text-base">
+              <Link href={`${base}/party-venue-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Hire our party venue in Den Haag</Link> for the perfect setting, or visit <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant Den Haag</Link> to see our restaurant.
+            </p>
           </div>
         </div>
       </section>

@@ -4,41 +4,81 @@ import { SITE_URL } from '@/lib/constants'
 
 const locales = ['en', 'nl'] as const
 
-const staticPages = [
-  { slug: '', lastMod: '2026-04-05' },
-  { slug: 'menu', lastMod: '2026-04-05' },
-  { slug: 'catering', lastMod: '2026-04-05' },
-  { slug: 'contact', lastMod: '2026-04-05' },
-  { slug: 'vacancy', lastMod: '2026-04-03' },
-  { slug: 'blog', lastMod: '2026-04-05' },
-  { slug: 'butter-chicken-den-haag', lastMod: '2026-04-03' },
-  { slug: 'biryani-den-haag', lastMod: '2026-04-03' },
-  { slug: 'tandoori-den-haag', lastMod: '2026-04-03' },
-  { slug: 'indian-takeaway-den-haag', lastMod: '2026-04-03' },
-  { slug: 'indian-buffet-den-haag', lastMod: '2026-04-05' },
-  { slug: 'party-venue-den-haag', lastMod: '2026-04-03' },
-  { slug: 'corporate-events-den-haag', lastMod: '2026-04-03' },
-  { slug: 'indian-wedding-catering-den-haag', lastMod: '2026-04-03' },
-  { slug: 'indian-food-netherlands', lastMod: '2026-04-03' },
-  { slug: 'halal-food-den-haag', lastMod: '2026-04-03' },
-  { slug: 'indian-restaurant-rijswijk', lastMod: '2026-04-05' },
-  { slug: 'indian-restaurant-delft', lastMod: '2026-04-05' },
-  { slug: 'indian-restaurant-zoetermeer', lastMod: '2026-04-05' },
+interface SitemapPage {
+  slug: string
+  lastMod: string
+  priority: number
+  changeFreq: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
+}
+
+const staticPages: SitemapPage[] = [
+  // Core pages
+  { slug: '', lastMod: '2026-04-10', priority: 1.0, changeFreq: 'weekly' },
+  { slug: 'menu', lastMod: '2026-04-10', priority: 0.9, changeFreq: 'monthly' },
+  { slug: 'catering', lastMod: '2026-04-10', priority: 0.9, changeFreq: 'monthly' },
+  { slug: 'contact', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'monthly' },
+  { slug: 'vacancy', lastMod: '2026-04-10', priority: 0.6, changeFreq: 'weekly' },
+
+  // Dish pages
+  { slug: 'halal-food-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'biryani-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'butter-chicken-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'tandoori-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'dal-makhani-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'mutton-rogan-josh-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'naan-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'chaat-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'pani-puri-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'soya-chaap-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+
+  // Service pages
+  { slug: 'indian-takeaway-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-buffet-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-food-delivery-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'party-venue-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+
+  // Event and catering pages
+  { slug: 'corporate-events-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-wedding-catering-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-birthday-catering-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'diwali-dinner-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'bruiloft-catering-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'zaal-huren-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'evenementenruimte-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+
+  // Location pages
+  { slug: 'indian-restaurant-delft', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-restaurant-rijswijk', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-restaurant-zoetermeer', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-food-netherlands', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-restaurant-near-peace-palace-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-restaurant-near-den-haag-centraal', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+
+  // Landing pages
+  { slug: 'beste-indiaas-restaurant-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'family-restaurant-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+
+  // Blog index
+  { slug: 'blog', lastMod: '2026-04-10', priority: 0.7, changeFreq: 'weekly' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // All static pages × both locales
   const sitemapStaticPages = locales.flatMap((locale) =>
-    staticPages.map(({ slug, lastMod }) => ({
+    staticPages.map(({ slug, lastMod, priority, changeFreq }) => ({
       url: slug ? `${SITE_URL}/${locale}/${slug}` : `${SITE_URL}/${locale}`,
       lastModified: new Date(lastMod),
+      priority,
+      changeFrequency: changeFreq,
     }))
   )
 
-  // Blog posts  -  each post only at its own language URL
+  // Blog posts with priority 0.7
   const blogPages = blogPosts.map((post) => ({
     url: `${SITE_URL}/${post.language}/blog/${post.slug}`,
     lastModified: new Date(post.publishedAt),
+    priority: 0.7,
+    changeFrequency: 'weekly' as const,
   }))
 
   return [...sitemapStaticPages, ...blogPages]

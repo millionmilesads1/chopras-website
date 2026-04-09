@@ -18,8 +18,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
   const titles = {
-    en: 'Indian Restaurant Menu Den Haag | Chopras  -  Curries, Tandoori & Street Food',
-    nl: 'Indiaas Restaurant Menu Den Haag | Chopras  -  Curry, Tandoori & Streetfood',
+    en: 'Indian Restaurant Menu Den Haag | Chopras Indian Restaurant',
+    nl: 'Indiaas Restaurant Menu Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
     en: 'Browse the full Chopras Indian menu in Den Haag. Fresh curries, tandoori, biryani, chaat and street food. Halal certified. Vegetarian and vegan options clearly labelled.',
@@ -99,6 +99,53 @@ export default function LocaleMenuPage({ params }: Props) {
 
       {/* INTERACTIVE MENU */}
       <MenuPageClient />
+
+      {/* INTERNAL LINKS SECTION */}
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-12 text-center">
+            Explore Our Specialities
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link href={`${base}/biryani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Signature Dish</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">Learn about our biryani in Den Haag</p>
+            </Link>
+            <Link href={`${base}/butter-chicken-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Fan Favorite</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">The story behind our butter chicken</p>
+            </Link>
+            <Link href={`${base}/tandoori-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Tandoori Specials</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">Our tandoori specialities Den Haag</p>
+            </Link>
+            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Vegetarian Delight</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">Dal makhani Den Haag</p>
+            </Link>
+            <Link href={`${base}/chaat-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Street Food</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">Indian street food and chaat Den Haag</p>
+            </Link>
+            <Link href={`${base}/halal-food-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Halal Certified</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">Our full halal Indian menu Den Haag</p>
+            </Link>
+            <Link href={`${base}/mutton-rogan-josh-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Lamb Curry</p>
+              <p className="text-[#1B2B5E] font-semibold text-lg">mutton rogan josh Den Haag — our Kashmiri lamb curry</p>
+            </Link>
+          </div>
+          <div className="mt-12 pt-12 border-t border-gray-200 space-y-4">
+            <p className="text-[#1A1A1A] text-base leading-relaxed">
+              Looking for <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegetarian Indian food Den Haag</Link>? Or interested in <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">need this menu for your event? Book Indian catering in Den Haag</Link>?
+            </p>
+            <p className="text-[#1A1A1A] text-base leading-relaxed">
+              Visit <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant - best Indian restaurant in Den Haag</Link> or <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">make a reservation at Chopras Indian Restaurant</Link>.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* BOTTOM CTA */}
       <section

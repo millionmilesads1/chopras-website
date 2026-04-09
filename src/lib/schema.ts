@@ -36,8 +36,8 @@ const SAME_AS = [
 
 const AGGREGATE_RATING = {
   '@type': 'AggregateRating',
-  ratingValue: '4.7',
-  reviewCount: '83',
+  ratingValue: '4.5',
+  reviewCount: '200',
   bestRating: '5',
   worstRating: '1',
 }
@@ -81,6 +81,7 @@ export function getRestaurantSchema(locale: Locale): Record<string, unknown> {
     '@type': 'Restaurant',
     '@id': `${SITE_URL}/#restaurant`,
     name: RESTAURANT.name,
+    description: 'Den Haag best Indian restaurant serving authentic North Indian food, halal dishes, vegetarian and vegan options, Indian street food, Indo Chinese food, and event catering with a private event hall.',
     image: [
       RESTAURANT.logo,
       `${SITE_URL}/og/home-og.jpg`,
@@ -90,12 +91,12 @@ export function getRestaurantSchema(locale: Locale): Record<string, unknown> {
     email: RESTAURANT.contact.email,
     address: ADDRESS,
     geo: GEO,
-    servesCuisine: ['Indian', 'North Indian', 'Street Food', 'Indo-Chinese', 'Halal'],
+    servesCuisine: ['North Indian', 'Indian Street Food', 'Halal Indian', 'Vegetarian Indian', 'Vegan Indian', 'Indo Chinese', 'Indian Catering'],
     priceRange: RESTAURANT.priceRange,
     openingHoursSpecification: OPENING_HOURS,
     hasMenu: `${SITE_URL}/${locale}/menu`,
     hasMap: RESTAURANT.googleMapsUrl,
-    acceptsReservations: `${SITE_URL}/${locale}/contact`,
+    acceptsReservations: true,
     areaServed: RESTAURANT.serviceAreas,
     aggregateRating: AGGREGATE_RATING,
     suitableForDiet: { '@id': 'https://schema.org/HalalDiet' },

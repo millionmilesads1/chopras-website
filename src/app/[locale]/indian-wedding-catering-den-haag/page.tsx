@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
-import { type Locale } from '@/lib/useTranslations'
+import { getBreadcrumbSchema } from '@/lib/schema'
+import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
 
@@ -13,8 +14,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
   const titles = {
-    en: 'Indian Wedding Catering Den Haag | Chopras  -  Bruiloft Catering',
-    nl: 'Indiase Bruiloftscatering Den Haag | Chopras  -  Authentiek Halal Trouwmenu',
+    en: 'Indian Wedding Catering Den Haag | Chopras Indian Restaurant',
+    nl: 'Indiase Bruiloftscatering Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
     en: 'Authentic Indian wedding catering in Den Haag at Chopras. Full halal wedding menus for 25 to 200 guests. Serving Den Haag, Rijswijk, Delft and surrounding areas.',
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function IndianWeddingCateringPage({ params }: Props) {
   const { locale } = params
+  const tr = getTranslations(locale)
   const base = `/${locale}`
   const isNl = locale === 'nl'
 
@@ -105,6 +107,10 @@ export default function IndianWeddingCateringPage({ params }: Props) {
     <>
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
       <JsonLd data={cateringServiceSchema as Record<string, unknown>} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Indiaas Bruiloft Catering' : 'Indian Wedding Catering', item: `${SITE_URL}/${locale}/indian-wedding-catering-den-haag` },
+      ])} />
       <JsonLd data={faqSchema as Record<string, unknown>} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
