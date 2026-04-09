@@ -7,28 +7,54 @@ export default function Footer({ locale }: { locale: Locale }) {
   const tr = getTranslations(locale)
   const base = `/${locale}`
 
-  const CATERING_LINKS = [
-    { label: tr.common.nav.catering, href: `${base}/catering` },
-    { label: tr.common.nav.indianBuffet, href: `${base}/indian-buffet-den-haag` },
-    { label: tr.common.nav.weddingCatering, href: `${base}/indian-wedding-catering-den-haag` },
-    { label: tr.common.nav.corporateEvents, href: `${base}/corporate-events-den-haag` },
-    { label: tr.common.nav.partyVenue, href: `${base}/party-venue-den-haag` },
+  const DISHES_LINKS = [
+    { label: 'Biryani Den Haag', href: `${base}/biryani-den-haag` },
+    { label: 'Butter Chicken Den Haag', href: `${base}/butter-chicken-den-haag` },
+    { label: 'Tandoori Den Haag', href: `${base}/tandoori-den-haag` },
+    { label: 'Dal Makhani Den Haag', href: `${base}/dal-makhani-den-haag` },
+    { label: 'Mutton Rogan Josh', href: `${base}/mutton-rogan-josh-den-haag` },
+    { label: 'Naan Den Haag', href: `${base}/naan-den-haag` },
+    { label: 'Chaat Den Haag', href: `${base}/chaat-den-haag` },
+    { label: 'Pani Puri Den Haag', href: `${base}/pani-puri-den-haag` },
+    { label: 'Soya Chaap Den Haag', href: `${base}/soya-chaap-den-haag` },
+    { label: 'Indo Chinese Food', href: `${base}/indo-chinese-restaurant-den-haag` },
+    { label: 'Indian Buffet', href: `${base}/indian-buffet-den-haag` },
   ]
 
-  const FOOD_LINKS = [
-    { label: tr.common.nav.menu, href: `${base}/menu` },
-    { label: tr.common.nav.butterChicken, href: `${base}/butter-chicken-den-haag` },
-    { label: tr.common.nav.biryani, href: `${base}/biryani-den-haag` },
-    { label: tr.common.nav.tandoori, href: `${base}/tandoori-den-haag` },
-    { label: tr.common.nav.takeaway, href: `${base}/indian-takeaway-den-haag` },
+  const MENU_LINKS = [
+    { label: 'Full Menu', href: `${base}/menu` },
+    { label: 'Halal Menu', href: `${base}/halal-menu` },
+    { label: 'Vegan Menu', href: `${base}/vegan-menu` },
+  ]
+
+  const CATERING_LINKS = [
+    { label: 'Indian Catering Den Haag', href: `${base}/catering` },
+    { label: 'Wedding Catering', href: `${base}/indian-wedding-catering-den-haag` },
+    { label: 'Birthday Catering', href: `${base}/indian-birthday-catering-den-haag` },
+    { label: 'Corporate Events', href: `${base}/corporate-events-den-haag` },
+    { label: 'Diwali Dinner', href: `${base}/diwali-dinner-den-haag` },
+    { label: 'Bruiloft Catering', href: `${base}/bruiloft-catering-den-haag` },
+    { label: 'Zaal Huren Den Haag', href: `${base}/zaal-huren-den-haag` },
+    { label: 'Evenementenruimte', href: `${base}/evenementenruimte-den-haag` },
+    { label: 'Party Venue Den Haag', href: `${base}/party-venue-den-haag` },
   ]
 
   const NEAR_YOU_LINKS = [
-    { label: tr.common.nav.foodNetherlands, href: `${base}/indian-food-netherlands` },
-    { label: tr.common.nav.halalFood, href: `${base}/halal-food-den-haag` },
-    { label: tr.common.nav.nearRijswijk, href: `${base}/indian-restaurant-rijswijk` },
-    { label: tr.common.nav.nearDelft, href: `${base}/indian-restaurant-delft` },
-    { label: tr.common.nav.nearZoetermeer, href: `${base}/indian-restaurant-zoetermeer` },
+    { label: 'Indian Restaurant Delft', href: `${base}/indian-restaurant-delft` },
+    { label: 'Indian Restaurant Rijswijk', href: `${base}/indian-restaurant-rijswijk` },
+    { label: 'Indian Restaurant Zoetermeer', href: `${base}/indian-restaurant-zoetermeer` },
+    { label: 'Near Peace Palace', href: `${base}/indian-restaurant-near-peace-palace-den-haag` },
+    { label: 'Near Den Haag Centraal', href: `${base}/indian-restaurant-near-den-haag-centraal` },
+  ]
+
+  const ORDER_LINKS = [
+    { label: 'Indian Food Delivery', href: `${base}/indian-food-delivery-den-haag` },
+    { label: 'Indian Takeaway', href: `${base}/indian-takeaway-den-haag` },
+  ]
+
+  const EXPLORE_LINKS = [
+    { label: 'Beste Indiaas Restaurant', href: `${base}/beste-indiaas-restaurant-den-haag` },
+    { label: 'Family Restaurant Den Haag', href: `${base}/family-restaurant-den-haag` },
   ]
 
   const INFO_LINKS = [
@@ -42,9 +68,9 @@ export default function Footer({ locale }: { locale: Locale }) {
     <footer className="text-white" style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}>
       {/* Main grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-8">
           {/* Column 1  -  Brand */}
-          <div className="flex flex-col gap-4 lg:col-span-1">
+          <div className="flex flex-col gap-4 lg:col-span-2">
             <Link href={base}>
               <Image
                 src={RESTAURANT.logo}
@@ -72,7 +98,39 @@ export default function Footer({ locale }: { locale: Locale }) {
             </a>
           </div>
 
-          {/* Column 2  -  Catering */}
+          {/* Column 2  -  Our Dishes */}
+          <div>
+            <h3 className="font-heading text-base font-semibold mb-4 text-brand-accent">
+              Our Dishes
+            </h3>
+            <ul className="flex flex-col gap-2">
+              {DISHES_LINKS.map(({ label, href }) => (
+                <li key={href}>
+                  <Link href={href} className="text-sm text-gray-300 hover:text-white transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3  -  Menu */}
+          <div>
+            <h3 className="font-heading text-base font-semibold mb-4 text-brand-accent">
+              Menu
+            </h3>
+            <ul className="flex flex-col gap-2">
+              {MENU_LINKS.map(({ label, href }) => (
+                <li key={href}>
+                  <Link href={href} className="text-sm text-gray-300 hover:text-white transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4  -  Catering */}
           <div>
             <h3 className="font-heading text-base font-semibold mb-4 text-brand-accent">
               {tr.common.nav.catering}
@@ -88,23 +146,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             </ul>
           </div>
 
-          {/* Column 3  -  Our Food */}
-          <div>
-            <h3 className="font-heading text-base font-semibold mb-4 text-brand-accent">
-              {tr.common.nav.dishes}
-            </h3>
-            <ul className="flex flex-col gap-2">
-              {FOOD_LINKS.map(({ label, href }) => (
-                <li key={href}>
-                  <Link href={href} className="text-sm text-gray-300 hover:text-white transition-colors">
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4  -  Near You */}
+          {/* Column 5  -  Near You */}
           <div>
             <h3 className="font-heading text-base font-semibold mb-4 text-brand-accent">
               {tr.common.nav.nearYou}
@@ -120,7 +162,39 @@ export default function Footer({ locale }: { locale: Locale }) {
             </ul>
           </div>
 
-          {/* Column 5  -  Info + Contact */}
+          {/* Column 6  -  Order */}
+          <div>
+            <h3 className="font-heading text-base font-semibold mb-4 text-brand-accent">
+              Order
+            </h3>
+            <ul className="flex flex-col gap-2">
+              {ORDER_LINKS.map(({ label, href }) => (
+                <li key={href}>
+                  <Link href={href} className="text-sm text-gray-300 hover:text-white transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 7  -  Explore */}
+          <div>
+            <h3 className="font-heading text-base font-semibold mb-4 text-brand-accent">
+              Explore
+            </h3>
+            <ul className="flex flex-col gap-2">
+              {EXPLORE_LINKS.map(({ label, href }) => (
+                <li key={href}>
+                  <Link href={href} className="text-sm text-gray-300 hover:text-white transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 8  -  Info + Contact */}
           <div>
             <h3 className="font-heading text-base font-semibold mb-4 text-brand-accent">
               {tr.common.footer.contact}

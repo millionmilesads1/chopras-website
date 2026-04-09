@@ -163,9 +163,9 @@ export default function ZaalHurenPage({ params }: Props) {
             {isNl ? 'Zaal Huren Aanvragen' : 'Request Venue Hire'}
           </h2>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href={`${base}/contact`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
+            <Link href={`${base}/contact`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
               {isNl ? 'Offerte Aanvragen' : 'Request Quote'}
-            </a>
+            </Link>
             <Link href={`${base}/menu`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
               {tr.common.viewMenu}
             </Link>
@@ -179,35 +179,35 @@ export default function ZaalHurenPage({ params }: Props) {
       {/* INTERNAL LINKS SECTION */}
       <section className="bg-[#FFFAF5] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10">
-            {isNl ? 'Populaire Zaal Huren Gerechten' : 'Popular Venue Hire Dishes'}
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10 text-center">
+            {isNl ? 'Andere Cateringmogelijkheden' : 'Other Catering Options'}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Link href={`${base}/biryani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
-              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Biryani' : 'Biryani'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Geurige rijst voor grote groepen' : 'Fragrant rice for large groups'}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <Link href={`${base}/indian-wedding-catering-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Bruiloft' : 'Wedding'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Nikah-recepties en bruiloftsfestiviteiten' : 'Nikah receptions and wedding festivities'}</p>
             </Link>
-            <Link href={`${base}/tandoori-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
-              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Tandoori' : 'Tandoori'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Gegrilde evenement favoriet' : 'Grilled event favourite'}</p>
+            <Link href={`${base}/corporate-events-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Zakelijk' : 'Corporate'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Bedrijfsdiners en teamvieringen' : 'Corporate dinners and team celebrations'}</p>
             </Link>
-            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
-              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Dal Makhani' : 'Dal Makhani'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Vegetarische gast optie' : 'Vegetarian guest option'}</p>
+            <Link href={`${base}/party-venue-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Feestzaal' : 'Party Venue'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Privé-evenementenhal huur' : 'Private event hall hire'}</p>
             </Link>
-            <Link href={`${base}/butter-chicken-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
-              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Butter Chicken' : 'Butter Chicken'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Altijd een hit op events' : 'Always a hit at events'}</p>
+            <Link href={`${base}/diwali-dinner-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Diwali' : 'Diwali'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Diwali-diners en festiviteiten' : 'Diwali dinners and festival celebrations'}</p>
             </Link>
           </div>
           <div className="mt-8 text-center space-y-4">
             <p className="text-[#1A1A1A] text-base">
               <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
-                {isNl ? 'Chopras Indiaas Restaurant - zaal huren met catering in Den Haag' : 'Chopras Indian Restaurant - venue hire with catering in Den Haag'}
+                {isNl ? 'Chopras Indiaas Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
               </Link>
             </p>
             <p className="text-[#1A1A1A] text-base">
-              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'vraag een zaal huren offerte aan' : 'request your venue hire quote at Chopras'}</Link>.
+              {isNl ? 'Voor meer cateringmogelijkheden, zie ons' : 'For more catering options, see our'} <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{tr.common.viewMenu}</Link> {isNl ? 'of' : 'or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een afspraak' : 'contact us'}</Link> {isNl ? 'om uw zaal huren te bespreken.' : 'to discuss your venue hire.'}
             </p>
           </div>
         </div>

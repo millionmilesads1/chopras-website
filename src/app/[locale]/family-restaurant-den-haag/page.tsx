@@ -163,9 +163,9 @@ export default function FamilyRestaurantPage({ params }: Props) {
             {isNl ? 'Bezoek met je Familie' : 'Visit with Your Family'}
           </h2>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href={`${base}/contact`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
+            <Link href={`${base}/contact`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
               {tr.common.reserve}
-            </a>
+            </Link>
             <Link href={`${base}/menu`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
               {tr.common.viewMenu}
             </Link>

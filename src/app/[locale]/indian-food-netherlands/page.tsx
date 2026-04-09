@@ -186,12 +186,28 @@ export default function IndianFoodNetherlandsPage({ params }: Props) {
             )}
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <a href={`${base}/contact`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
+            <Link href={`${base}/contact`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
               {tr.common.reserve}
-            </a>
+            </Link>
             <Link href={`${base}/menu`} className="inline-block border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#1B2B5E] transition-colors text-center">
               {tr.common.viewMenu}
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNAL LINKS SECTION */}
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mt-8 text-center space-y-4">
+            <p className="text-[#1A1A1A] text-base">
+              <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
+                {isNl ? 'Chopras Indiaas Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
+              </Link>
+            </p>
+            <p className="text-[#1A1A1A] text-base">
+              {isNl ? 'Voor catering en evenementen, zie ons' : 'For catering and events, see our'} <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'cateringmogelijkheden' : 'catering options'}</Link>.
+            </p>
           </div>
         </div>
       </section>

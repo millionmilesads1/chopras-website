@@ -214,6 +214,43 @@ export default function CorporateEventsPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* INTERNAL LINKS SECTION */}
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10 text-center">
+            {isNl ? 'Andere Cateringmogelijkheden' : 'Other Catering Options'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <Link href={`${base}/indian-wedding-catering-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Bruiloft' : 'Wedding'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiase bruiloftscatering' : 'Indian wedding catering'}</p>
+            </Link>
+            <Link href={`${base}/party-venue-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Feestzaal' : 'Party Venue'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Evenementenruimte huren' : 'Event space for rent'}</p>
+            </Link>
+            <Link href={`${base}/indian-birthday-catering-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Verjaardag' : 'Birthday'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Verjaardagscatering' : 'Birthday catering'}</p>
+            </Link>
+            <Link href={`${base}/diwali-dinner-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Diwali' : 'Diwali'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Diwali-diner' : 'Diwali dinner'}</p>
+            </Link>
+          </div>
+          <div className="text-center space-y-4">
+            <p className="text-[#1A1A1A] text-base">
+              <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
+                {isNl ? 'Chopras Indiaas Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
+              </Link>
+            </p>
+            <p className="text-[#1A1A1A] text-base">
+              {isNl ? 'Bekijk het volledige' : 'View the full'} <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'cateringsmenu' : 'catering menu'}</Link> {isNl ? 'of' : 'or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak nu een afspraak' : 'book a consultation now'}</Link>.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

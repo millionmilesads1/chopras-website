@@ -249,7 +249,7 @@ export default function IndianBuffetPage({ params }: Props) {
               </Link>
             </p>
             <p className="text-[#1A1A1A] text-base">
-              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een reservering' : 'book a table at Chopras Indian Restaurant Den Haag'}</Link>.
+              {isNl ? 'Bekijk ons' : 'View our'} <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{tr.common.viewMenu}</Link> {isNl ? 'of' : 'or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een reservering voor je buffet' : 'request a buffet quote at Chopras'}</Link>.
             </p>
           </div>
         </div>

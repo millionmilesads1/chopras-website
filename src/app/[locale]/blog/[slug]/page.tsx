@@ -114,12 +114,12 @@ export default function LocaleBlogPostPage({ params }: Props) {
                 <p className="text-white/70 text-sm mb-1">Leyweg 986</p>
                 <p className="text-white/70 text-sm mb-1">2545 GW Den Haag</p>
                 <p className="text-white/70 text-sm mb-6">+31 6 30645930</p>
-                <a
+                <Link
                   href={`${base}/contact`}
                   className="block w-full bg-[#D4AF37] text-[#1B2B5E] text-center font-bold py-3 rounded-xl mb-3 hover:bg-[#D4AF37]/90 transition-colors"
                 >
                   {tr.common.reserve}
-                </a>
+                </Link>
                 <Link
                   href={`${base}/menu`}
                   className="block text-center text-white/70 text-sm hover:text-white transition-colors"
@@ -156,6 +156,22 @@ export default function LocaleBlogPostPage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* INTERNAL LINKS SECTION */}
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mt-8 text-center space-y-4">
+            <p className="text-[#1A1A1A] text-base">
+              <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
+                {locale === 'nl' ? 'Chopras Indiaas Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
+              </Link>
+            </p>
+            <p className="text-[#1A1A1A] text-base">
+              {locale === 'nl' ? 'Voor catering en evenementen, zie ons' : 'For catering and events, see our'} <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{locale === 'nl' ? 'cateringmogelijkheden' : 'catering options'}</Link>.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
