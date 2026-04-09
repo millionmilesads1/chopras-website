@@ -183,20 +183,22 @@ export default function LocaleContactPage({ params }: Props) {
 
       {/* SECTION 2  -  QUICK ACTION CARDS */}
       <section className="bg-[#FFFAF5] py-16 px-6 md:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
           {quickCards.map(({ Icon, title, body, cta, href }) => (
             <div
               key={title}
-              className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="flex flex-col justify-between bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
-              <Icon className="text-[#D4AF37] w-10 h-10 mx-auto mb-4" />
-              <h3 className="font-heading text-2xl text-[#1B2B5E] font-semibold mb-2">{title}</h3>
-              <p className="text-[#1A1A1A]/60 text-sm mt-2 mb-6">{body}</p>
+              <div className="flex flex-col items-center text-center flex-1 mb-6">
+                <Icon className="text-[#D4AF37] w-10 h-10 mx-auto mb-4" />
+                <h3 className="font-heading text-2xl text-[#1B2B5E] font-semibold mb-2">{title}</h3>
+                <p className="text-[#1A1A1A]/60 text-sm mt-2">{body}</p>
+              </div>
               <a
                 href={href}
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="block w-full bg-[#D4AF37] text-[#1A1A1A] px-6 py-3 font-semibold uppercase tracking-widest text-sm hover:bg-[#F5D36A] transition-all text-center"
+                className="w-full mt-auto bg-[#D4AF37] text-[#1A1A1A] px-6 py-3 font-semibold uppercase tracking-widest text-sm hover:bg-[#F5D36A] transition-all text-center block"
               >
                 {cta}
               </a>

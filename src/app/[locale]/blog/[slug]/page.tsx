@@ -97,9 +97,9 @@ export default function LocaleBlogPostPage({ params }: Props) {
       {/* Article Body */}
       <section className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
             <article
-              className="prose prose-lg max-w-none
+              className="flex-1 prose prose-lg max-w-none
                 prose-headings:font-heading prose-headings:text-[#1B2B5E]
                 prose-p:text-gray-700 prose-p:leading-relaxed
                 prose-a:text-[#1B2B5E] prose-a:underline
@@ -108,8 +108,8 @@ export default function LocaleBlogPostPage({ params }: Props) {
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
-            <aside className="mt-8 lg:mt-0">
-              <div className="lg:sticky lg:top-8 bg-[#1B2B5E] rounded-2xl p-6 text-white">
+            <aside className="w-full lg:w-80">
+              <div className="sticky top-24 bg-[#1B2B5E] rounded-2xl p-6 text-white overflow-visible">
                 <p className="font-heading text-xl mb-4 leading-snug">{tr.blog.enjoySidebar}</p>
                 <p className="text-white/70 text-sm mb-1">Leyweg 986</p>
                 <p className="text-white/70 text-sm mb-1">2545 GW Den Haag</p>
