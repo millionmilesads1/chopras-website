@@ -57,6 +57,11 @@ const staticPages: SitemapPage[] = [
   // Landing pages
   { slug: 'beste-indiaas-restaurant-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
   { slug: 'family-restaurant-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indo-chinese-restaurant-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+
+  // Menu pages
+  { slug: 'halal-menu', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'vegan-menu', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
 
   // Blog index
   { slug: 'blog', lastMod: '2026-04-10', priority: 0.7, changeFreq: 'weekly' },
