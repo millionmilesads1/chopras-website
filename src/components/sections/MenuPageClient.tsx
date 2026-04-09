@@ -36,9 +36,54 @@ function VegetarianBadge() {
   )
 }
 
-function getPrimaryBadge(dietary: DietaryTag[]): boolean {
-  const priority: DietaryTag[] = ['veg', 'vegan']
-  return priority.some((tag) => dietary.includes(tag))
+function VeganBadge() {
+  return (
+    <div className="relative inline-flex items-center justify-center">
+      <Leaf
+        size={24}
+        className="text-[#2D7A2D]"
+        strokeWidth={2.5}
+        fill="currentColor"
+      />
+      <span className="absolute text-white text-xs font-bold inset-0 flex items-center justify-center">
+        V
+      </span>
+    </div>
+  )
+}
+
+function NonVegBadge() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="2" fill="none" stroke="#8B0000" strokeWidth="2" />
+      <circle cx="12" cy="12" r="6" fill="#8B0000" />
+    </svg>
+  )
+}
+
+function getDietBadge(dietary: DietaryTag[]): 'vegan' | 'vegetarian' | 'nonveg' | null {
+  if (dietary.includes('vegan')) {
+    return 'vegan'
+  }
+  if (dietary.includes('veg')) {
+    return 'vegetarian'
+  }
+  return 'nonveg'
+}
+
+function DietBadgeComponent({ type }: { type: 'vegan' | 'vegetarian' | 'nonveg' }) {
+  switch (type) {
+    case 'vegan':
+      return <VeganBadge />
+    case 'vegetarian':
+      return <VegetarianBadge />
+    case 'nonveg':
+      return <NonVegBadge />
+  }
 }
 
 function DishGrid({ dishes }: { dishes: typeof menuItems }) {
@@ -49,7 +94,7 @@ function DishGrid({ dishes }: { dishes: typeof menuItems }) {
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
     >
       {dishes.map((item, index) => {
-        const isVegetarian = !item.isDrink ? getPrimaryBadge(item.dietary) : false
+        const dietBadge = !item.isDrink ? getDietBadge(item.dietary) : null
         return (
           <article
             key={item.id}
@@ -75,9 +120,9 @@ function DishGrid({ dishes }: { dishes: typeof menuItems }) {
                   onError={(e) => { e.currentTarget.style.display = 'none' }}
                 />
               )}
-              {isVegetarian && (
+              {dietBadge && (
                 <div className="absolute top-3 left-3">
-                  <VegetarianBadge />
+                  <DietBadgeComponent type={dietBadge} />
                 </div>
               )}
             </div>

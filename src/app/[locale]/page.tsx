@@ -57,9 +57,6 @@ export default function LocaleHomePage({ params }: Props) {
   const { locale } = params
   const base = `/${locale}`
 
-  // Suppress unused variable warning  -  translations available to child components via prop
-  void getTranslations(locale)
-
   return (
     <>
       <JsonLd data={getWebSiteSchema(locale)} />
