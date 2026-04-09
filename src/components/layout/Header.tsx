@@ -64,7 +64,6 @@ export default function Header({ locale }: { locale: Locale }) {
 
   const NAV_LINKS = [
     { label: tr.common.nav.home, href: base },
-    { label: tr.common.nav.menu, href: `${base}/menu` },
     { label: tr.common.nav.blog, href: `${base}/blog` },
     { label: tr.common.nav.vacancy, href: `${base}/vacancy` },
     { label: tr.common.nav.contact, href: `${base}/contact` },
@@ -196,14 +195,14 @@ export default function Header({ locale }: { locale: Locale }) {
               )
             })}
 
-            {/* Feestzaal - Standalone top-level link with gold accent */}
+            {/* Feestzaal - Standalone top-level link */}
             <Link
               href={FEESTZAAL_LINK.href}
               className={cn(
-                'px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 whitespace-nowrap border',
+                'px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 whitespace-nowrap',
                 pathname === FEESTZAAL_LINK.href
-                  ? 'text-[#D4AF37] border-[#D4AF37] bg-[#D4AF37]/10'
-                  : 'text-[#D4AF37] border-[#D4AF37]/60 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5'
+                  ? 'text-white bg-white/10'
+                  : 'text-white/80 hover:text-white hover:bg-white/[0.08]'
               )}
             >
               {FEESTZAAL_LINK.label}
@@ -386,15 +385,15 @@ export default function Header({ locale }: { locale: Locale }) {
             )
           })}
 
-          {/* Feestzaal - Standalone top-level link with gold accent */}
+          {/* Feestzaal - Standalone top-level link */}
           <Link
             href={FEESTZAAL_LINK.href}
             onClick={() => setMobileOpen(false)}
             className={cn(
-              'block px-4 py-3 text-base font-medium rounded-xl transition-all duration-150 border-b-2 border-[#D4AF37]/40 mb-1',
+              'block px-4 py-3 text-base font-medium rounded-xl transition-all duration-150 border-b border-white/5',
               pathname === FEESTZAAL_LINK.href
-                ? 'text-[#D4AF37] bg-[#D4AF37]/10'
-                : 'text-[#D4AF37] hover:bg-[#D4AF37]/5'
+                ? 'text-[#D4AF37]'
+                : 'text-white hover:bg-white/[0.08]'
             )}
           >
             {FEESTZAAL_LINK.label}
