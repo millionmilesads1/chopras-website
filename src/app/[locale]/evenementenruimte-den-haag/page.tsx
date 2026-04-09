@@ -98,7 +98,7 @@ export default function EvenementenruimtePage({ params }: Props) {
                 <p>Je wilt je team of klanten in een relaxed omgeving samen laten zijn. Indiaas eten ontspant mensen. Ze praten meer. Ze lachen meer. Ze voelen zich minder stijf in het pak.</p>
                 
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Personeelsfeesten</h3>
-                <p>Je personeel werkt hard. Ze verdienen iets speciaals. Indiaas eten zegt "we appreciate you" beter dan veel andere dingen. Ze voelen dat.</p>
+                <p>Je personeel werkt hard. Ze verdienen iets speciaals. Indiaas eten zegt &quot;we appreciate you&quot; beter dan veel andere dingen. Ze voelen dat.</p>
                 
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Launches</h3>
                 <p>Je wilt een product launch, bedrijf opening, of ander groot moment. Je wilt dat het voelt speciaal. Dat eten memorabel is. Dat gasten het over hebben. Chopras is hoe je dat doet.</p>
@@ -112,7 +112,7 @@ export default function EvenementenruimtePage({ params }: Props) {
                 <p>You want your team or clients to be together in a relaxed setting. Indian food relaxes people. They talk more. They laugh more. They feel less stiff in their suits.</p>
                 
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Staff Celebrations</h3>
-                <p>Your staff works hard. They deserve something special. Indian food says "we appreciate you" better than many other things. They feel that.</p>
+                <p>Your staff works hard. They deserve something special. Indian food says &quot;we appreciate you&quot; better than many other things. They feel that.</p>
                 
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Launches</h3>
                 <p>You have a product launch, business opening, or other big moment. You want it to feel special. For the food to be memorable. For guests to talk about it. Chopras is how you do that.</p>
