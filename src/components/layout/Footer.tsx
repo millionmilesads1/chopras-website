@@ -39,7 +39,7 @@ export default function Footer({ locale }: { locale: Locale }) {
   ]
 
   return (
-    <footer className="bg-brand-text text-white">
+    <footer className="text-white" style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}>
       {/* Main grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
@@ -162,7 +162,7 @@ export default function Footer({ locale }: { locale: Locale }) {
       </div>
 
       {/* Bottom bar */}
-      <div className="bg-brand-primary">
+      <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
             <p className="text-white/40 text-xs">
