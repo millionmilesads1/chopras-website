@@ -134,10 +134,10 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
             {faqItems.map((item, idx) => (
               <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
                 <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.q}
+                  {item.question}
                   <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
                 </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
+                <p className="text-[#1A1A1A] mt-4">{item.answer}</p>
               </details>
             ))}
           </div>
