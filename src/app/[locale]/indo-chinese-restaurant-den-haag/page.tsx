@@ -38,15 +38,15 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
   const isNl = locale === 'nl'
 
   const faqItems = isNl ? [
-    { q: 'Wat is Indo-Chinese voeding?', a: 'Indo-Chinese is een fusie van Indiase en Chinese keukens. Het combineert Indiase kruiden en bereidingstechnieken met Chinese noodels, rijst en sauzen. Schezwan sauzen, hokkien noedels en Indiase specerijen maken deze keuken uniek pikant en aromatisch.' },
-    { q: 'Welke Indo-Chinese gerechten zijn het populairst?', a: 'Schezwan noedels, manchurian balletjes, fried rice, momos en indo-Chinese curry zijn de bestsellers. Ze zijn pikant, voelvaardig, en volledig anders van traditioneel Indiaas eten. Voor degenen die experimenteren: try de paneer schezwan.' },
-    { q: 'Is Indo-Chinese voeding erg pikant?', a: 'Indo-Chinese gerechten zijn over het algemeen pikanter dan traditionele Indiase curry\'s. Schezwan pepersaus en Chinese peppersaus geven de hitte. We kunnen het niveau aanpassen naar voorkeur, van mild tot zeer pikant.' },
-    { q: 'Kan ik Indo-Chinese online bestellen?', a: 'Ja. Bestel via Thuisbezorgd of Uber Eats. Alle Indo-Chinese gerechten blijven pikant en smaakvol bij levering. Volledige ketenintegriteit van keuken tot deur.' },
+    { question: 'Wat is Indo-Chinese voeding?', answer: 'Indo-Chinese is een fusie van Indiase en Chinese keukens. Het combineert Indiase kruiden en bereidingstechnieken met Chinese noodels, rijst en sauzen. Schezwan sauzen, hokkien noedels en Indiase specerijen maken deze keuken uniek pikant en aromatisch.' },
+    { question: 'Welke Indo-Chinese gerechten zijn het populairst?', answer: 'Schezwan noedels, manchurian balletjes, fried rice, momos en indo-Chinese curry zijn de bestsellers. Ze zijn pikant, voelvaardig, en volledig anders van traditioneel Indiaas eten. Voor degenen die experimenteren: try de paneer schezwan.' },
+    { question: 'Is Indo-Chinese voeding erg pikant?', answer: 'Indo-Chinese gerechten zijn over het algemeen pikanter dan traditionele Indiase curry&apos;s. Schezwan pepersaus en Chinese peppersaus geven de hitte. We kunnen het niveau aanpassen naar voorkeur, van mild tot zeer pikant.' },
+    { question: 'Kan ik Indo-Chinese online bestellen?', answer: 'Ja. Bestel via Thuisbezorgd of Uber Eats. Alle Indo-Chinese gerechten blijven pikant en smaakvol bij levering. Volledige ketenintegriteit van keuken tot deur.' },
   ] : [
-    { q: 'What is Indo-Chinese food?', a: 'Indo-Chinese is a fusion of Indian and Chinese cuisines. It combines Indian spices and cooking techniques with Chinese noodles, rice and sauces. Schezwan sauces, hokkien noodles and Indian spices make this cuisine uniquely spicy and aromatic.' },
-    { q: 'Which Indo-Chinese dishes are most popular?', a: 'Schezwan noodles, manchurian balls, fried rice, momos and Indo-Chinese curry are bestsellers. They are spicy, satisfying, and completely different from traditional Indian food. For those wanting to experiment: try the paneer schezwan.' },
-    { q: 'Is Indo-Chinese food very spicy?', a: 'Indo-Chinese dishes are generally spicier than traditional Indian curries. Schezwan pepper sauce and Chinese pepper sauce give the heat. We can adjust the level to your preference, from mild to very spicy.' },
-    { q: 'Can I order Indo-Chinese online?', a: 'Yes. Order via Thuisbezorgd or Uber Eats. All Indo-Chinese dishes remain spicy and flavorful on delivery. Full chain integrity from kitchen to door.' },
+    { question: 'What is Indo-Chinese food?', answer: 'Indo-Chinese is a fusion of Indian and Chinese cuisines. It combines Indian spices and cooking techniques with Chinese noodles, rice and sauces. Schezwan sauces, hokkien noodles and Indian spices make this cuisine uniquely spicy and aromatic.' },
+    { question: 'Which Indo-Chinese dishes are most popular?', answer: 'Schezwan noodles, manchurian balls, fried rice, momos and Indo-Chinese curry are bestsellers. They are spicy, satisfying, and completely different from traditional Indian food. For those wanting to experiment: try the paneer schezwan.' },
+    { question: 'Is Indo-Chinese food very spicy?', answer: 'Indo-Chinese dishes are generally spicier than traditional Indian curries. Schezwan pepper sauce and Chinese pepper sauce give the heat. We can adjust the level to your preference, from mild to very spicy.' },
+    { question: 'Can I order Indo-Chinese online?', answer: 'Yes. Order via Thuisbezorgd or Uber Eats. All Indo-Chinese dishes remain spicy and flavorful on delivery. Full chain integrity from kitchen to door.' },
   ]
 
   return (
