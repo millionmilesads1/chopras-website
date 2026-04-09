@@ -73,7 +73,7 @@ export default function IndianRestaurantPeacePalacePage({ params }: Props) {
               <>
                 <p>Als je in de buurt van het Friedespaleis bent - voor werk, voor bezoek, voor toerisme - je bent dicht bij Chopras. Ons restaurant op Leyweg 986 is maar tien minuten rijden van het centrum waar het Friedespaleis staat. Je kunt voorbij gaan na je werk of je bezochten, en je krijgt echte Indiase eten in plaats van snelkost.</p>
                 <p>Veel mensen van het Friedespaleis - diplomaten, bezoekers, werknemers - komen naar Chopras. Ze weten dat ze hier echt Indiaas eten kunnen krijgen. Niet voorgekookt. Niet uit een pakje. Echte geur, echte smaak, echte warmte. Dit is wat ze van India verwachten, en dit is wat we geven.</p>
-                <p>We zijn makkelijk bereikbaar van het centrum. Parkeren is beschikbaar. Je kunt er om acht uur avonds heen voor diner. Of je kunt er om half twaalf 's nachts heen na theater of een evenement. We zijn altijd open, altijd warm, altijd klaar voor jou.</p>
+                <p>We zijn makkelijk bereikbaar van het centrum. Parkeren is beschikbaar. Je kunt er om acht uur avonds heen voor diner. Of je kunt er om half twaalf &apos;s nachts heen na theater of een evenement. We zijn altijd open, altijd warm, altijd klaar voor jou.</p>
               </>
             ) : (
               <>

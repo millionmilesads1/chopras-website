@@ -71,15 +71,15 @@ export default function MuttonRoganJoshPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <p>Rogan josh is een van de meest gereputeerde lamscurrys uit het Indiase subcontinent, met diepgewortelde wortels in Kasjmir. De naam "rogan josh" comes van "rogan" - olie of vet - en "josh" - hitte of passie. Dit is geen toevallige naam. Dit gerecht is hitte, passie en volle Kasjmiri smaak, gelaagd in elke lepel.</p>
+                <p>Rogan josh is een van de meest gereputeerde lamscurrys uit het Indiase subcontinent, met diepgewortelde wortels in Kasjmir. De naam &quot;rogan josh&quot; comes van &quot;rogan&quot; - olie of vet - en &quot;josh&quot; - hitte of passie. Dit is geen toevallige naam. Dit gerecht is hitte, passie en volle Kasjmiri smaak, gelaagd in elke lepel.</p>
                 <p>Chopras serveert mutton rogan josh die echt is - niet de versimpelde versie die je in veel restaurants in Nederland vindt. Dit is lamsvlees dat tot goud braadstuk wordt, gesmolten in een saus die de hele dag is opgebouwd, met tomaten, Kasjmiri chilipepers, ginger-garlic paste, yoghurt, en een katern vol hele kruiden: zwarte kardemom, kaneel stok, laurierblad, kruidnagel.</p>
-                <p>De troef van echte rogan josh is dat het geen "curry sauce" is - het is een saus die van scratch is gemaakt, elke dag opnieuw. Het lamsvlees wordt eerst gebraad tot het gouden en mals is, dan wordt het langzaam gegaard in deze opgebouwde saus totdat het vlees zo zacht is dat het van je lepel valt.</p>
+                <p>De troef van echte rogan josh is dat het geen &quot;curry sauce&quot; is - het is een saus die van scratch is gemaakt, elke dag opnieuw. Het lamsvlees wordt eerst gebraad tot het gouden en mals is, dan wordt het langzaam gegaard in deze opgebouwde saus totdat het vlees zo zacht is dat het van je lepel valt.</p>
               </>
             ) : (
               <>
-                <p>Rogan josh is one of the most respected lamb curries from the Indian subcontinent, with deep roots in Kashmir. The name comes from "rogan" - oil or fat - and "josh" - heat or passion. This is not an accidental name. This dish is heat, passion and full Kashmiri flavour, layered in every spoonful.</p>
+                <p>Rogan josh is one of the most respected lamb curries from the Indian subcontinent, with deep roots in Kashmir. The name comes from &quot;rogan&quot; - oil or fat - and &quot;josh&quot; - heat or passion. This is not an accidental name. This dish is heat, passion and full Kashmiri flavour, layered in every spoonful.</p>
                 <p>Chopras serves mutton rogan josh that is genuine - not the simplified version you find in many Dutch restaurants. This is lamb that becomes golden and melts into a sauce that has been building all day, with tomatoes, Kashmiri chillies, ginger - garlic paste, yoghurt, and a full notebook of whole spices: black cardamom, cinnamon stick, bay leaf, clove.</p>
-                <p>The secret of true rogan josh is that it is not a "curry sauce" - it is a sauce made from scratch, every single day. The lamb is first seared until golden and tender, then slowly cooked in this developed sauce until the meat falls from your spoon.</p>
+                <p>The secret of true rogan josh is that it is not a &quot;curry sauce&quot; - it is a sauce made from scratch, every single day. The lamb is first seared until golden and tender, then slowly cooked in this developed sauce until the meat falls from your spoon.</p>
               </>
             )}
           </div>

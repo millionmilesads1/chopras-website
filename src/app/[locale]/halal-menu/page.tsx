@@ -84,13 +84,13 @@ export default function HalalMenuPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <p>Het halal menu van Chopras is niet een aparte kaart of "optie op het normale menu". Het is het volledige Chopras menu, bereid in een halal-gecertificeerde keuken. Dit onderscheid is cruciaal. Een restaurant dat "ook halal" aanbiedt werkt anders dan een restaurant waar halal de standaard is.</p>
+                <p>Het halal menu van Chopras is niet een aparte kaart of &quot;optie op het normale menu&quot;. Het is het volledige Chopras menu, bereid in een halal-gecertificeerde keuken. Dit onderscheid is cruciaal. Een restaurant dat &quot;ook halal&quot; aanbiedt werkt anders dan een restaurant waar halal de standaard is.</p>
                 <p>Elke leverancier die Chopras vlees levert is gecertificeerd halal. Het vlees wordt apart opgeslagen, apart verwerkt, apart gekookt. Dit is niet flexibel of situationeel. Dit is hoe Chopras werkt, altijd.</p>
                 <p>Voor moslimgemeenschappen in Den Haag en omgeving - Marokkaans, Pakistaans, Turks, Indiaas - betekent dit dat ze elke keer dat ze naar Chopras gaan, dezelfde standaard krijgen. Geen vragen, geen twijfels. Halal, volledig, altijd.</p>
               </>
             ) : (
               <>
-                <p>The halal menu at Chopras is not a separate card or an "option on the normal menu". It is the complete Chopras menu, prepared in a halal-certified kitchen. This distinction is crucial. A restaurant that "also offers halal" operates differently from a restaurant where halal is the standard.</p>
+                <p>The halal menu at Chopras is not a separate card or an &quot;option on the normal menu&quot;. It is the complete Chopras menu, prepared in a halal-certified kitchen. This distinction is crucial. A restaurant that &quot;also offers halal&quot; operates differently from a restaurant where halal is the standard.</p>
                 <p>Every supplier who delivers meat to Chopras is certified halal. The meat is stored separately, processed separately, cooked separately. This is not flexible or situational. This is how Chopras works, always.</p>
                 <p>For Muslim communities in Den Haag and surrounding areas - Moroccan, Pakistani, Turkish, Indian - this means that every time they come to Chopras, they get the same standard. No questions, no doubts. Halal, complete, always.</p>
               </>

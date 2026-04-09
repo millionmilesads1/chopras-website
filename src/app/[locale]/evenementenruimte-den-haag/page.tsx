@@ -73,7 +73,7 @@ export default function EvenementenruimtePage({ params }: Props) {
               <>
                 <p>Bedrijfsuitjes. Personeelsfeesten. Teambijeenkomsten. Launches. Veel bedrijven kiezen voor dezelfde zalencentra, dezelfde catering, dezelfde ervaring. Dat is waarom sommige bedrijven naar Chopras komen - ze willen iets anders. Ze willen authentiek. Ze willen dat hun team zich waardeert voelt.</p>
                 <p>Onze evenementenruimte in Den Haag is perfect voor groepen van alle grootten. Luncheons voor tien. Reünies voor honderd. Bedrijfsdinners. Teambuilding met eten als de focus. Alles is mogelijk, alles is custom, en alles smaakt geweldig.</p>
-                <p>We begrijpen wat bedrijven nodig hebben. Flexibele menu's. Timing dat perfect klikt. Serveerders die professioneel zijn maar niet stijf. Voedsel dat gesprek aanzet, niet je mond sluit. Dit is waarom bedrijven ons uitkiezen voor evenementen.</p>
+                <p>We begrijpen wat bedrijven nodig hebben. Flexibele menu&apos;s. Timing dat perfect klikt. Serveerders die professioneel zijn maar niet stijf. Voedsel dat gesprek aanzet, niet je mond sluit. Dit is waarom bedrijven ons uitkiezen voor evenementen.</p>
               </>
             ) : (
               <>

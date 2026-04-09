@@ -95,7 +95,7 @@ export default function DiwaliDinnerPage({ params }: Props) {
             {isNl ? (
               <>
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">In het Restaurant</h3>
-                <p>Je reserveert een tafel voor je familie. We bereiden speciale menu's voor Diwali - er is klassieke biryani, tandoori, rogan josh, frisse salade, alles. Je zit in ons restaurant met je familie, omringd door de geur van India, met naan vers uit de tandoor terwijl je praat. Dit is hoe je het zou doen in India - zit samen, eet samen.</p>
+                <p>Je reserveert een tafel voor je familie. We bereiden speciale menu&apos;s voor Diwali - er is klassieke biryani, tandoori, rogan josh, frisse salade, alles. Je zit in ons restaurant met je familie, omringd door de geur van India, met naan vers uit de tandoor terwijl je praat. Dit is hoe je het zou doen in India - zit samen, eet samen.</p>
                 
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Catering voor Thuis</h3>
                 <p>We bezorgen het hele Diwali-feest naar je huis. We bereiden alles, we bezorgen het, soms leveren we zelfs iemand om het uit te serveren. Je hoeft alleen maar je familie uit te nodigen. Alles is fris, heet, authentiek. Dit is voor families die willen vieren maar niet naar buiten willen gaan.</p>
