@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { CheckCircle } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { SITE_URL } from '@/lib/constants'
 import { getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
