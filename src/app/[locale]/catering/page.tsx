@@ -356,7 +356,7 @@ export default function LocaleCateringPage({ params }: Props) {
           </div>
           <div className="text-center space-y-4 max-w-2xl mx-auto">
             <p className="text-[#1A1A1A] text-base">
-              {isNl ? 'Wil je een feestzaal huren in Den Haag met catering inbegrepen?' : 'Do you want to hire a party venue in Den Haag with catering included?'} <Link href={`${base}/feestzaal-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'Bekijk onze feestzaal' : 'View our event space'}</Link> {isNl ? 'voor de perfecte setting, of bezoek' : 'for the perfect setting, or visit'} <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant Den Haag</Link> {isNl ? 'om ons restaurant te zien.' : 'to see our restaurant.'}
+              {locale === 'nl' ? 'Wil je een feestzaal huren in Den Haag met catering inbegrepen?' : 'Do you want to hire a party venue in Den Haag with catering included?'} <Link href={`${base}/feestzaal-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{locale === 'nl' ? 'Bekijk onze feestzaal' : 'View our event space'}</Link> {locale === 'nl' ? 'voor de perfecte setting, of bezoek' : 'for the perfect setting, or visit'} <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant Den Haag</Link> {locale === 'nl' ? 'om ons restaurant te zien.' : 'to see our restaurant.'}
             </p>
           </div>
         </div>
