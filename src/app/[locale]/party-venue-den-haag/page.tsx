@@ -45,7 +45,6 @@ export default function PartyVenuePage({ params }: Props) {
       { '@type': 'LocationFeatureSpecification', name: 'Indian Catering Included', value: true },
       { '@type': 'LocationFeatureSpecification', name: 'AV Equipment Welcome', value: true },
       { '@type': 'LocationFeatureSpecification', name: 'Photo Shoots Welcome', value: true },
-      { '@type': 'LocationFeatureSpecification', name: 'Free Parking', value: true },
     ],
     aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
     sameAs: [
@@ -71,10 +70,9 @@ export default function PartyVenuePage({ params }: Props) {
     { title: 'Capacity', desc: '25 to 80 guests depending on layout  -  seated dinner, standing reception, or mixed format.' },
     { title: 'Décor', desc: 'Vibrant Indian theme  -  original artwork, warm amber lighting, richly coloured textiles that create a distinctive atmosphere and a beautiful backdrop for event photography.' },
     { title: 'AV Setup', desc: 'Bring your own projector, speakers, and laptop. The hall has power access and enough space for a full AV setup.' },
-    { title: 'Catering', desc: 'Full Indian catering included as standard with every event hire  -  buffet or plated service, your choice, built around your event and guest list.' },
-    { title: 'Professional Staff', desc: 'A team of servers for the full duration of your event  -  setup through to the last guest leaving.' },
+    { title: 'Catering', desc: 'Full Indian catering included as standard with every event hire - buffet or plated service, your choice, built around your event and guest list.' },
+    { title: 'Professional Staff', desc: 'A team of servers for the full duration of your event - setup through to the last guest leaving.' },
     { title: 'Setup and Breakdown', desc: 'Fully managed by Chopras. You arrive to a room ready for your guests. You leave and we handle everything after.' },
-    { title: 'Free Parking', desc: 'The Leyweg shopping area offers free parking for guests arriving by car  -  a significant advantage over central Den Haag venues.' },
   ]
 
   const eventTypes = isNl ? [

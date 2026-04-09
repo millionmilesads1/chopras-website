@@ -13,7 +13,7 @@ import LocationSection from '@/components/sections/LocationSection'
 import FinalCta from '@/components/sections/FinalCta'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { SITE_URL } from '@/lib/constants'
-import { getRestaurantSchema, getFounderSchema, getFaqPageSchema } from '@/lib/schema'
+import { getRestaurantSchema, getFounderSchema, getWebSiteSchema, getFaqPageSchema } from '@/lib/schema'
 import { homeFaqs } from '@/lib/faq-data'
 
 type Props = { params: { locale: Locale } }
@@ -61,6 +61,7 @@ export default function LocaleHomePage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={getWebSiteSchema(locale)} />
       <JsonLd data={getRestaurantSchema(locale)} />
       <JsonLd data={getFounderSchema()} />
       <JsonLd data={getFaqPageSchema(homeFaqs)} />
@@ -70,6 +71,22 @@ export default function LocaleHomePage({ params }: Props) {
 
       {/* 2  -  Trust Bar */}
       <TrustBar locale={locale} />
+
+      {/* AEO product overview  -  50-word extractable block for AI citation */}
+      <article
+        id="restaurant-overview"
+        className="sr-only"
+        aria-label="About Chopras Indian Restaurant"
+      >
+        <h2>What is Chopras Indian Restaurant?</h2>
+        <p>
+          Chopras Indian Restaurant is a fully Halal-certified North Indian restaurant at
+          Leyweg 986, 2545 GW Den Haag, Netherlands. Founded in 2023 by Arun Chopra, Chopras
+          serves freshly prepared curries, tandoori dishes, chaat, and biryani using spices
+          imported directly from India. Rated 4.7 out of 5 from 83 verified reviews.
+        </p>
+        <p>Last updated: 2026-04-07</p>
+      </article>
 
       {/* 3  -  Featured Dishes */}
       <FeaturedDishes locale={locale} />

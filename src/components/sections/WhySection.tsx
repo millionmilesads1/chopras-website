@@ -95,7 +95,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
                 </p>
               </div>
               <div className="flex items-center gap-3 mt-10">
-                <span className="text-5xl font-heading font-semibold text-[#1B2B5E]">89</span>
+                <span className="text-5xl font-heading font-semibold text-[#1B2B5E]">143</span>
                 <span className="text-sm text-[#1A1A1A]/40 leading-tight font-body">Dishes crafted<br />fresh daily</span>
               </div>
             </div>
@@ -156,7 +156,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
         >
           <div
             className="rounded-2xl p-1.5 ring-1 ring-white/10"
-            style={{ background: 'linear-gradient(135deg, #0a0aaa 0%, #1B2B5E 100%)' }}
+            style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
           >
             <div className="rounded-[calc(1rem-0.375rem)] px-8 py-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
               <div className="flex items-center justify-between flex-wrap gap-5">

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { SITE_URL } from '@/lib/constants'
-import { getLocalRestaurantSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -44,7 +44,11 @@ export default function IndianRestaurantRijswijkPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
+      <JsonLd data={restaurantSchema} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Indiaas Restaurant bij Rijswijk' : 'Indian Restaurant Near Rijswijk', item: `${SITE_URL}/${locale}/indian-restaurant-rijswijk` },
+      ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,9 +92,8 @@ export default function IndianRestaurantRijswijkPage({ params }: Props) {
               </>
             ) : (
               <>
-                <p>Rijswijk and Den Haag share a border with no natural separation between them  -  the municipal line runs through residential streets and shopping areas without a visible boundary. Chopras at Leyweg 986 is less than 5 minutes by car from central Rijswijk. Most Rijswijk residents are closer to us than they are to Den Haag Centrum.</p>
+                <p>Rijswijk and Den Haag share a border with no natural separation between them - the municipal line runs through residential streets and shopping areas without a visible boundary. Chopras at Leyweg 986 is less than 5 minutes by car from central Rijswijk. Most Rijswijk residents are closer to us than they are to Den Haag Centrum.</p>
                 <p>By public transport: tram lines and bus services connect central Rijswijk to the Leyweg area directly with no changes required. The journey is typically under 10 minutes from most parts of Rijswijk.</p>
-                <p>Parking is a meaningful advantage over going into central Den Haag. The Leyweg shopping area offers free parking  -  a material benefit for Rijswijk families driving to dinner. Central Den Haag parking can be expensive and limited, particularly in the evening. Leyweg removes that friction entirely.</p>
                 <p>Rijswijk has a substantial South Asian community, particularly Hindustani families who are the original Indian food audience in this part of South Holland. Quality Indian food that matches their expectations is the aim. Chopras is the nearest authentic option.</p>
               </>
             )}
@@ -134,8 +137,7 @@ export default function IndianRestaurantRijswijkPage({ params }: Props) {
               { title: 'Openingstijden', desc: 'Dinsdag tot en met zondag: 16:30–22:30. Maandag gesloten.' },
             ] : [
               { title: 'Distance', desc: 'Under 5 minutes by car from central Rijswijk. Leyweg 986 is just across the municipal boundary.' },
-              { title: 'Public Transport', desc: 'Direct tram and bus connections from Rijswijk to Leyweg  -  typically under 10 minutes.' },
-              { title: 'Parking', desc: 'Free parking in the Leyweg shopping area. Significantly easier than central Den Haag.' },
+              { title: 'Public Transport', desc: 'Direct tram and bus connections from Rijswijk to Leyweg - typically under 10 minutes.' },
               { title: 'Opening Hours', desc: 'Tuesday to Sunday: 16:30–22:30. Closed Monday.' },
             ]).map((item) => (
               <div key={item.title} className="bg-white rounded-xl p-5 border-l-4 border-[#D4AF37]">

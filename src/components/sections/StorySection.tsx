@@ -85,7 +85,7 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
             </div>
             <div className="rounded-full bg-[#D4AF37]/[0.08] p-1 ring-1 ring-[#D4AF37]/20">
               <span className="block rounded-full bg-[#FFFAF5] text-[#1B2B5E] px-5 py-2 font-body text-xs uppercase tracking-wider shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
-                89 Dishes · 12 Categories
+                143 Dishes · 12 Categories
               </span>
             </div>
             <div className="rounded-full bg-[#D4AF37]/[0.08] p-1 ring-1 ring-[#D4AF37]/20">

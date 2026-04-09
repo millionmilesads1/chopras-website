@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import JsonLd from '@/components/seo/JsonLd'
 import { blogPosts } from '@/lib/blog-data'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { SITE_URL } from '@/lib/constants'
+import { getBreadcrumbSchema } from '@/lib/schema'
 
 type Props = { params: { locale: Locale } }
 
@@ -50,19 +52,10 @@ export default function LocaleBlogPage({ params }: Props) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-              { '@type': 'ListItem', position: 2, name: tr.common.nav.blog, item: `${SITE_URL}/${locale}/blog` },
-            ],
-          }),
-        }}
-      />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: tr.common.nav.blog, item: `${SITE_URL}/${locale}/blog` },
+      ])} />
 
       {/* Hero */}
       <section className="bg-[#1B2B5E] py-20 text-center">

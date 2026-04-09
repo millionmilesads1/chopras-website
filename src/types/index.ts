@@ -9,11 +9,13 @@ export type MenuItem = {
   dietary: DietaryTag[]
   image?: string
   featured?: boolean
+  isDrink?: boolean
 }
 
 export type MenuCategory =
   | 'starters'
   | 'soups'
+  | 'vegan'
   | 'tandoori'
   | 'veg-curries'
   | 'chicken'

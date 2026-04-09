@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { SITE_URL } from '@/lib/constants'
-import { getLocalRestaurantSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -44,7 +44,11 @@ export default function IndianRestaurantDelftPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
+      <JsonLd data={restaurantSchema} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Indiaas Restaurant bij Delft' : 'Indian Restaurant Near Delft', item: `${SITE_URL}/${locale}/indian-restaurant-delft` },
+      ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,9 +91,9 @@ export default function IndianRestaurantDelftPage({ params }: Props) {
               </>
             ) : (
               <>
-                <p>Delft and Den Haag form a continuous urban area  -  the municipal boundaries run through what is essentially uninterrupted built environment. Chopras at Leyweg 986 is approximately 15 minutes by car from central Delft, or 20 to 25 minutes by tram or bus via the direct connection.</p>
-                <p>The A13 motorway connects Delft directly to the Leyweg area  -  most routes avoid central Den Haag entirely. Parking at Leyweg is free, which is a significant advantage over finding parking in Delft or Den Haag Centrum.</p>
-                <p>Delft has a large international student population through TU Delft. Indian and South Asian students, international students familiar with Indian food, and local families organising a special dinner once a month  -  Chopras is the most logical outing from Delft for all these groups when the choice is Indian food.</p>
+                <p>Delft and Den Haag form a continuous urban area - the municipal boundaries run through what is essentially uninterrupted built environment. Chopras at Leyweg 986 is approximately 15 minutes by car from central Delft, or 20 to 25 minutes by tram or bus via the direct connection.</p>
+                <p>The A13 motorway connects Delft directly to the Leyweg area - most routes avoid central Den Haag entirely.</p>
+                <p>Delft has a large international student population through TU Delft. Indian and South Asian students, international students familiar with Indian food, and local families organising a special dinner once a month - Chopras is the most logical outing from Delft for all these groups when the choice is Indian food.</p>
               </>
             )}
           </div>
@@ -132,8 +136,7 @@ export default function IndianRestaurantDelftPage({ params }: Props) {
               { title: 'Openingstijden', desc: 'Dinsdag tot en met zondag: 16:30–22:30. Maandag gesloten.' },
             ] : [
               { title: 'Distance', desc: 'Approximately 15 minutes by car from central Delft via the A13. Direct route without entering the city centre.' },
-              { title: 'Public Transport', desc: 'Tram and bus connections from Delft via Den Haag Centraal to Leyweg  -  approximately 25 minutes.' },
-              { title: 'Parking', desc: 'Free parking in the Leyweg shopping area. Much simpler than parking in city centres.' },
+              { title: 'Public Transport', desc: 'Tram and bus connections from Delft via Den Haag Centraal to Leyweg - approximately 25 minutes.' },
               { title: 'Opening Hours', desc: 'Tuesday to Sunday: 16:30–22:30. Closed Monday.' },
             ]).map((item) => (
               <div key={item.title} className="bg-white rounded-xl p-5 border-l-4 border-[#D4AF37]">

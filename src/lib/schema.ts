@@ -95,11 +95,23 @@ export function getRestaurantSchema(locale: Locale): Record<string, unknown> {
     openingHoursSpecification: OPENING_HOURS,
     hasMenu: `${SITE_URL}/${locale}/menu`,
     hasMap: RESTAURANT.googleMapsUrl,
-    acceptsReservations: true,
+    acceptsReservations: `${SITE_URL}/${locale}/contact`,
     areaServed: RESTAURANT.serviceAreas,
     aggregateRating: AGGREGATE_RATING,
-    suitableForDiet: 'https://schema.org/HalalDiet',
-    logo: RESTAURANT.logo,
+    suitableForDiet: { '@id': 'https://schema.org/HalalDiet' },
+    logo: {
+      '@type': 'ImageObject',
+      url: RESTAURANT.logo,
+      width: 512,
+      height: 512,
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: RESTAURANT.contact.phone,
+      email: RESTAURANT.contact.email,
+      contactType: 'reservations',
+      availableLanguage: ['English', 'Dutch', 'Hindi'],
+    },
     sameAs: SAME_AS,
     founder: {
       '@type': 'Person',
@@ -165,20 +177,31 @@ export function getFounderSchema(): Record<string, unknown> {
 
 // ---------------------------------------------------------------------------
 // FAQPage schema
+// NOTE: Google restricted FAQPage rich results to government and healthcare
+// authority sites in August 2023. This function is retained for completeness
+// but should NOT be added to restaurant pages — it produces no rich result.
 // ---------------------------------------------------------------------------
 
 export function getFaqPageSchema(
   faqs: Array<{ question: string; answer: string }>,
+  datePublished = '2024-01-01',
+  dateModified = '2026-04-07',
 ): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    datePublished,
+    dateModified,
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
+      datePublished,
+      dateModified,
       acceptedAnswer: {
         '@type': 'Answer',
         text: faq.answer,
+        datePublished,
+        dateModified,
       },
     })),
   }
@@ -252,11 +275,14 @@ export function getBlogPostingSchema(
   },
   locale: Locale,
 ): Record<string, unknown> {
+  const postUrl = `${SITE_URL}/${locale}/blog/${post.slug}`
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    '@id': `${postUrl}#article`,
     headline: post.h1,
     description: post.metaDescription,
+    inLanguage: locale === 'nl' ? 'nl-NL' : 'en-GB',
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     author: {
@@ -277,10 +303,10 @@ export function getBlogPostingSchema(
         height: 512,
       },
     },
-    url: `${SITE_URL}/${locale}/blog/${post.slug}`,
+    url: postUrl,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${SITE_URL}/${locale}/blog/${post.slug}`,
+      '@id': postUrl,
     },
     image: post.image ?? `${SITE_URL}/og/home-og.jpg`,
   }

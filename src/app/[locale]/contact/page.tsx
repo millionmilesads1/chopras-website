@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { MapPin, Phone, Mail, Clock, Bus, Car } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Bus } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
-import { getRestaurantSchema } from '@/lib/schema'
+import { getRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import ContactForm from '@/components/contact/ContactForm'
 import TrustBar from '@/components/sections/TrustBar'
 import ReservationForm from '@/components/contact/ReservationForm'
@@ -43,14 +43,10 @@ export default function LocaleContactPage({ params }: Props) {
   const tr = getTranslations(locale)
   const restaurantSchema = getRestaurantSchema(locale)
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-      { '@type': 'ListItem', position: 2, name: tr.common.nav.contact, item: `${SITE_URL}/${locale}/contact` },
-    ],
-  }
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+    { name: tr.common.nav.contact, item: `${SITE_URL}/${locale}/contact` },
+  ])
 
   const quickCards = [
     {
@@ -70,7 +66,7 @@ export default function LocaleContactPage({ params }: Props) {
     {
       Icon: MapPin,
       title: 'Get Directions',
-      body: 'Free parking at Leyweg',
+      body: 'Leyweg 986, Den Haag',
       cta: 'Open in Maps',
       href: 'https://maps.google.com/?q=Leyweg+986+Den+Haag',
     },
@@ -78,13 +74,13 @@ export default function LocaleContactPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
-      <JsonLd data={breadcrumbSchema as Record<string, unknown>} />
+      <JsonLd data={restaurantSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* SECTION 1  -  RESERVATION SPLIT */}
       <section
         className="pb-0"
-        style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 60%, #0F1040 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh] items-start gap-0">
@@ -162,10 +158,6 @@ export default function LocaleContactPage({ params }: Props) {
                 <div className="flex items-center gap-3">
                   <Bus className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
                   <p className="text-white/70 text-sm">Tram and bus accessible · Leyweg stop nearby</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Car className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
-                  <p className="text-white/70 text-sm">Free parking at Leyweg shopping area</p>
                 </div>
               </div>
 

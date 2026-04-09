@@ -29,16 +29,6 @@ function IconCalendar({ className }: { className?: string }) {
   )
 }
 
-function IconParking({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" strokeWidth="1" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10" />
-      <path d="M9 8h4a3 3 0 010 6H9V8z" />
-      <line x1="9" y1="14" x2="9" y2="18" />
-    </svg>
-  )
-}
-
 function IconStar({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" strokeWidth="1" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
@@ -55,7 +45,6 @@ export default function TrustBar({ locale = 'en' }: { locale?: Locale }) {
     { Icon: IconShieldCheck, label: 'Halal Food Den Haag' },
     { Icon: IconFlame, label: tr.common.freshSpices },
     { Icon: IconCalendar, label: 'Open Tue–Sun' },
-    { Icon: IconParking, label: tr.common.freeParking },
     { Icon: IconStar, label: tr.common.privateHall },
   ]
 
@@ -63,7 +52,7 @@ export default function TrustBar({ locale = 'en' }: { locale?: Locale }) {
     <div
       className="relative py-3 overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #0a0aaa 0%, #1B2B5E 100%)',
+        background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)',
         borderTop: '1px solid rgba(212,175,55,0.15)',
         borderBottom: '1px solid rgba(212,175,55,0.08)',
       }}

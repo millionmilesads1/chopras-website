@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { SITE_URL } from '@/lib/constants'
+import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -35,22 +36,6 @@ export default function HalalFoodPage({ params }: Props) {
   const base = `/${locale}`
   const isNl = locale === 'nl'
 
-  const restaurantSchema = {
-    '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name,
-    address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode },
-    telephone: RESTAURANT.contact.phone, url: RESTAURANT.contact.website,
-    servesCuisine: ['North Indian', 'Halal', 'Indian Street Food'],
-    priceRange: RESTAURANT.priceRange, suitableForDiet: 'https://schema.org/HalalDiet',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
-    sameAs: [
-      'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-      'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
-      'https://www.facebook.com/choprasrestaurant',
-      'https://www.instagram.com/choprasrestaurant',
-      'https://www.youtube.com/@choprasrestaurant',
-    ],
-  }
-
   const faqItems = isNl ? [
     { q: 'Is Chopras volledig halal gecertificeerd?', a: 'Ja. Chopras is een volledig halal-gecertificeerd restaurant. Al het vlees is afkomstig van gecertificeerde halal-leveranciers. De keuken werkt door en door volgens halalstandaarden. Er is geen niet-halal vlees aanwezig in het pand. Dit is geen gedeeltelijke of selectieve certificering  -  het heeft betrekking op de gehele bedrijfsvoering.' },
     { q: 'Welke gerechten zijn halal bij Chopras?', a: 'Elk vlees- en gevogeltegerecht bij Chopras is halal. Alle kip-, lams-, schapen- en visgerechten worden bereid met vlees van gecertificeerde halal-leveranciers. De vegetarische en veganistische gerechten bevatten per definitie geen vlees. Het volledige menu  -  niet-vegetarisch en vegetarisch  -  is beschikbaar zonder beperking voor halal-nalevers.' },
@@ -65,20 +50,13 @@ export default function HalalFoodPage({ params }: Props) {
     { q: 'How can I be sure the food is genuinely halal?', a: 'Chopras works exclusively with suppliers who can provide certified halal documentation. The kitchen operation  -  from storage through preparation to service  -  runs without any exposure to non-halal meat or products. If you want specific documentation, contact us directly.' },
   ]
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map(({ q, a }) => ({
-      '@type': 'Question',
-      name: q,
-      acceptedAnswer: { '@type': 'Answer', text: a },
-    })),
-  }
-
   return (
     <>
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
-      <JsonLd data={faqSchema as Record<string, unknown>} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/halal-food-den-haag`)} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Halal Eten Den Haag' : 'Halal Food Den Haag', item: `${SITE_URL}/${locale}/halal-food-den-haag` },
+      ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

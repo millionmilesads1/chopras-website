@@ -37,8 +37,6 @@ export default function TopBar() {
 
         {/* RIGHT - Info pills (hidden on mobile) */}
         <div className="hidden md:flex items-center gap-4">
-          <p className="text-[#1B2B5E]/60 text-xs">Free parking at Leyweg</p>
-          <div className="w-px h-3 bg-[#1B2B5E]/20" />
           <p className="text-[#1B2B5E]/60 text-xs">100% Halal Certified</p>
         </div>
 

@@ -60,7 +60,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Come and Find Out for Yourself</h2>
 
-<p>The best Indian restaurant in Den Haag  -  and we are confident enough to say it directly  -  is at Leyweg 986, 2545 GW Den Haag. Open Tuesday to Sunday from 16:30 to 22:30. You can <a href="https://chopras.nl/en/menu">view the full menu</a> before you come, or simply arrive and trust the kitchen. The Indian restaurant Leyweg address is easy to reach by tram and has free parking nearby. If you want to make a reservation or ask about group bookings, visit the <a href="https://chopras.nl/en/contact">contact page</a>. We look forward to cooking for you.</p>
+<p>The best Indian restaurant in Den Haag - and we are confident enough to say it directly - is at Leyweg 986, 2545 GW Den Haag. Open Tuesday to Sunday from 16:30 to 22:30. You can <a href="https://chopras.nl/en/menu">view the full menu</a> before you come, or simply arrive and trust the kitchen. The Indian restaurant Leyweg address is easy to reach by tram. If you want to make a reservation or ask about group bookings, visit the <a href="https://chopras.nl/en/contact">contact page</a>. We look forward to cooking for you.</p>
 `,
   },
   {

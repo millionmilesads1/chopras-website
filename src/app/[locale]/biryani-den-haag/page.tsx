@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { SITE_URL } from '@/lib/constants'
+import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -36,40 +37,13 @@ export default function BiryaniPage({ params }: Props) {
   const base = `/${locale}`
   const isNl = locale === 'nl'
 
-  const restaurantSchema = {
-    '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name,
-    address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode },
-    telephone: RESTAURANT.contact.phone, url: RESTAURANT.contact.website, servesCuisine: 'Indian', priceRange: RESTAURANT.priceRange,
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
-    sameAs: [
-      'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-      'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
-      'https://www.facebook.com/choprasrestaurant',
-      'https://www.instagram.com/choprasrestaurant',
-      'https://www.youtube.com/@choprasrestaurant',
-    ],
-  }
-
-  const pageFaqs = [
-    { question: isNl ? 'Is de biryani bij Chopras halal?' : 'Is the biryani at Chopras halal?', answer: isNl ? 'Ja. Alle kip en lam bij Chopras zijn afkomstig van halal-gecertificeerde leveranciers. De biryani is volledig halal.' : 'Yes. All chicken and lamb at Chopras are sourced from halal-certified suppliers. The biryani is fully halal.' },
-    { question: isNl ? 'Welke soorten biryani serveren jullie?' : 'What types of biryani do you serve?', answer: isNl ? 'Chopras serveert kip biryani (€19.50), lam biryani (€22.50) en groente biryani (€17.50).' : 'Chopras serves chicken biryani (€19.50), lamb biryani (€22.50), and vegetable biryani (€17.50).' },
-    { question: isNl ? 'Kan ik biryani laten bezorgen in Den Haag?' : 'Can I get biryani delivered in Den Haag?', answer: isNl ? 'Ja. Chopras is beschikbaar op Thuisbezorgd en Uber Eats voor bezorging door Den Haag.' : 'Yes. Chopras is available on Thuisbezorgd and Uber Eats for delivery across Den Haag.' },
-  ]
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: pageFaqs.map(({ question, answer }) => ({
-      '@type': 'Question',
-      name: question,
-      acceptedAnswer: { '@type': 'Answer', text: answer },
-    })),
-  }
-
   return (
     <>
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
-      <JsonLd data={faqSchema as Record<string, unknown>} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/biryani-den-haag`)} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Biryani Den Haag' : 'Biryani Den Haag', item: `${SITE_URL}/${locale}/biryani-den-haag` },
+      ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

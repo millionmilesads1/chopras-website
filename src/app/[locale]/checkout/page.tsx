@@ -68,6 +68,7 @@ export default function CheckoutPage({ params }: { params: { locale: Locale } })
 
       if (data.success) {
         clearCart()
+        localStorage.setItem('lastOrder', JSON.stringify(data.order))
         router.push(
           `${base}/order-confirmation?order=${data.orderNumber}&name=${encodeURIComponent(form.name)}`
         )
@@ -86,7 +87,7 @@ export default function CheckoutPage({ params }: { params: { locale: Locale } })
       {/* Hero */}
       <section
         className="py-16 px-6 text-center"
-        style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
       >
         <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">
           ALMOST THERE
@@ -319,7 +320,7 @@ export default function CheckoutPage({ params }: { params: { locale: Locale } })
                 {/* Header */}
                 <div
                   className="px-6 py-5"
-                  style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 100%)' }}
+                  style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
                 >
                   <p className="font-heading text-xl text-white">Order Summary</p>
                   <p className="text-white/60 text-sm">
@@ -343,7 +344,7 @@ export default function CheckoutPage({ params }: { params: { locale: Locale } })
                         ) : (
                           <div
                             className="w-full h-full flex items-center justify-center text-white font-heading"
-                            style={{ background: 'linear-gradient(135deg, #0000C9, #1B2B5E)' }}
+                            style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
                           >
                             {item.name.charAt(0)}
                           </div>

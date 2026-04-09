@@ -43,7 +43,7 @@ export default function CartDrawer({ locale }: { locale: Locale }) {
         aria-label="Shopping cart"
       >
         {/* Header */}
-        <div style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 100%)' }}>
+        <div style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}>
           <div className="px-6 py-5 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <ShoppingBag className="w-5 h-5 text-white" />
@@ -100,7 +100,7 @@ export default function CartDrawer({ locale }: { locale: Locale }) {
                   ) : (
                     <div
                       className="w-full h-full flex items-center justify-center text-white font-heading text-lg"
-                      style={{ background: 'linear-gradient(135deg, #0000C9, #1B2B5E)' }}
+                      style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
                     >
                       {item.name.charAt(0)}
                     </div>

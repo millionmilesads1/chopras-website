@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
+import { Cormorant_Garamond, DM_Sans, Great_Vibes } from 'next/font/google'
 import '@/styles/globals.css'
 import Header from '@/components/layout/Header'
 import TopBar from '@/components/layout/TopBar'
@@ -23,6 +23,13 @@ const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-dm-sans',
+  display: 'swap',
+})
+
+const greatVibes = Great_Vibes({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-great-vibes',
   display: 'swap',
 })
 
@@ -68,7 +75,7 @@ export default function LocaleLayout({
   const websiteSchema = getWebSiteSchema(params.locale)
 
   return (
-    <html lang={params.locale} className={`${cormorant.variable} ${dmSans.variable}`}>
+    <html lang={params.locale} className={`${cormorant.variable} ${dmSans.variable} ${greatVibes.variable}`}>
       <body className="bg-brand-bg text-brand-text font-body antialiased">
         <script
           type="application/ld+json"

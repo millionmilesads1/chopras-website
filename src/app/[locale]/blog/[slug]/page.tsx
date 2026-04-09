@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { blogPosts } from '@/lib/blog-data'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { SITE_URL } from '@/lib/constants'
+import JsonLd from '@/components/seo/JsonLd'
 import { getBlogPostingSchema, getBreadcrumbSchema } from '@/lib/schema'
 
 type Props = { params: { locale: Locale; slug: string } }
@@ -53,12 +54,12 @@ export default function LocaleBlogPostPage({ params }: Props) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getBlogPostingSchema(post, locale)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbSchema([
+      <JsonLd data={getBlogPostingSchema(post, locale)} />
+      <JsonLd data={getBreadcrumbSchema([
         { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
         { name: tr.common.nav.blog, item: `${SITE_URL}/${locale}/blog` },
         { name: post.title, item: `${SITE_URL}/${locale}/blog/${post.slug}` },
-      ])) }} />
+      ])} />
 
       {/* Hero */}
       <section className="bg-[#1B2B5E] py-20">

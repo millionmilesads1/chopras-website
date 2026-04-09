@@ -52,7 +52,7 @@ export default function FeaturedDishes({ locale = 'en' }: { locale?: Locale }) {
 
   return (
     <section
-      style={{ background: 'linear-gradient(135deg, #0a0aaa 0%, #1B2B5E 60%, #0F1040 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
       className="py-28 md:py-36 px-5 md:px-12 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">

@@ -140,7 +140,7 @@ export default function Header({ locale }: { locale: Locale }) {
           'fixed top-9 left-0 right-0 z-40 transition-all duration-300 backdrop-blur-sm border-b border-white/[0.08]',
           scrolled ? 'h-14 shadow-lg shadow-black/20' : 'h-16'
         )}
-        style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between gap-4">
 

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { SITE_URL } from '@/lib/constants'
+import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -34,49 +35,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const restaurantSchema = {
-  '@context': 'https://schema.org', '@type': 'Restaurant',
-  name: RESTAURANT.name,
-  address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode },
-  telephone: RESTAURANT.contact.phone, url: RESTAURANT.contact.website,
-  servesCuisine: 'Indian', priceRange: RESTAURANT.priceRange,
-  hasMenu: 'https://chopras.nl/menu',
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
-  sameAs: [
-    'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-    'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
-    'https://www.facebook.com/choprasrestaurant',
-    'https://www.instagram.com/choprasrestaurant',
-    'https://www.youtube.com/@choprasrestaurant',
-  ],
-}
-
-const pageFaqs = [
-  { question: "Is Chopras' butter chicken halal?", answer: "Yes. All chicken at Chopras is sourced exclusively from halal-certified suppliers. The entire kitchen operates to halal standards  -  it is not an option or a special request. You can eat here with complete confidence." },
-  { question: "How spicy is the butter chicken at Chopras?", answer: "Butter chicken is one of the mildest dishes on the Indian menu  -  it is intentionally gentle in heat, with the warmth coming from the aromatic spices rather than chilli. Most children eat it happily." },
-  { question: "Can I order butter chicken for delivery in Den Haag?", answer: "Yes. Chopras is available on Thuisbezorgd and Uber Eats for delivery across most of Den Haag within a 5km radius of Leyweg. Butter chicken travels exceptionally well." },
-]
-
 export default function ButterChickenPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
   const base = `/${locale}`
   const isNl = locale === 'nl'
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: pageFaqs.map(({ question, answer }) => ({
-      '@type': 'Question',
-      name: question,
-      acceptedAnswer: { '@type': 'Answer', text: answer },
-    })),
-  }
-
   return (
     <>
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
-      <JsonLd data={faqSchema as Record<string, unknown>} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/butter-chicken-den-haag`)} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Butter Chicken Den Haag' : 'Butter Chicken Den Haag', item: `${SITE_URL}/${locale}/butter-chicken-den-haag` },
+      ])} />
 
       {/* HERO */}
       <section className="bg-[#1B2B5E] py-20 text-center">

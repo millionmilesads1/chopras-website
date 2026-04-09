@@ -58,7 +58,7 @@ export default function AddToCartButton({ dish }: AddToCartButtonProps) {
   return (
     <button
       onClick={handleAdd}
-      className="bg-[#D4AF37] text-[#1A1A1A] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 hover:bg-[#F5D36A] transition-all"
+      className="bg-[#0000CC] text-white px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 hover:bg-[#0000AA] transition-all"
     >
       <Plus className="w-4 h-4" />
       Add to Cart

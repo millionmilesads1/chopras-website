@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { SITE_URL } from '@/lib/constants'
+import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -35,40 +36,13 @@ export default function TandooriPage({ params }: Props) {
   const base = `/${locale}`
   const isNl = locale === 'nl'
 
-  const restaurantSchema = {
-    '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name,
-    address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode },
-    telephone: RESTAURANT.contact.phone, servesCuisine: 'Indian', priceRange: RESTAURANT.priceRange,
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
-    sameAs: [
-      'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-      'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
-      'https://www.facebook.com/choprasrestaurant',
-      'https://www.instagram.com/choprasrestaurant',
-      'https://www.youtube.com/@choprasrestaurant',
-    ],
-  }
-
-  const pageFaqs = [
-    { question: isNl ? 'Is de tandoori bij Chopras halal?' : 'Is the tandoori at Chopras halal?', answer: isNl ? 'Ja. Alle kip en lam bij Chopras zijn halal gecertificeerd. De tandoor-kip, seekh kebab en alle andere vleesgerechten zijn volledig halal.' : 'Yes. All chicken and lamb at Chopras are halal certified. The tandoori chicken, seekh kebab, and all other meat dishes are fully halal.' },
-    { question: isNl ? 'Wat zijn de populairste tandoori gerechten bij Chopras?' : 'What are the most popular tandoori dishes at Chopras?', answer: isNl ? 'De meest bestelde tandoori gerechten zijn Chicken Tikka (€16.50), Seekh Kebab (€17.50) en Paneer Tikka (€15.50).' : 'The most popular tandoori dishes are Chicken Tikka (€16.50), Seekh Kebab (€17.50), and Paneer Tikka (€15.50).' },
-    { question: isNl ? 'Op welke temperatuur werkt de tandoor bij Chopras?' : 'What temperature does the tandoor at Chopras operate at?', answer: isNl ? 'De tandoor bij Chopras werkt op circa 400°C. Die droge, intense hitte is wat de kenmerkende verschroeide buitenkant en sappige kern van tandoori gerechten geeft.' : 'The tandoor at Chopras operates at around 400°C. That dry, intense heat is what gives tandoori dishes their characteristic charred exterior and juicy interior.' },
-  ]
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: pageFaqs.map(({ question, answer }) => ({
-      '@type': 'Question',
-      name: question,
-      acceptedAnswer: { '@type': 'Answer', text: answer },
-    })),
-  }
-
   return (
     <>
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
-      <JsonLd data={faqSchema as Record<string, unknown>} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/tandoori-den-haag`)} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Tandoori Den Haag' : 'Tandoori Den Haag', item: `${SITE_URL}/${locale}/tandoori-den-haag` },
+      ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4">

@@ -56,7 +56,7 @@ export default function LocationSection({ locale = 'en' }: { locale?: Locale }) 
   return (
     <section
       className="py-28 md:py-36 px-5 md:px-12"
-      style={{ background: 'linear-gradient(135deg, #0a0aaa 0%, #1B2B5E 60%, #0F1040 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
     >
       <div
         ref={ref}

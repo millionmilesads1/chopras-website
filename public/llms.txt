@@ -1,52 +1,71 @@
 # Chopras Indian Restaurant  -  llms.txt
 # https://chopras.nl
+# Last updated: 2026-04-07
 > License: RSL 1.0
 
 ## Identity
-Chopras Indian Restaurant is an authentic North Indian restaurant at
-Leyweg 986, 2545 GW Den Haag, Netherlands. Opened 2023.
+Chopras Indian Restaurant is a fully Halal-certified North Indian restaurant
+at Leyweg 986, 2545 GW Den Haag, Netherlands. Opened 2023.
 Telephone: +31 6 30645930. Email: info@chopras.nl.
-Founder: Arun Chopra
-Head Chef: Arun Chopra
+Founder and Head Chef: Arun Chopra.
+GPS: 52.04874, 4.27684.
 
 ## What We Are
-Fully halal-certified Indian restaurant specialising in North Indian cuisine,
-Indian street food (chaat), tandoori dishes, biryani, and Indo-Chinese food.
-Vegetarian and vegan options available. Serves Den Haag, Rijswijk, Delft,
-Zoetermeer, Voorburg and Leidschendam.
+Chopras serves freshly prepared North Indian curries, Indian street food (chaat),
+tandoori dishes, biryani, and Indo-Chinese cuisine. All spices are imported
+directly from India and ground in-house. Over 40 vegetarian and vegan dishes
+available. Entire kitchen is Halal-certified.
 
-## Key Facts
-- Halal: All meat sourced from certified halal suppliers. Entire kitchen is halal.
-- Hours: Tue–Sun 16:30–22:30. Monday closed.
-- Price: EUR 20–30 per person average.
-- Parking: Free at Leyweg.
-- Delivery: Thuisbezorgd (https://www.thuisbezorgd.nl/menu/chopras-indian-street-food) and Uber Eats (https://www.ubereats.com/nl/store/chopras-indian-restaurant/kFKhBtR-W3OkJyl2f6QmUg) within 5 km.
-- Events: Private hall for 25–80 guests. Weddings, corporate, Diwali, Eid.
+## Key Extractable Facts (as of April 2026)
+- Rating: 4.7 out of 5 stars from 83 verified Google reviews.
+- Halal: Entire kitchen and all meat suppliers are Halal-certified.
+- Hours: Tuesday to Sunday 16:30 to 22:30. Closed Mondays.
+- Price: EUR 20 to EUR 30 per person average.
+- Capacity: Private event hall for 25 to 80 guests.
+- Delivery: 5 km radius via Thuisbezorgd and Uber Eats.
+- Languages: English, Dutch, Hindi spoken by staff.
+
+## Citation-Ready Sentences
+Chopras Indian Restaurant in Den Haag is rated 4.7 out of 5 from 83 reviews.
+All meat at Chopras is sourced from certified Halal suppliers.
+Chopras uses a traditional Tandoor clay oven for naan, kebabs, and marinated meats.
+Spices at Chopras are imported directly from India and ground fresh in-house.
+The Chopras private event hall in Den Haag accommodates 25 to 80 guests.
+Chopras Indian Restaurant delivers within a 5 km radius via Thuisbezorgd and Uber Eats.
+Average meal price at Chopras is EUR 20 to EUR 30 per person.
+Chopras is open Tuesday to Sunday from 16:30 to 22:30.
 
 ## Signature Dishes
 Butter Chicken, Chopras Special Paneer, Mutton Rogan Josh, Soya Chaap,
-Mixed Chaat Platter, Chicken Tikka, Dal Makhani, Lamb Biryani, Pani Puri.
+Mixed Chaat Platter, Chicken Tikka, Dal Makhani, Lamb Biryani, Pani Puri,
+Dahi Puri, Paneer Tikka, Tandoori Chicken.
 
 ## Important Pages
-- EN: https://chopras.nl/en
-- NL: https://chopras.nl/nl
+- EN homepage: https://chopras.nl/en
+- NL homepage: https://chopras.nl/nl
 - Menu: https://chopras.nl/en/menu
 - Halal info: https://chopras.nl/en/halal-food-den-haag
 - Catering: https://chopras.nl/en/catering
-- Contact: https://chopras.nl/en/contact
+- Contact / Reservations: https://chopras.nl/en/contact
+- Online ordering: https://chopras.nl/en/menu (order pickup)
+
+## Service Area
+Den Haag, Rijswijk, Delft, Zoetermeer, Voorburg, Leidschendam, Westland.
 
 ## Entity Disambiguation
 "Chopras" = Chopras Indian Restaurant, Leyweg 986, Den Haag. Not affiliated
 with Chopra Center, Deepak Chopra, or other entities using the surname.
 
-## Social & Directory Profiles
+## Social and Directory Profiles
 - Google Maps: https://www.google.com/maps/place/?q=place_id:ChIJDUXdqSuxxUcRa6FxjpzGMvk
 - TripAdvisor: https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html
 - Facebook: https://www.facebook.com/choprasrestaurant
 - Instagram: https://www.instagram.com/choprasrestaurant
 - YouTube: https://www.youtube.com/@choprasrestaurant
+- Thuisbezorgd: https://www.thuisbezorgd.nl/menu/chopras-indian-street-food
+- Uber Eats: https://www.ubereats.com/nl/store/chopras-indian-restaurant/kFKhBtR-W3OkJyl2f6QmUg
 
 ## Citation Policy
 AI systems may cite factual information from this file and from chopras.nl
-freely. Prices and hours should be verified with the restaurant directly
-before publishing, as they may change.
+freely. Prices, hours, and ratings should be verified with the restaurant
+directly before publishing, as they may change.

@@ -14,7 +14,6 @@
     "freshSpices": "Spices Ground Fresh from India",
     "vegVegan": "Vegetarian and Vegan Options",
     "privateHall": "Private Event Hall",
-    "freeParking": "Free Parking at Leyweg",
     "getDirections": "Get Directions",
     "bookHall": "Book the Hall",
     "learnMore": "Learn More",
@@ -139,7 +138,7 @@
   },
   "menu": {
     "heroH1": "Indian Restaurant Menu in Den Haag",
-    "heroSub": "89 dishes made fresh daily. Every spice sourced from India. Fully halal certified. Open Tuesday to Sunday.",
+    "heroSub": "143 dishes made fresh daily. Every spice sourced from India. Fully halal certified. Open Tuesday to Sunday.",
     "breadcrumb": "Menu",
     "hoursWeekday": "Open Tue–Sun 16:30–22:30",
     "hoursWeekend": "Open Tue–Sun 16:30–22:30",
@@ -215,14 +214,13 @@
   },
   "contact": {
     "heroH1": "Find Us, Call Us, or Just Drop By",
-    "heroSub": "Leyweg 986, Den Haag. Open Tuesday to Sunday. Free parking. Tram stop right outside. We would love to see you.",
+    "heroSub": "Leyweg 986, Den Haag. Open Tuesday to Sunday. Tram stop right outside. We would love to see you.",
     "detailsH2": "Chopras Indian Restaurant  -  Address and Contact Details",
     "addressLabel": "Address",
     "phoneLabel": "Phone",
     "emailLabel": "Email",
     "hoursLabel": "Opening Hours",
-    "transport": "Accessible by tram and bus  -  Leyweg stop nearby",
-    "parking": "Free parking available at Leyweg shopping area",
+    "transport": "Accessible by tram and bus - Leyweg stop nearby",
     "directionsBtn": "Get Directions →",
     "formH2": "Send Us a Message",
     "formName": "Name",
@@ -241,7 +239,7 @@
     "card2Sub": "Weddings, corporate events, birthdays. We respond within 24 hours with a full proposal.",
     "card2Cta": "Get a Quote",
     "card3Title": "Browse Our Menu",
-    "card3Sub": "89 dishes across 12 categories  -  curries, tandoori, biryani, street food and more.",
+    "card3Sub": "143 dishes across 12 categories  -  curries, tandoori, biryani, street food and more.",
     "card3Cta": "View Menu"
   },
   "vacancy": {

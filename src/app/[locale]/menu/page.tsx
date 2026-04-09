@@ -67,7 +67,7 @@ export default function LocaleMenuPage({ params }: Props) {
       {/* STAT PILLS */}
       <div
         className="py-6 px-6"
-        style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 60%, #0F1040 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
       >
         <div className="flex flex-wrap items-center justify-center gap-3 max-w-7xl mx-auto">
           {statPills.map((stat) => (
@@ -103,7 +103,7 @@ export default function LocaleMenuPage({ params }: Props) {
       {/* BOTTOM CTA */}
       <section
         className="py-20 md:py-28 text-center px-6 md:px-16"
-        style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 60%, #0F1040 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
       >
         <div className="max-w-3xl mx-auto">
           <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-6">

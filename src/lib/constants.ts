@@ -42,7 +42,6 @@ export const RESTAURANT = {
     'Pet Friendly',
     'Private Event Hall',
     'Catering Available',
-    'Free Parking',
   ],
   serviceAreas: ['Den Haag', 'Rijswijk', 'Delft', 'Zoetermeer', 'Voorburg', 'Leidschendam', 'Westland'],
   priceRange: '€€',

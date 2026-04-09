@@ -14,7 +14,6 @@
     "freshSpices": "Verse Kruiden Rechtstreeks uit India",
     "vegVegan": "Vegetarische en Veganistische Opties",
     "privateHall": "Eigen Evenementenruimte",
-    "freeParking": "Gratis Parkeren bij Leyweg",
     "getDirections": "Routebeschrijving",
     "bookHall": "Ruimte Reserveren",
     "learnMore": "Meer Informatie",
@@ -139,7 +138,7 @@
   },
   "menu": {
     "heroH1": "Indiaas Restaurant Menu in Den Haag",
-    "heroSub": "89 gerechten dagelijks vers bereid. Elke kruid uit India. Volledig halal gecertificeerd. Open dinsdag tot en met zondag.",
+    "heroSub": "143 gerechten dagelijks vers bereid. Elke kruid uit India. Volledig halal gecertificeerd. Open dinsdag tot en met zondag.",
     "breadcrumb": "Menu",
     "hoursWeekday": "Open di–zo 16:30–22:30",
     "hoursWeekend": "Open di–zo 16:30–22:30",
@@ -221,8 +220,7 @@
     "phoneLabel": "Telefoon",
     "emailLabel": "E-mail",
     "hoursLabel": "Openingstijden",
-    "transport": "Bereikbaar per tram en bus  -  halte Leyweg vlakbij",
-    "parking": "Gratis parkeren bij winkelcentrum Leyweg",
+    "transport": "Bereikbaar per tram en bus - halte Leyweg vlakbij",
     "directionsBtn": "Routebeschrijving →",
     "formH2": "Stuur Ons een Bericht",
     "formName": "Naam",
@@ -241,7 +239,7 @@
     "card2Sub": "Bruiloften, zakelijke evenementen, verjaardagen. We reageren binnen 24 uur met een volledig voorstel.",
     "card2Cta": "Offerte Aanvragen",
     "card3Title": "Bekijk Ons Menu",
-    "card3Sub": "89 gerechten in 12 categorieën  -  curry, tandoori, biryani, street food en meer.",
+    "card3Sub": "143 gerechten in 12 categorieën  -  curry, tandoori, biryani, street food en meer.",
     "card3Cta": "Bekijk Menu"
   },
   "vacancy": {

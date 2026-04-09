@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { SITE_URL } from '@/lib/constants'
-import { getLocalRestaurantSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -44,7 +44,11 @@ export default function IndianRestaurantZoetermeerPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
+      <JsonLd data={restaurantSchema} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Indiaas Restaurant bij Zoetermeer' : 'Indian Restaurant Near Zoetermeer', item: `${SITE_URL}/${locale}/indian-restaurant-zoetermeer` },
+      ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,10 +92,9 @@ export default function IndianRestaurantZoetermeerPage({ params }: Props) {
               </>
             ) : (
               <>
-                <p>Zoetermeer lies directly east of Den Haag, connected via the A12 motorway and several tram lines. Chopras at Leyweg 986 is typically 20 minutes by car from central Zoetermeer  -  straight via the A12 towards Den Haag, exit Leyweg.</p>
+                <p>Zoetermeer lies directly east of Den Haag, connected via the A12 motorway and several tram lines. Chopras at Leyweg 986 is typically 20 minutes by car from central Zoetermeer - straight via the A12 towards Den Haag, exit Leyweg.</p>
                 <p>By public transport, the Randstadrail connects Zoetermeer directly to central Den Haag, from where bus connections to Leyweg are available. Total travel time is typically 30 to 40 minutes depending on departure time.</p>
-                <p>Zoetermeer has one of the largest South Asian communities in the Den Haag region  -  Hindustani families, Pakistani and Indian expats, and a growing second and third generation of Dutch people with an Indian food tradition at home. For them, Chopras is the nearest authentic option with the certified halal status that the community requires.</p>
-                <p>Parking at Leyweg is free and generously available  -  a relevant point for Zoetermeer families arriving in groups who want to avoid the parking stress of city centres.</p>
+                <p>Zoetermeer has one of the largest South Asian communities in the Den Haag region - Hindustani families, Pakistani and Indian expats, and a growing second and third generation of Dutch people with an Indian food tradition at home. For them, Chopras is the nearest authentic option with the certified halal status that the community requires.</p>
               </>
             )}
           </div>
@@ -135,7 +138,6 @@ export default function IndianRestaurantZoetermeerPage({ params }: Props) {
             ] : [
               { title: 'Distance', desc: 'Approximately 20 minutes by car from central Zoetermeer via the A12.' },
               { title: 'Public Transport', desc: 'Randstadrail to Den Haag Centrum, then bus to Leyweg. Approximately 30–40 minutes total.' },
-              { title: 'Parking', desc: 'Free parking in the Leyweg shopping area. No parking stress.' },
               { title: 'Opening Hours', desc: 'Tuesday to Sunday: 16:30–22:30. Closed Monday.' },
             ]).map((item) => (
               <div key={item.title} className="bg-white rounded-xl p-5 border-l-4 border-[#D4AF37]">

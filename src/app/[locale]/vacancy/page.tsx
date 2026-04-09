@@ -4,6 +4,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import VacancyForm from '@/components/sections/VacancyForm'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { SITE_URL } from '@/lib/constants'
+import { getBreadcrumbSchema } from '@/lib/schema'
 
 type Props = { params: { locale: Locale } }
 
@@ -114,6 +115,10 @@ export default function LocaleVacancyPage({ params }: Props) {
       {jobSchemas.map((schema, i) => (
         <JsonLd key={i} data={schema as Record<string, unknown>} />
       ))}
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: tr.common.nav.vacancy, item: `${SITE_URL}/${locale}/vacancy` },
+      ])} />
 
       {/* Hero */}
       <section className="bg-[#1B2B5E] py-24 text-center">

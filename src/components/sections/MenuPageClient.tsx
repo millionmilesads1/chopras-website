@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
+import { Leaf } from 'lucide-react'
 import { menuCategories, menuItems } from '@/lib/menu-data'
 import type { DietaryTag } from '@/types'
 import AddToCartButton from '@/components/cart/AddToCartButton'
@@ -11,18 +12,20 @@ function formatPrice(price: number): string {
   return price % 1 === 0 ? `€${price}` : `€${price.toFixed(2)}`
 }
 
-type BadgeConfig = { label: string; className: string }
-
-const primaryBadgeConfig: Partial<Record<DietaryTag, BadgeConfig>> = {
-  veg: { label: 'Veg', className: 'bg-green-500 text-white' },
-  vegan: { label: 'Vegan', className: 'bg-emerald-600 text-white' },
-  halal: { label: 'Halal', className: 'bg-[#D4AF37] text-[#1A1A1A]' },
+function VegetarianBadge() {
+  return (
+    <Leaf
+      size={24}
+      className="text-green-500"
+      strokeWidth={2.5}
+      fill="currentColor"
+    />
+  )
 }
 
-function getPrimaryBadge(dietary: DietaryTag[]): BadgeConfig | null {
-  const priority: DietaryTag[] = ['veg', 'vegan', 'halal']
-  const match = priority.find((tag) => dietary.includes(tag))
-  return match ? (primaryBadgeConfig[match] ?? null) : null
+function getPrimaryBadge(dietary: DietaryTag[]): boolean {
+  const priority: DietaryTag[] = ['veg', 'vegan']
+  return priority.some((tag) => dietary.includes(tag))
 }
 
 function DishGrid({ dishes }: { dishes: typeof menuItems }) {
@@ -33,7 +36,7 @@ function DishGrid({ dishes }: { dishes: typeof menuItems }) {
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
     >
       {dishes.map((item, index) => {
-        const badge = getPrimaryBadge(item.dietary)
+        const isVegetarian = !item.isDrink ? getPrimaryBadge(item.dietary) : false
         return (
           <article
             key={item.id}
@@ -59,12 +62,10 @@ function DishGrid({ dishes }: { dishes: typeof menuItems }) {
                   onError={(e) => { e.currentTarget.style.display = 'none' }}
                 />
               )}
-              {badge && (
-                <span
-                  className={`absolute top-3 left-3 text-xs px-2 py-0.5 rounded-full font-semibold uppercase ${badge.className}`}
-                >
-                  {badge.label}
-                </span>
+              {isVegetarian && (
+                <div className="absolute top-3 left-3">
+                  <VegetarianBadge />
+                </div>
               )}
             </div>
 
@@ -189,7 +190,10 @@ export default function MenuPageClient() {
       {/* Category sections */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 pb-16">
         {menuCategories.map((category) => {
-          const dishes = menuItems.filter((item) => item.category === category.id)
+          const dishes = category.id === 'vegan'
+            ? menuItems.filter((item) => item.dietary.includes('vegan'))
+            : menuItems.filter((item) => item.category === category.id)
+
           return (
             <section key={category.id} id={category.id} className="scroll-mt-36">
               {/* Section header */}

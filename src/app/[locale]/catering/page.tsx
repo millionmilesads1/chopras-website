@@ -7,7 +7,7 @@ import {
 } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
-import { getRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getCateringServiceSchema, getBreadcrumbSchema } from '@/lib/schema'
 import CateringForm from '@/components/catering/CateringForm'
 import CateringFaqAccordion from '@/components/sections/CateringFaqAccordion'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
@@ -96,7 +96,7 @@ export default function LocaleCateringPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={getRestaurantSchema(locale)} />
+      <JsonLd data={getCateringServiceSchema(locale)} />
       <JsonLd data={breadcrumbSchema} />
 
       {/* SECTION 1  -  HERO */}
@@ -190,7 +190,7 @@ export default function LocaleCateringPage({ params }: Props) {
       {/* SECTION 3  -  EVENT TYPES */}
       <section
         className="py-20 md:py-28 px-6 md:px-16"
-        style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 60%, #0F1040 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -262,7 +262,7 @@ export default function LocaleCateringPage({ params }: Props) {
       {/* SECTION 5  -  WHY CHOPRAS CATERING */}
       <section
         className="py-20 md:py-28 px-6 md:px-16"
-        style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 60%, #0F1040 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -309,7 +309,7 @@ export default function LocaleCateringPage({ params }: Props) {
       <section
         id="catering-form"
         className="py-20 md:py-28 px-6 md:px-16"
-        style={{ background: 'linear-gradient(135deg, #0000C9 0%, #1B2B5E 60%, #0F1040 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
       >
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -33,26 +34,13 @@ export default function IndianTakeawayPage({ params }: Props) {
   const tr = getTranslations(locale)
   const isNl = locale === 'nl'
 
-  const pageFaqs = [
-    { question: isNl ? 'Hoe kan ik Indiaas eten bestellen bij Chopras in Den Haag?' : 'How can I order Indian takeaway from Chopras in Den Haag?', answer: isNl ? 'U kunt bestellen via Thuisbezorgd of Uber Eats voor bezorging, of bellen op +31 6 30645930 om uw bestelling op te halen bij Leyweg 986.' : 'You can order via Thuisbezorgd or Uber Eats for delivery, or call +31 6 30645930 to collect from Leyweg 986.' },
-    { question: isNl ? 'Hoe ver bezorgt Chopras?' : 'How far does Chopras deliver?', answer: isNl ? 'Chopras bezorgt binnen circa 5 km van Leyweg 986 via Thuisbezorgd en Uber Eats.' : 'Chopras delivers within approximately 5km of Leyweg 986 via Thuisbezorgd and Uber Eats.' },
-    { question: isNl ? 'Is het afhaaleten halal?' : 'Is the takeaway food halal?', answer: isNl ? 'Ja. Alle vleesgerechten bij Chopras zijn halal gecertificeerd, of u nu ter plekke eet, afhaalt of laat bezorgen.' : 'Yes. All meat dishes at Chopras are halal certified, whether you dine in, collect, or order for delivery.' },
-  ]
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: pageFaqs.map(({ question, answer }) => ({
-      '@type': 'Question',
-      name: question,
-      acceptedAnswer: { '@type': 'Answer', text: answer },
-    })),
-  }
-
   return (
     <>
-      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name, address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode }, telephone: RESTAURANT.contact.phone, servesCuisine: 'Indian', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' }, sameAs: ['https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html', 'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/', 'https://www.facebook.com/choprasrestaurant', 'https://www.instagram.com/choprasrestaurant', 'https://www.youtube.com/@choprasrestaurant'] } as Record<string, unknown>} />
-      <JsonLd data={faqSchema as Record<string, unknown>} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag', 'Rijswijk', 'Delft'], `${SITE_URL}/${locale}/indian-takeaway-den-haag`)} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
+        { name: isNl ? 'Indiaas Afhalen Den Haag' : 'Indian Takeaway Den Haag', item: `${SITE_URL}/${locale}/indian-takeaway-den-haag` },
+      ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4">

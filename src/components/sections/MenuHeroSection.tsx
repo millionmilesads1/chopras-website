@@ -119,14 +119,21 @@ export default function MenuHeroSection({ locale = 'en' }: { locale?: Locale }) 
         {/* Hero content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 mb-6">
-            <div className="h-px w-8 bg-[#D4AF37]" />
+            <div className="h-px w-8 bg-[#c7a348]" />
             <span
-              className="text-[#D4AF37] text-xs uppercase tracking-widest font-medium"
-              style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)' }}
+              className="text-3xl"
+              style={{
+                fontFamily: 'var(--font-great-vibes)',
+                color: '#c7a348',
+                fontSize: '2rem',
+                letterSpacing: '0.15em',
+                WebkitTextStroke: '0.6px #c7a348',
+                textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)',
+              }}
             >
               CHOPRAS MENU
             </span>
-            <div className="h-px w-8 bg-[#D4AF37]" />
+            <div className="h-px w-8 bg-[#c7a348]" />
           </div>
 
           <h1
@@ -135,7 +142,7 @@ export default function MenuHeroSection({ locale = 'en' }: { locale?: Locale }) 
           >
             <span className="block text-5xl md:text-6xl lg:text-8xl">{tr.menu.heroH1}</span>
             <span className="block italic font-light text-3xl md:text-4xl lg:text-5xl mt-2">
-              89 dishes · 12 categories
+              143 dishes · 12 categories
             </span>
           </h1>
 
