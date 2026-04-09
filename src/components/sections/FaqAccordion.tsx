@@ -3,14 +3,26 @@
 import { useState } from 'react'
 import { Plus, Minus } from 'lucide-react'
 import { homeFaqs } from '@/lib/faq-data'
+import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 const INITIAL_COUNT = 8
 
-export default function FaqAccordion() {
+export default function FaqAccordion({ locale = 'en' }: { locale?: Locale }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [showAll, setShowAll] = useState(false)
+  const t = getTranslations(locale)
 
-  const visibleFaqs = showAll ? homeFaqs : homeFaqs.slice(0, INITIAL_COUNT)
+  // Map FAQ keys to translations
+  const translatedFaqs = homeFaqs.map((faq, index) => {
+    const qKey = `q${index + 1}` as keyof typeof t.faq
+    const aKey = `a${index + 1}` as keyof typeof t.faq
+    return {
+      question: (t.faq[qKey] as string) || faq.question,
+      answer: (t.faq[aKey] as string) || faq.answer,
+    }
+  })
+
+  const visibleFaqs = showAll ? translatedFaqs : translatedFaqs.slice(0, INITIAL_COUNT)
 
   return (
     <div className="max-w-3xl mx-auto">
