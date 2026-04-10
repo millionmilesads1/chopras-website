@@ -3,10 +3,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { RESTAURANT } from '@/lib/constants'
-import { getTranslations, type Locale } from '@/lib/useTranslations'
+import type { Locale } from '@/lib/useTranslations'
 
 export default function Footer({ locale }: { locale: Locale }) {
-  const tr = getTranslations(locale)
   const base = `/${locale}`
 
   const DISHES_LINKS = [
@@ -86,7 +85,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               {/* Tagline */}
               <div className="flex flex-col gap-1">
                 <p className="text-white/90 text-sm leading-relaxed font-medium">
-                  Den Haag's Most Authentic Indian Restaurant
+                  Den Haag&apos;s Most Authentic Indian Restaurant
                 </p>
               </div>
 
