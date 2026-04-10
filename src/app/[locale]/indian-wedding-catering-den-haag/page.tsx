@@ -134,7 +134,7 @@ export default function IndianWeddingCateringPage({ params }: Props) {
           <p className="text-white/75 text-lg md:text-xl" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}>
             {isNl ? 'Halal bruiloftsmenus voor 25 tot 200 gasten. Nikah, Walima, Sangeet, Mehndi en grote diners. Den Haag, Rijswijk, Delft en omgeving.' : 'Halal wedding menus for 25 to 200 guests. Nikah, Walima, Sangeet, Mehndi and full dinners. Den Haag, Rijswijk, Delft and surrounding areas.'}
           </p>
-          <Link href={`${base}/catering#catering-form`} className="inline-block mt-8 bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors">
+          <Link href={`${base}/catering#catering-form`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]">
             {isNl ? 'Bruiloftsofferte Aanvragen' : 'Get a Wedding Quote'}
           </Link>
         </div>
@@ -204,10 +204,10 @@ export default function IndianWeddingCateringPage({ params }: Props) {
             {isNl ? 'Stuur ons uw datum, het aantal gasten en het type gelegenheid. We hebben binnen 24 uur een voorstel voor u  -  vrijblijvend, zonder druk.' : 'Send us your date, guest count, and what type of occasion you are planning. We will have a proposal back to you within 24 hours  -  no obligation, no pressure.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href={`${base}/catering#catering-form`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">
+            <Link href={`${base}/catering#catering-form`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]">
               {isNl ? 'Bruiloftsofferte Aanvragen' : 'Get a Wedding Quote'}
             </Link>
-            <a href={`tel:${RESTAURANT.contact.phone}`} className="inline-block border-2 border-[#1B2B5E] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#1B2B5E] hover:text-white transition-colors text-center">
+            <a href={`tel:${RESTAURANT.contact.phone}`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]">
               {RESTAURANT.contact.phoneDisplay}
             </a>
           </div>

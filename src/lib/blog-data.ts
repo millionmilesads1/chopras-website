@@ -24,21 +24,21 @@ export const blogPosts: BlogPost[] = [
 
 <p>There is a difference between a restaurant that serves Indian food and one that actually cooks it. That difference lives almost entirely in what happens before the food reaches the pan. Every dish in the Indian culinary tradition begins with whole spices  -  cumin, coriander, cardamom, cloves, dried red chillies  -  that are meant to be toasted and ground fresh. The oils released during that grinding are volatile. They fade within hours. A pre-ground spice blend mixed weeks ago in a factory and stored in a shaker bottle at the back of a restaurant kitchen produces a dish that is recognisably Indian in category but hollow at its core. Technically correct. Spiritually absent.</p>
 
-<p>The chef's relationship with the food matters equally. North Indian cooking  -  the tradition Chopras draws from  -  is not a set of recipes to be executed mechanically. It is a set of instincts: knowing when the onions have caramelised far enough, when the tomato has fully dissolved into the gravy base, when the butter goes in at the end to lift everything. These judgements happen by smell and sound and years of experience, not by timer. You can taste the difference at the first bite.</p>
+<p>The chef's relationship with the food matters equally. North Indian cooking  -  the tradition Chopras Indian Restaurant draws from  -  is not a set of recipes to be executed mechanically. It is a set of instincts: knowing when the onions have caramelised far enough, when the tomato has fully dissolved into the gravy base, when the butter goes in at the end to lift everything. These judgements happen by smell and sound and years of experience, not by timer. You can taste the difference at the first bite.</p>
 
 <p>Sourcing is the third pillar. Authentic Indian food Den Haag restaurants rarely discuss where their spices come from because the answer is usually a European wholesaler. The difference between a spice traded through five intermediaries and one sourced directly from the farms that grow it is not subtle. It is the difference between a dish that makes you pause and one you finish without noticing.</p>
 
-<h2>What Chopras Does Differently</h2>
+<h2>What Chopras Indian Restaurant Does Differently</h2>
 
-<p>Chopras opened on Leyweg in 2023 with a singular purpose: to cook the food its founders grew up eating, at the quality it deserved. The spices are sourced directly from India  -  not European-market blends, not commodity imports, but specific ingredients from specific regions, chosen for the recipes they will be used in. They are ground in-house daily. The kitchen does not rely on convenience shortcuts because convenience shortcuts produce the kind of food that made you settle for fine in the first place.</p>
+<p>Chopras Indian Restaurant opened on Leyweg in 2023 with a singular purpose: to cook the food its founders grew up eating, at the quality it deserved. The spices are sourced directly from India  -  not European-market blends, not commodity imports, but specific ingredients from specific regions, chosen for the recipes they will be used in. They are ground in-house daily. The kitchen does not rely on convenience shortcuts because convenience shortcuts produce the kind of food that made you settle for fine in the first place.</p>
 
-<p>The restaurant is fully <a href="https://chopras.nl/en/halal-food-den-haag">halal certified</a>. This is not a marketing footnote  -  it is a foundational commitment that shapes the entire supply chain. Every meat supplier holds recognised halal certification. The kitchen operates to standards that the Muslim community in Den Haag can trust completely. It reflects the seriousness with which Chopras approaches every decision.</p>
+<p>The restaurant is fully <a href="https://chopras.nl/en/halal-food-den-haag">halal certified</a>. This is not a marketing footnote  -  it is a foundational commitment that shapes the entire supply chain. Every meat supplier holds recognised halal certification. The kitchen operates to standards that the Muslim community in Den Haag can trust completely. It reflects the seriousness with which Chopras Indian Restaurant approaches every decision.</p>
 
-<p>The Leyweg location is deliberate. This part of Den Haag is genuinely diverse  -  families from the Netherlands, India, Pakistan, Morocco, Suriname, all eating and living in the same neighbourhood. Chopras did not open in the tourist centre or position itself as a destination restaurant for the already-converted. They opened where the community is. That tells you something about who they are cooking for and why it matters to get it right.</p>
+<p>The Leyweg location is deliberate. This part of Den Haag is genuinely diverse  -  families from the Netherlands, India, Pakistan, Morocco, Suriname, all eating and living in the same neighbourhood. Chopras Indian Restaurant did not open in the tourist centre or position itself as a destination restaurant for the already-converted. They opened where the community is. That tells you something about who they are cooking for and why it matters to get it right.</p>
 
 <h2>What to Order on Your First Visit</h2>
 
-<p>The menu at Chopras is large enough to be exciting and specific enough to reflect genuine depth. If you are visiting for the first time and want a clear path through it, here are four dishes that show you what the kitchen can do.</p>
+<p>The menu at Chopras Indian Restaurant is large enough to be exciting and specific enough to reflect genuine depth. If you are visiting for the first time and want a clear path through it, here are four dishes that show you what the kitchen can do.</p>
 
 <h3>Butter Chicken</h3>
 <p>The most popular Indian dish in the world exists at every quality level imaginable, and at Chopras it sits firmly at the top. The sauce is rich without being cloying, the tomato and cream balance each other without either dominating, and the chicken  -  marinated in spiced yogurt and cooked in the <a href="https://chopras.nl/en/tandoori-den-haag">tandoor</a> before going into the sauce  -  has a texture and depth that pre-cooked chicken simply cannot match. If you want to test what a kitchen is capable of, start here. It will tell you everything.</p>
@@ -56,7 +56,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>The honest answer is: almost everyone who takes food seriously. Families are genuinely welcome  -  not tolerated in the way that some restaurants merely tolerate children, but actively made comfortable with generous portions and staff who understand that families eat together. The Muslim community in Den Haag and across South Holland comes because the halal certification here means something. Expats from India, Pakistan, Bangladesh, and Sri Lanka come because this is the authentic Indian food they grew up eating, and at Chopras it tastes like it should. Dutch locals discovering Indian cuisine for the first time come because if you are going to form your opinion of a cuisine, you should do it with the best version available to you, not a diluted one.</p>
 
-<p>Vegetarians are equally well served. The <a href="https://chopras.nl/en/blog/vegetarian-indian-food-den-haag">plant-based section of the menu</a> is not an afterthought  -  dal makhani, paneer dishes, chaat, soya chaap  -  it is where some of the most interesting cooking at Chopras actually happens. In Indian cuisine, vegetarian cooking is not the lesser option. At Chopras, that shows in every dish.</p>
+<p>Vegetarians are equally well served. The <a href="https://chopras.nl/en/blog/vegetarian-indian-food-den-haag">plant-based section of the menu</a> is not an afterthought  -  dal makhani, paneer dishes, chaat, soya chaap  -  it is where some of the most interesting cooking at Chopras Indian Restaurant actually happens. In Indian cuisine, vegetarian cooking is not the lesser option. At Chopras Indian Restaurant, that shows in every dish.</p>
 
 <h2>Come and Find Out for Yourself</h2>
 
@@ -103,11 +103,11 @@ export const blogPosts: BlogPost[] = [
 
 <h2>How Chopras Approaches It</h2>
 
-<p>At Chopras, halal is not an option on the menu. It is the baseline. The restaurant was designed from day one  -  when it opened on Leyweg in 2023  -  to serve the Muslim community in Den Haag without compromise or qualification. Every meat on the menu comes from certified halal suppliers. The documentation exists. There is no pork anywhere in the kitchen. There is no alcohol used in any preparation, marinade, or sauce at any stage of cooking.</p>
+<p>At Chopras Indian Restaurant, halal is not an option on the menu. It is the baseline. The restaurant was designed from day one  -  when it opened on Leyweg in 2023  -  to serve the Muslim community in Den Haag without compromise or qualification. Every meat on the menu comes from certified halal suppliers. The documentation exists. There is no pork anywhere in the kitchen. There is no alcohol used in any preparation, marinade, or sauce at any stage of cooking.</p>
 
 <p>The <a href="https://chopras.nl/en/tandoori-den-haag">tandoori</a> section of the menu and the <a href="https://chopras.nl/en/chaat-den-haag">chaat offerings</a> are fully halal as well, with no compromise on quality or authenticity for any part of the menu.</p>
 
-<p>The kitchen does not need a separation protocol because there is nothing to separate from. When you order Chicken Tikka Masala or Mutton Rogan Josh or Lamb Karahi at Chopras, the question of whether the meat is halal does not need to be asked. The whole restaurant is built on that assurance, and it has been since the first day of service.</p>
+<p>The kitchen does not need a separation protocol because there is nothing to separate from. When you order Chicken Tikka Masala or Mutton Rogan Josh or Lamb Karahi at Chopras Indian Restaurant, the question of whether the meat is halal does not need to be asked. The whole restaurant is built on that assurance, and it has been since the first day of service.</p>
 
 <p>The spices are sourced directly from India and ground in-house daily. This matters for halal compliance beyond just flavour  -  it means there are no European spice blends with unclear additive sourcing entering the kitchen. The supply chain is understood, traceable, and clean from the very beginning of the production chain.</p>
 
@@ -131,7 +131,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Indiaas Catering in Den Haag  -  Zo Maak Je Jouw Feest Onvergetelijk',
     metaTitle: 'Indiaas Catering Den Haag | Chopras Catering voor Elk Evenement',
     metaDescription:
-      'Op zoek naar Indiaas catering in Den Haag? Chopras verzorgt catering voor bruiloften, verjaardagen en bedrijfsfeesten. Vraag vandaag een offerte aan.',
+      'Op zoek naar Indiaas catering in Den Haag? Chopras Indian Restaurant verzorgt catering voor bruiloften, verjaardagen en bedrijfsfeesten. Vraag vandaag een offerte aan.',
     h1: 'Indiaas Catering in Den Haag  -  Zo Maak Je Jouw Feest Onvergetelijk',
     primaryKeyword: 'Indiaas catering Den Haag',
     language: 'nl',
@@ -139,11 +139,11 @@ export const blogPosts: BlogPost[] = [
     readingTime: 5,
     author: 'Arun Chopra',
     excerpt:
-      'Wat serveren we op ons feest? De eeuwige vraag. Indiaas catering van Chopras in Den Haag is het antwoord dat iedereen blij maakt.',
+      'Wat serveren we op ons feest? De eeuwige vraag. Indiaas catering van Chopras Indian Restaurant in Den Haag is het antwoord dat iedereen blij maakt.',
     content: `
 <p>Het is de eeuwige vraag bij elk feest, elk jubileum, elke bedrijfsborrel: wat gaan we eten? De keuze voor het eten bepaalt meer dan mensen denken. Het zet de toon van de avond, het vertelt iets over de gast of het bedrijf dat uitnodigt, en het bepaalt of mensen straks nog aan deze avond denken of hem zijn vergeten zodra ze thuiskomen. Indiase catering lost dit probleem op een manier die bijna geen andere keuken kan evenaren  -  met kleur, smaak, en een vanzelfsprekende geschiktheid voor iedereen aan tafel.</p>
 
-<p>Chopras in Den Haag verzorgt professionele Indiase catering voor evenementen van alle formaten, van intieme familiefeesten tot grote bedrijfsbijeenkomsten met honderden gasten. Hier leest u waarom Indiase catering de beste keuze is voor uw volgende evenement  -  en waarom Chopras de juiste partner is om het voor u te regelen.</p>
+<p>Chopras Indian Restaurant in Den Haag verzorgt professionele Indiase catering voor evenementen van alle formaten, van intieme familiefeesten tot grote bedrijfsbijeenkomsten met honderden gasten. Hier leest u waarom Indiase catering de beste keuze is voor uw volgende evenement  -  en waarom Chopras Indian Restaurant de juiste partner is om het voor u te regelen.</p>
 
 <h2>Waarom Indiase Catering Onverslaanbaar Is voor Evenementen</h2>
 
@@ -160,34 +160,34 @@ export const blogPosts: BlogPost[] = [
 
 <h2>De Praktische Voordelen van Kiezen voor Chopras</h2>
 
-<p>Een evenement organiseren is al complex genoeg zonder dat de catering een bron van stress wordt. Chopras werkt als één aanspreekpunt voor de volledige culinaire verzorging van uw evenement. Geen coördinatie tussen meerdere leveranciers, geen onduidelijkheid over wie wat levert op welk moment, geen last-minute verrassingen op de dag zelf.</p>
+<p>Een evenement organiseren is al complex genoeg zonder dat de catering een bron van stress wordt. Chopras Indian Restaurant werkt als één aanspreekpunt voor de volledige culinaire verzorging van uw evenement. Geen coördinatie tussen meerdere leveranciers, geen onduidelijkheid over wie wat levert op welk moment, geen last-minute verrassingen op de dag zelf.</p>
 
 <p>Alles wordt vers bereid. De specerijen worden dagelijks gemalen in de keuken van Chopras  -  niet vanuit een pot pre-mix, maar vanuit verse hele specerijen die direct uit India worden ingevoerd. Dat verschil proef je in elk gerecht, ook als het in grote hoeveelheden wordt bereid voor een groot gezelschap. Catering betekent bij Chopras niet dat de kwaliteit daalt zodra de schaal groter wordt. Het tegenovergestelde is eerder waar: de gerechten die het best werken op een buffet zijn precies de gerechten die Chopras het beste beheerst.</p>
 
-<p>De catering is volledig halal gecertificeerd. Alle vlees komt van gecertificeerde halal leveranciers. Er wordt geen varkensvlees gebruikt en geen alcohol in de bereiding. Dit maakt Chopras catering de juiste keuze voor evenementen waarbij een gemengd publiek aanwezig is, zoals in Den Haag altijd het geval is. Niemand hoeft te vragen, niemand hoeft onzeker te eten.</p>
+<p>De catering is volledig halal gecertificeerd. Alle vlees komt van gecertificeerde halal leveranciers. Er wordt geen varkensvlees gebruikt en geen alcohol in de bereiding. Dit maakt Chopras Indian Restaurant catering de juiste keuze voor evenementen waarbij een gemengd publiek aanwezig is, zoals in Den Haag altijd het geval is. Niemand hoeft te vragen, niemand hoeft onzeker te eten.</p>
 
 <h2>Voor Welke Evenementen Is Chopras Catering Geschikt?</h2>
 
 <h3>Bruiloften en huwelijksfeesten</h3>
-<p>Een bruiloft vraagt om eten dat indruk maakt en lang bijblijft. Indiase catering bij een trouwfeest biedt kleur, beleving en smaak die een gemiddeld buffet simpelweg niet kan evenaren. Of het nu een traditionele Indiase bruiloft is of een Nederlandse trouwerij waarbij men iets bijzonders wil serveren: Chopras stelt menu's samen die passen bij de omvang van het feest, de stijl van de avond en de voorkeuren van het bruidspaar.</p>
+<p>Een bruiloft vraagt om eten dat indruk maakt en lang bijblijft. Indiase catering bij een trouwfeest biedt kleur, beleving en smaak die een gemiddeld buffet simpelweg niet kan evenaren. Of het nu een traditionele Indiase bruiloft is of een Nederlandse trouwerij waarbij men iets bijzonders wil serveren: Chopras Indian Restaurant stelt menu's samen die passen bij de omvang van het feest, de stijl van de avond en de voorkeuren van het bruidspaar.</p>
 
 <h3>Verjaardagsfeesten en jubilea</h3>
 <p>Vijftigste verjaardag, twintig jaar huwelijk, jubileum van een bedrijf  -  dit zijn momenten die iets extra's verdienen. Een Indiaas buffet met streetfood stations maakt van elke viering een herinneringswaardige avond die gasten nog maanden later noemen.</p>
 
 <h3>Bedrijfsfeesten en corporate events</h3>
-<p>Kantoorbijeenkomsten, teamuitjes, productlanceringen, eindejaarsfeesten  -  Chopras levert professionele Indiase catering voor bedrijven in Den Haag en omgeving. De presentatie is representatief en kwalitatief, het eten voldoet aan de dieetwensen van een divers team, en de beleving onderscheidt uw evenement van de standaard borrelhapjes die iedereen al kent.</p>
+<p>Kantoorbijeenkomsten, teamuitjes, productlanceringen, eindejaarsfeesten  -  Chopras Indian Restaurant levert professionele Indiase catering voor bedrijven in Den Haag en omgeving. De presentatie is representatief en kwalitatief, het eten voldoet aan de dieetwensen van een divers team, en de beleving onderscheidt uw evenement van de standaard borrelhapjes die iedereen al kent.</p>
 
 <h3>Culturele feestdagen</h3>
-<p>Diwali, Holi, Eid, Vaisakhi, Navratri  -  voor de Indiase en Zuid-Aziatische gemeenschap in Den Haag en omgeving is Chopras de logische partner voor culturele vieringen waarbij authentiek Indiaas eten onmisbaar is. De keuken kent de tradities, de gerechten en de verwachtingen van de gemeenschap.</p>
+<p>Diwali, Holi, Eid, Vaisakhi, Navratri  -  voor de Indiase en Zuid-Aziatische gemeenschap in Den Haag en omgeving is Chopras Indian Restaurant de logische partner voor culturele vieringen waarbij authentiek Indiaas eten onmisbaar is. De keuken kent de tradities, de gerechten en de verwachtingen van de gemeenschap.</p>
 
 <h3>Buurtfeesten en kleinere bijeenkomsten</h3>
-<p>Niet elk evenement is groot. Chopras schaalt de catering mee op de omvang en het budget van het evenement, van een intiem familiediner tot een buurtfeest of schoolevenement. Goed eten hoeft geen grand statement te zijn om indruk te maken.</p>
+<p>Niet elk evenement is groot. Chopras Indian Restaurant schaalt de catering mee op de omvang en het budget van het evenement, van een intiem familiediner tot een buurtfeest of schoolevenement. Goed eten hoeft geen grand statement te zijn om indruk te maken.</p>
 
 <h2>Hoe Het Proces Werkt</h2>
 
-<p>Het cateringproces bij Chopras is eenvoudig en transparant. U neemt contact op via de cateringpagina of het contactformulier, en geeft aan wat voor evenement het is, hoeveel gasten u verwacht, welke datum en locatie, en of er specifieke dieetwensen of culturele vereisten zijn. Vervolgens worden de opties besproken en stelt u samen met Chopras een menu samen dat past bij het evenement en het budget.</p>
+<p>Het cateringproces bij Chopras Indian Restaurant is eenvoudig en transparant. U neemt contact op via de cateringpagina of het contactformulier, en geeft aan wat voor evenement het is, hoeveel gasten u verwacht, welke datum en locatie, en of er specifieke dieetwensen of culturele vereisten zijn. Vervolgens worden de opties besproken en stelt u samen met Chopras Indian Restaurant een menu samen dat past bij het evenement en het budget.</p>
 
-<p>Op de dag zelf zorgt Chopras voor levering en de verzorging van het buffet of de streetfood stations. De presentatie is professioneel en feestelijk. Het eten is vers bereid. U hoeft alleen te genieten  -  en de complimenten van uw gasten in ontvangst te nemen.</p>
+<p>Op de dag zelf zorgt Chopras Indian Restaurant voor levering en de verzorging van het buffet of de streetfood stations. De presentatie is professioneel en feestelijk. Het eten is vers bereid. U hoeft alleen te genieten  -  en de complimenten van uw gasten in ontvangst te nemen.</p>
 
 <h2>Servicegebied voor Indiase Catering</h2>
 
@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Vegetarian Indian Food in Den Haag  -  Why Plant-Based Has Never Tasted This Good',
     metaTitle: 'Vegetarian Indian Food Den Haag | Chopras Plant-Based Menu Guide',
     metaDescription:
-      'Den Haag\'s best vegetarian Indian food is at Chopras. Explore rich curries, crispy street food and vegan dishes made with authentic Indian spices.',
+      'Den Haag\'s best vegetarian Indian food is at Chopras Indian Restaurant. Explore rich curries, crispy street food and vegan dishes made with authentic Indian spices.',
     h1: 'Vegetarian Indian Food in Den Haag  -  Why Plant-Based Has Never Tasted This Good',
     primaryKeyword: 'vegetarian Indian food Den Haag',
     language: 'en',
@@ -211,7 +211,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: 5,
     author: 'Arun Chopra',
     excerpt:
-      'Vegetarian does not mean compromise. At Chopras in Den Haag, the plant-based menu is where some of the most extraordinary dishes on the menu actually live.',
+      'Vegetarian does not mean compromise. At Chopras Indian Restaurant in Den Haag, the plant-based menu is where some of the most extraordinary dishes on the menu actually live.',
     content: `
 <p>Somewhere along the way, vegetarian food acquired a reputation for compromise. The salad you order because nothing else fits. The pasta primavera that arrives when the kitchen has run out of better ideas. The menu page marked vegetarian options that contains three items, all of them afterthoughts added to satisfy a legal obligation rather than a culinary commitment. This reputation is undeserved in the best of circumstances. In Indian cuisine, it is not just undeserved  -  it is completely wrong.</p>
 
@@ -223,7 +223,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Spice plays the central role. The vegetable or legume is not the whole dish  -  it is the canvas on which the spice work happens. A properly made dal makhani involves slow-cooked black lentils, yes, but also a precise sequence of whole spice tempering, a tomato base reduced down to almost nothing, cream folded in at the right moment, a finishing of butter that lifts the whole thing into something rich and deeply satisfying. The technique is everything. This is why vegetarian Indian food Den Haag diners have been searching for, and rarely finding until Chopras opened.</p>
 
-<h2>The Vegetarian Menu at Chopras  -  Dish by Dish</h2>
+<h2>The Vegetarian Menu at Chopras Indian Restaurant  -  Dish by Dish</h2>
 
 <h3>Soya Chaap</h3>
 <p>This is the dish that surprises people who arrive expecting vegetarian food to be quiet and unassuming. <a href="https://chopras.nl/en/soya-chaap-den-haag">Soya chaap</a> is made from wheat and soy protein, marinated in a deeply spiced sauce  -  cumin, coriander, ginger, garlic, red chilli  -  and then finished in the tandoor at high heat until it develops the same kind of char and smokiness you expect from tandoori chicken. What comes out is intensely flavoured, textured in a way that is deeply satisfying, and unlike anything most people eating in Den Haag have tried before. Meat-eaters order it and come back for it specifically. It is not a substitute for anything. It is genuinely good on its own terms.</p>
@@ -248,7 +248,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Vegetarians who are tired of being offered two options and a side salad while everyone else at the table has a page of choices. Vegans who want food that is genuinely exciting rather than technically compliant. Hindu and Jain guests who need a menu that takes their eating practices seriously and cooks to match. Health-conscious diners who want something nourishing and full of flavour at the same time. Flexitarians who eat less meat and want the plant-based options to be as considered and satisfying as the rest of the menu.</p>
 
-<p>At Chopras, they are. The <a href="https://chopras.nl/en/menu">full menu is available here</a>  -  explore the vegetarian section and you will find more variety and depth than most restaurants put into their entire offering.</p>
+<p>At Chopras Indian Restaurant, they are. The <a href="https://chopras.nl/en/menu">full menu is available here</a>  -  explore the vegetarian section and you will find more variety and depth than most restaurants put into their entire offering.</p>
 `,
   },
   {
@@ -256,7 +256,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Indian Street Food in Den Haag  -  The Real Thing, No Shortcuts',
     metaTitle: 'Indian Street Food Den Haag | Chopras  -  Chaat, Samosa and More',
     metaDescription:
-      'Discover authentic Indian street food in Den Haag at Chopras. From pani puri and samosa chaat to aloo tikki  -  bold flavours that transport you to India.',
+      'Discover authentic Indian street food in Den Haag at Chopras Indian Restaurant. From pani puri and samosa chaat to aloo tikki  -  bold flavours that transport you to India.',
     h1: 'Indian Street Food in Den Haag  -  The Real Thing, No Shortcuts',
     primaryKeyword: 'Indian street food Den Haag',
     language: 'en',
@@ -264,11 +264,11 @@ export const blogPosts: BlogPost[] = [
     readingTime: 5,
     author: 'Arun Chopra',
     excerpt:
-      'Real Indian street food is loud, messy, explosive with flavour and completely unlike anything else. Chopras in Den Haag serves the real thing.',
+      'Real Indian street food is loud, messy, explosive with flavour and completely unlike anything else. Chopras Indian Restaurant in Den Haag serves the real thing.',
     content: `
 <p>Picture a street corner in Old Delhi at seven in the evening. The chai wallahs are calling out. Rickshaws are honking. Somewhere between the spice market and the sweet shops, a pani puri vendor is working at extraordinary speed  -  filling hollow crispy shells with ice-cold spiced water, handing them across one at a time to a line of people who eat each one in a single urgent bite and immediately hold out their hands for the next. The smell is tamarind and mint and black salt and roasted cumin all at once. The experience is two seconds of complete sensory overload followed by the immediate need to do it again.</p>
 
-<p>That is Indian street food. Not a category. An experience. And that experience is what Chopras brings to Den Haag  -  not a polished, restrained version calibrated for imagined European preferences, but the real thing, made the right way, with spices imported from India and ground in-house daily.</p>
+<p>That is Indian street food. Not a category. An experience. And that experience is what Chopras Indian Restaurant brings to Den Haag  -  not a polished, restrained version calibrated for imagined European preferences, but the real thing, made the right way, with spices imported from India and ground in-house daily.</p>
 
 <h2>Why Authentic Indian Street Food Is Rare in Europe</h2>
 
@@ -282,7 +282,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Chaat is a category before it is any individual dish. The word comes from a Hindi verb meaning to lick  -  a reference to the way these flavours stay with you, the instinct to clean every trace from the plate. Chaat originated in the street food culture of North India, particularly in Uttar Pradesh and the lanes of Old Delhi, and spread across the subcontinent in dozens of regional variations shaped by local ingredients and tastes. What defines the category is the principle of contrast: every great chaat dish combines something crispy with something creamy, something sharp with something sweet, something bold with something cooling. A single bite contains all of these simultaneously. The complexity in that bite is the whole point.</p>
 
-<h2>The Street Food Menu at Chopras  -  Each Dish Explained</h2>
+<h2>The Street Food Menu at Chopras Indian Restaurant  -  Each Dish Explained</h2>
 
 <h3>Pani Puri</h3>
 <p>The <a href="https://chopras.nl/en/pani-puri-den-haag">pani puri</a> is not a casual experience, and it is not meant to be. You will be handed hollow crispy spheres  -  each about the size of a large walnut  -  alongside a cup of intensely spiced cold water mixed with tamarind, fresh mint, green chilli, black salt, and roasted cumin. The method: crack the top of the puri with your thumb, add a small spoonful of the chickpea and potato filling, dip it into the pani until it is nearly full, and eat it whole in a single bite. What follows is approximately two seconds of cold, explosive, layered flavour  -  the crunch of the shell, the ice-cold spiced water, the earthiness of the filling, the heat of the chilli, all arriving at once and then dissolving together. There is no polite way to eat pani puri. That is entirely the point, and it is why people stand at street stalls and eat a dozen without stopping.</p>
@@ -306,7 +306,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Consider the difference between coffee ground from fresh beans and instant coffee dissolved in hot water. Both are technically coffee. One is a pale, flat reference to the other. The volatile aromatic compounds in a coffee bean  -  the ones that create complexity, brightness, and depth  -  begin evaporating the moment the bean is ground. The same process happens with Indian spices. Cumin, coriander, cardamom, dried chillies: the oils released during grinding are what create the flavour that makes chaat food what it is. Ground weeks ago, bottled, stored on a shelf, they produce the shape of a flavour without its substance.</p>
 
-<p>At Chopras, the spices are ground daily from whole spices sourced directly from India. In the street food dishes especially  -  where the spice intensity is not hidden under a long-cooked sauce but present and immediate in every bite  -  this is what makes the difference between food that transports you and food that merely reminds you of something better.</p>
+<p>At Chopras Indian Restaurant, the spices are ground daily from whole spices sourced directly from India. In the street food dishes especially  -  where the spice intensity is not hidden under a long-cooked sauce but present and immediate in every bite  -  this is what makes the difference between food that transports you and food that merely reminds you of something better.</p>
 
 <p>The <a href="https://chopras.nl/en/menu">full street food menu is here</a>. Come with friends, order the Mixed Chaat Platter to start, and trust the kitchen from there.</p>
 `,
@@ -356,7 +356,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Indian cuisine and halal eating have a deep natural compatibility. Muslim communities have been at the heart of Indian food culture for centuries  -  Mughal cooking, the biryani tradition, the tandoor  -  these emerged from or were shaped by Muslim culinary culture. The recipes are halal-compatible by origin.</p>
 
-<p>The challenge in the Netherlands is the supply chain. Finding a restaurant that genuinely uses certified halal meat throughout  -  not self-labelled, not selective  -  requires verification. Den Haag, with the largest proportional Muslim population of any major Dutch city, has better halal dining options than most. Chopras is fully halal certified across the entire non-vegetarian menu.</p>
+<p>The challenge in the Netherlands is the supply chain. Finding a restaurant that genuinely uses certified halal meat throughout  -  not self-labelled, not selective  -  requires verification. Den Haag, with the largest proportional Muslim population of any major Dutch city, has better halal dining options than most. Chopras Indian Restaurant is fully halal certified across the entire non-vegetarian menu.</p>
 
 <h2>Vegetarian and Vegan Indian Food in the Netherlands</h2>
 
@@ -374,7 +374,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Chopras in Den Haag  -  The Recommended Starting Point</h2>
 
-<p>If you are discovering Indian food in the Netherlands, or if you have been eating it for years and want the best available option in the South Holland region, Chopras on Leyweg 986 in Den Haag is the starting point. <a href="https://chopras.nl/en/menu">The menu covers the full range</a>  -  restaurant curries, tandoori grills, street food, biryani, Indo-Chinese. Fully halal certified. Open Tuesday to Sunday.</p>
+<p>If you are discovering Indian food in the Netherlands, or if you have been eating it for years and want the best available option in the South Holland region, Chopras Indian Restaurant on Leyweg 986 in Den Haag is the starting point. <a href="https://chopras.nl/en/menu">The menu covers the full range</a>  -  restaurant curries, tandoori grills, street food, biryani, Indo-Chinese. Fully halal certified. Open Tuesday to Sunday.</p>
 
 <p>For those planning a first visit, the recommended order: Mixed Chaat Platter to start, Butter Chicken and Garlic Naan as the main, Mango Lassi throughout. This covers three different registers of Indian food in a single meal and gives you a clear picture of what the kitchen can do. The <a href="https://chopras.nl/en/blog/best-indian-restaurant-den-haag">full guide to the best Indian restaurant in Den Haag</a> has more detail on what to expect.</p>
 `,
@@ -418,15 +418,15 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Kruidenkwaliteit:</strong> De kruiden worden dagelijks vers gemalen vanuit hele specerijen die rechtstreeks uit India worden betrokken. Dit is niet een marketingclaim  -  je proeft het verschil. De komijn in de dal heeft een complexiteit die je niet krijgt uit een pakje. De garam masala in de butter chicken heeft een gelaagdheid die typisch is voor vers gemalen specerijen.</p>
 
-<p><strong>Tandoor:</strong> Chopras heeft een echte tandoor-kleioven. De naan wordt letterlijk tegen de binnenwand geklopt en bakt in seconden bij intense hitte. De chicken tikka hangt aan spiesen in de oven en krijgt de kenmerkende rokerige buitenkant die je alleen met een echte tandoor bereikt. Dit is zichtbaar en proefbaar.</p>
+<p><strong>Tandoor:</strong> Chopras Indian Restaurant heeft een echte tandoor-kleioven. De naan wordt letterlijk tegen de binnenwand geklopt en bakt in seconden bij intense hitte. De chicken tikka hangt aan spiesen in de oven en krijgt de kenmerkende rokerige buitenkant die je alleen met een echte tandoor bereikt. Dit is zichtbaar en proefbaar.</p>
 
 <p><strong>Halalcertificering:</strong> Volledige certificering  -  niet selectief, niet gedeeltelijk. Alle vlees is afkomstig van gecertificeerde halalleveranciers. De gehele keuken werkt op halal-standaard. Voor de moslimgemeenschap van Den Haag en omgeving is dit een van de meest betrouwbare opties in de regio.</p>
 
-<p><strong>Street food:</strong> De chaat-sectie van het menu is opvallend sterk. Pani puri, samosa chaat, papdi chaat  -  gerechten die snel de kwaliteit van een keuken onthullen, omdat ze niet verdoezeld kunnen worden door een rijke saus. Bij Chopras zijn ze goed.</p>
+<p><strong>Street food:</strong> De chaat-sectie van het menu is opvallend sterk. Pani puri, samosa chaat, papdi chaat  -  gerechten die snel de kwaliteit van een keuken onthullen, omdat ze niet verdoezeld kunnen worden door een rijke saus. Bij Chopras Indian Restaurant zijn ze goed.</p>
 
 <h2>Wat Te Bestellen op Je Eerste Bezoek</h2>
 
-<p>Als je voor de eerste keer naar Chopras gaat, is dit de aanbevolen volgorde voor een tafel van twee.</p>
+<p>Als je voor de eerste keer naar Chopras Indian Restaurant gaat, is dit de aanbevolen volgorde voor een tafel van twee.</p>
 
 <p><strong>Mixed Chaat Platter (als voorgerecht):</strong> De streetfood test. Als de pani puri goed smaakt  -  de munt-tamarindwater scherp en kruidig, de schelpjes knapperig, de vulling goed gekruid  -  weet je dat deze keuken begrijpt wat het doet.</p>
 
@@ -496,9 +496,9 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Prijzen en Beschikbaarheid</h2>
 
-<p>Butter chicken bij Chopras kost €18,50 en wordt geserveerd met een keuze uit gewone rijst of gewone naan. We raden aan er een knoflooknaan (€4) bij te bestellen  -  het knoflookboter op de naan combineert perfect met de butter chicken saus. Een mangolassi (€6) maakt de maaltijd compleet.</p>
+<p>Butter chicken bij Chopras Indian Restaurant kost €18,50 en wordt geserveerd met een keuze uit gewone rijst of gewone naan. We raden aan er een knoflooknaan (€4) bij te bestellen  -  het knoflookboter op de naan combineert perfect met de butter chicken saus. Een mangolassi (€6) maakt de maaltijd compleet.</p>
 
-<p>Het gerecht is beschikbaar elke dag dat Chopras open is: dinsdag tot en met zondag vanaf 16:30 uur tot 22:30 uur. Maandag is het restaurant gesloten.</p>
+<p>Het gerecht is beschikbaar elke dag dat Chopras Indian Restaurant open is: dinsdag tot en met zondag vanaf 16:30 uur tot 22:30 uur. Maandag is het restaurant gesloten.</p>
 
 <p>Bekijk de <a href="https://chopras.nl/en/butter-chicken-den-haag">volledige pagina over butter chicken bij Chopras</a> voor meer informatie, of ga direct naar het <a href="https://chopras.nl/en/menu">complete menu</a>. Reserveer een tafel via de contactpagina of bel +31 6 30645930.</p>
 `,
@@ -538,29 +538,29 @@ export const blogPosts: BlogPost[] = [
 
 <p>Den Haag has a significant Indian and Hindustani community, and Diwali is observed both publicly and privately across the city. The Hindostaanse Organisaties in Den Haag coordinate community events. Many families hold private dinners for extended family and close friends. Some restaurants and community halls host Diwali dinners for those who want to celebrate without cooking for thirty people at home.</p>
 
-<p>For smaller groups celebrating at a restaurant, Chopras on Leyweg 986 is the recommended choice in Den Haag. The kitchen understands Diwali food traditions  -  the food is not adapted for a European audience but cooked as it is meant to be cooked. The atmosphere is warm and festive without requiring a private event booking.</p>
+<p>For smaller groups celebrating at a restaurant, Chopras Indian Restaurant on Leyweg 986 is the recommended choice in Den Haag. The kitchen understands Diwali food traditions  -  the food is not adapted for a European audience but cooked as it is meant to be cooked. The atmosphere is warm and festive without requiring a private event booking.</p>
 
-<p>For larger Diwali celebrations  -  extended family dinners, community gatherings, cultural association events  -  Chopras' <a href="https://chopras.nl/en/party-venue-den-haag">private event hall</a> accommodates 25 to 80 guests and is available for hire. The catering comes from the same kitchen as the restaurant.</p>
+<p>For larger Diwali celebrations  -  extended family dinners, community gatherings, cultural association events  -  Chopras Indian Restaurant's <a href="https://chopras.nl/en/party-venue-den-haag">private event hall</a> accommodates 25 to 80 guests and is available for hire. The catering comes from the same kitchen as the restaurant.</p>
 
-<h2>What to Order at Chopras for Diwali</h2>
+<h2>What to Order at Chopras Indian Restaurant for Diwali</h2>
 
 <p><strong>Pani Puri:</strong> Start the meal with pani puri  -  the hollow shells filled with spiced potato and chickpea, dunked in sharp mint and tamarind water. This is Diwali street food at its most celebratory. Loud, fun, communal.</p>
 
 <p><strong>Samosa Chaat:</strong> Crushed samosa under yogurt, chickpeas, tamarind chutney, mint chutney, and sev. One of the great street food dishes of the Indian subcontinent, and a natural Diwali starter.</p>
 
-<p><strong>Butter Chicken (€18.50):</strong> The Diwali main course across Punjabi households  -  creamy, tomato-forward, deeply spiced with fresh-ground garam masala. At Chopras, made with tandoor-cooked chicken and sauced fresh daily.</p>
+<p><strong>Butter Chicken (€18.50):</strong> The Diwali main course across Punjabi households  -  creamy, tomato-forward, deeply spiced with fresh-ground garam masala. At Chopras Indian Restaurant, made with tandoor-cooked chicken and sauced fresh daily.</p>
 
 <p><strong>Dal Makhani (€18.50):</strong> Slow-cooked black lentils in cream and butter  -  a Diwali staple in North Indian households. This dish symbolises abundance in the same way the festival does: it takes time, it is generous, it is rich.</p>
 
 <p><strong>Gulab Jamun:</strong> On the dessert menu  -  the warm milk-solid dumplings in rose syrup that appear on every Diwali table. Order a plate for the table. This is the appropriate ending to a Diwali meal.</p>
 
-<h2>How to Book a Diwali Dinner at Chopras</h2>
+<h2>How to Book a Diwali Dinner at Chopras Indian Restaurant</h2>
 
 <p>For a table at the restaurant during Diwali, book as early as possible. Diwali coincides with some of the busiest weeks of the year for Chopras  -  the South Asian community in Den Haag celebrates seriously, and tables fill up quickly in the weeks around the festival. Call +31 6 30645930 or use the contact page to reserve.</p>
 
-<p>For a private event  -  a family Diwali dinner in the event hall, a community celebration, or a Diwali-themed corporate event  -  contact Chopras via the <a href="https://chopras.nl/en/catering#catering-form">catering enquiry form</a> as early as possible. October and November bookings for the event hall go quickly. The earlier you contact us, the more flexibility there is in menu planning.</p>
+<p>For a private event  -  a family Diwali dinner in the event hall, a community celebration, or a Diwali-themed corporate event  -  contact Chopras Indian Restaurant via the <a href="https://chopras.nl/en/catering#catering-form">catering enquiry form</a> as early as possible. October and November bookings for the event hall go quickly. The earlier you contact us, the more flexibility there is in menu planning.</p>
 
-<p>The <a href="https://chopras.nl/en/party-venue-den-haag">party venue page</a> has full details of the event hall capacity, what is included, and how the booking process works. The <a href="https://chopras.nl/en/menu">full menu</a> covers all the dishes available for Diwali dinners at the restaurant.</p>
+<p>The <a href="https://chopras.nl/en/party-venue-den-haag">party venue page</a> has full details of the event hall capacity, what is included, and how the booking process works. The <a href="https://chopras.nl/en/menu">full menu</a> covers all the dishes available for Diwali dinners at Chopras Indian Restaurant.</p>
 
 <p>Diwali happens once a year. The food should be worthy of the occasion.</p>
 `,
@@ -615,19 +615,19 @@ export const blogPosts: BlogPost[] = [
 <p>Spiced potato patties, pan-fried until a golden-brown crust forms on each side. The interior is soft and herb-flecked; the exterior is crisp and slightly caramelised. Served with mint chutney and tamarind chutney. Sometimes served as the base of a chaat assembly (aloo tikki chaat) with yogurt and chickpeas on top. One of the oldest street food preparations in North India  -  simple, direct, excellent.</p>
 
 <h3>Mixed Chaat Platter</h3>
-<p>The best starting point for a table of first-timers. Multiple chaat preparations served together  -  typically pani puri, samosa chaat, and papdi chaat  -  in portions designed for sharing. You taste the range of the tradition in a single order. At Chopras, the Mixed Chaat Platter is the recommended first order for any table trying Indian street food for the first time.</p>
+<p>The best starting point for a table of first-timers. Multiple chaat preparations served together  -  typically pani puri, samosa chaat, and papdi chaat  -  in portions designed for sharing. You taste the range of the tradition in a single order. At Chopras Indian Restaurant, the Mixed Chaat Platter is the recommended first order for any table trying Indian street food for the first time.</p>
 
 <h2>Where to Find Authentic Indian Street Food in the Netherlands</h2>
 
 <p>The honest assessment: genuine, well-executed Indian street food is rare in the Netherlands. Most Indian restaurants offer a limited chaat selection that does not prioritise the same freshness and technique as the restaurant food. The few restaurants that do it well are worth knowing.</p>
 
-<p>In Den Haag, <a href="https://chopras.nl/en/menu">Chopras on Leyweg</a> is currently the most authentic option for Indian street food. The chaat menu is taken seriously: fresh shells made in-house, chutneys made daily, the yogurt kept cold, the assembly done correctly. The pani puri is the test  -  at Chopras it passes.</p>
+<p>In Den Haag, <a href="https://chopras.nl/en/menu">Chopras Indian Restaurant on Leyweg</a> is currently the most authentic option for Indian street food. The chaat menu is taken seriously: fresh shells made in-house, chutneys made daily, the yogurt kept cold, the assembly done correctly. The pani puri is the test  -  at Chopras Indian Restaurant it passes.</p>
 
 <h2>What to Drink With Street Food</h2>
 
-<p>Mango lassi (€6)  -  the sweet yogurt-based mango drink  -  is the natural partner for spicy street food. The sweetness and the fat in the yogurt cut through the chilli heat and reset the palate between bites. Masala chai  -  spiced milk tea  -  is the traditional street food drink in India itself. Both are available at Chopras.</p>
+<p>Mango lassi (€6)  -  the sweet yogurt-based mango drink  -  is the natural partner for spicy street food. The sweetness and the fat in the yogurt cut through the chilli heat and reset the palate between bites. Masala chai  -  spiced milk tea  -  is the traditional street food drink in India itself. Both are available at Chopras Indian Restaurant.</p>
 
-<p>The <a href="https://chopras.nl/en/menu">full street food menu at Chopras</a> is the place to start. Come with friends, order the Mixed Chaat Platter, and let the kitchen take it from there.</p>
+<p>The <a href="https://chopras.nl/en/menu">full street food menu at Chopras Indian Restaurant</a> is the place to start. Come with friends, order the Mixed Chaat Platter, and let the kitchen take it from there.</p>
 `,
   },
 ]

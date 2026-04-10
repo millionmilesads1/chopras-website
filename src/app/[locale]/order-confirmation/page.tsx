@@ -142,13 +142,13 @@ function OrderConfirmationContent({ locale }: { locale: Locale }) {
         <div className="flex flex-col sm:flex-row gap-3 mt-4">
           <Link
             href={`${base}/menu`}
-            className="flex-1 bg-[#D4AF37] text-[#1A1A1A] py-4 font-semibold uppercase tracking-widest text-sm hover:bg-[#F5D36A] transition-all rounded-xl text-center"
+            className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98]"
           >
             Order Again
           </Link>
           <Link
             href={base}
-            className="flex-1 border border-gray-200 text-[#1A1A1A]/70 py-4 font-semibold text-sm hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all rounded-xl text-center"
+            className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98]"
           >
             Back to Home
           </Link>

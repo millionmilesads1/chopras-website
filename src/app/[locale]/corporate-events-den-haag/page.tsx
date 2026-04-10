@@ -134,7 +134,7 @@ export default function CorporateEventsPage({ params }: Props) {
           <p className="text-xl text-white/75 mt-6 leading-relaxed" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}>
             {isNl ? 'Teamdiners. Klantentertainment. Productlanceringen. Conferentiecatering. Voor 15 tot 120 gasten in Den Haag.' : 'Team dinners. Client entertainment. Product launches. Conference catering. For 15 to 120 guests across Den Haag.'}
           </p>
-          <Link href={`${base}/catering#catering-form`} className="inline-block mt-8 bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors">
+          <Link href={`${base}/catering#catering-form`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]">
             {isNl ? 'Zakelijke Offerte Aanvragen' : 'Get a Corporate Quote'}
           </Link>
         </div>
@@ -204,7 +204,7 @@ export default function CorporateEventsPage({ params }: Props) {
           <p className="text-white/75 leading-relaxed text-lg mb-8 max-w-2xl mx-auto">
             {isNl ? 'Vertel ons over uw evenement  -  datum, locatie, aantal gasten en formaat  -  en wij hebben binnen 24 uur een duidelijke, gespecificeerde offerte voor u.' : 'Tell us about your event  -  date, location, guest count, and format  -  and we will have a clear, itemised quote back to you within 24 hours.'}
           </p>
-          <Link href={`${base}/catering#catering-form`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors">
+          <Link href={`${base}/catering#catering-form`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]">
             {isNl ? 'Offerte Aanvragen' : 'Request a Quote'}
           </Link>
           <div className="mt-6">

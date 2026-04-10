@@ -73,7 +73,7 @@ export default function LocaleBlogPostPage({ params }: Props) {
           </nav>
 
           {post.language === 'nl' && (
-            <span className="inline-block bg-[#D4AF37] text-[#1B2B5E] text-xs font-bold px-3 py-1 rounded-full mb-6">
+            <span className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]">
               {tr.blog.nlBadge}
             </span>
           )}

@@ -47,7 +47,7 @@ export const homeFaqs: FaqItem[] = [
   },
   {
     question: "What are some of the most popular dishes at your restaurant?",
-    answer: "Most popular dishes at Chopras include Butter Chicken, Dal Makhani, Mutton Rogan Josh, Lamb Biryani, Paneer Tikka, Tandoori Chicken, and Pani Puri. These are loved for authentic North Indian flavours and generous portions."
+    answer: "Most popular dishes at Chopras Indian Restaurant include Butter Chicken, Dal Makhani, Mutton Rogan Josh, Lamb Biryani, Paneer Tikka, Tandoori Chicken, and Pani Puri. These are loved for authentic North Indian flavours and generous portions."
   },
   {
     question: "Do you offer a kids menu or child-friendly dishes?",
