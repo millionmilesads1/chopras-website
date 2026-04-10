@@ -165,7 +165,7 @@ export default function LocaleMenuPage({ params }: Props) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href={`${base}/contact`}
-              className="inline-block bg-[#D4AF37] text-[#1A1A1A] px-8 py-4 font-semibold uppercase tracking-widest text-sm hover:bg-[#F5D36A] transition-all"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] min-h-[48px] backdrop-blur-[10px]"
             >
               Reserve a Table
             </Link>
@@ -173,7 +173,7 @@ export default function LocaleMenuPage({ params }: Props) {
               href="https://www.thuisbezorgd.nl/menu/chopras-indian-street-food"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border-2 border-[#D4AF37] text-[#D4AF37] px-8 py-4 uppercase tracking-widest text-sm hover:bg-[#D4AF37] hover:text-[#1A1A1A] transition-all"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] min-h-[48px] backdrop-blur-[10px]"
             >
               Order on Thuisbezorgd
             </a>

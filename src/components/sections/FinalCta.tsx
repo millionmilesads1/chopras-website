@@ -44,25 +44,15 @@ export default function FinalCta({ locale = 'en' }: { locale?: Locale }) {
           >
             <Link
               href={`${base}/contact`}
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#D4AF37] pl-8 pr-2 py-2 text-[#1A1A1A] text-sm font-semibold uppercase tracking-widest transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#e8c84a] active:scale-[0.98] shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)]"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] min-h-[48px] backdrop-blur-[10px]"
             >
               Reserve a Table
-              <span className="inline-flex w-10 h-10 items-center justify-center rounded-full bg-black/10 transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105">
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" strokeWidth="1.5" stroke="currentColor">
-                  <path d="M2.5 12.5L12.5 2.5M12.5 2.5H5.5M12.5 2.5V9.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </span>
             </Link>
             <Link
               href={`${base}/menu`}
-              className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 pl-8 pr-2 py-2 text-white text-sm uppercase tracking-widest transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-white/40 hover:bg-white/10 active:scale-[0.98]"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] min-h-[48px] backdrop-blur-[10px]"
             >
               {tr.home.ctaMenu}
-              <span className="inline-flex w-10 h-10 items-center justify-center rounded-full bg-white/10 transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105">
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" strokeWidth="1.5" stroke="currentColor">
-                  <path d="M2.5 12.5L12.5 2.5M12.5 2.5H5.5M12.5 2.5V9.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </span>
             </Link>
           </div>
 

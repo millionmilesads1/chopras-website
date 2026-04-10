@@ -74,14 +74,14 @@ export default function MeetTheFounder() {
               Not made mild for a European palate. The real thing.
             </p>
             <p>
-              Every recipe at Chopras comes from memory - from kitchens in
+              Every recipe at Chopras Indian Restaurant comes from memory - from kitchens in
               Delhi, from street corners in Mumbai, from family tables in
               Rajasthan. Arun grinds the spices fresh every morning himself
               because he knows that the moment you open a packet, something
               is already lost.
             </p>
             <p>
-              When you eat at Chopras, you are not eating at a restaurant.
+              When you eat at Chopras Indian Restaurant, you are not eating at a restaurant.
               You are eating at someone&apos;s table. That is the only standard
               Arun has ever cooked to.
             </p>
