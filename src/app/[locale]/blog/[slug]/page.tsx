@@ -104,7 +104,13 @@ export default function LocaleBlogPostPage({ params }: Props) {
                 prose-p:text-gray-700 prose-p:leading-relaxed
                 prose-a:text-[#1B2B5E] prose-a:underline
                 prose-strong:text-[#1A1A1A]
-                prose-ul:text-gray-700"
+                prose-ul:text-gray-700
+                prose-img:block prose-img:md:float-right prose-img:md:ml-6 prose-img:mb-4 prose-img:w-full prose-img:md:w-auto
+                [&_img]:block [&_img]:md:float-right [&_img]:md:ml-6 [&_img]:mb-4
+                [&_.est-badge]:hidden [&_.est-badge]:md:block
+                [&_[class*='sticky']]:relative [&_[class*='sticky']]:md:sticky
+                [&_[class*='absolute']]:relative [&_[class*='absolute']]:md:absolute
+                overflow-hidden"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
