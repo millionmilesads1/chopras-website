@@ -108,7 +108,7 @@ export default function LocaleBlogPostPage({ params }: Props) {
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
-            <aside className="w-full lg:w-80">
+            <aside className="hidden lg:block w-full lg:w-80">
               <div className="sticky top-24 bg-[#1B2B5E] rounded-2xl p-6 text-white overflow-visible">
                 <p className="font-heading text-xl mb-4 leading-snug">{tr.blog.enjoySidebar}</p>
                 <p className="text-white/70 text-sm mb-1">Leyweg 986</p>
