@@ -201,7 +201,15 @@ export default function IndianRestaurantPeacePalacePage({ params }: Props) {
               </Link>
             </p>
             <p className="text-[#1A1A1A] text-base">
-              <Link href={`${base}/menu`} className="text-[#D4AF37] hover:underline">{isNl ? 'Bekijk het volledige menu' : 'View the full menu'}</Link> {isNl ? 'of' : 'or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:underline">{isNl ? 'maak een reservering' : 'book a table'}</Link> {isNl ? 'bij Chopras Indiaas Restaurant dicht bij Friedespaleis Den Haag.' : 'at Chopras Indian Restaurant near Peace Palace Den Haag.'}
+              {isNl ? (
+                <>
+                  <Link href={`${base}/menu`} className="text-[#D4AF37] hover:underline">Bekijk het volledige menu</Link> of <Link href={`${base}/contact`} className="text-[#D4AF37] hover:underline">maak een reservering</Link> bij Chopras Indiaas Restaurant dicht bij Friedespaleis Den Haag. We serveren <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal</Link> opties en <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">vegetarisch</Link> gerechten.
+                </>
+              ) : (
+                <>
+                  <Link href={`${base}/menu`} className="text-[#D4AF37] hover:underline">View the full menu</Link> or <Link href={`${base}/contact`} className="text-[#D4AF37] hover:underline">book a table</Link> at Chopras Indian Restaurant near Peace Palace Den Haag. We offer <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal</Link> options and <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">vegetarian</Link> dishes.
+                </>
+              )}
             </p>
           </div>
         </div>
