@@ -95,7 +95,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
             {isNl ? (
               <>
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Menu Ontwerp</h3>
-                <p>We werken met jou mee om het juiste menu te kiezen. Biryani? Tandoori? Curry? Vegetarisch? Allemaal? We weten wat werkt voor verschillende groepen en we geven je advies.</p>
+                <p>We werken met jou mee om het juiste menu te kiezen. Biryani? <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:underline">Tandoori</Link>? Curry? <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">Vegetarisch</Link>? Allemaal? We weten wat werkt voor verschillende groepen en we geven je advies.</p>
                 
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Bezorging</h3>
                 <p>Alles wordt bezorgd op de exacte tijd die je nodig hebt. Niet eerder, niet later. Heet. Vers. In beschermde containers zodat het niet beschadigd raakt onderweg.</p>
@@ -109,7 +109,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
             ) : (
               <>
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Menu Design</h3>
-                <p>We work with you to choose the right menu. Biryani? Tandoori? Curry? Vegetarian? Everything? We know what works for different groups and we advise you.</p>
+                <p>We work with you to choose the right menu. Biryani? <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:underline">Tandoori</Link>? Curry? <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">Vegetarian</Link>? Everything? We know what works for different groups and we advise you.</p>
                 
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Delivery</h3>
                 <p>Everything is delivered at the exact time you need it. Not before, not after. Hot. Fresh. In protective containers so it is not damaged on the way.</p>

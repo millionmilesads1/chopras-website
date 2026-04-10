@@ -72,13 +72,13 @@ export default function BruiloftCateringPage({ params }: Props) {
             {isNl ? (
               <>
                 <p>Een Indiaase bruiloft is veel meer dan eten. Het is een viering van twee families die samenkomen, van tradities die teruggaan eeuwen, van liefde die generaties verbindt. En het eten op die dag moet dat alles weerspiegelen. Het moet authentiek zijn, lekker zijn, en duurzaam. Dit is wat we bij Chopras voor je doen.</p>
-                <p>We hebben decennia ervaring met het serveren van Indiaase bruiloften. We kennen de tradities. We begrijpen wat je nodig hebt. Biryani voor honderd mensen? Tandoori? Vegetarische gerechtjes naast vleesgerechten? Halal? Gluten-vrij? We doen het allemaal, en we doen het met de eer die het moment verdient.</p>
+                <p>We hebben decennia ervaring met het serveren van Indiaase bruiloften. We kennen de tradities. We begrijpen wat je nodig hebt. <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:underline">Biryani</Link> voor honderd mensen? <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:underline">Tandoori</Link>? Vegetarische gerechtjes naast vleesgerechten? Halal? Gluten-vrij? We doen het allemaal, en we doen het met de eer die het moment verdient.</p>
                 <p>Dit is niet alleen eten bezorgen. Dit is een partnering. We werken met jou samen van begin tot einde, we zorgen voor de details, we stellen zeker dat alles perfect is. Je bruiloft verdient echte aandacht, echte vakmanschap, en echte warmte. Dat is wat we geven.</p>
               </>
             ) : (
               <>
                 <p>An Indian wedding is much more than food. It is a celebration of two families coming together, of traditions that go back centuries, of love that binds generations. And the food on that day must reflect all of that. It must be authentic, delicious, and lasting. This is what we do at Chopras for you.</p>
-                <p>We have decades of experience serving Indian weddings. We know the traditions. We understand what you need. Biryani for a hundred people? Tandoori? Vegetarian dishes alongside meat dishes? Halal? Gluten - free? We do it all, and we do it with the honour the moment deserves.</p>
+                <p>We have decades of experience serving Indian weddings. We know the traditions. We understand what you need. <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:underline">Biryani</Link> for a hundred people? <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:underline">Tandoori</Link>? Vegetarian dishes alongside meat dishes? Halal? Gluten - free? We do it all, and we do it with the honour the moment deserves.</p>
                 <p>This is not just delivering food. This is a partnership. We work with you from start to finish, we look after the details, we ensure that everything is perfect. Your wedding deserves real attention, real skill, and real warmth. That is what we give.</p>
               </>
             )}

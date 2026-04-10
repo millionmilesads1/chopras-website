@@ -79,15 +79,15 @@ export default function TandooriPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <p>De tandoor is een Indiase kleioven die bij temperaturen van ongeveer 400°C werkt. Het is de reden waarom tandoori kip een karakteristieke verschroeide buitenkant heeft met een sappige, geurige kern  -  die combinatie kan niet worden bereikt in een gewone oven of pan.</p>
+                <p>De tandoor is een Indiase <Link href={`${base}/blog/best-indian-restaurant-den-haag`} className="text-[#D4AF37] hover:underline">kleioven</Link> die bij temperaturen van ongeveer 400°C werkt. Het is de reden waarom tandoori kip een karakteristieke verschroeide buitenkant heeft met een sappige, geurige kern  -  die combinatie kan niet worden bereikt in een gewone oven of pan.</p>
                 <p>Bij Chopras wordt de tandoor uren voor de service aangestoken. De kip wordt van tevoren gemarineerd met verse kruiden en yoghurt, dan gehangen in de oven om te garen. De hitte is droog en intense  -  het vocht verdampt snel, de kruiden karamelliseren, en het vlees behoudt zijn sappen van binnenuit.</p>
-                <p>Onze tandoori gerechten zijn halal gecertificeerd. Elke portie wordt vers bereid wanneer u bestelt.</p>
+                <p>Onze tandoori gerechten zijn <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal</Link> gecertificeerd. Elke portie wordt vers bereid wanneer u bestelt.</p>
               </>
             ) : (
               <>
-                <p>The tandoor is an Indian clay oven that operates at temperatures of around 400°C. It is the reason why tandoori chicken has a characteristic charred exterior with a juicy, fragrant core  -  that combination cannot be achieved in a regular oven or pan.</p>
+                <p>The tandoor is an Indian <Link href={`${base}/blog/best-indian-restaurant-den-haag`} className="text-[#D4AF37] hover:underline">clay oven</Link> that operates at temperatures of around 400°C. It is the reason why tandoori chicken has a characteristic charred exterior with a juicy, fragrant core  -  that combination cannot be achieved in a regular oven or pan.</p>
                 <p>At Chopras, the tandoor is fired up hours before service. The chicken is marinated overnight with fresh spices and yogurt, then hung in the oven to cook. The heat is dry and intense  -  moisture evaporates fast, the spices caramelise, and the meat retains its juices from within.</p>
-                <p>Our tandoori dishes are halal certified. Every portion is freshly prepared when you order.</p>
+                <p>Our tandoori dishes are <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal</Link> certified. Every portion is freshly prepared when you order.</p>
               </>
             )}
           </div>
@@ -101,13 +101,13 @@ export default function TandooriPage({ params }: Props) {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             {[
-              { name: isNl ? 'Chicken Tikka' : 'Chicken Tikka', price: '€16.50', desc: isNl ? 'Gemarineerde kipdelen, 24 uur in yoghurt en kruiden, direct van de tandoor' : 'Marinated chicken pieces, 24 hours in yogurt and spices, straight from the tandoor' },
-              { name: isNl ? 'Seekh Kebab' : 'Seekh Kebab', price: '€17.50', desc: isNl ? 'Gemalen lam met gember, knoflook en verse kruiden, geroosterd op metalen pennen' : 'Minced lamb with ginger, garlic and fresh spices, grilled on metal skewers' },
-              { name: isNl ? 'Paneer Tikka' : 'Paneer Tikka', price: '€15.50', desc: isNl ? 'Verse paneer gemarineerd in yoghurt en kruiden, geroosterd in de tandoor' : 'Fresh paneer marinated in yogurt and spices, grilled in the tandoor' },
-              { name: isNl ? 'Tandoori Naan' : 'Tandoori Naan', price: '€3.50', desc: isNl ? 'Platbrood gebakken op de muur van de tandoor' : 'Flatbread baked against the wall of the tandoor' },
+              { name: isNl ? 'Chicken Tikka' : 'Chicken Tikka', price: '€16.50', desc: isNl ? 'Gemarineerde kipdelen, 24 uur in yoghurt en kruiden, direct van de tandoor' : 'Marinated chicken pieces, 24 hours in yogurt and spices, straight from the tandoor', href: '/menu' },
+              { name: isNl ? 'Seekh Kebab' : 'Seekh Kebab', price: '€17.50', desc: isNl ? 'Gemalen lam met gember, knoflook en verse kruiden, geroosterd op metalen pennen' : 'Minced lamb with ginger, garlic and fresh spices, grilled on metal skewers', href: '/menu' },
+              { name: isNl ? 'Paneer Tikka' : 'Paneer Tikka', price: '€15.50', desc: isNl ? 'Verse paneer gemarineerd in yoghurt en kruiden, geroosterd in de tandoor' : 'Fresh paneer marinated in yogurt and spices, grilled in the tandoor', href: '/blog/vegetarian-indian-food-den-haag' },
+              { name: isNl ? 'Tandoori Naan' : 'Tandoori Naan', price: '€3.50', desc: isNl ? 'Platbrood gebakken op de muur van de tandoor' : 'Flatbread baked against the wall of the tandoor', href: '/naan-den-haag' },
             ].map((item) => (
               <div key={item.name} className="bg-[#FFFAF5] rounded-xl p-5 border-l-4 border-[#D4AF37]">
-                <h3 className="font-heading text-lg text-[#1B2B5E] mb-1">{item.name}  -  {item.price}</h3>
+                <h3 className="font-heading text-lg text-[#1B2B5E] mb-1"><Link href={`${base}${item.href}`} className="text-[#D4AF37] hover:underline">{item.name}</Link>  -  {item.price}</h3>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             ))}
@@ -145,7 +145,11 @@ export default function TandooriPage({ params }: Props) {
               </Link>
             </p>
             <p className="text-[#1A1A1A] text-base">
-              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een reservering' : 'book a table at Chopras Indian Restaurant Den Haag'}</Link>.
+              {isNl ? (
+                <>Bekijk het volledige menu of <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">maak een reservering</Link>.</>
+              ) : (
+                <>View the full menu or <Link href={`${base}/contact`} className="text-[#D4AF37] hover:underline">book</Link> a table at Chopras Indian Restaurant Den Haag.</>
+              )}
             </p>
           </div>
         </div>

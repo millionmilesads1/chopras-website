@@ -109,13 +109,13 @@ export default function IndianRestaurantRijswijkPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <p>Vaste klanten uit Rijswijk bij Chopras convergereren op specifieke gerechten. De Chicken Tikka Masala en Butter Chicken zijn de meest voorkomende eerste bestellingen van nieuwe bezoekers  -  toegankelijke instappunten die onmiddellijk het kwaliteitsverschil tussen Chopras en generieke Indiase restaurants aantonen.</p>
+                <p>Vaste klanten uit Rijswijk bij Chopras convergereren op specifieke gerechten. De Chicken Tikka Masala en <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:underline">Butter Chicken</Link> zijn de meest voorkomende eerste bestellingen van nieuwe bezoekers  -  toegankelijke instappunten die onmiddellijk het kwaliteitsverschil tussen Chopras en generieke Indiase restaurants aantonen.</p>
                 <p>De halalcertificering is bijzonder relevant voor de diverse gemeenschap van Rijswijk. De gemeente heeft een aanzienlijke moslimbevolking  -  Pakistaanse, Marokkaanse, Turkse en Hindoestaans-moslimfamilies  -  voor wie een echt gecertificeerd halal Indiaas restaurant op vijf minuten rijden een betekenisvolle lokale optie is.</p>
                 <p>Het restaurant is gezinsvriendelijk in de echte zin van het woord  -  niet alleen tolerant voor kinderen, maar aanpasbaar voor hen. De butter chicken is mild genoeg voor kinderen. De porties zijn royaal. De sfeer is warm in plaats van formeel.</p>
               </>
             ) : (
               <>
-                <p>Regulars at Chopras from Rijswijk have converged on specific dishes. The Chicken Tikka Masala and Butter Chicken are the most common first orders from new visitors  -  accessible entry points that immediately establish the quality difference between Chopras and generic Indian restaurants.</p>
+                <p>Regulars at Chopras from Rijswijk have converged on specific dishes. The Chicken Tikka Masala and <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:underline">Butter Chicken</Link> are the most common first orders from new visitors  -  accessible entry points that immediately establish the quality difference between Chopras and generic Indian restaurants.</p>
                 <p>The halal certification is especially relevant for Rijswijk&apos;s diverse community. The municipality has a significant Muslim population  -  Pakistani, Moroccan, Turkish, and Hindustani Muslim families  -  for whom a genuinely certified halal Indian restaurant within five minutes is a meaningful local option.</p>
                 <p>The restaurant is family-friendly in the genuine sense  -  not just tolerant of children, but adapted for them. The butter chicken is mild enough for children. The portions are generous. The atmosphere is warm rather than formal.</p>
               </>

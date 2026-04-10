@@ -73,14 +73,14 @@ export default function DalMakhaniPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <p>Dal makhani in Den Haag is vegetarisch voedsel dat niemand voelt als minder dan vlees. Het is een voedsel dat vleeseters en vegetarianen allebei adoreren. Dit is omdat het niet voelt als voedselvervanging. Het voelt als comfort voedsel dat al duizenden jaren bestaat. Zwarte linzen - urad dal genoemd - werden in Indische voedsel gebruikt lang voordat iemand vegetarische producten uitvond. Het is een oud voedsel. Het is een serieus voedsel. En het smaakt ongeloflijk.</p>
+                <p>Dal makhani in Den Haag is <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">vegetarisch</Link> voedsel dat niemand voelt als minder dan vlees. Het is een voedsel dat vleeseters en vegetarianen allebei adoreren. Dit is omdat het niet voelt als voedselvervanging. Het voelt als comfort voedsel dat al duizenden jaren bestaat. Zwarte linzen - urad dal genoemd - werden in Indische voedsel gebruikt lang voordat iemand vegetarische producten uitvond. Het is een oud voedsel. Het is een serieus voedsel. En het smaakt ongeloflijk.</p>
                 <p>Indian lentils worden gebruikt in duizenden recepten, maar dal makhani is misschien het meest beroemd. Het is het gerecht dat mensen op Instagram plaatsen. Het is het gerecht dat restaurants adverteren. Dit is omdat het uitziet geweldig - diep rood, bijna paars van kleur, glad en voelt. En het smaakt nog beter dan het uitziet. Dit is een voedsel dat je laat voelen als je in Punjab bent, in het hart van India, waar dit gerecht thuishoort.</p>
                 <p>Vegetarische Indian mains in Den Haag zijn moeilijk te vinden. Veel restaurants behandelen vegetarische gerechten alsof ze een voetnoot zijn. Chopras behandelt dal makhani als het hoofdgerecht dat het is. We koken het met dezelfde zorg en aandacht als onze vlees curries. De linzen worden de dag eerder ingeweekt. Ze worden die ochtend gekookt totdat ze volledig zacht zijn. De saus wordt gebouwd in lagen - tomaat, ginger, garlic, cream, butter, spices - elk moment voegt meer smaak.</p>
                 <p>Dit is waarom vegetarisch Indiaas voedsel niet hoeft in te leveren. Dit is waarom dal makhani zo populair is geworden. Het is echt voedsel met echte smaak, geen compromis.</p>
               </>
             ) : (
               <>
-                <p>Dal makhani in Den Haag is vegetarian food that no one feels as less than meat. It is food that meat-eaters and vegetarians both adore. This is because it does not feel like food substitution. It feels like comfort food that has existed for thousands of years. Black lentils - called urad dal - were used in Indian food long before anyone invented vegetarian products. It is old food. It is serious food. And it tastes incredible.</p>
+                <p>Dal makhani in Den Haag is <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">vegetarian</Link> food that no one feels as less than meat. It is food that meat-eaters and vegetarians both adore. This is because it does not feel like food substitution. It feels like comfort food that has existed for thousands of years. Black lentils - called urad dal - were used in Indian food long before anyone invented vegetarian products. It is old food. It is serious food. And it tastes incredible.</p>
                 <p>Indian lentils are used in thousands of recipes, but dal makhani is perhaps the most famous. It is the dish people post on Instagram. It is the dish restaurants advertise. This is because it looks amazing - deep red, almost purple in colour, smooth and feels luxurious. And it tastes even better than it looks. This is food that makes you feel like you are in Punjab, in the heart of India, where this dish belongs.</p>
                 <p>Vegetarian Indian mains in Den Haag are hard to find. Many restaurants treat vegetarian dishes as if they are a footnote. Chopras treats dal makhani as the main dish it is. We cook it with the same care and attention as our meat curries. The lentils are soaked the day before. They are cooked that morning until completely tender. The sauce is built in layers - tomato, ginger, garlic, cream, butter, spices - each moment adds more taste.</p>
                 <p>This is why vegetarian Indian food does not have to compromise. This is why dal makhani has become so popular. It is real food with real taste, no compromise.</p>
@@ -164,10 +164,11 @@ export default function DalMakhaniPage({ params }: Props) {
             {isNl ? 'Dal Makhani Bestellen' : 'Order Dal Makhani'}
           </h2>
           <p className="text-[#1A1A1A] text-lg leading-relaxed mb-8">
-            {isNl
-              ? 'Voeg dal makhani toe aan je bestelling. Eet het met naan. Eet het met rijst. Voelde het voelen. Dit is voedsel dat je voelt als thuis. Bezoek Chopras op Leyweg 986, Den Haag. Open dinsdag tot zondag.'
-              : 'Add dal makhani to your order. Eat it with naan. Eat it with rice. Feel the comfort. This is food that feels like home. Visit Chopras at Leyweg 986, Den Haag. Open Tuesday to Sunday.'
-            }
+            {isNl ? (
+              <>Voeg dal makhani toe aan je bestelling. Eet het met <Link href={`${base}/naan-den-haag`} className="text-[#D4AF37] hover:underline">naan</Link>. Eet het met rijst. Voelde het voelen. Dit is voedsel dat je voelt als thuis. Bezoek Chopras op Leyweg 986, Den Haag. Open dinsdag tot zondag.</>
+            ) : (
+              <>Add dal makhani to your order. Eat it with <Link href={`${base}/naan-den-haag`} className="text-[#D4AF37] hover:underline">naan</Link>. Eat it with rice. Feel the comfort. This is food that feels like home. Visit Chopras at Leyweg 986, Den Haag. Open Tuesday to Sunday.</>
+            )}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href={`${base}/contact`} className="inline-block bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold hover:bg-[#c9a230] transition-colors text-center">

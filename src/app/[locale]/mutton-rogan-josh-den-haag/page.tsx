@@ -95,7 +95,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
             {isNl ? (
               <>
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">De Selectie van het Lamsvlees</h3>
-                <p>We beginnen met halal-gecertificeerd lamsvlees van de schouder en benen - de betere sneden voor een langzame bereiding. Dit vlees heeft marmer van vet door het weefsel. Als je dat vlees slechts drie uur zachtjes gaaart, wordt het vlees mals en de vet wordt een zijde in de saus. Dit is een kukengeheim: schlechter vlees geeft je schlechter rogan josh. Alle onze lamsvlees wordt elke ochtend geselecteerd.</p>
+                <p>We beginnen met <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal</Link>-gecertificeerd lamsvlees van de schouder en benen - de betere sneden voor een langzame bereiding. Dit vlees heeft marmer van vet door het weefsel. Als je dat vlees slechts drie uur zachtjes gaaart, wordt het vlees mals en de vet wordt een zijde in de saus. Dit is een kukengeheim: schlechter vlees geeft je schlechter rogan josh. Alle onze lamsvlees wordt elke ochtend geselecteerd.</p>
                 
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Het Branden van het Vlees</h3>
                 <p>Het lamsvlees wordt gebraden in een mengsel van ghee en olie in een zware pan. Deze stap is niet voor smaak alleen - het zegelt het oppervlak en helpt de sappen binnenin te houden. We branden tot het vlees aan alle kanten goud is. Dit duurt zeker 20 minuten. Veel restaurants slaan deze stap over. Wij niet.</p>
@@ -109,7 +109,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
             ) : (
               <>
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">The Selection of Lamb</h3>
-                <p>We begin with halal-certified lamb from the shoulder and legs - the better cuts for slow cooking. This lamb has marbling of fat throughout the tissue. When you cook that lamb for just three hours on low heat, the meat becomes tender and the fat becomes silk in the sauce. This is a kitchen secret: poor lamb gives you poor rogan josh. All our lamb is hand-selected every morning.</p>
+                <p>We begin with <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal</Link>-certified lamb from the shoulder and legs - the better cuts for slow cooking. This lamb has marbling of fat throughout the tissue. When you cook that lamb for just three hours on low heat, the meat becomes tender and the fat becomes silk in the sauce. This is a kitchen secret: poor lamb gives you poor rogan josh. All our lamb is hand-selected every morning.</p>
                 
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">The Searing of the Meat</h3>
                 <p>The lamb is seared in a blend of ghee and oil in a heavy pot. This step is not for flavour alone - it seals the surface and helps keep the juices inside. We sear until the lamb is golden on all sides. This takes at least 20 minutes. Many restaurants skip this step. We do not.</p>
@@ -164,12 +164,18 @@ export default function MuttonRoganJoshPage({ params }: Props) {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {[
-              { name: isNl ? 'Lamsvlees Rogan Josh' : 'Mutton Rogan Josh', price: '€22.50', desc: isNl ? 'Mals lamsvlees in diepgeurige Kasjmiri saus' : 'Tender lamb in deep-flavoured Kashmiri sauce' },
-              { name: isNl ? 'Met Naan' : 'With Naan', price: '+€4.50', desc: isNl ? 'Vers naan om de saus op te schrapen' : 'Fresh naan to soak up every drop of sauce' },
+              { name: isNl ? 'Lamsvlees Rogan Josh' : 'Mutton Rogan Josh', price: '€22.50', desc: isNl ? 'Mals lamsvlees in diepgeurige Kasjmiri saus' : 'Tender lamb in deep-flavoured Kashmiri sauce', href: null },
+              { name: isNl ? 'Met Naan' : 'With Naan', price: '+€4.50', descBefore: isNl ? 'Vers ' : 'Fresh ', descWord: 'naan', descAfter: isNl ? ' om de saus op te schrapen' : ' to soak up every drop of sauce', href: '/naan-den-haag' },
             ].map((item) => (
               <div key={item.name} className="bg-[#FFFAF5] rounded-xl p-6 border-l-4 border-[#D4AF37]">
                 <h3 className="font-heading text-xl text-[#1B2B5E] mb-1">{item.name} - {item.price}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
+                <p className="text-gray-600 text-sm">
+                  {item.href ? (
+                    <>{item.descBefore}<Link href={`${base}${item.href}`} className="text-[#D4AF37] hover:underline">{item.descWord}</Link>{item.descAfter}</>
+                  ) : (
+                    item.desc
+                  )}
+                </p>
               </div>
             ))}
           </div>

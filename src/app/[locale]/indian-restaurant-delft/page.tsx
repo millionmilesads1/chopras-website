@@ -108,14 +108,14 @@ export default function IndianRestaurantDelftPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <p>Bezoekers uit Delft bestellen vaker dan gemiddeld biryani  -  het gerecht dat het meest onderscheidend is van de thuisbereidingsversies die de meeste mensen kennen. De qualiteit van de saffraanrijst en de verse kruiden bij Chopras maakt een direct vergelijkbaar verschil zichtbaar.</p>
-                <p>De street food-sectie van het menu is bijzonder populair bij internationale TU Delft-studenten en -medewerkers  -  pani puri, chaat en samosa zijn vertrouwde smaken voor bezoekers uit India en Pakistan die elders in Den Haag of Delft moeilijk te vinden authentieke versies van deze gerechten zoeken.</p>
+                <p>Bezoekers uit Delft bestellen vaker dan gemiddeld <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:underline">biryani</Link>  -  het gerecht dat het meest onderscheidend is van de thuisbereidingsversies die de meeste mensen kennen. De qualiteit van de saffraanrijst en de verse kruiden bij Chopras maakt een direct vergelijkbaar verschil zichtbaar.</p>
+                <p>De street food-sectie van het menu is bijzonder populair bij internationale TU Delft-studenten en -medewerkers  -  pani puri, <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:underline">chaat</Link> en samosa zijn vertrouwde smaken voor bezoekers uit India en Pakistan die elders in Den Haag of Delft moeilijk te vinden authentieke versies van deze gerechten zoeken.</p>
                 <p>Het halal-aspect trekt specifiek families uit Delft&apos;s diverse moslimgemeenschap aan  -  Turks, Marokkaans, Pakistaans, Indiaas-moslim  -  voor wie de volledig gecertificeerde haalhalstatus van Chopras een doorslaggevend argument is.</p>
               </>
             ) : (
               <>
-                <p>Visitors from Delft order biryani at above-average rates  -  the dish that is most distinctively different from the home-cooked versions most people know. The quality of the saffron rice and fresh spices at Chopras makes an immediately comparable difference.</p>
-                <p>The street food section of the menu is particularly popular with international TU Delft students and staff  -  pani puri, chaat and samosa are familiar tastes for visitors from India and Pakistan who find authentic versions of these dishes hard to find elsewhere in Den Haag or Delft.</p>
+                <p>Visitors from Delft order <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:underline">biryani</Link> at above-average rates  -  the dish that is most distinctively different from the home-cooked versions most people know. The quality of the saffron rice and fresh spices at Chopras makes an immediately comparable difference.</p>
+                <p>The street food section of the menu is particularly popular with international TU Delft students and staff  -  pani puri, <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:underline">chaat</Link> and samosa are familiar tastes for visitors from India and Pakistan who find authentic versions of these dishes hard to find elsewhere in Den Haag or Delft.</p>
                 <p>The halal aspect specifically draws families from Delft&apos;s diverse Muslim community  -  Turkish, Moroccan, Pakistani, Indian-Muslim  -  for whom Chopras&apos; fully certified halal status is a decisive factor.</p>
               </>
             )}

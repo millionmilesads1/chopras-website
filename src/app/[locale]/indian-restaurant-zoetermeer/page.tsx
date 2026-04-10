@@ -109,14 +109,14 @@ export default function IndianRestaurantZoetermeerPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <p>De Dal Makhani en Butter Chicken zijn de vaste keuzes voor Hindoestaanse families uit Zoetermeer  -  gerechten die thuis worden bereid maar die bij Chopras een restaurantkwaliteit hebben die de thuisversie moeilijk evenaart. Langzame garing, verse kruiden, de juiste verhouding room en boter.</p>
-                <p>Families die voor de eerste keer komen voor een speciale gelegenheid  -  verjaardag, jubileum, Eid-diner  -  kiezen vaak voor biryani als centrepiece van de tafel. Het is het gerecht dat het meest overtuigt dat de rit de moeite waard was.</p>
+                <p>De <Link href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:underline">Dal Makhani</Link> en <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:underline">Butter Chicken</Link> zijn de vaste keuzes voor Hindoestaanse families uit Zoetermeer  -  gerechten die thuis worden bereid maar die bij Chopras een restaurantkwaliteit hebben die de thuisversie moeilijk evenaart. Langzame garing, verse kruiden, de juiste verhouding room en boter.</p>
+                <p>Families die voor de eerste keer komen voor een speciale gelegenheid  -  verjaardag, jubileum, Eid-diner  -  kiezen vaak voor <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:underline">biryani</Link> als centrepiece van de tafel. Het is het gerecht dat het meest overtuigt dat de rit de moeite waard was.</p>
                 <p>De private evenementenhal wordt regelmatig geboekt door families en gemeenschappen uit Zoetermeer voor grotere bijeenkomsten  -  wanneer de afstand te groot is voor een spontane avond uit maar ruimschoots de moeite waard voor een geplande gelegenheid.</p>
               </>
             ) : (
               <>
-                <p>Dal Makhani and Butter Chicken are the consistent choices for Hindustani families from Zoetermeer  -  dishes that are cooked at home but that at Chopras have a restaurant quality that the home version struggles to match. Slow cooking, fresh spices, the right ratio of cream and butter.</p>
-                <p>Families visiting for a special occasion for the first time  -  birthday, anniversary, Eid dinner  -  often choose biryani as the centrepiece of the table. It is the dish that most convincingly makes the journey feel worthwhile.</p>
+                <p><Link href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:underline">Dal Makhani</Link> and <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:underline">Butter Chicken</Link> are the consistent choices for Hindustani families from Zoetermeer  -  dishes that are cooked at home but that at Chopras have a restaurant quality that the home version struggles to match. Slow cooking, fresh spices, the right ratio of cream and butter.</p>
+                <p>Families visiting for a special occasion for the first time  -  birthday, anniversary, Eid dinner  -  often choose <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:underline">biryani</Link> as the centrepiece of the table. It is the dish that most convincingly makes the journey feel worthwhile.</p>
                 <p>The private event hall is regularly booked by families and communities from Zoetermeer for larger gatherings  -  when the distance is too far for a spontaneous evening out but well worth the journey for a planned occasion.</p>
               </>
             )}

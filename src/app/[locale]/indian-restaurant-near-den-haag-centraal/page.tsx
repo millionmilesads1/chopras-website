@@ -72,13 +72,13 @@ export default function IndianRestaurantCentraalPage({ params }: Props) {
             {isNl ? (
               <>
                 <p>Forenzen. Bezoekers. Toeristen. Iedereen die Den Haag Centraal Station verlaat en honger heeft, kan naar Chopras gaan. We zijn op Leyweg 986, op slechts tien minuten rijden van het station. Met tram of bus ben je er nog sneller. Dit is de beste plek voor eten na het station.</p>
-                <p>Je komt uit de trein. Je bent moe. Je bent honger. Je wilt geen snelkost. Je wilt echte eten. Dit is wat Chopras is. We maken alles vers. Biryani. Tandoori. Curries. Naan. Alles gemaakt op moment, niet uren geleden.</p>
+                <p>Je komt uit de trein. Je bent moe. Je bent honger. Je wilt geen snelkost. Je wilt echte eten. Dit is wat Chopras is. We maken alles vers. <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:underline">Biryani</Link>. <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:underline">Tandoori</Link>. Curries. Naan. Alles gemaakt op moment, niet uren geleden.</p>
                 <p>Veel werknemers en bezoekers kennen ons al. Ze weten dat als ze naar Chopras gaan, ze echte Indiase keuken krijgen. Niet voorgekookt. Niet uit een pakje. Dit is waarom ze keren terug, keer op keer.</p>
               </>
             ) : (
               <>
                 <p>Commuters. Visitors. Tourists. Everyone who leaves Den Haag Central Station and is hungry can go to Chopras. We are on Leyweg 986, only ten minutes drive from the station. By tram or bus you get there even faster. This is the best place to eat after the station.</p>
-                <p>You get off the train. You are tired. You are hungry. You do not want fast food. You want real food. This is what Chopras is. We make everything fresh. Biryani. Tandoori. Curries. Naan. Everything made at the moment, not hours ago.</p>
+                <p>You get off the train. You are tired. You are hungry. You do not want fast food. You want real food. This is what Chopras is. We make everything fresh. <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:underline">Biryani</Link>. <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:underline">Tandoori</Link>. Curries. Naan. Everything made at the moment, not hours ago.</p>
                 <p>Many employees and visitors already know us. They know that when they go to Chopras, they get real Indian cooking. Not pre-cooked. Not from a packet. This is why they come back, again and again.</p>
               </>
             )}

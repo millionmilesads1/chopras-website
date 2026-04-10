@@ -32,7 +32,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Chopras opened on Leyweg in 2023 with a singular purpose: to cook the food its founders grew up eating, at the quality it deserved. The spices are sourced directly from India  -  not European-market blends, not commodity imports, but specific ingredients from specific regions, chosen for the recipes they will be used in. They are ground in-house daily. The kitchen does not rely on convenience shortcuts because convenience shortcuts produce the kind of food that made you settle for fine in the first place.</p>
 
-<p>The restaurant is fully halal certified. This is not a marketing footnote  -  it is a foundational commitment that shapes the entire supply chain. Every meat supplier holds recognised halal certification. The kitchen operates to standards that the Muslim community in Den Haag can trust completely. It reflects the seriousness with which Chopras approaches every decision.</p>
+<p>The restaurant is fully <a href="https://chopras.nl/en/halal-food-den-haag">halal certified</a>. This is not a marketing footnote  -  it is a foundational commitment that shapes the entire supply chain. Every meat supplier holds recognised halal certification. The kitchen operates to standards that the Muslim community in Den Haag can trust completely. It reflects the seriousness with which Chopras approaches every decision.</p>
 
 <p>The Leyweg location is deliberate. This part of Den Haag is genuinely diverse  -  families from the Netherlands, India, Pakistan, Morocco, Suriname, all eating and living in the same neighbourhood. Chopras did not open in the tourist centre or position itself as a destination restaurant for the already-converted. They opened where the community is. That tells you something about who they are cooking for and why it matters to get it right.</p>
 
@@ -41,22 +41,22 @@ export const blogPosts: BlogPost[] = [
 <p>The menu at Chopras is large enough to be exciting and specific enough to reflect genuine depth. If you are visiting for the first time and want a clear path through it, here are four dishes that show you what the kitchen can do.</p>
 
 <h3>Butter Chicken</h3>
-<p>The most popular Indian dish in the world exists at every quality level imaginable, and at Chopras it sits firmly at the top. The sauce is rich without being cloying, the tomato and cream balance each other without either dominating, and the chicken  -  marinated in spiced yogurt and cooked in the tandoor before going into the sauce  -  has a texture and depth that pre-cooked chicken simply cannot match. If you want to test what a kitchen is capable of, start here. It will tell you everything.</p>
+<p>The most popular Indian dish in the world exists at every quality level imaginable, and at Chopras it sits firmly at the top. The sauce is rich without being cloying, the tomato and cream balance each other without either dominating, and the chicken  -  marinated in spiced yogurt and cooked in the <a href="https://chopras.nl/en/tandoori-den-haag">tandoor</a> before going into the sauce  -  has a texture and depth that pre-cooked chicken simply cannot match. If you want to test what a kitchen is capable of, start here. It will tell you everything.</p>
 
 <h3>Soya Chaap</h3>
-<p>This is the dish that surprises people most, including committed meat-eaters. Soya chaap  -  wheat and soy protein marinated in a rich spiced sauce and finished in the tandoor  -  has a texture that is deeply satisfying in a way that is hard to explain until you have tried it. The smokiness from the tandoor transforms what might otherwise be a modest ingredient into something extraordinary. Order it once and it becomes a fixture in everything you eat at Chopras.</p>
+<p>This is the dish that surprises people most, including committed meat-eaters. <a href="https://chopras.nl/en/soya-chaap-den-haag">Soya chaap</a>  -  wheat and soy protein marinated in a rich spiced sauce and finished in the tandoor  -  has a texture that is deeply satisfying in a way that is hard to explain until you have tried it. The smokiness from the tandoor transforms what might otherwise be a modest ingredient into something extraordinary. Order it once and it becomes a fixture in everything you eat at Chopras.</p>
 
 <h3>Mixed Chaat Platter</h3>
-<p>Indian street food at its most social. The platter brings together multiple chaat preparations in portions designed for sharing  -  pani puri, samosa chaat, papdi chaat  -  and arrives at the table already loud with competing flavours and textures. It is the best possible introduction to the street food tradition, and it works as a starter for a group of any size.</p>
+<p>Indian street food at its most social. The platter brings together multiple <a href="https://chopras.nl/en/chaat-den-haag">chaat</a> preparations in portions designed for sharing  -  pani puri, samosa chaat, papdi chaat  -  and arrives at the table already loud with competing flavours and textures. It is the best possible introduction to the street food tradition, and it works as a starter for a group of any size.</p>
 
 <h3>Mutton Rogan Josh</h3>
-<p>A slow-cooked mutton curry in the Kashmiri tradition, deeply fragrant with whole spices, finished with a richness that comes only from proper time in the pot. This is the kind of dish that stays with you  -  not just at the table, but the next morning when you find yourself thinking about going back.</p>
+<p>A slow-cooked <a href="https://chopras.nl/en/mutton-rogan-josh-den-haag">mutton curry in the Kashmiri tradition</a>, deeply fragrant with whole spices, finished with a richness that comes only from proper time in the pot. This is the kind of dish that stays with you  -  not just at the table, but the next morning when you find yourself thinking about going back.</p>
 
 <h2>Who This Restaurant Is For</h2>
 
 <p>The honest answer is: almost everyone who takes food seriously. Families are genuinely welcome  -  not tolerated in the way that some restaurants merely tolerate children, but actively made comfortable with generous portions and staff who understand that families eat together. The Muslim community in Den Haag and across South Holland comes because the halal certification here means something. Expats from India, Pakistan, Bangladesh, and Sri Lanka come because this is the authentic Indian food they grew up eating, and at Chopras it tastes like it should. Dutch locals discovering Indian cuisine for the first time come because if you are going to form your opinion of a cuisine, you should do it with the best version available to you, not a diluted one.</p>
 
-<p>Vegetarians are equally well served. The plant-based section of the menu is not an afterthought  -  dal makhani, paneer dishes, chaat, soya chaap  -  it is where some of the most interesting cooking at Chopras actually happens. In Indian cuisine, vegetarian cooking is not the lesser option. At Chopras, that shows in every dish.</p>
+<p>Vegetarians are equally well served. The <a href="https://chopras.nl/en/blog/vegetarian-indian-food-den-haag">plant-based section of the menu</a> is not an afterthought  -  dal makhani, paneer dishes, chaat, soya chaap  -  it is where some of the most interesting cooking at Chopras actually happens. In Indian cuisine, vegetarian cooking is not the lesser option. At Chopras, that shows in every dish.</p>
 
 <h2>Come and Find Out for Yourself</h2>
 
@@ -105,6 +105,8 @@ export const blogPosts: BlogPost[] = [
 
 <p>At Chopras, halal is not an option on the menu. It is the baseline. The restaurant was designed from day one  -  when it opened on Leyweg in 2023  -  to serve the Muslim community in Den Haag without compromise or qualification. Every meat on the menu comes from certified halal suppliers. The documentation exists. There is no pork anywhere in the kitchen. There is no alcohol used in any preparation, marinade, or sauce at any stage of cooking.</p>
 
+<p>The <a href="https://chopras.nl/en/tandoori-den-haag">tandoori</a> section of the menu and the <a href="https://chopras.nl/en/chaat-den-haag">chaat offerings</a> are fully halal as well, with no compromise on quality or authenticity for any part of the menu.</p>
+
 <p>The kitchen does not need a separation protocol because there is nothing to separate from. When you order Chicken Tikka Masala or Mutton Rogan Josh or Lamb Karahi at Chopras, the question of whether the meat is halal does not need to be asked. The whole restaurant is built on that assurance, and it has been since the first day of service.</p>
 
 <p>The spices are sourced directly from India and ground in-house daily. This matters for halal compliance beyond just flavour  -  it means there are no European spice blends with unclear additive sourcing entering the kitchen. The supply chain is understood, traceable, and clean from the very beginning of the production chain.</p>
@@ -151,8 +153,8 @@ export const blogPosts: BlogPost[] = [
 
 <ul>
   <li><strong>Visuele presentatie:</strong> Gele dal, donkerrode masala, het groen van verse koriander en munt  -  Indiaas eten ziet er prachtig uit op een buffet. Het trekt mensen aan nog voordat ze hebben geproefd, en het geeft elk evenement onmiddellijk een feestelijk en kleurrijk karakter.</li>
-  <li><strong>Geschikt voor alle dieetwensen:</strong> Halal, vegetarisch, veganistisch  -  Indiase keuken heeft van nature gerechten voor elke eetvoorkeur. Geen aparte menu's, geen ongemakkelijke gesprekken, geen gasten die teleurgesteld toekijken. Iedereen vindt iets wat hij of zij met plezier eet.</li>
-  <li><strong>Interactieve elementen:</strong> Een streetfood station met pani puri, samosa chaat en papdi chaat creëert een beleving, niet alleen een maaltijd. Gasten staan eromheen, praten, proeven, lachen om de explosie van smaken. De drempel om nieuwe mensen aan te spreken verdwijnt als er goed eten bij is.</li>
+  <li><strong>Geschikt voor alle dieetwensen:</strong> <a href="https://chopras.nl/nl/halal-food-den-haag">Halal</a>, <a href="https://chopras.nl/nl/blog/vegetarian-indian-food-den-haag">vegetarisch</a>, veganistisch  -  Indiase keuken heeft van nature gerechten voor elke eetvoorkeur. Geen aparte menu's, geen ongemakkelijke gesprekken, geen gasten die teleurgesteld toekijken. Iedereen vindt iets wat hij of zij met plezier eet.</li>
+  <li><strong>Interactieve elementen:</strong> Een streetfood station met <a href="https://chopras.nl/nl/pani-puri-den-haag">pani puri</a>, samosa <a href="https://chopras.nl/nl/chaat-den-haag">chaat</a> en papdi chaat creëert een beleving, niet alleen een maaltijd. Gasten staan eromheen, praten, proeven, lachen om de explosie van smaken. De drempel om nieuwe mensen aan te spreken verdwijnt als er goed eten bij is.</li>
   <li><strong>Warm en uitnodigend:</strong> De geuren van verse specerijen, het visuele spektakel van een Indiaas buffet  -  het creëert onmiddellijk een warme, feestelijke sfeer die moeilijk te kopiëren is met doorsnee cateringopties.</li>
 </ul>
 
@@ -224,7 +226,7 @@ export const blogPosts: BlogPost[] = [
 <h2>The Vegetarian Menu at Chopras  -  Dish by Dish</h2>
 
 <h3>Soya Chaap</h3>
-<p>This is the dish that surprises people who arrive expecting vegetarian food to be quiet and unassuming. Soya chaap is made from wheat and soy protein, marinated in a deeply spiced sauce  -  cumin, coriander, ginger, garlic, red chilli  -  and then finished in the tandoor at high heat until it develops the same kind of char and smokiness you expect from tandoori chicken. What comes out is intensely flavoured, textured in a way that is deeply satisfying, and unlike anything most people eating in Den Haag have tried before. Meat-eaters order it and come back for it specifically. It is not a substitute for anything. It is genuinely good on its own terms.</p>
+<p>This is the dish that surprises people who arrive expecting vegetarian food to be quiet and unassuming. <a href="https://chopras.nl/en/soya-chaap-den-haag">Soya chaap</a> is made from wheat and soy protein, marinated in a deeply spiced sauce  -  cumin, coriander, ginger, garlic, red chilli  -  and then finished in the tandoor at high heat until it develops the same kind of char and smokiness you expect from tandoori chicken. What comes out is intensely flavoured, textured in a way that is deeply satisfying, and unlike anything most people eating in Den Haag have tried before. Meat-eaters order it and come back for it specifically. It is not a substitute for anything. It is genuinely good on its own terms.</p>
 
 <h3>Dal Makhani</h3>
 <p>The overnight dal. Black lentils soaked and slow-cooked for hours, enriched with tomato, cream, and butter until the whole preparation becomes almost impossibly smooth and profoundly rich. This is comfort food at a level that very few dishes in any cuisine reach. It is the dish that proves patience and quality ingredients are more important than protein source when it comes to making something genuinely memorable. If you order nothing else from the vegetarian section of the Chopras menu, order this. It is one of the most satisfying things the kitchen produces.</p>

@@ -72,13 +72,13 @@ export default function DiwaliDinnerPage({ params }: Props) {
             {isNl ? (
               <>
                 <p>Diwali is het festival van de lichten - een viering van goed over slecht, licht over duisternis, hoop over twijfel. Dit is niet zomaar een Indisch feestdag. Dit is het hart van wat het betekent om Indiaas te zijn. En in Den Haag, als je dit wilt vieren op de juiste manier, met echte Indiase eten en echte Indiase warmte, kom je naar Chopras.</p>
-                <p>We openen onze deuren voor Diwali-dinners waar je familie kan samenkomen rond tafels vol geurig eten. Dit is niet snelkost uit containers. Dit is een feest. Biryani. Rogan josh. Tandoori. Dal. Naan vers uit onze tandoor. Alles gemaakt met dezelfde zorg die je groot moeder zou gebruiken als je in India was.</p>
+                <p>We openen onze deuren voor Diwali-dinners waar je familie kan samenkomen rond tafels vol geurig eten. Dit is niet snelkost uit containers. Dit is een feest. <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:underline">Biryani</Link>. Rogan josh. <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:underline">Tandoori</Link>. Dal. Naan vers uit onze tandoor. Alles gemaakt met dezelfde zorg die je groot moeder zou gebruiken als je in India was.</p>
                 <p>Je kunt bij ons eten, of we bezorgen het feest naar je huis. Je kunt een hele catering voor je familie boeken, of je kunt gewoon een tafel reserveren en ons doen wat we doen. Hoe je het ook wil, we maken Diwali speciaal voor je in Den Haag.</p>
               </>
             ) : (
               <>
                 <p>Diwali is the festival of lights - a celebration of good over evil, light over darkness, hope over doubt. This is not just an Indian holiday. This is the heart of what it means to be Indian. And in Den Haag, if you want to celebrate this the right way, with real Indian food and real Indian warmth, you come to Chopras.</p>
-                <p>We open our doors for Diwali dinners where your family can gather around tables full of fragrant food. This is not fast food from containers. This is a feast. Biryani. Rogan josh. Tandoori. Dal. Naan fresh from our tandoor. Everything made with the same care your grandmother would use if you were in India.</p>
+                <p>We open our doors for Diwali dinners where your family can gather around tables full of fragrant food. This is not fast food from containers. This is a feast. <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:underline">Biryani</Link>. Rogan josh. <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:underline">Tandoori</Link>. Dal. Naan fresh from our tandoor. Everything made with the same care your grandmother would use if you were in India.</p>
                 <p>You can eat with us, or we can deliver the feast to your house. You can book a full catering for your family, or you can simply reserve a table and let us do what we do. However you want it, we make Diwali special for you in Den Haag.</p>
               </>
             )}
