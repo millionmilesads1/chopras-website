@@ -196,12 +196,12 @@ export default function IndianRestaurantPeacePalacePage({ params }: Props) {
           </div>
           <div className="mt-8 text-center space-y-4">
             <p className="text-[#1A1A1A] text-base">
-              <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
+              <Link href={`${base}/`} className="text-[#D4AF37] hover:underline">
                 {isNl ? 'Chopras Indiaas Restaurant - Indiaas eten dicht bij Friedespaleis Den Haag' : 'Chopras Indian Restaurant - Indian food near Peace Palace Den Haag'}
               </Link>
             </p>
             <p className="text-[#1A1A1A] text-base">
-              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een reservering' : 'book a table at Chopras Indian Restaurant near Peace Palace'}</Link>.
+              <Link href={`${base}/menu`} className="text-[#D4AF37] hover:underline">{isNl ? 'Bekijk het volledige menu' : 'View the full menu'}</Link> {isNl ? 'of' : 'or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:underline">{isNl ? 'maak een reservering' : 'book a table'}</Link> {isNl ? 'bij Chopras Indiaas Restaurant dicht bij Friedespaleis Den Haag.' : 'at Chopras Indian Restaurant near Peace Palace Den Haag.'}
             </p>
           </div>
         </div>
