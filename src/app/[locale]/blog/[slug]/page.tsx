@@ -122,7 +122,7 @@ export default function LocaleBlogPostPage({ params }: Props) {
                 <p className="text-white/70 text-sm mb-6">+31 6 30645930</p>
                 <Link
                   href={`${base}/contact`}
-                  className="block w-full bg-[#D4AF37] text-[#1B2B5E] text-center font-bold py-3 rounded-xl mb-3 hover:bg-[#D4AF37]/90 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] min-h-[48px] w-full backdrop-blur-[10px] mb-3"
                 >
                   {tr.common.reserve}
                 </Link>

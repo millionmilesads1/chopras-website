@@ -196,7 +196,7 @@ export default function CateringForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-[#D4AF37] text-[#1A1A1A] py-5 font-semibold uppercase tracking-widest text-sm hover:bg-[#F5D36A] transition-all disabled:opacity-60"
+          className="w-full inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] disabled:opacity-60 backdrop-blur-[10px] min-h-[48px]"
         >
           {isSubmitting ? 'Sending...' : 'Send My Catering Enquiry'}
         </button>

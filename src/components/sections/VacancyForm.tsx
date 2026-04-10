@@ -151,7 +151,7 @@ export default function VacancyForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-[#D4AF37] text-[#1B2B5E] px-8 py-4 rounded-full font-bold w-full md:w-auto disabled:opacity-60 hover:bg-[#c9a230] transition-colors"
+          className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] disabled:opacity-60 backdrop-blur-[10px] w-full md:w-auto"
         >
           {isSubmitting ? 'Sending...' : 'Send My Application'}
         </button>

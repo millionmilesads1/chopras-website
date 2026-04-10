@@ -78,10 +78,10 @@ export default function IndianTakeawayPage({ params }: Props) {
               <div className="text-4xl mb-4">🏠</div>
               <h3 className="font-heading text-xl text-[#1B2B5E] mb-2">{isNl ? 'Bezorging' : 'Delivery'}</h3>
               <p className="text-gray-600 text-sm mb-4">{isNl ? 'Via Thuisbezorgd of Uber Eats, binnen 5 km van Leyweg' : 'Via Thuisbezorgd or Uber Eats, within 5km of Leyweg'}</p>
-              <a href="https://www.thuisbezorgd.nl/menu/chopras-indian-street-food" target="_blank" rel="noopener noreferrer" className="block bg-[#1B2B5E] text-[#D4AF37] px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#0F1F4B] transition-colors mb-2">
+              <a href="https://www.thuisbezorgd.nl/menu/chopras-indian-street-food" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px] mb-2 w-full">
                 {tr.menu.thuisbezorgd}
               </a>
-              <a href="https://www.ubereats.com/nl/store/chopras-indian-restaurant/kFKhBtR-W3OkJyl2f6QmUg" target="_blank" rel="noopener noreferrer" className="block border border-[#1B2B5E] text-[#1B2B5E] px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1B2B5E]/5 transition-colors">
+              <a href="https://www.ubereats.com/nl/store/chopras-indian-restaurant/kFKhBtR-W3OkJyl2f6QmUg" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px] w-full">
                 {tr.menu.ubereats}
               </a>
             </div>
@@ -89,7 +89,7 @@ export default function IndianTakeawayPage({ params }: Props) {
               <div className="text-4xl mb-4">🏪</div>
               <h3 className="font-heading text-xl text-[#1B2B5E] mb-2">{isNl ? 'Afhalen' : 'Collect'}</h3>
               <p className="text-gray-600 text-sm mb-4">{isNl ? 'Bestel telefonisch en haal af bij Leyweg 986' : 'Call ahead and collect from Leyweg 986'}</p>
-              <a href={`tel:${RESTAURANT.contact.phone}`} className="block bg-[#1B2B5E] text-[#D4AF37] px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#0F1F4B] transition-colors">
+              <a href={`tel:${RESTAURANT.contact.phone}`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px] w-full">
                 {RESTAURANT.contact.phoneDisplay}
               </a>
             </div>
@@ -97,7 +97,7 @@ export default function IndianTakeawayPage({ params }: Props) {
               <div className="text-4xl mb-4">🍽️</div>
               <h3 className="font-heading text-xl text-[#1B2B5E] mb-2">{isNl ? 'Ter Plekke Eten' : 'Dine In'}</h3>
               <p className="text-gray-600 text-sm mb-4">{isNl ? 'Reserveer een tafel bij ons restaurant' : 'Reserve a table at our restaurant'}</p>
-              <Link href={`${base}/contact`} className="block bg-[#D4AF37] text-[#1B2B5E] px-4 py-2 rounded-full text-sm font-bold hover:bg-[#c9a230] transition-colors">
+              <Link href={`${base}/contact`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px] w-full">
                 {tr.common.reserve}
               </Link>
             </div>

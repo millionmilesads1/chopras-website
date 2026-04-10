@@ -160,13 +160,13 @@ export default function MenuHeroSection({ locale = 'en' }: { locale?: Locale }) 
           <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center">
             <Link
               href={`${base}/contact`}
-              className="bg-[#D4AF37] text-[#1A1A1A] font-semibold px-8 py-4 text-sm uppercase tracking-widest hover:bg-[#C49B2A] transition-all duration-300 min-h-[48px] flex items-center justify-center"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] min-h-[48px] backdrop-blur-[10px]"
             >
-              Reserve a Table &rarr;
+              Reserve a Table
             </Link>
             <a
               href="#menu"
-              className="border border-white/40 text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all backdrop-blur-sm min-h-[48px] flex items-center justify-center"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] min-h-[48px] backdrop-blur-[10px]"
             >
               Browse Menu
             </a>
