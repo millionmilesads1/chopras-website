@@ -18,7 +18,7 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
         {/* LEFT: Double-bezel image */}
         <div
           ref={imgRef}
-          className={`lg:sticky lg:top-[108px] self-start transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${imgInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          className={`block md:sticky md:top-[108px] self-start transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${imgInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           {/* Outer shell */}
           <div className="rounded-[2rem] bg-[#1B2B5E]/[0.04] p-2 ring-1 ring-[#1B2B5E]/[0.07]">
@@ -49,7 +49,7 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
           </div>
 
           {/* Editorial year stamp */}
-          <div className="hidden lg:flex absolute -left-3 top-8 rounded-full bg-[#D4AF37]/10 px-4 py-2 ring-1 ring-[#D4AF37]/25 backdrop-blur-sm">
+          <div className="hidden md:flex absolute -left-3 top-8 rounded-full bg-[#D4AF37]/10 px-4 py-2 ring-1 ring-[#D4AF37]/25 backdrop-blur-sm">
             <span className="font-body text-[10px] text-[#D4AF37] uppercase tracking-[0.2em]">Est. 2023</span>
           </div>
         </div>
