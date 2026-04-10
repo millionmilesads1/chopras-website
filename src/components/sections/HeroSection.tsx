@@ -1,7 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import { Phone, ShoppingBag } from 'lucide-react'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import { RESTAURANT } from '@/lib/constants'
 
 export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
   const tr = getTranslations(locale)
@@ -51,13 +53,14 @@ export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
               spices from India, made with love on Leyweg.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mt-10 justify-center">
-              {/* Primary CTA  -  button-in-button */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-10 justify-center max-w-4xl mx-auto">
+              {/* Button 1: Reserve a Table */}
               <Link
                 href={`${base}/contact`}
-                className="group relative inline-flex items-center gap-3 rounded-full bg-[#D4AF37] pl-7 pr-2 py-2 text-[#1A1A1A] text-sm font-semibold uppercase tracking-widest transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#e8c84a] active:scale-[0.98] min-h-[48px]"
+                className="group relative inline-flex items-center justify-center gap-3 rounded-full bg-[#D4AF37] px-4 py-2 text-[#1A1A1A] text-sm font-semibold uppercase tracking-widest transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#e8c84a] active:scale-[0.98] min-h-[48px]"
               >
-                Reserve a Table
+                <span className="hidden sm:inline">Reserve a Table</span>
+                <span className="sm:hidden">Reserve</span>
                 <span className="inline-flex w-9 h-9 items-center justify-center rounded-full bg-black/10 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" strokeWidth="1.5" stroke="currentColor">
                     <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" strokeLinecap="round" strokeLinejoin="round"/>
@@ -65,17 +68,38 @@ export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
                 </span>
               </Link>
 
-              {/* Secondary CTA */}
+              {/* Button 2: View Menu */}
               <Link
                 href={`${base}/menu`}
-                className="group inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/5 pl-7 pr-2 py-2 text-white text-sm uppercase tracking-widest transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-white/50 hover:bg-white/10 active:scale-[0.98] min-h-[48px] backdrop-blur-sm"
+                className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/25 bg-white/5 px-4 py-2 text-white text-sm uppercase tracking-widest transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-white/50 hover:bg-white/10 active:scale-[0.98] min-h-[48px] backdrop-blur-sm"
               >
-                {tr.common.viewMenu}
+                <span className="hidden sm:inline">{tr.common.viewMenu}</span>
+                <span className="sm:hidden">Menu</span>
                 <span className="inline-flex w-9 h-9 items-center justify-center rounded-full bg-white/10 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" strokeWidth="1.5" stroke="currentColor">
                     <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
+              </Link>
+
+              {/* Button 3: Call Now */}
+              <a
+                href={`tel:${RESTAURANT.contact.phone}`}
+                className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/25 bg-white/5 px-4 py-2 text-white text-sm uppercase tracking-widest transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-white hover:bg-white hover:text-[#1A1A1A] active:scale-[0.98] min-h-[48px] backdrop-blur-sm"
+              >
+                <Phone size={16} className="transition-all duration-700" />
+                <span className="hidden sm:inline">Call Now</span>
+                <span className="sm:hidden">Call</span>
+              </a>
+
+              {/* Button 4: Order Online */}
+              <Link
+                href={`${base}/menu`}
+                className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/25 bg-white/5 px-4 py-2 text-white text-sm uppercase tracking-widest transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-white hover:bg-white hover:text-[#1A1A1A] active:scale-[0.98] min-h-[48px] backdrop-blur-sm"
+              >
+                <ShoppingBag size={16} className="transition-all duration-700" />
+                <span className="hidden sm:inline">Order Online</span>
+                <span className="sm:hidden">Order</span>
               </Link>
             </div>
         </div>
