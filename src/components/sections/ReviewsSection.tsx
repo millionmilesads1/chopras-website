@@ -23,9 +23,11 @@ export default function ReviewsSection({ locale = 'en' }: { locale?: Locale }) {
         ref={headerRef}
         className={`text-center transition-all duration-500 ease-out ${headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       >
-        <p className="font-body text-[#D4AF37] text-xs uppercase tracking-widest mb-4">
-          What Guests Say
-        </p>
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="h-px w-12 bg-[#C7A348] opacity-60" />
+          <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">What Guests Say</span>
+          <div className="h-px w-12 bg-[#C7A348] opacity-60" />
+        </div>
         <h2 className="font-semibold text-4xl md:text-5xl mb-6 leading-[1.4] [letter-spacing:0.02em] mt-2">
           {tr.home.reviewsH2}
         </h2>

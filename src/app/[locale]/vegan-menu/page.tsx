@@ -60,12 +60,12 @@ export default function VeganMenuPage({ params }: Props) {
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 mb-6">
-            <div className="h-px w-8 bg-[#D4AF37]" />
-            <span className="text-[#D4AF37] text-xs uppercase tracking-widest font-medium" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)' }}>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-px w-12 bg-[#C7A348] opacity-60" />
+            <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
               100% PLANT-BASED
             </span>
-            <div className="h-px w-8 bg-[#D4AF37]" />
+            <div className="h-px w-12 bg-[#C7A348] opacity-60" />
           </div>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
             {isNl ? 'Veganistisch Menu - Volledig Plantaardig' : 'Vegan Menu - Completely Plant-Based'}
