@@ -83,6 +83,8 @@ function DishGrid({ dishes }: { dishes: typeof menuItems }) {
         return (
           <article
             key={item.id}
+            itemScope
+            itemType="https://schema.org/MenuItem"
             style={{ transitionDelay: `${(index % 8) * 50}ms` }}
             className={`bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-500 ease-out group ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
@@ -114,16 +116,26 @@ function DishGrid({ dishes }: { dishes: typeof menuItems }) {
 
             {/* Card body */}
             <div className="p-5">
-              <h3 className="font-heading text-xl text-[#1A1A1A] font-semibold leading-tight whitespace-nowrap">
+              <h3
+                itemProp="name"
+                className="font-heading text-xl text-[#1A1A1A] font-semibold leading-tight whitespace-nowrap"
+              >
                 {renderDishTitle(item.name)}
               </h3>
-              <p className="text-[#1A1A1A]/60 text-sm mt-1 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
+              <p
+                itemProp="description"
+                className="text-[#1A1A1A]/60 text-sm mt-1 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all duration-300"
+              >
                 {item.description}
               </p>
               <div className="flex items-center justify-between mt-3">
-                <p className="text-[#D4AF37] font-semibold text-lg font-heading">
-                  {formatPrice(item.price)}
-                </p>
+                <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
+                  <meta itemProp="priceCurrency" content="EUR" />
+                  <meta itemProp="price" content={item.price.toString()} />
+                  <p className="text-[#D4AF37] font-semibold text-lg font-heading">
+                    {formatPrice(item.price)}
+                  </p>
+                </div>
                 <AddToCartButton
                   dish={{
                     id: item.id,
@@ -147,63 +159,60 @@ function DishGrid({ dishes }: { dishes: typeof menuItems }) {
 export default function MenuPageClient() {
   const [activeCategory, setActiveCategory] = useState<string>(menuCategories[0].id)
   const navRef = useRef<HTMLDivElement>(null)
-  const isProgrammaticScroll = useRef(false)
 
   useEffect(() => {
-    // Prevent this component from triggering scroll restoration
     window.scrollTo(0, 0)
     document.documentElement.scrollTop = 0
     document.body.scrollTop = 0
   }, [])
 
   useEffect(() => {
-    const visibleSections = new Set<string>()
+    const handleScroll = () => {
+      const headerOffset = 140
+      const categories = menuCategories.map((cat) => ({
+        id: cat.id,
+        element: document.getElementById(cat.id),
+      }))
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (isProgrammaticScroll.current) return
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            visibleSections.add(entry.target.id)
-          } else {
-            visibleSections.delete(entry.target.id)
-          }
-        })
-        for (const cat of menuCategories) {
-          if (visibleSections.has(cat.id)) {
-            setActiveCategory(cat.id)
-            break
-          }
+      let currentCategory: string | undefined = categories[0]?.id
+
+      for (const cat of categories) {
+        if (!cat.element) continue
+        const rect = cat.element.getBoundingClientRect()
+        if (rect.top <= headerOffset + 20) {
+          currentCategory = cat.id
         }
-      },
-      { rootMargin: '-80px 0px -60% 0px' },
-    )
+      }
 
-    menuCategories.forEach(({ id }) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
+      if (currentCategory !== undefined) {
+        setActiveCategory(currentCategory)
+      }
+    }
 
-    return () => observer.disconnect()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  function scrollToCategory(id: string) {
-    setActiveCategory(id)
-    isProgrammaticScroll.current = true
-    const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    setTimeout(() => {
-      isProgrammaticScroll.current = false
-    }, 1000)
+  const handleCategoryClick = (categoryId: string) => {
+    setActiveCategory(categoryId)
+    const element = document.getElementById(categoryId)
+    if (element) {
+      const headerOffset = 140
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY
+      window.scrollTo({
+        top: elementPosition - headerOffset,
+        behavior: 'smooth',
+      })
+    }
   }
 
   useEffect(() => {
     if (!navRef.current) return
-    const activeBtn = navRef.current.querySelector<HTMLButtonElement>(
+    const activeLink = navRef.current.querySelector<HTMLAnchorElement>(
       `[data-category="${activeCategory}"]`,
     )
-    if (activeBtn) {
-      activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+    if (activeLink) {
+      activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
     }
   }, [activeCategory])
 
@@ -217,21 +226,27 @@ export default function MenuPageClient() {
         <div ref={navRef} className="w-full overflow-x-auto scrollbar-hide py-2">
           <div className="flex gap-2 px-6 md:px-16 min-w-max mx-auto">
             {menuCategories.map((category) => (
-              <button
+              <a
                 key={category.id}
+                href={`#${category.id}`}
                 data-category={category.id}
-                onClick={() => scrollToCategory(category.id)}
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleCategoryClick(category.id)
+                }}
+                aria-label={`Jump to ${category.shortLabel} section`}
                 className={`
                   flex-none whitespace-nowrap px-5 py-2.5 rounded-full
                   text-sm font-medium transition-all duration-200
-                  ${activeCategory === category.id
-                    ? 'bg-[#D4AF37] text-[#1A1A1A] font-semibold shadow-sm'
-                    : 'bg-white border border-gray-200 text-[#1A1A1A]/60 hover:border-[#D4AF37]/50 hover:text-[#1A1A1A]'
+                  ${
+                    activeCategory === category.id
+                      ? 'bg-[#D4AF37] text-[#1A1A1A] font-semibold shadow-sm'
+                      : 'bg-white border border-gray-200 text-[#1A1A1A]/60 hover:border-[#D4AF37]/50 hover:text-[#1A1A1A]'
                   }
                 `}
               >
                 {category.shortLabel}
-              </button>
+              </a>
             ))}
           </div>
         </div>
@@ -240,18 +255,29 @@ export default function MenuPageClient() {
       {/* Category sections */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 pb-16">
         {menuCategories.map((category) => {
-          const dishes = category.id === 'vegan'
-            ? menuItems.filter((item) => item.dietary.includes('vegan'))
-            : menuItems.filter((item) => item.category === category.id)
+          const dishes =
+            category.id === 'vegan'
+              ? menuItems.filter((item) => item.dietary.includes('vegan'))
+              : menuItems.filter((item) => item.category === category.id)
 
           return (
-            <section key={category.id} id={category.id} className="scroll-mt-36">
+            <section
+              key={category.id}
+              id={category.id}
+              aria-label={`${category.label} - Chopras Indian Restaurant Den Haag`}
+              itemScope
+              itemType="https://schema.org/MenuSection"
+              className="scroll-mt-36"
+            >
               {/* Section header */}
               <div className="py-10">
                 <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-3">
                   {category.shortLabel}
                 </p>
-                <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#C7A348]">
+                <h2
+                  itemProp="name"
+                  className="font-heading text-4xl md:text-5xl font-semibold text-[#C7A348]"
+                >
                   {category.label}
                 </h2>
                 <div className="border-b-2 border-[#D4AF37] w-16 mt-4" />
