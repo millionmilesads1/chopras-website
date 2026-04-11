@@ -125,7 +125,7 @@ export default function LocaleCateringPage({ params }: Props) {
           style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%)' }}
         />
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto py-20">
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm mb-4">
             <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
               • CATERING · CHOPRAS INDIAN RESTAURANT · DEN HAAG •
             </span>

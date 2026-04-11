@@ -123,7 +123,7 @@ export default function LocaleVacancyPage({ params }: Props) {
       {/* Hero */}
       <section className="bg-[#1B2B5E] py-24 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm mb-4">
             <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
               • JOIN OUR TEAM · CHOPRAS INDIAN RESTAURANT · DEN HAAG •
             </span>

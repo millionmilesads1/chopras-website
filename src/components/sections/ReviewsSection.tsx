@@ -23,7 +23,7 @@ export default function ReviewsSection({ locale = 'en' }: { locale?: Locale }) {
         ref={headerRef}
         className={`text-center transition-all duration-500 ease-out ${headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       >
-        <div className="flex items-center justify-center gap-2 mb-4">
+        <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm mb-4">
           <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">• WHAT OUR GUESTS SAY •</span>
         </div>
         <h2 className="font-semibold text-4xl md:text-5xl mb-6 leading-[1.4] [letter-spacing:0.02em] mt-2">

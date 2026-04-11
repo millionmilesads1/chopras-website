@@ -87,7 +87,7 @@ export default function LocaleContactPage({ params }: Props) {
 
             {/* LEFT  -  GHL Form */}
             <div className="bg-white rounded-t-3xl lg:rounded-l-3xl lg:rounded-r-none p-8 md:p-10 shadow-2xl">
-              <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm mb-4">
                 <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
                   • VISIT US · CHOPRAS INDIAN RESTAURANT · DEN HAAG •
                 </span>
@@ -106,7 +106,7 @@ export default function LocaleContactPage({ params }: Props) {
 
               {/* Restaurant info card */}
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8">
-                <div className="flex items-center justify-center gap-2 mb-4">
+                <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm mb-4">
                   <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
                     • FIND US •
                   </span>

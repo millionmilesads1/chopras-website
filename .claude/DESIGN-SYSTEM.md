@@ -62,19 +62,23 @@ Design specification:
 - Centered dot-separator pill format: "• TEXT •"
 - Font: uppercase, tracking-widest, text-xs, font-medium
 - Color: #C7A348 (gold)
-- Margin bottom: 16px before the H1
+- Glassmorphism pill container: rounded-full border, subtle gold tint background, backdrop blur
+- Margin bottom: 16px (mb-4) before the H1, or 24px (mb-6) for full-screen hero sections
 - Example from homepage: "• AUTHENTIC INDIAN RESTAURANT · DEN HAAG · EST. 2023 •"
 
 How to implement on each page:
-Use this exact component pattern:
-<div className="flex items-center justify-center gap-2 mb-4">
+Use this EXACT component pattern including the full glassmorphism pill container:
+<div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm mb-4">
   <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
     • [PAGE CATEGORY TEXT HERE] •
   </span>
 </div>
 
+For full-screen hero sections (video/canvas backgrounds), use mb-6 instead of mb-4 on the wrapper div.
+
 NEVER use the lined format (h-px w-12 decorative lines) — that format is retired.
 NEVER use Great Vibes script font for eyebrow labels.
+NEVER use a plain div or span for an eyebrow without the glassmorphism pill container (rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm). Every eyebrow on every page must have the full pill container wrapper.
 
 Eyebrow text per page type:
 - Homepage: "• AUTHENTIC INDIAN RESTAURANT · DEN HAAG · EST. 2023 •"
@@ -174,6 +178,7 @@ Non-vegetarian: filled dark red circle inside square border, color #8B0000
 - Never use font sizes smaller than text-xs for any visible text
 - Never use pure black (#000000) as a text color — use #1B2B5E or #3A3A4A
 - Never remove the eyebrow label from a hero section
+- Never render an eyebrow as a plain div or span without the glassmorphism pill container (rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm)
 - Never use a different button style than the three variants defined above
 
 ---

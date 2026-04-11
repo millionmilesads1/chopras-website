@@ -208,7 +208,7 @@ export default function LocaleHomePage({ params }: Props) {
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm mb-4">
               <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">• FAQ •</span>
             </div>
             <h2 className="font-semibold text-4xl mb-6 leading-[1.4] [letter-spacing:0.02em] mt-2">

@@ -47,7 +47,7 @@ export default function MeetTheFounder() {
           className={`transition-all duration-[800ms] delay-100 ease-[cubic-bezier(0.32,0.72,0,1)] ${textInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           {/* Label pill */}
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm mb-4">
             <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
               • MEET THE FOUNDER •
             </span>
