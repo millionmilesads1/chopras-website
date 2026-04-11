@@ -70,9 +70,24 @@ export default function FeaturedDishes({ locale = 'en' }: { locale?: Locale }) {
               Our Most Loved Indian Dishes in Den Haag
             </h2>
           </div>
-          <p className="text-white/40 text-sm max-w-xs leading-relaxed">
-            Butter Chicken Den Haag · Biryani Den Haag · and 87 more dishes, all made fresh daily.
-          </p>
+          <div className="flex flex-col gap-3 mt-6">
+            <div className="flex items-center gap-3">
+              <div className="w-1 h-1 rounded-full bg-[#C7A348]" />
+              <span className="text-white/80 text-sm">Butter Chicken Den Haag</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-1 h-1 rounded-full bg-[#C7A348]" />
+              <span className="text-white/80 text-sm">Biryani Den Haag</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-1 h-1 rounded-full bg-[#C7A348]" />
+              <span className="text-white/80 text-sm">Tandoori Den Haag</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-1 h-1 rounded-full bg-[#C7A348]" />
+              <span className="text-white/80 text-sm">143 dishes · made fresh daily</span>
+            </div>
+          </div>
         </div>
 
         {/* Category pill bar */}

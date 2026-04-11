@@ -180,6 +180,7 @@ Non-vegetarian: filled dark red circle inside square border, color #8B0000
 - Never remove the eyebrow label from a hero section
 - Never render an eyebrow as a plain div or span without the glassmorphism pill container (rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm)
 - Never use a different button style than the three variants defined above
+- NEVER use gold #C7A348 or #D4AF37 for body text, paragraph text, or descriptive text on dark blue or navy backgrounds. Gold is ONLY for: eyebrow pill text, H2 headings on light backgrounds, button borders, decorative accents, and star ratings. All body text and descriptive text on dark backgrounds must be white or rgba(255,255,255,0.8).
 
 ---
 
