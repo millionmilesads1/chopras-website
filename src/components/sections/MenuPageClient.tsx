@@ -52,37 +52,22 @@ function VeganBadge() {
   )
 }
 
-function NonVegBadge() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6"
-    >
-      <rect x="2" y="2" width="20" height="20" rx="2" fill="none" stroke="#8B0000" strokeWidth="2" />
-      <circle cx="12" cy="12" r="6" fill="#8B0000" />
-    </svg>
-  )
-}
-
-function getDietBadge(dietary: DietaryTag[]): 'vegan' | 'vegetarian' | 'nonveg' | null {
+function getDietBadge(dietary: DietaryTag[]): 'vegan' | 'vegetarian' | null {
   if (dietary.includes('vegan')) {
     return 'vegan'
   }
   if (dietary.includes('veg')) {
     return 'vegetarian'
   }
-  return 'nonveg'
+  return null
 }
 
-function DietBadgeComponent({ type }: { type: 'vegan' | 'vegetarian' | 'nonveg' }) {
+function DietBadgeComponent({ type }: { type: 'vegan' | 'vegetarian' }) {
   switch (type) {
     case 'vegan':
       return <VeganBadge />
     case 'vegetarian':
       return <VegetarianBadge />
-    case 'nonveg':
-      return <NonVegBadge />
   }
 }
 
@@ -189,7 +174,7 @@ export default function MenuPageClient() {
           }
         }
       },
-      { rootMargin: '-80px 0px -50% 0px' },
+      { rootMargin: '-80px 0px -60% 0px' },
     )
 
     menuCategories.forEach(({ id }) => {
@@ -201,6 +186,7 @@ export default function MenuPageClient() {
   }, [])
 
   function scrollToCategory(id: string) {
+    setActiveCategory(id)
     const el = document.getElementById(id)
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
