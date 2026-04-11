@@ -220,35 +220,34 @@ export default function MenuPageClient() {
     <div className="bg-[#FFFAF5]">
       {/* Sticky category navigation */}
       <nav
-        className="sticky top-[100px] z-30 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm"
+        ref={navRef}
+        className="w-full flex justify-center overflow-x-auto border-b border-gray-100 bg-white sticky top-[64px] z-10"
         aria-label="Menu categories"
       >
-        <div ref={navRef} className="w-full overflow-x-auto scrollbar-hide py-2">
-          <div className="flex gap-2 px-6 md:px-16 min-w-max mx-auto">
-            {menuCategories.map((category) => (
-              <a
-                key={category.id}
-                href={`#${category.id}`}
-                data-category={category.id}
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleCategoryClick(category.id)
-                }}
-                aria-label={`Jump to ${category.shortLabel} section`}
-                className={`
-                  flex-none whitespace-nowrap px-5 py-2.5 rounded-full
-                  text-sm font-medium transition-all duration-200
-                  ${
-                    activeCategory === category.id
-                      ? 'bg-[#D4AF37] text-[#1A1A1A] font-semibold shadow-sm'
-                      : 'bg-white border border-gray-200 text-[#1A1A1A]/60 hover:border-[#D4AF37]/50 hover:text-[#1A1A1A]'
-                  }
-                `}
-              >
-                {category.shortLabel}
-              </a>
-            ))}
-          </div>
+        <div className="flex items-center justify-center gap-1 px-6 py-3">
+          {menuCategories.map((category) => (
+            <a
+              key={category.id}
+              href={`#${category.id}`}
+              data-category={category.id}
+              onClick={(e) => {
+                e.preventDefault()
+                handleCategoryClick(category.id)
+              }}
+              aria-label={`Jump to ${category.shortLabel} section`}
+              className={`
+                flex-none whitespace-nowrap px-5 py-2.5 rounded-full
+                text-sm font-medium transition-all duration-200
+                ${
+                  activeCategory === category.id
+                    ? 'bg-[#D4AF37] text-[#1A1A1A] font-semibold shadow-sm'
+                    : 'bg-white border border-gray-200 text-[#1A1A1A]/60 hover:border-[#D4AF37]/50 hover:text-[#1A1A1A]'
+                }
+              `}
+            >
+              {category.shortLabel}
+            </a>
+          ))}
         </div>
       </nav>
 
