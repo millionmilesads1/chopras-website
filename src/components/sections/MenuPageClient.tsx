@@ -147,6 +147,7 @@ function DishGrid({ dishes }: { dishes: typeof menuItems }) {
 export default function MenuPageClient() {
   const [activeCategory, setActiveCategory] = useState<string>(menuCategories[0].id)
   const navRef = useRef<HTMLDivElement>(null)
+  const isProgrammaticScroll = useRef(false)
 
   useEffect(() => {
     // Prevent this component from triggering scroll restoration
@@ -160,6 +161,7 @@ export default function MenuPageClient() {
 
     const observer = new IntersectionObserver(
       (entries) => {
+        if (isProgrammaticScroll.current) return
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             visibleSections.add(entry.target.id)
@@ -187,8 +189,12 @@ export default function MenuPageClient() {
 
   function scrollToCategory(id: string) {
     setActiveCategory(id)
+    isProgrammaticScroll.current = true
     const el = document.getElementById(id)
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setTimeout(() => {
+      isProgrammaticScroll.current = false
+    }, 1000)
   }
 
   useEffect(() => {
