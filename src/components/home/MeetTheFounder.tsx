@@ -17,10 +17,9 @@ export default function MeetTheFounder() {
           className={`relative transition-all duration-[800ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${photoInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <div className="relative aspect-[3/4] max-w-[420px] rounded-3xl overflow-hidden shadow-2xl">
-            {/* TODO: Replace with actual photo of Arun Chopra - upload to /images/restaurant/arun-chopra.jpg and update src here */}
             <Image
-              src="/images/restaurant/people-enjoying-food---best.png"
-              alt="Arun Chopra - Founder of Chopras Indian Restaurant"
+              src="/images/restaurant/arun-chopra.jpg"
+              alt="Arun Chopra - Founder of Chopras Indian Restaurant Den Haag"
               fill
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
