@@ -47,12 +47,10 @@ export default function MeetTheFounder() {
           className={`transition-all duration-[800ms] delay-100 ease-[cubic-bezier(0.32,0.72,0,1)] ${textInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           {/* Label pill */}
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-12 bg-[#C7A348] opacity-60" />
+          <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
-              Meet the Founder
+              • MEET THE FOUNDER •
             </span>
-            <div className="h-px w-12 bg-[#C7A348] opacity-60" />
           </div>
 
           <h2 className="text-3xl md:text-4xl font-semibold leading-[1.4] [letter-spacing:0.02em] mt-2 mb-6">

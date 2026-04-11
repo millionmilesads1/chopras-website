@@ -118,22 +118,10 @@ export default function MenuHeroSection({ locale = 'en' }: { locale?: Locale }) 
 
         {/* Hero content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 mb-6">
-            <div className="h-px w-8 bg-[#c7a348]" />
-            <span
-              className="text-3xl"
-              style={{
-                fontFamily: 'var(--font-great-vibes)',
-                color: '#c7a348',
-                fontSize: '2rem',
-                letterSpacing: '0.15em',
-                WebkitTextStroke: '0.6px #c7a348',
-                textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)',
-              }}
-            >
-              CHOPRAS MENU
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
+              • OUR MENU · CHOPRAS INDIAN RESTAURANT · DEN HAAG •
             </span>
-            <div className="h-px w-8 bg-[#c7a348]" />
           </div>
 
           <h1

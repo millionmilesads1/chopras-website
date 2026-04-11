@@ -87,12 +87,10 @@ export default function LocaleContactPage({ params }: Props) {
 
             {/* LEFT  -  GHL Form */}
             <div className="bg-white rounded-t-3xl lg:rounded-l-3xl lg:rounded-r-none p-8 md:p-10 shadow-2xl">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="h-px w-12 bg-[#C7A348] opacity-60" />
+              <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
-                  Book Your Table
+                  • VISIT US · CHOPRAS INDIAN RESTAURANT · DEN HAAG •
                 </span>
-                <div className="h-px w-12 bg-[#C7A348] opacity-60" />
               </div>
               <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] font-semibold mt-2">
                 Reserve Your Table at Chopras
@@ -108,12 +106,10 @@ export default function LocaleContactPage({ params }: Props) {
 
               {/* Restaurant info card */}
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="h-px w-12 bg-[#C7A348] opacity-60" />
+                <div className="flex items-center justify-center gap-2 mb-4">
                   <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
-                    Find Us
+                    • FIND US •
                   </span>
-                  <div className="h-px w-12 bg-[#C7A348] opacity-60" />
                 </div>
                 <h3 className="font-heading text-2xl text-white font-semibold mt-2 mb-6">
                   Chopras Indian Restaurant

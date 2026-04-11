@@ -78,12 +78,10 @@ export default function LocaleBlogPostPage({ params }: Props) {
             </span>
           )}
 
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-12 bg-[#C7A348] opacity-60" />
+          <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
-              BLOG · CHOPRAS INDIAN RESTAURANT · DEN HAAG
+              • BLOG · CHOPRAS INDIAN RESTAURANT · DEN HAAG •
             </span>
-            <div className="h-px w-12 bg-[#C7A348] opacity-60" />
           </div>
           <h1 className="font-heading text-3xl md:text-5xl text-white max-w-4xl leading-tight mb-4">
             {post.h1}

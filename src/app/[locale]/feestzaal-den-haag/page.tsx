@@ -92,12 +92,10 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
         </div>
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(27,43,94,0.85), rgba(27,43,94,0.95))' }} />
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto py-20">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-12 bg-[#C7A348] opacity-60" />
+          <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
-              FEESTZAAL · CHOPRAS INDIAN RESTAURANT · DEN HAAG
+              • FEESTZAAL · CHOPRAS INDIAN RESTAURANT · DEN HAAG •
             </span>
-            <div className="h-px w-12 bg-[#C7A348] opacity-60" />
           </div>
           <h1 className="font-heading text-5xl md:text-7xl font-semibold text-white mb-6">
             {isNl ? 'Feestzaal Huren in Den Haag — Chopras Indian Restaurant' : 'Event Venue for Hire in Den Haag — Chopras Indian Restaurant'}
