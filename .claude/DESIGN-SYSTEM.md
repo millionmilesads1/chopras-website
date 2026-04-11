@@ -31,10 +31,12 @@ Hero H1:
 
 H2 headings on homepage:
 - Font: Great Vibes (script)
-- Color: #C7A348
+- Color: #C7A348 on light/cream backgrounds ONLY
+- Color: text-white on dark blue or navy backgrounds — NEVER gold on blue
 - Letter spacing: tracking-wide
 - Line height: 1.4
 - Always on ONE line — reduce font size if wrapping
+- H2 headings on dark blue or navy backgrounds must be text-white — NEVER gold on blue
 
 H2 headings on landing pages:
 - Font: existing serif font (Cormorant Garamond)
@@ -181,6 +183,7 @@ Non-vegetarian: filled dark red circle inside square border, color #8B0000
 - Never render an eyebrow as a plain div or span without the glassmorphism pill container (rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm)
 - Never use a different button style than the three variants defined above
 - NEVER use gold #C7A348 or #D4AF37 for body text, paragraph text, or descriptive text on dark blue or navy backgrounds. Gold is ONLY for: eyebrow pill text, H2 headings on light backgrounds, button borders, decorative accents, and star ratings. All body text and descriptive text on dark backgrounds must be white or rgba(255,255,255,0.8).
+- NEVER use gold for H2 headings on dark blue or navy backgrounds. H2 headings on dark blue or navy must use text-white to override the global h2 { color: #C7A348 } rule.
 
 ---
 

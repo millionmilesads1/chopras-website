@@ -66,7 +66,7 @@ export default function FeaturedDishes({ locale = 'en' }: { locale?: Locale }) {
               <span className="inline-block w-1 h-1 rounded-full bg-[#D4AF37]" />
               From Our Kitchen
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.4] [letter-spacing:0.02em] mt-2 mb-6 max-w-xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.4] [letter-spacing:0.02em] mt-2 mb-6 max-w-xl text-white">
               Our Most Loved Indian Dishes in Den Haag
             </h2>
           </div>
