@@ -76,7 +76,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
         {/* Asymmetric Bento Grid */}
         <div
           ref={gridRef}
-          className={`grid grid-cols-1 md:grid-cols-12 gap-4 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${gridInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          className={`grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${gridInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           {/* Hero card  -  col-span-7 row-span-2 */}
           <div className="md:col-span-7 md:row-span-2 rounded-[2rem] bg-[#1B2B5E]/[0.03] p-2 ring-1 ring-[#1B2B5E]/[0.06]">
@@ -103,7 +103,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
 
           {/* Card 2  -  col-span-5 upper right */}
           <div className="md:col-span-5 rounded-[2rem] bg-[#D4AF37]/[0.06] p-2 ring-1 ring-[#D4AF37]/[0.12]">
-            <div className="h-full min-h-[200px] rounded-[calc(2rem-0.5rem)] bg-[#FFFAF5] shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] p-8 md:p-10 flex flex-col justify-between">
+            <div className="h-full min-h-[220px] rounded-[calc(2rem-0.5rem)] bg-[#FFFAF5] shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] p-8 md:p-10 flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 ring-1 ring-[#D4AF37]/15">
                   <IconUsers className="w-6 h-6 text-[#D4AF37]" />
@@ -121,7 +121,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
 
           {/* Card 3  -  col-span-5 lower right */}
           <div className="md:col-span-5 rounded-[2rem] bg-[#1B2B5E]/[0.03] p-2 ring-1 ring-[#1B2B5E]/[0.06]">
-            <div className="h-full min-h-[200px] rounded-[calc(2rem-0.5rem)] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] p-8 md:p-10 flex flex-col justify-between">
+            <div className="h-full min-h-[220px] rounded-[calc(2rem-0.5rem)] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] p-8 md:p-10 flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-[#1B2B5E]/5 flex items-center justify-center mb-6 ring-1 ring-[#1B2B5E]/8">
                   <IconCalendar className="w-6 h-6 text-[#1B2B5E]" />
