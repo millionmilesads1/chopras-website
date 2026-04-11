@@ -81,22 +81,6 @@ export default function LocaleMenuPage({ params }: Props) {
         </div>
       </div>
 
-      {/* ALLERGEN NOTICE */}
-      <div className="bg-[#FFFAF5] py-12 px-6 md:px-16">
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-[#D4AF37]/10 border-l-4 border-[#D4AF37] rounded-r-xl p-6 flex gap-4 items-start">
-            <Info className="text-[#D4AF37] w-5 h-5 flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-semibold text-[#1A1A1A] text-sm">{tr.menu.allergenTitle}</p>
-              <p className="text-[#1A1A1A]/70 text-sm mt-1 leading-relaxed">{tr.menu.allergenText}</p>
-              <p className="text-[#D4AF37] text-xs font-medium mt-3 uppercase tracking-widest">
-                {tr.menu.allergenRequest}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* INTERACTIVE MENU */}
       <MenuPageClient />
 
@@ -180,6 +164,22 @@ export default function LocaleMenuPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* ALLERGEN NOTICE */}
+      <div className="bg-[#FFFAF5] py-12 px-6 md:px-16">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-[#D4AF37]/10 border-l-4 border-[#D4AF37] rounded-r-xl p-6 flex gap-4 items-start">
+            <Info className="text-[#D4AF37] w-5 h-5 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold text-[#1A1A1A] text-sm">{tr.menu.allergenTitle}</p>
+              <p className="text-[#1A1A1A]/70 text-sm mt-1 leading-relaxed">{tr.menu.allergenText}</p>
+              <p className="text-[#D4AF37] text-xs font-medium mt-3 uppercase tracking-widest">
+                {tr.menu.allergenRequest}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
