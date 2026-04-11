@@ -43,7 +43,7 @@ export default function IndianFoodNetherlandsPage({ params }: Props) {
     publisher: { '@type': 'Organization', name: RESTAURANT.name, url: RESTAURANT.contact.website },
     about: { '@type': 'Thing', name: isNl ? 'Indiaas Eten in Nederland' : 'Indian Food in the Netherlands' },
     url: `${SITE_URL}/${locale}/indian-food-netherlands`,
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '83', bestRating: '5', worstRating: '1' },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '834', bestRating: '5', worstRating: '1' },
     sameAs: [
       'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
       'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',

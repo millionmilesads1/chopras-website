@@ -112,8 +112,8 @@ export default function LocaleHomePage({ params }: Props) {
                 </div>
               </div>
               <p className="font-body text-[#1A1A1A] font-semibold mb-2">Google Rating</p>
-              <p className="font-body text-3xl font-bold text-[#1B2B5E] mb-1">4.5 stars</p>
-              <p className="font-body text-[#666]">200+ verified reviews</p>
+              <p className="font-body text-3xl font-bold text-[#1B2B5E] mb-1">4.9 stars</p>
+              <p className="font-body text-[#666]">834 verified reviews</p>
             </div>
             <div className="bg-white rounded-lg p-8 shadow-sm">
               <div className="flex items-center gap-2 mb-4">
@@ -156,7 +156,7 @@ export default function LocaleHomePage({ params }: Props) {
           Chopras Indian Restaurant is a fully Halal-certified North Indian restaurant at
           Leyweg 986, 2545 GW Den Haag, Netherlands. Founded in 2023 by Arun Chopra, Chopras
           serves freshly prepared curries, tandoori dishes, chaat, and biryani using spices
-          imported directly from India. Rated 4.7 out of 5 from 83 verified reviews.
+          imported directly from India. Rated 4.9 out of 5 from 834 verified reviews.
         </p>
         <p>Last updated: 2026-04-07</p>
       </article>
@@ -191,7 +191,7 @@ export default function LocaleHomePage({ params }: Props) {
                 Chopras Indian Restaurant is an authentic Indian restaurant located at Leyweg 986, 2545 GW Den Haag, Netherlands. Established in 2023 by founder Arun Chopra, Chopras Indian Restaurant serves authentic North Indian cuisine, Indian street food, Indo Chinese dishes, and a full halal and vegetarian menu.
               </p>
               <p>
-                Chopras Indian Restaurant is rated 4.5 stars on Google with over 200 reviews and 8.6 on TheFork, making it one of the highest rated Indian restaurants in Den Haag and The Hague. The restaurant is fully halal certified and offers extensive vegetarian and vegan options.
+                Chopras Indian Restaurant is rated 4.9 stars on Google with 834 reviews and 8.6 on TheFork, making it one of the highest rated Indian restaurants in Den Haag and The Hague. The restaurant is fully halal certified and offers extensive vegetarian and vegan options.
               </p>
               <p>
                 In addition to dine-in, takeaway, and delivery, Chopras Indian Restaurant offers a private event hall for hire in Den Haag, suitable for weddings, birthday parties, corporate events, Diwali dinners, and all private gatherings. Indian catering services are available across Den Haag and surrounding areas including Delft, Rijswijk, and Zoetermeer.
