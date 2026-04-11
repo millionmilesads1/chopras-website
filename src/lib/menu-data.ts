@@ -152,7 +152,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/onion-bhaji.webp',
-    description: '',
+    description: 'Crispy golden fritters made with fresh onions and aromatic spices. A classic Indian starter in Den Haag.',
   },
   {
     id: 'samosa',
@@ -161,7 +161,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['halal'],
     image: '/images/dishes/veg-samosa.webp',
-    description: '',
+    description: 'Golden pastry filled with spiced potato and peas, fried fresh. A classic halal Indian starter in Den Haag.',
   },
   {
     id: 'veg-samosa-chaat',
@@ -170,7 +170,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/samosa-chaat.webp',
-    description: '',
+    description: 'Crispy samosa broken open and topped with yogurt, chutney and chaat masala. Authentic Indian street food in Den Haag.',
   },
   {
     id: 'pani-puri',
@@ -179,7 +179,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/pani-puri.webp',
-    description: '',
+    description: 'Hollow crispy shells filled with spiced potato and tangy tamarind water. Authentic Indian street food in Den Haag.',
   },
   {
     id: 'dahi-puri',
@@ -188,7 +188,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/dahi-puri.webp',
-    description: '',
+    description: 'Soft puris filled with spiced potato and dipped in sweet yogurt. Authentic Indian street food served in Den Haag.',
   },
   {
     id: 'aloo-tikki',
@@ -197,7 +197,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/aloo-tikki.webp',
-    description: '',
+    description: 'Pan-fried spiced potato patties served with mint chutney and yogurt. A popular halal Indian starter in Den Haag.',
   },
   {
     id: 'papdi-chaat',
@@ -206,7 +206,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/papdi-chaat.webp',
-    description: '',
+    description: 'Crispy wafers topped with chickpeas, yogurt, tamarind and mint chutney. Classic Indian chaat in Den Haag.',
   },
   {
     id: 'mixed-chaat',
@@ -215,7 +215,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/mixed-chaat.webp',
-    description: '',
+    description: 'A generous platter of Den Haag street food favourites - pani puri, papdi chaat and aloo tikki from Chopras Indian Restaurant.',
   },
   {
     id: 'plain-papad',
@@ -224,7 +224,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/plain-papad.webp',
-    description: '',
+    description: 'Thin crispy lentil wafers - a traditional Indian starter served fresh at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'masala-papad',
@@ -233,7 +233,7 @@ export const menuItems: MenuItem[] = [
     category: 'starters',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/masala-papad.webp',
-    description: '',
+    description: 'Crispy papad topped with fresh onions, tomatoes and chaat masala. A tangy Indian starter Den Haag guests love.',
   },
 
   // ─── TANDOORI ────────────────────────────────────────────────────────────
@@ -244,7 +244,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/paneer-tikka.webp',
-    description: '',
+    description: 'Fresh cottage cheese marinated in spiced yogurt and chargrilled. Authentic vegetarian tandoori dish in Den Haag.',
   },
   {
     id: 'malai-soya-chaap',
@@ -253,7 +253,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/malai-soya-chap.webp',
-    description: '',
+    description: 'Soya chaap marinated in creamy malai and mild spices, slow-grilled in our clay oven. Rich vegetarian dish Den Haag.',
   },
   {
     id: 'achari-soya-chaap',
@@ -262,7 +262,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/soya-chaap-achari.webp',
-    description: '',
+    description: 'Soya chaap marinated in tangy pickling spices and chargrilled in the clay oven. Authentic vegan dish Den Haag.',
   },
   {
     id: 'tandoori-prawn-fish',
@@ -271,7 +271,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     image: '/images/dishes/tandoori-prawns.webp',
-    description: '',
+    description: 'Fresh prawns or fish marinated in spiced yogurt and chargrilled in our tandoor. Halal seafood specialty Den Haag.',
   },
   {
     id: 'tandoori-chicken',
@@ -280,7 +280,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     image: '/images/dishes/tandoori-chicken.webp',
-    description: '',
+    description: 'Whole leg marinated overnight in yogurt and spices, chargrilled in our clay oven. Authentic tandoori Den Haag.',
   },
   {
     id: 'chicken-tikka',
@@ -289,7 +289,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     image: '/images/dishes/chicken-tikka.webp',
-    description: '',
+    description: 'Boneless halal chicken marinated in yogurt and spices, grilled in the tandoor clay oven. Halal chicken tikka Den Haag.',
   },
   {
     id: 'chicken-malai-tikka',
@@ -298,7 +298,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     image: '/images/dishes/chicken-malai-tikka.webp',
-    description: '',
+    description: 'Boneless halal chicken marinated in rich cream and mild spices, slow-grilled in our tandoor. Soft and smoky Den Haag favourite.',
   },
   {
     id: 'chicken-hariyali-tikka',
@@ -307,7 +307,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     image: '/images/dishes/chicken-hariyali-tikka.webp',
-    description: '',
+    description: 'Halal chicken marinated in fresh coriander and mint, chargrilled in the clay oven. Vivid green tikka Den Haag.',
   },
   {
     id: 'chicken-lasooni-tikka',
@@ -316,7 +316,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     image: '/images/dishes/chicken-lasooni-tikka.webp',
-    description: '',
+    description: 'Halal chicken marinated in a bold garlic and spice blend, chargrilled in the tandoor. Pungent, smoky tikka Den Haag.',
   },
   {
     id: 'lamb-seekh-kebab',
@@ -325,7 +325,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     image: '/images/dishes/mutton-seekh-kebab.webp',
-    description: '',
+    description: 'Minced halal lamb mixed with fresh herbs and spices, grilled on skewers in our clay oven. Halal seekh kebab Den Haag.',
   },
   {
     id: 'chicken-seekh-kebab',
@@ -334,7 +334,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     image: '/images/dishes/chicken-seekh-kebab.webp',
-    description: '',
+    description: 'Minced halal chicken blended with fresh herbs and spices, chargrilled on skewers in the tandoor. Authentic Den Haag kebab.',
   },
   {
     id: 'chopras-non-veg-platter',
@@ -343,7 +343,7 @@ export const menuItems: MenuItem[] = [
     category: 'tandoori',
     dietary: ['halal'],
     image: '/images/dishes/chopras-non-veg-platter.webp',
-    description: '',
+    description: 'A generous tandoori selection from Chopras Indian Restaurant Den Haag - chicken tikka, seekh kebab and tandoori chicken.',
   },
 
   // ─── SOUPS ───────────────────────────────────────────────────────────────
@@ -354,7 +354,7 @@ export const menuItems: MenuItem[] = [
     category: 'soups',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/tomato-soup.webp',
-    description: '',
+    description: 'Slow-cooked fresh tomato soup with Indian spices and a hint of cream. Warming Indian soup at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'lentil-soup',
@@ -363,7 +363,7 @@ export const menuItems: MenuItem[] = [
     category: 'soups',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/dal-soup.webp',
-    description: '',
+    description: 'Homemade yellow lentil soup tempered with cumin and fresh herbs. Authentic Indian lentil soup in Den Haag.',
   },
   {
     id: 'veg-manchow-soup',
@@ -372,7 +372,7 @@ export const menuItems: MenuItem[] = [
     category: 'soups',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/manchow-soup.webp',
-    description: '',
+    description: 'Wok-tossed vegetables in a spiced Indo Chinese broth with crispy noodles. Indo Chinese soup Den Haag.',
   },
   {
     id: 'chicken-soup',
@@ -381,7 +381,7 @@ export const menuItems: MenuItem[] = [
     category: 'soups',
     dietary: ['halal'],
     image: '/images/dishes/chicken-soup.webp',
-    description: '',
+    description: 'Warming homemade soup made with fresh spices and tender halal chicken. Authentic Indian chicken soup Den Haag.',
   },
 
   // ─── VEG CURRIES (Veg Curries + Paneer Curries) ──────────────────────────
@@ -392,7 +392,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/dal-makhani.webp',
-    description: '',
+    description: 'Black lentils slow cooked overnight with butter and cream. Authentic Punjabi dal makhani in Den Haag.',
   },
   {
     id: 'dal-tadka',
@@ -401,7 +401,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/dal-tadka.webp',
-    description: '',
+    description: 'Yellow lentils slow cooked and tempered with butter, cumin and garlic. A classic vegetarian Indian curry in Den Haag.',
   },
   {
     id: 'rajma-raseela',
@@ -410,7 +410,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/rajma-masala.webp',
-    description: '',
+    description: 'Red kidney beans cooked in a rich tomato and onion gravy. Traditional North Indian vegetarian curry Den Haag.',
   },
   {
     id: 'chana-masala',
@@ -419,7 +419,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/channa-masala.webp',
-    description: '',
+    description: 'Chickpeas slow cooked in a tangy tomato and spice gravy. Authentic vegan Indian curry in Den Haag.',
   },
   {
     id: 'aloo-gobi',
@@ -428,7 +428,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/aloo-gobhi.webp',
-    description: '',
+    description: 'Cauliflower and potato cooked with fresh turmeric and cumin. Classic vegetarian Indian food Den Haag, served hot.',
   },
   {
     id: 'aloo-jeera',
@@ -437,7 +437,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/aloo-jeera.webp',
-    description: '',
+    description: 'Potatoes tempered with cumin seeds and fresh coriander. A simple, clean North Indian vegetarian side Den Haag.',
   },
   {
     id: 'mixed-veg',
@@ -446,7 +446,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/mixed-veg.webp',
-    description: '',
+    description: 'Seasonal vegetables cooked in a light tomato and spice gravy. Fresh vegetarian curry at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'bhindi-masala',
@@ -455,7 +455,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/bhandi-masala.webp',
-    description: '',
+    description: 'Fresh okra cooked with onions, tomatoes and Indian spices. Authentic vegetarian curry at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'baingan-bharta',
@@ -464,7 +464,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/baingan-bharta.webp',
-    description: '',
+    description: 'Fire-roasted aubergine mashed with fresh spices and tomatoes. Smoky, authentic North Indian vegetarian curry Den Haag.',
   },
   {
     id: 'malai-kofta',
@@ -473,7 +473,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/malai-kofta.webp',
-    description: '',
+    description: 'Soft cottage cheese and potato dumplings in a rich, creamy tomato and cashew gravy. Vegetarian Indian curry Den Haag.',
   },
   // Paneer Curries (grouped under veg-curries)
   {
@@ -483,7 +483,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/palak-paneer.webp',
-    description: '',
+    description: 'Fresh paneer cubes simmered in a smooth, spiced spinach sauce. Classic vegetarian Indian curry Den Haag.',
   },
   {
     id: 'karahi-paneer',
@@ -492,7 +492,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/karahi-paneer.webp',
-    description: '',
+    description: 'Paneer cubes cooked with bell peppers and tomatoes in a spiced karahi gravy. Vegetarian Indian food Den Haag.',
   },
   {
     id: 'shahi-paneer',
@@ -501,7 +501,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/shahi-paneer.webp',
-    description: '',
+    description: 'Fresh cottage cheese in a rich, creamy tomato and cashew gravy. Authentic Mughlai vegetarian curry Den Haag.',
   },
   {
     id: 'handi-paneer',
@@ -510,7 +510,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/handi-paneer.webp',
-    description: '',
+    description: 'Fresh paneer slow cooked in a sealed clay pot with aromatic whole spices. North Indian vegetarian dish Den Haag.',
   },
   {
     id: 'paneer-butter-masala',
@@ -519,7 +519,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/paneer-butter-masala.webp',
-    description: '',
+    description: 'Soft paneer in a rich, buttery tomato sauce with whole spices. Popular vegetarian Indian dish in Den Haag.',
   },
   {
     id: 'tawa-paneer-masala',
@@ -528,7 +528,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/tawa-paneer.webp',
-    description: '',
+    description: 'Paneer cooked on a hot tawa with peppers, onions and robust Indian spices. Authentic vegetarian curry Den Haag.',
   },
   {
     id: 'chopras-special-paneer',
@@ -537,7 +537,7 @@ export const menuItems: MenuItem[] = [
     category: 'veg-curries',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/chopras-special-paneer.webp',
-    description: '',
+    description: 'Chopras Indian Restaurant house recipe - paneer in a layered spice gravy unique to our Den Haag kitchen.',
   },
 
   // ─── CHICKEN ─────────────────────────────────────────────────────────────
@@ -548,7 +548,7 @@ export const menuItems: MenuItem[] = [
     category: 'chicken',
     dietary: ['halal'],
     image: '/images/dishes/butter-chicken.webp',
-    description: '',
+    description: 'Tender halal chicken in a rich, slow-cooked tomato and cream sauce. Den Haag most loved authentic chicken curry.',
   },
   {
     id: 'karahi-chicken',
@@ -557,7 +557,7 @@ export const menuItems: MenuItem[] = [
     category: 'chicken',
     dietary: ['halal'],
     image: '/images/dishes/kadai-chicken.webp',
-    description: '',
+    description: 'Halal chicken cooked with fresh tomatoes and peppers in a spiced karahi. Authentic North Indian chicken curry Den Haag.',
   },
   {
     id: 'chicken-curry',
@@ -566,7 +566,7 @@ export const menuItems: MenuItem[] = [
     category: 'chicken',
     dietary: ['halal'],
     image: '/images/dishes/chicken-curry.webp',
-    description: '',
+    description: 'Classic halal chicken cooked in a homemade onion and tomato gravy. Authentic Indian chicken curry Den Haag.',
   },
   {
     id: 'chicken-tikka-masala',
@@ -575,7 +575,7 @@ export const menuItems: MenuItem[] = [
     category: 'chicken',
     dietary: ['halal'],
     image: '/images/dishes/chicken-tikka-masala.webp',
-    description: '',
+    description: 'Chargrilled chicken pieces in a creamy spiced tomato gravy. Classic halal Indian chicken curry in Den Haag.',
   },
   {
     id: 'chicken-handi',
@@ -584,7 +584,7 @@ export const menuItems: MenuItem[] = [
     category: 'chicken',
     dietary: ['halal'],
     image: '/images/dishes/chicken-handi.webp',
-    description: '',
+    description: 'Slow-cooked halal chicken sealed in a clay pot with aromatic whole spices. North Indian specialty Den Haag.',
   },
   {
     id: 'chicken-vindaloo',
@@ -593,7 +593,7 @@ export const menuItems: MenuItem[] = [
     category: 'chicken',
     dietary: ['halal'],
     image: '/images/dishes/chicken-vindaloo.webp',
-    description: '',
+    description: 'Fiery halal chicken cooked in a bold Goan-style vinegar and spice gravy. Authentic Indian vindaloo Den Haag.',
   },
   {
     id: 'chicken-methi-malai',
@@ -602,7 +602,7 @@ export const menuItems: MenuItem[] = [
     category: 'chicken',
     dietary: ['halal'],
     image: '/images/dishes/chicken-methi-malai.webp',
-    description: '',
+    description: 'Tender halal chicken cooked with fragrant fenugreek leaves in a creamy sauce. Authentic North Indian chicken curry Den Haag.',
   },
 
   // ─── LAMB & MUTTON ───────────────────────────────────────────────────────
@@ -613,7 +613,7 @@ export const menuItems: MenuItem[] = [
     category: 'lamb-mutton',
     dietary: ['halal'],
     image: '/images/dishes/mutton-rogan-josh.webp',
-    description: '',
+    description: 'Slow-cooked halal lamb in a deep Kashmiri spice gravy. Authentic rogan josh at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'mutton-vindaloo',
@@ -622,7 +622,7 @@ export const menuItems: MenuItem[] = [
     category: 'lamb-mutton',
     dietary: ['halal'],
     image: '/images/dishes/mutton-vindaloo.webp',
-    description: '',
+    description: 'Fiery halal mutton cooked in a bold vinegar and spice gravy. Authentic Indian mutton vindaloo Den Haag.',
   },
   {
     id: 'tawa-mutton-masala',
@@ -631,7 +631,7 @@ export const menuItems: MenuItem[] = [
     category: 'lamb-mutton',
     dietary: ['halal'],
     image: '/images/dishes/tawa-mutton-masala.webp',
-    description: '',
+    description: 'Halal mutton cooked on a hot tawa with peppers and robust spices. Authentic Indian lamb masala Den Haag.',
   },
   {
     id: 'mutton-karahi',
@@ -640,7 +640,7 @@ export const menuItems: MenuItem[] = [
     category: 'lamb-mutton',
     dietary: ['halal'],
     image: '/images/dishes/mutton-karahi.webp',
-    description: '',
+    description: 'Halal mutton cooked with fresh tomatoes and peppers in a spiced karahi gravy. Classic Indian lamb curry Den Haag.',
   },
   {
     id: 'mutton-korma',
@@ -649,7 +649,7 @@ export const menuItems: MenuItem[] = [
     category: 'lamb-mutton',
     dietary: ['halal'],
     image: '/images/dishes/mutton-korma.webp',
-    description: '',
+    description: 'Halal lamb slow cooked in a mild, creamy almond and saffron sauce. Authentic Indian korma Den Haag.',
   },
   {
     id: 'mutton-handi',
@@ -658,7 +658,7 @@ export const menuItems: MenuItem[] = [
     category: 'lamb-mutton',
     dietary: ['halal'],
     image: '/images/dishes/handi-mutton.webp',
-    description: '',
+    description: 'Halal mutton slow cooked in a sealed clay pot with whole spices and fresh herbs. Rich Indian lamb handi Den Haag.',
   },
   {
     id: 'rara-gosht',
@@ -667,7 +667,7 @@ export const menuItems: MenuItem[] = [
     category: 'lamb-mutton',
     dietary: ['halal'],
     image: '/images/dishes/rara-gosht.webp',
-    description: '',
+    description: 'Tender halal lamb cooked with minced mutton in a deeply spiced gravy. Bold authentic Indian lamb Den Haag.',
   },
   {
     id: 'keema-saag',
@@ -676,7 +676,7 @@ export const menuItems: MenuItem[] = [
     category: 'lamb-mutton',
     dietary: ['halal'],
     image: '/images/dishes/keema-saag.webp',
-    description: '',
+    description: 'Minced halal lamb cooked with fresh spinach in a fragrant spiced gravy. Classic North Indian keema saag Den Haag.',
   },
 
   // ─── INDO-CHINESE ────────────────────────────────────────────────────────
@@ -687,7 +687,7 @@ export const menuItems: MenuItem[] = [
     category: 'indo-chinese',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/veg-spring-roll.webp',
-    description: '',
+    description: 'Crispy golden rolls filled with seasoned vegetables, served with Indo Chinese dipping sauce. Street food Den Haag.',
   },
   {
     id: 'chicken-spring-roll',
@@ -696,7 +696,7 @@ export const menuItems: MenuItem[] = [
     category: 'indo-chinese',
     dietary: ['halal'],
     image: '/images/dishes/chicken-spring-roll.webp',
-    description: '',
+    description: 'Crispy golden rolls filled with spiced halal chicken, served with sweet chilli sauce. Indo Chinese food Den Haag.',
   },
   {
     id: 'chilli-paneer',
@@ -705,7 +705,7 @@ export const menuItems: MenuItem[] = [
     category: 'indo-chinese',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/chilli-paneer.webp',
-    description: '',
+    description: 'Crispy paneer wok-tossed with peppers and onions in a bold Indo Chinese sauce. Authentic Indo Chinese food Den Haag.',
   },
   {
     id: 'chilli-chicken',
@@ -714,7 +714,7 @@ export const menuItems: MenuItem[] = [
     category: 'indo-chinese',
     dietary: ['halal'],
     image: '/images/dishes/chilli-chicken.webp',
-    description: '',
+    description: 'Halal chicken wok-tossed with green chillies and soy sauce. Classic Indo Chinese dish at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'veg-noodles',
@@ -723,7 +723,7 @@ export const menuItems: MenuItem[] = [
     category: 'indo-chinese',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/veg-noodles.webp',
-    description: '',
+    description: 'Stir-fried noodles with fresh vegetables in Indo Chinese style. Authentic Indian Chinese food in Den Haag.',
   },
 
   // ─── BIRYANI ─────────────────────────────────────────────────────────────
@@ -734,7 +734,7 @@ export const menuItems: MenuItem[] = [
     category: 'biryani',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/veg-biryani.webp',
-    description: '',
+    description: 'Fresh seasonal vegetables layered with aromatic saffron basmati rice and whole spices. Authentic vegetarian biryani Den Haag.',
   },
   {
     id: 'chicken-biryani',
@@ -743,7 +743,7 @@ export const menuItems: MenuItem[] = [
     category: 'biryani',
     dietary: ['halal'],
     image: '/images/dishes/chicken-biryani.webp',
-    description: '',
+    description: 'Halal chicken slow cooked with saffron basmati rice and whole spices. Authentic dum biryani Den Haag.',
   },
   {
     id: 'prawn-biryani',
@@ -752,7 +752,7 @@ export const menuItems: MenuItem[] = [
     category: 'biryani',
     dietary: ['halal'],
     image: '/images/dishes/prawns-biryani.webp',
-    description: '',
+    description: 'Fresh prawns layered with fragrant saffron basmati rice and aromatic whole spices. Authentic seafood biryani Den Haag.',
   },
   {
     id: 'lamb-biryani',
@@ -761,7 +761,7 @@ export const menuItems: MenuItem[] = [
     category: 'biryani',
     dietary: ['halal'],
     image: '/images/dishes/muton-biryani.webp',
-    description: '',
+    description: 'Halal lamb slow cooked with fragrant saffron basmati rice. Authentic Indian lamb biryani in Den Haag.',
   },
 
   // ─── BREADS (Bread + Rolls) ───────────────────────────────────────────────
@@ -772,7 +772,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/tandoori-roti.webp',
-    description: '',
+    description: 'Whole wheat flatbread baked fresh in our tandoor clay oven. Authentic Indian bread at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'butter-roti',
@@ -781,7 +781,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/tandoori-butter-roti.webp',
-    description: '',
+    description: 'Soft whole wheat roti brushed with fresh butter, hot from the tandoor. Classic Indian bread Den Haag.',
   },
   {
     id: 'onion-roti',
@@ -790,7 +790,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/onion-tandoori-roti.webp',
-    description: '',
+    description: 'Whole wheat bread stuffed with spiced onions and baked in the clay oven. Authentic Indian roti Den Haag.',
   },
   {
     id: 'garlic-roti',
@@ -799,7 +799,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/garlic-roti.webp',
-    description: '',
+    description: 'Whole wheat roti topped with fresh garlic and herbs, tandoor baked. Fragrant Indian bread Den Haag.',
   },
   {
     id: 'missi-roti',
@@ -808,7 +808,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/missi-roti.webp',
-    description: '',
+    description: 'Chickpea flour and wheat flatbread with fresh herbs and spices. Traditional North Indian bread Den Haag.',
   },
   {
     id: 'lachha-paratha',
@@ -817,7 +817,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/laccha-paratha.webp',
-    description: '',
+    description: 'Flaky layered whole wheat paratha cooked to a golden crisp. Classic North Indian bread Den Haag.',
   },
   {
     id: 'pudina-paratha',
@@ -826,7 +826,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/mint-paratha.webp',
-    description: '',
+    description: 'Layered paratha infused with fresh mint and spices. Aromatic Indian flatbread at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'aloo-paratha',
@@ -835,7 +835,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/aloo-paratha.webp',
-    description: '',
+    description: 'Whole wheat bread stuffed with spiced mashed potato and cooked with butter. Classic Indian aloo paratha Den Haag.',
   },
   {
     id: 'paneer-paratha',
@@ -844,7 +844,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/paneer-paratha.webp',
-    description: '',
+    description: 'Whole wheat paratha stuffed with crumbled spiced paneer and baked in the clay oven. Vegetarian Indian bread Den Haag.',
   },
   {
     id: 'plain-naan',
@@ -853,7 +853,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/plain-naan.webp',
-    description: '',
+    description: 'Soft leavened flatbread baked fresh in our tandoor. Classic Indian naan bread served in Den Haag.',
   },
   {
     id: 'butter-naan',
@@ -862,7 +862,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/butter-naan.webp',
-    description: '',
+    description: 'Soft tandoor-baked naan brushed generously with fresh butter. Classic Indian bread at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'garlic-naan',
@@ -871,7 +871,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/garlic-naan.webp',
-    description: '',
+    description: 'Soft naan topped with fresh garlic and coriander, hot from the tandoor. Most popular Indian bread in Den Haag.',
   },
   {
     id: 'paneer-naan',
@@ -880,7 +880,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/paneer-naan.webp',
-    description: '',
+    description: 'Soft naan stuffed with crumbled spiced paneer and baked fresh in the tandoor. Vegetarian Indian bread Den Haag.',
   },
   {
     id: 'cheese-naan',
@@ -889,7 +889,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/cheese-naan.webp',
-    description: '',
+    description: 'Soft naan stuffed with melted cheese and baked in the clay oven. Rich Indian bread Den Haag.',
   },
   {
     id: 'keema-naan',
@@ -898,7 +898,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['halal'],
     image: '/images/dishes/keema-naan.webp',
-    description: '',
+    description: 'Naan stuffed with spiced minced halal lamb and fresh herbs. Authentic Indian keema naan Den Haag.',
   },
   // Rolls (grouped under breads)
   {
@@ -908,7 +908,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/paneer-roll.webp',
-    description: '',
+    description: 'Tandoor-grilled paneer wrapped in fresh roti with mint chutney and spiced onions. Vegetarian Indian wrap Den Haag.',
   },
   {
     id: 'egg-kathi-roll',
@@ -917,7 +917,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['halal'],
     image: '/images/dishes/egg-roll.webp',
-    description: '',
+    description: 'Fluffy egg wrapped in tandoor roti with spiced onions and tangy chutney. Classic Indian kathi roll Den Haag.',
   },
   {
     id: 'chicken-tikka-roll',
@@ -926,7 +926,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['halal'],
     image: '/images/dishes/chicken-tikka-roll.webp',
-    description: '',
+    description: 'Tandoor-grilled halal chicken wrapped in fresh roti with onions and mint chutney. Halal Indian wrap Den Haag.',
   },
   {
     id: 'mutton-seekh-roll',
@@ -935,7 +935,7 @@ export const menuItems: MenuItem[] = [
     category: 'breads',
     dietary: ['halal'],
     image: '/images/dishes/mutton-seekh-roll.webp',
-    description: '',
+    description: 'Tender halal mutton seekh kebab wrapped in freshly baked roti with tangy chutneys. Authentic Indian wrap in Den Haag.',
   },
 
   // ─── RICE & SIDES (Rice non-biryani + Thali + Kids + Sides) ─────────────
@@ -946,7 +946,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/steamed-rice.webp',
-    description: '',
+    description: 'Plain basmati rice steamed to perfection. A classic accompaniment to any Indian curry in Den Haag.',
   },
   {
     id: 'jeera-rice',
@@ -955,7 +955,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/jeera-rice.webp',
-    description: '',
+    description: 'Basmati rice tempered with cumin seeds and fresh coriander. Fragrant Indian side dish served in Den Haag.',
   },
   {
     id: 'veg-fried-rice',
@@ -964,7 +964,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/veg-fried-rice.webp',
-    description: '',
+    description: 'Basmati rice wok-tossed with fresh vegetables in Indo Chinese style. Authentic Indian fried rice Den Haag.',
   },
   {
     id: 'chicken-fried-rice',
@@ -973,7 +973,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['halal'],
     image: '/images/dishes/chicken-fried-rice.webp',
-    description: '',
+    description: 'Basmati rice wok-tossed with halal chicken and fresh vegetables in Indo Chinese style. Authentic fried rice Den Haag.',
   },
   {
     id: 'veg-thali',
@@ -982,7 +982,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/veg-thali.webp',
-    description: '',
+    description: 'A complete vegetarian Indian meal - dal, curry, rice, naan and more. Authentic Indian thali experience in Den Haag.',
   },
   {
     id: 'non-veg-thali',
@@ -991,7 +991,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['halal'],
     image: '/images/dishes/non-veg-thali.webp',
-    description: '',
+    description: 'A hearty halal meal with curry, biryani, naan and more. Complete non-vegetarian thali at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'fries-nuggets',
@@ -1000,7 +1000,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['halal'],
     image: '/images/dishes/fries-chicken-nuggets-kids.webp',
-    description: '',
+    description: 'Crispy golden fries and tender halal chicken nuggets. A popular kids and family side at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'onion-salad',
@@ -1009,7 +1009,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/onion-salad.webp',
-    description: '',
+    description: 'Freshly sliced onions with lemon and chaat masala. A simple Indian salad side at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'mixed-salad',
@@ -1018,7 +1018,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/mixed-salad.webp',
-    description: '',
+    description: 'A fresh mix of seasonal vegetables and salad greens. Light Indian sides Den Haag served at every table.',
   },
   {
     id: 'boondi-raita',
@@ -1027,7 +1027,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/boondi-raita.webp',
-    description: '',
+    description: 'Crispy boondi pearls in cool, spiced yogurt. A refreshing Indian side dish at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'cucumber-raita',
@@ -1036,7 +1036,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/cucumber-raita.webp',
-    description: '',
+    description: 'Cool yogurt mixed with fresh cucumber and roasted cumin. A cooling Indian side dish in Den Haag.',
   },
   {
     id: 'mixed-raita',
@@ -1045,7 +1045,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/mixed-raita.webp',
-    description: '',
+    description: 'Fresh yogurt mixed with cucumber, tomato and roasted cumin. A classic Indian sides Den Haag accompaniment.',
   },
   {
     id: 'green-chillies',
@@ -1054,7 +1054,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/green-chilli.webp',
-    description: '',
+    description: 'Fresh whole green chillies served as a fiery side. A traditional table accompaniment at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'mixed-pickle',
@@ -1063,7 +1063,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/mixed-pickle.webp',
-    description: '',
+    description: 'Traditional Indian mixed pickle with tangy spices. A classic Indian sides Den Haag accompaniment served at every table.',
   },
   {
     id: 'mint-chutney',
@@ -1072,7 +1072,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['vegan', 'halal'],
     image: '',
-    description: '',
+    description: 'Freshly blended green mint and coriander chutney. A cooling Indian condiment at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'tamarind-chutney',
@@ -1081,7 +1081,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['vegan', 'halal'],
     image: '',
-    description: '',
+    description: 'Sweet and tangy tamarind chutney with warming spices. An authentic Indian condiment served in Den Haag.',
   },
   {
     id: 'vinegar-onion',
@@ -1090,7 +1090,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice-sides',
     dietary: ['vegan', 'halal'],
     image: '',
-    description: '',
+    description: 'Sharp pickled onions in vinegar - a tangy, palate-cleansing side at Chopras Indian Restaurant Den Haag.',
   },
 
   // ─── DESSERTS ────────────────────────────────────────────────────────────
@@ -1101,7 +1101,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/moong-dal-halwa.webp',
-    description: '',
+    description: 'Slow-cooked split moong lentil pudding with ghee and cardamom. Traditional Indian dessert Den Haag at its finest.',
   },
   {
     id: 'saffron-kheer',
@@ -1110,7 +1110,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/saffron-kheer.webp',
-    description: '',
+    description: 'Creamy basmati rice pudding with saffron, cardamom and nuts. Classic Indian dessert served in Den Haag.',
   },
   {
     id: 'rasmalai',
@@ -1119,7 +1119,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/rasmalai.webp',
-    description: '',
+    description: 'Soft cottage cheese dumplings soaked in saffron and cardamom milk. Classic Indian dessert Den Haag.',
   },
   {
     id: 'gulab-jamun',
@@ -1128,7 +1128,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/gulab-jamun.webp',
-    description: '',
+    description: 'Soft milk dumplings soaked in rose and cardamom syrup. Classic Indian dessert at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'kulfi-pistachio',
@@ -1137,7 +1137,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/pista-kulfi.webp',
-    description: '',
+    description: 'Traditional slow-churned Indian ice cream with rich pistachio flavour. Authentic Indian dessert in Den Haag.',
   },
   {
     id: 'kulfi-malai',
@@ -1146,7 +1146,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/malai-kulfi.webp',
-    description: '',
+    description: 'Rich, creamy traditional Indian kulfi with a classic malai flavour. Authentic Indian dessert in Den Haag.',
   },
   {
     id: 'kulfi-coconut',
@@ -1155,7 +1155,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/coconut-kulfi.webp',
-    description: '',
+    description: 'Traditional handmade kulfi with creamy coconut. Authentic Indian ice cream at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'kulfi-mango',
@@ -1164,7 +1164,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/mango-kulfi.webp',
-    description: '',
+    description: 'Creamy handmade kulfi made with real Alphonso mango pulp. Authentic Indian mango dessert in Den Haag.',
   },
   {
     id: 'ice-cream-vanilla',
@@ -1173,7 +1173,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     dietary: ['veg', 'halal'],
     image: '',
-    description: '',
+    description: 'Classic creamy vanilla ice cream - a sweet, light dessert at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'ice-cream-chocolate',
@@ -1182,7 +1182,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     dietary: ['veg', 'halal'],
     image: '',
-    description: '',
+    description: 'Rich, velvety chocolate ice cream - a popular and crowd-pleasing dessert at Chopras Indian Restaurant Den Haag.',
   },
   {
     id: 'ice-cream-strawberry',
@@ -1191,7 +1191,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     dietary: ['veg', 'halal'],
     image: '',
-    description: '',
+    description: 'Fresh, vibrant strawberry ice cream - a sweet and fruity finish at Chopras Indian Restaurant Den Haag.',
   },
 
   // ─── DRINKS ──────────────────────────────────────────────────────────────
@@ -1202,7 +1202,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/mango-lassi.webp',
-    description: '',
+    description: 'Thick, creamy yogurt drink blended with sweet Alphonso mango. Authentic Indian mango lassi in Den Haag.',
     isDrink: true,
   },
   {
@@ -1212,7 +1212,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/salted-lassi.webp',
-    description: '',
+    description: 'Chilled yogurt drink with a pinch of salt and roasted cumin. Refreshing Indian drink Den Haag.',
     isDrink: true,
   },
   {
@@ -1222,7 +1222,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/sweet-lassi.webp',
-    description: '',
+    description: 'Classic chilled yogurt drink lightly sweetened with sugar. Traditional Indian lassi at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1232,7 +1232,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/shikanji.webp',
-    description: '',
+    description: 'Traditional Indian lemonade with black salt and spices - a refreshing Indian drink in Den Haag.',
     isDrink: true,
   },
   {
@@ -1242,7 +1242,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/jal-jeera.webp',
-    description: '',
+    description: 'Tangy, spiced cumin and tamarind drink. A cooling authentic Indian street drink in Den Haag.',
     isDrink: true,
   },
   {
@@ -1252,7 +1252,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/masala-soda.webp',
-    description: '',
+    description: 'Sparkling water with fresh lime and Indian chaat masala. A refreshing Indian street drink in Den Haag.',
     isDrink: true,
   },
   {
@@ -1262,7 +1262,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/masala-coke.webp',
-    description: '',
+    description: 'Coca-Cola mixed with fresh lime and chaat masala. A spiced twist on cola at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1272,7 +1272,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/indian-masala-tea.webp',
-    description: '',
+    description: 'Freshly brewed Indian spiced tea with ginger, cardamom and milk. Authentic masala tea at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1282,7 +1282,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/Thumps-Up-Den-Haag.avif',
-    description: '',
+    description: 'India iconic bold and caramel-rich cola - an authentic Indian drink experience at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1292,7 +1292,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/Limca-Den-Haag.webp',
-    description: '',
+    description: 'Refreshing Indian lemon and lime flavoured soda. A taste of India at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1302,7 +1302,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/Maaza-Deg-haag-1.jpg',
-    description: '',
+    description: 'Sweet, thick Indian mango drink. Authentic Indian mango beverage at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1312,7 +1312,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['vegan', 'halal'],
     image: '/images/dishes/coke-den-haag-scaled.webp',
-    description: '',
+    description: 'Classic Coca-Cola or sugar-free Cola Zero served ice cold at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1322,7 +1322,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/Fanta-Den-Haag.png',
-    description: '',
+    description: 'Bright, fizzy and refreshing orange Fanta served ice cold at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1332,7 +1332,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/Sprite-Den-Haag.jpg',
-    description: '',
+    description: 'Crisp, clean and refreshing lemon-lime Sprite served ice cold at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1342,7 +1342,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/Fernandes-Den-Haag.jpg',
-    description: '',
+    description: 'Popular Dutch favourite Fernandes soda in a range of fruity flavours served at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1352,7 +1352,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/heineken-zero-Den-HAag.webp',
-    description: '',
+    description: 'Crisp, full-flavoured alcohol-free Heineken lager. A refreshing halal beer option at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1362,7 +1362,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/redbull.jpg',
-    description: '',
+    description: 'RedBull energy drink served cold at Chopras Indian Restaurant Den Haag for a refreshing boost.',
     isDrink: true,
   },
   {
@@ -1372,7 +1372,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '',
-    description: '',
+    description: 'Fresh mint, lime and soda - a refreshing alcohol-free mocktail at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1382,7 +1382,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '',
-    description: '',
+    description: 'Chilled, naturally sweet apple juice - a refreshing non-alcoholic drink at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1392,7 +1392,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/Orange-Juice-Den-Haag.jpg',
-    description: '',
+    description: 'Fresh, chilled orange juice - a bright and vitamin-rich drink at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1402,7 +1402,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/Chocolate-Milk-Den-Haag.jpg',
-    description: '',
+    description: 'Rich, creamy chocolate milk served chilled - a favourite with younger guests at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1412,7 +1412,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '',
-    description: '',
+    description: 'Chilled brewed coffee over ice - a smooth and refreshing drink at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1422,7 +1422,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/Iced-Tea-Peach.webp',
-    description: '',
+    description: 'Chilled, lightly sweet peach iced tea - a refreshing non-alcoholic drink at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1432,7 +1432,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/Ginger-Ale-Den-Haag.png',
-    description: '',
+    description: 'Crisp, naturally spiced ginger ale - a sharp and refreshing drink served at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1442,7 +1442,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/cappuccino.webp',
-    description: '',
+    description: 'Freshly brewed rich coffee or a creamy, frothy cappuccino served at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1452,7 +1452,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '',
-    description: '',
+    description: 'Delicate, light and calming green tea brewed fresh and served warm at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1462,7 +1462,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/Still-Water-Den-Haag.jpg',
-    description: '',
+    description: 'Fresh, clean still mineral water served cold - a pure and simple drink at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1472,7 +1472,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/Sparkling-Water-Den-Haag.png',
-    description: '',
+    description: 'Crisp and clean sparkling water served chilled - a refreshing drink option at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
   {
@@ -1482,7 +1482,7 @@ export const menuItems: MenuItem[] = [
     category: 'drinks',
     dietary: ['veg', 'halal'],
     image: '/images/dishes/Still-Water-Den-Haag.jpg',
-    description: '',
+    description: 'Large 1.5L still mineral water - ideal for families and groups dining at Chopras Indian Restaurant Den Haag.',
     isDrink: true,
   },
 ]
