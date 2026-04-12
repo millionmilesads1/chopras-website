@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { RESTAURANT } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -24,8 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: titles[locale], description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/indian-food-netherlands`,
-      languages: { en: `${SITE_URL}/en/indian-food-netherlands`, nl: `${SITE_URL}/nl/indian-food-netherlands`, 'x-default': `${SITE_URL}/en/indian-food-netherlands` },
+      canonical: getLocalizedUrl(locale, 'indian-food-netherlands'),
+      languages: { en: getLocalizedUrl('en', 'indian-food-netherlands'), nl: getLocalizedUrl('nl', 'indian-food-netherlands'), 'x-default': getLocalizedUrl('en', 'indian-food-netherlands') },
     },
   }
 }
@@ -42,7 +43,7 @@ export default function IndianFoodNetherlandsPage({ params }: Props) {
     author: { '@type': 'Organization', name: RESTAURANT.name, url: RESTAURANT.contact.website },
     publisher: { '@type': 'Organization', name: RESTAURANT.name, url: RESTAURANT.contact.website },
     about: { '@type': 'Thing', name: isNl ? 'Indiaas Eten in Nederland' : 'Indian Food in the Netherlands' },
-    url: `${SITE_URL}/${locale}/indian-food-netherlands`,
+    url: getLocalizedUrl(locale, 'indian-food-netherlands'),
     aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '834', bestRating: '5', worstRating: '1' },
     sameAs: [
       'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
@@ -125,8 +126,8 @@ export default function IndianFoodNetherlandsPage({ params }: Props) {
     <>
       <JsonLd data={articleSchema as Record<string, unknown>} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Indiaas Eten Nederland' : 'Indian Food Netherlands', item: `${SITE_URL}/${locale}/indian-food-netherlands` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Indiaas Eten Nederland' : 'Indian Food Netherlands', item: getLocalizedUrl(locale, 'indian-food-netherlands') },
       ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">

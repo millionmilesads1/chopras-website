@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: titles[locale], description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/indian-restaurant-delft`,
-      languages: { en: `${SITE_URL}/en/indian-restaurant-delft`, nl: `${SITE_URL}/nl/indian-restaurant-delft`, 'x-default': `${SITE_URL}/en/indian-restaurant-delft` },
+      canonical: getLocalizedUrl(locale, 'indian-restaurant-delft'),
+      languages: { en: getLocalizedUrl('en', 'indian-restaurant-delft'), nl: getLocalizedUrl('nl', 'indian-restaurant-delft'), 'x-default': getLocalizedUrl('en', 'indian-restaurant-delft') },
     },
   }
 }
@@ -39,15 +39,15 @@ export default function IndianRestaurantDelftPage({ params }: Props) {
   const restaurantSchema = getLocalRestaurantSchema(
     locale,
     ['Delft', 'Den Haag', 'South Holland'],
-    `${SITE_URL}/${locale}/indian-restaurant-delft`,
+    getLocalizedUrl(locale, 'indian-restaurant-delft'),
   )
 
   return (
     <>
       <JsonLd data={restaurantSchema} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Indiaas Restaurant bij Delft' : 'Indian Restaurant Near Delft', item: `${SITE_URL}/${locale}/indian-restaurant-delft` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Indiaas Restaurant bij Delft' : 'Indian Restaurant Near Delft', item: getLocalizedUrl(locale, 'indian-restaurant-delft') },
       ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">

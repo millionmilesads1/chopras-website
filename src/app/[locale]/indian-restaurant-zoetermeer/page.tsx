@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: titles[locale], description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/indian-restaurant-zoetermeer`,
-      languages: { en: `${SITE_URL}/en/indian-restaurant-zoetermeer`, nl: `${SITE_URL}/nl/indian-restaurant-zoetermeer`, 'x-default': `${SITE_URL}/en/indian-restaurant-zoetermeer` },
+      canonical: getLocalizedUrl(locale, 'indian-restaurant-zoetermeer'),
+      languages: { en: getLocalizedUrl('en', 'indian-restaurant-zoetermeer'), nl: getLocalizedUrl('nl', 'indian-restaurant-zoetermeer'), 'x-default': getLocalizedUrl('en', 'indian-restaurant-zoetermeer') },
     },
   }
 }
@@ -39,15 +39,15 @@ export default function IndianRestaurantZoetermeerPage({ params }: Props) {
   const restaurantSchema = getLocalRestaurantSchema(
     locale,
     ['Zoetermeer', 'Den Haag', 'South Holland'],
-    `${SITE_URL}/${locale}/indian-restaurant-zoetermeer`,
+    getLocalizedUrl(locale, 'indian-restaurant-zoetermeer'),
   )
 
   return (
     <>
       <JsonLd data={restaurantSchema} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Indiaas Restaurant bij Zoetermeer' : 'Indian Restaurant Near Zoetermeer', item: `${SITE_URL}/${locale}/indian-restaurant-zoetermeer` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Indiaas Restaurant bij Zoetermeer' : 'Indian Restaurant Near Zoetermeer', item: getLocalizedUrl(locale, 'indian-restaurant-zoetermeer') },
       ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">

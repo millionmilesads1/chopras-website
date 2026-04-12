@@ -13,7 +13,7 @@ import FaqAccordion from '@/components/sections/FaqAccordion'
 import LocationSection from '@/components/sections/LocationSection'
 import FinalCta from '@/components/sections/FinalCta'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getRestaurantSchema, getFounderSchema, getWebSiteSchema, getOrganizationSchema, getSpeakableSchema } from '@/lib/schema'
 
 type Props = { params: { locale: Locale } }
@@ -36,17 +36,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}`,
+      canonical: getLocalizedUrl(locale),
       languages: {
-        en: `${SITE_URL}/en`,
-        nl: `${SITE_URL}/nl`,
-        'x-default': `${SITE_URL}/en`,
+        en: getLocalizedUrl('en'),
+        nl: getLocalizedUrl('nl'),
+        'x-default': getLocalizedUrl('en'),
       },
     },
     openGraph: {
       title: titles[locale],
       description: descriptions[locale],
-      url: `${SITE_URL}/${locale}`,
+      url: getLocalizedUrl(locale),
       images: [{ url: '/og/home-og.jpg', width: 1200, height: 630, alt: 'Chopras Indian Restaurant Den Haag' }],
       type: 'website',
     },

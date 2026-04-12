@@ -11,6 +11,7 @@ import WhatsAppWidget from '@/components/WhatsAppWidget'
 import { type Locale } from '@/lib/useTranslations'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
 import { getWebSiteSchema } from '@/lib/schema'
+import { getLocalizedUrl } from '@/lib/utils'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -39,27 +40,36 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: 'Chopras Indian Restaurant Den Haag | Authentic Indian Food',
-    template: '%s | Chopras Indian Restaurant Den Haag',
-  },
-  description:
-    'Authentic Indian restaurant in Den Haag serving fresh curries, tandoori, chaat and biryani. Halal certified. Vegetarian and vegan options. Open Tuesday to Sunday.',
-  authors: [{ name: RESTAURANT.name }],
-  creator: RESTAURANT.name,
-  robots: { index: true, follow: true },
-  openGraph: {
-    type: 'website',
-    siteName: RESTAURANT.name,
-  },
-  twitter: { card: 'summary_large_image' },
-  icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
-    shortcut: '/logo.png',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: 'Chopras Indian Restaurant Den Haag | Authentic Indian Food',
+      template: '%s | Chopras Indian Restaurant Den Haag',
+    },
+    description:
+      'Authentic Indian restaurant in Den Haag serving fresh curries, tandoori, chaat and biryani. Halal certified. Vegetarian and vegan options. Open Tuesday to Sunday.',
+    authors: [{ name: RESTAURANT.name }],
+    creator: RESTAURANT.name,
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: 'website',
+      siteName: RESTAURANT.name,
+    },
+    twitter: { card: 'summary_large_image' },
+    icons: {
+      icon: '/logo.png',
+      apple: '/logo.png',
+      shortcut: '/logo.png',
+    },
+    alternates: {
+      languages: {
+        'en': getLocalizedUrl('en'),
+        'nl': getLocalizedUrl('nl'),
+        'x-default': getLocalizedUrl('en'),
+      },
+    },
+  }
 }
 
 export async function generateStaticParams() {

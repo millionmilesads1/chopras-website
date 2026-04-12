@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/biryani-den-haag`,
-      languages: { en: `${SITE_URL}/en/biryani-den-haag`, nl: `${SITE_URL}/nl/biryani-den-haag`, 'x-default': `${SITE_URL}/en/biryani-den-haag` },
+      canonical: getLocalizedUrl(locale, 'biryani-den-haag'),
+      languages: { en: getLocalizedUrl('en', 'biryani-den-haag'), nl: getLocalizedUrl('nl', 'biryani-den-haag'), 'x-default': getLocalizedUrl('en', 'biryani-den-haag') },
     },
   }
 }
@@ -67,10 +67,10 @@ export default function BiryaniPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/biryani-den-haag`)} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'biryani-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Biryani Den Haag' : 'Biryani Den Haag', item: `${SITE_URL}/${locale}/biryani-den-haag` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Biryani Den Haag' : 'Biryani Den Haag', item: getLocalizedUrl(locale, 'biryani-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(biryanisFaqs)} />
 

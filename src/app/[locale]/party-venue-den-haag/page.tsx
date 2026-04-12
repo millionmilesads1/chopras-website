@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { RESTAURANT } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -25,8 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/party-venue-den-haag`,
-      languages: { en: `${SITE_URL}/en/party-venue-den-haag`, nl: `${SITE_URL}/nl/party-venue-den-haag`, 'x-default': `${SITE_URL}/en/party-venue-den-haag` },
+      canonical: getLocalizedUrl(locale, 'party-venue-den-haag'),
+      languages: { en: getLocalizedUrl('en', 'party-venue-den-haag'), nl: getLocalizedUrl('nl', 'party-venue-den-haag'), 'x-default': getLocalizedUrl('en', 'party-venue-den-haag') },
     },
   }
 }
@@ -43,7 +44,7 @@ export default function PartyVenuePage({ params }: Props) {
     address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, addressLocality: RESTAURANT.address.city, postalCode: RESTAURANT.address.postcode, addressCountry: 'NL' },
     telephone: RESTAURANT.contact.phone,
     maximumAttendeeCapacity: 80,
-    url: 'https://chopras.nl/en/party-venue-den-haag',
+    url: 'https://chopras.nl/party-venue-den-haag',
     amenityFeature: [
       { '@type': 'LocationFeatureSpecification', name: 'Indian Catering Included', value: true },
       { '@type': 'LocationFeatureSpecification', name: 'AV Equipment Welcome', value: true },
@@ -122,8 +123,8 @@ export default function PartyVenuePage({ params }: Props) {
     <>
       <JsonLd data={eventVenueSchema as Record<string, unknown>} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Party Venue Den Haag' : 'Party Venue Den Haag', item: `${SITE_URL}/${locale}/party-venue-den-haag` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Party Venue Den Haag' : 'Party Venue Den Haag', item: getLocalizedUrl(locale, 'party-venue-den-haag') },
       ])} />
       <JsonLd data={faqSchema as Record<string, unknown>} />
 

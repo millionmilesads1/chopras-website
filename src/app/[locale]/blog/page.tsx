@@ -3,7 +3,7 @@ import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { blogPosts } from '@/lib/blog-data'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getBreadcrumbSchema } from '@/lib/schema'
 
 type Props = { params: { locale: Locale } }
@@ -26,11 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/blog`,
+      canonical: getLocalizedUrl(locale, 'blog'),
       languages: {
-        en: `${SITE_URL}/en/blog`,
-        nl: `${SITE_URL}/nl/blog`,
-        'x-default': `${SITE_URL}/en/blog`,
+        en: getLocalizedUrl('en', 'blog'),
+        nl: getLocalizedUrl('nl', 'blog'),
+        'x-default': getLocalizedUrl('en', 'blog'),
       },
     },
   }
@@ -53,8 +53,8 @@ export default function LocaleBlogPage({ params }: Props) {
   return (
     <>
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: tr.common.nav.blog, item: `${SITE_URL}/${locale}/blog` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: tr.common.nav.blog, item: getLocalizedUrl(locale, 'blog') },
       ])} />
 
       {/* Hero */}

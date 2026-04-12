@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { RESTAURANT } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -24,8 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: titles[locale], description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/indian-wedding-catering-den-haag`,
-      languages: { en: `${SITE_URL}/en/indian-wedding-catering-den-haag`, nl: `${SITE_URL}/nl/indian-wedding-catering-den-haag`, 'x-default': `${SITE_URL}/en/indian-wedding-catering-den-haag` },
+      canonical: getLocalizedUrl(locale, 'indian-wedding-catering-den-haag'),
+      languages: { en: getLocalizedUrl('en', 'indian-wedding-catering-den-haag'), nl: getLocalizedUrl('nl', 'indian-wedding-catering-den-haag'), 'x-default': getLocalizedUrl('en', 'indian-wedding-catering-den-haag') },
     },
   }
 }
@@ -108,8 +109,8 @@ export default function IndianWeddingCateringPage({ params }: Props) {
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
       <JsonLd data={cateringServiceSchema as Record<string, unknown>} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Indiaas Bruiloft Catering' : 'Indian Wedding Catering', item: `${SITE_URL}/${locale}/indian-wedding-catering-den-haag` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Indiaas Bruiloft Catering' : 'Indian Wedding Catering', item: getLocalizedUrl(locale, 'indian-wedding-catering-den-haag') },
       ])} />
       <JsonLd data={faqSchema as Record<string, unknown>} />
 

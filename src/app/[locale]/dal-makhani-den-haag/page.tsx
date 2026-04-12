@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -25,11 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/dal-makhani-den-haag`,
+      canonical: getLocalizedUrl(locale, 'dal-makhani-den-haag'),
       languages: {
-        en: `${SITE_URL}/en/dal-makhani-den-haag`,
-        nl: `${SITE_URL}/nl/dal-makhani-den-haag`,
-        'x-default': `${SITE_URL}/en/dal-makhani-den-haag`,
+        en: getLocalizedUrl('en', 'dal-makhani-den-haag'),
+        nl: getLocalizedUrl('nl', 'dal-makhani-den-haag'),
+        'x-default': getLocalizedUrl('en', 'dal-makhani-den-haag'),
       },
     },
   }
@@ -43,10 +43,10 @@ export default function DalMakhaniPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/dal-makhani-den-haag`)} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'dal-makhani-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Dal Makhani Den Haag' : 'Dal Makhani Den Haag', item: `${SITE_URL}/${locale}/dal-makhani-den-haag` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Dal Makhani Den Haag' : 'Dal Makhani Den Haag', item: getLocalizedUrl(locale, 'dal-makhani-den-haag') },
       ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">

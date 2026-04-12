@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/halal-food-den-haag`,
-      languages: { en: `${SITE_URL}/en/halal-food-den-haag`, nl: `${SITE_URL}/nl/halal-food-den-haag`, 'x-default': `${SITE_URL}/en/halal-food-den-haag` },
+      canonical: getLocalizedUrl(locale, 'halal-food-den-haag'),
+      languages: { en: getLocalizedUrl('en', 'halal-food-den-haag'), nl: getLocalizedUrl('nl', 'halal-food-den-haag'), 'x-default': getLocalizedUrl('en', 'halal-food-den-haag') },
     },
   }
 }
@@ -53,10 +53,10 @@ export default function HalalFoodPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/halal-food-den-haag`)} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'halal-food-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Halal Eten Den Haag' : 'Halal Food Den Haag', item: `${SITE_URL}/${locale}/halal-food-den-haag` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Halal Eten Den Haag' : 'Halal Food Den Haag', item: getLocalizedUrl(locale, 'halal-food-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(faqItems)} />
 

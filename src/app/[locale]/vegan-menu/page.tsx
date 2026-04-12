@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/vegan-menu`,
-      languages: { en: `${SITE_URL}/en/vegan-menu`, nl: `${SITE_URL}/nl/vegan-menu`, 'x-default': `${SITE_URL}/en/vegan-menu` },
+      canonical: getLocalizedUrl(locale, 'vegan-menu'),
+      languages: { en: getLocalizedUrl('en', 'vegan-menu'), nl: getLocalizedUrl('nl', 'vegan-menu'), 'x-default': getLocalizedUrl('en', 'vegan-menu') },
     },
   }
 }
@@ -51,10 +51,10 @@ export default function VeganMenuPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/vegan-menu`)} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'vegan-menu'))} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Veganistisch Menu' : 'Vegan Menu', item: `${SITE_URL}/${locale}/vegan-menu` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Veganistisch Menu' : 'Vegan Menu', item: getLocalizedUrl(locale, 'vegan-menu') },
       ])} />
       <JsonLd data={getFaqPageSchema(faqItems)} />
 

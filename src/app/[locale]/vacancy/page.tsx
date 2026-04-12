@@ -3,7 +3,7 @@ import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import VacancyForm from '@/components/sections/VacancyForm'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getBreadcrumbSchema } from '@/lib/schema'
 
 type Props = { params: { locale: Locale } }
@@ -26,11 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/vacancy`,
+      canonical: getLocalizedUrl(locale, 'vacancy'),
       languages: {
-        en: `${SITE_URL}/en/vacancy`,
-        nl: `${SITE_URL}/nl/vacancy`,
-        'x-default': `${SITE_URL}/en/vacancy`,
+        en: getLocalizedUrl('en', 'vacancy'),
+        nl: getLocalizedUrl('nl', 'vacancy'),
+        'x-default': getLocalizedUrl('en', 'vacancy'),
       },
     },
   }
@@ -116,8 +116,8 @@ export default function LocaleVacancyPage({ params }: Props) {
         <JsonLd key={i} data={schema as Record<string, unknown>} />
       ))}
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: tr.common.nav.vacancy, item: `${SITE_URL}/${locale}/vacancy` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: tr.common.nav.vacancy, item: getLocalizedUrl(locale, 'vacancy') },
       ])} />
 
       {/* Hero */}

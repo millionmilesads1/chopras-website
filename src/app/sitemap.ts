@@ -69,18 +69,30 @@ const staticPages: SitemapPage[] = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // All static pages × both locales
+  // English pages live at root (https://chopras.nl/slug), Dutch at /nl/
   const sitemapStaticPages = locales.flatMap((locale) =>
-    staticPages.map(({ slug, lastMod, priority, changeFreq }) => ({
-      url: slug ? `${SITE_URL}/${locale}/${slug}` : `${SITE_URL}/${locale}`,
-      lastModified: new Date(lastMod),
-      priority,
-      changeFrequency: changeFreq,
-    }))
+    staticPages.map(({ slug, lastMod, priority, changeFreq }) => {
+      let url: string
+      if (locale === 'nl') {
+        url = slug ? `${SITE_URL}/nl/${slug}` : `${SITE_URL}/nl`
+      } else {
+        url = slug ? `${SITE_URL}/${slug}` : SITE_URL
+      }
+      return {
+        url,
+        lastModified: new Date(lastMod),
+        priority,
+        changeFrequency: changeFreq,
+      }
+    })
   )
 
   // Blog posts with priority 0.7
+  // English blog posts at /blog/slug, Dutch at /nl/blog/slug
   const blogPages = blogPosts.map((post) => ({
-    url: `${SITE_URL}/${post.language}/blog/${post.slug}`,
+    url: post.language === 'nl'
+      ? `${SITE_URL}/nl/blog/${post.slug}`
+      : `${SITE_URL}/blog/${post.slug}`,
     lastModified: new Date(post.publishedAt),
     priority: 0.7,
     changeFrequency: 'weekly' as const,

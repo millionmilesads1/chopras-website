@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -25,11 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/pani-puri-den-haag`,
+      canonical: getLocalizedUrl(locale, 'pani-puri-den-haag'),
       languages: {
-        en: `${SITE_URL}/en/pani-puri-den-haag`,
-        nl: `${SITE_URL}/nl/pani-puri-den-haag`,
-        'x-default': `${SITE_URL}/en/pani-puri-den-haag`,
+        en: getLocalizedUrl('en', 'pani-puri-den-haag'),
+        nl: getLocalizedUrl('nl', 'pani-puri-den-haag'),
+        'x-default': getLocalizedUrl('en', 'pani-puri-den-haag'),
       },
     },
   }
@@ -43,10 +43,10 @@ export default function PaniPuriPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/pani-puri-den-haag`)} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'pani-puri-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Pani Puri Den Haag' : 'Pani Puri Den Haag', item: `${SITE_URL}/${locale}/pani-puri-den-haag` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Pani Puri Den Haag' : 'Pani Puri Den Haag', item: getLocalizedUrl(locale, 'pani-puri-den-haag') },
       ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">

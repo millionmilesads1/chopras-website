@@ -6,7 +6,7 @@ import MenuPageClient from '@/components/sections/MenuPageClient'
 import MenuHeroSection from '@/components/sections/MenuHeroSection'
 import { menuCategories, menuItems } from '@/lib/menu-data'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getMenuSchema, getBreadcrumbSchema } from '@/lib/schema'
 
 type Props = { params: { locale: Locale } }
@@ -29,11 +29,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/menu`,
+      canonical: getLocalizedUrl(locale, 'menu'),
       languages: {
-        en: `${SITE_URL}/en/menu`,
-        nl: `${SITE_URL}/nl/menu`,
-        'x-default': `${SITE_URL}/en/menu`,
+        en: getLocalizedUrl('en', 'menu'),
+        nl: getLocalizedUrl('nl', 'menu'),
+        'x-default': getLocalizedUrl('en', 'menu'),
       },
     },
   }
@@ -57,8 +57,8 @@ export default function LocaleMenuPage({ params }: Props) {
     <>
       <JsonLd data={getMenuSchema(locale, menuSections)} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: tr.common.nav.menu, item: `${SITE_URL}/${locale}/menu` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: tr.common.nav.menu, item: getLocalizedUrl(locale, 'menu') },
       ])} />
 
       {/* HERO  -  scroll-scrubbed butter chicken animation */}

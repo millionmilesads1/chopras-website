@@ -6,7 +6,8 @@ import {
   CheckCircle, ChefHat, Shield, MapPin,
 } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { RESTAURANT } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getCateringServiceSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import CateringForm from '@/components/catering/CateringForm'
 import CateringFaqAccordion from '@/components/sections/CateringFaqAccordion'
@@ -32,11 +33,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/catering`,
+      canonical: getLocalizedUrl(locale, 'catering'),
       languages: {
-        en: `${SITE_URL}/en/catering`,
-        nl: `${SITE_URL}/nl/catering`,
-        'x-default': `${SITE_URL}/en/catering`,
+        en: getLocalizedUrl('en', 'catering'),
+        nl: getLocalizedUrl('nl', 'catering'),
+        'x-default': getLocalizedUrl('en', 'catering'),
       },
     },
   }
@@ -58,8 +59,8 @@ export default function LocaleCateringPage({ params }: Props) {
   ]
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-    { name: tr.common.nav.catering, item: `${SITE_URL}/${locale}/catering` },
+    { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+    { name: tr.common.nav.catering, item: getLocalizedUrl(locale, 'catering') },
   ])
 
   const eventTypes = [

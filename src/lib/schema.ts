@@ -86,7 +86,7 @@ export function getRestaurantSchema(locale: Locale): Record<string, unknown> {
       RESTAURANT.logo,
       `${SITE_URL}/og/home-og.jpg`,
     ],
-    url: `${SITE_URL}/${locale}`,
+    url: locale === 'nl' ? `${SITE_URL}/nl` : SITE_URL,
     telephone: RESTAURANT.contact.phone,
     email: RESTAURANT.contact.email,
     address: ADDRESS,
@@ -94,7 +94,7 @@ export function getRestaurantSchema(locale: Locale): Record<string, unknown> {
     servesCuisine: ['North Indian', 'Indian Street Food', 'Halal Indian', 'Vegetarian Indian', 'Vegan Indian', 'Indo Chinese', 'Indian Catering'],
     priceRange: RESTAURANT.priceRange,
     openingHoursSpecification: OPENING_HOURS,
-    hasMenu: `${SITE_URL}/${locale}/menu`,
+    hasMenu: locale === 'nl' ? `${SITE_URL}/nl/menu` : `${SITE_URL}/menu`,
     hasMap: RESTAURANT.googleMapsUrl,
     acceptsReservations: true,
     areaServed: RESTAURANT.serviceAreas,
@@ -119,7 +119,7 @@ export function getRestaurantSchema(locale: Locale): Record<string, unknown> {
       '@id': `${SITE_URL}/#arun-chopra`,
       name: 'Arun Chopra',
       jobTitle: 'Founder',
-      url: `${SITE_URL}/en`,
+      url: SITE_URL,
     },
   }
 }
@@ -171,8 +171,8 @@ export function getFounderSchema(): Record<string, unknown> {
       name: RESTAURANT.name,
       url: SITE_URL,
     },
-    url: `${SITE_URL}/en`,
-    sameAs: [`${SITE_URL}/en`],
+    url: SITE_URL,
+    sameAs: [SITE_URL],
   }
 }
 
@@ -241,9 +241,9 @@ export function getMenuSchema(
   return {
     '@context': 'https://schema.org',
     '@type': 'Menu',
-    '@id': `${SITE_URL}/${locale}/menu#menu`,
+    '@id': `${locale === 'nl' ? `${SITE_URL}/nl` : SITE_URL}/menu#menu`,
     name: `${RESTAURANT.name} Menu`,
-    url: `${SITE_URL}/${locale}/menu`,
+    url: locale === 'nl' ? `${SITE_URL}/nl/menu` : `${SITE_URL}/menu`,
     hasMenuSection: sections.map((section) => ({
       '@type': 'MenuSection',
       name: section.name,
@@ -276,7 +276,9 @@ export function getBlogPostingSchema(
   },
   locale: Locale,
 ): Record<string, unknown> {
-  const postUrl = `${SITE_URL}/${locale}/blog/${post.slug}`
+  const postUrl = locale === 'nl'
+    ? `${SITE_URL}/nl/blog/${post.slug}`
+    : `${SITE_URL}/blog/${post.slug}`
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -291,7 +293,7 @@ export function getBlogPostingSchema(
       '@id': `${SITE_URL}/#arun-chopra`,
       name: post.author,
       jobTitle: 'Founder',
-      url: `${SITE_URL}/en`,
+      url: SITE_URL,
     },
     publisher: {
       '@type': 'Organization',
@@ -376,8 +378,8 @@ export function getSpeakableSchema(locale: Locale): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    '@id': `${SITE_URL}/${locale}/#speakable`,
-    url: `${SITE_URL}/${locale}`,
+    '@id': `${locale === 'nl' ? `${SITE_URL}/nl` : SITE_URL}/#speakable`,
+    url: locale === 'nl' ? `${SITE_URL}/nl` : SITE_URL,
     speakable: {
       '@type': 'SpeakableSpecification',
       cssSelector: ['h1', 'h2', '.about-chopras-section'],

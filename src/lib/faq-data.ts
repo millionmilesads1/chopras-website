@@ -55,7 +55,7 @@ export const homeFaqs: FaqItem[] = [
   },
   {
     question: "Can I book a table online at Chopras Indian Restaurant?",
-    answer: "Yes. Tables can be reserved online through chopras.nl/en/contact or by calling +31 6 30645930. Advance booking is strongly recommended for weekends and special cultural events."
+    answer: "Yes. Tables can be reserved online through chopras.nl/contact or by calling +31 6 30645930. Advance booking is strongly recommended for weekends and special cultural events."
   },
   {
     question: "Do you accept walk-ins without reservations?",
@@ -119,7 +119,7 @@ export const homeFaqs: FaqItem[] = [
   },
   {
     question: "How can I contact the restaurant for queries or reservations?",
-    answer: "Contact Chopras Indian Restaurant by phone at +31 6 30645930, by email at info@chopras.nl, or via the contact form at chopras.nl/en/contact. Staff are available during opening hours Tuesday to Sunday."
+    answer: "Contact Chopras Indian Restaurant by phone at +31 6 30645930, by email at info@chopras.nl, or via the contact form at chopras.nl/contact. Staff are available during opening hours Tuesday to Sunday."
   },
 ]
 

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: titles[locale], description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/indian-restaurant-rijswijk`,
-      languages: { en: `${SITE_URL}/en/indian-restaurant-rijswijk`, nl: `${SITE_URL}/nl/indian-restaurant-rijswijk`, 'x-default': `${SITE_URL}/en/indian-restaurant-rijswijk` },
+      canonical: getLocalizedUrl(locale, 'indian-restaurant-rijswijk'),
+      languages: { en: getLocalizedUrl('en', 'indian-restaurant-rijswijk'), nl: getLocalizedUrl('nl', 'indian-restaurant-rijswijk'), 'x-default': getLocalizedUrl('en', 'indian-restaurant-rijswijk') },
     },
   }
 }
@@ -39,15 +39,15 @@ export default function IndianRestaurantRijswijkPage({ params }: Props) {
   const restaurantSchema = getLocalRestaurantSchema(
     locale,
     ['Rijswijk', 'Den Haag', 'South Holland'],
-    `${SITE_URL}/${locale}/indian-restaurant-rijswijk`,
+    getLocalizedUrl(locale, 'indian-restaurant-rijswijk'),
   )
 
   return (
     <>
       <JsonLd data={restaurantSchema} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Indiaas Restaurant bij Rijswijk' : 'Indian Restaurant Near Rijswijk', item: `${SITE_URL}/${locale}/indian-restaurant-rijswijk` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Indiaas Restaurant bij Rijswijk' : 'Indian Restaurant Near Rijswijk', item: getLocalizedUrl(locale, 'indian-restaurant-rijswijk') },
       ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">

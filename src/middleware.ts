@@ -17,17 +17,31 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Check if pathname already has a locale
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  )
+  // If path starts with /nl/ or is exactly /nl — serve Dutch, no redirect
+  if (pathname.startsWith('/nl/') || pathname === '/nl') {
+    return NextResponse.next()
+  }
 
-  if (pathnameHasLocale) return NextResponse.next()
+  // If path starts with /en/ — 301 redirect to strip the /en prefix
+  if (pathname.startsWith('/en/')) {
+    const newPath = pathname.replace('/en', '')
+    return NextResponse.redirect(
+      new URL(newPath || '/', request.url),
+      { status: 301 }
+    )
+  }
 
-  // Everything without a locale  -  permanent redirect to English version
-  return NextResponse.redirect(new URL(`/en${pathname === '/' ? '' : pathname}`, request.url), 308)
+  // If path is exactly /en — 301 redirect to root
+  if (pathname === '/en') {
+    return NextResponse.redirect(new URL('/', request.url), { status: 301 })
+  }
+
+  // Everything else — rewrite internally to /en prefix so Next.js routes to [locale] pages
+  // The browser URL stays unchanged (e.g. /menu stays /menu, not /en/menu)
+  const rewrittenPath = pathname === '/' ? '/en' : `/en${pathname}`
+  return NextResponse.rewrite(new URL(rewrittenPath, request.url))
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\\..*).*)'],
 }

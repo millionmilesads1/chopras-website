@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { MapPin, Phone, Mail, Clock, Bus } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT, SITE_URL } from '@/lib/constants'
+import { RESTAURANT } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import ContactForm from '@/components/contact/ContactForm'
 import TrustBar from '@/components/sections/TrustBar'
@@ -28,11 +29,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/contact`,
+      canonical: getLocalizedUrl(locale, 'contact'),
       languages: {
-        en: `${SITE_URL}/en/contact`,
-        nl: `${SITE_URL}/nl/contact`,
-        'x-default': `${SITE_URL}/en/contact`,
+        en: getLocalizedUrl('en', 'contact'),
+        nl: getLocalizedUrl('nl', 'contact'),
+        'x-default': getLocalizedUrl('en', 'contact'),
       },
     },
   }
@@ -44,8 +45,8 @@ export default function LocaleContactPage({ params }: Props) {
   const restaurantSchema = getRestaurantSchema(locale)
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-    { name: tr.common.nav.contact, item: `${SITE_URL}/${locale}/contact` },
+    { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+    { name: tr.common.nav.contact, item: getLocalizedUrl(locale, 'contact') },
   ])
 
   const quickCards = [

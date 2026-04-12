@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -25,11 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/chaat-den-haag`,
+      canonical: getLocalizedUrl(locale, 'chaat-den-haag'),
       languages: {
-        en: `${SITE_URL}/en/chaat-den-haag`,
-        nl: `${SITE_URL}/nl/chaat-den-haag`,
-        'x-default': `${SITE_URL}/en/chaat-den-haag`,
+        en: getLocalizedUrl('en', 'chaat-den-haag'),
+        nl: getLocalizedUrl('nl', 'chaat-den-haag'),
+        'x-default': getLocalizedUrl('en', 'chaat-den-haag'),
       },
     },
   }
@@ -43,10 +43,10 @@ export default function ChaatPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/chaat-den-haag`)} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'chaat-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Chaat Den Haag' : 'Chaat Den Haag', item: `${SITE_URL}/${locale}/chaat-den-haag` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Chaat Den Haag' : 'Chaat Den Haag', item: getLocalizedUrl(locale, 'chaat-den-haag') },
       ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">

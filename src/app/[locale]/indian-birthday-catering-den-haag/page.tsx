@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/indian-birthday-catering-den-haag`,
-      languages: { en: `${SITE_URL}/en/indian-birthday-catering-den-haag`, nl: `${SITE_URL}/nl/indian-birthday-catering-den-haag`, 'x-default': `${SITE_URL}/en/indian-birthday-catering-den-haag` },
+      canonical: getLocalizedUrl(locale, 'indian-birthday-catering-den-haag'),
+      languages: { en: getLocalizedUrl('en', 'indian-birthday-catering-den-haag'), nl: getLocalizedUrl('nl', 'indian-birthday-catering-den-haag'), 'x-default': getLocalizedUrl('en', 'indian-birthday-catering-den-haag') },
     },
   }
 }
@@ -39,10 +39,10 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/indian-birthday-catering-den-haag`)} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'indian-birthday-catering-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Verjaardags Catering' : 'Birthday Catering', item: `${SITE_URL}/${locale}/indian-birthday-catering-den-haag` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Verjaardags Catering' : 'Birthday Catering', item: getLocalizedUrl(locale, 'indian-birthday-catering-den-haag') },
       ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">

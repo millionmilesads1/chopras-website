@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale],
     description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/family-restaurant-den-haag`,
-      languages: { en: `${SITE_URL}/en/family-restaurant-den-haag`, nl: `${SITE_URL}/nl/family-restaurant-den-haag`, 'x-default': `${SITE_URL}/en/family-restaurant-den-haag` },
+      canonical: getLocalizedUrl(locale, 'family-restaurant-den-haag'),
+      languages: { en: getLocalizedUrl('en', 'family-restaurant-den-haag'), nl: getLocalizedUrl('nl', 'family-restaurant-den-haag'), 'x-default': getLocalizedUrl('en', 'family-restaurant-den-haag') },
     },
   }
 }
@@ -39,10 +39,10 @@ export default function FamilyRestaurantPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/family-restaurant-den-haag`)} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'family-restaurant-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Familie Restaurant' : 'Family Restaurant', item: `${SITE_URL}/${locale}/family-restaurant-den-haag` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Familie Restaurant' : 'Family Restaurant', item: getLocalizedUrl(locale, 'family-restaurant-den-haag') },
       ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">

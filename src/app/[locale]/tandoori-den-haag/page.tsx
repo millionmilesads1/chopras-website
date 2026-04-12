@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { SITE_URL } from '@/lib/constants'
+import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: titles[locale], description: descriptions[locale],
     alternates: {
-      canonical: `${SITE_URL}/${locale}/tandoori-den-haag`,
-      languages: { en: `${SITE_URL}/en/tandoori-den-haag`, nl: `${SITE_URL}/nl/tandoori-den-haag`, 'x-default': `${SITE_URL}/en/tandoori-den-haag` },
+      canonical: getLocalizedUrl(locale, 'tandoori-den-haag'),
+      languages: { en: getLocalizedUrl('en', 'tandoori-den-haag'), nl: getLocalizedUrl('nl', 'tandoori-den-haag'), 'x-default': getLocalizedUrl('en', 'tandoori-den-haag') },
     },
   }
 }
@@ -38,10 +38,10 @@ export default function TandooriPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], `${SITE_URL}/${locale}/tandoori-den-haag`)} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'tandoori-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: tr.common.nav.home, item: `${SITE_URL}/${locale}` },
-        { name: isNl ? 'Tandoori Den Haag' : 'Tandoori Den Haag', item: `${SITE_URL}/${locale}/tandoori-den-haag` },
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Tandoori Den Haag' : 'Tandoori Den Haag', item: getLocalizedUrl(locale, 'tandoori-den-haag') },
       ])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
