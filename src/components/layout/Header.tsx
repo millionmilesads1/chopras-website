@@ -63,7 +63,7 @@ export default function Header({ locale }: { locale: Locale }) {
   const base = locale === 'nl' ? '/nl' : ''
 
   const NAV_LINKS = [
-    { label: tr.common.nav.home, href: base },
+    { label: tr.common.nav.home, href: base || '/' },
     { label: tr.common.nav.blog, href: `${base}/blog` },
     { label: tr.common.nav.vacancy, href: `${base}/vacancy` },
     { label: tr.common.nav.contact, href: `${base}/contact` },
@@ -164,7 +164,7 @@ export default function Header({ locale }: { locale: Locale }) {
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between gap-4">
 
           {/* GROUP 1  -  Logo */}
-          <Link href={base} className="flex-shrink-0" onClick={() => setMobileOpen(false)}>
+          <Link href={base || '/'} className="flex-shrink-0" onClick={() => setMobileOpen(false)}>
             <Image
               src={RESTAURANT.logo}
               alt={`${RESTAURANT.name} logo`}
@@ -423,7 +423,7 @@ export default function Header({ locale }: { locale: Locale }) {
       >
         {/* Panel header */}
         <div className="px-6 py-5 flex items-center justify-between border-b border-white/10 flex-shrink-0">
-          <Link href={base} onClick={() => setMobileOpen(false)}>
+          <Link href={base || '/'} onClick={() => setMobileOpen(false)}>
             <Image
               src={RESTAURANT.logo}
               alt={`${RESTAURANT.name} logo`}
