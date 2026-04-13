@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Beste Indiaas Restaurant Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Chopras Indian Restaurant in Den Haag serves authentic halal North Indian food, street food, biryani, tandoori and catering. Open daily. Book your table now.',
+    en: 'Chopras Indian Restaurant - Den Haag\'s best authentic Indian food. Halal certified, vegetarian and vegan options, private event hall and catering. Leyweg 986, open Tuesday to Sunday.',
     nl: 'Chopras Indian Restaurant in Den Haag serveert authentiek halal Noord-Indiaas eten, street food, biryani, tandoori en catering. Dagelijks open. Reserveer nu.',
   }
   return {
