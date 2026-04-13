@@ -47,7 +47,7 @@ export default function LocaleBlogPostPage({ params }: Props) {
   if (!post) notFound()
 
   const tr = getTranslations(locale)
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
   const relatedPosts = blogPosts
     .filter((p) => p.slug !== post.slug && p.language === locale)
     .slice(0, 2)

@@ -35,7 +35,7 @@ function OrderConfirmationContent({ locale }: { locale: Locale }) {
   const searchParams = useSearchParams()
   const orderNumber = searchParams.get('order') ?? ''
   const customerName = searchParams.get('name') ?? 'valued customer'
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
 
   const [lastOrder, setLastOrder] = useState<LastOrder | null>(null)
 

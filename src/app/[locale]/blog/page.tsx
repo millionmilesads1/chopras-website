@@ -47,7 +47,7 @@ function formatDate(dateStr: string, locale: Locale): string {
 export default function LocaleBlogPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
   const localePosts = blogPosts.filter(post => post.language === locale)
 
   return (

@@ -66,7 +66,7 @@ const jobSchemas = [
 export default function LocaleVacancyPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
 
   const vacancies = [
     {

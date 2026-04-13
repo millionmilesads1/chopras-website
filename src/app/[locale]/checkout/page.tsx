@@ -16,7 +16,7 @@ export default function CheckoutPage({ params }: { params: { locale: Locale } })
   const router = useRouter()
   const { items, clearCart, getTotalPrice } = useCartStore()
   const totalPrice = getTotalPrice()
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
 
   const [form, setForm] = useState({
     name: '',

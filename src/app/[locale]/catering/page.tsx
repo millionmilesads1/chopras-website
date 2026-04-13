@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function LocaleCateringPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
 
   const cateringFaqs = locale === 'nl' ? [
     { question: 'Verzorgt Chopras Indian Restaurant catering in Den Haag?', answer: 'Ja. Chopras Indian Restaurant verzorgt volledige Indiase catering in heel Den Haag voor verjaardagen, bruiloften, zakelijke evenementen, Diwali diners en privéfeesten. Neem contact op voor uw vereisten.' },

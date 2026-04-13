@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function LocaleMenuPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
 
   const menuSections = menuCategories.map((category) => ({
     name: category.label,

@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function TandooriPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
   const isNl = locale === 'nl'
 
   return (
