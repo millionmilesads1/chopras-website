@@ -1,3 +1,4 @@
+import { type ReactNode } from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import JsonLd from '@/components/seo/JsonLd'
@@ -15,6 +16,20 @@ import FinalCta from '@/components/sections/FinalCta'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getRestaurantSchema, getFounderSchema, getWebSiteSchema, getOrganizationSchema, getSpeakableSchema } from '@/lib/schema'
+
+function injectLinks(text: string, links: Array<[string, ReactNode]>): ReactNode {
+  if (!text || links.length === 0) return text
+  const [[anchor, el], ...rest] = links
+  const i = text.indexOf(anchor)
+  if (i === -1) return injectLinks(text, rest)
+  return (
+    <>
+      {text.slice(0, i)}
+      {el}
+      {injectLinks(text.slice(i + anchor.length), rest)}
+    </>
+  )
+}
 
 type Props = { params: { locale: Locale } }
 
@@ -77,22 +92,52 @@ export default function LocaleHomePage({ params }: Props) {
           </h2>
           <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-6">
             <p>
-              Den Haag has no shortage of Indian restaurants. <strong>4.9 stars on Google from 800+ verified reviews</strong> puts Chopras Indian Restaurant in a different category altogether. Add 8.6 on <a href="https://www.thefork.nl/restaurant/chopras-indian-restaurant-r825662" rel="nofollow noopener" target="_blank" className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">TheFork</a> and an Excellent rating on <a href="https://www.tripadvisor.nl/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html" rel="nofollow noopener" target="_blank" className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Tripadvisor</a>, and the picture is clear. This is not a restaurant that happened to collect a few good reviews. This is a kitchen that has earned consistent trust from thousands of Den Haag diners who came back, brought their families, and left another five-star review. <Link href={`${base}/blog/best-indian-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Authentic Indian food in Den Haag</Link> at this level does not happen by accident.
+              {injectLinks(t.home.whyBestP1, [
+                [t.home.whyBestP1Strong, <strong key="s1">{t.home.whyBestP1Strong}</strong>],
+                ['TheFork', <a key="tf" href="https://www.thefork.nl/restaurant/chopras-indian-restaurant-r825662" rel="nofollow noopener" target="_blank" className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">TheFork</a>],
+                ['Tripadvisor', <a key="ta" href="https://www.tripadvisor.nl/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html" rel="nofollow noopener" target="_blank" className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Tripadvisor</a>],
+                ['Authentic Indian food in Den Haag', <Link key="aif" href={`${base}/blog/best-indian-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Authentic Indian food in Den Haag</Link>],
+              ])}
             </p>
             <p>
-              Every morning before service, the masalas at Chopras Indian Restaurant are ground fresh in the kitchen from whole spices sourced directly from India. Cumin. Cardamom. Coriander. Not from a pre-mixed supplier blend, not from a bag opened yesterday. The volatile aromatic oils in these spices begin evaporating within hours of grinding. That is food chemistry, not marketing language. It is precisely why the <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">butter chicken Den Haag</Link>, the <Link href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">dal makhani</Link>, and the <Link href={`${base}/mutton-rogan-josh-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">mutton rogan josh</Link> at Chopras Indian Restaurant taste alive in a way that pre-ground spice versions simply cannot replicate.
+              {injectLinks(t.home.whyBestP2, [
+                ['butter chicken Den Haag', <Link key="bc" href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">butter chicken Den Haag</Link>],
+                ['dal makhani', <Link key="dm" href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">dal makhani</Link>],
+                ['mutton rogan josh', <Link key="mrj" href={`${base}/mutton-rogan-josh-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">mutton rogan josh</Link>],
+              ])}
             </p>
             <p>
-              The tandoor clay oven at Leyweg 986 reaches 400 degrees Celsius. That temperature is not adjustable, and that is precisely why it matters. <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Tandoori dishes</Link> require that specific heat to develop their char and smokiness. The blistered edges on <Link href={`${base}/naan-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">fresh naan Den Haag</Link>, the crust on chicken tikka, the depth in <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani Den Haag</Link>: all of it comes from the same oven, fired up hours before the first guest arrives. No conventional oven produces these results. No shortcut replaces this process.
+              {injectLinks(t.home.whyBestP3, [
+                ['Tandoori dishes', <Link key="td" href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Tandoori dishes</Link>],
+                ['fresh naan Den Haag', <Link key="fn" href={`${base}/naan-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">fresh naan Den Haag</Link>],
+                ['biryani Den Haag', <Link key="bd" href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani Den Haag</Link>],
+              ])}
             </p>
             <p>
-              Halal at Chopras Indian Restaurant is not a menu option or a separate certification framed on the wall. It is the entire kitchen. Every supplier is halal certified. Every meat dish is halal without exception. There is no cross-contamination risk because there is no non-halal meat anywhere on the premises. For <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal Indian food Den Haag</Link> guests and Muslim families across The Hague, this distinction matters enormously. A fully <Link href={`${base}/halal-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal kitchen</Link> is a different commitment entirely from a restaurant that offers halal options alongside a mixed kitchen.
+              {injectLinks(t.home.whyBestP4, [
+                ['halal Indian food Den Haag', <Link key="hif" href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal Indian food Den Haag</Link>],
+                ['halal kitchen', <Link key="hk" href={`${base}/halal-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal kitchen</Link>],
+              ])}
             </p>
             <p>
-              Beyond the dining room, Chopras Indian Restaurant runs a complete operation. <Link href={`${base}/indian-food-delivery-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian food delivery Den Haag</Link> and <Link href={`${base}/indian-takeaway-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian takeaway</Link> bring the same kitchen to your door. The private <Link href={`${base}/feestzaal-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">event hall at Leyweg 986</Link> accommodates 25 to 80 guests for <Link href={`${base}/indian-wedding-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian wedding catering Den Haag</Link>, <Link href={`${base}/corporate-events-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">corporate events</Link>, <Link href={`${base}/indian-birthday-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">birthday catering</Link>, and <Link href={`${base}/diwali-dinner-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Diwali dinners</Link>. The food at every event is the same kitchen, the same spices, the same standard as the restaurant. No event-only shortcuts. No box-company substitutes.
+              {injectLinks(t.home.whyBestP5, [
+                ['Indian food delivery Den Haag', <Link key="ifd" href={`${base}/indian-food-delivery-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian food delivery Den Haag</Link>],
+                ['Indian takeaway', <Link key="it" href={`${base}/indian-takeaway-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian takeaway</Link>],
+                ['event hall at Leyweg 986', <Link key="eh" href={`${base}/feestzaal-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">event hall at Leyweg 986</Link>],
+                ['Indian wedding catering Den Haag', <Link key="iwc" href={`${base}/indian-wedding-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian wedding catering Den Haag</Link>],
+                ['corporate events', <Link key="ce" href={`${base}/corporate-events-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">corporate events</Link>],
+                ['birthday catering', <Link key="bca" href={`${base}/indian-birthday-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">birthday catering</Link>],
+                ['Diwali dinners', <Link key="dd" href={`${base}/diwali-dinner-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Diwali dinners</Link>],
+              ])}
             </p>
             <p>
-              Leyweg in Den Haag is home to the largest Hindustani community in the Netherlands. These are guests who have been eating Indian food their entire lives and they know the difference between real masalas and a pre-packaged blend. Earning their loyalty, alongside Dutch families, corporate guests, and visitors who travel from <Link href={`${base}/indian-restaurant-delft`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Delft</Link>, <Link href={`${base}/indian-restaurant-rijswijk`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Rijswijk</Link>, and <Link href={`${base}/indian-restaurant-zoetermeer`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Zoetermeer</Link> specifically to eat here, is not something that comes from a marketing budget. <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Reserve a table at Leyweg 986</Link> or <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">explore the full 143-dish menu</Link> to find out why Den Haag keeps returning to Chopras Indian Restaurant.
+              {injectLinks(t.home.whyBestP6, [
+                ['Delft', <Link key="del" href={`${base}/indian-restaurant-delft`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Delft</Link>],
+                ['Rijswijk', <Link key="rij" href={`${base}/indian-restaurant-rijswijk`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Rijswijk</Link>],
+                ['Zoetermeer', <Link key="zoo" href={`${base}/indian-restaurant-zoetermeer`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Zoetermeer</Link>],
+                ['Reserve a table at Leyweg 986', <Link key="res" href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Reserve a table at Leyweg 986</Link>],
+                ['explore the full 143-dish menu', <Link key="men" href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">explore the full 143-dish menu</Link>],
+              ])}
             </p>
           </div>
         </div>
