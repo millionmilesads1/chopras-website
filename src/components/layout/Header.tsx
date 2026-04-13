@@ -60,7 +60,7 @@ export default function Header({ locale }: { locale: Locale }) {
   const { getTotalItems, openCart } = useCartStore()
   const totalItems = getTotalItems()
 
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
 
   const NAV_LINKS = [
     { label: tr.common.nav.home, href: base },

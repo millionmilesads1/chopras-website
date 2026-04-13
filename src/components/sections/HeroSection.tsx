@@ -7,7 +7,7 @@ import { RESTAURANT } from '@/lib/constants'
 
 export default function HeroSection({ locale = 'en' }: { locale?: Locale }) {
   const tr = getTranslations(locale)
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
 
   return (
     <>

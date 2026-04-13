@@ -7,7 +7,7 @@ import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
   const tr = getTranslations(locale)
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
   const { ref: imgRef, inView: imgInView } = useInView()
   const { ref: textRef, inView: textInView } = useInView()
 

@@ -15,7 +15,7 @@ export default function CartDrawer({ locale }: { locale: Locale }) {
   const { items, isOpen, closeCart, removeItem, updateQuantity, getTotalPrice } = useCartStore()
 
   const totalPrice = getTotalPrice()
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
 
   function handleCheckout() {
     closeCart()

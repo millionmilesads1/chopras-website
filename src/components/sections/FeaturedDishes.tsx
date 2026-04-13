@@ -43,7 +43,7 @@ const CATEGORIES: Category[] = ['All', 'Starters', 'Tandoori', 'Curries', 'Birya
 
 export default function FeaturedDishes({ locale = 'en' }: { locale?: Locale }) {
   const [activeCategory, setActiveCategory] = useState<Category>('All')
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
   const { ref: headRef, inView: headInView } = useInView()
   const { ref: scrollRef, inView: scrollInView } = useInView()
 

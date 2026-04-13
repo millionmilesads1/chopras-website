@@ -6,7 +6,7 @@ import { RESTAURANT } from '@/lib/constants'
 import type { Locale } from '@/lib/useTranslations'
 
 export default function Footer({ locale }: { locale: Locale }) {
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
 
   const DISHES_LINKS = [
     { label: 'Biryani Den Haag', href: `${base}/biryani-den-haag` },

@@ -12,7 +12,7 @@ const FRAMES = Array.from({ length: FRAME_COUNT }, (_, i) =>
 
 export default function MenuHeroSection({ locale = 'en' }: { locale?: Locale }) {
   const tr = getTranslations(locale)
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
 
   const containerRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)

@@ -49,7 +49,7 @@ function IconShield({ className }: { className?: string }) {
 
 export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
   const t = getTranslations(locale)
-  const base = `/${locale}`
+  const base = locale === 'nl' ? '/nl' : ''
 
   const { ref: headRef, inView: headInView } = useInView()
   const { ref: gridRef, inView: gridInView } = useInView()
