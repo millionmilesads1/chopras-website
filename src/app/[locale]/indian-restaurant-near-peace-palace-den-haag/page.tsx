@@ -99,7 +99,7 @@ export default function IndianRestaurantPeacePalacePage({ params }: Props) {
                 <p>Het centrum van Den Haag is dichtbij. Scheveningen strand is twintig minuten rijden. Je kunt wandelen, winkelieren, en als je honger hebt, kom je naar Chopras.</p>
                 
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Werk in de Buurt</h3>
-                <p>Veel kantoren zijn op Leyweg. Als je in de buurt werkt, ben je dicht bij Chopras voor lunch of diner na het werk.</p>
+                <p>Veel kantoren zijn op Leyweg. Als je in de buurt werkt, ben je dicht bij Chopras voor diner na het werk.</p>
               </>
             ) : (
               <>
@@ -110,7 +110,7 @@ export default function IndianRestaurantPeacePalacePage({ params }: Props) {
                 <p>The city centre of Den Haag is nearby. Scheveningen beach is twenty minutes drive. You can walk, shop, and when you are hungry, you come to Chopras.</p>
                 
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Work Nearby</h3>
-                <p>Many offices are on Leyweg. If you work nearby, you are close to Chopras for lunch or dinner after work.</p>
+                <p>Many offices are on Leyweg. If you work nearby, you are close to Chopras for dinner after work.</p>
               </>
             )}
           </div>
@@ -130,11 +130,11 @@ export default function IndianRestaurantPeacePalacePage({ params }: Props) {
               },
               {
                 q: isNl ? 'Moet ik reserveren?' : 'Do I need to book?',
-                a: isNl ? 'Voor groepen of avondeten, raden we aan te reserveren. Voor lunch kan je meestal zonder reservering binnenlopen.' : 'For groups or dinner, we recommend booking. For lunch you can usually just walk in.'
+                a: isNl ? 'Voor groepen raden we aan te reserveren. Voor diner op rustige avonden kunt u ook binnenlopen.' : 'For groups we recommend booking. For dinner on quieter evenings you can also walk in.'
               },
               {
                 q: isNl ? 'Wat zijn de openingstijden?' : 'What are the opening hours?',
-                a: isNl ? 'Dinsdag tot zondag van 11:30 tot 22:00. Maandag gesloten. We zijn open voor lunch en diner.' : 'Tuesday to Sunday from 11:30 am to 10:00 pm. Closed Mondays. We are open for lunch and dinner.'
+                a: isNl ? 'Dinsdag tot zondag, 16:30 tot 22:30. Maandag gesloten.' : 'Tuesday to Sunday, 16:30 to 22:30. Closed Monday.'
               },
             ].map((item, idx) => (
               <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">

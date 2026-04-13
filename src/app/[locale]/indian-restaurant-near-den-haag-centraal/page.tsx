@@ -136,7 +136,7 @@ export default function IndianRestaurantCentraalPage({ params }: Props) {
               },
               {
                 q: isNl ? 'Kun je zonder reservering binnenlopen?' : 'Can you just walk in?',
-                a: isNl ? 'Voor lunch en diner buiten de piek uren ja. Voor avondeten in het weekeinde, raden we reservering aan.' : 'For lunch and dinner outside peak hours yes. For evening meals on weekends, we recommend booking.'
+                a: isNl ? 'Buiten de piekuren kunt u meestal gewoon binnenlopen. Voor avondeten in het weekend raden we reservering aan.' : 'Outside peak hours, walk-ins are usually fine. For evening meals on weekends, we recommend booking.'
               },
               {
                 q: isNl ? 'Kun je je bagage hier laten?' : 'Can you leave your luggage here?',

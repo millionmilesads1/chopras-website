@@ -67,7 +67,7 @@ export default function CorporateEventsPage({ params }: Props) {
     { emoji: '🏆', title: 'Conferentiediners en Uitreikingen', desc: 'Volledige bediening op bord voor 40 tot 120 gasten. Professioneel, op tijd en uitgevoerd zonder keukendrama aan uw kant.' },
     { emoji: '🌍', title: 'Overheids- en Diplomatieke Recepties', desc: 'Chopras heeft de halal-certificering en de multiculturele menuomvang die vereist is voor internationale diplomatieke catering waar dieetvereisten strikt en gevarieerd kunnen zijn.' },
     { emoji: '💬', title: 'Netwerkevenementen en Meetups', desc: 'Kleinere, staande evenementen waar gasten bewegen en socialiseren. Indiase canapés en street food stations werken perfect voor dit formaat.' },
-    { emoji: '📋', title: 'Trainingen en Workshopcatering', desc: 'Werkende lunches op tijd geleverd, in de juiste hoeveelheden. Teams die goed eten in de middag, concentreren zich beter in de middag.' },
+    { emoji: '📋', title: 'Trainingen en Workshopcatering', desc: 'Avondcatering voor trainingen en meerdaagse workshops. Teams die een volledige dag afsluiten met een goed Indiaas diner, zijn energieker voor de avondsessie of de volgende ochtend.' },
     { emoji: '✈️', title: 'Bezoeken van Internationale Delegaties', desc: 'Bij het ontvangen van delegaties uit India, de Golfregio, Zuid-Azië of Afrika, draagt authentieke Indiase catering een culturele herkenning die generiek Nederlandse eten niet heeft.' },
   ] : [
     { emoji: '🍽️', title: 'Team Dinners and Company Celebrations', desc: 'Year-end dinners, quarterly celebrations, team offsites. An Indian spread is generous, sociable and suits every dietary profile in the room without special requests.' },
@@ -76,7 +76,7 @@ export default function CorporateEventsPage({ params }: Props) {
     { emoji: '🏆', title: 'Conference Dinners and Awards Ceremonies', desc: 'Full plated service for 40 to 120 guests. Professional, timed, and executed without kitchen drama on your side.' },
     { emoji: '🌍', title: 'Government and Diplomatic Receptions', desc: 'Chopras has the halal certification and the multicultural menu breadth required for international diplomatic catering where dietary requirements may be strict and varied.' },
     { emoji: '💬', title: 'Networking Events and Meetups', desc: 'Smaller, standing-format events where guests move and mingle. Indian canapes and street food stations work perfectly for this format.' },
-    { emoji: '📋', title: 'Training Days and Workshop Catering', desc: 'Working lunches delivered on time, in the right quantities. Teams that eat well in the afternoon focus better in the afternoon.' },
+    { emoji: '📋', title: 'Training Days and Workshop Catering', desc: 'Evening catering for training days and full-day workshops. Teams that close out a long day with a proper Indian dinner arrive at the evening session or the next morning in better shape.' },
     { emoji: '✈️', title: 'International Delegation Visits', desc: 'When hosting delegations from India, the Gulf States, South Asia or Africa, authentic Indian catering carries a cultural recognition that generic Dutch food does not.' },
   ]
 
