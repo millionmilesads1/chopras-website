@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Indiaas Restaurant bij Zoetermeer | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Looking for an Indian restaurant near Zoetermeer? Chopras in Den Haag is 20 minutes away. Authentic Indian food, halal certified, open Tue–Sun. Reserve your table.',
+    en: 'Indian restaurant near Zoetermeer. Chopras Indian Restaurant is 20 minutes via the A12. Authentic halal food at Leyweg 986, Den Haag. Open Tuesday to Sunday.',
     nl: 'Op zoek naar een Indiaas restaurant bij Zoetermeer? Chopras in Den Haag is 20 minuten rijden. Authentiek Indiaas eten, halal gecertificeerd, open di–zo.',
   }
   return {

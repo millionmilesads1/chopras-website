@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Beste Indiaas Restaurant in Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Best Indian restaurant in Den Haag. Chopras serves authentic dishes made fresh daily. Award-winning taste.',
-    nl: 'Beste Indiaas restaurant in Den Haag. Chopras serveert authentieke gerechtjes vers bereid. Prijswinnende smaak.',
+    en: 'Beste Indiaas restaurant Den Haag bij Chopras Indian Restaurant. Authentieke Noord-Indiaase keuken, volledig halal. Beoordeeld 4.9 sterren op Google. Bezoek ons.',
+    nl: 'Beste Indiaas restaurant Den Haag bij Chopras Indian Restaurant. Authentieke Noord-Indiaase keuken, volledig halal. Beoordeeld 4.9 sterren op Google. Bezoek ons.',
   }
   return {
     title: titles[locale],

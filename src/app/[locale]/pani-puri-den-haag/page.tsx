@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Pani Puri Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Pani puri (golgappa) at Chopras Den Haag. Crispy hollow puri, spiced potato, tangy water. Authentic Indian street food. Order now.',
+    en: 'Authentic pani puri Den Haag at Chopras Indian Restaurant. Crispy shells with spiced potato and tamarind water. Real Indian street food at Leyweg 986 Den Haag.',
     nl: 'Pani puri (golgappa) bij Chopras Den Haag. Krokante holle puri, gekruid aardappel, zure water. Authentiek Indiaas straatvoedsel.',
   }
   return {

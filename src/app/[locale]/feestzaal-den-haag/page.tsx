@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Feestzaal Huren Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Feestzaal huren in Den Haag met authentiek Indiaas diner bij Chopras Indian Restaurant. Perfect voor verjaardagen, bruiloften en bedrijfsfeesten. Direct boeken.',
-    nl: 'Feestzaal huren Den Haag met Indiaas catering bij Chopras Indian Restaurant. Ideaal voor verjaardagen, bruiloften, bedrijfsfeesten en Diwali. Vrijblijvend offerte.',
+    en: 'Feestzaal huren Den Haag bij Chopras Indian Restaurant. Verjaardagen, bruiloften en bedrijfsfeesten. Authentiek Indiaas catering inbegrepen. Offerte aanvragen.',
+    nl: 'Feestzaal huren Den Haag bij Chopras Indian Restaurant. Verjaardagen, bruiloften en bedrijfsfeesten. Authentiek Indiaas catering inbegrepen. Offerte aanvragen.',
   }
   return {
     title: titles[locale],

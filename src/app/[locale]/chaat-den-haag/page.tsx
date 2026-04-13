@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Chaat Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Chaat at Chopras Den Haag. Papdi chaat, aloo tikki, pani puri. Authentic Mumbai street food. Order online or visit Leyweg 986.',
+    en: 'Authentic chaat Den Haag at Chopras Indian Restaurant. Papdi chaat, dahi puri and aloo tikki, fresh daily at Leyweg 986. Best Indian street food in The Hague.',
     nl: 'Chaat bij Chopras Den Haag. Papdi chaat, aloo tikki, pani puri. Authentiek Mumbai straatvoedsel. Bestel online of bezoek Leyweg 986.',
   }
   return {

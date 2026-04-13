@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Zaal Huren Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Rent a private dining space in Den Haag at Chopras. Indian restaurant venue hire for celebrations and events.',
-    nl: 'Zaal huren in Den Haag bij Chopras. Indiaas restaurant voor private feesten en evenementen.',
+    en: 'Zaal huren Den Haag bij Chopras Indian Restaurant. Feesten en vergaderingen met Indiaas catering inbegrepen. Flexibel en betaalbaar. Offerte aanvragen vandaag.',
+    nl: 'Zaal huren Den Haag bij Chopras Indian Restaurant. Feesten en vergaderingen met Indiaas catering inbegrepen. Flexibel en betaalbaar. Offerte aanvragen vandaag.',
   }
   return {
     title: titles[locale],

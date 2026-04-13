@@ -6,7 +6,7 @@ export const blogPosts: BlogPost[] = [
     title: 'The Best Indian Restaurant in Den Haag  -  And Why It Is Not Even Close',
     metaTitle: 'Best Indian Restaurant in Den Haag 2026 | Chopras Review',
     metaDescription:
-      'Looking for the best Indian restaurant in Den Haag? Here is why thousands of locals and expats keep coming back to Chopras on Leyweg in The Hague.',
+      'Best Indian restaurant Den Haag. Discover what makes Chopras Indian Restaurant stand out. Authentic food, halal certified and rated 4.9 stars on Google. Read more.',
     h1: 'The Best Indian Restaurant in Den Haag  -  And Why It Is Not Even Close',
     primaryKeyword: 'best Indian restaurant Den Haag',
     language: 'en',
@@ -68,7 +68,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Finding a Truly Halal Indian Restaurant in Den Haag  -  Here Is What You Need to Know',
     metaTitle: 'Halal Indian Restaurant Den Haag | Chopras  -  Certified and Authentic',
     metaDescription:
-      'Searching for a certified halal Indian restaurant in Den Haag? Chopras on Leyweg is fully halal-certified with a menu your whole family will love.',
+      'Halal Indian restaurant Den Haag. Chopras Indian Restaurant is fully halal certified. Biryani, tandoori and curries. Full halal menu available at Leyweg 986.',
     h1: 'Finding a Truly Halal Indian Restaurant in Den Haag  -  Here Is What You Need to Know',
     primaryKeyword: 'halal Indian restaurant Den Haag',
     language: 'en',
@@ -131,7 +131,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Indiaas Catering in Den Haag  -  Zo Maak Je Jouw Feest Onvergetelijk',
     metaTitle: 'Indiaas Catering Den Haag | Chopras Catering voor Elk Evenement',
     metaDescription:
-      'Op zoek naar Indiaas catering in Den Haag? Chopras Indian Restaurant verzorgt catering voor bruiloften, verjaardagen en bedrijfsfeesten. Vraag vandaag een offerte aan.',
+      'Indiaas catering Den Haag van Chopras Indian Restaurant. Voor verjaardagen, bruiloften en bedrijfsfeesten. Authentiek, halal en vers bereid. Offerte aanvragen.',
     h1: 'Indiaas Catering in Den Haag  -  Zo Maak Je Jouw Feest Onvergetelijk',
     primaryKeyword: 'Indiaas catering Den Haag',
     language: 'nl',
@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Vegetarian Indian Food in Den Haag  -  Why Plant-Based Has Never Tasted This Good',
     metaTitle: 'Vegetarian Indian Food Den Haag | Chopras Plant-Based Menu Guide',
     metaDescription:
-      'Den Haag\'s best vegetarian Indian food is at Chopras Indian Restaurant. Explore rich curries, crispy street food and vegan dishes made with authentic Indian spices.',
+      'Vegetarian Indian food Den Haag at Chopras Indian Restaurant. Dal makhani, soya chaap and paneer. A complete vegetarian and vegan Indian menu at Leyweg 986.',
     h1: 'Vegetarian Indian Food in Den Haag  -  Why Plant-Based Has Never Tasted This Good',
     primaryKeyword: 'vegetarian Indian food Den Haag',
     language: 'en',
@@ -256,7 +256,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Indian Street Food in Den Haag  -  The Real Thing, No Shortcuts',
     metaTitle: 'Indian Street Food Den Haag | Chopras  -  Chaat, Samosa and More',
     metaDescription:
-      'Discover authentic Indian street food in Den Haag at Chopras Indian Restaurant. From pani puri and samosa chaat to aloo tikki  -  bold flavours that transport you to India.',
+      'Indian street food Den Haag at Chopras Indian Restaurant. Pani puri, chaat and samosa from India. Authentic snacks at Leyweg 986. Open Tuesday to Sunday.',
     h1: 'Indian Street Food in Den Haag  -  The Real Thing, No Shortcuts',
     primaryKeyword: 'Indian street food Den Haag',
     language: 'en',

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Lamsvlees Rogan Josh in Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Authentic mutton rogan josh in Den Haag at Chopras. Tender lamb in aromatic Kashmiri spice sauce. Slow-cooked daily. Halal. Order online or visit Leyweg.',
+    en: 'Authentic mutton rogan josh Den Haag at Chopras Indian Restaurant. Halal lamb in a deep Kashmiri spice gravy. A signature North Indian dish at Leyweg 986.',
     nl: 'Authentieke lamsvlees rogan josh in Den Haag bij Chopras. Mals lam in geurige Kasjmiri saus. Dagelijks langzaam gegaard. Halal. Bestel online of bezoek Leyweg.',
   }
   return {

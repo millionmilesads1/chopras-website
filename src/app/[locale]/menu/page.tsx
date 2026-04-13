@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Indiaas Restaurant Menu Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Browse the full Chopras Indian menu in Den Haag. Fresh curries, tandoori, biryani, chaat and street food. Halal certified. Vegetarian and vegan options clearly labelled.',
+    en: 'Indian restaurant menu Den Haag at Chopras Indian Restaurant. 143 fresh dishes including curries, tandoori and biryani. Halal certified. Order online or dine in.',
     nl: 'Bekijk het volledige Chopras Indiase menu in Den Haag. Verse curry, tandoori, biryani, chaat en streetfood. Halal gecertificeerd. Vegetarische en veganistische opties duidelijk aangegeven.',
   }
   return {

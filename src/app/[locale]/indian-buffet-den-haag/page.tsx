@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Indiaas Buffet Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Book an Indian buffet in Den Haag at Chopras for your event. Fresh curries, tandoori, biryani and street food for groups of 25 to 200. Halal certified. Get a quote.',
+    en: 'Indian buffet Den Haag at Chopras Indian Restaurant. Authentic curries, tandoori and biryani for groups. Halal certified. Request a catering quote today at Leyweg 986.',
     nl: 'Boek een Indiaas buffet in Den Haag bij Chopras voor uw evenement. Verse curry, tandoori, biryani en street food voor groepen van 25 tot 200 personen. Halal gecertificeerd.',
   }
   return {

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Contact Chopras Indiaas Restaurant Den Haag | Reserveringen',
   }
   const descriptions = {
-    en: 'Get in touch with Chopras Indian Restaurant in Den Haag. Call, email or use our form for table reservations, catering enquiries and event bookings.',
+    en: 'Contact Chopras Indian Restaurant Den Haag. Leyweg 986, open Tuesday to Sunday. Reserve a table, call us or send a message. Free parking available on site.',
     nl: 'Neem contact op met Chopras Indiaas Restaurant in Den Haag. Bel, mail of gebruik ons formulier voor tafelreserveringen, cateringaanvragen en evenementboekingen.',
   }
   return {

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Biryani in Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Authentic biryani in Den Haag at Chopras. Fragrant basmati rice slow-cooked with chicken, lamb or vegetables. Halal certified. Open Tue–Sun on Leyweg.',
+    en: 'Authentic biryani Den Haag at Chopras Indian Restaurant. Chicken, lamb and veg biryani with saffron basmati rice. Halal certified. Dine in or order online today.',
     nl: 'Authentieke biryani in Den Haag bij Chopras. Geurige basmatirijst langzaam gegaard met kip, lam of groenten. Halal gecertificeerd. Open di–zo op Leyweg.',
   }
   return {

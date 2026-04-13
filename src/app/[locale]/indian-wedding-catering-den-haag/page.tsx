@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Indiase Bruiloftscatering Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Authentic Indian wedding catering in Den Haag at Chopras. Full halal wedding menus for 25 to 200 guests. Serving Den Haag, Rijswijk, Delft and surrounding areas.',
+    en: 'Indian wedding catering Den Haag by Chopras Indian Restaurant. Nikah, walima and reception catering. Fully halal certified. Request a free quote today.',
     nl: 'Authentieke Indiase bruiloftscatering in Den Haag bij Chopras. Volledige halal bruiloftsmenus voor 25 tot 200 gasten. Actief in Den Haag, Rijswijk, Delft en omgeving.',
   }
   return {

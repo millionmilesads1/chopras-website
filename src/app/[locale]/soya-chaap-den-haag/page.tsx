@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Soya Chaap Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Soya chaap at Chopras Den Haag. Vegan mock meat cooked in rich curry sauce. Plant-based Indian food, halal certified. Order online or visit Leyweg 986.',
+    en: 'Authentic soya chaap Den Haag at Chopras Indian Restaurant. Vegan plant-based mock meat grilled in the tandoor. The best vegan Indian food in The Hague.',
     nl: 'Soya chaap bij Chopras Den Haag. Plantaardig vleesvervanger in rijke curryaus. Veganistisch Indiaas eten, halal gecertificeerd. Bestel online of bezoek Leyweg 986.',
   }
   return {

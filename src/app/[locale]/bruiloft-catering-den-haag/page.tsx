@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Indiaas Bruiloft Catering in Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Authentic Indian wedding catering in Den Haag. Custom menus for your celebration. Fresh food, professional service.',
-    nl: 'Authentieke Indiaas bruiloft catering in Den Haag. Op maat gemaakte menu voor je feest. Vers eten, professionele service.',
+    en: 'Bruiloft catering Den Haag bij Chopras Indian Restaurant. Authentiek Indiaas eten voor uw trouwdag. Volledig halal. Bel ons voor een vrijblijvende offerte vandaag.',
+    nl: 'Bruiloft catering Den Haag bij Chopras Indian Restaurant. Authentiek Indiaas eten voor uw trouwdag. Volledig halal. Bel ons voor een vrijblijvende offerte vandaag.',
   }
   return {
     title: titles[locale],
