@@ -185,24 +185,16 @@ export function getFounderSchema(): Record<string, unknown> {
 
 export function getFaqPageSchema(
   faqs: Array<{ question: string; answer: string }>,
-  datePublished = '2024-01-01',
-  dateModified = '2026-04-07',
 ): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    datePublished,
-    dateModified,
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
-      datePublished,
-      dateModified,
       acceptedAnswer: {
         '@type': 'Answer',
         text: faq.answer,
-        datePublished,
-        dateModified,
       },
     })),
   }
