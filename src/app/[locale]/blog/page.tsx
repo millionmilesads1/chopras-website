@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Indiaas Eten Blog Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Discover Indian food stories, restaurant guides, catering tips and street food guides from Chopras Indian Restaurant in Den Haag.',
+    en: 'Indian food blog by Chopras Indian Restaurant Den Haag. Recipes, guides and tips on halal Indian food, catering and street food. Read our latest articles at Leyweg 986.',
     nl: 'Ontdek Indiase voedselsverhalen, restaurantgidsen, cateringstips en streetfoodgidsen van Chopras Indiaas Restaurant in Den Haag.',
   }
   return {
