@@ -54,6 +54,50 @@ Package manager: pnpm. Node: 20.x.
 - Never hardcode restaurant data — always import from constants.ts
 - Never commit .env.local
 
+## URL STRUCTURE — CRITICAL
+- English pages live at ROOT: chopras.nl/butter-chicken-den-haag (NO /en/ prefix)
+- Dutch pages live at /nl/: chopras.nl/nl/butter-chicken-den-haag
+- The /en/ prefix does NOT exist and must never be used in links
+- Internal link base pattern:
+    const base = locale === 'nl' ? '/nl' : ''
+  NEVER use: const base = `/${locale}` — this generates broken /en/ links
+- getLocalizedUrl() already handles this correctly for canonical/hreflang
+
+## TRANSLATION ARCHITECTURE
+- JSON keys (en.json / nl.json) are used for plain text headings and subtext
+- Copy sections that contain embedded <Link> JSX components must use the
+  isNl conditional pattern directly in TSX — JSON cannot hold JSX
+- Pattern for bilingual sections with links:
+    {isNl ? (
+      <p>Dutch text with <Link href={`${base}/slug`}>Dutch anchor</Link></p>
+    ) : (
+      <p>English text with <Link href={`${base}/slug`}>English anchor</Link></p>
+    )}
+- Blog content and blog meta descriptions live in src/lib/blog-data.ts only
+  — never in the blog page.tsx file
+
+## SCHEMA RULES
+- datePublished and dateModified: ONLY on Article / BlogPosting schema types
+- NEVER add date fields to: FAQPage, Service, LocalBusiness, Organization,
+  Menu, or any non-blog schema — static dates confuse Google and generate
+  unwanted "X days ago" timestamps in search results
+- getFaqPageSchema() must never include date parameters
+
+## RESTAURANT FACTS — NEVER GET THESE WRONG
+- Opening hours: Tuesday to Sunday, 16:30 to 22:30
+- Closed: Monday — every Monday, no exceptions
+- NO LUNCH SERVICE — Chopras opens at 16:30 only
+  Never write: "lunch", "open for lunch", "working lunches", "lunchtime",
+  "11:30", "12:00", "13:00", or any implication of daytime food service
+- Capacity: 25 to 80 guests (private hall) — never claim above 80
+- Review proof point: use "800+" not specific counts like "834"
+  (specific counts go stale — "800+" stays accurate)
+- Address: Leyweg 986, 2545 GW Den Haag
+- Phone: +31 6 30645930
+- Email: info@chopras.nl
+- Founded: 2023 by Arun Chopra
+- Serves: Den Haag, Rijswijk, Delft, Zoetermeer, Voorburg, Leidschendam
+
 ## META DESCRIPTION RULES — MANDATORY FOR ALL PAGES
 
 1. Primary keyword must appear within the first 60 characters
@@ -158,7 +202,7 @@ Meta: Indian birthday catering Den Haag by Chopras Indian Restaurant. Authentic 
 
 Corporate Events /corporate-events-den-haag
 Primary keyword: Corporate events Den Haag
-Meta: Corporate events Den Haag. Chopras Indian Restaurant provides Indian catering for team dinners and receptions. Halal certified. Up to 120 guests. Book now.
+Meta: Corporate events Den Haag. Chopras Indian Restaurant provides Indian catering for team dinners and receptions. Halal certified. Up to 80 guests. Book now.
 
 Diwali Dinner /diwali-dinner-den-haag
 Primary keyword: Diwali dinner Den Haag
