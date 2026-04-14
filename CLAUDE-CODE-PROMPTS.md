@@ -15,6 +15,52 @@
 
 ---
 
+## MASTER RULES — APPLY TO EVERY SINGLE PROMPT WITHOUT EXCEPTION
+
+These rules override everything else. Claude Code must follow all of them on every page.
+
+**INLINE LINKS — MANDATORY IN ALL PROSE:**
+Every paragraph of 3 or more sentences must contain at least one inline Link component.
+Links must use keyword-rich anchor text — never "click here", never "read more".
+Use: className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold"
+Target pages come from sitemap.md. The GEO block paragraph must also contain inline links.
+Minimum 8 inline links per page across all prose sections combined.
+
+**BRAND STYLING — MANDATORY ON ALL SECTIONS:**
+- H2: font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]
+- H3: font-heading text-2xl text-[#1B2B5E] mb-4
+- Body: font-body text-[#1A1A1A] text-lg leading-relaxed
+- Section padding: py-20 px-6 md:px-16
+- NEVER use font-bold alone for headings
+
+**FAQ — MANDATORY ON EVERY PAGE:**
+Every page must have a FAQ section with 4-5 bilingual Q&A pairs.
+Always use: <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
+NEVER use raw <details> elements.
+Define faqsEn and faqsNl as module-level constants before the component.
+Wire getFaqPageSchema(isNl ? faqsNl : faqsEn) to a JsonLd block — NO date parameters.
+
+**GEO BLOCK — MANDATORY ON EVERY PAGE:**
+One visible section with a question-format H2 and a 60-100 word self-contained answer.
+Must contain: restaurant name, address (Leyweg 986), primary service, verifiable fact, opening hours.
+Must be bilingual using isNl conditional.
+Must contain at least 2 inline Link components.
+
+**FACTS — NEVER GET THESE WRONG:**
+- Hours: Tuesday to Sunday, 16:30 to 22:30. Closed Monday.
+- NO LUNCH SERVICE. Never write lunch, 11:30, 12:00, or any daytime food reference.
+- Capacity: 25 to 80 guests. Never claim above 80.
+- Reviews: "800+" not specific counts like "834".
+- Delivery: Thuisbezorgd and Uber Eats (both, not just one).
+- No alcohol served or permitted. Chopras is fully halal.
+
+**BUILD CHECK — MANDATORY BEFORE EVERY COMMIT:**
+Run pnpm build (not just pnpm tsc --noEmit).
+Zero errors required. Fix all ESLint and build errors before committing.
+Then: git add, git commit, git push origin main.
+
+---
+
 ## PRIORITY ORDER
 
 **Tier 1 — Start here (highest traffic impact):**

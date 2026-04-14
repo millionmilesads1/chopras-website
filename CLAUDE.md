@@ -314,3 +314,25 @@ Meta: Indian street food Den Haag at Chopras Indian Restaurant. Pani puri, chaat
 - NEVER use raw <details> elements
 - FAQ arrays defined as module-level constants before the component function
 - Arrays use { question: string, answer: string } shape
+
+### Inline Links - mandatory in all prose copy
+- Every paragraph of 3 or more sentences must contain at least one inline Link component
+- Links must use keyword-rich anchor text - never "click here" or "read more"
+- Link class: className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold"
+- Minimum 8 inline links per page across all prose sections combined
+- GEO block paragraph must also contain at least 2 inline Link components
+- Target pages come from sitemap.md
+
+### GEO Block - mandatory on every page
+- One visible section with a question-format H2
+- Self-contained 60-100 word answer paragraph
+- Must contain: restaurant name, address (Leyweg 986), primary service, one verifiable fact, opening hours
+- Must be bilingual using isNl conditional
+- Must contain at least 2 inline Link components
+- Never use sr-only - must be visible to human visitors
+
+## BUILD CHECK - MANDATORY BEFORE EVERY COMMIT
+- ALWAYS run: pnpm build (not just pnpm tsc --noEmit)
+- pnpm tsc --noEmit misses ESLint errors and runtime issues that break Vercel
+- Zero build errors required before any commit
+- Fix all ESLint and TypeScript errors before committing and pushing
