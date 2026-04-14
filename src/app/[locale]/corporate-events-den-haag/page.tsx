@@ -28,6 +28,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: getLocalizedUrl(locale, 'corporate-events-den-haag'),
       languages: { en: getLocalizedUrl('en', 'corporate-events-den-haag'), nl: getLocalizedUrl('nl', 'corporate-events-den-haag'), 'x-default': getLocalizedUrl('en', 'corporate-events-den-haag') },
     },
+    openGraph: {
+      title: titles[locale],
+      description: descriptions[locale],
+      url: getLocalizedUrl(locale, 'corporate-events-den-haag'),
+      images: [{ url: '/og/home-og.jpg', width: 1200, height: 630, alt: 'Chopras Indian Restaurant Den Haag' }],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[locale],
+      description: descriptions[locale],
+      images: ['/og/home-og.jpg'],
+    },
   }
 }
 

@@ -55,6 +55,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: 'website',
       siteName: RESTAURANT.name,
+      images: [{ url: '/og/home-og.jpg', width: 1200, height: 630, alt: 'Chopras Indian Restaurant Den Haag' }],
     },
     twitter: { card: 'summary_large_image' },
     icons: {

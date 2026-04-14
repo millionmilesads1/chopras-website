@@ -32,6 +32,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           : getLocalizedUrl('en', 'blog'),
       },
     },
+    openGraph: {
+      title: post.metaTitle,
+      description: post.metaDescription,
+      url: getLocalizedUrl(locale, `blog/${post.slug}`),
+      images: [{ url: '/og/home-og.jpg', width: 1200, height: 630, alt: post.title }],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.metaTitle,
+      description: post.metaDescription,
+      images: ['/og/home-og.jpg'],
+    },
   }
 }
 
