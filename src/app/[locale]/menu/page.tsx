@@ -4,6 +4,7 @@ import { Info } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
 import MenuPageClient from '@/components/sections/MenuPageClient'
 import MenuHeroSection from '@/components/sections/MenuHeroSection'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 import { menuCategories, menuItems } from '@/lib/menu-data'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { getLocalizedUrl } from '@/lib/utils'
@@ -331,19 +332,12 @@ export default function LocaleMenuPage({ params }: Props) {
       {/* FAQ SECTION */}
       <section className="bg-[#FFFAF5] py-16 md:py-24 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-12 text-center">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4] text-center">
             {isNl
               ? 'Veelgestelde vragen over het Chopras-menu'
               : 'Frequently Asked Questions About the Chopras Menu'}
           </h2>
-          <div className="space-y-8">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-gray-200 pb-8 last:border-b-0 last:pb-0">
-                <h3 className="font-heading text-xl text-[#1B2B5E] mb-3">{faq.question}</h3>
-                <p className="text-[#3A3A4A] text-base leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion faqs={faqs} locale={locale} />
         </div>
       </section>
 
