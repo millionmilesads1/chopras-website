@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
@@ -149,35 +150,12 @@ export default function BruiloftCateringPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Bruiloft FAQ' : 'Wedding FAQ'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? 'Hoe veel tijd van tevoren moet ik boeken?' : 'How much time in advance should I book?',
-                a: isNl ? 'Voor een bruiloft van tachtig of meer gasten, raden we ten minste drie maanden vooraf aan. Dit geeft ons tijd om met je samen te werken aan het menu en de details.' : 'For a wedding of eighty or more guests, we recommend at least three months in advance. This gives us time to work with you on the menu and details.'
-              },
-              {
-                q: isNl ? 'Kun je vegetarische en vlees gerechten beide leveren?' : 'Can you provide both vegetarian and meat dishes?',
-                a: isNl ? 'Ja, absoluut. De meeste bruiloften hebben beide. We bereiden ze afzonderlijk om contamatie te voorkomen, en alles wordt geserveerd met gelijke liefde.' : 'Yes, absolutely. Most weddings have both. We prepare them separately to prevent contamination, and everything is served with equal care.'
-              },
-              {
-                q: isNl ? 'Wat is inbegrepen in de prijs?' : 'What is included in the price?',
-                a: isNl ? 'Menu design, voorbereiding, bezorging, opzet, serveerders, borden, bestek, servetten, alles. De enige kosten die je hebt zijn voor eten en service. Niets verborgen.' : 'Menu design, preparation, delivery, setup, servers, plates, utensils, napkins, everything. The only costs you have are for food and service. Nothing hidden.'
-              },
-            ].map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.q}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

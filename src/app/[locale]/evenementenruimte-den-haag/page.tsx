@@ -4,6 +4,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -149,35 +150,12 @@ export default function EvenementenruimtePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Event FAQ' : 'Event FAQ'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? 'Kunnen jullie dieetbeperkingen accommoderen?' : 'Can you accommodate dietary restrictions?',
-                a: isNl ? 'Ja. Vegetarisch, vegan, gluten-vrij, allergieën - we accommoderen alles. Zeg ons wat je nodig hebt.' : 'Yes. Vegetarian, vegan, gluten - free, allergies - we accommodate everything. Tell us what you need.'
-              },
-              {
-                q: isNl ? 'Wat is de capaciteit van de ruimte?' : 'What is the capacity of the space?',
-                a: isNl ? '25 tot 80 gasten comfortabel. Afhankelijk van setup en arrangement, kan meer gebeuren.' : '25 to 80 guests comfortably. Depending on setup and arrangement, more can happen.'
-              },
-              {
-                q: isNl ? 'Kunnen we audio-visuele apparatuur gebruiken?' : 'Can we use audio-visual equipment?',
-                a: isNl ? 'Ja. Projectoren, schermen, speakersystemen - alles kan worden ingesteld. Zeg ons wat je nodig hebt.' : 'Yes. Projectors, screens, speaker systems - everything can be set up. Tell us what you need.'
-              },
-            ].map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.q}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

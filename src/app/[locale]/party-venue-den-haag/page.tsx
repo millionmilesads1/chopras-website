@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
@@ -44,6 +45,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   }
 }
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  { question: 'Can I hire an event space at Chopras Indian Restaurant in Den Haag?', answer: 'Yes. Chopras Indian Restaurant has a private event hall available for hire in Den Haag. It is suitable for birthdays, corporate events, weddings, anniversaries, and all celebrations.' },
+  { question: 'How many guests can the Chopras Indian Restaurant event hall accommodate?', answer: 'The private event hall at Chopras Indian Restaurant Den Haag can accommodate groups of various sizes. Contact us directly to discuss capacity for your specific event.' },
+  { question: 'What occasions can I host at Chopras Indian Restaurant Den Haag?', answer: 'You can host birthdays, anniversaries, weddings, bruiloft, corporate dinners, Diwali parties, team building events, product launches, and private gatherings at Chopras Indian Restaurant Den Haag.' },
+]
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  { question: 'Kan ik een evenementenruimte huren bij Chopras Indian Restaurant in Den Haag?', answer: 'Ja. Chopras Indian Restaurant heeft een privé-evenementenhal beschikbaar voor huur in Den Haag. Deze is geschikt voor verjaardagen, zakelijke evenementen, bruiloften, jubileums en alle vieringen.' },
+  { question: 'Hoeveel gasten kan de evenementenhal van Chopras Indian Restaurant herbergen?', answer: 'De privé-evenementenhal van Chopras Indian Restaurant Den Haag kan groepen van verschillende grootte herbergen. Neem rechtstreeks contact met ons op om capaciteit voor uw specifieke evenement te bespreken.' },
+  { question: 'Welke gelegenheden kan ik organiseren bij Chopras Indian Restaurant Den Haag?', answer: 'U kunt verjaardagen, jubileums, bruiloften, bruiloft, zakelijke diners, Diwali-feesten, teambuilding-evenementen, productlanceringen en privébijeenkomsten organiseren bij Chopras Indian Restaurant Den Haag.' },
+]
 
 export default function PartyVenuePage({ params }: Props) {
   const { locale } = params
@@ -112,16 +125,6 @@ export default function PartyVenuePage({ params }: Props) {
     { title: 'Product Launches and Networking', desc: 'Make your launch or networking event memorable with a street food station or a cocktail-style Indian canape spread.' },
   ]
 
-  const faqItems = isNl ? [
-    { q: 'Kan ik een evenementenruimte huren bij Chopras Indian Restaurant in Den Haag?', a: 'Ja. Chopras Indian Restaurant heeft een privé-evenementenhal beschikbaar voor huur in Den Haag. Deze is geschikt voor verjaardagen, zakelijke evenementen, bruiloften, jubileums en alle vieringen.' },
-    { q: 'Hoeveel gasten kan de evenementenhal van Chopras Indian Restaurant herbergen?', a: 'De privé-evenementenhal van Chopras Indian Restaurant Den Haag kan groepen van verschillende grootte herbergen. Neem rechtstreeks contact met ons op om capaciteit voor uw specifieke evenement te bespreken.' },
-    { q: 'Welke gelegenheden kan ik organiseren bij Chopras Indian Restaurant Den Haag?', a: 'U kunt verjaardagen, jubileums, bruiloften, bruiloft, zakelijke diners, Diwali-feesten, teambuilding-evenementen, productlanceringen en privébijeenkomsten organiseren bij Chopras Indian Restaurant Den Haag.' },
-  ] : [
-    { q: 'Can I hire an event space at Chopras Indian Restaurant in Den Haag?', a: 'Yes. Chopras Indian Restaurant has a private event hall available for hire in Den Haag. It is suitable for birthdays, corporate events, weddings, anniversaries, and all celebrations.' },
-    { q: 'How many guests can the Chopras Indian Restaurant event hall accommodate?', a: 'The private event hall at Chopras Indian Restaurant Den Haag can accommodate groups of various sizes. Contact us directly to discuss capacity for your specific event.' },
-    { q: 'What occasions can I host at Chopras Indian Restaurant Den Haag?', a: 'You can host birthdays, anniversaries, weddings, bruiloft, corporate dinners, Diwali parties, team building events, product launches, and private gatherings at Chopras Indian Restaurant Den Haag.' },
-  ]
-
   return (
     <>
       <JsonLd data={eventVenueSchema as Record<string, unknown>} />
@@ -129,7 +132,7 @@ export default function PartyVenuePage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Party Venue Den Haag' : 'Party Venue Den Haag', item: getLocalizedUrl(locale, 'party-venue-den-haag') },
       ])} />
-      <JsonLd data={getFaqPageSchema(faqItems.map(({ q, a }) => ({ question: q, answer: a })))} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -195,7 +198,7 @@ export default function PartyVenuePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10 text-center">
             {isNl ? 'Soorten Evenementen die Wij Organiseren' : 'Types of Events We Host'}
@@ -211,19 +214,12 @@ export default function PartyVenuePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10 text-center">
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
           </h2>
-          <div className="space-y-4">
-            {faqItems.map(({ q, a }) => (
-              <details key={q} className="border-l-4 border-[#D4AF37] bg-[#1B2B5E]/5 rounded-r-xl">
-                <summary className="px-6 py-4 cursor-pointer text-[#1B2B5E] font-bold text-lg list-none">{q}</summary>
-                <p className="px-6 pb-5 pt-2 text-gray-700 leading-relaxed">{a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

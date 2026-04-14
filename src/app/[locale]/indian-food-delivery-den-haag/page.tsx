@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -44,6 +45,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsNl: Array<{ question: string; answer: string }> = [
+  {
+    question: 'Hoe lang duurt de bezorging?',
+    answer: 'Afhankelijk van hoe druk het is en hoe ver je weg bent. Standaard 30 tot 45 minuten. We geven je een geschatte tijd als je bestelt. We gaan ervan uit dat het eten heet aankomt, dus we jagen niet - we rijden snel maar voorzichtig.',
+  },
+  {
+    question: 'Kunnen jullie voor mijn flat of appartement bezorgen?',
+    answer: 'Ja, absoluut. We bezorgen overal in Den Haag - appartementen, huizen, kantoren. Je geeft ons je adres en we brengen het naar je deur.',
+  },
+  {
+    question: 'Wat als het eten niet aankomt zoals ik het wil?',
+    answer: 'Bel ons meteen. We doen het opnieuw. We willen dat je blij bent met je eten. Dit is niet alleen zakendoen - dit is reputatie.',
+  },
+]
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  {
+    question: 'How long does delivery take?',
+    answer: 'It depends on how busy we are and how far away you are. Standard 30 to 45 minutes. We give you an estimated time when you order. We assume the food arrives hot, so we do not rush - we drive fast but carefully.',
+  },
+  {
+    question: 'Can you deliver to my flat or apartment?',
+    answer: 'Yes, absolutely. We deliver everywhere in Den Haag - apartments, houses, offices. You give us your address and we bring it to your door.',
+  },
+  {
+    question: 'What if the food does not arrive as I want it?',
+    answer: 'Call us right away. We will do it again. We want you to be happy with your food. This is not just business - this is reputation.',
+  },
+]
+
 export default function IndianFoodDeliveryPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -57,6 +88,7 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Indiaas Eten Bezorgen' : 'Indian Food Delivery', item: getLocalizedUrl(locale, 'indian-food-delivery-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,10 +139,10 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
               <>
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Currys</h3>
                 <p>Kip tikka masala. Dal makhani. Mutton rogan josh. Soya chaap. Aloo gobi. Paneer dishes. Al onze currys worden van scratch gemaakt met verse ginger-garlic paste, hele kruiden, en geen pakjes of bakjes. Ze zijn warm, vol smaak, en ze wachten niet op jou.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Biryani</h3>
                 <p>Kip biryani. Lamsvlees biryani. Groente biryani. Dit is gefijnde basmati rijst, langzaam gekookt met gemarineerd vlees en geurige kruiden. Als je nog nooit echte biryani hebt gegeten, of je hebt het alleen uit een restaurant gekend waar het voelt als natte rijst met vlees, je bent niet klaar voor wat wij doen.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Breads</h3>
                 <p>Naan. Roti. Paratha. Alles uit onze tandoor. Niets uit een pan met boter. Niet voorgebakken. Ze worden op je bestelling gemaakt en bezorgd terwijl ze nog warm zijn. Dit maakt het verschil.</p>
               </>
@@ -118,10 +150,10 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
               <>
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Curries</h3>
                 <p>Chicken tikka masala. Dal makhani. Mutton rogan josh. Soya chaap. Aloo gobi. Paneer dishes. All our curries are made from scratch with fresh ginger - garlic paste, whole spices, and no packets or jars. They are warm, full of flavour, and they do not wait for you.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Biryani</h3>
                 <p>Chicken biryani. Lamb biryani. Vegetable biryani. This is refined basmati rice, slowly cooked with marinated meat and fragrant spices. If you have never eaten real biryani, or you have only known it from a restaurant where it feels like wet rice with meat, you are not ready for what we do.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Breads</h3>
                 <p>Naan. Roti. Paratha. All from our tandoor. Nothing from a pan with butter. Not pre-baked. They are made on your order and delivered while they are still warm. This makes the difference.</p>
               </>
@@ -130,39 +162,16 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen over Bezorging' : 'Delivery Questions'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? 'Hoe lang duurt de bezorging?' : 'How long does delivery take?',
-                a: isNl ? 'Afhankelijk van hoe druk het is en hoe ver je weg bent. Standaard 30 tot 45 minuten. We geven je een geschatte tijd als je bestelt. We gaan ervan uit dat het eten heet aankomt, dus we jagen niet - we rijden snel maar voorzichtig.' : 'It depends on how busy we are and how far away you are. Standard 30 to 45 minutes. We give you an estimated time when you order. We assume the food arrives hot, so we do not rush - we drive fast but carefully.'
-              },
-              {
-                q: isNl ? 'Kunnen jullie voor mijn flat of appartement bezorgen?' : 'Can you deliver to my flat or apartment?',
-                a: isNl ? 'Ja, absoluut. We bezorgen overal in Den Haag - appartementen, huizen, kantoren. Je geeft ons je adres en we brengen het naar je deur.' : 'Yes, absolutely. We deliver everywhere in Den Haag - apartments, houses, offices. You give us your address and we bring it to your door.'
-              },
-              {
-                q: isNl ? 'Wat als het eten niet aankomt zoals ik het wil?' : 'What if the food does not arrive as I want it?',
-                a: isNl ? 'Bel ons meteen. We doen het opnieuw. We willen dat je blij bent met je eten. Dit is niet alleen zakendoen - dit is reputatie.' : 'Call us right away. We will do it again. We want you to be happy with your food. This is not just business - this is reputation.'
-              },
-            ].map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.q}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-[#FFFAF5] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Begin nu met Bestellen' : 'Order Now'}

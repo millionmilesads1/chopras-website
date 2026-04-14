@@ -4,6 +4,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -149,35 +150,12 @@ export default function ZaalHurenPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Zaal Huren FAQ' : 'Venue Hire FAQ'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? 'Hoeveel mensen kunnen in de zaal?' : 'How many people can fit in the venue?',
-                a: isNl ? '25 tot 80 gasten comfortabel. Als je meer nodig hebt, kunnen we arrangementen maken.' : '25 to 80 guests comfortably. If you need more, we can make arrangements.'
-              },
-              {
-                q: isNl ? 'Kunnen mijn gasten hun eigen drank meebrengen?' : 'Can my guests bring their own drinks?',
-                a: isNl ? 'Chopras Indian Restaurant is een volledig halal locatie. Wij serveren een selectie van frisdranken, sappen en water. Er wordt geen alcohol geserveerd of toegestaan op het terrein.' : 'Chopras Indian Restaurant is a fully halal venue. We serve a selection of soft drinks, juices, and water. No alcohol is served or permitted on the premises.'
-              },
-              {
-                q: isNl ? 'Wat als ik decoraties wil toevoegen?' : 'What if I want to add decorations?',
-                a: isNl ? 'Dat is prima. Je kunt je eigen decoraties toevoegen. We helpen graag met opzet. Je feest, jouw stijl.' : 'That is fine. You can add your own decorations. We are happy to help with setup. Your celebration, your style.'
-              },
-            ].map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.q}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

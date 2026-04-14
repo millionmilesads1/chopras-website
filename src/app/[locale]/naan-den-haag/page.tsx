@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -48,6 +49,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn: Array<{ question: string; answer: string }> = [
+  {
+    question: 'What is the difference between naan and roti?',
+    answer: 'Naan is made with yeast and yoghurt. Roti is made with only flour and water. Naan goes in a tandoor. Roti goes on a griddle. Naan feels soft. Roti feels thinner. Both are good. They are just different.',
+  },
+  {
+    question: 'Is naan vegetarian?',
+    answer: 'Yes, naan is vegetarian. It contains flour, water, yoghurt, salt, and butter. There is no meat or fish. It is also halal-friendly.',
+  },
+  {
+    question: 'Can I bake naan at home in my oven?',
+    answer: 'You can bake naan-like bread in your oven, but it will not be the same. Tandoor heat is different. Try it by all means, but also come to Chopras to taste real tandoori naan.',
+  },
+]
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  {
+    question: 'Wat is het verschil tussen naan en roti?',
+    answer: 'Naan is gemaakt met gist en yoghurt. Roti is gemaakt met alleen bloem en water. Naan gaat in een tandoor. Roti gaat op een pan. Naan voelt zacht. Roti voelt dunner. Beide zijn goed. Ze zijn gewoon anders.',
+  },
+  {
+    question: 'Is naan vegetarisch?',
+    answer: 'Ja, naan is vegetarisch. Het bevat bloem, water, yoghurt, zout, en boter. Er is geen vlees of vis. Het is ook halal gezonde.',
+  },
+  {
+    question: 'Kan ik naan thuis in mijn oven bakken?',
+    answer: 'Je kunt naan-achtig brood in je oven bakken, maar het wordt niet hetzelfde zijn. De tandoor hitte is anders. Probeer het zeker, maar kom ook naar Chopras om echte tandoori naan te voelen.',
+  },
+]
+
 export default function NaanPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -61,6 +92,7 @@ export default function NaanPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Naan Den Haag' : 'Naan Den Haag', item: getLocalizedUrl(locale, 'naan-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -140,42 +172,16 @@ export default function NaanPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#1B2B5E] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-10">
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen Over Naan' : 'Frequently Asked Questions About Naan'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? "Wat is het verschil tussen naan en roti?" : "What is the difference between naan and roti?",
-                a: isNl
-                  ? "Naan is gemaakt met gist en yoghurt. Roti is gemaakt met alleen bloem en water. Naan gaat in een tandoor. Roti gaat op een pan. Naan voelt zacht. Roti voelt dunner. Beide zijn goed. Ze zijn gewoon anders."
-                  : "Naan is made with yeast and yoghurt. Roti is made with only flour and water. Naan goes in a tandoor. Roti goes on a griddle. Naan feels soft. Roti feels thinner. Both are good. They are just different.",
-              },
-              {
-                q: isNl ? "Is naan vegetarisch?" : "Is naan vegetarian?",
-                a: isNl
-                  ? "Ja, naan is vegetarisch. Het bevat bloem, water, yoghurt, zout, en boter. Er is geen vlees of vis. Het is ook halal gezonde."
-                  : "Yes, naan is vegetarian. It contains flour, water, yoghurt, salt, and butter. There is no meat or fish. It is also halal-friendly.",
-              },
-              {
-                q: isNl ? "Kan ik naan thuis in mijn oven bakken?" : "Can I bake naan at home in my oven?",
-                a: isNl
-                  ? "Je kunt naan-achtig brood in je oven bakken, maar het wordt niet hetzelfde zijn. De tandoor hitte is anders. Probeer het zeker, maar kom ook naar Chopras om echte tandoori naan te voelen."
-                  : "You can bake naan-like bread in your oven, but it will not be the same. Tandoor heat is different. Try it by all means, but also come to Chopras to taste real tandoori naan.",
-              },
-            ].map(({ q, a }) => (
-              <details key={q} className="border-l-4 border-[#D4AF37] bg-white/10 rounded-r-xl">
-                <summary className="px-6 py-4 cursor-pointer text-white font-bold text-lg list-none">{q}</summary>
-                <p className="px-6 pb-5 pt-2 text-white/80 leading-relaxed">{a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Naan Bestellen en Genieten' : 'Order and Enjoy Naan'}
@@ -201,7 +207,7 @@ export default function NaanPage({ params }: Props) {
       </section>
 
       {/* INTERNAL LINKS SECTION */}
-      <section className="bg-white py-16">
+      <section className="bg-[#FFFAF5] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}

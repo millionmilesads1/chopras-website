@@ -5,6 +5,7 @@ import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -43,6 +44,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   }
 }
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  { question: 'Kunt u ook op ons kantoor of externe locatie cateren?', answer: 'Ja. Chopras verzorgt volledige zakelijke catering op locatie door Den Haag en omgeving. Wij brengen de keuken naar uw locatie  -  of dat nu een ministerie, kantoor, congrescentrum of externe evenementenlocatie is.' },
+  { question: 'Wat is de minimale groepsgrootte voor zakelijke catering?', answer: 'De minimale groepsgrootte voor zakelijke evenementencatering is 15 personen. Voor kleinere executive diners raden wij aan het restaurant direct op Leyweg te boeken.' },
+  { question: 'Is de catering halal gecertificeerd?', answer: 'Ja, volledig. Al het vlees dat bij Chopras zakelijke evenementen wordt geserveerd, is afkomstig van halal-gecertificeerde leveranciers. Dit geldt ook voor catering op externe locaties.' },
+  { question: 'Levert u ook bedienend personeel?', answer: 'Ja. Elke zakelijke cateringboeking omvat professioneel bedienend personeel voor de volledige duur van het evenement. Personeel zijn ervaren restaurantprofessionals  -  geen uitzendkrachten.' },
+  { question: 'Hoe snel kunt u een offerte verstrekken?', answer: 'Wij verstrekken offertes binnen 24 uur na ontvangst van uw evenementgegevens. Voor urgente vereisten  -  boekingen in dezelfde week  -  bel ons direct.' },
+]
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  { question: 'Can you cater at our office or external venue?', answer: 'Yes. Chopras provides full off-site corporate catering across Den Haag and surrounding areas. We bring the kitchen to your location  -  whether that is a ministry, an office, a conference centre, or an external event venue.' },
+  { question: 'What is the minimum group size for corporate catering?', answer: 'The minimum group size for corporate event catering is 15 people. For smaller executive dinners, we recommend booking the restaurant directly on Leyweg.' },
+  { question: 'Is the catering halal certified?', answer: 'Yes, completely. All meat served at Chopras corporate events is sourced from halal-certified suppliers. This applies to off-site catering as well as events in our own hall.' },
+  { question: 'Do you provide serving staff?', answer: 'Yes. Every corporate catering booking includes professional serving staff for the full duration of the event. Staff are experienced restaurant professionals  -  not agency workers hired for the evening.' },
+  { question: 'How quickly can you provide a quote?', answer: 'We provide quotes within 24 hours of receiving your event details. For urgent requirements  -  same-week bookings  -  call us directly.' },
+]
 
 export default function CorporateEventsPage({ params }: Props) {
   const { locale } = params
@@ -93,20 +110,6 @@ export default function CorporateEventsPage({ params }: Props) {
     { emoji: '✈️', title: 'International Delegation Visits', desc: 'When hosting delegations from India, the Gulf States, South Asia or Africa, authentic Indian catering carries a cultural recognition that generic Dutch food does not.' },
   ]
 
-  const faqItems = isNl ? [
-    { q: 'Kunt u ook op ons kantoor of externe locatie cateren?', a: 'Ja. Chopras verzorgt volledige zakelijke catering op locatie door Den Haag en omgeving. Wij brengen de keuken naar uw locatie  -  of dat nu een ministerie, kantoor, congrescentrum of externe evenementenlocatie is.' },
-    { q: 'Wat is de minimale groepsgrootte voor zakelijke catering?', a: 'De minimale groepsgrootte voor zakelijke evenementencatering is 15 personen. Voor kleinere executive diners raden wij aan het restaurant direct op Leyweg te boeken.' },
-    { q: 'Is de catering halal gecertificeerd?', a: 'Ja, volledig. Al het vlees dat bij Chopras zakelijke evenementen wordt geserveerd, is afkomstig van halal-gecertificeerde leveranciers. Dit geldt ook voor catering op externe locaties.' },
-    { q: 'Levert u ook bedienend personeel?', a: 'Ja. Elke zakelijke cateringboeking omvat professioneel bedienend personeel voor de volledige duur van het evenement. Personeel zijn ervaren restaurantprofessionals  -  geen uitzendkrachten.' },
-    { q: 'Hoe snel kunt u een offerte verstrekken?', a: 'Wij verstrekken offertes binnen 24 uur na ontvangst van uw evenementgegevens. Voor urgente vereisten  -  boekingen in dezelfde week  -  bel ons direct.' },
-  ] : [
-    { q: 'Can you cater at our office or external venue?', a: 'Yes. Chopras provides full off-site corporate catering across Den Haag and surrounding areas. We bring the kitchen to your location  -  whether that is a ministry, an office, a conference centre, or an external event venue.' },
-    { q: 'What is the minimum group size for corporate catering?', a: 'The minimum group size for corporate event catering is 15 people. For smaller executive dinners, we recommend booking the restaurant directly on Leyweg.' },
-    { q: 'Is the catering halal certified?', a: 'Yes, completely. All meat served at Chopras corporate events is sourced from halal-certified suppliers. This applies to off-site catering as well as events in our own hall.' },
-    { q: 'Do you provide serving staff?', a: 'Yes. Every corporate catering booking includes professional serving staff for the full duration of the event. Staff are experienced restaurant professionals  -  not agency workers hired for the evening.' },
-    { q: 'How quickly can you provide a quote?', a: 'We provide quotes within 24 hours of receiving your event details. For urgent requirements  -  same-week bookings  -  call us directly.' },
-  ]
-
   return (
     <>
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
@@ -115,7 +118,7 @@ export default function CorporateEventsPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Zakelijke Evenementen' : 'Corporate Events', item: getLocalizedUrl(locale, 'corporate-events-den-haag') },
       ])} />
-      <JsonLd data={getFaqPageSchema(faqItems.map(({ q, a }) => ({ question: q, answer: a })))} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -179,19 +182,12 @@ export default function CorporateEventsPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10 text-center">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
           </h2>
-          <div className="space-y-4">
-            {faqItems.map(({ q, a }) => (
-              <details key={q} className="border-l-4 border-[#D4AF37] bg-[#1B2B5E]/5 rounded-r-xl">
-                <summary className="px-6 py-4 cursor-pointer text-[#1B2B5E] font-bold text-lg list-none">{q}</summary>
-                <p className="px-6 pb-5 pt-2 text-gray-700 leading-relaxed">{a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

@@ -4,12 +4,29 @@ import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'nl' }]
 }
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  { question: 'Is Chopras volledig halal gecertificeerd?', answer: 'Ja. Chopras is een volledig halal-gecertificeerd restaurant. Al het vlees is afkomstig van gecertificeerde halal-leveranciers. De keuken werkt door en door volgens halalstandaarden. Er is geen niet-halal vlees aanwezig in het pand. Dit is geen gedeeltelijke of selectieve certificering  -  het heeft betrekking op de gehele bedrijfsvoering.' },
+  { question: 'Welke gerechten zijn halal bij Chopras?', answer: 'Elk vlees- en gevogeltegerecht bij Chopras is halal. Alle kip-, lams-, schapen- en visgerechten worden bereid met vlees van gecertificeerde halal-leveranciers. De vegetarische en veganistische gerechten bevatten per definitie geen vlees. Het volledige menu  -  niet-vegetarisch en vegetarisch  -  is beschikbaar zonder beperking voor halal-nalevers.' },
+  { question: 'Doen jullie ook halal catering voor evenementen en bruiloften?', answer: 'Ja. Chopras verzorgt volledige halal-evenementencatering voor bruiloften, Nikah-recepties, Walima-diners, Eid-vieringen, zakelijke evenementen en privéfeesten. Alle catering  -  of het nu in onze eigen evenementenhal of op een externe locatie is  -  wordt uitgevoerd volgens dezelfde halalstandaarden als het restaurant.' },
+  { question: 'Is het volledige menu halal?', answer: 'Al het vlees op het menu  -  kip, lam, schapen en zeevruchten  -  is halal. De vegetarische en veganistische gerechten bevatten geen vlees. Er zijn geen niet-halal vleesopties op het Chopras-menu.' },
+  { question: 'Hoe weet ik zeker dat het eten echt halal is?', answer: 'Chopras werkt uitsluitend met leveranciers die gecertificeerde halalcertificaten kunnen overleggen. De keukenoperatie  -  van opslag tot bereiding tot service  -  verloopt zonder enige blootstelling aan niet-halalvlees of -producten. Als u specifieke documentatie wilt, neem dan contact met ons op.' },
+]
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  { question: 'Is Chopras fully halal certified?', answer: 'Yes. Chopras is a fully halal-certified restaurant. All meat is sourced from certified halal suppliers. The kitchen operates to halal standards throughout. There is no non-halal meat on the premises. This is not a partial or selective certification  -  it covers the entire operation.' },
+  { question: 'Which dishes are halal at Chopras?', answer: 'Every meat and poultry dish at Chopras is halal. All chicken, lamb, mutton, and seafood dishes are prepared with meat from certified halal suppliers. The vegetarian and vegan dishes contain no meat by definition. The entire menu  -  non-vegetarian and vegetarian  -  is available without restriction for halal-observant guests.' },
+  { question: 'Do you cater halal for events and weddings?', answer: 'Yes. Chopras provides full halal event catering for weddings, Nikah receptions, Walima dinners, Eid celebrations, corporate events, and private parties. All catering  -  whether at our own event hall or at an external venue  -  is carried out to the same halal standards as the restaurant.' },
+  { question: 'Is the entire menu halal?', answer: 'All meat on the menu  -  chicken, lamb, mutton and seafood  -  is halal. The vegetarian and vegan dishes contain no meat. There are no non-halal meat options on the Chopras menu.' },
+  { question: 'How can I be sure the food is genuinely halal?', answer: 'Chopras works exclusively with suppliers who can provide certified halal documentation. The kitchen operation  -  from storage through preparation to service  -  runs without any exposure to non-halal meat or products. If you want specific documentation, contact us directly.' },
+]
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
@@ -50,20 +67,6 @@ export default function HalalFoodPage({ params }: Props) {
   const base = locale === 'nl' ? '/nl' : ''
   const isNl = locale === 'nl'
 
-  const faqItems = isNl ? [
-    { question: 'Is Chopras volledig halal gecertificeerd?', answer: 'Ja. Chopras is een volledig halal-gecertificeerd restaurant. Al het vlees is afkomstig van gecertificeerde halal-leveranciers. De keuken werkt door en door volgens halalstandaarden. Er is geen niet-halal vlees aanwezig in het pand. Dit is geen gedeeltelijke of selectieve certificering  -  het heeft betrekking op de gehele bedrijfsvoering.' },
-    { question: 'Welke gerechten zijn halal bij Chopras?', answer: 'Elk vlees- en gevogeltegerecht bij Chopras is halal. Alle kip-, lams-, schapen- en visgerechten worden bereid met vlees van gecertificeerde halal-leveranciers. De vegetarische en veganistische gerechten bevatten per definitie geen vlees. Het volledige menu  -  niet-vegetarisch en vegetarisch  -  is beschikbaar zonder beperking voor halal-nalevers.' },
-    { question: 'Doen jullie ook halal catering voor evenementen en bruiloften?', answer: 'Ja. Chopras verzorgt volledige halal-evenementencatering voor bruiloften, Nikah-recepties, Walima-diners, Eid-vieringen, zakelijke evenementen en privéfeesten. Alle catering  -  of het nu in onze eigen evenementenhal of op een externe locatie is  -  wordt uitgevoerd volgens dezelfde halalstandaarden als het restaurant.' },
-    { question: 'Is het volledige menu halal?', answer: 'Al het vlees op het menu  -  kip, lam, schapen en zeevruchten  -  is halal. De vegetarische en veganistische gerechten bevatten geen vlees. Er zijn geen niet-halal vleesopties op het Chopras-menu.' },
-    { question: 'Hoe weet ik zeker dat het eten echt halal is?', answer: 'Chopras werkt uitsluitend met leveranciers die gecertificeerde halalcertificaten kunnen overleggen. De keukenoperatie  -  van opslag tot bereiding tot service  -  verloopt zonder enige blootstelling aan niet-halalvlees of -producten. Als u specifieke documentatie wilt, neem dan contact met ons op.' },
-  ] : [
-    { question: 'Is Chopras fully halal certified?', answer: 'Yes. Chopras is a fully halal-certified restaurant. All meat is sourced from certified halal suppliers. The kitchen operates to halal standards throughout. There is no non-halal meat on the premises. This is not a partial or selective certification  -  it covers the entire operation.' },
-    { question: 'Which dishes are halal at Chopras?', answer: 'Every meat and poultry dish at Chopras is halal. All chicken, lamb, mutton, and seafood dishes are prepared with meat from certified halal suppliers. The vegetarian and vegan dishes contain no meat by definition. The entire menu  -  non-vegetarian and vegetarian  -  is available without restriction for halal-observant guests.' },
-    { question: 'Do you cater halal for events and weddings?', answer: 'Yes. Chopras provides full halal event catering for weddings, Nikah receptions, Walima dinners, Eid celebrations, corporate events, and private parties. All catering  -  whether at our own event hall or at an external venue  -  is carried out to the same halal standards as the restaurant.' },
-    { question: 'Is the entire menu halal?', answer: 'All meat on the menu  -  chicken, lamb, mutton and seafood  -  is halal. The vegetarian and vegan dishes contain no meat. There are no non-halal meat options on the Chopras menu.' },
-    { question: 'How can I be sure the food is genuinely halal?', answer: 'Chopras works exclusively with suppliers who can provide certified halal documentation. The kitchen operation  -  from storage through preparation to service  -  runs without any exposure to non-halal meat or products. If you want specific documentation, contact us directly.' },
-  ]
-
   return (
     <>
       <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'halal-food-den-haag'))} />
@@ -71,7 +74,7 @@ export default function HalalFoodPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Halal Eten Den Haag' : 'Halal Food Den Haag', item: getLocalizedUrl(locale, 'halal-food-den-haag') },
       ])} />
-      <JsonLd data={getFaqPageSchema(faqItems)} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,24 +152,17 @@ export default function HalalFoodPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#1B2B5E] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-10">
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen over Halal bij Chopras' : 'Frequently Asked Questions About Halal at Chopras'}
           </h2>
-          <div className="space-y-4">
-            {faqItems.map(({ question, answer }) => (
-              <details key={question} className="border-l-4 border-[#D4AF37] bg-white/10 rounded-r-xl">
-                <summary className="px-6 py-4 cursor-pointer text-white font-bold text-lg list-none">{question}</summary>
-                <p className="px-6 pb-5 pt-2 text-white/80 leading-relaxed">{answer}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
       {/* INTERNAL LINKS SECTION */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10">
             {isNl ? 'Ontdek Halal Gerechten' : 'Explore Halal Dishes'}

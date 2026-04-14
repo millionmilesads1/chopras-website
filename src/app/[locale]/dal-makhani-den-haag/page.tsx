@@ -2,14 +2,45 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'nl' }]
 }
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  {
+    question: 'Wat zijn urad dal?',
+    answer: 'Urad dal zijn zwarte linzen. Ze zijn klein, rond, en zwart. Ze worden veel gebruikt in Indiaas voedsel. Dal makhani is gemaakt van urad dal, die wordt gekookt totdat volledig zacht en romig.',
+  },
+  {
+    question: 'Hoe smaakt dal makhani?',
+    answer: 'Dal makhani smaakt zacht, romig, licht zoet van de room en boter, zuur van de tomaat, pittig van de chili, en voelt voelt voelt van de kruiden. Het is comfort voedsel. Gemak. Thuis.',
+  },
+  {
+    question: 'Is dal makhani gezond?',
+    answer: 'Dal is voedzaam - linzen zijn voorzien van proteïne en fiber. Maar dal makhani bevat room en boter, dus het is niet laag calorie. Het is voedsel dat je geniet in bescheiden porties, niet iets dat je kan elke dag eten. Maar voedsel voelt hoop.',
+  },
+]
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  {
+    question: 'What are urad dal?',
+    answer: 'Urad dal are black lentils. They are small, round, and black. They are used widely in Indian food. Dal makhani is made from urad dal, which is cooked until completely tender and creamy.',
+  },
+  {
+    question: 'What does dal makhani taste like?',
+    answer: 'Dal makhani tastes soft, creamy, lightly sweet from the cream and butter, sour from the tomato, spicy from the chilli, and feels complete from the spices. It is comfort food. Ease. Home.',
+  },
+  {
+    question: 'Is dal makhani healthy?',
+    answer: 'Dal is nourishing - lentils are full of protein and fibre. But dal makhani contains cream and butter, so it is not low calorie. It is food you enjoy in modest portions, not something you eat every day. But real food is worth it.',
+  },
+]
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
@@ -61,6 +92,7 @@ export default function DalMakhaniPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Dal Makhani Den Haag' : 'Dal Makhani Den Haag', item: getLocalizedUrl(locale, 'dal-makhani-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,42 +166,16 @@ export default function DalMakhaniPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#1B2B5E] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-10">
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen Over Dal Makhani' : 'Frequently Asked Questions About Dal Makhani'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? "Wat zijn urad dal?" : "What are urad dal?",
-                a: isNl
-                  ? "Urad dal zijn zwarte linzen. Ze zijn klein, rond, en zwart. Ze worden veel gebruikt in Indiaas voedsel. Dal makhani is gemaakt van urad dal, die wordt gekookt totdat volledig zacht en romig."
-                  : "Urad dal are black lentils. They are small, round, and black. They are used widely in Indian food. Dal makhani is made from urad dal, which is cooked until completely tender and creamy.",
-              },
-              {
-                q: isNl ? "Hoe smaakt dal makhani?" : "What does dal makhani taste like?",
-                a: isNl
-                  ? "Dal makhani smaakt zacht, romig, licht zoet van de room en boter, zuur van de tomaat, pittig van de chili, en voelt voelt voelt van de kruiden. Het is comfort voedsel. Gemak. Thuis."
-                  : "Dal makhani tastes soft, creamy, lightly sweet from the cream and butter, sour from the tomato, spicy from the chilli, and feels complete from the spices. It is comfort food. Ease. Home.",
-              },
-              {
-                q: isNl ? "Is dal makhani gezond?" : "Is dal makhani healthy?",
-                a: isNl
-                  ? "Dal is voedzaam - linzen zijn voorzien van proteïne en fiber. Maar dal makhani bevat room en boter, dus het is niet laag calorie. Het is voedsel dat je geniet in bescheiden porties, niet iets dat je kan elke dag eten. Maar voedsel voelt hoop."
-                  : "Dal is nourishing - lentils are full of protein and fibre. But dal makhani contains cream and butter, so it is not low calorie. It is food you enjoy in modest portions, not something you eat every day. But real food is worth it.",
-              },
-            ].map(({ q, a }) => (
-              <details key={q} className="border-l-4 border-[#D4AF37] bg-white/10 rounded-r-xl">
-                <summary className="px-6 py-4 cursor-pointer text-white font-bold text-lg list-none">{q}</summary>
-                <p className="px-6 pb-5 pt-2 text-white/80 leading-relaxed">{a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Dal Makhani Bestellen' : 'Order Dal Makhani'}
@@ -196,7 +202,7 @@ export default function DalMakhaniPage({ params }: Props) {
       </section>
 
       {/* INTERNAL LINKS SECTION */}
-      <section className="bg-white py-16">
+      <section className="bg-[#FFFAF5] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}

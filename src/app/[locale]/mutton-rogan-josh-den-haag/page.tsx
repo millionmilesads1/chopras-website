@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -44,6 +45,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsNl: Array<{ question: string; answer: string }> = [
+  {
+    question: 'Wat is het verschil tussen rogan josh en andere lamscurrys?',
+    answer: 'Rogan josh is Kasjmiri - de saus is op tomaten en yoghurt gebaseerd met hele geroosterde kruiden, niet op coconut melk of room. Het accent is op geur en warmte, niet op hitte. Het lamsvlees moet mals en zijde zijn, niet stevig.',
+  },
+  {
+    question: 'Is het spicy hot?',
+    answer: 'Nee. Rogan josh wordt warm van de geroosterde kruiden, niet van chilipepers. Als je warmer wilt, kun je ons vragen het aan te passen. Maar dit is niet het type curry waar je moet zingen.',
+  },
+  {
+    question: 'Waarom duurt het zo lang om rogan josh te maken?',
+    answer: 'Het lam moet mals worden. Dat kan niet snel. Als je het sneller doet, zal het vlees vezel zijn en zal de saus vlak zijn. Wij nemen de tijd. Dit is hoe het gemaakt hoort te worden.',
+  },
+]
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  {
+    question: 'What is the difference between rogan josh and other lamb curries?',
+    answer: 'Rogan josh is Kashmiri - the sauce is tomato and yoghurt-based with whole roasted spices, not on coconut milk or cream. The accent is on aroma and warmth, not on heat. The lamb must be tender and silk, not firm.',
+  },
+  {
+    question: 'Is it spicy hot?',
+    answer: 'No. Rogan josh gets warmth from the roasted spices, not from chillies. If you want it warmer, you can ask us to adjust it. But this is not the type of curry where you need to sing.',
+  },
+  {
+    question: 'Why does rogan josh take so long to make?',
+    answer: 'The lamb needs to become tender. That cannot be done quickly. If you do it faster, the meat will be stringy and the sauce will be flat. We take the time. This is how it is supposed to be made.',
+  },
+]
+
 export default function MuttonRoganJoshPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -57,6 +88,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Rogan Josh Den Haag' : 'Rogan Josh Den Haag', item: getLocalizedUrl(locale, 'mutton-rogan-josh-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,13 +139,13 @@ export default function MuttonRoganJoshPage({ params }: Props) {
               <>
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">De Selectie van het Lamsvlees</h3>
                 <p>We beginnen met <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal</Link>-gecertificeerd lamsvlees van de schouder en benen - de betere sneden voor een langzame bereiding. Dit vlees heeft marmer van vet door het weefsel. Als je dat vlees slechts drie uur zachtjes gaaart, wordt het vlees mals en de vet wordt een zijde in de saus. Dit is een kukengeheim: schlechter vlees geeft je schlechter rogan josh. Alle onze lamsvlees wordt elke ochtend geselecteerd.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Het Branden van het Vlees</h3>
                 <p>Het lamsvlees wordt gebraden in een mengsel van ghee en olie in een zware pan. Deze stap is niet voor smaak alleen - het zegelt het oppervlak en helpt de sappen binnenin te houden. We branden tot het vlees aan alle kanten goud is. Dit duurt zeker 20 minuten. Veel restaurants slaan deze stap over. Wij niet.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Het Bouwen van de Saus</h3>
                 <p>Terwijl het vlees brandt, wordt de saus ingesteld. Verse tomaten worden in een pan gedaan met yoghurt, ginger-garlic paste, Kasjmiri rode chilipepers (niet voor hitte maar voor smaak en kleur), en een rist hele kruiden. Deze kruiden - zwarte kardemom, kaneel, laurier, kruidnagel, kurkuma - worden elke ochtend gemalen. Ze zijn niet uit een zak van vorig seizoen. Ze zijn vers. Ze geven geur, niet alleen smaak.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">De Langzame Garing</h3>
                 <p>Het gebrande lam wordt in de saus gedaan. Alles wordt bedekt en gaat langzaam in de oven. Dit duurt drie uur. De saus wordt dikker, donkerder, ronderder. Het lam wordt teder. Na drie uur, is het vlees mals, is de saus zijde, en is rogan josh rogan josh - warm, volle smaak, met veel lagen van geur.</p>
               </>
@@ -121,13 +153,13 @@ export default function MuttonRoganJoshPage({ params }: Props) {
               <>
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">The Selection of Lamb</h3>
                 <p>We begin with <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal</Link>-certified lamb from the shoulder and legs - the better cuts for slow cooking. This lamb has marbling of fat throughout the tissue. When you cook that lamb for just three hours on low heat, the meat becomes tender and the fat becomes silk in the sauce. This is a kitchen secret: poor lamb gives you poor rogan josh. All our lamb is hand-selected every morning.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">The Searing of the Meat</h3>
                 <p>The lamb is seared in a blend of ghee and oil in a heavy pot. This step is not for flavour alone - it seals the surface and helps keep the juices inside. We sear until the lamb is golden on all sides. This takes at least 20 minutes. Many restaurants skip this step. We do not.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Building the Sauce</h3>
                 <p>While the lamb sears, the sauce is set. Fresh tomatoes go into a pan with yoghurt, ginger - garlic paste, Kashmiri red chillies (not for heat but for taste and colour), and a full roster of whole spices. These spices - black cardamom, cinnamon, bay leaf, clove, turmeric - are ground every morning. They are not from a bag from last season. They are fresh. They give aroma, not just flavour.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">The Slow Cook</h3>
                 <p>The seared lamb goes into the sauce. Everything is covered and goes slowly into the oven. This takes three hours. The sauce thickens, darkens, rounds out. The lamb becomes tender. After three hours, the meat is soft, the sauce is silk, and rogan josh is rogan josh - warm, full flavour, with many layers of aroma.</p>
               </>
@@ -136,39 +168,16 @@ export default function MuttonRoganJoshPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen over Rogan Josh' : 'Questions About Rogan Josh'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? 'Wat is het verschil tussen rogan josh en andere lamscurrys?' : 'What is the difference between rogan josh and other lamb curries?',
-                a: isNl ? 'Rogan josh is Kasjmiri - de saus is op tomaten en yoghurt gebaseerd met hele geroosterde kruiden, niet op coconut melk of room. Het accent is op geur en warmte, niet op hitte. Het lamsvlees moet mals en zijde zijn, niet stevig.' : 'Rogan josh is Kashmiri - the sauce is tomato and yoghurt-based with whole roasted spices, not on coconut milk or cream. The accent is on aroma and warmth, not on heat. The lamb must be tender and silk, not firm.'
-              },
-              {
-                q: isNl ? 'Is het spicy hot?' : 'Is it spicy hot?',
-                a: isNl ? 'Nee. Rogan josh wordt warm van de geroosterde kruiden, niet van chilipepers. Als je warmer wilt, kun je ons vragen het aan te passen. Maar dit is niet het type curry waar je moet zingen.' : 'No. Rogan josh gets warmth from the roasted spices, not from chillies. If you want it warmer, you can ask us to adjust it. But this is not the type of curry where you need to sing.'
-              },
-              {
-                q: isNl ? 'Waarom duurt het zo lang om rogan josh te maken?' : 'Why does rogan josh take so long to make?',
-                a: isNl ? 'Het lam moet mals worden. Dat kan niet snel. Als je het sneller doet, zal het vlees vezel zijn en zal de saus vlak zijn. Wij nemen de tijd. Dit is hoe het gemaakt hoort te worden.' : 'The lamb needs to become tender. That cannot be done quickly. If you do it faster, the meat will be stringy and the sauce will be flat. We take the time. This is how it is supposed to be made.'
-              },
-            ].map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.q}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-[#FFFAF5] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Rogan Josh Bestellen bij Chopras' : 'Order Rogan Josh at Chopras'}

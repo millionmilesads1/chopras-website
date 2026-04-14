@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -44,6 +45,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn = [
+  { question: 'Why do people choose Chopras?', answer: 'Because the food is authentic. Because it is fresh. Because it tastes good. Because they feel welcome. Because we do it well, every day.' },
+  { question: 'Is Chopras expensive?', answer: 'No. For what you get - real food, fresh food, good food - we are very fairly priced.' },
+  { question: 'How often do people come back?', answer: 'Many people come every week. Some come twice a week. They know they get the best Indian food here, so why would they go anywhere else?' },
+]
+
+const faqsNl = [
+  { question: 'Waarom kiezen mensen voor Chopras?', answer: 'Omdat het voedsel authentiek is. Omdat het vers is. Omdat het lekker is. Omdat ze zich welkom voelen. Omdat we het goed doen, elke dag.' },
+  { question: 'Is Chopras duur?', answer: 'Nee. Voor wat je krijgt - echt voedsel, vers voedsel, goed voedsel - zijn we heel redelijk geprijsd.' },
+  { question: 'Hoe vaak komen mensen terug?', answer: 'Veel mensen komen elke week. Sommigen twee keer per week. Ze weten dat ze hier het beste Indiaas eten krijgen, dus waarom zouden ze ergens anders heen gaan?' },
+]
+
 export default function BesteIndiaasPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -57,6 +70,7 @@ export default function BesteIndiaasPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Beste Restaurant' : 'Best Restaurant', item: getLocalizedUrl(locale, 'beste-indiaas-restaurant-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,35 +150,12 @@ export default function BesteIndiaasPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Wat Mensen Zeggen' : 'What People Say'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? 'Waarom kiezen mensen voor Chopras?' : 'Why do people choose Chopras?',
-                a: isNl ? 'Omdat het voedsel authentiek is. Omdat het vers is. Omdat het lekker is. Omdat ze zich welkom voelen. Omdat we het goed doen, elke dag.' : 'Because the food is authentic. Because it is fresh. Because it tastes good. Because they feel welcome. Because we do it well, every day.'
-              },
-              {
-                q: isNl ? 'Is Chopras duur?' : 'Is Chopras expensive?',
-                a: isNl ? 'Nee. Voor wat je krijgt - echt voedsel, vers voedsel, goed voedsel - zijn we heel redelijk geprijsd.' : 'No. For what you get - real food, fresh food, good food - we are very fairly priced.'
-              },
-              {
-                q: isNl ? 'Hoe vaak komen mensen terug?' : 'How often do people come back?',
-                a: isNl ? 'Veel mensen komen elke week. Sommigen twee keer per week. Ze weten dat ze hier het beste Indiaas eten krijgen, dus waarom zouden ze ergens anders heen gaan?' : 'Many people come every week. Some come twice a week. They know they get the best Indian food here, so why would they go anywhere else?'
-              },
-            ].map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.q}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

@@ -5,6 +5,7 @@ import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -44,6 +45,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn: Array<{ question: string; answer: string }> = [
+  { question: 'What is the minimum group size for a Chopras Indian buffet?', answer: 'The minimum group size for buffet catering is 15 people. For smaller groups we recommend booking the restaurant directly. For events at external venues, a minimum of 25 guests applies.' },
+  { question: 'Can you do the buffet at our venue?', answer: 'Yes. Chopras provides full off-site catering across Den Haag, Rijswijk, Delft, Zoetermeer and surrounding areas. We bring the kitchen to you.' },
+  { question: 'Is the buffet food halal?', answer: 'Yes, completely. All meat dishes served at Chopras buffet events are sourced from halal-certified suppliers. Halal compliance is the standard for every event we cater.' },
+  { question: 'How far in advance should I book?', answer: 'We recommend booking 1 to 2 weeks in advance for weekend events. For large events of 100+ guests, 3 to 4 weeks ahead is recommended.' },
+  { question: 'Can I customise the buffet menu?', answer: 'Yes. Every buffet booking includes a menu consultation call. You can specify dishes, dietary requirements, and any cultural preferences. The standard menu is a representative template.' },
+]
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  { question: 'Wat is de minimale groepsgrootte voor een Indiaas buffet bij Chopras?', answer: 'De minimale groepsgrootte voor buffetcatering is 15 personen. Voor kleinere groepen raden wij aan direct het restaurant te boeken. Voor evenementen op externe locaties geldt een minimum van 25 gasten.' },
+  { question: 'Kan het buffet ook op onze locatie worden geserveerd?', answer: 'Ja. Chopras verzorgt volledige cateringservice op locatie door heel Den Haag, Rijswijk, Delft, Zoetermeer en Voorburg. Neem contact met ons op met uw locatiegegevens en wij beoordelen de opbouwvereisten.' },
+  { question: 'Is het buffeteten halal?', answer: 'Ja, volledig. Alle vleesgerechten bij Chopras-buffetevenementen zijn afkomstig van halal-gecertificeerde leveranciers. Halal-naleving is geen extra optie - het is de standaard voor elk evenement dat wij cateren.' },
+  { question: 'Hoe ver van tevoren moet ik boeken?', answer: 'Wij raden aan 1 a 2 weken van tevoren te boeken voor weekevenementen. Weekboekingen zijn vaak met minder opzegtermijn mogelijk. Voor grote evenementen van 100+ gasten is 3 a 4 weken van tevoren aanbevolen.' },
+  { question: 'Kan ik het buffetmenu aanpassen?', answer: 'Ja. Elke buffetboeking omvat een menuoverlegesprek met ons team. U kunt de gerechten, dieetvereisten en eventuele culturele wensen opgeven. Het standaardmenu op deze pagina is een representatief sjabloon.' },
+]
+
 export default function IndianBuffetPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -71,20 +88,6 @@ export default function IndianBuffetPage({ params }: Props) {
     areaServed: RESTAURANT.serviceAreas.map((area) => ({ '@type': 'City', name: area })),
   }
 
-  const faqItems = isNl ? [
-    { q: 'Wat is de minimale groepsgrootte voor een Indiaas buffet bij Chopras?', a: 'De minimale groepsgrootte voor buffetcatering is 15 personen. Voor kleinere groepen raden wij aan direct het restaurant te boeken. Voor evenementen op externe locaties geldt een minimum van 25 gasten.' },
-    { q: 'Kan het buffet ook op onze locatie worden geserveerd?', a: 'Ja. Chopras verzorgt volledige cateringservice op locatie door heel Den Haag, Rijswijk, Delft, Zoetermeer en Voorburg. Neem contact met ons op met uw locatiegegevens en wij beoordelen de opbouwvereisten.' },
-    { q: 'Is het buffeteten halal?', a: 'Ja, volledig. Alle vleesgerechten bij Chopras-buffetevenementen zijn afkomstig van halal-gecertificeerde leveranciers. Halal-naleving is geen extra optie  -  het is de standaard voor elk evenement dat wij cateren.' },
-    { q: 'Hoe ver van tevoren moet ik boeken?', a: 'Wij raden aan 1 à 2 weken van tevoren te boeken voor weekevenementen. Weekboekingen zijn vaak met minder opzegtermijn mogelijk. Voor grote evenementen van 100+ gasten is 3 à 4 weken van tevoren aanbevolen.' },
-    { q: 'Kan ik het buffetmenu aanpassen?', a: 'Ja. Elke buffetboeking omvat een menuoverlegesprek met ons team. U kunt de gerechten, dieetvereisten en eventuele culturele wensen opgeven. Het standaardmenu op deze pagina is een representatief sjabloon.' },
-  ] : [
-    { q: 'What is the minimum group size for a Chopras Indian buffet?', a: 'The minimum group size for buffet catering is 15 people. For smaller groups we recommend booking the restaurant directly. For events at external venues, a minimum of 25 guests applies.' },
-    { q: 'Can you do the buffet at our venue?', a: 'Yes. Chopras provides full off-site catering across Den Haag, Rijswijk, Delft, Zoetermeer and surrounding areas. We bring the kitchen to you.' },
-    { q: 'Is the buffet food halal?', a: 'Yes, completely. All meat dishes served at Chopras buffet events are sourced from halal-certified suppliers. Halal compliance is the standard for every event we cater.' },
-    { q: 'How far in advance should I book?', a: 'We recommend booking 1 to 2 weeks in advance for weekend events. For large events of 100+ guests, 3 to 4 weeks ahead is recommended.' },
-    { q: 'Can I customise the buffet menu?', a: 'Yes. Every buffet booking includes a menu consultation call. You can specify dishes, dietary requirements, and any cultural preferences. The standard menu is a representative template.' },
-  ]
-
   return (
     <>
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
@@ -93,7 +96,7 @@ export default function IndianBuffetPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Indiaas Buffet' : 'Indian Buffet', item: getLocalizedUrl(locale, 'indian-buffet-den-haag') },
       ])} />
-      <JsonLd data={getFaqPageSchema(faqItems.map(({ q, a }) => ({ question: q, answer: a })))} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -182,23 +185,16 @@ export default function IndianBuffetPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#1B2B5E] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-10">
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
           </h2>
-          <div className="space-y-4">
-            {faqItems.map(({ q, a }) => (
-              <details key={q} className="border-l-4 border-[#D4AF37] bg-white/10 rounded-r-xl">
-                <summary className="px-6 py-4 cursor-pointer text-white font-bold text-lg list-none">{q}</summary>
-                <p className="px-6 pb-5 pt-2 text-white/80 leading-relaxed">{a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
             {isNl ? 'Vraag uw Indiase Buffetofferte aan' : 'Get Your Indian Buffet Quote'}
@@ -218,7 +214,7 @@ export default function IndianBuffetPage({ params }: Props) {
       </section>
 
       {/* INTERNAL LINKS SECTION */}
-      <section className="bg-white py-16">
+      <section className="bg-[#FFFAF5] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10">
             {isNl ? 'Ontdek Meer van Onze Gerechten' : 'Explore More of Our Dishes'}

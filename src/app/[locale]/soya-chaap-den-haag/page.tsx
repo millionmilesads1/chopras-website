@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -48,6 +49,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn: Array<{ question: string; answer: string }> = [
+  {
+    question: 'Is soya chaap actually vegan?',
+    answer: 'Yes. Soya chaap consists of soya chunks, water, salt and spices. There is no animal product in the dish itself. The sauce contains butter, which is vegetarian but not vegan. If you are fully vegan, ask for plant-based butter instead. We can adjust.',
+  },
+  {
+    question: 'How does soya chaap taste compared to meat curry?',
+    answer: 'Soya chaap absorbs sauces the way meat would. The texture is similar - firm but tender. The taste depends on the sauce and spices, not the soya itself. Many guests cannot tell the difference if they do not know they are eating soya chaap.',
+  },
+  {
+    question: 'What is soya chaap made from?',
+    answer: 'Soya chaap is made from soybeans processed into chunks. No GMO, no artificial additives. Just plant-based protein in a form you can cook like you would cook meat. It is halal, it is vegan, it is healthy.',
+  },
+]
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  {
+    question: 'Is soya chaap echt veganistisch?',
+    answer: 'Ja. Soya chaap bestaat uit soya chunks, water, zout en kruiden. Er is geen dierlijk product in het gerecht zelf. De saus bevat boter, wat vegetarisch maar niet veganistisch is. Als je volledig veganistisch bent, vraag dan om plantaardige boter in plaats daarvan. Wij kunnen dat aanpassen.',
+  },
+  {
+    question: 'Hoe smaakt soya chaap vergeleken met echte vlees curry?',
+    answer: 'Soya chaap absorbeert sauzen net als vlees zou doen. De textuur is vergelijkbaar - stevig maar mals. De smaak hangt af van de saus en kruiden, niet van de soya zelf. Veel gasten kunnen het verschil niet eens proeven als ze niet weten dat ze soya chaap eten.',
+  },
+  {
+    question: 'Waar is soya chaap gemaakt van?',
+    answer: 'Soya chaap is gemaakt van soyabonen die zijn verwerkt in chunks. Geen GMO, geen kunstmatige additieven. Gewoon plantaardig eiwit in een vorm die je kunt koken zoals je vlees zou koken. Het is halal, het is veganistisch, het is gezond.',
+  },
+]
+
 export default function SoyaChaapPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -61,6 +92,7 @@ export default function SoyaChaapPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Soya Chaap Den Haag' : 'Soya Chaap Den Haag', item: getLocalizedUrl(locale, 'soya-chaap-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -156,42 +188,16 @@ export default function SoyaChaapPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#1B2B5E] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-10">
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Vragen Over Soya Chaap en Plantaardig Indiaas Eten' : 'Questions About Soya Chaap and Vegan Indian Food'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? "Is soya chaap echt veganistisch?" : "Is soya chaap actually vegan?",
-                a: isNl
-                  ? "Ja. Soya chaap bestaat uit soya chunks, water, zout en kruiden. Er is geen dierlijk product in het gerecht zelf. De saus bevat boter, wat vegetarisch maar niet veganistisch is. Als je volledig veganistisch bent, vraag dan om plantaardige boter in plaats daarvan. Wij kunnen dat aanpassen."
-                  : "Yes. Soya chaap consists of soya chunks, water, salt and spices. There is no animal product in the dish itself. The sauce contains butter, which is vegetarian but not vegan. If you are fully vegan, ask for plant-based butter instead. We can adjust.",
-              },
-              {
-                q: isNl ? "Hoe smaakt soya chaap vergeleken met echte vlees curry?" : "How does soya chaap taste compared to meat curry?",
-                a: isNl
-                  ? "Soya chaap absorbeert sauzen net als vlees zou doen. De textuur is vergelijkbaar - stevig maar mals. De smaak hangt af van de saus en kruiden, niet van de soya zelf. Veel gasten kunnen het verschil niet eens proeven als ze niet weten dat ze soya chaap eten."
-                  : "Soya chaap absorbs sauces the way meat would. The texture is similar - firm but tender. The taste depends on the sauce and spices, not the soya itself. Many guests cannot tell the difference if they do not know they are eating soya chaap.",
-              },
-              {
-                q: isNl ? "Waar is soya chaap gemaakt van?" : "What is soya chaap made from?",
-                a: isNl
-                  ? "Soya chaap is gemaakt van soyabonen die zijn verwerkt in chunks. Geen GMO, geen kunstmatige additieven. Gewoon plantaardig eiwit in een vorm die je kunt koken zoals je vlees zou koken. Het is halal, het is veganistisch, het is gezond."
-                  : "Soya chaap is made from soybeans processed into chunks. No GMO, no artificial additives. Just plant-based protein in a form you can cook like you would cook meat. It is halal, it is vegan, it is healthy.",
-              },
-            ].map(({ q, a }) => (
-              <details key={q} className="border-l-4 border-[#D4AF37] bg-white/10 rounded-r-xl">
-                <summary className="px-6 py-4 cursor-pointer text-white font-bold text-lg list-none">{q}</summary>
-                <p className="px-6 pb-5 pt-2 text-white/80 leading-relaxed">{a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Meer Vegetarische Opties en Vegan Indiaans Voedsel' : 'More Vegetarian Options and Vegan Indian Food'}
@@ -232,7 +238,7 @@ export default function SoyaChaapPage({ params }: Props) {
       </section>
 
       {/* INTERNAL LINKS SECTION */}
-      <section className="bg-white py-16">
+      <section className="bg-[#FFFAF5] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}

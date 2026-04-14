@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
@@ -43,6 +44,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   }
 }
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  { question: 'What types of weddings do you cater at Chopras?', answer: 'Chopras caters for Nikah receptions, Walima dinners, Sangeet nights, Mehndi parties, Haldi ceremonies, and full wedding dinners. We cater for Indian, Pakistani, Surinamese and multicultural weddings  -  and everything in between.' },
+  { question: 'Is the wedding catering fully halal?', answer: 'Yes, completely. All meat is sourced from halal-certified suppliers. The entire kitchen operates to halal standards. Halal compliance is not an option  -  it is the standard for all Chopras catering.' },
+  { question: 'How large can the wedding be?', answer: 'Chopras caters for weddings of 25 to 200 guests. For our own event hall at Leyweg, the maximum capacity is 80 guests. For larger weddings of 80 to 200 guests, we cater at external venues across Den Haag and surrounding areas.' },
+  { question: 'Can we customise the wedding menu?', answer: 'Yes. Every wedding menu starts with a conversation about your occasion, guest count, cultural preferences, and dietary requirements. We never compose two identical wedding menus  -  every menu is built for the specific occasion and guest list.' },
+  { question: 'How far in advance should we book for wedding catering?', answer: 'For large weddings of 100+ guests, we recommend booking 6 to 8 weeks in advance. For smaller weddings of 25 to 60 guests, 3 to 4 weeks is sufficient. Saturday dates are the most popular and book up fastest.' },
+]
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  { question: 'Welke type bruiloften cateren jullie bij Chopras?', answer: 'Chopras cater voor Nikah-recepties, Walima-diners, Sangeet-avonden, Mehndi-feesten, Haldi-ceremonies en grote bruiloftsdiners. Wij cateren voor Indiase, Pakistaanse, Surinaamse en multiculturele bruiloften  -  en alles daartussenin.' },
+  { question: 'Is de bruiloftscatering volledig halal?', answer: 'Ja, volledig. Al het vlees is afkomstig van halal-gecertificeerde leveranciers. De gehele keuken werkt volgens halalstandaarden. Halal-naleving is niet een optie die wij aanbieden  -  het is de standaard voor alle catering bij Chopras.' },
+  { question: 'Hoe groot kan de bruiloft zijn?', answer: 'Chopras cater voor bruiloften van 25 tot 200 gasten. Voor onze eigen evenementenhal op Leyweg is de maximumcapaciteit 80 gasten. Voor grotere bruiloften van 80 tot 200 gasten verzorgen wij catering op externe locaties door Den Haag en omgeving.' },
+  { question: 'Kunnen wij het bruiloftsmenu aanpassen?', answer: 'Ja. Elk bruiloftsmenu begint met een gesprek over uw gelegenheden, gastenaantal, culturele voorkeuren en dieetvereisten. Wij stellen nooit twee identieke bruiloftsmenus samen  -  elk menu is op maat gemaakt voor de specifieke gelegenheid en gastenlijst.' },
+  { question: 'Hoe ver van tevoren moeten wij boeken voor bruiloftscatering?', answer: 'Voor grote bruiloften van 100+ gasten raden wij 6 tot 8 weken van tevoren boeken aan. Voor kleinere bruiloften van 25 tot 60 gasten is 3 tot 4 weken voldoende. Zaterdagdatums zijn het meest gewild en boeken het snelst vol.' },
+]
 
 export default function IndianWeddingCateringPage({ params }: Props) {
   const { locale } = params
@@ -93,20 +110,6 @@ export default function IndianWeddingCateringPage({ params }: Props) {
     { title: 'Reception and Wedding Dinner', desc: 'Large formal dinner for 50 to 200 guests. Full buffet service or plated service. Professional serving staff. Fresh bread replenished throughout the evening.' },
   ]
 
-  const faqItems = isNl ? [
-    { q: 'Welke type bruiloften cateren jullie bij Chopras?', a: 'Chopras cater voor Nikah-recepties, Walima-diners, Sangeet-avonden, Mehndi-feesten, Haldi-ceremonies en grote bruiloftsdiners. Wij cateren voor Indiase, Pakistaanse, Surinaamse en multiculturele bruiloften  -  en alles daartussenin.' },
-    { q: 'Is de bruiloftscatering volledig halal?', a: 'Ja, volledig. Al het vlees is afkomstig van halal-gecertificeerde leveranciers. De gehele keuken werkt volgens halalstandaarden. Halal-naleving is niet een optie die wij aanbieden  -  het is de standaard voor alle catering bij Chopras.' },
-    { q: 'Hoe groot kan de bruiloft zijn?', a: 'Chopras cater voor bruiloften van 25 tot 200 gasten. Voor onze eigen evenementenhal op Leyweg is de maximumcapaciteit 80 gasten. Voor grotere bruiloften van 80 tot 200 gasten verzorgen wij catering op externe locaties door Den Haag en omgeving.' },
-    { q: 'Kunnen wij het bruiloftsmenu aanpassen?', a: 'Ja. Elk bruiloftsmenu begint met een gesprek over uw gelegenheden, gastenaantal, culturele voorkeuren en dieetvereisten. Wij stellen nooit twee identieke bruiloftsmenus samen  -  elk menu is op maat gemaakt voor de specifieke gelegenheid en gastenlijst.' },
-    { q: 'Hoe ver van tevoren moeten wij boeken voor bruiloftscatering?', a: 'Voor grote bruiloften van 100+ gasten raden wij 6 tot 8 weken van tevoren boeken aan. Voor kleinere bruiloften van 25 tot 60 gasten is 3 tot 4 weken voldoende. Zaterdagdatums zijn het meest gewild en boeken het snelst vol.' },
-  ] : [
-    { q: 'What types of weddings do you cater at Chopras?', a: 'Chopras caters for Nikah receptions, Walima dinners, Sangeet nights, Mehndi parties, Haldi ceremonies, and full wedding dinners. We cater for Indian, Pakistani, Surinamese and multicultural weddings  -  and everything in between.' },
-    { q: 'Is the wedding catering fully halal?', a: 'Yes, completely. All meat is sourced from halal-certified suppliers. The entire kitchen operates to halal standards. Halal compliance is not an option  -  it is the standard for all Chopras catering.' },
-    { q: 'How large can the wedding be?', a: 'Chopras caters for weddings of 25 to 200 guests. For our own event hall at Leyweg, the maximum capacity is 80 guests. For larger weddings of 80 to 200 guests, we cater at external venues across Den Haag and surrounding areas.' },
-    { q: 'Can we customise the wedding menu?', a: 'Yes. Every wedding menu starts with a conversation about your occasion, guest count, cultural preferences, and dietary requirements. We never compose two identical wedding menus  -  every menu is built for the specific occasion and guest list.' },
-    { q: 'How far in advance should we book for wedding catering?', a: 'For large weddings of 100+ guests, we recommend booking 6 to 8 weeks in advance. For smaller weddings of 25 to 60 guests, 3 to 4 weeks is sufficient. Saturday dates are the most popular and book up fastest.' },
-  ]
-
   return (
     <>
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
@@ -115,7 +118,7 @@ export default function IndianWeddingCateringPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Indiaas Bruiloft Catering' : 'Indian Wedding Catering', item: getLocalizedUrl(locale, 'indian-wedding-catering-den-haag') },
       ])} />
-      <JsonLd data={getFaqPageSchema(faqItems.map(({ q, a }) => ({ question: q, answer: a })))} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -178,19 +181,12 @@ export default function IndianWeddingCateringPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#1B2B5E] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-10">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
           </h2>
-          <div className="space-y-4">
-            {faqItems.map(({ q, a }) => (
-              <details key={q} className="border-l-4 border-[#D4AF37] bg-white/10 rounded-r-xl">
-                <summary className="px-6 py-4 cursor-pointer text-white font-bold text-lg list-none">{q}</summary>
-                <p className="px-6 pb-5 pt-2 text-white/80 leading-relaxed">{a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

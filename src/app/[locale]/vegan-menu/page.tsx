@@ -4,6 +4,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -44,23 +45,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn: Array<{ question: string; answer: string }> = [
+  { question: 'Is the vegan menu truly completely plant-based?', answer: 'Yes. All dishes on the Chopras vegan menu contain no meat, fish, dairy or eggs. This applies to curries, biryani, tandoori, and all side dishes. Completely vegan, always.' },
+  { question: 'Which vegan dishes are most popular?', answer: 'Dal makhani, chana masala, aloo gobi, and vegetable biryani are the most ordered dishes. They are rich, flavorful, and satisfying as a complete meal. For more experienced eaters: baingan bharta and okra fry.' },
+  { question: 'Can I order the vegan menu online?', answer: 'Yes. Order via Thuisbezorgd or Uber Eats. All food is prepared without dairy, butter or eggs. Full chain integrity from kitchen to door.' },
+  { question: 'Are the naan breads also vegan?', answer: 'Yes. We bake vegan naan fresh in the tandoor. This applies to garlic naan, plain naan and all other bread types. No milk or butter, purely plant-based.' },
+]
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  { question: 'Is het veganistische menu echt volledig plantaardig?', answer: 'Ja. Alle gerechten op het Chopras veganistische menu bevatten geen vlees, vis, zuivel of eieren. Dit geldt voor curry&apos;s, biryani, tandoori, en alle bijgerechten. Volledig veganistisch, altijd.' },
+  { question: 'Welke veganistische gerechten zijn het populairst?', answer: 'Dal makhani, chana masala, aloo gobi, en vegetable biryani zijn de meest bestelde gerechten. Ze zijn rijkgevuld, smaakvol, en voldoend voor een volledige maaltijd. Voor meer ervaren eters: baingan bharta en okra fry.' },
+  { question: 'Kan ik het veganistische menu online bestellen?', answer: 'Ja. Bestel via Thuisbezorgd of Uber Eats. Al het eten wordt bereid zonder zuivel, boter of eieren. Volledige ketenduidelijkheid van keuken tot deur.' },
+  { question: 'Zijn de naan broodjes ook veganistisch?', answer: 'Ja. We bakken veganistische naan broodjes vers in de tandoor. Dit geldt voor garlic naan, plain naan en alle andere broodsoorten. Geen melk of boter, puur plantaardig.' },
+]
+
 export default function VeganMenuPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
   const base = locale === 'nl' ? '/nl' : ''
   const isNl = locale === 'nl'
-
-  const faqItems = isNl ? [
-    { question: 'Is het veganistische menu echt volledig plantaardig?', answer: 'Ja. Alle gerechten op het Chopras veganistische menu bevatten geen vlees, vis, zuivel of eieren. Dit geldt voor curry&apos;s, biryani, tandoori, en alle bijgerechten. Volledig veganistisch, altijd.' },
-    { question: 'Welke veganistische gerechten zijn het populairst?', answer: 'Dal makhani, chana masala, aloo gobi, en vegetable biryani zijn de meest bestelde gerechten. Ze zijn rijkgevuld, smaakvol, en voldoend voor een volledige maaltijd. Voor meer ervaren eters: baingan bharta en okra fry.' },
-    { question: 'Kan ik het veganistische menu online bestellen?', answer: 'Ja. Bestel via Thuisbezorgd of Uber Eats. Al het eten wordt bereid zonder zuivel, boter of eieren. Volledige ketenduidelijkheid van keuken tot deur.' },
-    { question: 'Zijn de naan broodjes ook veganistisch?', answer: 'Ja. We bakken veganistische naan broodjes vers in de tandoor. Dit geldt voor garlic naan, plain naan en alle andere broodsoorten. Geen melk of boter, puur plantaardig.' },
-  ] : [
-    { question: 'Is the vegan menu truly completely plant-based?', answer: 'Yes. All dishes on the Chopras vegan menu contain no meat, fish, dairy or eggs. This applies to curries, biryani, tandoori, and all side dishes. Completely vegan, always.' },
-    { question: 'Which vegan dishes are most popular?', answer: 'Dal makhani, chana masala, aloo gobi, and vegetable biryani are the most ordered dishes. They are rich, flavorful, and satisfying as a complete meal. For more experienced eaters: baingan bharta and okra fry.' },
-    { question: 'Can I order the vegan menu online?', answer: 'Yes. Order via Thuisbezorgd or Uber Eats. All food is prepared without dairy, butter or eggs. Full chain integrity from kitchen to door.' },
-    { question: 'Are the naan breads also vegan?', answer: 'Yes. We bake vegan naan fresh in the tandoor. This applies to garlic naan, plain naan and all other bread types. No milk or butter, purely plant-based.' },
-  ]
 
   return (
     <>
@@ -69,7 +72,7 @@ export default function VeganMenuPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Veganistisch Menu' : 'Vegan Menu', item: getLocalizedUrl(locale, 'vegan-menu') },
       ])} />
-      <JsonLd data={getFaqPageSchema(faqItems)} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,22 +139,12 @@ export default function VeganMenuPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veganistisch Menu FAQ' : 'Vegan Menu FAQ'}
           </h2>
-          <div className="space-y-4">
-            {faqItems.map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.question}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.answer}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

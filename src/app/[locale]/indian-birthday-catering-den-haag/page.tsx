@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -44,6 +45,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsNl: Array<{ question: string; answer: string }> = [
+  {
+    question: 'Wat is het minimum aantal gasten voor catering?',
+    answer: 'Minimaal tien gasten. Alles eronder en het wordt niet voordelig voor je.',
+  },
+  {
+    question: 'Hoeveel kost catering?',
+    answer: 'Afhankelijk van het menu, het aantal gasten, en de locatie. We geven je een offerte als je contact opneemt. Geen verrassingen - alles duidelijk van tevoren.',
+  },
+  {
+    question: 'Kunnen jullie voor elke locatie in Den Haag leveren?',
+    answer: 'Ja. Huis, kantoor, feestzaal, buiten - overal. Als het in Den Haag is, we bezorgen het.',
+  },
+]
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  {
+    question: 'What is the minimum number of guests for catering?',
+    answer: 'Minimum ten guests. Anything less and it does not work well for you.',
+  },
+  {
+    question: 'How much does catering cost?',
+    answer: 'It depends on the menu, number of guests, and location. We give you a quote when you contact us. No surprises - everything clear in advance.',
+  },
+  {
+    question: 'Can you deliver to any location in Den Haag?',
+    answer: 'Yes. House, office, event hall, outdoors - anywhere. If it is in Den Haag, we deliver it.',
+  },
+]
+
 export default function IndianBirthdayCateringPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -57,6 +88,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Verjaardags Catering' : 'Birthday Catering', item: getLocalizedUrl(locale, 'indian-birthday-catering-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,13 +139,13 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
               <>
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Menu Ontwerp</h3>
                 <p>We werken met jou mee om het juiste menu te kiezen. Biryani? <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:underline">Tandoori</Link>? Curry? <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">Vegetarisch</Link>? Allemaal? We weten wat werkt voor verschillende groepen en we geven je advies.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Bezorging</h3>
                 <p>Alles wordt bezorgd op de exacte tijd die je nodig hebt. Niet eerder, niet later. Heet. Vers. In beschermde containers zodat het niet beschadigd raakt onderweg.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Opzet</h3>
                 <p>Voor grotere feesten sturen we iemand om te helpen met opzetten en serveren. Je hoeft niet in je eigen keuken te staan. Je bent samen met je gasten.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Borden, Bestek, Servetten</h3>
                 <p>Alles wat je nodig hebt - borden, bekers, bestek, servetten, alles wordt meegebracht. Het enige wat je hoeft te doen is eten genieten.</p>
               </>
@@ -121,13 +153,13 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
               <>
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Menu Design</h3>
                 <p>We work with you to choose the right menu. Biryani? <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:underline">Tandoori</Link>? Curry? <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">Vegetarian</Link>? Everything? We know what works for different groups and we advise you.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Delivery</h3>
                 <p>Everything is delivered at the exact time you need it. Not before, not after. Hot. Fresh. In protective containers so it is not damaged on the way.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Setup</h3>
                 <p>For larger celebrations we send someone to help with setup and serving. You do not have to be in your own kitchen. You are together with your guests.</p>
-                
+
                 <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Plates, Utensils, Napkins</h3>
                 <p>Everything you need - plates, cups, utensils, napkins, everything is brought. All you need to do is enjoy the food.</p>
               </>
@@ -136,39 +168,16 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? 'Wat is het minimum aantal gasten voor catering?' : 'What is the minimum number of guests for catering?',
-                a: isNl ? 'Minimaal tien gasten. Alles eronder en het wordt niet voordelig voor je.' : 'Minimum ten guests. Anything less and it does not work well for you.'
-              },
-              {
-                q: isNl ? 'Hoeveel kost catering?' : 'How much does catering cost?',
-                a: isNl ? 'Afhankelijk van het menu, het aantal gasten, en de locatie. We geven je een offerte als je contact opneemt. Geen verrassingen - alles duidelijk van tevoren.' : 'It depends on the menu, number of guests, and location. We give you a quote when you contact us. No surprises - everything clear in advance.'
-              },
-              {
-                q: isNl ? 'Kunnen jullie voor elke locatie in Den Haag leveren?' : 'Can you deliver to any location in Den Haag?',
-                a: isNl ? 'Ja. Huis, kantoor, feestzaal, buiten - overal. Als het in Den Haag is, we bezorgen het.' : 'Yes. House, office, event hall, outdoors - anywhere. If it is in Den Haag, we deliver it.'
-              },
-            ].map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.q}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-[#FFFAF5] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Plan je Feest' : 'Plan Your Celebration'}

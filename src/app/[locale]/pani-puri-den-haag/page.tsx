@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -48,6 +49,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn: Array<{ question: string; answer: string }> = [
+  {
+    question: 'What is golgappa?',
+    answer: 'Golgappa is another word for pani puri. In Mumbai it is called golgappa, in Delhi pani puri. In other parts of India it has different names. It is the same delicacy - hollow puri filled with potato and dipped in water.',
+  },
+  {
+    question: 'Can I order pani puri ahead?',
+    answer: 'Pani puri tastes best fresh. Just freshly fried puri, fresh water, fresh potato - all at the same time. Make your reservation at Chopras, call us, and we will make your pani puri when you arrive. This is how it should be.',
+  },
+  {
+    question: 'Is pani puri vegetarian?',
+    answer: 'Yes, completely. Pani puri consists of flour, potato, chickpeas, water, and spices. There is no meat, no fish, no animal products. It is vegetarian, vegan and halal.',
+  },
+]
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  {
+    question: 'Wat is golgappa?',
+    answer: 'Golgappa is een ander woord voor pani puri. In Mumbai wordt het golgappa genoemd, in Delhi pani puri. In andere delen van India heeft het verschillende namen. Het is dezelfde lekkernij - holle puri gevuld met aardappel en ondergedompeld in water.',
+  },
+  {
+    question: 'Kan ik pani puri vooraf bestellen?',
+    answer: 'Pani puri smaakt het beste vers. Gewoon vers gebakken puri, vers water, vers aardappel - allemaal tegelijk. Maak je reservering bij Chopras, bel ons, en wij maken je pani puri wanneer je aankomt. Dit is hoe het hoort te zijn.',
+  },
+  {
+    question: 'Is pani puri vegetarisch?',
+    answer: 'Ja, volledig. Pani puri bestaat uit bloem, aardappel, kikkererwten, water, en kruiden. Er is geen vlees, geen vis, geen dierlijke producten. Het is vegetarisch, veganistisch en halal.',
+  },
+]
+
 export default function PaniPuriPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -61,6 +92,7 @@ export default function PaniPuriPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Pani Puri Den Haag' : 'Pani Puri Den Haag', item: getLocalizedUrl(locale, 'pani-puri-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -150,42 +182,16 @@ export default function PaniPuriPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#1B2B5E] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-10">
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen Over Pani Puri en Indiaas Straatvoedsel' : 'Frequently Asked Questions About Pani Puri and Indian Street Food'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? "Wat is golgappa?" : "What is golgappa?",
-                a: isNl
-                  ? "Golgappa is een ander woord voor pani puri. In Mumbai wordt het golgappa genoemd, in Delhi pani puri. In andere delen van India heeft het verschillende namen. Het is dezelfde lekkernij - holle puri gevuld met aardappel en ondergedompeld in water."
-                  : "Golgappa is another word for pani puri. In Mumbai it is called golgappa, in Delhi pani puri. In other parts of India it has different names. It is the same delicacy - hollow puri filled with potato and dipped in water.",
-              },
-              {
-                q: isNl ? "Kan ik pani puri vooraf bestellen?" : "Can I order pani puri ahead?",
-                a: isNl
-                  ? "Pani puri smaakt het beste vers. Gewoon vers gebakken puri, vers water, vers aardappel - allemaal tegelijk. Maak je reservering bij Chopras, bel ons, en wij maken je pani puri wanneer je aankomt. Dit is hoe het hoort te zijn."
-                  : "Pani puri tastes best fresh. Just freshly fried puri, fresh water, fresh potato - all at the same time. Make your reservation at Chopras, call us, and we will make your pani puri when you arrive. This is how it should be.",
-              },
-              {
-                q: isNl ? "Is pani puri vegetarisch?" : "Is pani puri vegetarian?",
-                a: isNl
-                  ? "Ja, volledig. Pani puri bestaat uit bloem, aardappel, kikkererwten, water, en kruiden. Er is geen vlees, geen vis, geen dierlijke producten. Het is vegetarisch, veganistisch en halal."
-                  : "Yes, completely. Pani puri consists of flour, potato, chickpeas, water, and spices. There is no meat, no fish, no animal products. It is vegetarian, vegan and halal.",
-              },
-            ].map(({ q, a }) => (
-              <details key={q} className="border-l-4 border-[#D4AF37] bg-white/10 rounded-r-xl">
-                <summary className="px-6 py-4 cursor-pointer text-white font-bold text-lg list-none">{q}</summary>
-                <p className="px-6 pb-5 pt-2 text-white/80 leading-relaxed">{a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Meer Indiaas Straatvoedsel en Chaat-Specialiteiten' : 'More Indian Street Food and Chaat Specialties'}
@@ -226,7 +232,7 @@ export default function PaniPuriPage({ params }: Props) {
       </section>
 
       {/* INTERNAL LINKS SECTION */}
-      <section className="bg-white py-16">
+      <section className="bg-[#FFFAF5] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}

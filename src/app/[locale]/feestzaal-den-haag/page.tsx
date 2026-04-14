@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { CheckCircle } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
@@ -50,27 +51,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn: Array<{ question: string; answer: string }> = [
+  { question: 'Can I hire a party hall at Chopras Indian Restaurant in Den Haag?', answer: 'Yes. Chopras Indian Restaurant offers a private event space for hire in Den Haag, perfect for birthdays, weddings, corporate events, Diwali dinners and all other occasions. Contact us for a no-obligation quote.' },
+  { question: 'Is catering included when hiring the event space?', answer: 'Yes. Chopras Indian Restaurant provides full authentic Indian catering with your event venue hire in Den Haag. From a buffet to a multi-course dinner - everything is possible and fully customized to your needs.' },
+  { question: 'What occasions is the event space suitable for?', answer: 'The event space at Chopras Indian Restaurant in Den Haag is suitable for birthday parties, weddings, stag parties, corporate events, staff parties, Diwali celebrations, children\'s parties, baby showers, drinks receptions, meetings and team building events.' },
+  { question: 'How many people can the event space at Chopras Indian Restaurant accommodate?', answer: 'The private event space at Chopras Indian Restaurant Den Haag is flexible for groups of various sizes. Contact us for exact capacity information and availability.' },
+  { question: 'How do I book an event space at Chopras Indian Restaurant Den Haag?', answer: 'Contact us via our contact page or call us directly. We are happy to discuss your requirements, date and catering options and will send you a no-obligation quote.' },
+  { question: 'Is there an affordable party hall for hire in Den Haag with catering?', answer: 'Chopras Indian Restaurant offers competitive rates for event space hire in Den Haag including authentic Indian catering. Request a no-obligation quote via our contact page.' },
+]
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  { question: 'Kan ik een feestzaal huren bij Chopras Indian Restaurant in Den Haag?', answer: 'Ja. Chopras Indian Restaurant biedt een privé feestzaal te huur in Den Haag, perfect voor verjaardagen, bruiloften, bedrijfsfeesten, Diwali-diners en alle andere gelegenheden. Neem contact met ons op voor een vrijblijvende offerte.' },
+  { question: 'Is er catering inbegrepen bij het huren van de feestzaal?', answer: 'Ja. Chopras Indian Restaurant verzorgt volledige authentieke Indiaas catering bij uw feestzaal huur in Den Haag. Van een buffet tot een meergangendiner - alles is mogelijk en volledig op maat.' },
+  { question: 'Voor welke gelegenheden is de feestzaal geschikt?', answer: 'De feestzaal van Chopras Indian Restaurant in Den Haag is geschikt voor verjaardagsfeesten, bruiloften, vrijgezellenfeesten, bedrijfsfeesten, personeelsfeesten, Diwali-vieringen, kinderfeesten, babyshowers, borrels, vergaderingen en teambuilding evenementen.' },
+  { question: 'Hoeveel personen passen er in de feestzaal van Chopras Indian Restaurant?', answer: 'De privé evenementenruimte van Chopras Indian Restaurant Den Haag is flexibel inzetbaar voor groepen van verschillende groottes. Neem contact op voor exacte capaciteitsinformatie en beschikbaarheid.' },
+  { question: 'Hoe boek ik een feestzaal bij Chopras Indian Restaurant Den Haag?', answer: 'Neem contact op via onze contactpagina of bel ons direct. Wij bespreken graag uw wensen, datum en catering en sturen u een vrijblijvende offerte toe.' },
+  { question: 'Is er een goedkope feestzaal te huren in Den Haag met catering?', answer: 'Chopras Indian Restaurant biedt competitieve tarieven voor feestzaalverhuur in Den Haag inclusief authentiek Indiaas catering. Vraag een vrijblijvende offerte aan via onze contactpagina.' },
+]
+
 export default function FeestzaalDenHaagPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
   const base = locale === 'nl' ? '/nl' : ''
   const isNl = locale === 'nl'
-
-  const faqItems = isNl ? [
-    { q: 'Kan ik een feestzaal huren bij Chopras Indian Restaurant in Den Haag?', a: 'Ja. Chopras Indian Restaurant biedt een privé feestzaal te huur in Den Haag, perfect voor verjaardagen, bruiloften, bedrijfsfeesten, Diwali-diners en alle andere gelegenheden. Neem contact met ons op voor een vrijblijvende offerte.' },
-    { q: 'Is er catering inbegrepen bij het huren van de feestzaal?', a: 'Ja. Chopras Indian Restaurant verzorgt volledige authentieke Indiaas catering bij uw feestzaal huur in Den Haag. Van een buffet tot een meergangendiner - alles is mogelijk en volledig op maat.' },
-    { q: 'Voor welke gelegenheden is de feestzaal geschikt?', a: 'De feestzaal van Chopras Indian Restaurant in Den Haag is geschikt voor verjaardagsfeesten, bruiloften, vrijgezellenfeesten, bedrijfsfeesten, personeelsfeesten, Diwali-vieringen, kinderfeesten, babyshowers, borrels, vergaderingen en teambuilding evenementen.' },
-    { q: 'Hoeveel personen passen er in de feestzaal van Chopras Indian Restaurant?', a: 'De privé evenementenruimte van Chopras Indian Restaurant Den Haag is flexibel inzetbaar voor groepen van verschillende groottes. Neem contact op voor exacte capaciteitsinformatie en beschikbaarheid.' },
-    { q: 'Hoe boek ik een feestzaal bij Chopras Indian Restaurant Den Haag?', a: 'Neem contact op via onze contactpagina of bel ons direct. Wij bespreken graag uw wensen, datum en catering en sturen u een vrijblijvende offerte toe.' },
-    { q: 'Is er een goedkope feestzaal te huren in Den Haag met catering?', a: 'Chopras Indian Restaurant biedt competitieve tarieven voor feestzaalverhuur in Den Haag inclusief authentiek Indiaas catering. Vraag een vrijblijvende offerte aan via onze contactpagina.' },
-  ] : [
-    { q: 'Can I hire a party hall at Chopras Indian Restaurant in Den Haag?', a: 'Yes. Chopras Indian Restaurant offers a private event space for hire in Den Haag, perfect for birthdays, weddings, corporate events, Diwali dinners and all other occasions. Contact us for a no-obligation quote.' },
-    { q: 'Is catering included when hiring the event space?', a: 'Yes. Chopras Indian Restaurant provides full authentic Indian catering with your event venue hire in Den Haag. From a buffet to a multi-course dinner - everything is possible and fully customized to your needs.' },
-    { q: 'What occasions is the event space suitable for?', a: 'The event space at Chopras Indian Restaurant in Den Haag is suitable for birthday parties, weddings, stag parties, corporate events, staff parties, Diwali celebrations, children\'s parties, baby showers, drinks receptions, meetings and team building events.' },
-    { q: 'How many people can the event space at Chopras Indian Restaurant accommodate?', a: 'The private event space at Chopras Indian Restaurant Den Haag is flexible for groups of various sizes. Contact us for exact capacity information and availability.' },
-    { q: 'How do I book an event space at Chopras Indian Restaurant Den Haag?', a: 'Contact us via our contact page or call us directly. We are happy to discuss your requirements, date and catering options and will send you a no-obligation quote.' },
-    { q: 'Is there an affordable party hall for hire in Den Haag with catering?', a: 'Chopras Indian Restaurant offers competitive rates for event space hire in Den Haag including authentic Indian catering. Request a no-obligation quote via our contact page.' },
-  ]
 
   return (
     <>
@@ -78,7 +81,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Feestzaal Huren' : 'Event Venue', item: getLocalizedUrl(locale, 'feestzaal-den-haag') },
       ])} />
-      <JsonLd data={getFaqPageSchema(faqItems.map(({ q, a }) => ({ question: q, answer: a })))} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       {/* HERO SECTION */}
       <section className="relative min-h-[60vh] flex items-center justify-center bg-[#1B2B5E]">
@@ -437,23 +440,12 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="bg-white py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E] mb-12 text-center">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
           </h2>
-
-          <div className="space-y-4">
-            {faqItems.map(({ q, a }) => (
-              <details key={q} className="border-l-4 border-[#D4AF37] bg-[#FFFAF5] rounded-r-lg p-6">
-                <summary className="cursor-pointer text-[#1B2B5E] font-semibold text-lg mb-3 list-none flex items-center gap-3">
-                  <span className="text-[#D4AF37] text-xl flex-shrink-0">+</span>
-                  {q}
-                </summary>
-                <p className="text-[#1A1A1A]/70 leading-relaxed ml-8">{a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

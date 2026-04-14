@@ -4,12 +4,43 @@ import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'nl' }]
 }
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  {
+    question: 'Is de butter chicken bij Chopras halal?',
+    answer: 'Ja. Alle kip bij Chopras is uitsluitend afkomstig van halal-gecertificeerde leveranciers. De gehele keuken werkt volgens halal-normen  -  het is geen optie of speciaal verzoek. U kunt hier met volledig vertrouwen eten.',
+  },
+  {
+    question: 'Hoe pittig is de butter chicken bij Chopras?',
+    answer: 'Butter chicken is een van de mildste gerechten op het Indiase menu  -  het is opzettelijk zacht in hitte, waarbij de warmte afkomstig is van de aromatische kruiden in plaats van chili. De meeste kinderen eten het graag. Als u van pittig houdt, kunt u vragen om het pittiger te maken.',
+  },
+  {
+    question: 'Kan ik butter chicken laten bezorgen in Den Haag?',
+    answer: 'Ja. Chopras is beschikbaar op Thuisbezorgd en Uber Eats voor bezorging in het grootste deel van Den Haag binnen een straal van 5 km vanaf Leyweg. Butter chicken gaat uitstekend mee  -  de saus blijft rijk en romig.',
+  },
+]
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  {
+    question: "Is Chopras' butter chicken halal?",
+    answer: 'Yes. All chicken at Chopras is sourced exclusively from halal-certified suppliers. The entire kitchen operates to halal standards  -  it is not an option or a special request. You can eat here with complete confidence.',
+  },
+  {
+    question: 'How spicy is the butter chicken at Chopras?',
+    answer: 'Butter chicken is one of the mildest dishes on the Indian menu  -  it is intentionally gentle in heat, with the warmth coming from the aromatic spices rather than chilli. Most children eat it happily.',
+  },
+  {
+    question: 'Can I order butter chicken for delivery in Den Haag?',
+    answer: 'Yes. Chopras is available on Thuisbezorgd and Uber Eats for delivery across most of Den Haag within a 5km radius of Leyweg. Butter chicken travels exceptionally well.',
+  },
+]
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
@@ -54,34 +85,6 @@ export default function ButterChickenPage({ params }: Props) {
   const base = locale === 'nl' ? '/nl' : ''
   const isNl = locale === 'nl'
 
-  const butterChickenFaqs = isNl ? [
-    {
-      question: 'Serveer je butter chicken bij Chopras Indian Restaurant in Den Haag?',
-      answer: 'Ja. Chopras Indian Restaurant serveert authentieke butter chicken dagelijks. Onze butter chicken wordt gemaakt van een nacht gemarineerde tandoor-kip, vers ingedikt in tomaten en room, met kruiden die diezelfde ochtend zijn gemalen. Het is op basis van het originele recept uit Oud-Delhi van Moti Mahal.'
-    },
-    {
-      question: 'Wat maakt de butter chicken van Chopras Indian Restaurant speciaal?',
-      answer: 'De butter chicken van Chopras Indian Restaurant is speciaal omdat we elk detail goed doen. Tandoor-gemarineerde kip wordt langzaam bereid in een rijke tomaten- en roomsaus, met kruiden die vers gemalen zijn, echte room en boter, niet uit een pot. We starten met vers gemarineerde kip de avond van tevoren, niet een uur eerder. Dit creëert authentieke smaak.'
-    },
-    {
-      question: 'Waar vind ik de beste butter chicken in Den Haag?',
-      answer: 'Chopras Indian Restaurant op Leyweg 986 serveert de beste authentieke butter chicken in Den Haag. We serveren murgh makhani op dezelfde manier als in India - gemaakt met verse tomaten, volledige room en gemarineerde tandoor-kip. Kom binnen en smak het verschil.'
-    }
-  ] : [
-    {
-      question: 'Does Chopras Indian Restaurant serve butter chicken in Den Haag?',
-      answer: 'Yes. Chopras Indian Restaurant serves authentic butter chicken daily. Our butter chicken is made from overnight-marinated tandoor chicken, slow-cooked in a rich tomato and cream sauce, with spices freshly ground that morning. It is based on the original recipe from Old Delhi at Moti Mahal.'
-    },
-    {
-      question: 'What makes Chopras Indian Restaurant butter chicken special?',
-      answer: 'Chopras Indian Restaurant butter chicken is special because we get every detail right. Tandoor-marinated chicken is slow-cooked in a rich tomato and cream sauce, with spices freshly ground, real cream and butter, not from a jar. We start with fresh marinated chicken the evening before, not an hour earlier. This creates authentic flavour.'
-    },
-    {
-      question: 'Where can I find the best butter chicken in Den Haag?',
-      answer: 'Chopras Indian Restaurant on Leyweg 986 serves the best authentic butter chicken in Den Haag. We serve murgh makhani the way it is made in India - made with fresh tomatoes, full-fat cream and marinated tandoor chicken. Come in and taste the difference.'
-    }
-  ]
-
   return (
     <>
       <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'butter-chicken-den-haag'))} />
@@ -89,7 +92,7 @@ export default function ButterChickenPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Butter Chicken Den Haag' : 'Butter Chicken Den Haag', item: getLocalizedUrl(locale, 'butter-chicken-den-haag') },
       ])} />
-      <JsonLd data={getFaqPageSchema(butterChickenFaqs)} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       {/* HERO */}
       <section className="bg-[#1B2B5E] py-20 text-center">
@@ -171,43 +174,17 @@ export default function ButterChickenPage({ params }: Props) {
       </section>
 
       {/* SECTION 3  -  FAQ */}
-      <section className="bg-[#1B2B5E] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-10">
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? "Is de butter chicken bij Chopras halal?" : "Is Chopras' butter chicken halal?",
-                a: isNl
-                  ? "Ja. Alle kip bij Chopras is uitsluitend afkomstig van halal-gecertificeerde leveranciers. De gehele keuken werkt volgens halal-normen  -  het is geen optie of speciaal verzoek. U kunt hier met volledig vertrouwen eten."
-                  : "Yes. All chicken at Chopras is sourced exclusively from halal-certified suppliers. The entire kitchen operates to halal standards  -  it is not an option or a special request. You can eat here with complete confidence.",
-              },
-              {
-                q: isNl ? "Hoe pittig is de butter chicken bij Chopras?" : "How spicy is the butter chicken at Chopras?",
-                a: isNl
-                  ? "Butter chicken is een van de mildste gerechten op het Indiase menu  -  het is opzettelijk zacht in hitte, waarbij de warmte afkomstig is van de aromatische kruiden in plaats van chili. De meeste kinderen eten het graag. Als u van pittig houdt, kunt u vragen om het pittiger te maken."
-                  : "Butter chicken is one of the mildest dishes on the Indian menu  -  it is intentionally gentle in heat, with the warmth coming from the aromatic spices rather than chilli. Most children eat it happily.",
-              },
-              {
-                q: isNl ? "Kan ik butter chicken laten bezorgen in Den Haag?" : "Can I order butter chicken for delivery in Den Haag?",
-                a: isNl
-                  ? "Ja. Chopras is beschikbaar op Thuisbezorgd en Uber Eats voor bezorging in het grootste deel van Den Haag binnen een straal van 5 km vanaf Leyweg. Butter chicken gaat uitstekend mee  -  de saus blijft rijk en romig."
-                  : "Yes. Chopras is available on Thuisbezorgd and Uber Eats for delivery across most of Den Haag within a 5km radius of Leyweg. Butter chicken travels exceptionally well.",
-              },
-            ].map(({ q, a }) => (
-              <details key={q} className="border-l-4 border-[#D4AF37] bg-white/10 rounded-r-xl">
-                <summary className="px-6 py-4 cursor-pointer text-white font-bold text-lg list-none">{q}</summary>
-                <p className="px-6 pb-5 pt-2 text-white/80 leading-relaxed">{a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
       {/* SECTION 4  -  Visit */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl

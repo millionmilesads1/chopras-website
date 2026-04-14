@@ -4,12 +4,27 @@ import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'nl' }]
 }
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  { question: 'Is alle vlees op het halal menu gekeurde halal?', answer: 'Ja. Alle vlees op het Chopras halal menu is van gecertificeerde halal leveranciers. Geen uitzonderingen, geen voorwaarden. Dit geldt voor kip, lam, schapen- en visgerechten.' },
+  { question: 'Welke curry&apos;s zijn het populairst op het halal menu?', answer: 'Butter chicken, lamb rogan josh, en chicken tikka masala zijn de meest bestelde gerechten. Ze zijn mild, rijk, en geschikt voor beginners in Indiaas eten. Voor meer ervaren eters: mutton keema en seekh kebab.' },
+  { question: 'Kunnen vegetarische gasten samen met halal-eters eten?', answer: 'Volledig. Dal makhani, chana masala, paneer tikka en vegetable biryani zijn beschikbaar zonder compromissen. Ze worden in dezelfde halal keuken bereid.' },
+  { question: 'Kan ik het halal menu online bestellen?', answer: 'Ja. Bestel via Thuisbezorgd of Uber Eats. Alle halal certificering blijft gelden voor bezorgbestellingen. Volledige ketenintegriteit van keuken tot deur.' },
+]
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  { question: 'Is all meat on the halal menu certified halal?', answer: 'Yes. All meat on the Chopras halal menu is from certified halal suppliers. No exceptions, no conditions. This applies to chicken, lamb, mutton and seafood dishes.' },
+  { question: 'Which curries are most popular on the halal menu?', answer: 'Butter chicken, lamb rogan josh, and chicken tikka masala are the most ordered dishes. They are mild, rich, and suitable for beginners in Indian food. For more experienced eaters: mutton keema and seekh kebab.' },
+  { question: 'Can vegetarian guests eat alongside halal diners?', answer: 'Completely. Dal makhani, chana masala, paneer tikka and vegetable biryani are available without compromise. They are prepared in the same halal kitchen.' },
+  { question: 'Can I order the halal menu online?', answer: 'Yes. Order via Thuisbezorgd or Uber Eats. All halal certification remains in effect for delivery orders. Full chain integrity from kitchen to door.' },
+]
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
@@ -50,18 +65,6 @@ export default function HalalMenuPage({ params }: Props) {
   const base = locale === 'nl' ? '/nl' : ''
   const isNl = locale === 'nl'
 
-  const faqItems = isNl ? [
-    { question: 'Is alle vlees op het halal menu gekeurde halal?', answer: 'Ja. Alle vlees op het Chopras halal menu is van gecertificeerde halal leveranciers. Geen uitzonderingen, geen voorwaarden. Dit geldt voor kip, lam, schapen- en visgerechten.' },
-    { question: 'Welke curry&apos;s zijn het populairst op het halal menu?', answer: 'Butter chicken, lamb rogan josh, en chicken tikka masala zijn de meest bestelde gerechten. Ze zijn mild, rijk, en geschikt voor beginners in Indiaas eten. Voor meer ervaren eters: mutton keema en seekh kebab.' },
-    { question: 'Kunnen vegetarische gasten samen met halal-eters eten?', answer: 'Volledig. Dal makhani, chana masala, paneer tikka en vegetable biryani zijn beschikbaar zonder compromissen. Ze worden in dezelfde halal keuken bereid.' },
-    { question: 'Kan ik het halal menu online bestellen?', answer: 'Ja. Bestel via Thuisbezorgd of Uber Eats. Alle halal certificering blijft gelden voor bezorgbestellingen. Volledige ketenintegriteit van keuken tot deur.' },
-  ] : [
-    { question: 'Is all meat on the halal menu certified halal?', answer: 'Yes. All meat on the Chopras halal menu is from certified halal suppliers. No exceptions, no conditions. This applies to chicken, lamb, mutton and seafood dishes.' },
-    { question: 'Which curries are most popular on the halal menu?', answer: 'Butter chicken, lamb rogan josh, and chicken tikka masala are the most ordered dishes. They are mild, rich, and suitable for beginners in Indian food. For more experienced eaters: mutton keema and seekh kebab.' },
-    { question: 'Can vegetarian guests eat alongside halal diners?', answer: 'Completely. Dal makhani, chana masala, paneer tikka and vegetable biryani are available without compromise. They are prepared in the same halal kitchen.' },
-    { question: 'Can I order the halal menu online?', answer: 'Yes. Order via Thuisbezorgd or Uber Eats. All halal certification remains in effect for delivery orders. Full chain integrity from kitchen to door.' },
-  ]
-
   return (
     <>
       <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'halal-menu'))} />
@@ -69,7 +72,7 @@ export default function HalalMenuPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Halal Menu' : 'Halal Menu', item: getLocalizedUrl(locale, 'halal-menu') },
       ])} />
-      <JsonLd data={getFaqPageSchema(faqItems)} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,22 +139,12 @@ export default function HalalMenuPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Halal Menu FAQ' : 'Halal Menu FAQ'}
           </h2>
-          <div className="space-y-4">
-            {faqItems.map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.question}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.answer}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

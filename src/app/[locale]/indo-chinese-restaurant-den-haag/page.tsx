@@ -4,6 +4,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -44,23 +45,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsNl: Array<{ question: string; answer: string }> = [
+  { question: 'Wat is Indo-Chinese voeding?', answer: 'Indo-Chinese is een fusie van Indiase en Chinese keukens. Het combineert Indiase kruiden en bereidingstechnieken met Chinese noodels, rijst en sauzen. Schezwan sauzen, hokkien noedels en Indiase specerijen maken deze keuken uniek pikant en aromatisch.' },
+  { question: 'Welke Indo-Chinese gerechten zijn het populairst?', answer: 'Schezwan noedels, manchurian balletjes, fried rice, momos en indo-Chinese curry zijn de bestsellers. Ze zijn pikant, voelvaardig, en volledig anders van traditioneel Indiaas eten. Voor degenen die experimenteren: try de paneer schezwan.' },
+  { question: 'Is Indo-Chinese voeding erg pikant?', answer: 'Indo-Chinese gerechten zijn over het algemeen pikanter dan traditionele Indiase curry&apos;s. Schezwan pepersaus en Chinese peppersaus geven de hitte. We kunnen het niveau aanpassen naar voorkeur, van mild tot zeer pikant.' },
+  { question: 'Kan ik Indo-Chinese online bestellen?', answer: 'Ja. Bestel via Thuisbezorgd of Uber Eats. Alle Indo-Chinese gerechten blijven pikant en smaakvol bij levering. Volledige ketenintegriteit van keuken tot deur.' },
+]
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  { question: 'What is Indo-Chinese food?', answer: 'Indo-Chinese is a fusion of Indian and Chinese cuisines. It combines Indian spices and cooking techniques with Chinese noodles, rice and sauces. Schezwan sauces, hokkien noodles and Indian spices make this cuisine uniquely spicy and aromatic.' },
+  { question: 'Which Indo-Chinese dishes are most popular?', answer: 'Schezwan noodles, manchurian balls, fried rice, momos and Indo-Chinese curry are bestsellers. They are spicy, satisfying, and completely different from traditional Indian food. For those wanting to experiment: try the paneer schezwan.' },
+  { question: 'Is Indo-Chinese food very spicy?', answer: 'Indo-Chinese dishes are generally spicier than traditional Indian curries. Schezwan pepper sauce and Chinese pepper sauce give the heat. We can adjust the level to your preference, from mild to very spicy.' },
+  { question: 'Can I order Indo-Chinese online?', answer: 'Yes. Order via Thuisbezorgd or Uber Eats. All Indo-Chinese dishes remain spicy and flavorful on delivery. Full chain integrity from kitchen to door.' },
+]
+
 export default function IndoChineseRestaurantPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
   const base = locale === 'nl' ? '/nl' : ''
   const isNl = locale === 'nl'
-
-  const faqItems = isNl ? [
-    { question: 'Wat is Indo-Chinese voeding?', answer: 'Indo-Chinese is een fusie van Indiase en Chinese keukens. Het combineert Indiase kruiden en bereidingstechnieken met Chinese noodels, rijst en sauzen. Schezwan sauzen, hokkien noedels en Indiase specerijen maken deze keuken uniek pikant en aromatisch.' },
-    { question: 'Welke Indo-Chinese gerechten zijn het populairst?', answer: 'Schezwan noedels, manchurian balletjes, fried rice, momos en indo-Chinese curry zijn de bestsellers. Ze zijn pikant, voelvaardig, en volledig anders van traditioneel Indiaas eten. Voor degenen die experimenteren: try de paneer schezwan.' },
-    { question: 'Is Indo-Chinese voeding erg pikant?', answer: 'Indo-Chinese gerechten zijn over het algemeen pikanter dan traditionele Indiase curry&apos;s. Schezwan pepersaus en Chinese peppersaus geven de hitte. We kunnen het niveau aanpassen naar voorkeur, van mild tot zeer pikant.' },
-    { question: 'Kan ik Indo-Chinese online bestellen?', answer: 'Ja. Bestel via Thuisbezorgd of Uber Eats. Alle Indo-Chinese gerechten blijven pikant en smaakvol bij levering. Volledige ketenintegriteit van keuken tot deur.' },
-  ] : [
-    { question: 'What is Indo-Chinese food?', answer: 'Indo-Chinese is a fusion of Indian and Chinese cuisines. It combines Indian spices and cooking techniques with Chinese noodles, rice and sauces. Schezwan sauces, hokkien noodles and Indian spices make this cuisine uniquely spicy and aromatic.' },
-    { question: 'Which Indo-Chinese dishes are most popular?', answer: 'Schezwan noodles, manchurian balls, fried rice, momos and Indo-Chinese curry are bestsellers. They are spicy, satisfying, and completely different from traditional Indian food. For those wanting to experiment: try the paneer schezwan.' },
-    { question: 'Is Indo-Chinese food very spicy?', answer: 'Indo-Chinese dishes are generally spicier than traditional Indian curries. Schezwan pepper sauce and Chinese pepper sauce give the heat. We can adjust the level to your preference, from mild to very spicy.' },
-    { question: 'Can I order Indo-Chinese online?', answer: 'Yes. Order via Thuisbezorgd or Uber Eats. All Indo-Chinese dishes remain spicy and flavorful on delivery. Full chain integrity from kitchen to door.' },
-  ]
 
   return (
     <>
@@ -69,7 +72,7 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Indo-Chinese Restaurant' : 'Indo-Chinese Restaurant', item: getLocalizedUrl(locale, 'indo-chinese-restaurant-den-haag') },
       ])} />
-      <JsonLd data={getFaqPageSchema(faqItems)} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,26 +139,16 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Indo-Chinese FAQ' : 'Indo-Chinese FAQ'}
           </h2>
-          <div className="space-y-4">
-            {faqItems.map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.question}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.answer}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-[#FFFAF5] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Indo-Chinese Bestellen' : 'Order Indo-Chinese'}

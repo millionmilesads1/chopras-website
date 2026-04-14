@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
@@ -143,35 +144,12 @@ export default function DiwaliDinnerPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Diwali FAQ' : 'Diwali FAQ'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? 'Hoe lang van tevoren moet ik reserveren?' : 'How long in advance should I book?',
-                a: isNl ? 'Voor het restaurant, raden wij aan minstens twee weken van tevoren te reserveren. Voor catering thuis, graag vier weken. Diwali is populair en we willen zeker zijn dat we tijd hebben voor je.' : 'For the restaurant, we recommend booking at least two weeks in advance. For home catering, please book four weeks. Diwali is popular and we want to be sure we have time for you.'
-              },
-              {
-                q: isNl ? 'Kunt je mensen uit verschillende culturen accommoderen?' : 'Can you accommodate people from different cultures?',
-                a: isNl ? 'Ja. Dit is Diwali - het gaat over licht en goed voor iedereen. Vegetarische opties, glutenvrije opties, alles. We willen dat iedereen feest.' : 'Yes. This is Diwali - it is about light and good for everyone. Vegetarian options, gluten-free options, everything. We want everyone to celebrate.'
-              },
-              {
-                q: isNl ? 'Wat is het minimum aantal gasten?' : 'What is the minimum number of guests?',
-                a: isNl ? 'Voor catering thuis, minimaal zes personen. Voor het restaurant, je kunt alleen komen eten, of met wie je wil. Geen minimum.' : 'For home catering, a minimum of six people. For the restaurant, you can come alone, or with whoever you want. No minimum.'
-              },
-            ].map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.q}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

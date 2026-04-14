@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
@@ -44,6 +45,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn = [
+  { question: 'How do I get there?', answer: 'Car: Leyweg 986, Den Haag. Public transport: tram or bus to Leyweg. Parking is available in front of the restaurant.' },
+  { question: 'Do I need to book?', answer: 'For groups we recommend booking. For dinner on quieter evenings you can also walk in.' },
+  { question: 'What are the opening hours?', answer: 'Tuesday to Sunday, 16:30 to 22:30. Closed Monday.' },
+]
+
+const faqsNl = [
+  { question: 'Hoe kan ik er heen?', answer: 'Auto: Leyweg 986, Den Haag. Vervoer: tram of bus naar Leyweg. Parkeren is beschikbaar aan de voorkant van het restaurant.' },
+  { question: 'Moet ik reserveren?', answer: 'Voor groepen raden we aan te reserveren. Voor diner op rustige avonden kunt u ook binnenlopen.' },
+  { question: 'Wat zijn de openingstijden?', answer: 'Dinsdag tot zondag, 16:30 tot 22:30. Maandag gesloten.' },
+]
+
 export default function IndianRestaurantPeacePalacePage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -57,6 +70,7 @@ export default function IndianRestaurantPeacePalacePage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Bij Friedespaleis' : 'Near Peace Palace', item: getLocalizedUrl(locale, 'indian-restaurant-near-peace-palace-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,35 +144,12 @@ export default function IndianRestaurantPeacePalacePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Bezoeksinfo' : 'Visit Info'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? 'Hoe kan ik er heen?' : 'How do I get there?',
-                a: isNl ? 'Auto: Leyweg 986, Den Haag. Vervoer: tram of bus naar Leyweg. Parkeren is beschikbaar aan de voorkant van het restaurant.' : 'Car: Leyweg 986, Den Haag. Public transport: tram or bus to Leyweg. Parking is available in front of the restaurant.'
-              },
-              {
-                q: isNl ? 'Moet ik reserveren?' : 'Do I need to book?',
-                a: isNl ? 'Voor groepen raden we aan te reserveren. Voor diner op rustige avonden kunt u ook binnenlopen.' : 'For groups we recommend booking. For dinner on quieter evenings you can also walk in.'
-              },
-              {
-                q: isNl ? 'Wat zijn de openingstijden?' : 'What are the opening hours?',
-                a: isNl ? 'Dinsdag tot zondag, 16:30 tot 22:30. Maandag gesloten.' : 'Tuesday to Sunday, 16:30 to 22:30. Closed Monday.'
-              },
-            ].map((item, idx) => (
-              <details key={idx} className="group border border-[#D4AF37] rounded-lg p-6 cursor-pointer hover:bg-white/50 transition-colors">
-                <summary className="font-bold text-[#1B2B5E] flex justify-between items-center">
-                  {item.q}
-                  <span className="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-[#1A1A1A] mt-4">{item.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 

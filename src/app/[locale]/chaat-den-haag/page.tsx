@@ -2,14 +2,45 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+import FaqAccordion from '@/components/sections/FaqAccordion'
 
 type Props = { params: { locale: Locale } }
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'nl' }]
 }
+
+const faqsNl: Array<{ question: string; answer: string }> = [
+  {
+    question: 'Is chaat gezond?',
+    answer: 'Chaat bevat veel groenten, kikkererwten, en kruiden. Het is voedzaam. Ja, het wordt gebakken, dus het is niet calorie-arm. Maar het is echte voedsel met echte ingrediënten. Het is een snack, niet een maaltijd. Dit is hoe het in India gegeten wordt.',
+  },
+  {
+    question: 'Kan ik chaat mee naar huis nemen?',
+    answer: 'Chaat smaakt het beste vers. We raden aan het op te eten wanneer je het krijgt. Als je het mee moet nemen, wil het geen garantie dat het hetzelfde smaak zal zijn. Maar je kunt het altijd proberen.',
+  },
+  {
+    question: 'Is chaat vegetarisch?',
+    answer: 'Ja, alle chaat die we serveren zijn vegetarisch. Ze bestaan uit aardappel, kikkererwten, bloem, water en kruiden. Er is geen vlees of vis.',
+  },
+]
+
+const faqsEn: Array<{ question: string; answer: string }> = [
+  {
+    question: 'Is chaat healthy?',
+    answer: 'Chaat contains many vegetables, chickpeas, and spices. It is nourishing. Yes, it is fried, so it is not low-calorie. But it is real food with real ingredients. It is a snack, not a meal. This is how it is eaten in India.',
+  },
+  {
+    question: 'Can I take chaat home?',
+    answer: 'Chaat tastes best fresh. We recommend eating it when you get it. If you must take it home, we cannot guarantee it will taste the same. But you can always try.',
+  },
+  {
+    question: 'Is chaat vegetarian?',
+    answer: 'Yes, all chaat we serve are vegetarian. They consist of potato, chickpeas, flour, water and spices. There is no meat or fish.',
+  },
+]
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = params
@@ -61,6 +92,7 @@ export default function ChaatPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Chaat Den Haag' : 'Chaat Den Haag', item: getLocalizedUrl(locale, 'chaat-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -148,42 +180,16 @@ export default function ChaatPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#1B2B5E] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-10">
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen Over Chaat' : 'Frequently Asked Questions About Chaat'}
           </h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: isNl ? "Is chaat gezond?" : "Is chaat healthy?",
-                a: isNl
-                  ? "Chaat bevat veel groenten, kikkererwten, en kruiden. Het is voedzaam. Ja, het wordt gebakken, dus het is niet calorie-arm. Maar het is echte voedsel met echte ingrediënten. Het is een snack, niet een maaltijd. Dit is hoe het in India gegeten wordt."
-                  : "Chaat contains many vegetables, chickpeas, and spices. It is nourishing. Yes, it is fried, so it is not low-calorie. But it is real food with real ingredients. It is a snack, not a meal. This is how it is eaten in India.",
-              },
-              {
-                q: isNl ? "Kan ik chaat mee naar huis nemen?" : "Can I take chaat home?",
-                a: isNl
-                  ? "Chaat smaakt het beste vers. We raden aan het op te eten wanneer je het krijgt. Als je het mee moet nemen, wil het geen garantie dat het hetzelfde smaak zal zijn. Maar je kunt het altijd proberen."
-                  : "Chaat tastes best fresh. We recommend eating it when you get it. If you must take it home, we cannot guarantee it will taste the same. But you can always try.",
-              },
-              {
-                q: isNl ? "Is chaat vegetarisch?" : "Is chaat vegetarian?",
-                a: isNl
-                  ? "Ja, alle chaat die we serveren zijn vegetarisch. Ze bestaan uit aardappel, kikkererwten, bloem, water en kruiden. Er is geen vlees of vis."
-                  : "Yes, all chaat we serve are vegetarian. They consist of potato, chickpeas, flour, water and spices. There is no meat or fish.",
-              },
-            ].map(({ q, a }) => (
-              <details key={q} className="border-l-4 border-[#D4AF37] bg-white/10 rounded-r-xl">
-                <summary className="px-6 py-4 cursor-pointer text-white font-bold text-lg list-none">{q}</summary>
-                <p className="px-6 pb-5 pt-2 text-white/80 leading-relaxed">{a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Chaat Bestellen en Genieten' : 'Order and Enjoy Chaat'}
@@ -218,7 +224,7 @@ export default function ChaatPage({ params }: Props) {
       </section>
 
       {/* INTERNAL LINKS SECTION */}
-      <section className="bg-white py-16">
+      <section className="bg-[#FFFAF5] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}
