@@ -22,7 +22,7 @@
 - 4.9 stars on Google from 800+ verified reviews
 - 8.6 rating on TheFork — Top rated restaurant
 - Excellent rating on Tripadvisor — Highest rated category
-- 143 dishes across 12 categories on the menu
+- 143 dishes across 13 categories on the menu
 - Fully halal certified — every meat dish, every supplier
 - Tandoor clay oven reaches 400 degrees Celsius
 - Spices sourced directly from India and ground fresh every morning before service
