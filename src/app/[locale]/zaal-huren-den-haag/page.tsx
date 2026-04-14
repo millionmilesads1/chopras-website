@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -44,6 +44,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn = [
+  { question: 'How many people can fit in the venue?', answer: '25 to 80 guests comfortably. If you need more, we can make arrangements.' },
+  { question: 'Can my guests bring their own drinks?', answer: 'We have a selection of drinks here. You can also bring your own - there is no corkage fee.' },
+  { question: 'What if I want to add decorations?', answer: 'That is fine. You can add your own decorations. We are happy to help with setup. Your celebration, your style.' },
+]
+
+const faqsNl = [
+  { question: 'Hoeveel mensen kunnen in de zaal?', answer: '25 tot 80 gasten comfortabel. Als je meer nodig hebt, kunnen we arrangementen maken.' },
+  { question: 'Kunnen mijn gasten hun eigen drank meebrengen?', answer: 'We hebben een selectie van dranken hier. Je mag ook je eigen meebrengen - er is geen corkage fee.' },
+  { question: 'Wat als ik decoraties wil toevoegen?', answer: 'Dat is prima. Je kunt je eigen decoraties toevoegen. We helpen graag met opzet. Je feest, jouw stijl.' },
+]
+
 export default function ZaalHurenPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -57,6 +69,7 @@ export default function ZaalHurenPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Zaal Huren' : 'Venue Hire', item: getLocalizedUrl(locale, 'zaal-huren-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -145,7 +158,7 @@ export default function ZaalHurenPage({ params }: Props) {
             {[
               {
                 q: isNl ? 'Hoeveel mensen kunnen in de zaal?' : 'How many people can fit in the venue?',
-                a: isNl ? 'Dertig tot honderd comfortabel. Als je meer nodig hebt, kunnen we arrangementen maken.' : 'Thirty to one hundred comfortably. If you need more, we can make arrangements.'
+                a: isNl ? '25 tot 80 gasten comfortabel. Als je meer nodig hebt, kunnen we arrangementen maken.' : '25 to 80 guests comfortably. If you need more, we can make arrangements.'
               },
               {
                 q: isNl ? 'Kunnen mijn gasten hun eigen drank meebrengen?' : 'Can my guests bring their own drinks?',

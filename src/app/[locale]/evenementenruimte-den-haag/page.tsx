@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -44,6 +44,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn = [
+  { question: 'Can you accommodate dietary restrictions?', answer: 'Yes. Vegetarian, vegan, gluten-free, allergies - we accommodate everything. Tell us what you need.' },
+  { question: 'What is the capacity of the space?', answer: '25 to 80 guests comfortably. Depending on setup and arrangement, more can happen.' },
+  { question: 'Can we use audio-visual equipment?', answer: 'Yes. Projectors, screens, speaker systems - everything can be set up. Tell us what you need.' },
+]
+
+const faqsNl = [
+  { question: 'Kunnen jullie dieetbeperkingen accommoderen?', answer: 'Ja. Vegetarisch, vegan, gluten-vrij, allergieën - we accommoderen alles. Zeg ons wat je nodig hebt.' },
+  { question: 'Wat is de capaciteit van de ruimte?', answer: '25 tot 80 gasten comfortabel. Afhankelijk van setup en arrangement, kan meer gebeuren.' },
+  { question: 'Kunnen we audio-visuele apparatuur gebruiken?', answer: 'Ja. Projectoren, schermen, speakersystemen - alles kan worden ingesteld. Zeg ons wat je nodig hebt.' },
+]
+
 export default function EvenementenruimtePage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -57,6 +69,7 @@ export default function EvenementenruimtePage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Evenementenruimte' : 'Event Space', item: getLocalizedUrl(locale, 'evenementenruimte-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,7 +162,7 @@ export default function EvenementenruimtePage({ params }: Props) {
               },
               {
                 q: isNl ? 'Wat is de capaciteit van de ruimte?' : 'What is the capacity of the space?',
-                a: isNl ? 'Tien tot honderd comfortabel. Afhankelijk van setup en arrangement, kan meer gebeuren.' : 'Ten to one hundred comfortably. Depending on setup and arrangement, more can happen.'
+                a: isNl ? '25 tot 80 gasten comfortabel. Afhankelijk van setup en arrangement, kan meer gebeuren.' : '25 to 80 guests comfortably. Depending on setup and arrangement, more can happen.'
               },
               {
                 q: isNl ? 'Kunnen we audio-visuele apparatuur gebruiken?' : 'Can we use audio-visual equipment?',

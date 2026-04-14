@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -44,6 +44,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn = [
+  { question: 'How long does it take from Centraal to Chopras?', answer: 'Tram: fifteen minutes. Bus: twenty minutes. Car: ten minutes. You get there quickly.' },
+  { question: 'Can you just walk in?', answer: 'Outside peak hours, walk-ins are usually fine. For evening meals on weekends, we recommend booking.' },
+  { question: 'Can you leave your luggage here?', answer: 'Yes. You can leave your luggage safely. Have your dinner, and you go to the next.' },
+]
+
+const faqsNl = [
+  { question: 'Hoe lang duurt het van Centraal naar Chopras?', answer: 'Tram: vijftien minuten. Bus: twintig minuten. Auto: tien minuten. Je bent er snel.' },
+  { question: 'Kun je zonder reservering binnenlopen?', answer: 'Buiten de piekuren kunt u meestal gewoon binnenlopen. Voor avondeten in het weekend raden we reservering aan.' },
+  { question: 'Kun je je bagage hier laten?', answer: 'Ja. Je kunt je bagage veilig laten. Eet je diner, en je gaat naar het volgende.' },
+]
+
 export default function IndianRestaurantCentraalPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -57,6 +69,7 @@ export default function IndianRestaurantCentraalPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Bij Centraal' : 'Near Centraal', item: getLocalizedUrl(locale, 'indian-restaurant-near-den-haag-centraal') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

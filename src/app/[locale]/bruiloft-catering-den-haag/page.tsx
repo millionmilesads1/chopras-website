@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -44,6 +44,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn = [
+  { question: 'How much time in advance should I book?', answer: 'For a wedding of eighty or more guests, we recommend at least three months in advance. This gives us time to work with you on the menu and details.' },
+  { question: 'Can you provide both vegetarian and meat dishes?', answer: 'Yes, absolutely. Most weddings have both. We prepare them separately to prevent contamination, and everything is served with equal care.' },
+  { question: 'What is included in the price?', answer: 'Menu design, preparation, delivery, setup, servers, plates, utensils, napkins, everything. The only costs you have are for food and service. Nothing hidden.' },
+]
+
+const faqsNl = [
+  { question: 'Hoe veel tijd van tevoren moet ik boeken?', answer: 'Voor een bruiloft van tachtig of meer gasten, raden we ten minste drie maanden vooraf aan. Dit geeft ons tijd om met je samen te werken aan het menu en de details.' },
+  { question: 'Kun je vegetarische en vlees gerechten beide leveren?', answer: 'Ja, absoluut. De meeste bruiloften hebben beide. We bereiden ze afzonderlijk om contamatie te voorkomen, en alles wordt geserveerd met gelijke liefde.' },
+  { question: 'Wat is inbegrepen in de prijs?', answer: 'Menu design, voorbereiding, bezorging, opzet, serveerders, borden, bestek, servetten, alles. De enige kosten die je hebt zijn voor eten en service. Niets verborgen.' },
+]
+
 export default function BruiloftCateringPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -57,6 +69,7 @@ export default function BruiloftCateringPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Bruiloft Catering' : 'Wedding Catering', item: getLocalizedUrl(locale, 'bruiloft-catering-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -145,7 +158,7 @@ export default function BruiloftCateringPage({ params }: Props) {
             {[
               {
                 q: isNl ? 'Hoe veel tijd van tevoren moet ik boeken?' : 'How much time in advance should I book?',
-                a: isNl ? 'Voor een bruiloft van honderd of meer gasten, raden we ten minste drie maanden vooraf aan. Dit geeft ons tijd om met je samen te werken aan het menu en de details.' : 'For a wedding of one hundred or more guests, we recommend at least three months in advance. This gives us time to work with you on the menu and details.'
+                a: isNl ? 'Voor een bruiloft van tachtig of meer gasten, raden we ten minste drie maanden vooraf aan. Dit geeft ons tijd om met je samen te werken aan het menu en de details.' : 'For a wedding of eighty or more guests, we recommend at least three months in advance. This gives us time to work with you on the menu and details.'
               },
               {
                 q: isNl ? 'Kun je vegetarische en vlees gerechten beide leveren?' : 'Can you provide both vegetarian and meat dishes?',

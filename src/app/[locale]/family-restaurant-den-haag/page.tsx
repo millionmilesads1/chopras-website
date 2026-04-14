@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -44,6 +44,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn = [
+  { question: 'Are children welcome?', answer: 'Yes, absolutely. This is a family restaurant. Children are welcome. Families are our foundation.' },
+  { question: 'Do you have food that children like to eat?', answer: 'Yes. Mild curry. Naan. Rice. Tandoori. Vegetables. Many options for children.' },
+  { question: 'Can I order small portions?', answer: 'Yes. We understand that children eat less. Tell us, we do it for you.' },
+]
+
+const faqsNl = [
+  { question: 'Zijn kinderen welkom?', answer: 'Ja, absoluut. Dit is een familie restaurant. Kinderen zijn welkom. Families zijn ons basis.' },
+  { question: 'Hebben jullie voedsel dat kinderen graag eten?', answer: 'Ja. Mild curry. Naan. Rijst. Tandoori. Groenten. Veel opties voor kinderen.' },
+  { question: 'Kan ik kleine porties bestellen?', answer: 'Ja. We begrijpen dat kinderen minder eten. Zeg het ons, we doen het voor je.' },
+]
+
 export default function FamilyRestaurantPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -57,6 +69,7 @@ export default function FamilyRestaurantPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Familie Restaurant' : 'Family Restaurant', item: getLocalizedUrl(locale, 'family-restaurant-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

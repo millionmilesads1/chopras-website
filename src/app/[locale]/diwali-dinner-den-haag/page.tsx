@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -44,6 +44,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const faqsEn = [
+  { question: 'How long in advance should I book?', answer: 'For the restaurant, we recommend booking at least two weeks in advance. For home catering, please book four weeks. Diwali is popular and we want to be sure we have time for you.' },
+  { question: 'Can you accommodate people from different cultures?', answer: 'Yes. This is Diwali - it is about light and good for everyone. Vegetarian options, gluten-free options, everything. We want everyone to celebrate.' },
+  { question: 'What is the minimum number of guests?', answer: 'For home catering, a minimum of six people. For the restaurant, you can come alone, or with whoever you want. No minimum.' },
+]
+
+const faqsNl = [
+  { question: 'Hoe lang van tevoren moet ik reserveren?', answer: 'Voor het restaurant, raden wij aan minstens twee weken van tevoren te reserveren. Voor catering thuis, graag vier weken. Diwali is populair en we willen zeker zijn dat we tijd hebben voor je.' },
+  { question: 'Kunt je mensen uit verschillende culturen accommoderen?', answer: 'Ja. Dit is Diwali - het gaat over licht en goed voor iedereen. Vegetarische opties, glutenvrije opties, alles. We willen dat iedereen feest.' },
+  { question: 'Wat is het minimum aantal gasten?', answer: 'Voor catering thuis, minimaal zes personen. Voor het restaurant, je kunt alleen komen eten, of met wie je wil. Geen minimum.' },
+]
+
 export default function DiwaliDinnerPage({ params }: Props) {
   const { locale } = params
   const tr = getTranslations(locale)
@@ -57,6 +69,7 @@ export default function DiwaliDinnerPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Diwali Diner' : 'Diwali Dinner', item: getLocalizedUrl(locale, 'diwali-dinner-den-haag') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,7 +152,7 @@ export default function DiwaliDinnerPage({ params }: Props) {
             {[
               {
                 q: isNl ? 'Hoe lang van tevoren moet ik reserveren?' : 'How long in advance should I book?',
-                a: isNl ? 'Voor het restaurant, ik raad je aan minstens twee weken van tevoren te reserveren. Voor catering thuis, graag vier weken. Diwali is populair en we willen zeker zijn dat we tijd hebben voor je.' : 'For the restaurant, I recommend booking at least two weeks in advance. For home catering, please book four weeks. Diwali is popular and we want to be sure we have time for you.'
+                a: isNl ? 'Voor het restaurant, raden wij aan minstens twee weken van tevoren te reserveren. Voor catering thuis, graag vier weken. Diwali is populair en we willen zeker zijn dat we tijd hebben voor je.' : 'For the restaurant, we recommend booking at least two weeks in advance. For home catering, please book four weeks. Diwali is popular and we want to be sure we have time for you.'
               },
               {
                 q: isNl ? 'Kunt je mensen uit verschillende culturen accommoderen?' : 'Can you accommodate people from different cultures?',
