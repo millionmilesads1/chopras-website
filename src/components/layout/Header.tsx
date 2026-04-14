@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown, ShoppingBag, ShoppingCart } from 'lucide-react'
 import { RESTAURANT } from '@/lib/constants'
 import { cn } from '@/lib/utils'
@@ -12,18 +12,17 @@ import { useCartStore } from '@/store/cartStore'
 
 function LanguageSwitcher({ locale }: { locale: Locale }) {
   const pathname = usePathname()
-  const router = useRouter()
 
-  function switchLanguage(newLocale: Locale) {
-    const segments = pathname.split('/')
-    segments[1] = newLocale
-    router.push(segments.join('/'))
+  function getLocalePath(newLocale: Locale): string {
+    const slug = pathname.startsWith('/nl') ? pathname.slice(3) : pathname
+    const clean = slug || '/'
+    return newLocale === 'nl' ? `/nl${clean === '/' ? '' : clean}` : clean
   }
 
   return (
     <div className="flex items-center bg-white/[0.08] rounded-full p-0.5">
-      <button
-        onClick={() => switchLanguage('en')}
+      <a
+        href={getLocalePath('en')}
         aria-label="Switch to English"
         className={cn(
           'px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200',
@@ -33,9 +32,9 @@ function LanguageSwitcher({ locale }: { locale: Locale }) {
         )}
       >
         EN
-      </button>
-      <button
-        onClick={() => switchLanguage('nl')}
+      </a>
+      <a
+        href={getLocalePath('nl')}
         aria-label="Switch to Nederlands"
         className={cn(
           'px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200',
@@ -45,7 +44,7 @@ function LanguageSwitcher({ locale }: { locale: Locale }) {
         )}
       >
         NL
-      </button>
+      </a>
     </div>
   )
 }
