@@ -46,13 +46,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const faqsEn = [
   { question: 'How many people can fit in the venue?', answer: '25 to 80 guests comfortably. If you need more, we can make arrangements.' },
-  { question: 'Can my guests bring their own drinks?', answer: 'We have a selection of drinks here. You can also bring your own - there is no corkage fee.' },
+  { question: 'Can my guests bring their own drinks?', answer: 'Chopras Indian Restaurant is a fully halal venue. We serve a selection of soft drinks, juices, and water. No alcohol is served or permitted on the premises.' },
   { question: 'What if I want to add decorations?', answer: 'That is fine. You can add your own decorations. We are happy to help with setup. Your celebration, your style.' },
 ]
 
 const faqsNl = [
   { question: 'Hoeveel mensen kunnen in de zaal?', answer: '25 tot 80 gasten comfortabel. Als je meer nodig hebt, kunnen we arrangementen maken.' },
-  { question: 'Kunnen mijn gasten hun eigen drank meebrengen?', answer: 'We hebben een selectie van dranken hier. Je mag ook je eigen meebrengen - er is geen corkage fee.' },
+  { question: 'Kunnen mijn gasten hun eigen drank meebrengen?', answer: 'Chopras Indian Restaurant is een volledig halal locatie. Wij serveren een selectie van frisdranken, sappen en water. Er wordt geen alcohol geserveerd of toegestaan op het terrein.' },
   { question: 'Wat als ik decoraties wil toevoegen?', answer: 'Dat is prima. Je kunt je eigen decoraties toevoegen. We helpen graag met opzet. Je feest, jouw stijl.' },
 ]
 
@@ -162,7 +162,7 @@ export default function ZaalHurenPage({ params }: Props) {
               },
               {
                 q: isNl ? 'Kunnen mijn gasten hun eigen drank meebrengen?' : 'Can my guests bring their own drinks?',
-                a: isNl ? 'We hebben een selectie van dranken hier. Je mag ook je eigen meebrengen - er is geen corkage fee.' : 'We have a selection of drinks here. You can also bring your own - there is no corkage fee.'
+                a: isNl ? 'Chopras Indian Restaurant is een volledig halal locatie. Wij serveren een selectie van frisdranken, sappen en water. Er wordt geen alcohol geserveerd of toegestaan op het terrein.' : 'Chopras Indian Restaurant is a fully halal venue. We serve a selection of soft drinks, juices, and water. No alcohol is served or permitted on the premises.'
               },
               {
                 q: isNl ? 'Wat als ik decoraties wil toevoegen?' : 'What if I want to add decorations?',

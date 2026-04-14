@@ -10,8 +10,11 @@ import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getCateringServiceSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import CateringForm from '@/components/catering/CateringForm'
-import CateringFaqAccordion from '@/components/sections/CateringFaqAccordion'
+import FaqAccordion from '@/components/sections/FaqAccordion'
+import { cateringFaqs, eventFaqs } from '@/lib/faq-data'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+
+const allCateringFaqs = [...cateringFaqs, ...eventFaqs]
 
 type Props = { params: { locale: Locale } }
 
@@ -61,7 +64,7 @@ export default function LocaleCateringPage({ params }: Props) {
   const tr = getTranslations(locale)
   const base = locale === 'nl' ? '/nl' : ''
 
-  const cateringFaqs = locale === 'nl' ? [
+  const schemaFaqs = locale === 'nl' ? [
     { question: 'Verzorgt Chopras Indian Restaurant catering in Den Haag?', answer: 'Ja. Chopras Indian Restaurant verzorgt volledige Indiase catering in heel Den Haag voor verjaardagen, bruiloften, zakelijke evenementen, Diwali diners en privéfeesten. Neem contact op voor uw vereisten.' },
     { question: 'Voor welke evenementen verzorgt Chopras Indian Restaurant catering?', answer: 'Chopras Indian Restaurant verzorgt catering voor verjaardagen, jubileums, bruiloften, bruiloft, zakelijke diners, Diwali vieringen, Holi evenementen en alle privébijeenkomsten in Den Haag en omgeving.' },
     { question: 'Hoe boek ik Indiase catering in Den Haag?', answer: 'Bezoek de cateringpagina op chopras.nl of bel Chopras Indian Restaurant direct op Leyweg 986, Den Haag. Wij stellen een aangepast menu en offerte samen voor uw evenement.' },
@@ -122,7 +125,7 @@ export default function LocaleCateringPage({ params }: Props) {
     <>
       <JsonLd data={getCateringServiceSchema(locale)} />
       <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={getFaqPageSchema(cateringFaqs)} />
+      <JsonLd data={getFaqPageSchema(schemaFaqs)} />
 
       {/* SECTION 1  -  HERO */}
       <section className="relative min-h-[60vh] flex items-center justify-center">
@@ -382,9 +385,7 @@ export default function LocaleCateringPage({ params }: Props) {
               {tr.catering.faqH2}
             </h2>
           </div>
-          <div className="max-w-3xl mx-auto">
-            <CateringFaqAccordion />
-          </div>
+          <FaqAccordion faqs={allCateringFaqs} locale={locale} />
         </div>
       </section>
 

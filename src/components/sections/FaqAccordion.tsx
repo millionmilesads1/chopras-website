@@ -2,27 +2,15 @@
 
 import { useState } from 'react'
 import { Plus, Minus } from 'lucide-react'
-import { homeFaqs } from '@/lib/faq-data'
-import { getTranslations, type Locale } from '@/lib/useTranslations'
+import type { Locale } from '@/lib/useTranslations'
 
 const INITIAL_COUNT = 8
 
-export default function FaqAccordion({ locale = 'en' }: { locale?: Locale }) {
+export default function FaqAccordion({ faqs, locale = 'en' }: { faqs: Array<{ question: string; answer: string }>; locale?: Locale }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [showAll, setShowAll] = useState(false)
-  const t = getTranslations(locale)
 
-  // Map FAQ keys to translations
-  const translatedFaqs = homeFaqs.map((faq, index) => {
-    const qKey = `q${index + 1}` as keyof typeof t.faq
-    const aKey = `a${index + 1}` as keyof typeof t.faq
-    return {
-      question: (t.faq[qKey] as string) || faq.question,
-      answer: (t.faq[aKey] as string) || faq.answer,
-    }
-  })
-
-  const visibleFaqs = showAll ? translatedFaqs : translatedFaqs.slice(0, INITIAL_COUNT)
+  const visibleFaqs = showAll ? faqs : faqs.slice(0, INITIAL_COUNT)
 
   return (
     <div className="max-w-3xl mx-auto">
@@ -55,7 +43,7 @@ export default function FaqAccordion({ locale = 'en' }: { locale?: Locale }) {
         </div>
       ))}
 
-      {!showAll && homeFaqs.length > INITIAL_COUNT && (
+      {!showAll && faqs.length > INITIAL_COUNT && (
         <div className="text-center mt-8">
           <button
             type="button"

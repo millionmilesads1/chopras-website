@@ -288,4 +288,29 @@ Meta: Indian street food Den Haag at Chopras Indian Restaurant. Pani puri, chaat
 - Assume Hitesh does not know the technical answer — guide him to the best outcome
 - Double-check every fact, every claim, every recommendation before stating it
 - Call out codebase errors even when not asked
-- Goal: Hitesh wants to be the best in the world at SEO and local SEO — every decision must serve that goal
+- Goal: Hitesh wants to be the best in the world at SEO and local SEO - every decision must serve that goal
+
+## BRAND STYLING STANDARDS - MANDATORY ON ALL PAGES
+
+### Headings - always use these exact classes
+- H2: font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]
+- H3: font-heading text-2xl text-[#1B2B5E] mb-4
+- NEVER use font-bold alone for headings - font-bold is a body font weight
+
+### Body Text
+- Standard paragraph: font-body text-[#1A1A1A] text-lg leading-relaxed
+
+### Section Wrappers
+- Standard: py-20 px-6 md:px-16
+- Inner container: max-w-4xl mx-auto
+
+### Section Backgrounds - alternate in this order
+- bg-white
+- bg-[#FFFAF5]
+- Dark accent: bg-[#1B2B5E] (navy) with white text
+
+### FAQ - mandatory pattern
+- Always use <FaqAccordion faqs={array} locale={locale} />
+- NEVER use raw <details> elements
+- FAQ arrays defined as module-level constants before the component function
+- Arrays use { question: string, answer: string } shape

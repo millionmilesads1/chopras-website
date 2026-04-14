@@ -90,7 +90,7 @@ export default function LocaleHomePage({ params }: Props) {
       {/* 1b  -  Why Chopras is Den Haag Best */}
       <section className="py-20 px-6 md:px-16 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-6 leading-[1.4] [letter-spacing:0.02em] mt-2">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {t.home.whyBestH2}
           </h2>
           <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-6">
@@ -149,7 +149,7 @@ export default function LocaleHomePage({ params }: Props) {
       {/* 1c  -  Ratings and Social Proof */}
       <section className="py-20 px-6 md:px-16 bg-[#FFFAF5]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-6 leading-[1.4] [letter-spacing:0.02em] mt-2">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {t.home.ratingsH2}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
@@ -215,7 +215,7 @@ export default function LocaleHomePage({ params }: Props) {
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <div className="about-chopras-section">
-            <h2 className="font-bold text-4xl md:text-5xl mb-8 leading-[1.4] [letter-spacing:0.02em] mt-2">
+            <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-8 leading-[1.4]">
               {isNl ? 'Over Chopras Indian Restaurant Den Haag' : 'About Chopras Indian Restaurant Den Haag'}
             </h2>
             {/* GEO block - self-contained answer for Google AI Overviews, ChatGPT, and Perplexity citation */}
@@ -286,7 +286,7 @@ export default function LocaleHomePage({ params }: Props) {
               {getTranslations(locale).home.faqH2}
             </h2>
           </div>
-          <FaqAccordion locale={locale} />
+          <FaqAccordion faqs={homeFaqs} locale={locale} />
         </div>
       </section>
 
