@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {
   Heart, Briefcase, Cake, Star, Users, Sun, Camera, Music,
-  CheckCircle, ChefHat, Shield, MapPin,
+  CheckCircle, ChefHat, Shield,
 } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT } from '@/lib/constants'
@@ -91,21 +91,10 @@ export default function LocaleCateringPage({ params }: Props) {
   ]
 
   const whyCards = [
-    {
-      Icon: ChefHat,
-      title: 'Restaurant Quality Food',
-      body: 'Same chefs. Same spices. Same kitchen. Just at your venue.',
-    },
-    {
-      Icon: Shield,
-      title: 'Halal Certified Throughout',
-      body: 'Every meat dish fully halal certified. One less thing to worry about.',
-    },
-    {
-      Icon: MapPin,
-      title: 'We Come to You',
-      body: 'We cater at your venue across Den Haag, Rijswijk, Delft and Zoetermeer.',
-    },
+    { Icon: ChefHat, title: tr.catering.why1Title, body: tr.catering.why1Copy },
+    { Icon: CheckCircle, title: tr.catering.why2Title, body: tr.catering.why2Copy },
+    { Icon: Shield, title: tr.catering.why3Title, body: tr.catering.why3Copy },
+    { Icon: Users, title: tr.catering.why4Title, body: tr.catering.why4Copy },
   ]
 
   const capacityStats = [
@@ -117,7 +106,7 @@ export default function LocaleCateringPage({ params }: Props) {
   const featurePills = [
     { label: 'Halal Certified as Standard' },
     { label: 'Vegetarian and Vegan Options Included' },
-    { label: '25 to 200 Guests' },
+    { label: 'Private Hall: 25 to 80 Guests' },
     { label: `${RESTAURANT.serviceAreas.slice(0, 4).join(' · ')}` },
   ]
 
@@ -293,10 +282,10 @@ export default function LocaleCateringPage({ params }: Props) {
               WHY CHOOSE US
             </p>
             <h2 className="font-heading text-4xl md:text-5xl font-semibold text-white">
-              Why Businesses and Families in Den Haag Choose Chopras
+              {tr.catering.whyH2}
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {whyCards.map(({ Icon, title, body }) => (
               <div
                 key={title}
@@ -371,6 +360,32 @@ export default function LocaleCateringPage({ params }: Props) {
               {locale === 'nl' ? 'Wil je een feestzaal huren in Den Haag met catering inbegrepen?' : 'Do you want to hire a party venue in Den Haag with catering included?'} <Link href={`${base}/feestzaal-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{locale === 'nl' ? 'Bekijk onze feestzaal' : 'View our event space'}</Link> {locale === 'nl' ? 'voor de perfecte setting, of bezoek' : 'for the perfect setting, or visit'} <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant Den Haag</Link> {locale === 'nl' ? 'om ons restaurant te zien.' : 'to see our restaurant.'}
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* SECTION 5.7  -  GEO BLOCK */}
+      <section className="bg-white py-20 md:py-28 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {locale === 'nl'
+              ? 'Verzorgt Chopras Indian Restaurant Catering in Den Haag?'
+              : 'Does Chopras Indian Restaurant Do Catering in Den Haag?'}
+          </h2>
+          {locale === 'nl' ? (
+            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8">
+              Ja. Chopras Indian Restaurant verzorgt volledige Indiase catering in Den Haag en omgeving, waaronder Rijswijk, Delft, Zoetermeer, Voorburg en Leidschendam. Vanuit Leyweg 986, Den Haag, verzorgen wij <Link href={`${base}/bruiloft-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">bruiloften</Link>, nikah-recepties, <Link href={`${base}/indian-birthday-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">verjaardagsfeesten</Link>, <Link href={`${base}/corporate-events-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">zakelijke diners</Link> en <Link href={`${base}/diwali-dinner-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Diwali-vieringen</Link>. Alle gerechten worden vers bereid door hetzelfde keukenteam als het restaurant, met specerijen die dagelijks vers worden gemalen. Elk vleesgerecht is standaard <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal gecertificeerd</Link>. De eigen evenementenruimte biedt ruimte aan <Link href={`${base}/feestzaal-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">25 tot 80 gasten</Link>. Vraag een vrijblijvende offerte aan.
+            </p>
+          ) : (
+            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8">
+              Yes. Chopras Indian Restaurant provides full Indian catering in Den Haag and surrounding areas, including Rijswijk, Delft, Zoetermeer, Voorburg, and Leidschendam. Based at Leyweg 986, Den Haag, Chopras caters <Link href={`${base}/indian-wedding-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">weddings</Link>, nikah receptions, <Link href={`${base}/indian-birthday-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">birthday parties</Link>, <Link href={`${base}/corporate-events-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">corporate dinners</Link>, and <Link href={`${base}/diwali-dinner-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Diwali celebrations</Link>. All food is prepared fresh by the same kitchen team as the restaurant, using spices ground daily in-house. Every meat dish is <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal certified</Link> as standard. The private event hall accommodates <Link href={`${base}/feestzaal-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">25 to 80 guests</Link>. Request a free catering quote today.
+            </p>
+          )}
+          <a
+            href="#catering-form"
+            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]"
+          >
+            {locale === 'nl' ? 'Offerte Aanvragen' : 'Request a Catering Quote'}
+          </a>
         </div>
       </section>
 
