@@ -6,7 +6,7 @@ import type { Locale } from '@/lib/useTranslations'
 
 const INITIAL_COUNT = 8
 
-export default function FaqAccordion({ faqs, locale = 'en' }: { faqs: Array<{ question: string; answer: string }>; locale?: Locale }) {
+export default function FaqAccordion({ faqs }: { faqs: Array<{ question: string; answer: string }>; locale?: Locale }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [showAll, setShowAll] = useState(false)
 
