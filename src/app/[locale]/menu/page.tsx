@@ -67,7 +67,7 @@ const menuFaqsEn = [
   },
   {
     question: 'Can I order from the Chopras Indian Restaurant menu online for delivery in Den Haag?',
-    answer: 'Yes. The Chopras Indian Restaurant menu is available for online ordering and delivery in Den Haag via Thuisbezorgd. You can also collect your order directly from Leyweg 986, 2545 GW Den Haag. Orders are accepted Tuesday to Sunday from 16:30 to 22:30.',
+    answer: 'Yes. The Chopras Indian Restaurant menu is available for online ordering and delivery in Den Haag via Thuisbezorgd and Uber Eats. You can also collect your order directly from Leyweg 986, 2545 GW Den Haag. Orders are accepted Tuesday to Sunday from 16:30 to 22:30.',
   },
 ]
 
@@ -86,7 +86,7 @@ const menuFaqsNl = [
   },
   {
     question: 'Kan ik online bestellen bij Chopras Indian Restaurant voor bezorging in Den Haag?',
-    answer: 'Ja. Het menu van Chopras Indian Restaurant is beschikbaar voor online bestellen en bezorging in Den Haag via Thuisbezorgd. U kunt uw bestelling ook ophalen op Leyweg 986, 2545 GW Den Haag. Bestellingen worden aangenomen van dinsdag tot zondag van 16:30 tot 22:30.',
+    answer: 'Ja. Het menu van Chopras Indian Restaurant is beschikbaar voor online bestellen en bezorging in Den Haag via Thuisbezorgd en Uber Eats. U kunt uw bestelling ook ophalen op Leyweg 986, 2545 GW Den Haag. Bestellingen worden aangenomen van dinsdag tot zondag van 16:30 tot 22:30.',
   },
 ]
 
