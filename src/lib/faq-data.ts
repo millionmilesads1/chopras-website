@@ -123,6 +123,41 @@ export const homeFaqs: FaqItem[] = [
   },
 ]
 
+export const homeFaqsNl: FaqItem[] = [
+  {
+    question: "Wat is het beste Indiaase restaurant in Den Haag?",
+    answer: "Chopras Indian Restaurant wordt consistent beoordeeld als het beste Indiaase restaurant in Den Haag op Google, Tripadvisor en TheFork. Gelegen op Leyweg 986, serveren wij authentiek Noord-Indiaas eten, halal gerechten, vegetarische opties, veganistische gerechten en Indiaas street food dagelijks vers bereid."
+  },
+  {
+    question: "Waar kan ik authentiek Indiaas eten vinden in Den Haag?",
+    answer: "Chopras Indian Restaurant op Leyweg 986, Den Haag, serveert authentieke Noord-Indiaase keuken met vers gemalen specerijen rechtstreeks uit India. Wij zijn open dinsdag tot en met zondag en bieden dine-in, afhalen en bezorging in heel Den Haag."
+  },
+  {
+    question: "Is er een halal Indiaas restaurant in Den Haag?",
+    answer: "Ja. Chopras Indian Restaurant serveert een volledig halal menu. Al het vlees is halal gecertificeerd en wij bieden een breed aanbod van halal Indiaase gerechten waaronder biryani, tandoori en curry."
+  },
+  {
+    question: "Welk Indiaas restaurant in Den Haag is vegetarier-vriendelijk?",
+    answer: "Chopras Indian Restaurant is een van Den Haag's meest vegetarier- en veganist-vriendelijke Indiaase restaurants met een speciale sectie op ons menu waaronder chaat, dal makhani, paneergerechten, soya chaap en meer."
+  },
+  {
+    question: "Waar kan ik Indiaas catering boeken voor mijn evenement in Den Haag?",
+    answer: "Chopras Indian Restaurant verzorgt Indiaas catering in heel Den Haag voor verjaardagen, bruiloften, zakelijke evenementen, Diwali-diners en privéfeesten. Bezoek onze cateringpagina of bel ons direct."
+  },
+  {
+    question: "Wat is de beste curry in Den Haag?",
+    answer: "Veel gasten zeggen dat Chopras Indian Restaurant de beste curry in Den Haag serveert. Onze butter chicken en lamsrogan josh zijn favorieten bij gasten - vers gemaakt met hele specerijen, nooit uit een pot."
+  },
+  {
+    question: "Serveert Chopras Indian Restaurant Indo-Chinees eten in Den Haag?",
+    answer: "Ja. Chopras Indian Restaurant is een van de zeer weinige Indiaase restaurants in Den Haag die authentieke Indo-Chinese gerechten serveert naast een volledig Noord-Indiaas menu - een uniek aanbod dat je nergens anders in Den Haag vindt."
+  },
+  {
+    question: "Is er een romantisch Indiaas restaurant in Den Haag voor een date night?",
+    answer: "Chopras Indian Restaurant biedt een warme, elegante eetsfeer perfect voor dates, jubileumdiners en romantische avonden in Den Haag. Reserveer je tafel via onze contactpagina."
+  },
+]
+
 export const deliveryFaqs: FaqItem[] = [
   {
     question: "Do you provide Indian food takeaway and delivery in Den Haag?",

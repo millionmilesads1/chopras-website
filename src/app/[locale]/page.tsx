@@ -16,7 +16,7 @@ import FinalCta from '@/components/sections/FinalCta'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getRestaurantSchema, getFounderSchema, getWebSiteSchema, getOrganizationSchema, getSpeakableSchema, getFaqPageSchema } from '@/lib/schema'
-import { homeFaqs } from '@/lib/faq-data'
+import { homeFaqs, homeFaqsNl } from '@/lib/faq-data'
 
 function injectLinks(text: string, links: Array<[string, ReactNode]>): ReactNode {
   if (!text || links.length === 0) return text
@@ -286,7 +286,7 @@ export default function LocaleHomePage({ params }: Props) {
               {getTranslations(locale).home.faqH2}
             </h2>
           </div>
-          <FaqAccordion faqs={homeFaqs} locale={locale} />
+          <FaqAccordion faqs={isNl ? homeFaqsNl : homeFaqs} locale={locale} />
         </div>
       </section>
 
