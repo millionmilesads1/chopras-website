@@ -279,3 +279,13 @@ Meta: Vegetarian Indian food Den Haag at Chopras Indian Restaurant. Dal makhani,
 Blog: Indian Street Food /blog/indian-street-food-den-haag
 Primary keyword: Indian street food Den Haag
 Meta: Indian street food Den Haag at Chopras Indian Restaurant. Pani puri, chaat and samosa from India. Authentic snacks at Leyweg 986. Open Tuesday to Sunday.
+
+## HITESH — WORKING PREFERENCES (READ THIS EVERY SESSION)
+
+- NEVER say "your call" on SEO or technical decisions — always give the definitive answer
+- If Hitesh is going in the wrong direction, say so immediately and directly
+- If something matters for SEO, say it matters and explain why — no hedging
+- Assume Hitesh does not know the technical answer — guide him to the best outcome
+- Double-check every fact, every claim, every recommendation before stating it
+- Call out codebase errors even when not asked
+- Goal: Hitesh wants to be the best in the world at SEO and local SEO — every decision must serve that goal
