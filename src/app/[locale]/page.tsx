@@ -15,7 +15,8 @@ import LocationSection from '@/components/sections/LocationSection'
 import FinalCta from '@/components/sections/FinalCta'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getRestaurantSchema, getFounderSchema, getWebSiteSchema, getOrganizationSchema, getSpeakableSchema } from '@/lib/schema'
+import { getRestaurantSchema, getFounderSchema, getWebSiteSchema, getOrganizationSchema, getSpeakableSchema, getFaqPageSchema } from '@/lib/schema'
+import { homeFaqs } from '@/lib/faq-data'
 
 function injectLinks(text: string, links: Array<[string, ReactNode]>): ReactNode {
   if (!text || links.length === 0) return text
@@ -81,6 +82,7 @@ export default function LocaleHomePage({ params }: Props) {
       <JsonLd data={getFounderSchema()} />
       <JsonLd data={getOrganizationSchema()} />
       <JsonLd data={getSpeakableSchema(locale)} />
+      <JsonLd data={getFaqPageSchema(homeFaqs)} />
 
       {/* 1  -  Hero */}
       <HeroSection locale={locale} />

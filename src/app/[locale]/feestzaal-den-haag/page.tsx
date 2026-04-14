@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { CheckCircle } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getBreadcrumbSchema } from '@/lib/schema'
+import { getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -72,25 +72,13 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
     { q: 'Is there an affordable party hall for hire in Den Haag with catering?', a: 'Chopras Indian Restaurant offers competitive rates for event space hire in Den Haag including authentic Indian catering. Request a no-obligation quote via our contact page.' },
   ]
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map(({ q, a }) => ({
-      '@type': 'Question',
-      name: q,
-      acceptedAnswer: { '@type': 'Answer', text: a },
-    })),
-  }
-
-  const breadcrumbSchema = getBreadcrumbSchema([
-    { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
-    { name: isNl ? 'Feestzaal Huren' : 'Event Venue', item: getLocalizedUrl(locale, 'feestzaal-den-haag') },
-  ])
-
   return (
     <>
-      <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={faqSchema as Record<string, unknown>} />
+      <JsonLd data={getBreadcrumbSchema([
+        { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
+        { name: isNl ? 'Feestzaal Huren' : 'Event Venue', item: getLocalizedUrl(locale, 'feestzaal-den-haag') },
+      ])} />
+      <JsonLd data={getFaqPageSchema(faqItems.map(({ q, a }) => ({ question: q, answer: a })))} />
 
       {/* HERO SECTION */}
       <section className="relative min-h-[60vh] flex items-center justify-center bg-[#1B2B5E]">

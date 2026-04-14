@@ -3,7 +3,7 @@ import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getBreadcrumbSchema } from '@/lib/schema'
+import { getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -107,16 +107,6 @@ export default function IndianWeddingCateringPage({ params }: Props) {
     { q: 'How far in advance should we book for wedding catering?', a: 'For large weddings of 100+ guests, we recommend booking 6 to 8 weeks in advance. For smaller weddings of 25 to 60 guests, 3 to 4 weeks is sufficient. Saturday dates are the most popular and book up fastest.' },
   ]
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map(({ q, a }) => ({
-      '@type': 'Question',
-      name: q,
-      acceptedAnswer: { '@type': 'Answer', text: a },
-    })),
-  }
-
   return (
     <>
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
@@ -125,7 +115,7 @@ export default function IndianWeddingCateringPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Indiaas Bruiloft Catering' : 'Indian Wedding Catering', item: getLocalizedUrl(locale, 'indian-wedding-catering-den-haag') },
       ])} />
-      <JsonLd data={faqSchema as Record<string, unknown>} />
+      <JsonLd data={getFaqPageSchema(faqItems.map(({ q, a }) => ({ question: q, answer: a })))} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
