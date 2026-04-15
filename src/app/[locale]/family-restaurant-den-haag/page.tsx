@@ -71,7 +71,7 @@ export default function FamilyRestaurantPage({ params }: Props) {
         { name: isNl ? 'Familie Restaurant' : 'Family Restaurant', item: getLocalizedUrl(locale, 'family-restaurant-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
-      <JsonLd data={getDietFoodEstablishmentSchema(locale, ['https://schema.org/HalalDiet', 'https://schema.org/VegetarianDiet'], 'family-restaurant')} />
+      <JsonLd data={getDietFoodEstablishmentSchema(locale, ['Halal', 'Halal Indian', 'Vegetarian Indian', 'North Indian'], 'family-restaurant')} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

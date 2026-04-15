@@ -73,7 +73,7 @@ export default function HalalMenuPage({ params }: Props) {
         { name: isNl ? 'Halal Menu' : 'Halal Menu', item: getLocalizedUrl(locale, 'halal-menu') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
-      <JsonLd data={getDietFoodEstablishmentSchema(locale, ['https://schema.org/HalalDiet'], 'halal-menu')} />
+      <JsonLd data={getDietFoodEstablishmentSchema(locale, ['Halal', 'Halal Indian', 'North Indian'], 'halal-menu')} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

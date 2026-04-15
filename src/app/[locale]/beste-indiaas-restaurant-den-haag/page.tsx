@@ -71,7 +71,7 @@ export default function BesteIndiaasPage({ params }: Props) {
         { name: isNl ? 'Beste Restaurant' : 'Best Restaurant', item: getLocalizedUrl(locale, 'beste-indiaas-restaurant-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
-      <JsonLd data={getDietFoodEstablishmentSchema(locale, ['https://schema.org/HalalDiet'], 'beste-indiaas-restaurant')} />
+      <JsonLd data={getDietFoodEstablishmentSchema(locale, ['Halal', 'Halal Indian', 'North Indian'], 'beste-indiaas-restaurant')} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

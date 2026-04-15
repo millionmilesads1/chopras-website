@@ -91,7 +91,7 @@ export function getRestaurantSchema(locale: Locale): Record<string, unknown> {
     email: RESTAURANT.contact.email,
     address: ADDRESS,
     geo: GEO,
-    servesCuisine: ['North Indian', 'Indian Street Food', 'Halal Indian', 'Vegetarian Indian', 'Vegan Indian', 'Indo Chinese', 'Indian Catering'],
+    servesCuisine: ['North Indian', 'Indian Street Food', 'Halal', 'Halal Indian', 'Vegetarian Indian', 'Vegan Indian', 'Indo Chinese', 'Indian Catering'],
     priceRange: RESTAURANT.priceRange,
     openingHoursSpecification: OPENING_HOURS,
     hasMenu: locale === 'nl' ? `${SITE_URL}/nl/menu` : `${SITE_URL}/menu`,
@@ -99,7 +99,6 @@ export function getRestaurantSchema(locale: Locale): Record<string, unknown> {
     acceptsReservations: true,
     areaServed: RESTAURANT.serviceAreas,
     aggregateRating: AGGREGATE_RATING,
-    suitableForDiet: 'https://schema.org/HalalDiet',
     logo: {
       '@type': 'ImageObject',
       url: RESTAURANT.logo,
@@ -146,7 +145,7 @@ export function getLocalRestaurantSchema(
     email: RESTAURANT.contact.email,
     address: ADDRESS,
     geo: GEO,
-    servesCuisine: ['North Indian', 'Indian Street Food'],
+    servesCuisine: ['North Indian', 'Indian Street Food', 'Halal', 'Halal Indian'],
     priceRange: RESTAURANT.priceRange,
     openingHoursSpecification: OPENING_HOURS,
     areaServed: areas,
@@ -474,7 +473,7 @@ export function getTakeawayServiceSchema(locale: Locale): Record<string, unknown
 
 export function getDietFoodEstablishmentSchema(
   locale: Locale,
-  diets: string[],
+  cuisines: string[] = ['Halal', 'Halal Indian', 'North Indian'],
   pageSlug: string,
 ): Record<string, unknown> {
   return {
@@ -488,7 +487,7 @@ export function getDietFoodEstablishmentSchema(
     address: ADDRESS,
     telephone: RESTAURANT.contact.phone,
     aggregateRating: AGGREGATE_RATING,
-    suitableForDiet: diets,
+    servesCuisine: cuisines,
     openingHoursSpecification: OPENING_HOURS,
   }
 }

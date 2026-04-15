@@ -73,7 +73,7 @@ export default function VeganMenuPage({ params }: Props) {
         { name: isNl ? 'Veganistisch Menu' : 'Vegan Menu', item: getLocalizedUrl(locale, 'vegan-menu') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
-      <JsonLd data={getDietFoodEstablishmentSchema(locale, ['https://schema.org/VeganDiet', 'https://schema.org/VegetarianDiet', 'https://schema.org/HalalDiet'], 'vegan-menu')} />
+      <JsonLd data={getDietFoodEstablishmentSchema(locale, ['Vegan', 'Vegan Indian', 'Vegetarian Indian', 'Halal', 'North Indian'], 'vegan-menu')} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
