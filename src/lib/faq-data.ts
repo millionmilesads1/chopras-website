@@ -255,6 +255,40 @@ export const eventFaqs: FaqItem[] = [
   },
 ]
 
+export const cateringFaqsNl: FaqItem[] = [
+  {
+    question: 'Biedt u cateringdiensten aan voor evenementen in Den Haag?',
+    answer: 'Ja. Chopras Indian Restaurant verzorgt Indiase catering voor bruiloften, bedrijfsfeesten, privéfeesten, verjaardagen en festivals in Den Haag. Aanpasbare menus beschikbaar met buffet- en bord-service opties.',
+  },
+  {
+    question: 'Organiseert u groepsdiner of privéfeesten in Den Haag?',
+    answer: 'Ja. Chopras Indian Restaurant heeft een privé-evenementenruimte voor 25 tot 80 gasten in Den Haag, geschikt voor verjaardagen, bedrijfsdiners, bruiloften en Diwali-vieringen met aanpasbare menus.',
+  },
+]
+
+export const eventFaqsNl: FaqItem[] = [
+  {
+    question: 'Heeft u een privé-evenementenruimte in Den Haag?',
+    answer: 'Ja. Chopras Indian Restaurant heeft een privé-evenementenruimte voor 25 tot 80 gasten in Den Haag, beschikbaar voor bruiloften, bedrijfsfeesten, verjaardagen en culturele vieringen met aanpasbare Indiase menus.',
+  },
+  {
+    question: 'Welke soorten evenementen kan ik organiseren bij Chopras Indian Restaurant?',
+    answer: 'Chopras Indian Restaurant organiseert verjaardagen, bruiloften, verlovingen, babyshowers, bedrijfsdiners, workshops, netwerkevenementen, culturele festivals zoals Diwali en Eid, en foto- of videoshoot sessies in de privé-evenementenruimte in Den Haag.',
+  },
+  {
+    question: 'Verzorgt u authentieke Indiase catering voor privé-evenementen?',
+    answer: 'Ja. Chopras Indian Restaurant verzorgt Indiase catering voor privé-evenementen in Den Haag met buffet- en bord-opties, gepersonaliseerde menus en professionele service voor bruiloften, verjaardagen en bedrijfsevenementen.',
+  },
+  {
+    question: 'Kunt u voldoen aan speciale dieetwensen (veganistisch, halal, glutenvrij)?',
+    answer: 'Ja. Chopras Indian Restaurant voldoet aan veganistische, vegetarische, halal en glutenvrije dieetwensen voor alle privé-evenementen in Den Haag. Alle dieetwensen moeten worden doorgegeven bij de boeking.',
+  },
+  {
+    question: 'Wat is de maximale capaciteit van uw privé-evenementenruimte?',
+    answer: 'De privé-evenementenruimte van Chopras Indian Restaurant in Den Haag biedt ruimte aan 25 tot 80 gasten, afhankelijk van de evenementopstelling, geschikt voor intieme bijeenkomsten en grotere feesten.',
+  },
+]
+
 export const allFaqs: FaqItem[] = [
   ...homeFaqs,
   ...deliveryFaqs,

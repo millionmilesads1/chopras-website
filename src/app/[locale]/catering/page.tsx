@@ -11,10 +11,11 @@ import { getLocalizedUrl } from '@/lib/utils'
 import { getCateringServiceSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import CateringForm from '@/components/catering/CateringForm'
 import FaqAccordion from '@/components/sections/FaqAccordion'
-import { cateringFaqs, eventFaqs } from '@/lib/faq-data'
+import { cateringFaqs, eventFaqs, cateringFaqsNl, eventFaqsNl } from '@/lib/faq-data'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 const allCateringFaqs = [...cateringFaqs, ...eventFaqs]
+const allCateringFaqsNl = [...cateringFaqsNl, ...eventFaqsNl]
 
 type Props = { params: { locale: Locale } }
 
@@ -64,16 +65,6 @@ export default function LocaleCateringPage({ params }: Props) {
   const tr = getTranslations(locale)
   const base = locale === 'nl' ? '/nl' : ''
 
-  const schemaFaqs = locale === 'nl' ? [
-    { question: 'Verzorgt Chopras Indian Restaurant catering in Den Haag?', answer: 'Ja. Chopras Indian Restaurant verzorgt volledige Indiase catering in heel Den Haag voor verjaardagen, bruiloften, zakelijke evenementen, Diwali diners en privéfeesten. Neem contact op voor uw vereisten.' },
-    { question: 'Voor welke evenementen verzorgt Chopras Indian Restaurant catering?', answer: 'Chopras Indian Restaurant verzorgt catering voor verjaardagen, jubileums, bruiloften, bruiloft, zakelijke diners, Diwali vieringen, Holi evenementen en alle privébijeenkomsten in Den Haag en omgeving.' },
-    { question: 'Hoe boek ik Indiase catering in Den Haag?', answer: 'Bezoek de cateringpagina op chopras.nl of bel Chopras Indian Restaurant direct op Leyweg 986, Den Haag. Wij stellen een aangepast menu en offerte samen voor uw evenement.' },
-  ] : [
-    { question: 'Does Chopras Indian Restaurant cater in Den Haag?', answer: 'Yes. Chopras Indian Restaurant provides full Indian catering across Den Haag for birthdays, weddings, corporate events, Diwali dinners, and private parties. Contact us to discuss your requirements.' },
-    { question: 'What events does Chopras Indian Restaurant cater for?', answer: 'Chopras Indian Restaurant caters for birthdays, anniversaries, weddings, bruiloft, corporate dinners, Diwali celebrations, Holi events, and all private gatherings in Den Haag and surrounding areas.' },
-    { question: 'How do I book Indian catering in Den Haag?', answer: 'Visit the catering page on chopras.nl or call Chopras Indian Restaurant directly at Leyweg 986, Den Haag. We will create a custom menu and quote for your event.' },
-  ]
-
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
     { name: tr.common.nav.catering, item: getLocalizedUrl(locale, 'catering') },
@@ -114,7 +105,7 @@ export default function LocaleCateringPage({ params }: Props) {
     <>
       <JsonLd data={getCateringServiceSchema(locale)} />
       <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={getFaqPageSchema(schemaFaqs)} />
+      <JsonLd data={getFaqPageSchema(locale === 'nl' ? allCateringFaqsNl : allCateringFaqs)} />
 
       {/* SECTION 1  -  HERO */}
       <section className="relative min-h-[60vh] flex items-center justify-center">
@@ -400,7 +391,7 @@ export default function LocaleCateringPage({ params }: Props) {
               {tr.catering.faqH2}
             </h2>
           </div>
-          <FaqAccordion faqs={allCateringFaqs} locale={locale} />
+          <FaqAccordion faqs={locale === 'nl' ? allCateringFaqsNl : allCateringFaqs} locale={locale} />
         </div>
       </section>
 
