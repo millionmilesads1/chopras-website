@@ -162,7 +162,7 @@ export function getFounderSchema(): Record<string, unknown> {
     '@type': 'Person',
     '@id': `${SITE_URL}/#arun-chopra`,
     name: 'Arun Chopra',
-    jobTitle: 'Founder and Head Chef',
+    jobTitle: 'Founder',
     description:
       'Arun Chopra founded Chopras Indian Restaurant in Den Haag in 2023 with the mission to serve authentic North Indian cuisine exactly as it is eaten in India.',
     worksFor: {
