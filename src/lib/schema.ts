@@ -358,11 +358,6 @@ export function getDishPageSchema(
       priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
     },
-    inMenu: {
-      '@type': 'Menu',
-      '@id': `${SITE_URL}/menu#menu`,
-      name: locale === 'nl' ? 'Chopras Indian Restaurant Menu' : 'Chopras Indian Restaurant Menu',
-    },
   }
 }
 
