@@ -14,31 +14,47 @@ export async function generateStaticParams() {
 
 const faqsNl: Array<{ question: string; answer: string }> = [
   {
-    question: 'Wat zijn urad dal?',
-    answer: 'Urad dal zijn zwarte linzen. Ze zijn klein, rond, en zwart. Ze worden veel gebruikt in Indiaas voedsel. Dal makhani is gemaakt van urad dal, die wordt gekookt totdat volledig zacht en romig.',
+    question: 'Wat maakt dal makhani anders dan andere linzengerechten?',
+    answer: 'Dal makhani wordt gemaakt van hele zwarte linzen (urad dal) die een nacht worden geweekt en daarna langzaam worden gekookt met boter, room en vers gemalen specerijen. Het resultaat is een dikke, romige curry met diepe smaak. Andere linzengerechten zoals masoor dal zijn dunner en minder rijk. Dal makhani is het gerecht waaraan alle andere linzengerechten worden afgemeten.',
+  },
+  {
+    question: 'Is dal makhani vegetarisch?',
+    answer: 'Ja. Dal makhani bevat geen vlees of vis. Het is een volledig vegetarisch gerecht gemaakt van zwarte linzen, boter, room en specerijen. Bij Chopras Indian Restaurant zijn alle dal makhani bereidingen vegetarisch en geschikt voor gasten die geen vlees eten. Het is ook een van de populairste gerechten bij vleesliefhebbers die simpelweg van de smaak houden.',
   },
   {
     question: 'Hoe smaakt dal makhani?',
-    answer: 'Dal makhani smaakt zacht, romig, licht zoet van de room en boter, zuur van de tomaat, pittig van de chili, en voelt voelt voelt van de kruiden. Het is comfort voedsel. Gemak. Thuis.',
+    answer: 'Dal makhani smaakt rijk, romig en licht rokerig. De boter en room geven een volle, ronde body. De tomaten voegen een lichte zuurheid toe die in evenwicht wordt gebracht door de specerijen. Het is comfort food in de ware zin van het woord. De versie bij Chopras gebruikt specerijen die elke ochtend vers worden gemalen, waardoor de smaak merkbaar levendiger is dan dal bereid met voorgemaalde mengsels.',
   },
   {
-    question: 'Is dal makhani gezond?',
-    answer: 'Dal is voedzaam - linzen zijn voorzien van proteïne en fiber. Maar dal makhani bevat room en boter, dus het is niet laag calorie. Het is voedsel dat je geniet in bescheiden porties, niet iets dat je kan elke dag eten. Maar voedsel voelt hoop.',
+    question: 'Kan ik dal makhani bestellen voor bezorging of afhalen bij Chopras?',
+    answer: 'Ja. Chopras Indian Restaurant op Leyweg 986 in Den Haag biedt zowel afhalen als bezorging aan. U kunt ook een tafel reserveren voor dineren op locatie. De keuken is open van dinsdag tot en met zondag vanaf 16:30. Dal makhani is beschikbaar tijdens elke dienst.',
+  },
+  {
+    question: 'Wat eet je bij dal makhani?',
+    answer: 'Dal makhani wordt traditioneel gegeten met naan of basmati rijst. Bij Chopras wordt de tandoori naan vers gebakken in onze kleioven op 400 graden Celsius en is de ideale begeleiding. De naan absorbeert de dikke saus perfect. Een portie dal makhani met twee stukken knoflooknaan is een van de meest bevredigende maaltijden op het menu.',
   },
 ]
 
 const faqsEn: Array<{ question: string; answer: string }> = [
   {
-    question: 'What are urad dal?',
-    answer: 'Urad dal are black lentils. They are small, round, and black. They are used widely in Indian food. Dal makhani is made from urad dal, which is cooked until completely tender and creamy.',
+    question: 'What makes dal makhani different from other lentil dishes?',
+    answer: 'Dal makhani is made from whole black lentils (urad dal) soaked overnight and slow-cooked with butter, cream, and freshly ground spices. The result is a thick, clinging curry with genuine depth. Other lentil dishes such as masoor dal are thinner and less rich. Dal makhani is the standard against which other lentil dishes are compared.',
+  },
+  {
+    question: 'Is dal makhani vegetarian?',
+    answer: 'Yes. Dal makhani contains no meat or fish. It is a fully vegetarian dish made from black lentils, butter, cream, and spices. At Chopras Indian Restaurant, all dal makhani preparations are vegetarian and suitable for guests who do not eat meat. It is also one of the most popular dishes among non-vegetarians who simply love the flavour.',
   },
   {
     question: 'What does dal makhani taste like?',
-    answer: 'Dal makhani tastes soft, creamy, lightly sweet from the cream and butter, sour from the tomato, spicy from the chilli, and feels complete from the spices. It is comfort food. Ease. Home.',
+    answer: 'Dal makhani tastes rich, creamy, and lightly smoky. The butter and cream give it a full, round body. The tomatoes add a gentle acidity that is balanced by the spices. It is comfort food in the truest sense. The version at Chopras uses spices ground fresh each morning, which makes the flavour noticeably more alive than dal made with pre-mixed blends.',
   },
   {
-    question: 'Is dal makhani healthy?',
-    answer: 'Dal is nourishing - lentils are full of protein and fibre. But dal makhani contains cream and butter, so it is not low calorie. It is food you enjoy in modest portions, not something you eat every day. But real food is worth it.',
+    question: 'Can I order dal makhani for delivery or takeaway from Chopras?',
+    answer: 'Yes. Chopras Indian Restaurant at Leyweg 986 in Den Haag offers both takeaway and delivery. You can also reserve a table for dine-in. The kitchen is open Tuesday to Sunday from 16:30. Dal makhani is available every service.',
+  },
+  {
+    question: 'What should I eat with dal makhani?',
+    answer: 'Dal makhani is traditionally served with naan or basmati rice. At Chopras, the tandoori naan is baked fresh in our clay oven at 400 degrees Celsius and is the ideal accompaniment. The naan pulls through the thick sauce and holds it cleanly. A bowl of dal makhani with two pieces of garlic naan is one of the most satisfying meals on the menu.',
   },
 ]
 
@@ -50,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Authentic dal makhani Den Haag at Chopras Indian Restaurant. Black lentils slow cooked with butter and cream. Served fresh daily at Leyweg 986.',
-    nl: 'Dal makhani bij Chopras Den Haag. Romige zwarte linzen curry langzaam gegaard met tomaat en kruiden. Vegetarisch comfort food.',
+    nl: 'Authentieke dal makhani Den Haag bij Chopras Indian Restaurant. Zwarte linzen langzaam gegaard met boter en room. Dagelijks vers bereid op Leyweg 986.',
   }
   return {
     title: titles[locale],
@@ -67,7 +83,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: titles[locale],
       description: descriptions[locale],
       url: getLocalizedUrl(locale, 'dal-makhani-den-haag'),
-      images: [{ url: '/og/home-og.jpg', width: 1200, height: 630, alt: 'Chopras Indian Restaurant Den Haag' }],
+      images: [{ url: '/og/home-og.jpg', width: 1200, height: 630, alt: 'Dal makhani at Chopras Indian Restaurant Den Haag' }],
       type: 'website',
     },
     twitter: {
@@ -90,83 +106,151 @@ export default function DalMakhaniPage({ params }: Props) {
       <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'dal-makhani-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
-        { name: isNl ? 'Dal Makhani Den Haag' : 'Dal Makhani Den Haag', item: getLocalizedUrl(locale, 'dal-makhani-den-haag') },
+        { name: 'Dal Makhani Den Haag', item: getLocalizedUrl(locale, 'dal-makhani-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
       <JsonLd data={getDishPageSchema(locale, 'Dal Makhani Den Haag', 'Dal Makhani Den Haag', 'Authentic dal makhani at Chopras Indian Restaurant Den Haag. Black lentils slow cooked with butter and cream using spices ground fresh daily at Leyweg 986.', 'Authentieke dal makhani bij Chopras Indian Restaurant Den Haag. Zwarte linzen langzaam gekookt met boter en room met dagelijks vers gemalen specerijen op Leyweg 986.', ['https://schema.org/VegetarianDiet', 'https://schema.org/HalalDiet'])} />
 
+      {/* HERO */}
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm mb-4">
             <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">• OUR DISHES · CHOPRAS INDIAN RESTAURANT · DEN HAAG •</span>
           </div>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
-            {isNl ? 'Dal Makhani in Den Haag - Romige Linzen Curry bij Chopras' : 'Dal Makhani in Den Haag - Creamy Lentil Curry at Chopras'}
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+            {isNl
+              ? 'Dal Makhani Den Haag - Langzaam Gegaard bij Chopras'
+              : 'Dal Makhani Den Haag - Slow-Cooked at Chopras Indian Restaurant'}
           </h1>
-          <p className="text-white/75 text-lg md:text-xl" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}>
-            {isNl ? 'Zwarte linzen. Romig. Tomatig. Comfort voedsel. Langzaam gegaard op Leyweg 986, Den Haag.' : 'Black lentils. Creamy. Tomatoey. Comfort food. Slow-cooked at Leyweg 986, Den Haag.'}
+          <p className="text-white/75 text-lg md:text-xl mb-8">
+            {isNl
+              ? 'Zwarte linzen. Een nacht geweekt. Langzaam gegaard met boter, room en vers gemalen specerijen op Leyweg 986, Den Haag.'
+              : 'Black lentils. Soaked overnight. Slow-cooked with butter, cream, and spices ground fresh that morning at Leyweg 986, Den Haag.'}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href={`${base}/contact`}
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] min-h-[48px] backdrop-blur-[10px]"
+            >
+              {tr.common.reserve}
+            </Link>
+            <Link
+              href={`${base}/menu`}
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] min-h-[48px] backdrop-blur-[10px]"
+            >
+              {tr.common.viewMenu}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 1 - What proper dal makhani tastes like */}
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl ? 'Wat echte dal makhani smaakt als' : 'What Proper Dal Makhani Actually Tastes Like'}
+          </h2>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+            {isNl ? (
+              <>
+                <p>Er bestaat een versie van dal makhani die door heel Nederland wordt geserveerd. Dun. Licht zuur. Een saus die de achterkant van een lepel bedekt maar er niet aan blijft kleven. U eet het, en er ontbreekt iets. Niet helemaal verkeerd. Gewoon te snel gemaakt.</p>
+                <p><strong>Echte dal makhani begint de avond ervoor.</strong> Zwarte linzen - urad dal - worden een nacht geweekt totdat ze opzwellen en zacht worden. De volgende ochtend koken ze totdat ze volledig zacht zijn. De saus wordt in lagen opgebouwd: ui langzaam gebakken in boter, gember en knoflook die diezelfde ochtend vers zijn gemalen, tomaten afgebroken totdat alle zuurheid is verdwenen en alleen zoetheid overblijft. Dan room. Dan boter. Dan de specerijen die Chopras Indian Restaurant rechtstreeks uit India haalt en elke ochtend vers maalt voor de dienst.</p>
+                <p>Elke fase kost tijd. Dat is geen sentiment - dat is scheikunde. De vluchtige aromatische olien in komijn en kardemom beginnen binnen enkele uren na het malen te vervluchtigen. Linzen die worden gehaast blijven korrelig van binnen. Een saus die niet lang genoeg wordt ingekookt blijft scherp in plaats van rond. Tijd is geen optie in dit gerecht. Tijd is het ingrediënt.</p>
+                <p>Dit is <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegetarisch Indiaas comfort food</Link> zoals het bedoeld is. Niet als vervanging voor vlees. Als het echte ding.</p>
+              </>
+            ) : (
+              <>
+                <p>There is a version of dal makhani served across the Netherlands. Thin. Slightly acidic. A sauce that coats the back of a spoon but does not cling to it. You eat it and something feels off. Not wrong exactly. Just rushed.</p>
+                <p><strong>Proper dal makhani starts the night before.</strong> Black lentils - urad dal - are soaked overnight until they swell and soften. The next morning they cook until completely tender. The sauce is built in layers: onions cooked slow in butter, ginger and garlic ground fresh that same morning, tomatoes broken down until all acidity is gone and only sweetness remains. Then cream. Then butter. Then the spices that Chopras Indian Restaurant sources directly from India and grinds fresh every morning before service.</p>
+                <p>Every stage takes time. That is not sentiment - that is chemistry. The volatile aromatic oils in cumin and cardamom begin evaporating within hours of grinding. Lentils that are rushed stay grainy at the centre. A sauce that is not reduced long enough stays sharp instead of round. Time is not optional in this dish. Time is the ingredient.</p>
+                <p>This is <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegetarian Indian comfort food</Link> done as it was intended. Not as a substitute for meat. As the real thing.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2 - The Punjabi standard */}
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl ? 'Dal Makhani Den Haag - De Punjabi Standaard' : 'Dal Makhani Den Haag - The Punjabi Standard'}
+          </h2>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+            {isNl ? (
+              <>
+                <p>Dal makhani is een Noord-Indiaas gerecht uit Punjab. De versie die de meeste mensen kennen werd in de twintigste eeuw in Delhi ontwikkeld, in een restaurant dat begreep dat boter en room linzen niet rijker maken door aan het einde te worden toegevoegd. Ze maken het rijker door vanaf het begin in het gerecht te koken.</p>
+                <p>Bij <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant</Link> op Leyweg 986 volgt de keuken deze aanpak. De boter gaat vroeg erin. De room wordt in fasen toegevoegd. De hele pan kookt langzaam in totdat de saus dik en glanzend is. Dit is <strong>Punjabi dal makhani zoals bedoeld</strong> - geen soep met linzen erin, maar een dikke, kleverige, diep smakende curry die u door hete <Link href={`${base}/naan-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">tandoori naan</Link> haalt of over basmati rijst eet en volledig tevreden bent.</p>
+                <p>De specerijen komen niet uit een zak. Chopras haalt hele specerijen rechtstreeks uit India en maalt ze elke ochtend vers voor de dienst. Het verschil is onmiddellijk en onmiskenbaar. Komijn die die ochtend is gemalen ruikt levend. Kardemom die weken in een voorgemengd mengsel heeft gezeten ruikt naar niets.</p>
+                <p>Met een Google-beoordeling van 4,9 sterren van meer dan 800 beoordeelde gasten is dit het meest gewaardeerde <Link href={`${base}/beste-indiaas-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indiaas restaurant in Den Haag</Link>. Dal makhani is een van de gerechten die gasten keer op keer terugbrengt.</p>
+              </>
+            ) : (
+              <>
+                <p>Dal makhani is a North Indian dish from Punjab. The version most people know was developed in the twentieth century in Delhi, at a restaurant that understood that butter and cream do not make lentils richer by being added last. They make it richer by cooking into the dish from the beginning.</p>
+                <p>At <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant</Link> on Leyweg 986, the kitchen follows this approach. The butter goes in early. The cream is added in stages. The whole pot reduces slowly until the sauce is thick and glossy. This is <strong>Punjabi dal makhani as it was intended</strong> - not a soup with lentils floating in it, but a thick, clinging, deeply flavoured curry that you pull through hot <Link href={`${base}/naan-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">tandoori naan</Link> or eat over basmati rice and feel completely satisfied.</p>
+                <p>The spices are not from a bag. Chopras sources whole spices directly from India and grinds them fresh every morning before service. The difference is immediate and unmistakable. Cumin ground that morning smells alive. Cardamom sitting in a pre-mixed blend for weeks smells of nothing.</p>
+                <p>With a 4.9-star Google rating from 800+ verified reviews, Chopras is the highest-rated <Link href={`${base}/beste-indiaas-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian restaurant in Den Haag</Link>. Dal makhani is one of the dishes that brings guests back.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3 - Vegetarian Indian food Den Haag */}
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl ? 'Vegetarisch Indiaas in Den Haag - Geen Compromis' : 'Vegetarian Indian Food Den Haag - No Compromise'}
+          </h2>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+            {isNl ? (
+              <>
+                <p>Veel restaurants behandelen vegetarische gerechten als voetnoten op het menu. Chopras behandelt dal makhani als het hoofdgerecht dat het is. De aandacht, de bereidingstijd, de kwaliteit van de specerijen - alles is identiek aan onze vlees curries.</p>
+                <p>Dal makhani staat niet alleen. Ons <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegetarisch en veganistisch menu</Link> omvat ook <Link href={`${base}/soya-chaap-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">soya chaap</Link> - plantaardig vlees gegrild in de tandoor - evenals paneer curries, chaat en meer dan twintig andere vegetarische opties verspreid over 143 gerechten. Gasten die geen vlees eten vinden bij Chopras een volledig menu, geen bijgerecht.</p>
+                <p>De gehele keuken is volledig <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal gecertificeerd</Link>. Chopras verwerkt uitsluitend halal vlees, waardoor er geen risico op kruisbesmetting bestaat voor gasten die een strikte halal-standaard volgen.</p>
+              </>
+            ) : (
+              <>
+                <p>Many restaurants treat vegetarian dishes as footnotes on the menu. Chopras treats dal makhani as the main dish it is. The attention, the preparation time, the quality of the spices - everything is identical to our meat curries.</p>
+                <p>Dal makhani does not stand alone. Our <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegetarian and vegan menu</Link> also includes <Link href={`${base}/soya-chaap-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">soya chaap</Link> - plant-based mock meat grilled in the tandoor - along with paneer curries, chaat, and over twenty other vegetarian options across 143 dishes. Guests who do not eat meat find a complete menu at Chopras, not a side option.</p>
+                <p>The entire kitchen is fully <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal certified</Link>. Chopras uses only halal-certified meat throughout, which means zero cross-contamination risk for guests who follow a strict halal standard.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* GEO BLOCK */}
+      <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+            {isNl
+              ? 'Waar vind ik authentieke dal makhani in Den Haag?'
+              : 'Where Can I Find Authentic Dal Makhani in Den Haag?'}
+          </h2>
+          <p className="font-body text-white/80 text-lg leading-relaxed">
+            {isNl ? (
+              <>
+                Chopras Indian Restaurant serveert authentieke dal makhani op{' '}
+                <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Leyweg 986, 2545 GW Den Haag</Link>.
+                {' '}Zwarte linzen worden een nacht geweekt en langzaam gegaard met boter, room en specerijen die elke ochtend vers worden gemalen. Het restaurant heeft een Google-beoordeling van 4,9 sterren van meer dan 800 gasten en is open van dinsdag tot en met zondag vanaf 16:30. Zowel{' '}
+                <Link href={`${base}/indian-takeaway-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">afhalen</Link>
+                {' '}als dineren op locatie zijn beschikbaar. Dit is echte Punjabi dal makhani - niet gehaast, niet uit blik.
+              </>
+            ) : (
+              <>
+                Chopras Indian Restaurant serves authentic dal makhani at{' '}
+                <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Leyweg 986, 2545 GW Den Haag</Link>.
+                {' '}Black lentils are soaked overnight and slow-cooked with butter, cream, and spices ground fresh each morning. The restaurant holds a 4.9-star Google rating from 800+ verified reviews and is open Tuesday to Sunday from 16:30. Both{' '}
+                <Link href={`${base}/indian-takeaway-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">takeaway</Link>
+                {' '}and dine-in are available. This is proper Punjabi dal makhani - not rushed, not from a tin.
+              </>
+            )}
           </p>
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
-            {isNl ? 'Waarom Dal Makhani het Ultieme Vegetarische Gerecht Is' : 'Why Dal Makhani Is the Ultimate Vegetarian Dish'}
-          </h2>
-          <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
-            {isNl ? (
-              <>
-                <p>Dal makhani in Den Haag is <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">vegetarisch</Link> voedsel dat niemand voelt als minder dan vlees. Het is een voedsel dat vleeseters en vegetarianen allebei adoreren. Dit is omdat het niet voelt als voedselvervanging. Het voelt als comfort voedsel dat al duizenden jaren bestaat. Zwarte linzen - urad dal genoemd - werden in Indische voedsel gebruikt lang voordat iemand vegetarische producten uitvond. Het is een oud voedsel. Het is een serieus voedsel. En het smaakt ongeloflijk.</p>
-                <p>Indian lentils worden gebruikt in duizenden recepten, maar dal makhani is misschien het meest beroemd. Het is het gerecht dat mensen op Instagram plaatsen. Het is het gerecht dat restaurants adverteren. Dit is omdat het uitziet geweldig - diep rood, bijna paars van kleur, glad en voelt. En het smaakt nog beter dan het uitziet. Dit is een voedsel dat je laat voelen als je in Punjab bent, in het hart van India, waar dit gerecht thuishoort.</p>
-                <p>Vegetarische Indian mains in Den Haag zijn moeilijk te vinden. Veel restaurants behandelen vegetarische gerechten alsof ze een voetnoot zijn. Chopras behandelt dal makhani als het hoofdgerecht dat het is. We koken het met dezelfde zorg en aandacht als onze vlees curries. De linzen worden de dag eerder ingeweekt. Ze worden die ochtend gekookt totdat ze volledig zacht zijn. De saus wordt gebouwd in lagen - tomaat, ginger, garlic, cream, butter, spices - elk moment voegt meer smaak.</p>
-                <p>Dit is waarom vegetarisch Indiaas voedsel niet hoeft in te leveren. Dit is waarom dal makhani zo populair is geworden. Het is echt voedsel met echte smaak, geen compromis.</p>
-              </>
-            ) : (
-              <>
-                <p>Dal makhani in Den Haag is <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">vegetarian</Link> food that no one feels as less than meat. It is food that meat-eaters and vegetarians both adore. This is because it does not feel like food substitution. It feels like comfort food that has existed for thousands of years. Black lentils - called urad dal - were used in Indian food long before anyone invented vegetarian products. It is old food. It is serious food. And it tastes incredible.</p>
-                <p>Indian lentils are used in thousands of recipes, but dal makhani is perhaps the most famous. It is the dish people post on Instagram. It is the dish restaurants advertise. This is because it looks amazing - deep red, almost purple in colour, smooth and feels luxurious. And it tastes even better than it looks. This is food that makes you feel like you are in Punjab, in the heart of India, where this dish belongs.</p>
-                <p>Vegetarian Indian mains in Den Haag are hard to find. Many restaurants treat vegetarian dishes as if they are a footnote. Chopras treats dal makhani as the main dish it is. We cook it with the same care and attention as our meat curries. The lentils are soaked the day before. They are cooked that morning until completely tender. The sauce is built in layers - tomato, ginger, garlic, cream, butter, spices - each moment adds more taste.</p>
-                <p>This is why vegetarian Indian food does not have to compromise. This is why dal makhani has become so popular. It is real food with real taste, no compromise.</p>
-              </>
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
-            {isNl ? 'Hoe Dal Makhani Wordt Gemaakt' : 'How Dal Makhani Is Made'}
-          </h2>
-          <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
-            {isNl ? (
-              <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">De Linzen Voorbereiding</h3>
-                <p>Urad dal wordt gekocht heel - niet gepeld. Ze worden gereinigd en geinspecteerd. Vuil wordt verwijderd. Dan worden ze in water geweekt, meestal de hele nacht. Dit zacht het dal en maakt het klaar voor koken. De volgende dag worden ze afgeleid en in vers water gekookt. Dit duurt ongeveer een half uur totdat ze volledig zacht zijn, bijna brij.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">De Saus Opbouwen</h3>
-                <p>De saus begint met uien in boter totdat ze goud en zacht zijn. Dan verse gember en knoflook die die ochtend in een vijzel zijn gestampt. Vers tomaten - niet uit blik - worden lange tijd gesneden totdat ze volledig zijn afgebroken. Dan tandoori masala, garam masala, rode chili poeder. Zout. Dan rijkelijke room en echte boter worden toegevoegd. Dit maakt het voedsel voelen zacht, voelen voelen, voelen luxe.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">Het Langzaam Koken</h3>
-                <p>De gekookte dal gaat in de saus. Dan kookt het langzaam, minstens dertig minuten, meestal langer. De saus wordt dieper rood. Het dal absorbeert alle smaak. De room verdikt. De boter vermengt zich. Dit is wanneer dal makhani echt dal makhani wordt.</p>
-              </>
-            ) : (
-              <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">Lentil Preparation</h3>
-                <p>Urad dal is bought whole - not split. They are cleaned and inspected. Dirt is removed. Then they are soaked in water, usually overnight. This softens the dal and prepares it for cooking. The next day they are drained and cooked in fresh water. This takes about half an hour until completely tender, almost mushy.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">Building the Sauce</h3>
-                <p>The sauce starts with onions in butter until golden and soft. Then fresh ginger and garlic that were pounded in a mortar that morning. Fresh tomatoes - not tinned - are cooked down over long time until completely broken down. Then tandoori masala, garam masala, red chilli powder. Salt. Then rich cream and real butter are added. This makes the food feel soft, feel luxurious, feel complete.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">The Slow Cooking</h3>
-                <p>The cooked dal goes into the sauce. Then it cooks slowly, at least thirty minutes, usually longer. The sauce becomes deeper red. The dal absorbs all the taste. The cream thickens. The butter mingles. This is when dal makhani truly becomes dal makhani.</p>
-              </>
-            )}
-          </div>
-        </div>
-      </section>
-
+      {/* FAQ */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
@@ -176,64 +260,89 @@ export default function DalMakhaniPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
-            {isNl ? 'Dal Makhani Bestellen' : 'Order Dal Makhani'}
+      {/* CTA SECTION */}
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl ? 'Dal Makhani Bestellen in Den Haag' : 'Order Dal Makhani in Den Haag'}
           </h2>
-          <p className="text-[#1A1A1A] text-lg leading-relaxed mb-8">
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5 mb-8">
             {isNl ? (
-              <>Voeg dal makhani toe aan je bestelling. Eet het met <Link href={`${base}/naan-den-haag`} className="text-[#D4AF37] hover:underline">naan</Link>. Eet het met rijst. Voelde het voelen. Dit is voedsel dat je voelt als thuis. Bezoek Chopras op Leyweg 986, Den Haag. Open dinsdag tot zondag.</>
+              <>
+                <p>
+                  Dal makhani is beschikbaar elke avond dat Chopras open is. Eet het met verse{' '}
+                  <Link href={`${base}/naan-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">tandoori naan</Link>
+                  {' '}uit onze kleioven, of combineer het met een portie{' '}
+                  <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani Den Haag</Link>
+                  {' '}voor een complete Noord-Indiaase maaltijd. Voor grotere groepen biedt Chopras ook{' '}
+                  <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indiaas catering in Den Haag</Link>
+                  {' '}aan, inclusief dal makhani als onderdeel van een volledig menu.
+                </p>
+                <p>Bezoek ons op Leyweg 986, Den Haag. Open dinsdag tot en met zondag vanaf 16:30.</p>
+              </>
             ) : (
-              <>Add dal makhani to your order. Eat it with <Link href={`${base}/naan-den-haag`} className="text-[#D4AF37] hover:underline">naan</Link>. Eat it with rice. Feel the comfort. This is food that feels like home. Visit Chopras at Leyweg 986, Den Haag. Open Tuesday to Sunday.</>
+              <>
+                <p>
+                  Dal makhani is available every evening that Chopras is open. Eat it with fresh{' '}
+                  <Link href={`${base}/naan-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">tandoori naan</Link>
+                  {' '}from our clay oven, or pair it with a portion of{' '}
+                  <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani Den Haag</Link>
+                  {' '}for a complete North Indian meal. For larger groups, Chopras also offers{' '}
+                  <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian catering in Den Haag</Link>
+                  {' '}including dal makhani as part of a full menu.
+                </p>
+                <p>Visit us at Leyweg 986, Den Haag. Open Tuesday to Sunday from 16:30.</p>
+              </>
             )}
-          </p>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href={`${base}/contact`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]">
+            <Link
+              href={`${base}/contact`}
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]"
+            >
               {tr.common.reserve}
             </Link>
-            <Link href={`${base}/menu`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]">
+            <Link
+              href={`${base}/menu`}
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]"
+            >
               {tr.common.viewMenu}
-            </Link>
-            <Link href={`${base}/soya-chaap-den-haag`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]">
-              {isNl ? 'Meer Vegetarisch Verkennen' : 'Explore More Vegetarian'}
             </Link>
           </div>
         </div>
       </section>
 
-      {/* INTERNAL LINKS SECTION */}
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+      {/* EXPLORE MORE DISHES */}
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <Link href={`${base}/tandoori-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
-              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Tandoori' : 'Tandoori'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Ontdek onze tandoori-specialiteiten in Den Haag' : 'Discover our tandoori specialities in Den Haag'}</p>
-            </Link>
-            <Link href={`${base}/butter-chicken-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/butter-chicken-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Boter Kip' : 'Butter Chicken'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Het verhaal achter onze boter kip' : 'The story behind our butter chicken'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Rijke tomaten-room curry met halal kip' : 'Rich tomato cream curry with halal chicken'}</p>
             </Link>
-            <Link href={`${base}/naan-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/soya-chaap-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Soya Chaap' : 'Soya Chaap'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Plantaardig vlees gegrild in de tandoor' : 'Plant-based mock meat grilled in the tandoor'}</p>
+            </Link>
+            <Link href={`${base}/naan-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Naan' : 'Naan'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Tandoori Naan Den Haag' : 'Tandoori Naan Den Haag'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Vers gebakken tandoori naan uit de kleioven' : 'Fresh tandoori naan baked in the clay oven'}</p>
             </Link>
-            <Link href={`${base}/catering`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/catering`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Catering' : 'Catering'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Wilt u dit gerecht voor uw evenement? Indiaas catering Den Haag' : 'Want this dish at your event? Indian catering Den Haag'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiaas catering Den Haag voor uw evenement' : 'Indian catering Den Haag for your event'}</p>
             </Link>
           </div>
-          <div className="text-center space-y-4">
-            <p className="text-[#1A1A1A] text-base">
+          <div className="text-center">
+            <p className="font-body text-[#1A1A1A] text-base">
               <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
-                {isNl ? 'Chopras Indiaas Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
+                {isNl
+                  ? 'Chopras Indian Restaurant - het beste Indiaas restaurant in Den Haag'
+                  : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
               </Link>
-            </p>
-            <p className="text-[#1A1A1A] text-base">
-              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een reservering' : 'book a table at Chopras Indian Restaurant Den Haag'}</Link>.
             </p>
           </div>
         </div>
