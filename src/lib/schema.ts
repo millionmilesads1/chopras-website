@@ -99,7 +99,7 @@ export function getRestaurantSchema(locale: Locale): Record<string, unknown> {
     acceptsReservations: true,
     areaServed: RESTAURANT.serviceAreas,
     aggregateRating: AGGREGATE_RATING,
-    suitableForDiet: { '@id': 'https://schema.org/HalalDiet' },
+    suitableForDiet: 'https://schema.org/HalalDiet',
     logo: {
       '@type': 'ImageObject',
       url: RESTAURANT.logo,
@@ -353,7 +353,7 @@ export function getDishPageSchema(
     '@id': `${SITE_URL}/#${dishName.toLowerCase().replace(/\s+/g, '-')}`,
     name: locale === 'nl' ? dishNameNl : dishName,
     description: locale === 'nl' ? descriptionNl : description,
-    suitableForDiet: suitableForDiet.map(d => ({ '@id': d })),
+    suitableForDiet: suitableForDiet,
     offers: {
       '@type': 'Offer',
       priceCurrency: 'EUR',
@@ -399,6 +399,97 @@ export function getOrganizationSchema(): Record<string, unknown> {
       'https://www.tripadvisor.nl/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
       'https://www.thefork.nl/restaurant/chopras-indian-restaurant-r825662',
     ],
+  }
+}
+
+// ---------------------------------------------------------------------------
+// ContactPage schema
+// ---------------------------------------------------------------------------
+
+export function getContactPageSchema(locale: Locale): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': `${SITE_URL}/${locale === 'nl' ? 'nl/' : ''}contact#contactpage`,
+    name: 'Contact Chopras Indian Restaurant Den Haag',
+    description: locale === 'nl'
+      ? 'Neem contact op met Chopras Indian Restaurant op Leyweg 986, Den Haag. Reserveer een tafel, vraag een catering offerte aan of stuur ons een bericht.'
+      : 'Contact Chopras Indian Restaurant at Leyweg 986, Den Haag. Reserve a table, request a catering quote or send us a message.',
+    url: `${SITE_URL}/${locale === 'nl' ? 'nl/' : ''}contact`,
+    mainEntity: {
+      '@type': 'Restaurant',
+      '@id': `${SITE_URL}/#restaurant`,
+      name: RESTAURANT.name,
+      telephone: RESTAURANT.contact.phone,
+      email: RESTAURANT.contact.email,
+      address: ADDRESS,
+    },
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Delivery service schema
+// ---------------------------------------------------------------------------
+
+export function getDeliveryServiceSchema(locale: Locale): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: locale === 'nl' ? 'Indiaas Eten Bezorgen Den Haag' : 'Indian Food Delivery Den Haag',
+    description: locale === 'nl'
+      ? 'Indiase maaltijdbezorging in Den Haag door Chopras Indian Restaurant. Verse curry en biryani bezorgd via Thuisbezorgd en Uber Eats vanuit Leyweg 986.'
+      : 'Indian food delivery in Den Haag by Chopras Indian Restaurant. Fresh curry and biryani delivered via Thuisbezorgd and Uber Eats from Leyweg 986.',
+    serviceType: locale === 'nl' ? 'Maaltijdbezorging' : 'Food Delivery',
+    provider: { '@type': 'Restaurant', '@id': `${SITE_URL}/#restaurant`, name: RESTAURANT.name },
+    areaServed: RESTAURANT.serviceAreas.map((area) => ({ '@type': 'City', name: area })),
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: RESTAURANT.contact.website,
+      availableLanguage: ['English', 'Dutch'],
+    },
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Takeaway service schema
+// ---------------------------------------------------------------------------
+
+export function getTakeawayServiceSchema(locale: Locale): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: locale === 'nl' ? 'Indiaas Eten Afhalen Den Haag' : 'Indian Takeaway Den Haag',
+    description: locale === 'nl'
+      ? 'Indiaas eten afhalen in Den Haag bij Chopras Indian Restaurant. Bestel online en haal op bij Leyweg 986, 2545 GW Den Haag.'
+      : 'Indian takeaway in Den Haag from Chopras Indian Restaurant. Order online and collect from Leyweg 986, 2545 GW Den Haag.',
+    serviceType: locale === 'nl' ? 'Afhaalservice' : 'Takeaway',
+    provider: { '@type': 'Restaurant', '@id': `${SITE_URL}/#restaurant`, name: RESTAURANT.name },
+    areaServed: [{ '@type': 'City', name: 'Den Haag' }],
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Diet-specific FoodEstablishment schema
+// ---------------------------------------------------------------------------
+
+export function getDietFoodEstablishmentSchema(
+  locale: Locale,
+  diets: string[],
+  pageSlug: string,
+): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': ['FoodEstablishment', 'Restaurant'],
+    '@id': `${SITE_URL}/#${pageSlug}`,
+    name: RESTAURANT.name,
+    description: locale === 'nl'
+      ? 'Chopras Indian Restaurant op Leyweg 986, Den Haag. Volledig halal gecertificeerd, met vegetarische en veganistische opties. Open dinsdag tot zondag 16:30-22:30.'
+      : 'Chopras Indian Restaurant at Leyweg 986, Den Haag. Fully halal certified with vegetarian and vegan options. Open Tuesday to Sunday 16:30 to 22:30.',
+    address: ADDRESS,
+    telephone: RESTAURANT.contact.phone,
+    aggregateRating: AGGREGATE_RATING,
+    suitableForDiet: diets,
+    openingHoursSpecification: OPENING_HOURS,
   }
 }
 
