@@ -243,14 +243,6 @@ export default function Footer({ locale }: { locale: Locale }) {
             <p>
               © {new Date().getFullYear()} Chopras Indian Restaurant Den Haag. All rights reserved.
             </p>
-            <a
-              href="https://milliongloballeads.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#C7A348] transition-colors duration-200"
-            >
-              Developed by <span className="font-semibold">MGL</span>
-            </a>
           </div>
         </div>
       </div>
