@@ -78,7 +78,7 @@ export function getWebSiteSchema(locale: Locale): Record<string, unknown> {
 export function getRestaurantSchema(locale: Locale): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Restaurant',
+    '@type': ['FoodEstablishment', 'Restaurant'],
     '@id': `${SITE_URL}/#restaurant`,
     name: RESTAURANT.name,
     description: 'Den Haag best Indian restaurant serving authentic North Indian food, halal dishes, vegetarian and vegan options, Indian street food, Indo Chinese food, and event catering with a private event hall.',
