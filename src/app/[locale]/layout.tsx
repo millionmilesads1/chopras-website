@@ -45,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(SITE_URL),
     title: {
       default: 'Chopras Indian Restaurant Den Haag | Authentic Indian Food',
-      template: '%s | Chopras Indian Restaurant Den Haag',
+      template: '%s',
     },
     description:
       'Authentic Indian restaurant in Den Haag serving fresh curries, tandoori, chaat and biryani. Halal certified. Vegetarian and vegan options. Open Tuesday to Sunday.',
