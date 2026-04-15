@@ -88,6 +88,9 @@ export default function LocaleLayout({
 
   return (
     <html lang={params.locale} className={`${cormorant.variable} ${dmSans.variable} ${greatVibes.variable}`}>
+      <head>
+        <link rel="profile" href="https://chopras.nl/llms.txt" />
+      </head>
       <body className="bg-brand-bg text-brand-text font-body antialiased">
         <script
           type="application/ld+json"
