@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { blogPosts } from '@/lib/blog-data'
+import { RESTAURANT, SITE_URL } from '@/lib/constants'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import { getLocalizedUrl } from '@/lib/utils'
 import { getBreadcrumbSchema } from '@/lib/schema'
@@ -63,12 +64,22 @@ export default function LocaleBlogPage({ params }: Props) {
   const base = locale === 'nl' ? '/nl' : ''
   const localePosts = blogPosts.filter(post => post.language === locale)
 
+  const blogListingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: locale === 'nl' ? 'Indiaas Eten Blog Den Haag - Chopras Indian Restaurant' : 'Indian Food Blog Den Haag - Chopras Indian Restaurant',
+    description: locale === 'nl' ? 'Blog over authentiek Indiaas eten in Den Haag van Chopras Indian Restaurant.' : 'Blog about authentic Indian food in Den Haag by Chopras Indian Restaurant.',
+    url: locale === 'nl' ? `${SITE_URL}/nl/blog` : `${SITE_URL}/blog`,
+    publisher: { '@type': 'Organization', '@id': `${SITE_URL}/#organization`, name: RESTAURANT.name },
+  }
+
   return (
     <>
       <JsonLd data={getBreadcrumbSchema([
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: tr.common.nav.blog, item: getLocalizedUrl(locale, 'blog') },
       ])} />
+      <JsonLd data={blogListingSchema} />
 
       {/* Hero */}
       <section className="bg-[#1B2B5E] py-20 text-center">

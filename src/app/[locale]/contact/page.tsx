@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Clock, Bus } from 'lucide-react'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getRestaurantSchema, getBreadcrumbSchema, getContactPageSchema } from '@/lib/schema'
 import ContactForm from '@/components/contact/ContactForm'
 import TrustBar from '@/components/sections/TrustBar'
 import ReservationForm from '@/components/contact/ReservationForm'
@@ -90,6 +90,7 @@ export default function LocaleContactPage({ params }: Props) {
     <>
       <JsonLd data={restaurantSchema} />
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={getContactPageSchema(locale)} />
 
       {/* SECTION 1  -  RESERVATION SPLIT */}
       <section
