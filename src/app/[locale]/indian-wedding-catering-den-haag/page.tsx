@@ -4,7 +4,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getBreadcrumbSchema, getFaqPageSchema, getCateringServiceSchema } from '@/lib/schema'
+import { getBreadcrumbSchema, getFaqPageSchema, getCateringServiceSchema, getLocalRestaurantSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -67,25 +67,13 @@ export default function IndianWeddingCateringPage({ params }: Props) {
   const base = locale === 'nl' ? '/nl' : ''
   const isNl = locale === 'nl'
 
-  const restaurantSchema = {
-    '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name,
-    url: RESTAURANT.contact.website, telephone: RESTAURANT.contact.phone, email: RESTAURANT.contact.email,
-    address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, addressLocality: RESTAURANT.address.city, postalCode: RESTAURANT.address.postcode, addressCountry: 'NL' },
-    servesCuisine: RESTAURANT.cuisines, priceRange: RESTAURANT.priceRange,
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '800', bestRating: '5', worstRating: '1' },
-    sameAs: [
-      'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-      'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
-      'https://www.facebook.com/choprasrestaurant',
-      'https://www.instagram.com/choprasrestaurant',
-      'https://www.youtube.com/@choprasrestaurant',
-    ],
-  }
-
   const cateringServiceSchema = {
     '@context': 'https://schema.org', '@type': 'Service',
     name: isNl ? 'Indiase Bruiloftscatering Den Haag' : 'Indian Wedding Catering Den Haag',
     serviceType: isNl ? 'Indiase Bruiloftscatering' : 'Indian Wedding Catering',
+    description: locale === 'nl'
+      ? 'Authentieke Indiase bruiloftscatering in Den Haag voor nikah, walima en recepties. Volledig halal gecertificeerd. Vers bereid door Chopras Indian Restaurant op Leyweg 986.'
+      : 'Authentic Indian wedding catering in Den Haag for nikah, walima and receptions. Fully halal certified. Freshly prepared by Chopras Indian Restaurant at Leyweg 986.',
     provider: { '@type': 'Restaurant', name: RESTAURANT.name, telephone: RESTAURANT.contact.phone, url: RESTAURANT.contact.website },
     areaServed: [
       { '@type': 'City', name: 'Den Haag' }, { '@type': 'City', name: 'Rijswijk' },
@@ -113,7 +101,7 @@ export default function IndianWeddingCateringPage({ params }: Props) {
   return (
     <>
       <JsonLd data={getCateringServiceSchema(locale)} />
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag', 'Rijswijk', 'Delft', 'Zoetermeer', 'Voorburg', 'Leidschendam'], getLocalizedUrl(locale, 'indian-wedding-catering-den-haag'))} />
       <JsonLd data={cateringServiceSchema as Record<string, unknown>} />
       <JsonLd data={getBreadcrumbSchema([
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },

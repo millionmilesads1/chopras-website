@@ -3,7 +3,7 @@ import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getBreadcrumbSchema, getFaqPageSchema, getLocalRestaurantSchema, getCateringServiceSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -67,31 +67,10 @@ export default function IndianBuffetPage({ params }: Props) {
   const base = locale === 'nl' ? '/nl' : ''
   const isNl = locale === 'nl'
 
-  const restaurantSchema = {
-    '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name,
-    address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode },
-    telephone: RESTAURANT.contact.phone, url: RESTAURANT.contact.website, servesCuisine: ['North Indian', 'Indian Street Food'], priceRange: RESTAURANT.priceRange,
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '800', bestRating: '5', worstRating: '1' },
-    sameAs: [
-      'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-      'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
-      'https://www.facebook.com/choprasrestaurant',
-      'https://www.instagram.com/choprasrestaurant',
-      'https://www.youtube.com/@choprasrestaurant',
-    ],
-  }
-
-  const cateringSchema = {
-    '@context': 'https://schema.org', '@type': 'CateringService',
-    name: isNl ? 'Chopras Indiaas Restaurant  -  Buffet Catering' : 'Chopras Indian Restaurant  -  Buffet Catering',
-    provider: { '@type': 'Restaurant', name: RESTAURANT.name, telephone: RESTAURANT.contact.phone, address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, postalCode: RESTAURANT.address.postcode, addressLocality: RESTAURANT.address.city, addressCountry: RESTAURANT.address.countryCode } },
-    areaServed: RESTAURANT.serviceAreas.map((area) => ({ '@type': 'City', name: area })),
-  }
-
   return (
     <>
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
-      <JsonLd data={cateringSchema as Record<string, unknown>} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'indian-buffet-den-haag'))} />
+      <JsonLd data={getCateringServiceSchema(locale)} />
       <JsonLd data={getBreadcrumbSchema([
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Indiaas Buffet' : 'Indian Buffet', item: getLocalizedUrl(locale, 'indian-buffet-den-haag') },

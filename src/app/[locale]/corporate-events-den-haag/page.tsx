@@ -3,7 +3,7 @@ import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getBreadcrumbSchema, getFaqPageSchema, getCateringServiceSchema } from '@/lib/schema'
+import { getBreadcrumbSchema, getFaqPageSchema, getCateringServiceSchema, getLocalRestaurantSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -67,25 +67,13 @@ export default function CorporateEventsPage({ params }: Props) {
   const base = locale === 'nl' ? '/nl' : ''
   const isNl = locale === 'nl'
 
-  const restaurantSchema = {
-    '@context': 'https://schema.org', '@type': 'Restaurant', name: RESTAURANT.name,
-    url: RESTAURANT.contact.website, telephone: RESTAURANT.contact.phone, email: RESTAURANT.contact.email,
-    address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, addressLocality: RESTAURANT.address.city, postalCode: RESTAURANT.address.postcode, addressCountry: 'NL' },
-    servesCuisine: RESTAURANT.cuisines, priceRange: RESTAURANT.priceRange,
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '800', bestRating: '5', worstRating: '1' },
-    sameAs: [
-      'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-      'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
-      'https://www.facebook.com/choprasrestaurant',
-      'https://www.instagram.com/choprasrestaurant',
-      'https://www.youtube.com/@choprasrestaurant',
-    ],
-  }
-
   const serviceSchema = {
     '@context': 'https://schema.org', '@type': 'Service',
     name: isNl ? 'Zakelijke Evenementencatering Den Haag' : 'Corporate Event Catering Den Haag',
     serviceType: isNl ? 'Zakelijke Evenementencatering' : 'Corporate Event Catering',
+    description: locale === 'nl'
+      ? 'Professionele Indiase zakelijke evenementencatering in Den Haag voor teamdiners, conferenties en bedrijfsfeesten. Halal gecertificeerd. Chopras Indian Restaurant op Leyweg 986.'
+      : 'Professional Indian corporate event catering in Den Haag for team dinners, conferences and company parties. Halal certified. Chopras Indian Restaurant at Leyweg 986.',
     provider: { '@type': 'Restaurant', name: RESTAURANT.name, telephone: RESTAURANT.contact.phone, url: RESTAURANT.contact.website },
     areaServed: RESTAURANT.serviceAreas.map((city) => ({ '@type': 'City', name: city })),
   }
@@ -113,7 +101,7 @@ export default function CorporateEventsPage({ params }: Props) {
   return (
     <>
       <JsonLd data={getCateringServiceSchema(locale)} />
-      <JsonLd data={restaurantSchema as Record<string, unknown>} />
+      <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag', 'Rijswijk', 'Delft', 'Zoetermeer'], getLocalizedUrl(locale, 'corporate-events-den-haag'))} />
       <JsonLd data={serviceSchema as Record<string, unknown>} />
       <JsonLd data={getBreadcrumbSchema([
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
