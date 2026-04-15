@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Indiaas Restaurant bij Den Haag Centraal | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Indian restaurant near Den Haag Centraal. Chopras Indian Restaurant is 15 minutes by tram. Halal Indian food at Leyweg 986. Open Tuesday to Sunday Den Haag.',
+    en: 'Indian restaurant near Den Haag Centraal. Chopras Indian Restaurant is 15 minutes by tram. Halal food at Leyweg 986. Open Tuesday to Sunday.',
     nl: 'Authentiek Indiaas restaurant dicht bij Den Haag Centraal. Chopras is gemakkelijk bereikbaar voor forenzen.',
   }
   return {

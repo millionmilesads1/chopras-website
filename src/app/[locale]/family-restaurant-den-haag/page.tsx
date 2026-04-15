@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Familie Restaurant in Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Family restaurant Den Haag. Chopras Indian Restaurant has a dedicated kids menu, warm atmosphere and generous portions. Authentic Indian food for all ages at Leyweg 986.',
+    en: 'Family restaurant Den Haag. Chopras Indian Restaurant has a dedicated kids menu and generous portions. Authentic Indian food for all ages at Leyweg 986.',
     nl: 'Familie vriendelijk Indiaas restaurant in Den Haag. Chopras verwelkomt families met kinderen. Authentiek eten voor iedereen.',
   }
   return {

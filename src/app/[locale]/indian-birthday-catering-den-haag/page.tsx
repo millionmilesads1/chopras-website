@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Indiaas Verjaardagseten in Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Indian birthday catering Den Haag by Chopras Indian Restaurant. Authentic food delivered hot to your party. Halal options available. Book your birthday catering today.',
+    en: 'Indian birthday catering Den Haag by Chopras Indian Restaurant. Authentic food delivered hot to your party. Halal certified. Book your catering today.',
     nl: 'Indiaas verjaardagseten in Den Haag. Authentiek eten voor je feest. Op maat gemaakte menu, bezorging en opzet inbegrepen.',
   }
   return {

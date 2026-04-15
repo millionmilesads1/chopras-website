@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Indiaas Restaurant Friedespaleis Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Indian restaurant near Peace Palace Den Haag. Chopras Indian Restaurant is 10 minutes from Leyweg 986. Authentic food for diplomats and tourists. Book a table now.',
+    en: 'Indian restaurant near Peace Palace Den Haag. Chopras Indian Restaurant is 10 minutes away at Leyweg 986. Authentic halal food. Book a table now.',
     nl: 'Authentiek Indiaas restaurant dicht bij Friedespaleis in Den Haag. Chopras serveert authentieke currys, biryani, tandoori.',
   }
   return {

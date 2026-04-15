@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Indo-Chinese Restaurant Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Indo Chinese food Den Haag at Chopras Indian Restaurant. Chilli chicken, chilli paneer and Hakka noodles. The only Indo Chinese restaurant in The Hague. Visit us now.',
+    en: 'Indo Chinese food Den Haag at Chopras Indian Restaurant. Chilli chicken, chilli paneer and Hakka noodles. The only Indo Chinese restaurant in The Hague.',
     nl: 'Indo-Chinese fusiekeuken bij Chopras in Den Haag. Schezwan gerechten, noedels, rijst, momos. Pikant en aromatisch.',
   }
   return {

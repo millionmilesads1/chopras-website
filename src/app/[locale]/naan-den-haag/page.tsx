@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Naan Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Fresh naan Den Haag at Chopras Indian Restaurant. Garlic, butter, cheese and Peshwari naan baked hot in our tandoor clay oven. Best Indian bread in The Hague.',
+    en: 'Fresh naan Den Haag at Chopras Indian Restaurant. Garlic, butter and Peshwari naan baked hot in our tandoor clay oven. Best Indian bread in The Hague.',
     nl: 'Naan bij Chopras Den Haag. Knoflook naan, tandoori naan, gewone naan. Vers gebakken in tandoor. Bestel nu via Leyweg 986.',
   }
   return {

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Indiaas Eten in Nederland | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Authentic Indian food Netherlands at Chopras Indian Restaurant Den Haag. North Indian cuisine, halal and street food. Serving the Netherlands since 2023 at Leyweg 986.',
+    en: 'Authentic Indian food Netherlands at Chopras Indian Restaurant Den Haag. Halal certified, North Indian cuisine and street food since 2023. Visit us.',
     nl: 'Alles wat u moet weten over Indiaas eten in Nederland. De beste steden, wat te bestellen, halal opties, vegetarische keuken. Chopras in Den Haag is uw startpunt.',
   }
   return {

@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Dal Makhani Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Authentic dal makhani Den Haag at Chopras Indian Restaurant. Black lentils slow cooked with butter and cream. Punjabi classic, served fresh daily at Leyweg 986.',
+    en: 'Authentic dal makhani Den Haag at Chopras Indian Restaurant. Black lentils slow cooked with butter and cream. Served fresh daily at Leyweg 986.',
     nl: 'Dal makhani bij Chopras Den Haag. Romige zwarte linzen curry langzaam gegaard met tomaat en kruiden. Vegetarisch comfort food.',
   }
   return {

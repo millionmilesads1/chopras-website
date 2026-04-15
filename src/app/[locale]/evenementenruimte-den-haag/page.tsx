@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Evenementenruimte in Den Haag | Chopras Indiaas Restaurant',
   }
   const descriptions = {
-    en: 'Evenementenruimte Den Haag bij Chopras Indian Restaurant. Bedrijfsfeesten, vergaderingen en teambuilding. Indiaas catering beschikbaar. Offerte aanvragen vandaag.',
-    nl: 'Evenementenruimte Den Haag bij Chopras Indian Restaurant. Bedrijfsfeesten, vergaderingen en teambuilding. Indiaas catering beschikbaar. Offerte aanvragen vandaag.',
+    en: 'Evenementenruimte Den Haag bij Chopras Indian Restaurant. Bedrijfsfeesten en vergaderingen. Indiaas catering beschikbaar. Offerte aanvragen vandaag.',
+    nl: 'Evenementenruimte Den Haag bij Chopras Indian Restaurant. Bedrijfsfeesten en vergaderingen. Indiaas catering beschikbaar. Offerte aanvragen vandaag.',
   }
   return {
     title: titles[locale],

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Diwali Diner in Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Diwali dinner Den Haag at Chopras Indian Restaurant. Dine in or book Indian catering for your Diwali celebration. Biryani, tandoori and dal. Book your table now.',
+    en: 'Diwali dinner Den Haag at Chopras Indian Restaurant. Dine in or book catering for your Diwali celebration. Biryani, tandoori and dal. Book now.',
     nl: 'Diwali-diner bij Chopras in Den Haag. Authentiek Indiaas feest voor je familie. Reserveer je tafel of catering nu.',
   }
   return {
