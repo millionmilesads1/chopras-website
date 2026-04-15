@@ -2,8 +2,20 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+
+const faqsEn = [
+  { question: 'How far is Chopras Indian Restaurant from Rijswijk?', answer: 'Chopras Indian Restaurant is at Leyweg 986, Den Haag, less than 5 minutes by car from central Rijswijk. Tram and bus connections are also available, typically under 10 minutes.' },
+  { question: 'Is Chopras Indian Restaurant halal certified?', answer: 'Yes. Chopras Indian Restaurant is fully halal certified. All meat is halal sourced and the full menu is suitable for guests requiring halal food in the Den Haag and Rijswijk area.' },
+  { question: 'What are the opening hours at Chopras Indian Restaurant?', answer: 'Chopras Indian Restaurant is open Tuesday to Sunday from 16:30 to 22:30. The restaurant is closed on Mondays.' },
+]
+
+const faqsNl = [
+  { question: 'Hoe ver is Chopras Indian Restaurant van Rijswijk?', answer: 'Chopras Indian Restaurant is op Leyweg 986, Den Haag, minder dan 5 minuten rijden van centraal Rijswijk. Tram- en busverbindingen zijn ook beschikbaar, doorgaans minder dan 10 minuten.' },
+  { question: 'Is Chopras Indian Restaurant halal gecertificeerd?', answer: 'Ja. Chopras Indian Restaurant is volledig halal gecertificeerd. Al het vlees is halal ingekocht en het volledige menu is geschikt voor gasten die halal voedsel vereisen in de regio Den Haag en Rijswijk.' },
+  { question: 'Wat zijn de openingstijden van Chopras Indian Restaurant?', answer: 'Chopras Indian Restaurant is open dinsdag tot en met zondag van 16:30 tot 22:30. Het restaurant is op maandag gesloten.' },
+]
 
 type Props = { params: { locale: Locale } }
 
@@ -62,6 +74,7 @@ export default function IndianRestaurantRijswijkPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Indiaas Restaurant bij Rijswijk' : 'Indian Restaurant Near Rijswijk', item: getLocalizedUrl(locale, 'indian-restaurant-rijswijk') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

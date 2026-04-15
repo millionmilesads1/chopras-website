@@ -2,8 +2,20 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+
+const faqsEn = [
+  { question: 'How far is Chopras Indian Restaurant from Delft?', answer: 'Chopras Indian Restaurant is at Leyweg 986, Den Haag, approximately 15 minutes by car from central Delft via the A13. Tram and bus connections are also available, taking around 25 minutes.' },
+  { question: 'Is there free parking available near Chopras for visitors from Delft?', answer: 'Yes. Free parking is available in the Leyweg shopping area directly next to the restaurant. This is a significant advantage over parking in central Delft or Den Haag city centre.' },
+  { question: 'What are the opening hours at Chopras Indian Restaurant?', answer: 'Chopras Indian Restaurant is open Tuesday to Sunday from 16:30 to 22:30. The restaurant is closed on Mondays.' },
+]
+
+const faqsNl = [
+  { question: 'Hoe ver is Chopras Indian Restaurant van Delft?', answer: 'Chopras Indian Restaurant is op Leyweg 986, Den Haag, circa 15 minuten rijden van het centrum van Delft via de A13. Tram- en busverbindingen zijn ook beschikbaar, circa 25 minuten reistijd.' },
+  { question: 'Is er gratis parkeerruimte bij Chopras voor bezoekers uit Delft?', answer: 'Ja. Gratis parkeren is beschikbaar in het winkelgebied Leyweg direct naast het restaurant. Dit is een aanzienlijk voordeel ten opzichte van parkeren in het centrum van Delft of Den Haag.' },
+  { question: 'Wat zijn de openingstijden van Chopras Indian Restaurant?', answer: 'Chopras Indian Restaurant is open dinsdag tot en met zondag van 16:30 tot 22:30. Het restaurant is op maandag gesloten.' },
+]
 
 type Props = { params: { locale: Locale } }
 
@@ -62,6 +74,7 @@ export default function IndianRestaurantDelftPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Indiaas Restaurant bij Delft' : 'Indian Restaurant Near Delft', item: getLocalizedUrl(locale, 'indian-restaurant-delft') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

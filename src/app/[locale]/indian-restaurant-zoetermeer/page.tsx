@@ -2,8 +2,20 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
+
+const faqsEn = [
+  { question: 'How far is Chopras Indian Restaurant from Zoetermeer?', answer: 'Chopras Indian Restaurant is at Leyweg 986, Den Haag, approximately 20 minutes by car from central Zoetermeer via the A12. Randstadrail connects Zoetermeer to central Den Haag, with bus connections to Leyweg, totalling around 30 to 40 minutes.' },
+  { question: 'Do you have a private event space for groups from Zoetermeer?', answer: 'Yes. Chopras Indian Restaurant has a private event hall accommodating 25 to 80 guests, suitable for weddings, birthdays, corporate dinners, and cultural celebrations. Groups from Zoetermeer regularly book the hall for special occasions.' },
+  { question: 'What are the opening hours at Chopras Indian Restaurant?', answer: 'Chopras Indian Restaurant is open Tuesday to Sunday from 16:30 to 22:30. The restaurant is closed on Mondays.' },
+]
+
+const faqsNl = [
+  { question: 'Hoe ver is Chopras Indian Restaurant van Zoetermeer?', answer: 'Chopras Indian Restaurant is op Leyweg 986, Den Haag, circa 20 minuten rijden van centraal Zoetermeer via de A12. De Randstadrail verbindt Zoetermeer met Den Haag Centrum, met busverbindingen naar Leyweg, totaal circa 30 tot 40 minuten.' },
+  { question: 'Heeft u een privé-evenementenruimte voor groepen uit Zoetermeer?', answer: 'Ja. Chopras Indian Restaurant heeft een privé-evenementenruimte voor 25 tot 80 gasten, geschikt voor bruiloften, verjaardagen, bedrijfsdiners en culturele vieringen. Groepen uit Zoetermeer boeken de zaal regelmatig voor bijzondere gelegenheden.' },
+  { question: 'Wat zijn de openingstijden van Chopras Indian Restaurant?', answer: 'Chopras Indian Restaurant is open dinsdag tot en met zondag van 16:30 tot 22:30. Het restaurant is op maandag gesloten.' },
+]
 
 type Props = { params: { locale: Locale } }
 
@@ -62,6 +74,7 @@ export default function IndianRestaurantZoetermeerPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Indiaas Restaurant bij Zoetermeer' : 'Indian Restaurant Near Zoetermeer', item: getLocalizedUrl(locale, 'indian-restaurant-zoetermeer') },
       ])} />
+      <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

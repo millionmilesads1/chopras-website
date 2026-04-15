@@ -45,7 +45,7 @@ Tone Notes: Confident authority. Den Haag best restaurant energy — not boastfu
 Schema Type: LocalBusiness + FAQPage + Organization
 Word Count: 1200 to 1800
 CTA Goal: Reserve a table or view menu
-Available Proof: 4.9 stars Google, 800+ reviews, 8.6 TheFork, Tripadvisor Excellent, 143 dishes, 12 categories, halal certified, spices from India ground daily, 400 degree tandoor, open since 2023, Arun Chopra founder, private hall 25 to 80 guests
+Available Proof: 4.9 stars Google, 800+ reviews, 8.6 TheFork, Tripadvisor Excellent, 143 dishes, 13 categories, halal certified, spices from India ground daily, 400 degree tandoor, open since 2023, Arun Chopra founder, private hall 25 to 80 guests
 Do Not Include: competitor names, fake urgency, unverifiable claims, generic phrases like "culinary journey" or "passionate about food"
 ```
 
@@ -61,7 +61,7 @@ Funnel Stage: MOFU
 Awareness Level: Solution-Aware
 Traffic Source: Organic
 Search Intent: Commercial + Informational
-Content Angle: 143 dishes. 12 categories. Every spice ground fresh that morning. This is what a real Indian restaurant menu looks like.
+Content Angle: 143 dishes. 13 categories. Every spice ground fresh that morning. This is what a real Indian restaurant menu looks like.
 Primary Keyword: Indian restaurant menu Den Haag
 Secondary Keywords: Indiaas menu Den Haag, halal menu Den Haag, vegetarian menu Indian restaurant Den Haag, Indian food menu The Hague
 LSI / Related Terms: biryani, tandoori, butter chicken, chaat, naan, dal makhani, Indo Chinese, vegan options, halal certified, 143 dishes
@@ -75,7 +75,7 @@ Tone Notes: Knowledgeable guide tone. Help them navigate 143 dishes without over
 Schema Type: Menu + MenuSection + FAQPage
 Word Count: 800 to 1200
 CTA Goal: View full menu or reserve a table
-Available Proof: 143 dishes, 12 categories, halal certified, vegetarian options clearly labelled, vegan options, Indo Chinese exclusive to Den Haag, fresh spices daily
+Available Proof: 143 dishes, 13 categories, halal certified, vegetarian options clearly labelled, vegan options, Indo Chinese exclusive to Den Haag, fresh spices daily
 Do Not Include: individual prices, competitor names, unverifiable superlatives
 ```
 
@@ -1291,7 +1291,7 @@ Funnel Stage: MOFU
 Awareness Level: Solution-Aware
 Traffic Source: Organic
 Search Intent: Commercial + Informational
-Content Angle: 143 dishes. 12 categories. Every spice sourced from India and ground fresh before service. This is what a complete Indian restaurant menu looks like.
+Content Angle: 143 dishes. 13 categories. Every spice sourced from India and ground fresh before service. This is what a complete Indian restaurant menu looks like.
 Primary Keyword: Indian restaurant menu Den Haag
 Secondary Keywords: Indiaas menu Den Haag, halal menu Den Haag, vegetarian menu Indian restaurant Den Haag, Indian food menu The Hague, menu Chopras Indian Restaurant
 LSI / Related Terms: starters, tandoori, curries, biryani, breads, rice, desserts, drinks, halal certified, vegetarian, vegan, Indo Chinese, 143 dishes, Leyweg
@@ -1305,7 +1305,7 @@ Tone Notes: Knowledgeable guide. Lead with highlights per category. The goal is 
 Schema Type: Menu + MenuSection + MenuItem + FAQPage
 Word Count: 800 to 1200
 CTA Goal: Dine in, order online, or view individual dish pages
-Available Proof: 143 dishes, 12 categories, halal certified, vegetarian and vegan labelled, Indo Chinese exclusive in Den Haag, spices ground fresh daily, 4.9 stars 800+ reviews, Leyweg 986
+Available Proof: 143 dishes, 13 categories, halal certified, vegetarian and vegan labelled, Indo Chinese exclusive in Den Haag, spices ground fresh daily, 4.9 stars 800+ reviews, Leyweg 986
 Do Not Include: individual dish prices, competitor menu comparisons
 ```
 

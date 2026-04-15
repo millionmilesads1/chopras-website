@@ -114,7 +114,7 @@ Tone Notes: Confident authority. Not boastful, just certain. Use Chopras brand v
 Schema Type: LocalBusiness + FAQPage + Organization
 Word Count: 1200 to 1800
 CTA Goal: Reserve a table or view menu
-Available Proof: 4.9 stars Google, 800+ reviews, 8.6 TheFork, Tripadvisor Excellent, 143 dishes, 12 categories, halal certified, spices from India ground daily, 400 degree tandoor, open since 2023, Arun Chopra founder, private hall 25 to 80 guests
+Available Proof: 4.9 stars Google, 800+ reviews, 8.6 TheFork, Tripadvisor Excellent, 143 dishes, 13 categories, halal certified, spices from India ground daily, 400 degree tandoor, open since 2023, Arun Chopra founder, private hall 25 to 80 guests
 Do Not Include: competitor names, fake urgency, generic phrases like "culinary journey" or "passionate about food"
 ```
 
@@ -144,7 +144,7 @@ Funnel Stage: MOFU
 Awareness Level: Solution-Aware
 Traffic Source: Organic
 Search Intent: Commercial + Informational
-Content Angle: 143 dishes. 12 categories. Every spice ground fresh that morning. This is what a real Indian restaurant menu looks like.
+Content Angle: 143 dishes. 13 categories. Every spice ground fresh that morning. This is what a real Indian restaurant menu looks like.
 Primary Keyword: Indian restaurant menu Den Haag
 Secondary Keywords: Indiaas menu Den Haag, halal menu Den Haag, vegetarian menu Indian restaurant Den Haag, Indian food menu The Hague
 LSI / Related Terms: biryani, tandoori, butter chicken, chaat, naan, dal makhani, Indo Chinese, vegan options, halal certified, 143 dishes
@@ -1891,7 +1891,7 @@ Then use the seo-copywriting skill.
 Write long-form SEO copy for the full Menu page and update the file at:
 src/app/[locale]/menu/page.tsx
 
-Note: This is the same file as Prompt 02 but covers the full menu treatment including all 12 categories.
+Note: This is the same file as Prompt 02 but covers the full menu treatment including all 13 categories.
 If Prompt 02 has already been completed, review what was written and expand to include
 category-by-category navigation copy and dish highlights per section.
 
@@ -1909,7 +1909,7 @@ Funnel Stage: MOFU
 Awareness Level: Solution-Aware
 Traffic Source: Organic
 Search Intent: Commercial + Informational
-Content Angle: 143 dishes. 12 categories. Every spice sourced from India and ground fresh before service. This is what a complete Indian restaurant menu looks like.
+Content Angle: 143 dishes. 13 categories. Every spice sourced from India and ground fresh before service. This is what a complete Indian restaurant menu looks like.
 Primary Keyword: Indian restaurant menu Den Haag
 Secondary Keywords: Indiaas menu Den Haag, halal menu Den Haag, vegetarian menu Indian restaurant Den Haag, Indian food menu The Hague, menu Chopras Indian Restaurant
 LSI / Related Terms: starters, tandoori, curries, biryani, breads, rice, desserts, drinks, halal certified, vegetarian, vegan, Indo Chinese, 143 dishes, Leyweg
@@ -1921,7 +1921,7 @@ Tone Notes: Knowledgeable guide. Lead with highlights per category. Help them fi
 Schema Type: Menu + MenuSection + MenuItem + FAQPage
 Word Count: 800 to 1200
 CTA Goal: Dine in, order online, or view individual dish pages
-Available Proof: 143 dishes, 12 categories, halal certified, vegetarian and vegan labelled, Indo Chinese exclusive in Den Haag, spices ground fresh daily, 4.9 stars 800+ reviews, Leyweg 986
+Available Proof: 143 dishes, 13 categories, halal certified, vegetarian and vegan labelled, Indo Chinese exclusive in Den Haag, spices ground fresh daily, 4.9 stars 800+ reviews, Leyweg 986
 Do Not Include: individual dish prices, competitor menu comparisons
 ```
 

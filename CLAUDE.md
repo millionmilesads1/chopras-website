@@ -96,6 +96,7 @@ Package manager: pnpm. Node: 20.x.
 - Phone: +31 6 30645930
 - Email: info@chopras.nl
 - Founded: 2023 by Arun Chopra
+- Arun Chopra is the FOUNDER only - never "Head Chef", never "Founder and Head Chef"
 - Serves: Den Haag, Rijswijk, Delft, Zoetermeer, Voorburg, Leidschendam
 
 ## META DESCRIPTION RULES — MANDATORY FOR ALL PAGES
