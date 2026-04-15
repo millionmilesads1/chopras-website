@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getCateringServiceSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -65,6 +65,7 @@ export default function EvenementenruimtePage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={getCateringServiceSchema(locale)} />
       <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'evenementenruimte-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },

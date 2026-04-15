@@ -37,7 +37,7 @@ export default function ReviewsSection({ locale = 'en' }: { locale?: Locale }) {
             <Star key={i} size={20} className="text-[#D4AF37] fill-[#D4AF37]" />
           ))}
           <span className="font-body text-[#1A1A1A]/60 text-sm ml-2">
-            4.9 out of 5 &middot; 834 Google reviews
+            4.9 out of 5 &middot; 800+ Google reviews
           </span>
         </div>
       </div>

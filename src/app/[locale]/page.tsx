@@ -161,7 +161,7 @@ export default function LocaleHomePage({ params }: Props) {
               </div>
               <p className="font-body text-[#1A1A1A] font-semibold mb-2">Google Rating</p>
               <p className="font-body text-3xl font-bold text-[#1B2B5E] mb-1">4.9 stars</p>
-              <p className="font-body text-[#666]">834 verified reviews</p>
+              <p className="font-body text-[#666]">800+ verified reviews</p>
             </div>
             <div className="bg-white rounded-lg p-8 shadow-sm">
               <div className="flex items-center gap-2 mb-4">

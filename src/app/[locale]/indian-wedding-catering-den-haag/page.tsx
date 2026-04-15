@@ -4,7 +4,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getBreadcrumbSchema, getFaqPageSchema, getCateringServiceSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -72,7 +72,7 @@ export default function IndianWeddingCateringPage({ params }: Props) {
     url: RESTAURANT.contact.website, telephone: RESTAURANT.contact.phone, email: RESTAURANT.contact.email,
     address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, addressLocality: RESTAURANT.address.city, postalCode: RESTAURANT.address.postcode, addressCountry: 'NL' },
     servesCuisine: RESTAURANT.cuisines, priceRange: RESTAURANT.priceRange,
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '834', bestRating: '5', worstRating: '1' },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '800', bestRating: '5', worstRating: '1' },
     sameAs: [
       'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
       'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
@@ -112,6 +112,7 @@ export default function IndianWeddingCateringPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={getCateringServiceSchema(locale)} />
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
       <JsonLd data={cateringServiceSchema as Record<string, unknown>} />
       <JsonLd data={getBreadcrumbSchema([

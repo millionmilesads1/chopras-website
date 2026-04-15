@@ -133,7 +133,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                   <span>TripAdvisor Reviewed</span>
                 </a>
                 <p className="text-xs text-white/50">
-                  Rated 4.9 ★ on Google · 834 reviews
+                  Rated 4.9 ★ on Google · 800+ reviews
                 </p>
               </div>
             </div>

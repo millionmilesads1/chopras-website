@@ -37,7 +37,7 @@ const SAME_AS = [
 const AGGREGATE_RATING = {
   '@type': 'AggregateRating',
   ratingValue: '4.9',
-  reviewCount: '834',
+  reviewCount: '800',
   bestRating: '5',
   worstRating: '1',
 }
@@ -138,6 +138,9 @@ export function getLocalRestaurantSchema(
     '@type': ['LocalBusiness', 'Restaurant'],
     '@id': `${SITE_URL}/#restaurant`,
     name: RESTAURANT.name,
+    description: locale === 'nl'
+      ? 'Chopras Indian Restaurant op Leyweg 986, Den Haag, serveert authentieke Noord-Indiase keuken. Volledig halal gecertificeerd, open dinsdag tot zondag van 16:30 tot 22:30.'
+      : 'Chopras Indian Restaurant at Leyweg 986, Den Haag, serves authentic North Indian cuisine. Fully halal certified, open Tuesday to Sunday 16:30 to 22:30.',
     url: pageUrl,
     telephone: RESTAURANT.contact.phone,
     email: RESTAURANT.contact.email,
@@ -314,10 +317,13 @@ export function getBlogPostingSchema(
 export function getCateringServiceSchema(locale: Locale): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
-    '@type': 'CateringService',
+    '@type': 'FoodService',
     name: locale === 'nl'
-      ? 'Chopras Indiaas Restaurant - Buffet Catering'
-      : 'Chopras Indian Restaurant - Buffet Catering',
+      ? 'Indiaas Catering Den Haag'
+      : 'Indian Catering Den Haag',
+    description: locale === 'nl'
+      ? 'Authentieke Indiase catering in Den Haag voor bruiloften, verjaardagen en bedrijfsevenementen. Halal gecertificeerd. Vers bereid door Chopras Indian Restaurant op Leyweg 986.'
+      : 'Authentic Indian catering in Den Haag for weddings, birthdays and corporate events. Halal certified. Freshly prepared by Chopras Indian Restaurant at Leyweg 986.',
     provider: {
       '@type': 'Restaurant',
       '@id': `${SITE_URL}/#restaurant`,

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getBreadcrumbSchema, getFaqPageSchema, getCateringServiceSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: 'Zakelijke Evenementen Den Haag | Chopras Indian Restaurant',
   }
   const descriptions = {
-    en: 'Corporate events Den Haag. Chopras Indian Restaurant provides Indian catering for team dinners and receptions. Halal certified. Up to 120 guests. Book now.',
+    en: 'Corporate events Den Haag. Chopras Indian Restaurant provides Indian catering for team dinners and receptions. Halal certified. Up to 80 guests. Book now.',
     nl: 'Zakelijke evenementencatering en verhuur van privéruimte in Den Haag bij Chopras. Authentieke Indiase catering voor teamdiners, productlanceringen en netwerkevenementen.',
   }
   return {
@@ -72,7 +72,7 @@ export default function CorporateEventsPage({ params }: Props) {
     url: RESTAURANT.contact.website, telephone: RESTAURANT.contact.phone, email: RESTAURANT.contact.email,
     address: { '@type': 'PostalAddress', streetAddress: RESTAURANT.address.street, addressLocality: RESTAURANT.address.city, postalCode: RESTAURANT.address.postcode, addressCountry: 'NL' },
     servesCuisine: RESTAURANT.cuisines, priceRange: RESTAURANT.priceRange,
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '834', bestRating: '5', worstRating: '1' },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '800', bestRating: '5', worstRating: '1' },
     sameAs: [
       'https://www.tripadvisor.com/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
       'https://www.google.com/maps/place/Chopras+Indian+Restaurant/@52.0583,4.2932,17z/',
@@ -94,7 +94,7 @@ export default function CorporateEventsPage({ params }: Props) {
     { emoji: '🍽️', title: 'Teamdiners en Bedrijfsvieringen', desc: 'Eindejaarsdiners, kwartaalvieringen, teamuitjes. Een Indiaas spread is genereus, gezellig en past bij elk voedingsprofiel in de zaal zonder speciale verzoeken.' },
     { emoji: '🤝', title: 'Klantentertainment en Bedrijfsontwikkeling', desc: 'Een klantendiner bij Chopras, of Chopras-catering op uw locatie, maakt een meer memorabele indruk dan een standaard restaurantboeking.' },
     { emoji: '🚀', title: 'Productlanceringen en Persevents', desc: 'Street food stations, chaat bars, Indiase kleine gerechten op canapé-stijl  -  Indiaas eten creëert visuele en smaakbelevenissen die goed fotograferen.' },
-    { emoji: '🏆', title: 'Conferentiediners en Uitreikingen', desc: 'Volledige bediening op bord voor 40 tot 120 gasten. Professioneel, op tijd en uitgevoerd zonder keukendrama aan uw kant.' },
+    { emoji: '🏆', title: 'Conferentiediners en Uitreikingen', desc: 'Volledige bediening op bord voor 40 tot 80 gasten. Professioneel, op tijd en uitgevoerd zonder keukendrama aan uw kant.' },
     { emoji: '🌍', title: 'Overheids- en Diplomatieke Recepties', desc: 'Chopras heeft de halal-certificering en de multiculturele menuomvang die vereist is voor internationale diplomatieke catering waar dieetvereisten strikt en gevarieerd kunnen zijn.' },
     { emoji: '💬', title: 'Netwerkevenementen en Meetups', desc: 'Kleinere, staande evenementen waar gasten bewegen en socialiseren. Indiase canapés en street food stations werken perfect voor dit formaat.' },
     { emoji: '📋', title: 'Trainingen en Workshopcatering', desc: 'Avondcatering voor trainingen en meerdaagse workshops. Teams die een volledige dag afsluiten met een goed Indiaas diner, zijn energieker voor de avondsessie of de volgende ochtend.' },
@@ -103,7 +103,7 @@ export default function CorporateEventsPage({ params }: Props) {
     { emoji: '🍽️', title: 'Team Dinners and Company Celebrations', desc: 'Year-end dinners, quarterly celebrations, team offsites. An Indian spread is generous, sociable and suits every dietary profile in the room without special requests.' },
     { emoji: '🤝', title: 'Client Entertainment and Business Development', desc: 'A client dinner at Chopras, or Chopras catering at your premises, creates a more memorable impression than a standard restaurant booking.' },
     { emoji: '🚀', title: 'Product Launches and Press Events', desc: 'Street food stations, chaat bars, canape-style Indian small plates  -  Indian food creates visual and flavour moments that photograph well.' },
-    { emoji: '🏆', title: 'Conference Dinners and Awards Ceremonies', desc: 'Full plated service for 40 to 120 guests. Professional, timed, and executed without kitchen drama on your side.' },
+    { emoji: '🏆', title: 'Conference Dinners and Awards Ceremonies', desc: 'Full plated service for 40 to 80 guests. Professional, timed, and executed without kitchen drama on your side.' },
     { emoji: '🌍', title: 'Government and Diplomatic Receptions', desc: 'Chopras has the halal certification and the multicultural menu breadth required for international diplomatic catering where dietary requirements may be strict and varied.' },
     { emoji: '💬', title: 'Networking Events and Meetups', desc: 'Smaller, standing-format events where guests move and mingle. Indian canapes and street food stations work perfectly for this format.' },
     { emoji: '📋', title: 'Training Days and Workshop Catering', desc: 'Evening catering for training days and full-day workshops. Teams that close out a long day with a proper Indian dinner arrive at the evening session or the next morning in better shape.' },
@@ -112,6 +112,7 @@ export default function CorporateEventsPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={getCateringServiceSchema(locale)} />
       <JsonLd data={restaurantSchema as Record<string, unknown>} />
       <JsonLd data={serviceSchema as Record<string, unknown>} />
       <JsonLd data={getBreadcrumbSchema([
@@ -134,7 +135,7 @@ export default function CorporateEventsPage({ params }: Props) {
             {isNl ? 'Zakelijke Evenementen in Den Haag  -  Indiase Catering en Privélocatie bij Chopras' : 'Corporate Events in Den Haag  -  Indian Catering and Private Venue at Chopras'}
           </h1>
           <p className="text-xl text-white/75 mt-6 leading-relaxed" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}>
-            {isNl ? 'Teamdiners. Klantentertainment. Productlanceringen. Conferentiecatering. Voor 15 tot 120 gasten in Den Haag.' : 'Team dinners. Client entertainment. Product launches. Conference catering. For 15 to 120 guests across Den Haag.'}
+            {isNl ? 'Teamdiners. Klantentertainment. Productlanceringen. Conferentiecatering. Voor 15 tot 80 gasten in Den Haag.' : 'Team dinners. Client entertainment. Product launches. Conference catering. For 15 to 80 guests across Den Haag.'}
           </p>
           <Link href={`${base}/catering#catering-form`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]">
             {isNl ? 'Zakelijke Offerte Aanvragen' : 'Get a Corporate Quote'}
@@ -152,13 +153,13 @@ export default function CorporateEventsPage({ params }: Props) {
               <>
                 <p>Den Haag is niet alleen de zetel van de Nederlandse overheid  -  het is een van de internationaal meest geconcentreerde steden van Europa. Meer dan 150 ambassades. <Link href={`${base}/indian-restaurant-near-peace-palace-den-haag`} className="text-[#D4AF37] hover:underline">Het Internationaal Gerechtshof</Link>. <Link href={`${base}/indian-restaurant-near-peace-palace-den-haag`} className="text-[#D4AF37] hover:underline">Het Vredespaleis</Link>. De hoofdkwartieren van Europol, de OPCW en het ICC. Honderden NGO&apos;s en internationale organisaties met personeel van over de hele wereld aan dezelfde tafel.</p>
                 <p>Dit creëert een ongewone dichtheid van zakelijke evenementen waarbij de gastenlijst tegelijkertijd culturen, dieetvereisten en verwachtingen omspant. Ministeriële diners, diplomatieke recepties, eindejaarsfeesten, klantentertainment waarbij de aankomen gast uit India, Indonesië of Saudi-Arabië kan komen. Generiek eten werkt niet voor dat spectrum. Indiaas eten wel.</p>
-                <p>Indiase keuken is een van de weinige culinaire tradities die <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal, vegetarisch, veganistisch en glutenvrij</Link> op een natuurlijke manier in één spread dekt  -  niet door aanpassing, maar omdat dat nu eenmaal de structuur van het eten is. Chopras heeft zakelijke evenementen gecaterd voor teams van 15 tot 120 gasten in Den Haag en de wijdere regio.</p>
+                <p>Indiase keuken is een van de weinige culinaire tradities die <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal, vegetarisch, veganistisch en glutenvrij</Link> op een natuurlijke manier in één spread dekt  -  niet door aanpassing, maar omdat dat nu eenmaal de structuur van het eten is. Chopras heeft zakelijke evenementen gecaterd voor teams van 15 tot 80 gasten in Den Haag en de wijdere regio.</p>
               </>
             ) : (
               <>
                 <p>Den Haag is not just the seat of Dutch government  -  it is one of the most internationally concentrated cities in Europe. More than 150 embassies. <Link href={`${base}/indian-restaurant-near-peace-palace-den-haag`} className="text-[#D4AF37] hover:underline">The International Court of Justice</Link>. <Link href={`${base}/indian-restaurant-near-peace-palace-den-haag`} className="text-[#D4AF37] hover:underline">The Peace Palace</Link>. The headquarters of Europol, the OPCW and the ICC. Hundreds of NGOs and international organisations with staff from every part of the world sitting around the same table.</p>
                 <p>This creates an unusual density of corporate events where the guest list spans cultures, dietary requirements and expectations simultaneously. Ministerial dinners, diplomatic receptions, year-end team celebrations, client entertainment where the guest arriving may be from India, Indonesia or Saudi Arabia. Generic food does not work across that range. Indian food does.</p>
-                <p>Indian cuisine is one of the few culinary traditions that naturally covers <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal, vegetarian, vegan and gluten-free</Link> in a single spread  -  not through special accommodation, but because that is the structure of the food. Chopras has catered corporate events for teams of 15 to 120 guests across Den Haag and the wider region.</p>
+                <p>Indian cuisine is one of the few culinary traditions that naturally covers <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal, vegetarian, vegan and gluten-free</Link> in a single spread  -  not through special accommodation, but because that is the structure of the food. Chopras has catered corporate events for teams of 15 to 80 guests across Den Haag and the wider region.</p>
               </>
             )}
           </div>
