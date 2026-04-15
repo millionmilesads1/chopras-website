@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getDishPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -93,6 +93,7 @@ export default function ChaatPage({ params }: Props) {
         { name: isNl ? 'Chaat Den Haag' : 'Chaat Den Haag', item: getLocalizedUrl(locale, 'chaat-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
+      <JsonLd data={getDishPageSchema(locale, 'Chaat Den Haag', 'Chaat Den Haag', 'Authentic Indian street food chaat at Chopras Indian Restaurant Den Haag. Papdi chaat, dahi puri and aloo tikki made fresh daily at Leyweg 986.', 'Authentiek Indiaas street food chaat bij Chopras Indian Restaurant Den Haag. Papdi chaat, dahi puri en aloo tikki dagelijks vers bereid op Leyweg 986.', ['https://schema.org/VegetarianDiet', 'https://schema.org/HalalDiet'])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

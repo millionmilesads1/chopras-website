@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getDishPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -56,6 +56,7 @@ export default function TandooriPage({ params }: Props) {
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
         { name: isNl ? 'Tandoori Den Haag' : 'Tandoori Den Haag', item: getLocalizedUrl(locale, 'tandoori-den-haag') },
       ])} />
+      <JsonLd data={getDishPageSchema(locale, 'Tandoori Den Haag', 'Tandoori Den Haag', 'Authentic halal tandoori dishes at Chopras Indian Restaurant Den Haag. Chicken tikka and seekh kebab from a 400-degree Celsius clay oven at Leyweg 986.', 'Authentieke halal tandoorigerechten bij Chopras Indian Restaurant Den Haag. Chicken tikka en seekh kebab uit een kleoven van 400 graden Celsius op Leyweg 986.')} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4">

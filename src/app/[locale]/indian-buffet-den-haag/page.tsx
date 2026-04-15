@@ -3,7 +3,7 @@ import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { RESTAURANT } from '@/lib/constants'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getBreadcrumbSchema, getFaqPageSchema, getLocalRestaurantSchema, getCateringServiceSchema } from '@/lib/schema'
+import { getBreadcrumbSchema, getFaqPageSchema, getLocalRestaurantSchema, getCateringServiceSchema, getDishPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -76,6 +76,7 @@ export default function IndianBuffetPage({ params }: Props) {
         { name: isNl ? 'Indiaas Buffet' : 'Indian Buffet', item: getLocalizedUrl(locale, 'indian-buffet-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
+      <JsonLd data={getDishPageSchema(locale, 'Indian Buffet Den Haag', 'Indiaas Buffet Den Haag', 'Authentic Indian buffet at Chopras Indian Restaurant Den Haag. Halal curries, tandoori and biryani for groups at Leyweg 986, 2545 GW Den Haag.', 'Authentiek Indiaas buffet bij Chopras Indian Restaurant Den Haag. Halal curry, tandoori en biryani voor groepen op Leyweg 986, 2545 GW Den Haag.')} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getDishPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -93,6 +93,7 @@ export default function NaanPage({ params }: Props) {
         { name: isNl ? 'Naan Den Haag' : 'Naan Den Haag', item: getLocalizedUrl(locale, 'naan-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
+      <JsonLd data={getDishPageSchema(locale, 'Naan Den Haag', 'Naan Den Haag', 'Fresh naan baked in a 400-degree tandoor clay oven at Chopras Indian Restaurant Den Haag. Garlic, butter, cheese and Peshwari naan at Leyweg 986.', 'Verse naan gebakken in een tandoorkleioven van 400 graden bij Chopras Indian Restaurant Den Haag. Knoflook-, boter- en Peshwarinaan op Leyweg 986.', ['https://schema.org/VegetarianDiet', 'https://schema.org/HalalDiet'])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getDishPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -93,6 +93,7 @@ export default function PaniPuriPage({ params }: Props) {
         { name: isNl ? 'Pani Puri Den Haag' : 'Pani Puri Den Haag', item: getLocalizedUrl(locale, 'pani-puri-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
+      <JsonLd data={getDishPageSchema(locale, 'Pani Puri Den Haag', 'Pani Puri Den Haag', 'Authentic pani puri at Chopras Indian Restaurant Den Haag. Crispy shells filled with spiced potato and tamarind water, made fresh daily at Leyweg 986.', 'Authentieke pani puri bij Chopras Indian Restaurant Den Haag. Knapperige schelpjes gevuld met gekruide aardappel en tamarindwater, dagelijks vers op Leyweg 986.', ['https://schema.org/VegetarianDiet', 'https://schema.org/HalalDiet'])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

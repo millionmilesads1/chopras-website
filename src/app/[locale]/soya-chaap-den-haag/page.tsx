@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getDishPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -93,6 +93,7 @@ export default function SoyaChaapPage({ params }: Props) {
         { name: isNl ? 'Soya Chaap Den Haag' : 'Soya Chaap Den Haag', item: getLocalizedUrl(locale, 'soya-chaap-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
+      <JsonLd data={getDishPageSchema(locale, 'Soya Chaap Den Haag', 'Soya Chaap Den Haag', 'Authentic vegan soya chaap at Chopras Indian Restaurant Den Haag. Plant-based mock meat grilled in the tandoor clay oven at Leyweg 986 Den Haag.', 'Authentieke veganistische soya chaap bij Chopras Indian Restaurant Den Haag. Plantaardig nepvlees gegrild in de tandoorkleioven op Leyweg 986 Den Haag.', ['https://schema.org/VeganDiet', 'https://schema.org/VegetarianDiet', 'https://schema.org/HalalDiet'])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

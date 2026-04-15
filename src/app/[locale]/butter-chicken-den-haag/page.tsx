@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getDishPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -109,6 +109,7 @@ export default function ButterChickenPage({ params }: Props) {
         { name: 'Butter Chicken Den Haag', item: getLocalizedUrl(locale, 'butter-chicken-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
+      <JsonLd data={getDishPageSchema(locale, 'Butter Chicken Den Haag', 'Butter Chicken Den Haag', 'Authentic halal butter chicken at Chopras Indian Restaurant Den Haag. Tender chicken in rich tomato and cream sauce with spices ground fresh daily at Leyweg 986.', 'Authentieke halal butter chicken bij Chopras Indian Restaurant Den Haag. Malse kip in rijke tomaten-roomsaus met dagelijks vers gemalen specerijen op Leyweg 986.')} />
 
       {/* HERO */}
       <section className="bg-[#1B2B5E] py-20 text-center">

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getDishPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -73,6 +73,7 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
         { name: isNl ? 'Indo-Chinese Restaurant' : 'Indo-Chinese Restaurant', item: getLocalizedUrl(locale, 'indo-chinese-restaurant-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
+      <JsonLd data={getDishPageSchema(locale, 'Indo Chinese Food Den Haag', 'Indo-Chinees Eten Den Haag', 'Authentic Indo Chinese food at Chopras Indian Restaurant Den Haag. Chilli chicken, chilli paneer and Hakka noodles. The only Indo Chinese restaurant in The Hague.', 'Authentiek Indo-Chinees eten bij Chopras Indian Restaurant Den Haag. Chilli chicken, chilli paneer en Hakka noodles. Het enige Indo-Chinese restaurant in Den Haag.')} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -336,6 +336,40 @@ export function getCateringServiceSchema(locale: Locale): Record<string, unknown
 }
 
 // ---------------------------------------------------------------------------
+// MenuItem schema (primary entity for individual dish pages)
+// ---------------------------------------------------------------------------
+
+export function getDishPageSchema(
+  locale: Locale,
+  dishName: string,
+  dishNameNl: string,
+  description: string,
+  descriptionNl: string,
+  suitableForDiet: string[] = ['https://schema.org/HalalDiet'],
+): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'MenuItem',
+    '@id': `${SITE_URL}/#${dishName.toLowerCase().replace(/\s+/g, '-')}`,
+    name: locale === 'nl' ? dishNameNl : dishName,
+    description: locale === 'nl' ? descriptionNl : description,
+    suitableForDiet: suitableForDiet.map(d => ({ '@id': d })),
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+    },
+    provider: {
+      '@type': 'Restaurant',
+      '@id': `${SITE_URL}/#restaurant`,
+      name: RESTAURANT.name,
+      address: ADDRESS,
+      telephone: RESTAURANT.contact.phone,
+    },
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Organization schema (for AI discoverability and entity recognition)
 // ---------------------------------------------------------------------------
 

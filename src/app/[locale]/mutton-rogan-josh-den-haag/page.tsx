@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getDishPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -89,6 +89,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
         { name: isNl ? 'Rogan Josh Den Haag' : 'Rogan Josh Den Haag', item: getLocalizedUrl(locale, 'mutton-rogan-josh-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
+      <JsonLd data={getDishPageSchema(locale, 'Mutton Rogan Josh Den Haag', 'Lamsvlees Rogan Josh Den Haag', 'Authentic halal mutton rogan josh at Chopras Indian Restaurant Den Haag. Kashmiri lamb curry with whole spices ground fresh daily at Leyweg 986.', 'Authentieke halal lamsvlees rogan josh bij Chopras Indian Restaurant Den Haag. Kasjmirische lamsschotel met dagelijks vers gemalen specerijen op Leyweg 986.')} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getDishPageSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -93,6 +93,7 @@ export default function DalMakhaniPage({ params }: Props) {
         { name: isNl ? 'Dal Makhani Den Haag' : 'Dal Makhani Den Haag', item: getLocalizedUrl(locale, 'dal-makhani-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
+      <JsonLd data={getDishPageSchema(locale, 'Dal Makhani Den Haag', 'Dal Makhani Den Haag', 'Authentic dal makhani at Chopras Indian Restaurant Den Haag. Black lentils slow cooked with butter and cream using spices ground fresh daily at Leyweg 986.', 'Authentieke dal makhani bij Chopras Indian Restaurant Den Haag. Zwarte linzen langzaam gekookt met boter en room met dagelijks vers gemalen specerijen op Leyweg 986.', ['https://schema.org/VegetarianDiet', 'https://schema.org/HalalDiet'])} />
 
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
