@@ -8,6 +8,7 @@ import CartDrawer from '@/components/cart/CartDrawer'
 import ScrollToTop from '@/components/ScrollToTop'
 import DisableScrollRestoration from '@/components/DisableScrollRestoration'
 import WhatsAppWidget from '@/components/WhatsAppWidget'
+import ScrollToTopButton from '@/components/ScrollToTopButton'
 import { type Locale } from '@/lib/useTranslations'
 import { RESTAURANT, SITE_URL } from '@/lib/constants'
 import { getWebSiteSchema } from '@/lib/schema'
@@ -104,6 +105,7 @@ export default function LocaleLayout({
         <main className="pt-[100px]">{children}</main>
         <Footer locale={params.locale} />
         <WhatsAppWidget />
+        <ScrollToTopButton />
       </body>
     </html>
   )
