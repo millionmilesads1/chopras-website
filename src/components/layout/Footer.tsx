@@ -47,6 +47,9 @@ export default function Footer({ locale }: { locale: Locale }) {
   const NEAR_YOU_LINKS = [
     { label: 'Indian Restaurant Delft', href: `${base}/indian-restaurant-delft` },
     { label: 'Indian Restaurant Rijswijk', href: `${base}/indian-restaurant-rijswijk` },
+    { label: 'Indian Restaurant Voorburg', href: `${base}/indian-restaurant-voorburg` },
+    { label: 'Indian Restaurant Leidschendam', href: `${base}/indian-restaurant-leidschendam` },
+    { label: 'Indian Restaurant Westland', href: `${base}/indian-restaurant-westland` },
     { label: 'Indian Restaurant Zoetermeer', href: `${base}/indian-restaurant-zoetermeer` },
     { label: 'Near Peace Palace', href: `${base}/indian-restaurant-near-peace-palace-den-haag` },
     { label: 'Near Den Haag Centraal', href: `${base}/indian-restaurant-near-den-haag-centraal` },

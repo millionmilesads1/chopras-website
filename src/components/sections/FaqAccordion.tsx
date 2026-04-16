@@ -34,7 +34,6 @@ export default function FaqAccordion({ faqs }: { faqs: Array<{ question: string;
           <div
             className="overflow-hidden transition-all duration-300"
             style={{ maxHeight: openIndex === index ? '500px' : '0px' }}
-            aria-hidden={openIndex !== index}
           >
             <div className="font-body text-[#1A1A1A]/70 text-sm leading-relaxed pt-3 pb-1">
               {faq.answer}

@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Authentic pani puri Den Haag at Chopras Indian Restaurant. Crispy shells with spiced potato and tamarind water. Real Indian street food at Leyweg 986.',
-    nl: 'Pani puri (golgappa) bij Chopras Den Haag. Krokante holle puri, gekruid aardappel, zure water. Authentiek Indiaas straatvoedsel.',
+    nl: 'Pani puri Den Haag bij Chopras Indian Restaurant. Krokante schelpjes gevuld met aardappel en tamarindwater. Echt Indiaas straatvoedsel op Leyweg 986.',
   }
   return {
     title: titles[locale],
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: titles[locale],
       description: descriptions[locale],
       url: getLocalizedUrl(locale, 'pani-puri-den-haag'),
-      images: [{ url: '/og/home-og.jpg', width: 1200, height: 630, alt: 'Chopras Indian Restaurant Den Haag' }],
+      images: [{ url: '/og/home-og.jpg', width: 1200, height: 630, alt: 'Pani puri at Chopras Indian Restaurant Den Haag' }],
       type: 'website',
     },
     twitter: {
@@ -51,31 +51,47 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const faqsEn: Array<{ question: string; answer: string }> = [
   {
-    question: 'What is golgappa?',
-    answer: 'Golgappa is another word for pani puri. In Mumbai it is called golgappa, in Delhi pani puri. In other parts of India it has different names. It is the same delicacy - hollow puri filled with potato and dipped in water.',
+    question: 'What is golgappa and is it the same as pani puri?',
+    answer: 'Golgappa and pani puri are the same dish. In Delhi and northern India it is called golgappa. In Mumbai and the west it is pani puri. In West Bengal it is puchka, and in Bihar it is gupchup. Every version uses the same base: a crispy hollow puri filled with spiced potato and dipped in flavoured tamarind water.',
   },
   {
-    question: 'Can I order pani puri ahead?',
-    answer: 'Pani puri tastes best fresh. Just freshly fried puri, fresh water, fresh potato - all at the same time. Make your reservation at Chopras, call us, and we will make your pani puri when you arrive. This is how it should be.',
+    question: 'What does pani puri taste like?',
+    answer: 'Pani puri delivers four flavours at once: sour from the tamarind water and lime, spicy from green chilli, sweet from the date and jaggery chutney, and earthy from the spiced potato filling. The puri itself is light and crispy until the water hits it. The entire experience lasts about three seconds per piece, which is why one order is never enough.',
   },
   {
-    question: 'Is pani puri vegetarian?',
-    answer: 'Yes, completely. Pani puri consists of flour, potato, chickpeas, water, and spices. There is no meat, no fish, no animal products. It is vegetarian, vegan and halal.',
+    question: 'Is pani puri vegetarian and vegan?',
+    answer: 'Yes. Pani puri contains no meat, no fish, and no animal products. The puri is made from flour and water. The filling is spiced potato and chickpeas. The pani is a blend of mint, tamarind, lime, and spices. Every component is naturally vegetarian and vegan. It is also halal certified at Chopras Indian Restaurant.',
+  },
+  {
+    question: 'Do I need to book a table to try pani puri at Chopras?',
+    answer: 'You can walk in, but booking is recommended especially on Friday and Saturday evenings. Pani puri is served as a starter and is most enjoyable when the kitchen can prepare it fresh while you are seated. Call us on +31 6 30645930 or use the contact page to reserve your table at Leyweg 986 in Den Haag.',
+  },
+  {
+    question: 'Can pani puri be included in an Indian catering order?',
+    answer: 'Yes. Pani puri is one of the most popular choices for birthday parties, weddings, and corporate events catered by Chopras Indian Restaurant. It works as an interactive starter for groups. The components are prepared separately and assembled on site to keep the puri crispy. Contact us for a catering quote.',
   },
 ]
 
 const faqsNl: Array<{ question: string; answer: string }> = [
   {
-    question: 'Wat is golgappa?',
-    answer: 'Golgappa is een ander woord voor pani puri. In Mumbai wordt het golgappa genoemd, in Delhi pani puri. In andere delen van India heeft het verschillende namen. Het is dezelfde lekkernij - holle puri gevuld met aardappel en ondergedompeld in water.',
+    question: 'Wat is golgappa en is het hetzelfde als pani puri?',
+    answer: 'Golgappa en pani puri zijn hetzelfde gerecht. In Delhi en Noord-India wordt het golgappa genoemd. In Mumbai en het westen pani puri. In West-Bengalen puchka, en in Bihar gupchup. Elke versie gebruikt dezelfde basis: een krokante, holle puri gevuld met gekruid aardappel en gedoopt in gekruid tamarindwater.',
   },
   {
-    question: 'Kan ik pani puri vooraf bestellen?',
-    answer: 'Pani puri smaakt het beste vers. Gewoon vers gebakken puri, vers water, vers aardappel - allemaal tegelijk. Maak je reservering bij Chopras, bel ons, en wij maken je pani puri wanneer je aankomt. Dit is hoe het hoort te zijn.',
+    question: 'Hoe smaakt pani puri?',
+    answer: 'Pani puri levert vier smaken tegelijk: zuur van het tamarindwater en de limoen, pittig van de groene chili, zoet van de dadel- en jaggerychutney, en aards van de gekruide aardappelvulling. De puri zelf is licht en knapperig totdat het water hem raakt. De hele ervaring duurt ongeveer drie seconden per stukje, en dat is waarom een bestelling nooit genoeg is.',
   },
   {
-    question: 'Is pani puri vegetarisch?',
-    answer: 'Ja, volledig. Pani puri bestaat uit bloem, aardappel, kikkererwten, water, en kruiden. Er is geen vlees, geen vis, geen dierlijke producten. Het is vegetarisch, veganistisch en halal.',
+    question: 'Is pani puri vegetarisch en veganistisch?',
+    answer: 'Ja. Pani puri bevat geen vlees, geen vis en geen dierlijke producten. De puri is gemaakt van bloem en water. De vulling is gekruid aardappel en kikkererwten. Het water is een mengsel van munt, tamarinde, limoen en kruiden. Elk onderdeel is van nature vegetarisch en veganistisch. Het is ook halal gecertificeerd bij Chopras Indian Restaurant.',
+  },
+  {
+    question: 'Moet ik een tafel reserveren om pani puri te proberen bij Chopras?',
+    answer: 'Inlopen kan, maar reserveren wordt aanbevolen, vooral op vrijdag- en zaterdagavond. Pani puri wordt geserveerd als voorgerecht en smaakt het beste wanneer de keuken het vers kan bereiden terwijl u zit. Bel ons op +31 6 30645930 of gebruik de contactpagina om uw tafel op Leyweg 986 in Den Haag te reserveren.',
+  },
+  {
+    question: 'Kan pani puri worden opgenomen in een Indiaas cateringorder?',
+    answer: 'Ja. Pani puri is een van de populairste keuzes voor verjaardagsfeesten, bruiloften en bedrijfsevenementen verzorgd door Chopras Indian Restaurant. Het werkt als een interactief voorgerecht voor groepen. De onderdelen worden apart bereid en ter plaatse geassembleerd om de puri knapperig te houden. Neem contact met ons op voor een cateringofferte.',
   },
 ]
 
@@ -90,125 +106,195 @@ export default function PaniPuriPage({ params }: Props) {
       <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'pani-puri-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
-        { name: isNl ? 'Pani Puri Den Haag' : 'Pani Puri Den Haag', item: getLocalizedUrl(locale, 'pani-puri-den-haag') },
+        { name: 'Pani Puri Den Haag', item: getLocalizedUrl(locale, 'pani-puri-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
       <JsonLd data={getDishPageSchema(locale, 'Pani Puri Den Haag', 'Pani Puri Den Haag', 'Authentic pani puri at Chopras Indian Restaurant Den Haag. Crispy shells filled with spiced potato and tamarind water, made fresh daily at Leyweg 986.', 'Authentieke pani puri bij Chopras Indian Restaurant Den Haag. Knapperige schelpjes gevuld met gekruide aardappel en tamarindwater, dagelijks vers op Leyweg 986.', ['https://schema.org/VegetarianDiet', 'https://schema.org/HalalDiet'])} />
 
+      {/* HERO */}
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm mb-4">
-            <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">
-              • OUR DISHES · CHOPRAS INDIAN RESTAURANT · DEN HAAG •
-            </span>
+            <span className="text-[#C7A348] text-xs font-medium uppercase tracking-widest">• OUR DISHES · CHOPRAS INDIAN RESTAURANT · DEN HAAG •</span>
           </div>
-          <h1
-            className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight"
-            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
-          >
-            {isNl ? 'Pani Puri in Den Haag - Authentiek Indiaas Straatvoedsel bij Chopras' : 'Pani Puri in Den Haag - Authentic Indian Street Food at Chopras'}
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+            {isNl
+              ? 'Pani Puri in Den Haag - Authentiek Indiaas Straatvoedsel bij Chopras'
+              : 'Pani Puri in Den Haag - Authentic Indian Street Food at Chopras'}
           </h1>
-          <p
-            className="text-white/75 text-lg md:text-xl"
-            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
-          >
-            {isNl ? 'Krokante puri. Gekruid aardappel. Geurige water. Indiaas straatvoedsel recht uit Mumbai op Leyweg 986, Den Haag.' : 'Crispy puri. Spiced potato. Fragrant water. Indian street food straight from Mumbai to Leyweg 986, Den Haag.'}
+          <p className="text-white/75 text-lg md:text-xl" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}>
+            {isNl
+              ? 'De krokante schelpje barst. Het gekruide aardappel vult je mond. Het tamarindwater treft als laatste. Dit is golgappa - het meest interactieve gerecht in het Indiaas straatvoedsel.'
+              : 'The crispy shell shatters. The spiced potato fills your mouth. The tamarind water hits last. This is golgappa - the most interactive dish in Indian street food.'}
           </p>
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
-            {isNl ? 'Wat Is Pani Puri en Waarom Het Zo Speciaal Is' : 'What Is Pani Puri and Why It Is So Special'}
-          </h2>
-          <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
-            {isNl ? (
-              <>
-                <p>Pani puri in Den Haag is niet iets wat je dagelijks in een Nederlands restaurant vindt. Het is een Indiaas <Link href={`${base}/blog/indian-street-food-den-haag`} className="text-[#D4AF37] hover:underline">straatvoedsel</Link> dat in elk straatje van Mumbai wordt verkocht, en het is één van de meest addictieve dingen die je naar je mond kunt brengen. Ook wel golgappa genoemd, pani puri is een kleine, holle, krokante bol gemaakt van meel - puri. Die puri wordt gevuld met gekookte aardappel die is gegarneerd met groene en rode chili, zoet en zuur mengsel, en Indische kruiden. Vervolgens wordt het gedompeld in de pani - een geheim mengsel van water, limoen, munt en kruiden die smaakt zuur, pittig en voelend.</p>
-                <p>De ervaring van pani puri eten is niet zoals het eten van normale voedsel. Je pakt één beet, je dompelt hem helemaal onder in die pani, je kauwt, je slikt, je voelt hoe al die smaken tegelijkertijd in je mond exploderen. Het is zuur door de limoen. Het is pittig door de chili. Het is zoet door het mengsel. Het is kruidig door garam masala en chaat masala. En het is krokant totdat je het nat maakt. Die combinatie van texturen, smaken en temperaturen gebeurt in seconden. Het is kortstondig. Het is intens. Het is waarom pani puri erg verslavend is.</p>
-                <p>Chopras serveert pani puri in Den Haag op dezelfde manier als het in India wordt geserveerd. De puri wordt die dag gebakken. De aardappel wordt die ochtend gekookt. De pani wordt vers gemaakt. Dit is geen voorgemaakte snack die uit een doos komt. Dit is straatvoedsel dat je straatvoedsel kunt voelen en proeven. Als je ooit in India bent geweest en pani puri hebt gegeten op een straathoek in Delhi of Mumbai, dan weet je wat je van Chopras kunt verwachten. Dezelfde geur. Dezelfde smaak. Dezelfde opwinding.</p>
-                <p>Indian snacks in Den Haag kunnen moeilijk zijn om te vinden. Veel restaurants bieden de standaard curries, het brood, de biryani. Pani puri is anders. Het is voedsel dat snel is, voedsel dat je kunt eten terwijl je staat of loopt. Het is voedsel dat betrokken. Het is voedsel dat spreekt. Chopras biedt deze pani puri aan als onderdeel van onze volle <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:underline">chaat</Link> selectie. Als je echt authentiek Indiaas straatvoedsel wilt in Den Haag, je hebt het gevonden.</p>
-              </>
-            ) : (
-              <>
-                <p>Pani puri in Den Haag is not something you find every day in a Dutch restaurant. It is Indian <Link href={`${base}/blog/indian-street-food-den-haag`} className="text-[#D4AF37] hover:underline">street food</Link> sold on every corner of Mumbai, and it is one of the most addictive things you can put in your mouth. Also called golgappa, pani puri is a small, hollow, crispy ball made of dough - puri. That puri is filled with cooked potato seasoned with green and red chilli, sweet and sour mixture, and Indian spices. Then it is dipped in the pani - a secret mixture of water, lime, mint and spices that tastes sour, spicy and alive.</p>
-                <p>The experience of eating pani puri is not like eating normal food. You pick one up, you dip it entirely in that pani, you chew, you swallow, you feel how all those flavours explode in your mouth at the same time. It is sour from the lime. It is spicy from the chilli. It is sweet from the mixture. It is spiced from garam masala and chaat masala. And it is crispy until you make it wet. That combination of textures, flavours and temperatures happens in seconds. It is fleeting. It is intense. It is why pani puri is so addictive.</p>
-                <p>Chopras serves pani puri in Den Haag the way it is served in India. The puri is fried that day. The potato is cooked that morning. The pani is made fresh. This is not a pre-made snack from a box. This is street food that tastes like street food. If you have ever been to India and eaten pani puri on a street corner in Delhi or Mumbai, you know what to expect from Chopras. Same smell. Same taste. Same excitement. Indian street food in Den Haag does not have to be complicated. It can be simple, authentic, fast and perfect.</p>
-                <p>Indian snacks in Den Haag can be hard to find. Many restaurants offer standard curries, bread, biryani. Pani puri is different. It is food that is quick, food you can eat while standing or walking. It is food that is involved. It is food that speaks. Chopras offers this pani puri as part of our full <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:underline">chaat</Link> selection. If you want truly authentic Indian street food in Den Haag, you have found it.</p>
-              </>
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
-            {isNl ? 'Hoe Pani Puri Wordt Gemaakt bij Chopras' : 'How Pani Puri Is Made at Chopras'}
-          </h2>
-          <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
-            {isNl ? (
-              <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">De Puri - Het Raamwerk</h3>
-                <p>De puri begint met bloem - maida, niet tarwebloem. Het deeg wordt gemengd met water, zout en een klein beetje hing zuurstoffen. Het moet perfect elastisch zijn. Dan wordt het deeg geboekt in kleine ballen. Elke bal moet exact dezelfde grootte zijn. Dit is belangrijk omdat ze allemaal tegelijkertijd moeten bakken. Ze gaan in heel hete olie. De hitte mag niet te laag zijn, want dan worden ze oliehoudend. De hitte mag niet te hoog zijn, want dan branden ze voor ze helemaal opgeblazen zijn.</p>
-                <p>Dit is waar veel restaurants hun fout begaan. Ze bakken de puri niet goed. Ze zijn niet krokant. Ze are niet hol. Ze zijn niet licht. Chopras bakt de puri op de juiste temperatuur, op het juiste moment, totdat ze precies puffed zijn, dus hol maar nog niet bruin. Dit gebeurt elke dag, twee, drie keer per dag, omdat we niet willen dat je stale puri eet.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">De Aardappelvulling</h3>
-                <p>De aardappel wordt die ochtend gekookt. Geen voorbereide puree. Geen vorige dag restanten. Verse aardappels, gekookt totdat ze precies zacht zijn, niet mushy. Dan worden ze gesneden in kleine blokjes. Die blokjes worden gemengd met gekookte kikkererwten, fijngehakte groene chili, fijngehakte rode chili, zout, en een mengsel van kruiden - garam masala, chaat masala, kurkuma. Dit is waar de smaak begint. De aardappel is niet zacht en smakeloos. Het is voeld, gekruid, lebendig.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">De Pani - Het Geheim</h3>
-                <p>De pani is waar pani puri echt om draait. Het water wordt gekookt en afgekoeld. Dan wordt het vermengd met fijngehakte munt, fijngehakte cilantro, gembermarkhaar, groene chili, garam masala, zwarte zoutval, limoensap, en een klein beetje water. Geen kunstmatige smaakmakers. Geen conserveermiddelen. Dit is een mengsel dat dezelfde ochtend is gemaakt. Dit is waarom het vers smaakt, waarom het voelt voelen, waarom het addictief is. Het smaakt zuur, pittig, zoet, kruidig. Het is alles tegelijk.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">De Montage</h3>
-                <p>Wanneer iemand pani puri bestelt, gebeurt dit. Je naam roept. Onze chef pakt een puri. Terwijl hij hem vasthoudt, maakt hij een gat in de bovenkant met zijn duim. Dit is handig. Dit vereist jaren oefenen. Hij voelt het moment waarop de puri zal breken. Het gat kan niet te groot zijn. Het gat kan niet te klein zijn. Dan vullen wij hem met een lepel gekruid aardappel. Dan dompelen wij hem in de zoete saus - tamarinde, daten, jaggery. Dan voegen wij hem in de water. Nu heb je je pani puri. Je eet het meteen. Je voelt alles tegelijk.</p>
-              </>
-            ) : (
-              <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">The Puri - The Framework</h3>
-                <p>The puri starts with flour - maida, not wheat flour. The dough is mixed with water, salt and a tiny bit of aerating agent. It must be perfectly elastic. Then the dough is formed into small balls. Each ball must be exactly the same size. This matters because they all need to fry at the same time. They go into very hot oil. The heat cannot be too low or they become oily. The heat cannot be too high or they burn before they are fully puffed.</p>
-                <p>This is where many restaurants go wrong. They do not fry the puri correctly. They are not crispy. They are not hollow. They are not light. Chopras fries the puri at the right temperature, at the right moment, until they are perfectly puffed - hollow but not brown. This happens every day, two, three times a day, because we do not want you to eat stale puri.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">The Potato Filling</h3>
-                <p>The potato is cooked that morning. No pre-made puree. No leftovers from yesterday. Fresh potatoes, cooked until they are exactly tender, not mushy. Then they are cut into small pieces. Those pieces are mixed with cooked chickpeas, finely chopped green chilli, finely chopped red chilli, salt, and a mixture of spices - garam masala, chaat masala, turmeric. This is where the taste begins. The potato is not soft and flavourless. It is felt, spiced, alive.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">The Pani - The Secret</h3>
-                <p>The pani is what pani puri is really about. The water is boiled and cooled. Then it is mixed with finely chopped mint, finely chopped cilantro, ginger matchsticks, green chilli, garam masala, black salt, lime juice, and a small amount of water. No artificial flavourings. No preservatives. This is a mixture made that same morning. This is why it tastes fresh, why it feels alive, why it is addictive. It tastes sour, spicy, sweet, spiced. It is everything at once.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">The Assembly</h3>
-                <p>When someone orders pani puri, this happens. Your name is called. Our chef picks up a puri. While holding it, he makes a hole in the top with his thumb. This is skill. This requires years of practice. He feels the moment when the puri will crack. The hole cannot be too big. The hole cannot be too small. Then we fill it with a spoon of spiced potato. Then we dip it in the sweet sauce - tamarind, dates, jaggery. Then we drop it in the water. Now you have your pani puri. You eat it immediately. You feel everything at once.</p>
-              </>
-            )}
-          </div>
-        </div>
-      </section>
-
+      {/* THE MOMENT */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
-            {isNl ? 'Veelgestelde Vragen Over Pani Puri en Indiaas Straatvoedsel' : 'Frequently Asked Questions About Pani Puri and Indian Street Food'}
+            {isNl
+              ? 'Een Hap. Vier Smaken. Nul Seconden om te Denken.'
+              : 'One Shell. Four Flavours. Zero Time to Think.'}
+          </h2>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+            {isNl ? (
+              <>
+                <p>Je pakt de puri. Je dompelt hem in het tamarindwater. Je stopt hem in je mond. Zuur. Pittig. Zoet. Knapperig. En dan is hij weg. Dat is pani puri Den Haag bij <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant</Link>. Geen gewoon voedsel. Een ervaring die drie seconden duurt maar die je bijblijft.</p>
+                <p>Pani puri staat in de Indiase straatvoedseltraditie als het meest interactieve gerecht dat er is. Op elke straathoek in Mumbai staat een chaatverkoper die ze met een hand maakt - duim door de schelpje, lepel aardappel erin, een draai in de pani, direct in uw handen. U eet het staand. U eet het snel. U vraagt direct om meer. Chopras brengt precies die ervaring naar Den Haag, zonder snelkoppelingen.</p>
+                <p>Met <strong>4,9 sterren van 800+ geverifieerde beoordelingen</strong> is Chopras Indian Restaurant het hoogst beoordeelde Indiase restaurant in Den Haag. De pani puri die we serveren volgt hetzelfde recept en dezelfde toewijding aan versheid als al het andere uit onze keuken. De kruiden worden elke ochtend vers gemalen. De puri wordt dagelijks gebakken. De pani wordt elke ochtend vers bereid. Dit is <Link href={`${base}/blog/indian-street-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">authentiek Indiaas straatvoedsel in Den Haag</Link>, geen benadering ervan.</p>
+              </>
+            ) : (
+              <>
+                <p>You pick up the puri. You dip it in the tamarind water. You put it in your mouth in one go. Sour. Spicy. Sweet. Crispy. And then it is gone. That is pani puri Den Haag at <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant</Link>. Not ordinary food. An experience that lasts three seconds and stays with you.</p>
+                <p>Pani puri sits at the heart of the Indian street food tradition as the most interactive dish there is. On every corner in Mumbai, a chaat vendor makes them with one hand - thumb through the shell, spoon the potato in, one dip in the pani, straight into your hands. You eat it standing. You eat it fast. You ask for more immediately. Chopras brings exactly that experience to Den Haag, without shortcuts.</p>
+                <p>With <strong>4.9 stars from 800+ verified reviews</strong>, Chopras Indian Restaurant is the highest-rated Indian restaurant in Den Haag. The pani puri we serve follows the same recipe and the same commitment to freshness as everything else from our kitchen. The spices are ground fresh every morning. The puri is fried daily. The pani is made the same day. This is <Link href={`${base}/blog/indian-street-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">authentic Indian street food in Den Haag</Link>, not an approximation of it.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT IS PANI PURI */}
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl
+              ? 'Wat Is Pani Puri? En Waarom Heet Het Ook Golgappa?'
+              : 'What Is Pani Puri? And Why Is It Also Called Golgappa?'}
+          </h2>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+            {isNl ? (
+              <>
+                <p>Pani puri is een <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">chaat-gerecht uit Den Haag</Link> dat bestaat uit drie componenten: de puri (een kleine, holle, gefrituurde deegbal), de vulling (gekruide aardappel met kikkererwten en specerijen), en de pani (een gekruid water van tamarinde, munt, limoen en Indiase kruiden). Die drie componenten komen samen op het moment van serveren. Er is geen wachttijd bij het eten. Je pakt hem op, dompelt hem in, eet hem op. Dat is het.</p>
+                <p>De naam verschilt per regio in India. In Delhi en Noord-India wordt het golgappa genoemd, een naam die veel Den Haag-bezoekers van Hindustaanse families al kennen. In Mumbai en Maharashtra is het pani puri. In West-Bengalen puchka, en in Bihar en Jharkhand gupchup. De basis is altijd dezelfde: holle puri, gekruide vulling, pittig zuur water. Alleen de lokale aanpassing verschilt licht in kruidenmix en scherpte.</p>
+                <p>Pani puri is van nature vegetarisch en veganistisch. Geen vlees, geen zuivelproduct, geen ei in een van de traditionele componenten. Dit maakt het een uitstekend gerecht voor gasten die <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">veganistisch Indiaas eten in Den Haag</Link> zoeken. En omdat de gehele keuken van Chopras Indian Restaurant halal gecertificeerd is, eten alle gasten met volledige zekerheid.</p>
+                <p>Het is ook het snelste gerecht in de Indiase keuken. Een geoefende chaatverkoper in India kan meer dan 200 stuks per uur samenstellen. Bij Chopras bereiden we elke bestelling vers, niet vooraf bereid, niet uit een doos, niet van gisteren. De puri die u eet, is diezelfde dag gebakken. Het water is die ochtend bereid. Dat is het verschil dat u proeft in het eerste hapje pani puri Den Haag.</p>
+              </>
+            ) : (
+              <>
+                <p>Pani puri is a <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">chaat dish</Link> from India made up of three components: the puri (a small, hollow, deep-fried dough ball), the filling (spiced potato mixed with chickpeas and spices), and the pani (a spiced water made from tamarind, mint, lime and Indian spices). Those three components come together at the moment of serving. There is no preparation time when eating. You pick it up, you dip it in, you eat it. That is it.</p>
+                <p>The name changes depending on where in India you are. In Delhi and northern India it is called golgappa, a name many Den Haag visitors from Hindustani families already know. In Mumbai and Maharashtra it is pani puri. In West Bengal it is puchka, and in Bihar it is gupchup. The base is always the same: hollow puri, spiced filling, tart spiced water. Only the local adjustment differs slightly in spice blend and heat level.</p>
+                <p>Pani puri is naturally vegetarian and vegan. There is no meat, no dairy, no egg in any of the traditional components. This makes it an excellent choice for guests looking for <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegan Indian food in Den Haag</Link>. And because the entire kitchen at Chopras Indian Restaurant is halal certified, every guest eats with complete confidence.</p>
+                <p>It is also the fastest dish in Indian cuisine. A skilled chaat vendor in India can assemble more than 200 pieces per hour. At Chopras we prepare every order fresh, not pre-made, not from a box, not from yesterday. The puri you eat was fried that same day. The water was prepared that morning. That is the difference you taste in the first bite of pani puri Den Haag.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT IS MADE */}
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl ? 'Hoe Pani Puri Wordt Gemaakt bij Chopras' : 'How Pani Puri Is Made at Chopras'}
+          </h2>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+            {isNl ? (
+              <>
+                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">De Puri</h3>
+                <p>De puri begint met maida, fijn tarwebloem, vermengd met semolina, water en zout tot een strak, elastisch deeg. Het deeg wordt uitgerold en uitgestoken in kleine ronde vormpjes. Elk rondje gaat in hete olie op de juiste temperatuur. Te laag en ze worden vet. Te hoog en ze verbranden voor ze opbollen. De puri moet volledig hol opblazen en goudgeel worden, niet bruin. Chopras bakt de puri elke dag vers, twee tot drie keer per service, zodat u nooit een oudbakken puri eet van ons <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige Indiase menu in Den Haag</Link>.</p>
+                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">De Vulling</h3>
+                <p>Verse aardappelen worden die ochtend gekookt, niet te zacht. Ze worden met de hand in kleine stukjes gebroken en gemengd met gekookte kikkererwten, fijngehakte groene chili, chaat masala, garam masala, kurkuma en zwart zout. Niet gepureerd. Niet glad. De vulling moet textuur hebben. U voelt elk onderdeel afzonderlijk: de aardappel, de kikkererwt, de specerij. Onze kruiden worden elke ochtend vers gemalen uit hele specerijen die rechtstreeks uit India worden betrokken, de kern van <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">authentiek vegetarisch Indiaas eten Den Haag</Link>.</p>
+                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">De Pani</h3>
+                <p>De pani is wat dit gerecht zijn naam geeft - pani betekent water in het Hindi. Het water wordt bereid met verse munt, koriander, geraspte gember, groene chili, tamarindpasta, limoen, zwart zout en garam masala. Alles wordt fijngemalen en gezeefd tot een heldere, intens gearomatiseerde vloeistof. Geen kunstmatige smaakmakers. Geen conserveermiddelen. De pani wordt elke ochtend vers bereid bij Chopras Indian Restaurant, op hetzelfde niveau als alles wat wij serveren op Leyweg 986. Dit is waarom hij fris smaakt, helder smaakt, levendig smaakt.</p>
+                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">De Samenstelling</h3>
+                <p>Wanneer u pani puri bestelt, doet onze kok het volgende. Hij pakt een puri. Met zijn duim maakt hij een klein gat aan de bovenkant, niet te groot, niet te klein. Hij lepelt de aardappelvulling erin. Hij voegt een scheutje zoete tamarindchutney toe. Dan dompelt hij hem volledig onder in de pani. Nu heeft u uw pani puri. U eet hem onmiddellijk. Elke seconde die u wacht, verliest u knapperigheid. Het ideale moment is direct na de samenstelling. Dat is de kunst van dit gerecht. <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Reserveer een tafel bij Chopras</Link> om het zelf te ervaren.</p>
+              </>
+            ) : (
+              <>
+                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">The Puri</h3>
+                <p>The puri starts with maida, fine wheat flour, mixed with semolina, water and salt into a tight, elastic dough. The dough is rolled out and cut into small rounds. Each round goes into hot oil at the right temperature. Too low and they become greasy. Too high and they burn before they puff. The puri must inflate fully hollow and turn golden, not brown. Chopras fries puri fresh every day, two to three times per service, so you never eat a stale one from our <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">full Indian restaurant menu Den Haag</Link>.</p>
+                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">The Filling</h3>
+                <p>Fresh potatoes are boiled that morning, not too soft. They are broken by hand into small pieces and mixed with cooked chickpeas, finely chopped green chilli, chaat masala, garam masala, turmeric and black salt (kala namak). Not mashed. Not smooth. The filling must have texture. You feel each component separately: the potato, the chickpea, the spice. Our spices are ground fresh every morning from whole spices sourced directly from India, which is the foundation of <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">authentic vegetarian Indian food Den Haag</Link>.</p>
+                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">The Pani</h3>
+                <p>The pani is what gives this dish its name - pani means water in Hindi. The water is prepared with fresh mint, coriander, grated ginger, green chilli, tamarind paste, lime, black salt and garam masala. Everything is ground fine and strained into a clear, intensely aromatic liquid. No artificial flavourings. No preservatives. The pani is prepared fresh every morning at Chopras Indian Restaurant, held to the same standard as everything we serve at Leyweg 986. This is why it tastes bright, clear and alive.</p>
+                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">The Assembly</h3>
+                <p>When you order pani puri, our chef does this. He picks up a puri. With his thumb he makes a small hole at the top, not too big, not too small. He spoons the potato filling in. He adds a dash of sweet tamarind chutney. Then he dips the whole thing into the pani. Now you have your pani puri. You eat it immediately. Every second you wait, you lose crispiness. The perfect moment is directly after assembly. That is the skill of this dish. <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Reserve a table at Chopras</Link> to experience it yourself.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* GEO BLOCK */}
+      <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+            {isNl
+              ? 'Waar Vind Ik Authentieke Pani Puri in Den Haag?'
+              : 'Where Can I Find Authentic Pani Puri in Den Haag?'}
+          </h2>
+          <div className="font-body text-white/80 text-lg leading-relaxed">
+            {isNl ? (
+              <p>Authentieke pani puri in Den Haag is beschikbaar bij Chopras Indian Restaurant op Leyweg 986, 2545 GW Den Haag. De keuken bakt dagelijks verse puri, vult elke schelpje met gekruid aardappel en tamarindwater, en serveert elke bestelling direct. Met 4,9 sterren van 800+ geverifieerde beoordelingen is Chopras Indian Restaurant het hoogst beoordeelde Indiase restaurant in Den Haag. Open dinsdag tot zondag vanaf 16:30. Bekijk ons volledige <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">chaat-menu Den Haag</Link> of <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">reserveer een tafel bij Chopras Indian Restaurant</Link>.</p>
+            ) : (
+              <p>Authentic pani puri in Den Haag is available at Chopras Indian Restaurant, located at Leyweg 986, 2545 GW Den Haag. The kitchen fries fresh puri daily, fills each shell with spiced potato and tamarind water, and serves every order immediately. With 4.9 stars from 800+ verified reviews, Chopras Indian Restaurant is the highest-rated Indian restaurant in Den Haag. Open Tuesday to Sunday from 16:30. Browse our full <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">chaat menu Den Haag</Link> or <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">reserve a table at Chopras Indian Restaurant</Link>.</p>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* VEGETARIAN / VEGAN / HALAL */}
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl
+              ? 'Pani Puri Is 100% Vegetarisch, Veganistisch en Halal Gecertificeerd'
+              : 'Pani Puri Is 100% Vegetarian, Vegan and Halal Certified'}
+          </h2>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+            {isNl ? (
+              <>
+                <p>Pani puri is een van de weinige gerechten in de Indiase keuken die van nature volledig plantaardig is. Geen vlees. Geen vis. Geen zuivel. Geen ei. De puri is bloem en water. De vulling is aardappel en kikkererwten. De pani is een water van kruiden en specerijen. Elk onderdeel is vegetarisch en veganistisch van nature. Er is niets aan het recept veranderd om dit te bereiken.</p>
+                <p>Bij Chopras Indian Restaurant is de gehele keuken <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledig halal gecertificeerd</Link>. Dit betekent niet alleen dat de vleesgerechten halal zijn. Het betekent dat er geen niet-halal vlees in de keuken is. Geen kruisbesmetting. Geen onduidelijkheid. Gasten die halal eten kunnen elk gerecht op het menu met vertrouwen bestellen, inclusief de pani puri en alle andere <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">chaat-specialiteiten in Den Haag</Link>.</p>
+                <p>Als u meer wil ontdekken over onze plantaardige opties, bekijk dan ons <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">veganistisch Indiaas menu Den Haag</Link>. Andere populaire vegetarische en veganistische gerechten bij Chopras zijn <Link href={`${base}/soya-chaap-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">soya chaap Den Haag</Link> en <Link href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">dal makhani Den Haag</Link>, langzaam gestoofde zwarte linzen met boter.</p>
+              </>
+            ) : (
+              <>
+                <p>Pani puri is one of the few dishes in Indian cuisine that is naturally fully plant-based. No meat. No fish. No dairy. No egg. The puri is flour and water. The filling is potato and chickpeas. The pani is a water of herbs and spices. Every component is vegetarian and vegan by nature. Nothing in the recipe has been altered to achieve this.</p>
+                <p>At Chopras Indian Restaurant, the entire kitchen is <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">fully halal certified</Link>. This does not just mean the meat dishes are halal. It means there is no non-halal meat in the kitchen at all. No cross-contamination. No ambiguity. Guests who eat halal can order any dish on the menu with complete confidence, including pani puri and all other <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">chaat specialities in Den Haag</Link>.</p>
+                <p>If you want to explore more of our plant-based options, browse our <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegan Indian menu Den Haag</Link>. Other popular vegetarian and vegan dishes at Chopras include <Link href={`${base}/soya-chaap-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">soya chaap Den Haag</Link> and <Link href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">dal makhani Den Haag</Link>, slow-cooked black lentils with butter.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl
+              ? 'Veelgestelde Vragen Over Pani Puri in Den Haag'
+              : 'Frequently Asked Questions About Pani Puri in Den Haag'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
-            {isNl ? 'Meer Indiaas Straatvoedsel en Chaat-Specialiteiten' : 'More Indian Street Food and Chaat Specialties'}
+      {/* CTA */}
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl
+              ? 'Reserveer een Tafel en Ervaar Pani Puri Den Haag'
+              : 'Reserve a Table and Experience Pani Puri Den Haag'}
           </h2>
-          <p className="text-[#1A1A1A] text-lg leading-relaxed mb-6">
-            {isNl
-              ? 'Pani puri is slechts één van onze chaat-opties. Ons volledige menu bevat ook samosa, pakora, chaat, aloo tikki, en veel meer. Elk item wordt handgemaakt. Elk item wordt verse gemaaktmade met ingrediënten die die dag binnenkomen. Dit is echte Indiaas straatvoedsel, niet uit een vries- en verhitingspakket. Als je authentiek Indiaas straatvoedsel in Den Haag wilt, ben je op de juiste plaats.'
-              : 'Pani puri is just one of our chaat options. Our full menu also includes samosa, pakora, chaat, aloo tikki, and much more. Each item is handmade. Each item is made fresh with ingredients that come in that day. This is real Indian street food, not from a freeze-and-heat packet. If you want authentic Indian street food in Den Haag, you have come to the right place.'
-            }
-          </p>
-          <p className="text-[#1A1A1A] text-lg leading-relaxed mb-8">
-            {isNl
-              ? 'Laten we pani puri-liefde delen. Bezoek onze restaurant op Leyweg 986, Den Haag. Bestel online. Bel ons. Maak een reservering voor een volle diner ervaring. Wij zijn open dinsdag tot zondag. Wij willen je voelen wat authentiek Indiaas straatvoedsel is.'
-              : 'Let us share the pani puri love. Visit our restaurant at Leyweg 986, Den Haag. Order online. Call us. Make a reservation for a full dining experience. We are open Tuesday to Sunday. We want you to feel what authentic Indian street food is.'
-            }
-          </p>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5 mb-8">
+            {isNl ? (
+              <>
+                <p>Chopras Indian Restaurant is open dinsdag tot zondag vanaf 16:30 op Leyweg 986, 2545 GW Den Haag. Pani puri wordt geserveerd als onderdeel van ons <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige Indiase menu Den Haag</Link> naast andere chaat-opties. Lees ook ons artikel over <Link href={`${base}/blog/indian-street-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indiaas straatvoedsel in Den Haag</Link> voor de volledige selectie.</p>
+                <p>Wilt u pani puri voor een feestje of evenement? Chopras Indian Restaurant verzorgt ook <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indiaas catering Den Haag</Link> voor verjaardagen, bruiloften en bedrijfsbijeenkomsten. Pani puri werkt als een interactief en indrukwekkend startgerecht voor elke groep.</p>
+              </>
+            ) : (
+              <>
+                <p>Chopras Indian Restaurant is open Tuesday to Sunday from 16:30 at Leyweg 986, 2545 GW Den Haag. Pani puri is served as part of our <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">full Indian restaurant menu Den Haag</Link> alongside other chaat options. Read our guide to <Link href={`${base}/blog/indian-street-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian street food in Den Haag</Link> for the complete selection.</p>
+                <p>Want pani puri for a party or event? Chopras Indian Restaurant also provides <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian catering Den Haag</Link> for birthdays, weddings and corporate gatherings. Pani puri works as an interactive and impressive starter dish for any group size.</p>
+              </>
+            )}
+          </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href={`${base}/contact`}
@@ -232,38 +318,41 @@ export default function PaniPuriPage({ params }: Props) {
         </div>
       </section>
 
-      {/* INTERNAL LINKS SECTION */}
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
-            {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}
+      {/* INTERNAL LINKS */}
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl ? 'Meer Gerechten bij Chopras Indian Restaurant Den Haag' : 'Explore More Dishes at Chopras Indian Restaurant Den Haag'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <Link href={`${base}/chaat-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/chaat-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Streetfood' : 'Street Food'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiaas straatvoedsel en chaat Den Haag' : 'Indian street food and chaat Den Haag'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Chaat Den Haag - authentiek Indiaas straatvoedsel' : 'Chaat Den Haag - authentic Indian street food'}</p>
             </Link>
-            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/soya-chaap-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Veganistisch' : 'Vegan'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Soya Chaap Den Haag bij Chopras' : 'Soya Chaap Den Haag at Chopras'}</p>
+            </Link>
+            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Vegetarisch' : 'Vegetarian'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Dal Makhani Den Haag' : 'Dal Makhani Den Haag'}</p>
             </Link>
-            <Link href={`${base}/soya-chaap-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
-              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Vegetarisch' : 'Vegetarian'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Soya Chaap Den Haag' : 'Soya Chaap Den Haag'}</p>
-            </Link>
-            <Link href={`${base}/catering`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/catering`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Catering' : 'Catering'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Wilt u dit gerecht voor uw evenement? Indiaas catering Den Haag' : 'Want this dish at your event? Indian catering Den Haag'}</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiaas catering Den Haag voor evenementen' : 'Indian catering Den Haag for events'}</p>
             </Link>
           </div>
           <div className="text-center space-y-4">
-            <p className="text-[#1A1A1A] text-base">
+            <p className="font-body text-[#1A1A1A] text-base">
               <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
-                {isNl ? 'Chopras Indiaas Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
+                {isNl ? 'Chopras Indian Restaurant - beste Indiase restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
               </Link>
             </p>
-            <p className="text-[#1A1A1A] text-base">
-              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een reservering' : 'book a table at Chopras Indian Restaurant Den Haag'}</Link>.
+            <p className="font-body text-[#1A1A1A] text-base">
+              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'}{' '}
+              <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
+                {isNl ? 'maak een reservering bij Chopras Indian Restaurant Den Haag' : 'book a table at Chopras Indian Restaurant Den Haag'}
+              </Link>.
             </p>
           </div>
         </div>

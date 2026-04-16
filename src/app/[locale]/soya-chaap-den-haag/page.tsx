@@ -51,31 +51,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const faqsEn: Array<{ question: string; answer: string }> = [
   {
-    question: 'Is soya chaap actually vegan?',
-    answer: 'Yes. Soya chaap consists of soya chunks, water, salt and spices. There is no animal product in the dish itself. The sauce contains butter, which is vegetarian but not vegan. If you are fully vegan, ask for plant-based butter instead. We can adjust.',
+    question: 'What is achari soya chaap and how is it cooked at Chopras?',
+    answer: 'Achari soya chaap is soya protein marinated in an achari spice blend - pickling spices including mustard seed, fennel, nigella and dried chilli. At Chopras Indian Restaurant, the marinated soya chaap goes directly into the tandoor clay oven, which reaches 400 degrees Celsius. The result is a smoky char on the outside and a tender, spice-saturated centre. It is fully vegan and available at Leyweg 986, Den Haag, Tuesday to Sunday from 16:30.',
   },
   {
-    question: 'How does soya chaap taste compared to meat curry?',
-    answer: 'Soya chaap absorbs sauces the way meat would. The texture is similar - firm but tender. The taste depends on the sauce and spices, not the soya itself. Many guests cannot tell the difference if they do not know they are eating soya chaap.',
+    question: 'Is soya chaap at Chopras Indian Restaurant fully vegan?',
+    answer: 'Yes. The soya chaap preparation is completely vegan - soya protein, achari spice marinade, no animal products in the tandoor-grilled version. If you order a sauce-based preparation, ask your server and we will adjust for a fully plant-based version. Chopras serves a dedicated vegan Indian menu in Den Haag with multiple plant-based dishes prepared to the same standard as the meat dishes.',
   },
   {
-    question: 'What is soya chaap made from?',
-    answer: 'Soya chaap is made from soybeans processed into chunks. No GMO, no artificial additives. Just plant-based protein in a form you can cook like you would cook meat. It is halal, it is vegan, it is healthy.',
+    question: 'What other vegan Indian dishes does Chopras serve in Den Haag?',
+    answer: 'Chopras Indian Restaurant Den Haag serves a full plant-based menu including dal makhani, chana masala, palak paneer, aloo gobi and vegetable biryani. Every dish is prepared with the same fresh-ground spices and standards as the meat dishes. No compromise, no separate preparation line. View the full vegan menu at chopras.nl or visit Leyweg 986. Open Tuesday to Sunday, 16:30 to 22:30.',
   },
 ]
 
 const faqsNl: Array<{ question: string; answer: string }> = [
   {
-    question: 'Is soya chaap echt veganistisch?',
-    answer: 'Ja. Soya chaap bestaat uit soya chunks, water, zout en kruiden. Er is geen dierlijk product in het gerecht zelf. De saus bevat boter, wat vegetarisch maar niet veganistisch is. Als je volledig veganistisch bent, vraag dan om plantaardige boter in plaats daarvan. Wij kunnen dat aanpassen.',
+    question: 'Wat is achari soya chaap en hoe wordt het bereid bij Chopras?',
+    answer: 'Achari soya chaap is soya-eiwit gemarineerd in een achari specerijenmengsel - ingelegde kruiden met mosterdzaad, venkel, nigella en gedroogde chili. Bij Chopras Indian Restaurant gaat de gemarineerde soya chaap direct in de tandoor kleioven, die 400 graden Celsius bereikt. Het resultaat is een rokerig korstje aan de buitenkant en een mals, kruidenrijk hart. Volledig veganistisch, verkrijgbaar op Leyweg 986, Den Haag, dinsdag tot en met zondag vanaf 16:30.',
   },
   {
-    question: 'Hoe smaakt soya chaap vergeleken met echte vlees curry?',
-    answer: 'Soya chaap absorbeert sauzen net als vlees zou doen. De textuur is vergelijkbaar - stevig maar mals. De smaak hangt af van de saus en kruiden, niet van de soya zelf. Veel gasten kunnen het verschil niet eens proeven als ze niet weten dat ze soya chaap eten.',
+    question: 'Is de soya chaap bij Chopras volledig veganistisch?',
+    answer: 'Ja. De achari soya chaap is volledig veganistisch - soya-eiwit, achari specerijenmarinade, geen dierlijke producten in de tandoor-gegrilde versie. Als je een sausbereiding bestelt, vraag dan je bediening en wij passen het aan voor een volledig plantaardige versie. Chopras serveert een uitgebreid veganistisch Indiaas menu in Den Haag met meerdere plantaardige gerechten die op hetzelfde niveau worden bereid als de vleesgerechten.',
   },
   {
-    question: 'Waar is soya chaap gemaakt van?',
-    answer: 'Soya chaap is gemaakt van soyabonen die zijn verwerkt in chunks. Geen GMO, geen kunstmatige additieven. Gewoon plantaardig eiwit in een vorm die je kunt koken zoals je vlees zou koken. Het is halal, het is veganistisch, het is gezond.',
+    question: 'Welke andere veganistische Indiase gerechten serveert Chopras in Den Haag?',
+    answer: 'Chopras Indian Restaurant Den Haag serveert een volledig plantaardig menu inclusief dal makhani, chana masala, palak paneer, aloo gobi en groente biryani. Elk gerecht wordt bereid met dezelfde versgemalen specerijen en kookstandaarden als de vleesgerechten. Geen compromissen, geen aparte bereiding. Bekijk het volledige veganistische menu op chopras.nl of bezoek Leyweg 986. Open dinsdag tot en met zondag, 16:30 tot 22:30.',
   },
 ]
 
@@ -90,11 +90,12 @@ export default function SoyaChaapPage({ params }: Props) {
       <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'soya-chaap-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([
         { name: tr.common.nav.home, item: getLocalizedUrl(locale) },
-        { name: isNl ? 'Soya Chaap Den Haag' : 'Soya Chaap Den Haag', item: getLocalizedUrl(locale, 'soya-chaap-den-haag') },
+        { name: 'Soya Chaap Den Haag', item: getLocalizedUrl(locale, 'soya-chaap-den-haag') },
       ])} />
       <JsonLd data={getFaqPageSchema(isNl ? faqsNl : faqsEn)} />
-      <JsonLd data={getDishPageSchema(locale, 'Soya Chaap Den Haag', 'Soya Chaap Den Haag', 'Authentic vegan soya chaap at Chopras Indian Restaurant Den Haag. Plant-based mock meat grilled in the tandoor clay oven at Leyweg 986 Den Haag.', 'Authentieke veganistische soya chaap bij Chopras Indian Restaurant Den Haag. Plantaardig nepvlees gegrild in de tandoorkleioven op Leyweg 986 Den Haag.', ['https://schema.org/VeganDiet', 'https://schema.org/VegetarianDiet', 'https://schema.org/HalalDiet'])} />
+      <JsonLd data={getDishPageSchema(locale, 'Soya Chaap Den Haag', 'Soya Chaap Den Haag', 'Authentic vegan soya chaap at Chopras Indian Restaurant Den Haag. Achari-marinated plant-based mock meat grilled in the tandoor clay oven at 400 degrees Celsius. Leyweg 986 Den Haag.', 'Authentieke veganistische soya chaap bij Chopras Indian Restaurant Den Haag. Achari-gemarineerd plantaardig eiwit gegrild in de tandoor kleioven op 400 graden Celsius. Leyweg 986 Den Haag.', ['https://schema.org/VeganDiet', 'https://schema.org/VegetarianDiet', 'https://schema.org/HalalDiet'])} />
 
+      {/* HERO */}
       <section className="bg-[#1B2B5E] py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#C7A348]/40 bg-white/10 backdrop-blur-sm mb-4">
@@ -106,115 +107,136 @@ export default function SoyaChaapPage({ params }: Props) {
             className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
           >
-            {isNl ? 'Soya Chaap in Den Haag - Plant-Based Mock Meat bij Chopras' : 'Soya Chaap in Den Haag - Vegan Mock Meat at Chopras'}
+            {isNl
+              ? 'Soya Chaap Den Haag - Achari Gemarineerd, Tandoor Gegrild bij Chopras'
+              : 'Soya Chaap Den Haag - Achari Spices, Tandoor Grilled at Chopras'}
           </h1>
           <p
-            className="text-white/75 text-lg md:text-xl"
+            className="text-white/75 text-lg md:text-xl mb-8"
             style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
           >
-            {isNl ? 'Plantaardige soya chaap. Rijke kruidensaus. Halal gecertificeerd. Leyweg 986, Den Haag.' : 'Plant-based soya chaap. Rich spiced sauce. Halal certified. Leyweg 986, Den Haag.'}
+            {isNl
+              ? 'Plantaardig soya-eiwit in achari marinade. 400 graden tandoor. Leyweg 986, Den Haag.'
+              : 'Plant-based soya protein in achari marinade. 400 degree tandoor. Leyweg 986, Den Haag.'}
           </p>
-        </div>
-      </section>
-
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
-            {isNl ? 'Wat Is Soya Chaap en Waarom Smaakt Het Zo Goed' : 'What Is Soya Chaap and Why It Tastes Amazing'}
-          </h2>
-          <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
-            {isNl ? (
-              <>
-                <p>Soya chaap in Den Haag bij Chopras is geen compromis. Het is geen tofu die je verstopt in een saus zodat je niet merkt dat je tofu eet. Soya chaap is echt voedsel met echte textuur, structuur en mond gevoel. Het bestaat uit soya chunks - gecultiveerde plantaardige eiwitten die je net als vlees kunt koken. Als je <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">vegetarisch</Link> bent of vegan leeft, weet je al hoe lastig het is om echte mock meat te vinden in Den Haag. Soya chaap voelt niet als een vervanger. Het voelt gewoon als eten.</p>
-                <p>Veel restaurants serveren vegetarisch eten omdat ze moeten. Chopras serveert soya chaap omdat wij ervan houden. Als je vegetarisch bent, moet je niet met minder tevreden zijn. Je zou waarschijnlijk graag eten wat anderen eten - een echte curry met textuur, warmte, laaglagen van smaak. <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">Plant based Indian food</Link> hoeft niet minder lekker te zijn dan de vlees variant. De soya chaap absorbeert de saus op dezelfde manier als lamsvlees dat zou doen. In een rijke tomaten en uien saus met gember, knoflook en kruiden die die ochtend zijn gemalen, wordt soya chaap voedzaam, bevredigend en ongeloflijk smakelijk.</p>
-                <p>De soya chaap die wij gebruiken komt van leveranciers die dezelfde standaarden hanteren als wij. Geen GMO, geen onnodig additieven, geen chemische naamgeving die je niet kunt uitspreken. Gewoon gesteriliseerde soyabonen die in een voedzame vorm zijn verwerkt. Het is <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal</Link>. Het is veganistisch. Het is plantaardig. En het kost ongeveer zestien euro vijftig - betaalbaarder dan veel lamscurry&apos;s op onze kaart.</p>
-                <p><Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">Vegan Indiase eetgebruiken</Link> hebben in Den Haag veel aandacht gekregen in de afgelopen jaren. Dat is niet toevallig. Authentiek voedsel dat voelt als voedsel, niet als vogelschietschot, trekt mensen aan. Soya chaap Den Haag laat zien dat je niet hoeft in te leveren op smaak, textuur of authenticiteit. Je hoeft alleen plantaardig te kiezen.</p>
-              </>
-            ) : (
-              <>
-                <p>Soya chaap in Den Haag at Chopras is not a compromise. It is not tofu hidden in sauce so you do not notice you are eating tofu. Soya chaap is real food with real texture, structure and mouthfeel. It consists of soya chunks - cultivated plant-based proteins that you can cook like meat. If you are <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">vegetarian</Link> or vegan, you already know how hard it is to find true mock meat in Den Haag. Soya chaap does not feel like a replacement. It feels like food. It is food.</p>
-                <p>Many restaurants serve vegetarian food because they have to. Chopras serves soya chaap because we love it. If you are vegetarian, you should not settle for less. You would probably like to eat what others eat - a real curry with texture, warmth, layers of flavour. <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">Plant-based Indian food</Link> does not need to be less delicious than the meat version. Soya chaap absorbs sauce the way lamb would. In a rich tomato and onion sauce with ginger, garlic, and spices ground that morning, soya chaap becomes nourishing, satisfying and incredible.</p>
-                <p>The soya chaap we use comes from suppliers who hold the same standards we do. No GMO, no unnecessary additives, no chemical names you cannot pronounce. Just sterilised soybeans processed into a nourishing form. It is <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:underline">halal</Link>. It is vegan. It is plant-based. And it costs around sixteen euro fifty - cheaper than many lamb curries on our menu.</p>
-                <p><Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">Vegan Indian food</Link> has received much attention in Den Haag in recent years. That is not chance. Authentic food that feels like food, not like a substitute, draws people in. Soya chaap Den Haag shows that you do not have to compromise on taste, texture or authenticity. You only have to choose plant-based.</p>
-              </>
-            )}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href={`${base}/contact`}
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] min-h-[48px] backdrop-blur-[10px]"
+            >
+              {tr.common.reserve}
+            </Link>
+            <Link
+              href={`${base}/vegan-menu`}
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-white/10 px-6 py-3 text-white text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[rgba(199,163,72,0.3)] active:scale-[0.98] min-h-[48px] backdrop-blur-[10px]"
+            >
+              {isNl ? 'Veganistisch Menu' : 'Vegan Menu'}
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
-            {isNl ? 'Hoe Soya Chaap Wordt Gemaakt bij Chopras' : 'How Soya Chaap Is Made at Chopras'}
-          </h2>
-          <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
-            {isNl ? (
-              <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">{isNl ? 'Voorbereiding van de Soya' : 'Soya Preparation'}</h3>
-                <p>Soya chunks worden eerst gerehydrateerd in warm water. Dit is geen snelle stap. Ze moeten langzaam water opnemen, niet uit elkaar vallen. Onze koks timing dit perfect - meestal tussen tien en vijftien minuten, tot de chunks voelbaar maar niet mushy zijn. Dat is het eerste kritieke moment. De tijd en temperatuur moeten precies goed zijn. Als je te lang wacht, raakt het pap. Als je niet lang genoeg wacht, blijft het te droog.</p>
-                <p>Na rehydratatie worden de chunks zachtjes gesneden als dat nodig is. Sommige recepten vereisen grotere stukken, sommige kleinere. Dit hangt af van de saus en het gestoomde evenwicht dat we willen bereiken. Onze koks kennen de limieten van hun soya. Ze werken ermee elke dag en weten wanneer het klaar is door voeling en ervaring, niet door klok. Dit is het verschil tussen voedsel maken en voedsel bereiden.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">{isNl ? 'De Saus: Het Hart van Soya Chaap' : 'The Sauce: The Heart of Soya Chaap'}</h3>
-                <p>De saus begint niet met poeder. Het begint met uien. Veel uien. Ze worden in boter gesnipperd totdat ze aan het verschrompelen zijn, net totdat ze beginnen aan te kleuren. Dan voegen we verse gember en knoflook toe die die ochtend in een vijzel zijn gestampt. Geen gejarkte pasta. Geen ingevroren blokjes. Verse gember en knoflook hebben een andere geur, een ander karakter. Ze voelen verschillend in je mond.</p>
-                <p>Verse tomaten - niet uit blik, niet uit een tetrapack, maar echte tomaten - worden langzaam gesneden en toegevoegd. Ze koken af in de hitte van de uien en gember totdat ze volledig zijn afgebroken. Geen klomp meer. Geen structuur meer. Alleen een dieprode saus vol tomaten essentie. Dit duurt normaal dertig minuten. Soms langer. Geen voortvarendheid.</p>
-                <p>Dan voegen we de kruiden toe: tandoori masala, garam masala, rode chili, kurkuma - alles vers gemalen die ochtend. Geen voorgemaakte zakjes. Geen voorraden die twee maanden oud zijn en hun kleur en geur hebben verloren. Deze kruiden zijn krachtig, levendig, echt. Ze vermengen zich met de saus en veranderen de kleur, de geur, de smaak in één keer.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">{isNl ? 'Het Combineren: Waar de Magie Gebeurt' : 'The Combination: Where the Magic Happens'}</h3>
-                <p>De gerehydrateerde soya wordt in de saus gegeven. En dan gebeurt iets bijzonders. De soya begint alle aromaten op te zuigen. Langzaam. Voorzichtig. Minstens een half uur, meestal langer. De saus wordt voller, visceuzer, rijker. Elke minuut verandert het gerecht. Dit is waarom je soya chaap niet in tien minuten kunt maken. Dit is waarom veel restaurants het fout doen. Ze hebben geen geduld.</p>
-                <p>Tegen het einde voegt onze chef vers gesmolten boter toe over het oppervlak. De boter vermengt zich met de saus. Het voegt glans toe. Het voegt mondgevoel toe. Het voegt warmte en luxe toe. Dit is soya chaap zoals het hoort te zijn. Dit is vegan Indiaans voedsel dat meer lijkt op echte culinaire kunst dan op voedselvervanging.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">{isNl ? 'Waarom Dit Verschil Uitmaakt' : 'Why This Difference Matters'}</h3>
-                <p>Het hele proces - van voorbereiding tot bord - is identiek aan wat we zouden doen met lamscurry. Het respecteert dezelfde principes. Respect voor verse ingrediënten. Voorzichtige techniek. Geduld. Voelen hoe het voedsel evolueert terwijl het kookt. Dit is waarschijnlijk waarom plant based Indian in Den Haag zo goed werkt. Het voelt niet gemaakt voor mensen-die-geen-vlees-eten. Het voelt gemaakt voor mensen die goed eten willen. Iedereen die goed eet wil dat zelfde niveau van zorg, authenticiteit en smaak. Soya chaap bij Chopras biedt dat.</p>
-              </>
-            ) : (
-              <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">Soya Preparation</h3>
-                <p>Soya chunks are first rehydrated in warm water. This is not a quick step. They must absorb water slowly, not fall apart. Our cooks time this perfectly - usually between ten and fifteen minutes, until the chunks are tender but not mushy. That is the first critical moment. Time and temperature must be exactly right. If you wait too long, it becomes paste. If you do not wait long enough, it stays too dry.</p>
-                <p>After rehydration, the chunks are gently cut if needed. Some recipes call for larger pieces, some for smaller. This depends on the sauce and the cooked balance we want to achieve. Our cooks know the limits of their soya. They work with it every day and know when it is ready through touch and experience, not clock. This is the difference between making food and cooking food.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">The Sauce: The Heart of Soya Chaap</h3>
-                <p>The sauce does not start with powder. It starts with onions. Many onions. They are softened in butter until they are shrinking, just until they begin to colour. Then we add fresh ginger and garlic that were pounded in a mortar that same morning. No jarred paste. No frozen cubes. Fresh ginger and garlic have a different smell, a different character. They feel different in your mouth.</p>
-                <p>Fresh tomatoes - not tinned, not from a tetrapack, but real tomatoes - are slowly cut and added. They cook down in the heat of the onions and ginger until completely broken down. No lump left. No structure left. Only a deep red sauce full of tomato essence. This usually takes thirty minutes. Sometimes longer. No rushing.</p>
-                <p>Then we add the spices: tandoori masala, garam masala, red chilli, turmeric - all ground fresh that morning. No pre-packaged mixes. No stock two months old that has lost colour and smell. These spices are powerful, vibrant, real. They mingle with the sauce and change the colour, the smell, the taste all at once.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">The Combination: Where the Magic Happens</h3>
-                <p>The rehydrated soya goes into the sauce. And then something special happens. The soya begins to absorb every aroma. Slowly. Carefully. At least half an hour, usually longer. The sauce becomes fuller, more viscous, richer. Every minute changes the dish. This is why you cannot make soya chaap in ten minutes. This is why many restaurants get it wrong. They do not have patience.</p>
-                <p>Toward the end, our chef adds fresh melted butter across the surface. The butter mingles with the sauce. It adds gloss. It adds mouthfeel. It adds warmth and luxury. This is soya chaap as it should be. This is vegan Indian food that feels more like real culinary art than food substitution.</p>
-
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-6 mb-4">Why This Difference Matters</h3>
-                <p>The entire process - from prep to plate - is identical to what we would do with lamb curry. It respects the same principles. Respect for fresh ingredients. Careful technique. Patience. Feeling how the food evolves as it cooks. This is probably why plant-based Indian in Den Haag works so well. It does not feel made for people-who-do-not-eat-meat. It feels made for people who want good food. Everyone who eats well wants that same level of care, authenticity and taste. Soya chaap at Chopras delivers that.</p>
-              </>
-            )}
-          </div>
-        </div>
-      </section>
-
+      {/* SECTION 1: Core angle */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
-            {isNl ? 'Vragen Over Soya Chaap en Plantaardig Indiaas Eten' : 'Questions About Soya Chaap and Vegan Indian Food'}
+            {isNl
+              ? 'De Vegan Tandoor Ervaring Bestaat - in Den Haag'
+              : 'The Vegan Tandoor Experience Exists - in Den Haag'}
+          </h2>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+            {isNl ? (
+              <>
+                <p>Soya chaap Den Haag bij Chopras Indian Restaurant is geen vegetarisch bijgerecht. Het is een volwaardig tandoor-gerecht, bereid met achari marinade en dezelfde kleioven die wordt gebruikt voor alle tandoori-gerechten op het menu. Als je <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">veganistisch Indiaas eten</Link> zoekt dat echt smaakt naar tandoor - rokerig, gegrild, krokant aan de buitenkant - is dit het enige gerecht in Den Haag dat dat biedt.</p>
+                <p>De achari marinade is gebaseerd op de smaken van Noord-Indiase ingelegde kruiden: mosterdzaad, venkel, nigella en gedroogde chili. Die combinatie van zure en aromatische componenten penetreert het soya-eiwit diep voordat het de oven ingaat. Achari betekent letterlijk &apos;van de ingelegde specerijen&apos; - het is scherp, complex en precies het soort marinade dat <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">plantaardig Indiaas koken</Link> bevredigend maakt in plaats van een compromis.</p>
+                <p>Bij Chopras worden de specerijen elke ochtend vers gemalen uit hele kruidenzaden die direct uit India worden betrokken. Geen zakje, geen poedermix uit een leveranciersbak. <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">De tandoor</Link> bereikt 400 graden Celsius. Die combinatie - verse achari kruiden en extreme hitte - geeft de soya chaap een rokerig korstje dat een gewone oven nooit kan repliceren. 4,9 sterren van 800+ Google-beoordelingen. Dat niveau geldt voor elk gerecht, inclusief dit.</p>
+              </>
+            ) : (
+              <>
+                <p>Soya chaap Den Haag at Chopras Indian Restaurant is not a vegetarian side dish. It is a full tandoor dish, prepared with achari marinade and the same clay oven used for every tandoori preparation on the menu. If you are looking for <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegan Indian food</Link> that genuinely tastes of the tandoor - smoky, charred, crisp on the outside - this is the only option in Den Haag that delivers it.</p>
+                <p>The achari marinade is built on North Indian pickling spices: mustard seed, fennel, nigella, and dried chilli. That combination of acidic and aromatic compounds penetrates the soya protein before it enters the oven. Achari means literally &apos;of the pickled spices&apos; - it is sharp, complex, and exactly the kind of marinade that makes <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">plant-based Indian cooking</Link> satisfying rather than a compromise.</p>
+                <p>At Chopras, spices are ground fresh every morning from whole seeds sourced directly from India. No pre-packaged mix. No powder blend from a supplier. <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">The tandoor</Link> reaches 400 degrees Celsius. That combination - fresh achari spices and extreme heat - gives the soya chaap a smoky char you cannot replicate in a conventional oven. 4.9 stars from 800+ Google reviews. That standard applies to every dish on the menu, including this one.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2: Why soya protein works in the tandoor */}
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl
+              ? 'Waarom Soya Chaap in de Tandoor Werkt'
+              : 'Why Soya Chaap Works in the Tandoor'}
+          </h2>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+            {isNl ? (
+              <>
+                <p>Soya chaap bestaat uit soya-eiwit dat is gevormd tot een compacte, vezelige structuur. Het is niet zacht als tofu. Het heeft een stevige, vlezige textuur die warmte goed geleidt en marinade vasthoudt. Dat is de reden waarom <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegetarische Indiase kooktradities</Link> soya chaap al generaties lang gebruiken voor tandoor-bereiding. Het gedraagt zich anders dan groentegebaseerde alternatieven. Het trekt de achari marinade op, houdt hitte vast en ontwikkelt een gegrild buitenste korstje terwijl het binnenin mals blijft.</p>
+                <p>In de tandoor op 400 graden Celsius gebeurt iets wat een pan niet kan repliceren. De directe stralingswarmte van de kleioven bereikt het oppervlak van de soya chaap bijna direct. De achari marinade karamelliseert. De suikers in het mosterdzaad verbranden lichtjes. De rook van de kolenbodem dringt het soya-eiwit binnen. Het resultaat is een gerecht dat <strong>smaakt naar geroosterd, naar kruid, naar warmte</strong> - niet naar vlees, maar ook niet naar een vervanging. Iets op zichzelf.</p>
+                <p>Voor een <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal gecertificeerd restaurant</Link> met echte vegan tandoor-opties in Den Haag is Chopras Indian Restaurant op Leyweg 986 de enige keuze. Het volledige menu is halal gecertificeerd - elke leverancier, elk gerecht. De soya chaap is halal en veganistisch. Die combinatie bestaat zelden in de Haagse horeca.</p>
+              </>
+            ) : (
+              <>
+                <p>Soya chaap is soya protein shaped into a compact, fibrous structure. It is not soft like tofu. It has a firm, meaty texture that conducts heat well and holds marinade. That is why <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegetarian Indian cooking traditions</Link> have used soya chaap for tandoor preparation for generations. It behaves differently from vegetable-based alternatives. It draws in the achari marinade, holds heat, and develops a charred outer layer while staying tender inside.</p>
+                <p>In the tandoor at 400 degrees Celsius, something happens that a pan cannot replicate. The direct radiant heat from the clay walls reaches the surface of the soya chaap almost immediately. The achari marinade caramelises. The sugars in the mustard seed char lightly. The smoke from the coal base enters the soya protein. The result is a dish that <strong>tastes of char, of spice, of heat</strong> - not of meat, but not of a replacement either. Something in its own right.</p>
+                <p>For a <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal certified restaurant</Link> with genuine vegan tandoor options in Den Haag, Chopras Indian Restaurant at Leyweg 986 is the only option. The full menu is halal certified - every supplier, every dish. The soya chaap is both halal and vegan. That combination is rare in Den Haag.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* GEO BLOCK */}
+      <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+            {isNl
+              ? 'Waar Vind Ik Soya Chaap in Den Haag?'
+              : 'Where Can I Find Soya Chaap in Den Haag?'}
+          </h2>
+          <div className="font-body text-white/80 text-lg leading-relaxed">
+            {isNl ? (
+              <p>Soya chaap in Den Haag is beschikbaar bij <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant</Link>, gevestigd op Leyweg 986, 2545 GW Den Haag. Het gerecht wordt bereid als achari-gemarineerde, tandoor-gegrilde plantaardige mock meat - volledig veganistisch en halal gecertificeerd. Chopras heeft een 4,9-sterrenbeoordeling van 800+ Google-recensies. <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Bekijk het volledige veganistische menu</Link> of reserveer een tafel. Open dinsdag tot en met zondag van 16:30 tot 22:30.</p>
+            ) : (
+              <p>Soya chaap in Den Haag is available at <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant</Link>, located at Leyweg 986, 2545 GW Den Haag. The dish is prepared as achari-marinated, tandoor-grilled plant-based mock meat - fully vegan and halal certified. Chopras holds a 4.9-star rating from 800+ Google reviews. <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">View the full vegan menu</Link> or reserve a table online. Open Tuesday to Sunday, 16:30 to 22:30.</p>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl
+              ? 'Vragen Over Soya Chaap en Veganistisch Indiaas Eten'
+              : 'Questions About Soya Chaap and Vegan Indian Food'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
-            {isNl ? 'Meer Vegetarische Opties en Vegan Indiaans Voedsel' : 'More Vegetarian Options and Vegan Indian Food'}
+      {/* CTA SECTION */}
+      <section className="bg-white py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl ? 'Soya Chaap Proeven in Den Haag' : 'Taste Soya Chaap in Den Haag'}
           </h2>
-          <p className="text-[#1A1A1A] text-lg leading-relaxed mb-6">
-            {isNl
-              ? <>Soya chaap is slechts een optie in ons scala van <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">plantaardig Indiaas voedsel</Link>. Ons volledige menu bevat ook dal makhani, chana masala, palak paneer, aloo gobi, en groente biryani. Elk gerecht wordt volledig bereid met dezelfde zorg als onze vleesgerechten. Geen compromissen. Geen aparte voorbereiding. Hetzelfde niveau van authenticiteit. Dit is vegetarisch eten dat je niet voelt als minder dan de vlees variant. Dit is eten dat je kiest omdat het goed is, niet omdat je geen vlees eet.</>
-              : <>Soya chaap is just one option in our range of <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:underline">plant-based Indian food</Link>. Our full menu also includes dal makhani, chana masala, palak paneer, aloo gobi, and vegetable biryani. Each dish is fully prepared with the same care as our meat dishes. No compromise. No separate preparation. The same level of authenticity. This is vegetarian food you do not feel as less than the meat version. This is food you choose because it is good, not because you do not eat meat.</>
-            }
-          </p>
-          <p className="text-[#1A1A1A] text-lg leading-relaxed mb-8">
-            {isNl
-              ? 'Wil je soya chaap proeven? Kijk op onze menu pagina voor het volledige aanbod, of maak een reservering voor een diner ervaringing. Bestel online via onze website, of bel ons op Leyweg 986, Den Haag. Wij open dinsdag tot zondag. Laten we je voedingskeuzes eren met voedsel dat ervan houdt.'
-              : 'Want to try soya chaap? Check our menu page for the full range, or make a reservation for a dining experience. Order online via our website, or call us at Leyweg 986, Den Haag. We are open Tuesday to Sunday. Let us honour your dietary choices with food that loves them.'
-            }
-          </p>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5 mb-8">
+            {isNl ? (
+              <>
+                <p>Soya chaap staat op het menu van Chopras Indian Restaurant op Leyweg 986, Den Haag. U kunt dineren van dinsdag tot en met zondag van 16:30 tot 22:30. Als u meerdere plantaardige gerechten wilt ontdekken, bekijk dan het <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige veganistische menu</Link> of het <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige menuoverzicht</Link> met alle 143 gerechten.</p>
+                <p>Chopras serveert ook <Link href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">dal makhani</Link>, chaat en pani puri - volledig vegetarisch en veganistisch. Het <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">reserveren van een tafel</Link> duurt minder dan twee minuten. Maandag gesloten.</p>
+              </>
+            ) : (
+              <>
+                <p>Soya chaap is on the menu at Chopras Indian Restaurant at Leyweg 986, Den Haag. You can dine Tuesday to Sunday, 16:30 to 22:30. If you want to explore more plant-based options, view the <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">full vegan menu</Link> or the <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">complete menu overview</Link> across all 143 dishes.</p>
+                <p>Chopras also serves <Link href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">dal makhani</Link>, chaat, and pani puri - all fully vegetarian and vegan. <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Reserving a table</Link> takes under two minutes. Closed Monday.</p>
+              </>
+            )}
+          </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href={`${base}/contact`}
@@ -223,53 +245,56 @@ export default function SoyaChaapPage({ params }: Props) {
               {tr.common.reserve}
             </Link>
             <Link
+              href={`${base}/vegan-menu`}
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]"
+            >
+              {isNl ? 'Veganistisch Menu' : 'Vegan Menu'}
+            </Link>
+            <Link
               href={`${base}/menu`}
               className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]"
             >
               {tr.common.viewMenu}
             </Link>
-            <Link
-              href={`${base}/dal-makhani-den-haag`}
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px]"
-            >
-              {isNl ? 'Dal Makhani Ontdekken' : 'Explore Dal Makhani'}
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* INTERNAL LINKS SECTION */}
-      <section className="bg-[#FFFAF5] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
-            {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}
+      {/* EXPLORE MORE DISHES */}
+      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl ? 'Meer Gerechten bij Chopras Indian Restaurant' : 'More Dishes at Chopras Indian Restaurant'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Vegetarisch' : 'Vegetarian'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Dal Makhani Den Haag' : 'Dal Makhani Den Haag'}</p>
+              <p className="text-[#1B2B5E] font-semibold">Dal Makhani Den Haag</p>
             </Link>
-            <Link href={`${base}/pani-puri-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/tandoori-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Tandoor</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Tandoori Gerechten Den Haag' : 'Tandoori Dishes Den Haag'}</p>
+            </Link>
+            <Link href={`${base}/pani-puri-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Streetfood' : 'Street Food'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Pani Puri Den Haag' : 'Pani Puri Den Haag'}</p>
+              <p className="text-[#1B2B5E] font-semibold">Pani Puri Den Haag</p>
             </Link>
-            <Link href={`${base}/chaat-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
-              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Chaat' : 'Chaat'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiaas straatvoedsel en chaat Den Haag' : 'Indian street food and chaat Den Haag'}</p>
-            </Link>
-            <Link href={`${base}/catering`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
-              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Catering' : 'Catering'}</p>
-              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Wilt u dit gerecht voor uw evenement? Indiaas catering Den Haag' : 'Want this dish at your event? Indian catering Den Haag'}</p>
+            <Link href={`${base}/chaat-den-haag`} className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">Chaat</p>
+              <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Chaat en Indiaas Streetfood Den Haag' : 'Chaat and Indian Street Food Den Haag'}</p>
             </Link>
           </div>
           <div className="text-center space-y-4">
-            <p className="text-[#1A1A1A] text-base">
+            <p className="font-body text-[#1A1A1A] text-base">
               <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
-                {isNl ? 'Chopras Indiaas Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
+                {isNl ? 'Chopras Indian Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
               </Link>
             </p>
-            <p className="text-[#1A1A1A] text-base">
-              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'} <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{isNl ? 'maak een reservering' : 'book a table at Chopras Indian Restaurant Den Haag'}</Link>.
+            <p className="font-body text-[#1A1A1A] text-base">
+              {isNl ? 'Bekijk het volledige menu of' : 'View the full menu or'}{' '}
+              <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
+                {isNl ? 'maak een reservering bij Chopras Indian Restaurant Den Haag' : 'book a table at Chopras Indian Restaurant Den Haag'}
+              </Link>.
             </p>
           </div>
         </div>

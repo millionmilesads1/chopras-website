@@ -74,6 +74,7 @@
 |---|---|---|---|
 | Near Delft | /indian-restaurant-delft | Indian restaurant Delft | Commercial |
 | Near Rijswijk | /indian-restaurant-rijswijk | Indian restaurant Rijswijk | Commercial |
+| Near Leidschendam | /indian-restaurant-leidschendam | Indian restaurant Leidschendam | Commercial |
 | Near Zoetermeer | /indian-restaurant-zoetermeer | Indian restaurant Zoetermeer | Commercial |
 | Near Peace Palace | /indian-restaurant-near-peace-palace-den-haag | Indian restaurant near Peace Palace Den Haag | Commercial |
 | Near Den Haag Centraal | /indian-restaurant-near-den-haag-centraal | Indian restaurant near Den Haag Centraal | Commercial |

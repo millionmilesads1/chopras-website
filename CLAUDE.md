@@ -332,8 +332,38 @@ Meta: Indian street food Den Haag at Chopras Indian Restaurant. Pani puri, chaat
 - Must contain at least 2 inline Link components
 - Never use sr-only - must be visible to human visitors
 
+## FORBIDDEN AI PHRASES — NEVER USE IN ANY CONTENT
+These phrases flag content as machine-generated to both human readers and Google's HCU:
+- "Delve into" / "dive into" — never
+- "It is worth noting" — never
+- "In conclusion" / "To summarize" — never
+- "Furthermore" / "Moreover" / "Additionally" — never
+- "It goes without saying" — never
+- "At the end of the day" — never
+- "Game-changing" / "Revolutionary" / "Cutting-edge" — never
+- "Leverage" (as a verb) — never
+- "Robust" / "Seamless" / "Scalable" — never
+- "In today's fast-paced world" — never
+- "Committed to quality" / "Exceptional service" — never
+- "Culinary journey" / "Culinary experience" — never (restaurant-specific)
+- "We are passionate about" — never
+- "A true gem" / "Hidden gem" — never
+- Opening a paragraph with "This" as the first word — never
+- Three adjectives in a row before a noun — never
+- Symmetrical bullet points all the same length — never
+
+## FAQ RULES — MANDATORY COUNT
+- Minimum 4 FAQ questions per page, maximum 6 per page
+- Exception: homepage may go up to 8 because of its breadth of topics
+- Questions must be phrased exactly as users type them into Google or ChatGPT
+- Each answer must be self-contained — readable without the question above it
+- Always use <FaqAccordion faqs={array} locale={locale} /> — never raw <details>
+- Provide full Dutch translations for every FAQ question and answer on bilingual pages
+- Do NOT add datePublished or dateModified to FAQPage schema ever
+
 ## BUILD CHECK - MANDATORY BEFORE EVERY COMMIT
 - ALWAYS run: pnpm build (not just pnpm tsc --noEmit)
 - pnpm tsc --noEmit misses ESLint errors and runtime issues that break Vercel
 - Zero build errors required before any commit
 - Fix all ESLint and TypeScript errors before committing and pushing
+

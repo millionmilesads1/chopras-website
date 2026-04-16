@@ -3,7 +3,7 @@ import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import { getLocalizedUrl } from '@/lib/utils'
-import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getCateringServiceSchema } from '@/lib/schema'
+import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getCateringServiceSchema, getEventSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 
 type Props = { params: { locale: Locale } }
@@ -63,8 +63,23 @@ export default function DiwaliDinnerPage({ params }: Props) {
   const base = locale === 'nl' ? '/nl' : ''
   const isNl = locale === 'nl'
 
+  const eventSchema = getEventSchema(isNl ? {
+    name: 'Diwali Diner Den Haag bij Chopras Indian Restaurant',
+    description: 'Vuur van India. Familie bij elkaar. Authentiek feest. Reserveer je Diwali-diner in Den Haag bij Chopras.',
+    startDate: '2026-10-20T18:30:00',
+    endDate: '2026-10-20T22:30:00',
+    url: getLocalizedUrl(locale, 'diwali-dinner-den-haag'),
+  } : {
+    name: 'Diwali Dinner Den Haag at Chopras Indian Restaurant',
+    description: 'Fire of India. Family together. Authentic celebration. Book your Diwali dinner in Den Haag at Chopras.',
+    startDate: '2026-10-20T18:30:00',
+    endDate: '2026-10-20T22:30:00',
+    url: getLocalizedUrl(locale, 'diwali-dinner-den-haag'),
+  })
+
   return (
     <>
+      <JsonLd data={eventSchema} />
       <JsonLd data={getCateringServiceSchema(locale)} />
       <JsonLd data={getLocalRestaurantSchema(locale, ['Den Haag'], getLocalizedUrl(locale, 'diwali-dinner-den-haag'))} />
       <JsonLd data={getBreadcrumbSchema([

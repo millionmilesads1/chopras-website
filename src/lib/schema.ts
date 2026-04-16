@@ -386,11 +386,7 @@ export function getOrganizationSchema(): Record<string, unknown> {
       contactType: 'reservations',
       availableLanguage: ['English', 'Dutch', 'Hindi'],
     },
-    sameAs: [
-      'https://share.google/HA9e9y2DYSLGiJGYS',
-      'https://www.tripadvisor.nl/Restaurant_Review-g188633-d27464805-Reviews-Chopras_Indian_Restaurant-The_Hague_South_Holland_Province.html',
-      'https://www.thefork.nl/restaurant/chopras-indian-restaurant-r825662',
-    ],
+    sameAs: SAME_AS,
   }
 }
 
@@ -498,6 +494,47 @@ export function getSpeakableSchema(locale: Locale): Record<string, unknown> {
     speakable: {
       '@type': 'SpeakableSpecification',
       cssSelector: ['h1', 'h2', '.about-chopras-section'],
+    },
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Event schema (for restaurant events like Diwali dinners)
+// ---------------------------------------------------------------------------
+
+export function getEventSchema(event: {
+  name: string
+  description: string
+  startDate: string  // ISO 8601, e.g. '2026-10-20T18:30:00'
+  endDate: string
+  url: string
+}): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: event.name,
+    description: event.description,
+    startDate: event.startDate,
+    endDate: event.endDate,
+    url: event.url,
+    location: {
+      '@type': 'Place',
+      name: RESTAURANT.name,
+      address: ADDRESS,
+    },
+    organizer: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#restaurant`,
+      name: RESTAURANT.name,
+      url: SITE_URL,
+    },
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    offers: {
+      '@type': 'Offer',
+      url: event.url,
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'EUR',
     },
   }
 }

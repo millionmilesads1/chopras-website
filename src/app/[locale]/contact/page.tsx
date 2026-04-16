@@ -172,8 +172,8 @@ export default function LocaleContactPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* Map  -  hidden on mobile */}
-              <div className="rounded-3xl overflow-hidden hidden lg:block" style={{ height: '280px' }}>
+              {/* Map */}
+              <div className="rounded-3xl overflow-hidden" style={{ height: '280px' }}>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2457.8!2d4.2742654!3d52.0487367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b12ba9dd450d%3A0xf932c69c8e71a16b!2sChopras%20Indian%20Restaurant%20Den%20Haag!5e0!3m2!1sen!2snl!4v1744000000000!5m2!1sen!2snl"
                   width="100%"

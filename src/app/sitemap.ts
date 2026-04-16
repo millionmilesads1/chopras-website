@@ -49,10 +49,16 @@ const staticPages: SitemapPage[] = [
   // Location pages
   { slug: 'indian-restaurant-delft', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
   { slug: 'indian-restaurant-rijswijk', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-restaurant-voorburg', lastMod: '2026-04-16', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-restaurant-leidschendam', lastMod: '2026-04-16', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'indian-restaurant-westland', lastMod: '2026-04-16', priority: 0.8, changeFreq: 'weekly' },
   { slug: 'indian-restaurant-zoetermeer', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
   { slug: 'indian-food-netherlands', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
   { slug: 'indian-restaurant-near-peace-palace-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
   { slug: 'indian-restaurant-near-den-haag-centraal', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+
+  // About page
+  { slug: 'about', lastMod: '2026-04-16', priority: 0.7, changeFreq: 'monthly' },
 
   // Landing pages
   { slug: 'beste-indiaas-restaurant-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
