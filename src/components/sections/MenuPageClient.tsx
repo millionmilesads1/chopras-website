@@ -221,7 +221,7 @@ export default function MenuPageClient() {
       {/* Sticky category navigation */}
       <nav
         ref={navRef}
-        className="w-full flex justify-center overflow-x-auto border-b border-gray-100 bg-white sticky top-[64px] z-10"
+        className="w-full flex justify-center overflow-x-auto border-b border-gray-100 bg-white sticky top-[92px] z-10"
         aria-label="Menu categories"
       >
         <div className="flex items-center justify-center gap-1 px-6 py-3">
