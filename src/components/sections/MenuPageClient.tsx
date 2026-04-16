@@ -207,12 +207,16 @@ export default function MenuPageClient() {
   }
 
   useEffect(() => {
-    if (!navRef.current) return
-    const activeLink = navRef.current.querySelector<HTMLAnchorElement>(
-      `[data-category="${activeCategory}"]`,
-    )
+    const nav = navRef.current
+    if (!nav) return
+    const activeLink = nav.querySelector<HTMLElement>(`[data-category="${activeCategory}"]`)
     if (activeLink) {
-      activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+      // Scroll only the nav container horizontally — never touch vertical page scroll
+      const navRect = nav.getBoundingClientRect()
+      const linkRect = activeLink.getBoundingClientRect()
+      const targetScrollLeft =
+        nav.scrollLeft + linkRect.left - navRect.left - (navRect.width - linkRect.width) / 2
+      nav.scrollTo({ left: targetScrollLeft, behavior: 'smooth' })
     }
   }, [activeCategory])
 
