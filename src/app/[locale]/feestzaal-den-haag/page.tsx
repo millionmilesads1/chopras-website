@@ -183,7 +183,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
               <p>
                 De privé feestzaal op <strong>Leyweg 986</strong> biedt ruimte voor <strong>25 tot 80 gasten</strong>. Dat bereik dekt alles, van een intieme{' '}
                 <Link href={`${base}/indian-wedding-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">nikah-receptie</Link>{' '}
-                tot een volledig bedrijfsdiner. Het eten komt uit dezelfde keuken die 4,9 sterren verdient van meer dan 800 Google-beoordelaars elke week. Uw evenementgasten krijgen exact dezelfde standaard. Geen aparte cateraar. Geen coördinatieproblemen.
+                tot een volledig bedrijfsdiner. Het eten komt uit dezelfde keuken die 4,9 sterren verdient van 800+ Google-beoordelaars elke week. Uw evenementgasten krijgen exact dezelfde standaard. Geen aparte cateraar. Geen coördinatieproblemen.
               </p>
             ) : (
               <p>
@@ -453,7 +453,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
               {
                 title: isNl ? 'Restaurant Kwaliteit Eten' : 'Restaurant Quality Food',
                 desc: isNl
-                  ? 'Dezelfde chefs, recepten en specerijen als in het restaurant. 4,9 sterren op Google van meer dan 800 beoordelaars. Geen aparte evenementenkeuken.'
+                  ? 'Dezelfde chefs, recepten en specerijen als in het restaurant. 4,9 sterren op Google van 800+ beoordelaars. Geen aparte evenementenkeuken.'
                   : 'The same chefs, recipes, and spices as in the restaurant. 4.9 stars on Google from 800+ reviewers. No separate event kitchen.',
               },
               {

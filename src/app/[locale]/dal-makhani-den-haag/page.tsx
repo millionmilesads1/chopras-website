@@ -182,7 +182,7 @@ export default function DalMakhaniPage({ params }: Props) {
                 <p>Dal makhani is een Noord-Indiaas gerecht uit Punjab. De versie die de meeste mensen kennen werd in de twintigste eeuw in Delhi ontwikkeld, in een restaurant dat begreep dat boter en room linzen niet rijker maken door aan het einde te worden toegevoegd. Ze maken het rijker door vanaf het begin in het gerecht te koken.</p>
                 <p>Bij <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant</Link> op Leyweg 986 volgt de keuken deze aanpak. De boter gaat vroeg erin. De room wordt in fasen toegevoegd. De hele pan kookt langzaam in totdat de saus dik en glanzend is. Dit is <strong>Punjabi dal makhani zoals bedoeld</strong> - geen soep met linzen erin, maar een dikke, kleverige, diep smakende curry die u door hete <Link href={`${base}/naan-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">tandoori naan</Link> haalt of over basmati rijst eet en volledig tevreden bent.</p>
                 <p>De specerijen komen niet uit een zak. Chopras haalt hele specerijen rechtstreeks uit India en maalt ze elke ochtend vers voor de dienst. Het verschil is onmiddellijk en onmiskenbaar. Komijn die die ochtend is gemalen ruikt levend. Kardemom die weken in een voorgemengd mengsel heeft gezeten ruikt naar niets.</p>
-                <p>Met een Google-beoordeling van 4,9 sterren van meer dan 800 beoordeelde gasten is dit het meest gewaardeerde <Link href={`${base}/beste-indiaas-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indiaas restaurant in Den Haag</Link>. Dal makhani is een van de gerechten die gasten keer op keer terugbrengt.</p>
+                <p>Met een Google-beoordeling van 4,9 sterren van 800+ beoordeelde gasten is dit het meest gewaardeerde <Link href={`${base}/beste-indiaas-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indiaas restaurant in Den Haag</Link>. Dal makhani is een van de gerechten die gasten keer op keer terugbrengt.</p>
               </>
             ) : (
               <>
@@ -233,7 +233,7 @@ export default function DalMakhaniPage({ params }: Props) {
               <>
                 Chopras Indian Restaurant serveert authentieke dal makhani op{' '}
                 <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Leyweg 986, 2545 GW Den Haag</Link>.
-                {' '}Zwarte linzen worden een nacht geweekt en langzaam gegaard met boter, room en specerijen die elke ochtend vers worden gemalen. Het restaurant heeft een Google-beoordeling van 4,9 sterren van meer dan 800 gasten en is open van dinsdag tot en met zondag vanaf 16:30. Zowel{' '}
+                {' '}Zwarte linzen worden een nacht geweekt en langzaam gegaard met boter, room en specerijen die elke ochtend vers worden gemalen. Het restaurant heeft een Google-beoordeling van 4,9 sterren van 800+ gasten en is open van dinsdag tot en met zondag vanaf 16:30. Zowel{' '}
                 <Link href={`${base}/indian-takeaway-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">afhalen</Link>
                 {' '}als dineren op locatie zijn beschikbaar. Dit is echte Punjabi dal makhani - niet gehaast, niet uit blik.
               </>
