@@ -54,6 +54,7 @@ const staticPages: SitemapPage[] = [
   { slug: 'indian-restaurant-westland', lastMod: '2026-04-16', priority: 0.8, changeFreq: 'weekly' },
   { slug: 'indian-restaurant-zoetermeer', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
   { slug: 'indian-food-netherlands', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
+  { slug: 'halal-indian-restaurant-netherlands', lastMod: '2026-04-17', priority: 0.8, changeFreq: 'weekly' },
   { slug: 'indian-restaurant-near-peace-palace-den-haag', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
   { slug: 'indian-restaurant-near-den-haag-centraal', lastMod: '2026-04-10', priority: 0.8, changeFreq: 'weekly' },
 

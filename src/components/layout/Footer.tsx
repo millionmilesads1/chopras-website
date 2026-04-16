@@ -26,6 +26,8 @@ export default function Footer({ locale }: { locale: Locale }) {
     { label: 'Full Menu', href: `${base}/menu` },
     { label: 'Halal Menu', href: `${base}/halal-menu` },
     { label: 'Vegan Menu', href: `${base}/vegan-menu` },
+    { label: 'Halal Indian Restaurant Netherlands', href: `${base}/halal-indian-restaurant-netherlands` },
+    { label: 'Indian Food Netherlands', href: `${base}/indian-food-netherlands` },
   ]
 
   const CATERING_LINKS = [

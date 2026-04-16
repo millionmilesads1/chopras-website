@@ -193,6 +193,10 @@ Halal Food /halal-food-den-haag
 Primary keyword: Halal food Den Haag
 Meta: Halal food Den Haag. Chopras Indian Restaurant is fully halal certified. Biryani, tandoori and curries. Open Tuesday to Sunday at Leyweg 986 Den Haag.
 
+Halal Indian Restaurant Netherlands /halal-indian-restaurant-netherlands
+Primary keyword: Halal Indian restaurant Netherlands
+Meta: Halal Indian restaurant Netherlands. Chopras Indian Restaurant Den Haag is fully halal certified. 143 dishes, 4.9 stars. Open Tuesday to Sunday. Visit us.
+
 Wedding Catering /indian-wedding-catering-den-haag
 Primary keyword: Indian wedding catering Den Haag
 Meta: Indian wedding catering Den Haag by Chopras Indian Restaurant. Nikah, walima and reception catering. Fully halal certified. Request a free quote today.
