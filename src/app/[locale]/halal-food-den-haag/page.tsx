@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Halal food Den Haag. Chopras Indian Restaurant is fully halal certified. Biryani, tandoori and curries. Open Tuesday to Sunday at Leyweg 986 Den Haag.',
-    nl: 'Volledig halal-gecertificeerd Indiaas restaurant in Den Haag. Authentieke curry, biryani, tandoori en street food van Chopras op Leyweg 986. Dagelijks open.',
+    nl: 'Halal eten Den Haag. Chopras Indian Restaurant is volledig halal gecertificeerd. Biryani, tandoori en curry. Open dinsdag tot en met zondag op Leyweg 986.',
   }
   return {
     title: titles[locale],

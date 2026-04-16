@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Indian restaurant near Rijswijk. Chopras Indian Restaurant Den Haag is 5 minutes away. Authentic halal food and vegetarian options. Book now.',
-    nl: 'Op zoek naar een Indiaas restaurant bij Rijswijk? Chopras is slechts 5 minuten rijden in Den Haag. Authentiek Indiaas eten, halal gecertificeerd, open di–zo.',
+    nl: 'Indiaas restaurant bij Rijswijk. Chopras Indian Restaurant Den Haag is 5 minuten rijden. Authentiek halal eten en vegetarische opties. Boek nu.',
   }
   return {
     title: titles[locale], description: descriptions[locale],

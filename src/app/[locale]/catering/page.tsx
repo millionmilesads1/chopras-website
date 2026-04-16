@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Indian catering Den Haag by Chopras Indian Restaurant. Weddings, birthdays and corporate events. Halal certified and fresh. Request a free quote.',
-    nl: 'Authentieke Indiase catering in Den Haag voor bruiloften, zakelijke evenementen, verjaardagen en feesten. Halal gecertificeerd. Actief in Den Haag, Rijswijk, Delft.',
+    nl: 'Indiaas catering Den Haag door Chopras Indian Restaurant. Bruiloften, verjaardagen en bedrijfsevenementen. Halal gecertificeerd en vers. Offerte aanvragen.',
   }
   return {
     title: titles[locale],

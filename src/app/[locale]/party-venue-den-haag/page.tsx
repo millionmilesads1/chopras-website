@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Hire Chopras private event hall in Den Haag for 25 to 80 guests. Full Indian catering included. Perfect for weddings, parties and corporate events.',
-    nl: 'Huur de privé-evenementenhal van Chopras in Den Haag voor 25 tot 80 gasten. Indiase inrichting, volledige catering, professioneel personeel. Ideaal voor bruiloften, feesten en zakelijke evenementen.',
+    nl: 'Feestzaal huren Den Haag bij Chopras. Privézaal voor 25 tot 80 gasten met Indiaas catering. Ideaal voor bruiloften en feesten. Offerte aanvragen.',
   }
   return {
     title: titles[locale],

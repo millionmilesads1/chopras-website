@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
-import { RESTAURANT } from '@/lib/constants'
+
 import { getLocalizedUrl } from '@/lib/utils'
 import { getFounderSchema, getRestaurantSchema, getBreadcrumbSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'

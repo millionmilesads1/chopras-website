@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Indian buffet Den Haag at Chopras Indian Restaurant. Authentic curries, tandoori and biryani for groups. Halal certified at Leyweg 986. Get a quote.',
-    nl: 'Boek een Indiaas buffet in Den Haag bij Chopras voor uw evenement. Verse curry, tandoori, biryani en street food voor groepen van 25 tot 200 personen. Halal gecertificeerd.',
+    nl: 'Indiaas buffet Den Haag bij Chopras Indian Restaurant. Authentieke curry, tandoori en biryani voor groepen. Halal gecertificeerd op Leyweg 986. Offerte.',
   }
   return {
     title: titles[locale], description: descriptions[locale],

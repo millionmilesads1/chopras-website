@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Authentic tandoori Den Haag at Chopras Indian Restaurant. Chicken tikka and seekh kebab from our clay oven. Halal certified. Order online or dine in.',
-    nl: 'Authentieke tandoori gerechten bij Chopras Den Haag. Chicken tikka, seekh kebab en tandoori naan recht uit onze kleioven. Halal gecertificeerd. Leyweg 986, Den Haag.',
+    nl: 'Authentieke tandoori Den Haag bij Chopras Indian Restaurant. Chicken tikka en seekh kebab uit kleioven. Halal gecertificeerd. Bestel online of dine in.',
   }
   return {
     title: titles[locale],

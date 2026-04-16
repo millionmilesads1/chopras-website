@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Corporate events Den Haag. Chopras Indian Restaurant provides Indian catering for team dinners and receptions. Halal certified. Up to 80 guests. Book now.',
-    nl: 'Zakelijke evenementencatering en verhuur van privéruimte in Den Haag bij Chopras. Authentieke Indiase catering voor teamdiners, productlanceringen en netwerkevenementen.',
+    nl: 'Zakelijke evenementen Den Haag. Chopras Indian Restaurant verzorgt Indiaas catering voor teamdiners. Halal gecertificeerd. Tot 80 gasten. Boek nu.',
   }
   return {
     title: titles[locale], description: descriptions[locale],

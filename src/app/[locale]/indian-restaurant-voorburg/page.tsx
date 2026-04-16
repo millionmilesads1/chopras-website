@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Indian restaurant near Voorburg. Chopras Indian Restaurant Den Haag is 10 minutes away at Leyweg 986. Authentic halal food. Open Tuesday to Sunday.',
-    nl: 'Op zoek naar een Indiaas restaurant bij Voorburg? Chopras is 10 minuten rijden in Den Haag op Leyweg 986. Halal gecertificeerd, open dinsdag tot en met zondag.',
+    nl: 'Indiaas restaurant bij Voorburg. Chopras Indian Restaurant is 10 minuten rijden in Den Haag. Halal gecertificeerd. Open dinsdag tot en met zondag.',
   }
   return {
     title: titles[locale], description: descriptions[locale],

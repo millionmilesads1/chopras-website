@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Vacature Indiaas restaurant Den Haag. Join Chopras Indian Restaurant as a chef, front-of-house or catering assistant. Apply today at Leyweg 986.',
-    nl: 'Wij zijn op zoek naar mensen in Den Haag. Word onderdeel van het Chopras-team als kok, bediening of evenementenassistent. Maak deel uit van het snelst groeiende Indiase restaurant van Den Haag.',
+    nl: 'Vacature Indiaas restaurant Den Haag. Word onderdeel van het Chopras-team als kok, bediening of cateringassistent. Solliciteer vandaag op Leyweg 986.',
   }
   return {
     title: titles[locale],

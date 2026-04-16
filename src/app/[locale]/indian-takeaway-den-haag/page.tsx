@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Indian takeaway Den Haag from Chopras Indian Restaurant. Order curries, biryani and naan for collection at Leyweg 986. Fresh and ready for pickup today.',
-    nl: 'Bestel Indiaas eten om af te halen of te laten bezorgen in Den Haag bij Chopras. Bezorging via Thuisbezorgd en Uber Eats, of haal af van Leyweg 986. Halal gecertificeerd.',
+    nl: 'Indiaas afhalen Den Haag bij Chopras Indian Restaurant. Bestel curry, biryani en naan voor afhaling op Leyweg 986. Vers en klaar voor ophalen vandaag.',
   }
   return {
     title: titles[locale], description: descriptions[locale],

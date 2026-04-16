@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Best butter chicken Den Haag at Chopras Indian Restaurant. Halal chicken in rich tomato and cream sauce. Made fresh daily at Leyweg 986. Order online.',
-    nl: 'De beste butter chicken in Den Haag bij Chopras op Leyweg. Langzaam gekookt in een rijke tomaten-roomsaus met vers gemalen kruiden. Halal gecertificeerd. Reserveer uw tafel.',
+    nl: 'Beste butter chicken Den Haag bij Chopras Indian Restaurant. Halal kip in rijke tomaten-roomsaus. Dagelijks vers bereid op Leyweg 986. Bestel online.',
   }
   return {
     title: titles[locale],

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Indian restaurant menu Den Haag at Chopras Indian Restaurant. 143 dishes including curries, tandoori and biryani. Halal certified. Order online.',
-    nl: 'Bekijk het volledige Chopras Indiase menu in Den Haag. Verse curry, tandoori, biryani, chaat en streetfood. Halal gecertificeerd. Vegetarische en veganistische opties duidelijk aangegeven.',
+    nl: 'Indiaas restaurant menu Den Haag bij Chopras Indian Restaurant. 143 gerechten waaronder curry, tandoori en biryani. Halal gecertificeerd. Bestel online.',
   }
   return {
     title: titles[locale],
