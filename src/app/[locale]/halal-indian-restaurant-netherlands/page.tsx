@@ -150,7 +150,7 @@ export default function HalalIndianRestaurantNetherlandsPage({ params }: Props) 
       </section>
 
       {/* Section 1: GEO block */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
@@ -220,7 +220,7 @@ export default function HalalIndianRestaurantNetherlandsPage({ params }: Props) 
       </section>
 
       {/* Section 3: The menu */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
@@ -358,7 +358,7 @@ export default function HalalIndianRestaurantNetherlandsPage({ params }: Props) 
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
