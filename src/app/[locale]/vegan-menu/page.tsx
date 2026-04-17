@@ -5,6 +5,8 @@ import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getDietFoodEstablishmentSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
+import MenuPageClient from '@/components/sections/MenuPageClient'
+import { menuCategories, menuItems } from '@/lib/menu-data'
 
 type Props = { params: { locale: Locale } }
 
@@ -82,6 +84,10 @@ const faqsNl: Array<{ question: string; answer: string }> = [
     answer: 'Ja. Veganistische naan wordt vers gebakken in de tandoor bij Chopras. Dit geldt voor knoflooknaan, gewone naan en roti. Er wordt geen melk of boter gebruikt. Gebakken op 400 graden Celsius krijgt de naan de knapperige randen die een gewone oven niet kan repliceren.',
   },
 ]
+
+const veganItems = menuItems.filter(item => item.dietary.includes('vegan'))
+const veganCategoryIds = Array.from(new Set(veganItems.map(item => item.category)))
+const veganCategories = menuCategories.filter(cat => veganCategoryIds.includes(cat.id))
 
 export default function VeganMenuPage({ params }: Props) {
   const { locale } = params
@@ -164,6 +170,11 @@ export default function VeganMenuPage({ params }: Props) {
             )}
           </div>
         </div>
+      </section>
+
+      {/* VEGAN DISH GRID */}
+      <section className="bg-[#F7F8FC]">
+        <MenuPageClient categories={veganCategories} items={veganItems} />
       </section>
 
       {/* Dish Categories Grid */}
