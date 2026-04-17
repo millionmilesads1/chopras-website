@@ -10,7 +10,7 @@ import { menuCategories, menuItems } from '@/lib/menu-data'
 
 type Props = { params: { locale: Locale } }
 
-const halalItems = menuItems.filter(item => item.dietary.includes('halal') || item.dietary.includes('veg') || item.dietary.includes('vegan'))
+const halalItems = menuItems.filter(item => item.dietary.includes('halal') && !item.dietary.includes('veg') && !item.dietary.includes('vegan'))
 const halalCategoryIds = Array.from(new Set(halalItems.map(item => item.category)))
 const halalCategories = menuCategories.filter(cat => halalCategoryIds.includes(cat.id))
 
