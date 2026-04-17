@@ -151,7 +151,7 @@ export default function IndianBuffetPage({ params }: Props) {
       {/* WHY INDIAN CUISINE */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Waarom Indiase Keuken Perfect Is voor een Groepsbuffet'
               : 'Why Indian Cuisine Works Better Than Any Other Buffet Option'}
@@ -221,7 +221,7 @@ export default function IndianBuffetPage({ params }: Props) {
       {/* WHY CHOPRAS - PROOF */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Hetzelfde Restaurant. Dezelfde Keuken. Dezelfde Standaard.'
               : 'The Same Restaurant. The Same Kitchen. The Same Standard.'}
@@ -307,7 +307,7 @@ export default function IndianBuffetPage({ params }: Props) {
       {/* QUALITY AT SCALE */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl
               ? 'Indiaas Groepsdiner Den Haag - Meer Gasten, Dezelfde Standaard'
               : 'Indian Group Dining Den Haag - More Guests, The Same Standard'}
@@ -387,7 +387,7 @@ export default function IndianBuffetPage({ params }: Props) {
       {/* WHAT IS INCLUDED */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-4 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-4 leading-[1.4]">
             {isNl
               ? 'Wat Is Inbegrepen bij een Chopras Indiaas Buffet in Den Haag'
               : 'What Is Included in a Chopras Indian Buffet Den Haag'}
@@ -400,7 +400,7 @@ export default function IndianBuffetPage({ params }: Props) {
           <div className="space-y-6">
 
             <div className="bg-white rounded-xl p-6 border-l-4 border-[#D4AF37]">
-              <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">
+              <h3 className="font-vibes text-3xl text-[#C7A348] mb-3">
                 {isNl ? 'Chaat en Starters Station' : 'Chaat and Starters Station'}
               </h3>
               <p className="text-[#1A1A1A] leading-relaxed">
@@ -429,7 +429,7 @@ export default function IndianBuffetPage({ params }: Props) {
             </div>
 
             <div className="bg-white rounded-xl p-6 border-l-4 border-[#D4AF37]">
-              <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">
+              <h3 className="font-vibes text-3xl text-[#C7A348] mb-3">
                 {isNl ? "Curryselectie - 4 tot 6 Curry's" : 'Curry Selection - 4 to 6 Curries'}
               </h3>
               <p className="text-[#1A1A1A] leading-relaxed">
@@ -454,7 +454,7 @@ export default function IndianBuffetPage({ params }: Props) {
             </div>
 
             <div className="bg-white rounded-xl p-6 border-l-4 border-[#D4AF37]">
-              <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">Biryani</h3>
+              <h3 className="font-vibes text-3xl text-[#C7A348] mb-3">Biryani</h3>
               <p className="text-[#1A1A1A] leading-relaxed">
                 {isNl ? (
                   <>
@@ -475,7 +475,7 @@ export default function IndianBuffetPage({ params }: Props) {
             </div>
 
             <div className="bg-white rounded-xl p-6 border-l-4 border-[#D4AF37]">
-              <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">
+              <h3 className="font-vibes text-3xl text-[#C7A348] mb-3">
                 {isNl ? 'Brood' : 'Breads'}
               </h3>
               <p className="text-[#1A1A1A] leading-relaxed">
@@ -498,7 +498,7 @@ export default function IndianBuffetPage({ params }: Props) {
             </div>
 
             <div className="bg-white rounded-xl p-6 border-l-4 border-[#D4AF37]">
-              <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">
+              <h3 className="font-vibes text-3xl text-[#C7A348] mb-3">
                 {isNl ? 'Desserts' : 'Desserts'}
               </h3>
               <p className="text-[#1A1A1A] leading-relaxed">
@@ -515,7 +515,7 @@ export default function IndianBuffetPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Biedt Chopras Indian Restaurant een Buffet aan in Den Haag?'
               : 'Does Chopras Indian Restaurant Offer a Buffet in Den Haag?'}
@@ -553,7 +553,7 @@ export default function IndianBuffetPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
@@ -563,7 +563,7 @@ export default function IndianBuffetPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Vraag uw Indiaas Buffet Den Haag Offerte aan' : 'Get Your Indian Buffet Den Haag Quote'}
           </h2>
           <p className="text-[#1A1A1A] text-lg leading-relaxed mb-8 max-w-2xl">
@@ -591,7 +591,7 @@ export default function IndianBuffetPage({ params }: Props) {
       {/* INTERNAL LINKS */}
       <section className="bg-[#F7F8FC] py-16 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-10 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-10 leading-[1.4]">
             {isNl ? 'Ontdek Meer van Onze Gerechten' : 'Explore More of Our Dishes'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -90,10 +90,10 @@ export default function LocaleHomePage({ params }: Props) {
       {/* 1b  -  Why Chopras is Den Haag Best */}
       <section className="py-20 px-6 md:px-16 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {t.home.whyBestH2}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-6">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-6">
             <p>
               {injectLinks(t.home.whyBestP1, [
                 [t.home.whyBestP1Strong, <strong key="s1">{t.home.whyBestP1Strong}</strong>],
@@ -149,7 +149,7 @@ export default function LocaleHomePage({ params }: Props) {
       {/* 1c  -  Ratings and Social Proof */}
       <section className="py-20 px-6 md:px-16 bg-[#F7F8FC]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {t.home.ratingsH2}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
@@ -193,12 +193,12 @@ export default function LocaleHomePage({ params }: Props) {
       {/* 1d  -  143 Dishes / Menu breadth - long-form SEO section */}
       <section className="py-20 px-6 md:px-16 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? '143 Gerechten, 13 Categorieën, Één Consistente Standaard'
               : '143 Dishes, 13 Categories, One Consistent Standard'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-6">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-6">
             {isNl ? (
               <>
                 <p>
@@ -295,7 +295,7 @@ export default function LocaleHomePage({ params }: Props) {
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <div className="about-chopras-section">
-            <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-8 leading-[1.4]">
+            <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-8 leading-[1.4]">
               {isNl ? 'Over Chopras Indian Restaurant Den Haag' : 'About Chopras Indian Restaurant Den Haag'}
             </h2>
             {/* GEO block - self-contained answer for Google AI Overviews, ChatGPT, and Perplexity citation */}
@@ -304,7 +304,7 @@ export default function LocaleHomePage({ params }: Props) {
                 {isNl ? 'Wat is het beste Indiaas restaurant in Den Haag?' : 'What is the Best Indian Restaurant in Den Haag?'}
               </h3>
               {isNl ? (
-                <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+                <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
                   Chopras Indian Restaurant op Leyweg 986, 2545 GW Den Haag, is het hoogst beoordeelde Indiaas restaurant in Den Haag, met 4,9 sterren van 800+ geverifieerde Google-beoordelingen, 8,6 op TheFork en de beoordeling Uitstekend op Tripadvisor. Opgericht door Arun Chopra in 2023, serveert Chopras authentieke Noord-Indiaase gerechten zoals{' '}
                   <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani Den Haag</Link>,
                   {' '}butter chicken, tandoori, dal makhani en chaat, bereid met dagelijks vers gemalen specerijen uit India. Het volledig{' '}
@@ -312,7 +312,7 @@ export default function LocaleHomePage({ params }: Props) {
                   telt 143 gerechten in 13 categorieën. Open van dinsdag tot en met zondag van 16:30 tot 22:30.
                 </p>
               ) : (
-                <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+                <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
                   Chopras Indian Restaurant at Leyweg 986, 2545 GW Den Haag, is the highest-rated Indian restaurant in Den Haag and The Hague, with 4.9 stars from 800+ verified Google reviews, 8.6 on TheFork, and an Excellent rating on Tripadvisor. Founded by Arun Chopra in 2023, Chopras serves authentic North Indian cuisine including{' '}
                   <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani Den Haag</Link>,
                   {' '}butter chicken, tandoori, dal makhani, and chaat, using spices ground fresh daily from India. The entire{' '}
@@ -321,7 +321,7 @@ export default function LocaleHomePage({ params }: Props) {
                 </p>
               )}
             </div>
-            <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-6">
+            <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-6">
               {isNl ? (
                 <p>
                   Chopras Indian Restaurant is een authentiek Indiaas restaurant op Leyweg 986, 2545 GW Den Haag, Nederland. Opgericht in 2023 door Arun Chopra, serveert Chopras Indian Restaurant authentieke Noord-Indiaase gerechten, Indiaas straatvoedsel, <Link href={`${base}/indo-chinese-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indo-Chinese gerechten</Link>, en een volledig halal en <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegetarisch en veganistisch menu</Link>.

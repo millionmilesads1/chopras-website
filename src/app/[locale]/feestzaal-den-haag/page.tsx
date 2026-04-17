@@ -160,12 +160,12 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       {/* INTRO */}
       <section className="bg-[#F7F8FC] py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Feestzaal Huren Den Haag - Zaal en Catering Onder Een Dak'
               : 'Feestzaal Huren Den Haag - Venue and Catering Under One Roof'}
           </h2>
-          <div className="space-y-6 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-6 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <p>
                 De meeste mensen die een feestzaal zoeken in Den Haag lopen tegen hetzelfde probleem op. Ze vinden een geschikte ruimte. Dan beginnen ze aan een tweede zoektocht naar een cateraar. Ze onderhandelen twee contracten, stemmen twee planningen op elkaar af, en steken de week voor het feest door met logistiek in plaats van ernaar uit te kijken. Bij{' '}
@@ -216,12 +216,12 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       {/* WHAT IS INCLUDED */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'De Privé Feestzaal op Leyweg 986 - Capaciteit, Catering en Standaard'
               : 'The Private Hall at Leyweg 986 - Capacity, Catering, and Standard'}
           </h2>
-          <div className="space-y-6 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-6 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <p>
                 De feestzaal van Chopras Indian Restaurant Den Haag heeft een capaciteit van <strong>25 tot 80 gasten</strong>. De ruimte is volledig privé tijdens uw evenement: uw gasten delen de zaal niet met andere diners. De opstelling wordt aangepast aan uw gelegenheid, van een formele tafelindeling voor een meergangendiner tot een ruimere opstelling voor een buffetreceptie met meerdere stations.
@@ -276,12 +276,12 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       {/* OCCASIONS */}
       <section className="bg-[#F7F8FC] py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Verjaardag, Bruiloft, Bedrijfsdiner en Meer in Den Haag'
               : 'Birthday, Wedding, Corporate Dinner and More in Den Haag'}
           </h2>
-          <div className="space-y-6 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-6 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <p>
                 Stel u voor: een verjaardagsdiner voor dertig personen op Leyweg 986. De gasten arriveren, de zaal is gereed, het eten staat klaar. De gastheer heeft de week ervoor niet besteed aan het afstemmen van twee aparte bedrijven. Dat is wat het huren van de feestzaal bij Chopras Indian Restaurant in de praktijk inhoudt.
@@ -334,12 +334,12 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       {/* CATERING */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Authentiek Indiaas Catering: Dezelfde Keuken, Dezelfde Standaard'
               : 'Authentic Indian Catering: The Same Kitchen, the Same Standard'}
           </h2>
-          <div className="space-y-6 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-6 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <p>
                 Het eten bij uw evenement is niet afkomstig van een externe cateraar en niet samengesteld uit een vast pakket. Het komt rechtstreeks uit de Chopras-keuken en wordt op de dag zelf vers bereid. Dit onderscheid klinkt eenvoudig. Het maakt het verschil.
@@ -392,12 +392,12 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#F7F8FC] py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Kan ik een feestzaal huren bij Chopras Indian Restaurant in Den Haag?'
               : 'Can I Rent an Event Hall at Chopras Indian Restaurant in Den Haag?'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <p>
                 Ja. Chopras Indian Restaurant op{' '}
@@ -422,12 +422,12 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       {/* BOOKING */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Hoe Boek Je een Feestzaal bij Chopras Indian Restaurant Den Haag'
               : 'How to Book the Event Hall at Chopras Indian Restaurant Den Haag'}
           </h2>
-          <div className="space-y-6 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-6 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <p>
                 Het boekingsproces is eenvoudig. Neem contact op via de{' '}
@@ -457,7 +457,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       {/* BENEFITS */}
       <section className="bg-[#F7F8FC] py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-12 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-12 leading-[1.4]">
             {isNl
               ? 'Waarom Chopras Indian Restaurant Kiezen voor Uw Evenement'
               : 'Why Choose Chopras Indian Restaurant for Your Event'}
@@ -492,7 +492,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
               <div key={item.title} className="p-6 border border-gray-200 rounded-lg bg-white">
                 <div className="flex items-start gap-3 mb-3">
                   <CheckCircle className="text-[#D4AF37] w-5 h-5 flex-shrink-0 mt-1" />
-                  <h3 className="font-heading text-2xl text-[#1B2B5E]">{item.title}</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348]">{item.title}</h3>
                 </div>
                 <p className="font-body text-[#1A1A1A] text-base leading-relaxed">{item.desc}</p>
               </div>
@@ -504,7 +504,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       {/* INTERNAL LINKS */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-12 text-center leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-12 text-center leading-[1.4]">
             {isNl ? 'Meer Over Onze Diensten' : 'Learn More About Our Services'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -559,7 +559,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Veelgestelde Vragen over de Feestzaal in Den Haag'
               : 'Frequently Asked Questions About the Event Hall in Den Haag'}

@@ -181,7 +181,7 @@ export default function LocaleVacancyPage({ params }: Props) {
                     {v.badge}
                   </span>
                 </div>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] font-bold mb-1">{v.title}</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] font-bold mb-1">{v.title}</h3>
                 <p className="text-gray-500 text-sm mb-4">{v.schedule}</p>
                 <p className="text-gray-700 leading-relaxed mb-6">{v.desc}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

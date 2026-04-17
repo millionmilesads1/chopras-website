@@ -126,7 +126,7 @@ export default function LocaleContactPage({ params }: Props) {
                     • FIND US •
                   </span>
                 </div>
-                <h3 className="font-heading text-2xl text-white font-semibold mt-2 mb-6">
+                <h3 className="font-vibes text-3xl text-white font-semibold mt-2 mb-6">
                   Chopras Indian Restaurant
                 </h3>
                 <div className="space-y-5">
@@ -202,7 +202,7 @@ export default function LocaleContactPage({ params }: Props) {
             >
               <div className="flex flex-col items-center text-center flex-1 mb-6">
                 <Icon className="text-[#D4AF37] w-10 h-10 mx-auto mb-4" />
-                <h3 className="font-heading text-2xl text-[#1B2B5E] font-semibold mb-2">{title}</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] font-semibold mb-2">{title}</h3>
                 <p className="text-[#1A1A1A]/60 text-sm mt-2">{body}</p>
               </div>
               <a

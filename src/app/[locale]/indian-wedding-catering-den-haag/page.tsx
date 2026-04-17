@@ -172,12 +172,12 @@ export default function IndianWeddingCateringPage({ params }: Props) {
       {/* SECTION: Understanding the Occasion */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Indiase Bruiloftscatering die de Gelegenheid Begrijpt'
               : 'Indian Wedding Catering That Understands the Occasion'}
           </h2>
-          <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <>
                 <p>
@@ -256,12 +256,12 @@ export default function IndianWeddingCateringPage({ params }: Props) {
       {/* SECTION: Same Kitchen Quality */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'De Keuken die Uw Bruiloft Bereidt is Dezelfde als het Restaurant'
               : 'The Kitchen Preparing Your Wedding Is the Same as the Restaurant'}
           </h2>
-          <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <>
                 <p>
@@ -341,13 +341,13 @@ export default function IndianWeddingCateringPage({ params }: Props) {
       {/* SECTION: Wedding Occasions Grid */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Bruiloftsgelegenheden die Wij Cateren' : 'Wedding Occasions We Cater'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {weddingOccasions.map((occasion) => (
               <div key={occasion.title} className="bg-white rounded-xl p-6 border-l-4 border-[#D4AF37]">
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">{occasion.title}</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">{occasion.title}</h3>
                 <p className="font-body text-[#1A1A1A] text-base leading-relaxed">{occasion.desc}</p>
               </div>
             ))}
@@ -358,12 +358,12 @@ export default function IndianWeddingCateringPage({ params }: Props) {
       {/* SECTION: What a Wedding Menu Looks Like */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Wat Staat Er op een Chopras Bruiloftsmenu?'
               : 'What Goes on a Chopras Wedding Menu?'}
           </h2>
-          <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <>
                 <p>
@@ -467,7 +467,7 @@ export default function IndianWeddingCateringPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl
               ? 'Verzorgt Chopras Indian Restaurant Bruiloftscatering in Den Haag?'
               : 'Does Chopras Indian Restaurant Do Wedding Catering in Den Haag?'}
@@ -513,7 +513,7 @@ export default function IndianWeddingCateringPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
@@ -523,12 +523,12 @@ export default function IndianWeddingCateringPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Begin Uw Bruiloftsplanning bij Chopras'
               : 'Start Your Wedding Catering Planning with Chopras'}
           </h2>
-          <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8 max-w-2xl">
+          <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed mb-8 max-w-2xl">
             {isNl
               ? 'Stuur ons uw datum, het aantal gasten en het type gelegenheid. Wij hebben binnen 24 uur een voorstel voor u - vrijblijvend, zonder druk.'
               : 'Send us your date, guest count, and the type of occasion you are planning. We will have a proposal back to you within 24 hours - no obligation, no pressure.'}
@@ -553,7 +553,7 @@ export default function IndianWeddingCateringPage({ params }: Props) {
       {/* INTERNAL LINKS */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4] text-center">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3] text-center">
             {isNl ? 'Andere Cateringmogelijkheden' : 'Other Catering Options'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
@@ -575,14 +575,14 @@ export default function IndianWeddingCateringPage({ params }: Props) {
             </Link>
           </div>
           <div className="text-center space-y-4">
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
                 {isNl
                   ? 'Chopras Indian Restaurant - beste Indiaas restaurant in Den Haag'
                   : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
               </Link>
             </p>
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               {isNl ? 'Bekijk het volledige' : 'View the full'}{' '}
               <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
                 {isNl ? 'cateringsmenu' : 'catering menu'}

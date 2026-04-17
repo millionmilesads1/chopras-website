@@ -147,10 +147,10 @@ export default function DalMakhaniPage({ params }: Props) {
       {/* SECTION 1 - What proper dal makhani tastes like */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Wat echte dal makhani smaakt als' : 'What Proper Dal Makhani Actually Tastes Like'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>Er bestaat een versie van dal makhani die door heel Nederland wordt geserveerd. Dun. Licht zuur. Een saus die de achterkant van een lepel bedekt maar er niet aan blijft kleven. U eet het, en er ontbreekt iets. Niet helemaal verkeerd. Gewoon te snel gemaakt.</p>
@@ -173,10 +173,10 @@ export default function DalMakhaniPage({ params }: Props) {
       {/* SECTION 2 - The Punjabi standard */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Dal Makhani Den Haag - De Punjabi Standaard' : 'Dal Makhani Den Haag - The Punjabi Standard'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>Dal makhani is een Noord-Indiaas gerecht uit Punjab. De versie die de meeste mensen kennen werd in de twintigste eeuw in Delhi ontwikkeld, in een restaurant dat begreep dat boter en room linzen niet rijker maken door aan het einde te worden toegevoegd. Ze maken het rijker door vanaf het begin in het gerecht te koken.</p>
@@ -199,10 +199,10 @@ export default function DalMakhaniPage({ params }: Props) {
       {/* SECTION 3 - Vegetarian Indian food Den Haag */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Vegetarisch Indiaas in Den Haag - Geen Compromis' : 'Vegetarian Indian Food Den Haag - No Compromise'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>Veel restaurants behandelen vegetarische gerechten als voetnoten op het menu. Chopras behandelt dal makhani als het hoofdgerecht dat het is. De aandacht, de bereidingstijd, de kwaliteit van de specerijen - alles is identiek aan onze vlees curries.</p>
@@ -223,7 +223,7 @@ export default function DalMakhaniPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl
               ? 'Waar vind ik authentieke dal makhani in Den Haag?'
               : 'Where Can I Find Authentic Dal Makhani in Den Haag?'}
@@ -253,7 +253,7 @@ export default function DalMakhaniPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Veelgestelde Vragen Over Dal Makhani' : 'Frequently Asked Questions About Dal Makhani'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
@@ -263,10 +263,10 @@ export default function DalMakhaniPage({ params }: Props) {
       {/* CTA SECTION */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Dal Makhani Bestellen in Den Haag' : 'Order Dal Makhani in Den Haag'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5 mb-8">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5 mb-8">
             {isNl ? (
               <>
                 <p>
@@ -315,7 +315,7 @@ export default function DalMakhaniPage({ params }: Props) {
       {/* EXPLORE MORE DISHES */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

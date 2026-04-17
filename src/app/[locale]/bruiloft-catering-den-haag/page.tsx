@@ -120,30 +120,30 @@ export default function BruiloftCateringPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Voorgerechten en Snacks</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Voorgerechten en Snacks</h3>
                 <p>Samosas, pakora, kebabs, tandoori snacks - alles vers. Dit wordt geserveerd terwijl je gasten aankomen, terwijl ze lachen, terwijl ze familieleden zien die ze lang niet hebben gezien.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Hoofd Gangen</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Hoofd Gangen</h3>
                 <p>Biryani. Tandoori kip, vis, lam. Dal. Groente curries. Paneer dishes. Elk gerecht is gemaakt met dezelfde zorg die je zou gebruiken als je thuis aan het koken was. Niets voorgekookt. Niets uit een jar.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Brood</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Brood</h3>
                 <p>Naan, roti, paratha - alles uit onze tandoor. Vers. Heet. Dit is de voet van het eten, en we maken het goed.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Zoet Eindigt</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Zoet Eindigt</h3>
                 <p>Kheer. Gulab jamun. Ras malai. Rasgulla. Traditionele Indiaase zoetigheden die je vertellen dat de maaltijd voorbij is, maar dat het moment niet voorbij is.</p>
               </>
             ) : (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Appetizers and Snacks</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Appetizers and Snacks</h3>
                 <p>Samosas, pakora, kebabs, tandoori snacks - all fresh. This is served as your guests arrive, as they laugh, as they see family members they have not seen in a long time.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Main Courses</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Main Courses</h3>
                 <p>Biryani. Tandoori chicken, fish, lamb. Dal. Vegetable curries. Paneer dishes. Each dish is made with the same care you would use if you were cooking at home. Nothing pre-cooked. Nothing from a jar.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Bread</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Bread</h3>
                 <p>Naan, roti, paratha - all from our tandoor. Fresh. Hot. This is the foundation of the meal, and we make it well.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Sweet Endings</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Sweet Endings</h3>
                 <p>Kheer. Gulab jamun. Ras malai. Rasgulla. Traditional Indian sweets that tell you the meal is over, but that the moment is not.</p>
               </>
             )}
@@ -153,7 +153,7 @@ export default function BruiloftCateringPage({ params }: Props) {
 
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Bruiloft FAQ' : 'Wedding FAQ'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />

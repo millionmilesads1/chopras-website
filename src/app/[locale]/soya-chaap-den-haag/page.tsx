@@ -139,12 +139,12 @@ export default function SoyaChaapPage({ params }: Props) {
       {/* SECTION 1: Core angle */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'De Vegan Tandoor Ervaring Bestaat - in Den Haag'
               : 'The Vegan Tandoor Experience Exists - in Den Haag'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>Soya chaap Den Haag bij Chopras Indian Restaurant is geen vegetarisch bijgerecht. Het is een volwaardig tandoor-gerecht, bereid met achari marinade en dezelfde kleioven die wordt gebruikt voor alle tandoori-gerechten op het menu. Als je <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">veganistisch Indiaas eten</Link> zoekt dat echt smaakt naar tandoor - rokerig, gegrild, krokant aan de buitenkant - is dit het enige gerecht in Den Haag dat dat biedt.</p>
@@ -165,12 +165,12 @@ export default function SoyaChaapPage({ params }: Props) {
       {/* SECTION 2: Why soya protein works in the tandoor */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Waarom Soya Chaap in de Tandoor Werkt'
               : 'Why Soya Chaap Works in the Tandoor'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>Soya chaap bestaat uit soya-eiwit dat is gevormd tot een compacte, vezelige structuur. Het is niet zacht als tofu. Het heeft een stevige, vlezige textuur die warmte goed geleidt en marinade vasthoudt. Dat is de reden waarom <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegetarische Indiase kooktradities</Link> soya chaap al generaties lang gebruiken voor tandoor-bereiding. Het gedraagt zich anders dan groentegebaseerde alternatieven. Het trekt de achari marinade op, houdt hitte vast en ontwikkelt een gegrild buitenste korstje terwijl het binnenin mals blijft.</p>
@@ -191,7 +191,7 @@ export default function SoyaChaapPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl
               ? 'Waar Vind Ik Soya Chaap in Den Haag?'
               : 'Where Can I Find Soya Chaap in Den Haag?'}
@@ -209,7 +209,7 @@ export default function SoyaChaapPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Vragen Over Soya Chaap en Veganistisch Indiaas Eten'
               : 'Questions About Soya Chaap and Vegan Indian Food'}
@@ -221,10 +221,10 @@ export default function SoyaChaapPage({ params }: Props) {
       {/* CTA SECTION */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Soya Chaap Proeven in Den Haag' : 'Taste Soya Chaap in Den Haag'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5 mb-8">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5 mb-8">
             {isNl ? (
               <>
                 <p>Soya chaap staat op het menu van Chopras Indian Restaurant op Leyweg 986, Den Haag. U kunt dineren van dinsdag tot en met zondag van 16:30 tot 22:30. Als u meerdere plantaardige gerechten wilt ontdekken, bekijk dan het <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige veganistische menu</Link> of het <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige menuoverzicht</Link> met alle 143 gerechten.</p>
@@ -263,7 +263,7 @@ export default function SoyaChaapPage({ params }: Props) {
       {/* EXPLORE MORE DISHES */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Meer Gerechten bij Chopras Indian Restaurant' : 'More Dishes at Chopras Indian Restaurant'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

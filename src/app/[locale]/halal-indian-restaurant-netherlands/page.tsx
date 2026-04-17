@@ -152,12 +152,12 @@ export default function HalalIndianRestaurantNetherlandsPage({ params }: Props) 
       {/* Section 1: GEO block */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Is Er een Halal Indiaas Restaurant in Nederland?'
               : 'Is There a Halal Indian Restaurant in the Netherlands?'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>
@@ -184,12 +184,12 @@ export default function HalalIndianRestaurantNetherlandsPage({ params }: Props) 
       {/* Section 2: What halal certification means */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Wat Halal Gecertificeerd Betekent bij Chopras'
               : 'What Halal Certified Means at Chopras'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>
@@ -222,12 +222,12 @@ export default function HalalIndianRestaurantNetherlandsPage({ params }: Props) 
       {/* Section 3: The menu */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? '143 Halal Indiaas Gerechten in 13 Categorieën'
               : '143 Halal Indian Dishes Across 13 Categories'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5 mb-10">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5 mb-10">
             {isNl ? (
               <>
                 <p>
@@ -296,7 +296,7 @@ export default function HalalIndianRestaurantNetherlandsPage({ params }: Props) 
       {/* Section 4: Visiting from elsewhere in NL */}
       <section className="bg-[#1B2B5E] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl
               ? 'Vanuit Heel Nederland Naar Den Haag'
               : 'Visiting from Anywhere in the Netherlands'}
@@ -328,12 +328,12 @@ export default function HalalIndianRestaurantNetherlandsPage({ params }: Props) 
       {/* Section 5: Halal catering */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Halal Indiaas Catering in Nederland'
               : 'Halal Indian Catering Across the Netherlands'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>
@@ -360,7 +360,7 @@ export default function HalalIndianRestaurantNetherlandsPage({ params }: Props) 
       {/* FAQ */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Veelgestelde Vragen - Halal Indiaas Restaurant Nederland'
               : 'Frequently Asked Questions - Halal Indian Restaurant Netherlands'}
@@ -372,7 +372,7 @@ export default function HalalIndianRestaurantNetherlandsPage({ params }: Props) 
       {/* Final CTA */}
       <section className="bg-[#1B2B5E] py-16 text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-4 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-4 leading-[1.4]">
             {isNl
               ? 'Reserveer een Tafel bij het Halal Indiaas Restaurant in Nederland'
               : 'Reserve a Table at the Halal Indian Restaurant in the Netherlands'}

@@ -120,30 +120,30 @@ export default function ZaalHurenPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Ruimte</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Ruimte</h3>
                 <p>Warme, Authentieke Indiaase eetruimte. Geen fluorescent licht. Geen plastic stoelen. Dit voelt als een plek waar je wil zijn.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Catering</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Catering</h3>
                 <p>Custom menu, vers eten, professionele serveerders. Je kiest wat je wilt, we bereiden het, we serveren het.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Setup</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Setup</h3>
                 <p>Tafels, stoelen, borden, bestek, servetten, tafeldecoraties - alles. We zorgen voor de details.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Faciliteren</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Faciliteren</h3>
                 <p>Parkeren beschikbaar. Toiletten. Muziek kan worden afgespeeld. Je feest voelt compleet.</p>
               </>
             ) : (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Space</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Space</h3>
                 <p>Warm, Authentic Indian dining space. No fluorescent lights. No plastic chairs. This feels like a place you want to be.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Catering</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Catering</h3>
                 <p>Custom menu, fresh food, professional servers. You choose what you want, we prepare it, we serve it.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Setup</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Setup</h3>
                 <p>Tables, chairs, plates, utensils, napkins, table decorations - everything. We look after the details.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Facilities</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Facilities</h3>
                 <p>Parking available. Toilets. Music can be played. Your celebration feels complete.</p>
               </>
             )}
@@ -153,7 +153,7 @@ export default function ZaalHurenPage({ params }: Props) {
 
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Zaal Huren FAQ' : 'Venue Hire FAQ'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />

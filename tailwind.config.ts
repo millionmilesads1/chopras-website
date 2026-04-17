@@ -12,13 +12,14 @@ const config: Config = {
         brand: {
           primary: '#1B2B5E',
           accent: '#D4AF37',
-          bg: '#FFFAF5',
+          bg: '#F7F8FC',
           text: '#1A1A1A',
           navy: '#0F1F4B',
         },
       },
       fontFamily: {
         heading: ['var(--font-cormorant)', 'Georgia', 'serif'],
+        vibes: ['var(--font-great-vibes)', 'cursive'],
         body: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
       },
     },

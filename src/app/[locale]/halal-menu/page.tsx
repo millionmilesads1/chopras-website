@@ -163,13 +163,13 @@ export default function HalalMenuPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Wat is het halal menu van Chopras Indian Restaurant Den Haag?'
               : 'What is the halal menu at Chopras Indian Restaurant Den Haag?'}
           </h2>
           {isNl ? (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               Chopras Indian Restaurant Den Haag aan <strong>Leyweg 986</strong> serveert een volledig halal
               gecertificeerd menu van 143 gerechten. Elke vleesleverancier is halal gecertificeerd. Kip, lam en
               schapen worden verwerkt in een uitsluitend halal keuken. Van{' '}
@@ -184,7 +184,7 @@ export default function HalalMenuPage({ params }: Props) {
               Open dinsdag tot en met zondag van 16:30 tot 22:30.
             </p>
           ) : (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               Chopras Indian Restaurant Den Haag at <strong>Leyweg 986</strong> serves a fully halal certified menu
               of 143 dishes. Every meat supplier is certified halal. Chicken, lamb and mutton are processed in a
               dedicated halal-only kitchen. From{' '}
@@ -210,12 +210,12 @@ export default function HalalMenuPage({ params }: Props) {
       {/* WHY HALAL CERTIFICATION IS DIFFERENT */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Waarom de halal certificering bij Chopras verder gaat'
               : 'Why halal certification at Chopras goes further'}
           </h2>
-          <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <>
                 <p>
@@ -284,10 +284,10 @@ export default function HalalMenuPage({ params }: Props) {
       {/* DISH CATEGORIES */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Elke categorie op het halal menu' : 'Every category on the halal menu'}
           </h2>
-          <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8">
+          <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed mb-8">
             {isNl ? (
               <>
                 Chopras serveert 143 gerechten verdeeld over 13 categorieen. Hieronder staat elke hoofdcategorie
@@ -310,7 +310,7 @@ export default function HalalMenuPage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {dishCategories.map((item) => (
               <div key={item.title} className="bg-white rounded-xl p-6 border-l-4 border-[#D4AF37]">
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">{item.title}</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">{item.title}</h3>
                 <p className="font-body text-[#1A1A1A] text-base leading-relaxed">{item.items}</p>
               </div>
             ))}
@@ -321,12 +321,12 @@ export default function HalalMenuPage({ params }: Props) {
       {/* TANDOOR SECTION */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Halal tandoori: de kleioven op 400 graden'
               : 'Halal tandoori: the clay oven at 400 degrees'}
           </h2>
-          <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <>
                 <p>
@@ -379,7 +379,7 @@ export default function HalalMenuPage({ params }: Props) {
       {/* HALAL CATERING */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl
               ? 'Halal catering voor evenementen in Den Haag'
               : 'Halal catering for events in Den Haag'}
@@ -433,12 +433,12 @@ export default function HalalMenuPage({ params }: Props) {
       {/* MIXED GROUPS: HALAL AND VEGAN */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Halal en vegetarisch in dezelfde ruimte'
               : 'Halal and vegetarian in the same room'}
           </h2>
-          <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <>
                 <p>
@@ -489,7 +489,7 @@ export default function HalalMenuPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Veelgestelde vragen over het halal menu'
               : 'Frequently asked questions about the halal menu'}
@@ -501,7 +501,7 @@ export default function HalalMenuPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16 text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl
               ? 'Eet met vertrouwen bij Chopras Indian Restaurant'
               : 'Dine with confidence at Chopras Indian Restaurant'}

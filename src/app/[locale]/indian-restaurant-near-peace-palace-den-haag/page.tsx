@@ -119,24 +119,24 @@ export default function IndianRestaurantPeacePalacePage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Friedespaleis Bezoeken</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Friedespaleis Bezoeken</h3>
                 <p>Het Friedespaleis staat op tien minuten rijden. Je kunt het bezoeken, en daarna naar Chopras gaan voor eten. Dit is een klassieke route voor bezoekers en werknemers.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Centrum Strandwandeling</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Centrum Strandwandeling</h3>
                 <p>Het centrum van Den Haag is dichtbij. Scheveningen strand is twintig minuten rijden. Je kunt wandelen, winkelieren, en als je honger hebt, kom je naar Chopras.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Werk in de Buurt</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Werk in de Buurt</h3>
                 <p>Veel kantoren zijn op Leyweg. Als je in de buurt werkt, ben je dicht bij Chopras voor diner na het werk.</p>
               </>
             ) : (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Visit Peace Palace</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Visit Peace Palace</h3>
                 <p>The Peace Palace is ten minutes drive away. You can visit it, and then come to Chopras for food. This is a classic route for visitors and employees.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">City Beach Walk</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">City Beach Walk</h3>
                 <p>The city centre of Den Haag is nearby. Scheveningen beach is twenty minutes drive. You can walk, shop, and when you are hungry, you come to Chopras.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Work Nearby</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Work Nearby</h3>
                 <p>Many offices are on Leyweg. If you work nearby, you are close to Chopras for dinner after work.</p>
               </>
             )}
@@ -146,7 +146,7 @@ export default function IndianRestaurantPeacePalacePage({ params }: Props) {
 
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Bezoeksinfo' : 'Visit Info'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />

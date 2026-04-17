@@ -127,10 +127,10 @@ export default function VeganMenuPage({ params }: Props) {
       {/* Main Intro */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Veganistisch Indiaas Eten in Den Haag Dat Echt Voldoet' : 'Vegan Indian Food Den Haag That Actually Satisfies'}
           </h2>
-          <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <>
                 <p>
@@ -180,11 +180,11 @@ export default function VeganMenuPage({ params }: Props) {
       {/* Dish Categories Grid */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Wat Staat Er op het Veganistische Menu?' : 'What Is on the Vegan Menu?'}
           </h2>
           {isNl ? (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed mb-8">
               Van linzencurry tot tandoorgegrilde{' '}
               <Link href={`${base}/soya-chaap-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">soya chaap</Link>,{' '}
               het veganistische menu beslaat elke gang van een volledige maaltijd.{' '}
@@ -192,7 +192,7 @@ export default function VeganMenuPage({ params }: Props) {
               en chana masala zijn de kerngerechten, maar het menu stopt daar niet.
             </p>
           ) : (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed mb-8">
               From lentil curry to tandoor-grilled{' '}
               <Link href={`${base}/soya-chaap-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">soya chaap</Link>,{' '}
               the vegan menu covers every course of a complete meal.{' '}
@@ -213,7 +213,7 @@ export default function VeganMenuPage({ params }: Props) {
               { title: 'Breads and Sides', items: 'Vegan naan, garlic naan, roti, papadum, plant-based raita' },
             ]).map((item) => (
               <div key={item.title} className="bg-[#F7F8FC] rounded-xl p-6 border-l-4 border-[#D4AF37]">
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">{item.title}</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">{item.title}</h3>
                 <p className="font-body text-[#1A1A1A] text-base leading-relaxed">{item.items}</p>
               </div>
             ))}
@@ -224,7 +224,7 @@ export default function VeganMenuPage({ params }: Props) {
       {/* Soya Chaap in the Tandoor — Dark Accent Section */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl ? 'Soya Chaap in de Tandoor: Plantaardig op Hoge Temperatuur' : 'Soya Chaap in the Tandoor: Plant-Based at High Temperature'}
           </h2>
           <div className="space-y-5 font-body text-white/80 text-lg leading-relaxed">
@@ -272,12 +272,12 @@ export default function VeganMenuPage({ params }: Props) {
       {/* GEO Block */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Heeft Chopras Indian Restaurant Veganistische Opties in Den Haag?'
               : 'Does Chopras Indian Restaurant Have Vegan Options in Den Haag?'}
           </h2>
-          <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <p>
                 Ja. Chopras Indian Restaurant op Leyweg 986, Den Haag, serveert een volledig veganistisch menu met meer dan tien plantaardige gerechten, waaronder{' '}
@@ -317,7 +317,7 @@ export default function VeganMenuPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Veelgestelde Vragen over het Veganistische Menu' : 'Frequently Asked Questions About the Vegan Menu'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
@@ -327,7 +327,7 @@ export default function VeganMenuPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl ? 'Reserveer een Tafel of Bestel Online' : 'Reserve a Table or Order Online'}
           </h2>
           <p className="text-white/80 text-lg font-body mb-8 max-w-2xl mx-auto">

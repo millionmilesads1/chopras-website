@@ -112,7 +112,7 @@ export default function AboutPage({ params }: Props) {
       {/* SECTION 1: The Mission */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'De Missie van Arun Chopra' : 'Arun Chopra - The Mission'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-6">
@@ -136,7 +136,7 @@ export default function AboutPage({ params }: Props) {
       {/* SECTION 2: The Kitchen */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Het Begrip van Authenticiteit' : 'The Definition of Authentic'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-6">
@@ -160,7 +160,7 @@ export default function AboutPage({ params }: Props) {
       {/* SECTION 3: The Restaurant */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Chopras in Den Haag' : 'Chopras in Den Haag'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-6">
@@ -184,7 +184,7 @@ export default function AboutPage({ params }: Props) {
       {/* CTA SECTION */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-8 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-8 leading-[1.4]">
             {isNl ? 'Ontdek Authentieke Indiase Keuken' : 'Discover Authentic Indian Food'}
           </h2>
           <p className="text-[#1A1A1A] text-lg mb-8 leading-relaxed">

@@ -90,7 +90,7 @@ export default function LocaleBlogPage({ params }: Props) {
             </span>
           </div>
           <h1
-            className="font-heading text-4xl md:text-5xl text-white mb-4 leading-tight"
+            className="font-vibes text-4xl md:text-5xl text-white mb-4 leading-tight"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
           >
             {tr.blog.heroH1}

@@ -64,10 +64,10 @@ export default function PrivacyPolicyPage({ params }: Props) {
       {/* HERO */}
       <section className="bg-white py-16 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h1 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Privacybeleid' : 'Privacy Policy'}
           </h1>
-          <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl
               ? 'Chopras Indian Restaurant respecteert uw privacy. Dit privacybeleid beschrijft hoe wij persoonsgegevens verzamelen, verwerken en beschermen conform de Algemene Verordening Gegevensbescherming (AVG).'
               : 'Chopras Indian Restaurant respects your privacy. This privacy policy describes how we collect, process, and protect your personal data in compliance with the General Data Protection Regulation (GDPR).'}

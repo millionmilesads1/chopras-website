@@ -182,7 +182,7 @@ export default function IndianRestaurantVoorburgPage({ params }: Props) {
 
       <section className="bg-[#F7F8FC] py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="font-heading text-2xl text-[#1B2B5E] mb-6">
+          <h3 className="font-vibes text-3xl text-[#C7A348] mb-6">
             {isNl ? 'Ook Nabij Den Haag' : 'Also Serving These Areas Near Den Haag'}
           </h3>
           <div className="flex flex-col sm:flex-row gap-4">

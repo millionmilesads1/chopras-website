@@ -147,11 +147,11 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
       {/* INTRO */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Indiaas Verjaardagseten in Den Haag' : 'Indian Birthday Catering in Den Haag'}
           </h2>
           {isNl ? (
-            <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <p>
                 De meeste verjaardagsgastheren brengen hun eigen feest door in de keuken. Eten opwarmen, containers controleren, gasten vragen om te wachten. Tegen de tijd dat het eten op tafel staat, is het moment al voorbij. Met Indiaas verjaardagseten van Chopras Indian Restaurant is dat verleden tijd.
               </p>
@@ -168,7 +168,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
               </p>
             </div>
           ) : (
-            <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <p>
                 Most birthday hosts spend their own party in the kitchen. Reheating food, checking containers, telling guests to wait. By the time the food is out, the moment has already passed. Indian birthday catering from Chopras Indian Restaurant changes that completely.
               </p>
@@ -191,13 +191,13 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
       {/* HOW IT WORKS */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Hoe Verjaardagseten bij Chopras Werkt' : 'How Birthday Catering at Chopras Works'}
           </h2>
           {isNl ? (
-            <div className="space-y-8 font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <div className="space-y-8 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <div>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Stap 1 - Neem Contact Op</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Stap 1 - Neem Contact Op</h3>
                 <p>
                   Stuur ons een bericht of bel ons. Vertel ons de datum, het aantal gasten, en eventuele dieetwensen.{' '}
                   <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Halal gecertificeerd</Link>{' '}
@@ -207,7 +207,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
                 </p>
               </div>
               <div>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Stap 2 - Kies je Menu</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Stap 2 - Kies je Menu</h3>
                 <p>
                   We stellen een menu samen rond jouw viering. Biryani, curry&apos;s, tandoori schotels, brood, bijgerechten. Van 25 gasten tot 80, wij hebben evenementen van elke omvang verzorgd vanuit onze{' '}
                   <Link href={`${base}/feestzaal-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">feestzaal in Den Haag</Link>{' '}
@@ -215,16 +215,16 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
                 </p>
               </div>
               <div>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Stap 3 - Aanwezig en Genieten</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Stap 3 - Aanwezig en Genieten</h3>
                 <p>
                   Wij komen voor je gasten aan. Het eten staat warm en klaar. Jij begroet mensen, jij viert, jij geniet van de verjaardag. De jarige kan eindelijk zijn of haar eigen feest beleven zonder in de keuken te staan.
                 </p>
               </div>
             </div>
           ) : (
-            <div className="space-y-8 font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <div className="space-y-8 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <div>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Step 1 - Get in Touch</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Step 1 - Get in Touch</h3>
                 <p>
                   Send us a message or call us. Tell us the date, the number of guests, and any dietary requirements.{' '}
                   <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Halal certified</Link>{' '}
@@ -234,7 +234,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
                 </p>
               </div>
               <div>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Step 2 - Choose Your Menu</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Step 2 - Choose Your Menu</h3>
                 <p>
                   We build a menu around your celebration. Biryani, curries, tandoori platters, bread, sides. From 25 guests to 80, we have catered events of every size from our{' '}
                   <Link href={`${base}/feestzaal-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">private hall in Den Haag</Link>{' '}
@@ -242,7 +242,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
                 </p>
               </div>
               <div>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Step 3 - Arrive and Eat</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Step 3 - Arrive and Eat</h3>
                 <p>
                   We arrive before your guests do. The food is set up hot and ready. You greet people, you celebrate, you enjoy the birthday. The birthday person can finally experience their own party without standing in the kitchen.
                 </p>
@@ -255,11 +255,11 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
       {/* THE FOOD */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Wat Wij Naar je Verjaardag Brengen' : 'What We Bring to Your Birthday'}
           </h2>
           {isNl ? (
-            <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <p>
                 Het{' '}
                 <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige menu</Link>{' '}
@@ -277,7 +277,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
               </p>
             </div>
           ) : (
-            <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <p>
                 The{' '}
                 <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">full menu</Link>{' '}
@@ -301,7 +301,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
       {/* PROOF - DARK */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl
               ? 'Waarom 800+ Gasten Chopras Vertrouwen voor hun Feesten'
               : 'Why 800+ Guests Trust Chopras for Their Celebrations'}
@@ -339,13 +339,13 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Doet Chopras Indian Restaurant Verjaardagseten in Den Haag?'
               : 'Does Chopras Indian Restaurant Do Birthday Catering in Den Haag?'}
           </h2>
           {isNl ? (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               Ja. Chopras Indian Restaurant op Leyweg 986, Den Haag verzorgt{' '}
               <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indiaas verjaardagseten</Link>{' '}
               voor groepen van 25 tot 80 gasten. Het eten wordt bereid in de restaurantkeuken, warm bezorgd en opgezet op jouw locatie. Alle gerechten zijn{' '}
@@ -353,7 +353,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
               Chopras heeft een Google-beoordeling van 4.9 sterren van meer dan 800 recensies en bedient Den Haag, Rijswijk, Delft, Zoetermeer, Voorburg en Leidschendam. Het restaurant is open dinsdag tot en met zondag vanaf 16:30.
             </p>
           ) : (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               Yes. Chopras Indian Restaurant at Leyweg 986, Den Haag provides{' '}
               <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian birthday catering</Link>{' '}
               for groups of 25 to 80 guests. The food is prepared in the restaurant kitchen, delivered hot, and set up at your venue. All dishes are{' '}
@@ -367,7 +367,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
@@ -377,7 +377,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
       {/* CTA - DARK */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16 text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl ? 'Boek je Verjaardagseten in Den Haag' : 'Book Your Birthday Catering in Den Haag'}
           </h2>
           <p className="font-body text-white/80 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
@@ -405,7 +405,7 @@ export default function IndianBirthdayCateringPage({ params }: Props) {
       {/* OTHER CATERING OPTIONS */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4] text-center">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3] text-center">
             {isNl ? 'Andere Cateringmogelijkheden' : 'Other Catering Options'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">

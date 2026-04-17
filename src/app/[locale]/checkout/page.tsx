@@ -136,7 +136,7 @@ export default function CheckoutPage({ params }: { params: { locale: Locale } })
               onSubmit={handleSubmit}
               className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm"
             >
-              <h2 className="font-heading text-2xl text-[#1B2B5E]">Your Details</h2>
+              <h2 className="font-vibes text-3xl text-[#C7A348]">Your Details</h2>
               <div className="w-12 h-0.5 bg-[#D4AF37] mt-2 mb-8" />
 
               {/* Full Name */}

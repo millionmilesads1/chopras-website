@@ -129,10 +129,10 @@ export default function MuttonRoganJoshPage({ params }: Props) {
       {/* WHAT IS MUTTON ROGAN JOSH */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Wat is mutton rogan josh?' : 'What is Mutton Rogan Josh?'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>
@@ -165,26 +165,26 @@ export default function MuttonRoganJoshPage({ params }: Props) {
       {/* WHAT MAKES KASHMIRI ROGAN JOSH DIFFERENT */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Wat maakt Kasjmirische rogan josh anders?' : 'What Makes Kashmiri Rogan Josh Different?'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-8">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-8">
             {isNl ? (
               <>
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">De Kasjmiri chilipeper</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">De Kasjmiri chilipeper</h3>
                   <p>
                     Kasjmiri gedroogde rode chilipepers zijn mild van hitte en intens aromatisch. Ze kleuren de saus diep rood - niet oranje, niet bruin - maar diep karmozijn. Deze kleur komt niet van paprika en niet van kleurstof. Het komt van de specifieke chilipepervariëteit die in de vallei groeit. Bij Chopras komen deze chilipepers direct uit India. Er wordt niets vervangen door een lokaal alternatief.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Venkel en gedroogde gember</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Venkel en gedroogde gember</h3>
                   <p>
                     De meeste <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal lamscurrys in Den Haag</Link> gebruiken komijn en koriander als specerijenbasis. Authentieke rogan josh gebruikt venkel en sonth (gedroogde gember). Dit is het detail dat een Kasjmirische rogan josh onderscheidt van elke andere lamscurry. De venkel geeft een licht anijsaroma dat de hele saus optilt. Zonder venkel verliest het gerecht zijn regionale identiteit volledig.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Yoghurt, geen room</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Yoghurt, geen room</h3>
                   <p>
                     <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Butter chicken</Link> gebruikt room. Rogan josh gebruikt yoghurt. Dit is niet uitwisselbaar. Yoghurt geeft de saus een lichte zurigheid die door de rijkheid van het lam heen snijdt en het gerecht in balans houdt. Room maakt de saus zoeter en zwaarder. Het een is Kasjmirisch. Het ander niet.
                   </p>
@@ -193,19 +193,19 @@ export default function MuttonRoganJoshPage({ params }: Props) {
             ) : (
               <>
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">The Kashmiri Chilli</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">The Kashmiri Chilli</h3>
                   <p>
                     Kashmiri dried red chillies are mild in heat and intensely aromatic. They turn the sauce deep red - not orange, not brown - deep crimson. This colour is not from paprika. It is not from food colouring. It is from the specific variety of chilli that grows in the Kashmir valley. At Chopras, these chillies are sourced directly from India. Nothing is substituted with a local equivalent.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Fennel and Dried Ginger</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Fennel and Dried Ginger</h3>
                   <p>
                     Most <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal lamb curries in Den Haag</Link> use cumin and coriander as their spice base. Authentic rogan josh uses fennel and sonth (dried ginger). This is the detail that separates a Kashmiri rogan josh from every other lamb curry. The fennel gives a faint anise note that lifts the entire sauce. Without it, the dish loses its regional identity entirely.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Yoghurt, Not Cream</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Yoghurt, Not Cream</h3>
                   <p>
                     <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Butter chicken</Link> uses cream. Rogan josh uses yoghurt. These are not interchangeable. Yoghurt gives the sauce a faint sourness that cuts through the richness of the lamb and keeps the dish in balance. Cream makes it sweeter and heavier. One is Kashmiri. One is not.
                   </p>
@@ -219,10 +219,10 @@ export default function MuttonRoganJoshPage({ params }: Props) {
       {/* ROGAN JOSH AT CHOPRAS */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Mutton rogan josh bij Chopras Indian Restaurant Den Haag' : 'Mutton Rogan Josh at Chopras Indian Restaurant Den Haag'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>
@@ -255,7 +255,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#1B2B5E] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl
               ? 'Waar vind ik authentieke lamsvlees rogan josh in Den Haag?'
               : 'Where Can I Find Authentic Mutton Rogan Josh in Den Haag?'}
@@ -277,7 +277,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Veelgestelde vragen over rogan josh' : 'Questions About Mutton Rogan Josh'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
@@ -287,7 +287,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
       {/* ORDER */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Rogan josh bestellen bij Chopras' : 'Order Rogan Josh at Chopras'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -340,7 +340,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
       {/* EXPLORE MORE */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Meer gerechten ontdekken' : 'Explore More Dishes'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -362,12 +362,12 @@ export default function MuttonRoganJoshPage({ params }: Props) {
             </Link>
           </div>
           <div className="text-center space-y-4">
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
                 {isNl ? 'Chopras Indian Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}
               </Link>
             </p>
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               {isNl
                 ? <>Bekijk het <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige menu</Link> of <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">maak een reservering bij Chopras Indian Restaurant Den Haag</Link>.</>
                 : <>View the <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">full menu</Link> or <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">book a table at Chopras Indian Restaurant Den Haag</Link>.</>

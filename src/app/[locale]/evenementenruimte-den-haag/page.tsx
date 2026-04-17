@@ -120,30 +120,30 @@ export default function EvenementenruimtePage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Bedrijfsdinners</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Bedrijfsdinners</h3>
                 <p>Je wilt je team of klanten in een relaxed omgeving samen laten zijn. Indiaas eten ontspant mensen. Ze praten meer. Ze lachen meer. Ze voelen zich minder stijf in het pak.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Personeelsfeesten</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Personeelsfeesten</h3>
                 <p>Je personeel werkt hard. Ze verdienen iets speciaals. Indiaas eten zegt &quot;we appreciate you&quot; beter dan veel andere dingen. Ze voelen dat.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Launches</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Launches</h3>
                 <p>Je wilt een product launch, bedrijf opening, of ander groot moment. Je wilt dat het voelt speciaal. Dat eten memorabel is. Dat gasten het over hebben. Chopras is hoe je dat doet.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Training en Workshops</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Training en Workshops</h3>
                 <p>Je hebt een dag training. Je wilt dat je deelnemers energiek en blij blijven. Goed eten helpt. Onze evenementenruimte heeft alles wat je nodig hebt voor een volledige dag.</p>
               </>
             ) : (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Corporate Dinners</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Corporate Dinners</h3>
                 <p>You want your team or clients to be together in a relaxed setting. Indian food relaxes people. They talk more. They laugh more. They feel less stiff in their suits.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Staff Celebrations</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Staff Celebrations</h3>
                 <p>Your staff works hard. They deserve something special. Indian food says &quot;we appreciate you&quot; better than many other things. They feel that.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Launches</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Launches</h3>
                 <p>You have a product launch, business opening, or other big moment. You want it to feel special. For the food to be memorable. For guests to talk about it. Chopras is how you do that.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Training and Workshops</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Training and Workshops</h3>
                 <p>You have a day of training. You want your participants to stay energised and happy. Good food helps. Our event space has everything you need for a full day.</p>
               </>
             )}
@@ -153,7 +153,7 @@ export default function EvenementenruimtePage({ params }: Props) {
 
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Event FAQ' : 'Event FAQ'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />

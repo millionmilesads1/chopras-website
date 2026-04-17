@@ -119,30 +119,30 @@ export default function IndianRestaurantCentraalPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Met Tram</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Met Tram</h3>
                 <p>Van Centraal Station kun je tram nemen. Uitstappen bij Leyweg. Chopras is aan het einde van de straat. Vijftien minuten totaal.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Met Bus</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Met Bus</h3>
                 <p>Verschillende buslijnen gaan naar Leyweg. Je kunt erop stappen, je bent er in twintig minuten.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Met Auto</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Met Auto</h3>
                 <p>Driving van het station: tien minuten. Parkeren is beschikbaar. Gemakkelijk.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Delivery</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Delivery</h3>
                 <p>Wil je niet naar buiten gaan? We bezorgen. Bestellen online, we bezorgen op Leyweg.</p>
               </>
             ) : (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">By Tram</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">By Tram</h3>
                 <p>From Central Station you can take the tram. Get off at Leyweg. Chopras is at the end of the street. Fifteen minutes total.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">By Bus</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">By Bus</h3>
                 <p>Various bus lines go to Leyweg. You get on, you are there in twenty minutes.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">By Car</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">By Car</h3>
                 <p>Driving from the station: ten minutes. Parking is available. Easy.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Delivery</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Delivery</h3>
                 <p>Do not want to go out? We deliver. Order online, we deliver to Leyweg.</p>
               </>
             )}
@@ -152,7 +152,7 @@ export default function IndianRestaurantCentraalPage({ params }: Props) {
 
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Bezoekers FAQ' : 'Visitor FAQ'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />

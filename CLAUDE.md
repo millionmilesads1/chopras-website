@@ -299,12 +299,18 @@ Meta: Indian street food Den Haag at Chopras Indian Restaurant. Pani puri, chaat
 ## BRAND STYLING STANDARDS - MANDATORY ON ALL PAGES
 
 ### Headings - always use these exact classes
-- H2: font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]
-- H3: font-heading text-2xl text-[#1B2B5E] mb-4
-- NEVER use font-bold alone for headings - font-bold is a body font weight
+- H2 (light/white bg): font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]
+- H2 (navy bg):        font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]
+- H3 (light/white bg): font-vibes text-3xl md:text-4xl text-[#C7A348] mb-4 leading-[1.3]
+- H3 (navy bg):        font-vibes text-3xl md:text-4xl text-white mb-4 leading-[1.3]
+- H4 (light/white bg): font-vibes text-2xl md:text-3xl text-[#C7A348] mb-3 leading-[1.3]
+- H4 (navy bg):        font-vibes text-2xl md:text-3xl text-white mb-3 leading-[1.3]
+- NEVER use font-heading or font-bold alone for H2/H3/H4
+- NEVER use text-[#1B2B5E] on any heading on a light/white background
 
 ### Body Text
-- Standard paragraph: font-body text-[#1A1A1A] text-lg leading-relaxed
+- Light bg paragraphs: font-body text-[#1A1A1A]/70 text-lg leading-relaxed
+- Navy bg paragraphs:  font-body text-white/85 text-lg leading-relaxed
 
 ### Section Wrappers
 - Standard: py-20 px-6 md:px-16

@@ -174,12 +174,12 @@ export default function CorporateEventsPage({ params }: Props) {
       {/* WHY DEN HAAG */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Waarom Den Haag de Zakelijke Evenementenhoofdstad van Nederland Is'
               : 'Why Den Haag Is the Corporate Event Capital of the Netherlands'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>Den Haag is niet alleen de zetel van de Nederlandse overheid - het is een van de internationaal meest geconcentreerde steden van Europa. Meer dan 150 ambassades. <Link href={`${base}/indian-restaurant-near-peace-palace-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Het Internationaal Gerechtshof</Link>. <Link href={`${base}/indian-restaurant-near-peace-palace-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Het Vredespaleis</Link>. De hoofdkwartieren van Europol, de OPCW en het ICC. Honderden NGO&apos;s en internationale organisaties met personeel van over de hele wereld aan dezelfde tafel.</p>
@@ -200,12 +200,12 @@ export default function CorporateEventsPage({ params }: Props) {
       {/* WHY CHOPRAS - PROOF SECTION */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Waarom Zakelijke Klanten Kiezen voor Chopras Indian Restaurant'
               : 'Why Corporate Clients Choose Chopras Indian Restaurant'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>Het kortste antwoord is consistentie. Wanneer u zakelijke catering in Den Haag boekt, is de zorg niet of het eten op de dag goed smaakt. De zorg is of het zo goed smaakt als de offerte beloofde. Chopras Indian Restaurant heeft 4,9 sterren van meer dan 800 geverifieerde Google-reviews. Die beoordeling komt van gewone gasten en van zakelijke klanten die groepen van 30, 50 en 80 personen boeken. De keuken hanteert geen aparte standaard voor evenementen.</p>
@@ -228,7 +228,7 @@ export default function CorporateEventsPage({ params }: Props) {
       {/* EVENT TYPE CARDS */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4] text-center">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3] text-center">
             {isNl ? 'Soorten Zakelijke Evenementen die Wij Cateren' : 'Types of Corporate Events We Cater'}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
@@ -246,12 +246,12 @@ export default function CorporateEventsPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Verzorgt Chopras Indian Restaurant Zakelijke Evenementen in Den Haag?'
               : 'Does Chopras Indian Restaurant Handle Corporate Events in Den Haag?'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <p>Ja. Chopras Indian Restaurant op Leyweg 986, Den Haag verzorgt zakelijke evenementen en professionele catering voor groepen van 15 tot 80 gasten. Het restaurant is volledig halal gecertificeerd, met vegetarische en veganistische opties in het <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige menu van 143 gerechten</Link>. Chopras cateert teamdiners, <Link href={`${base}/indian-restaurant-near-peace-palace-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">diplomatieke recepties bij het Vredespaleis</Link>, conferentiediners en productlanceringen in de eigen privézaal en op externe locaties door Den Haag. Beoordeeld met 4,9 sterren op Google. Open dinsdag tot en met zondag vanaf 16:30.</p>
             ) : (
@@ -264,7 +264,7 @@ export default function CorporateEventsPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Veelgestelde Vragen over Zakelijke Catering in Den Haag'
               : 'Frequently Asked Questions about Corporate Catering in Den Haag'}

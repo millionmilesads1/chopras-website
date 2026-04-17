@@ -147,10 +147,10 @@ export default function ChaatPage({ params }: Props) {
       {/* WHAT IS CHAAT */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Wat Is Chaat? Mumbais Straatvoedsel in Jouw Handen' : 'What Is Chaat? Mumbai Street Food in Your Hands'}
           </h2>
-          <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <>
                 <p>Chaat Den Haag is geen enkel gerecht. Het is een hele categorie van Indiaas straatvoedsel: papdi chaat, aloo tikki, <Link href={`${base}/pani-puri-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">pani puri</Link>, dahi puri. Wat ze gemeen hebben is de manier waarop ze smaken: zuur en zoet tegelijk, krokant en romig in dezelfde hap, pittig maar nooit overweldigend. Chaat is voedsel dat alle zintuigen tegelijk aanspreekt. Het is niet iets wat je rustig opeet. Het is iets wat je proeft, voelt en onthoudt.</p>
@@ -173,51 +173,51 @@ export default function ChaatPage({ params }: Props) {
       {/* OUR CHAAT SPECIALITIES */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'De Chaat-Specialiteiten bij Chopras Indian Restaurant' : 'The Chaat Specialities at Chopras Indian Restaurant'}
           </h2>
-          <div className="space-y-10 font-body text-[#1A1A1A] text-lg leading-relaxed">
+          <div className="space-y-10 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
             {isNl ? (
               <>
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Papdi Chaat</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Papdi Chaat</h3>
                   <p>Papdi chaat begint met papdi: dunne, krokante wafers van bloem, gebakken tot ze perfect breekbaar zijn. Daarop komen gekookte kikkererwten en gekruide aardappel, gevolgd door twee chutneys tegelijk. Tamarinde chutney voor het zure en zoete. Muntchutney voor het frisse. Dan de koele yoghurt. Dan chaat masala en zwart zout als afsluiting. Elk element heeft een functie. Niets is decoratief. Wanneer je een hap neemt, breekt alles tegelijk: krokant, romig, zuur, zoet, pittig in één seconde. Dit is waarom papdi chaat het meest bestelde gerecht op onze chaat-kaart is.</p>
                 </div>
 
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Aloo Tikki</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Aloo Tikki</h3>
                   <p>Aloo tikki is een klein aardappelkoekje - maar beschrijf het zo en je doet het tekort. Het is aardappel gemengd met groene chili, gember en verse specerijen, gevormd in een schijf en gebakken in hete olie tot de buitenkant goud en knapperig is terwijl het midden zacht blijft. Geserveerd op papdi met tamarinde en korianderchutneys, koele dahi er bovenop en een royale bestrooing van chaat masala. <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Vegetarisch Indiaas eten in Den Haag</Link> bereikt hier zijn hoogtepunt. Aloo tikki is straatvoedsel dat mensen terugbrengt naar de kindertijd, in elke stad in India.</p>
                 </div>
 
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Dahi Puri</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Dahi Puri</h3>
                   <p>Dahi puri is een holle puri, gebakken tot hij perfect krokant is, gevuld van binnenuit. Aardappel, kikkererwten, tamarinde chutney, muntchutney en dan een volle lepel koele yoghurt als afsluiting. Het contrast is het punt: de warmte van de specerijen tegenover de koelte van de dahi, de knapperigheid van de puri tegenover de zachtheid van de vulling. Afgewerkt met chaat masala en rode chilipoeier. Dit is chaat die je net zoveel voelt als proeft. Dahi puri is volledig <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal gecertificeerd</Link>, net als alle gerechten bij Chopras.</p>
                 </div>
 
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Pani Puri</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Pani Puri</h3>
                   <p>Pani puri is de meest directe chaat-ervaring. Een holle, krokante bol. Een gat bovenin geprikt. Gevuld met gekruide aardappel, kikkererwten en een lepel pani: het speciale tamarinde- en muntwater dat in één seconde naar binnen glijdt. Één hap. Het barst open in je mond: zoet, zuur, pittig, alles tegelijk. Je kunt het moeilijk rustig eten. Dat is precies het punt. Bekijk onze volledige <Link href={`${base}/pani-puri-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">pani puri-pagina</Link> voor meer over dit iconische gerecht.</p>
                 </div>
               </>
             ) : (
               <>
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Papdi Chaat</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Papdi Chaat</h3>
                   <p>Papdi chaat starts with papdi: thin, crispy wafers made from flour, fried until perfectly brittle. On top go cooked chickpeas and spiced potato, followed by two chutneys at once. Tamarind chutney for the sour and sweet. Mint chutney for the brightness. Then the cold yoghurt. Then chaat masala and black salt as the finish. Every element has a function. Nothing is decorative. When you take a bite, everything breaks at once: crispy, creamy, sour, sweet, spiced in a single second. This is why papdi chaat is the most ordered item on our chaat menu.</p>
                 </div>
 
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Aloo Tikki</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Aloo Tikki</h3>
                   <p>Aloo tikki is a small potato patty - but describe it that way and you do it a disservice. It is potato mixed with green chilli, ginger and fresh spices, shaped into a disc and fried in hot oil until the outside is golden and crisp while the centre stays soft. Served on papdi with tamarind and coriander chutneys, cool dahi on top, and a generous dusting of chaat masala. <Link href={`${base}/blog/vegetarian-indian-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Vegetarian Indian food in Den Haag</Link> reaches its peak here. Aloo tikki is street food that takes people back to childhood, in every city across India.</p>
                 </div>
 
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Dahi Puri</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Dahi Puri</h3>
                   <p>Dahi puri is a hollow puri, fried until perfectly crisp, filled from the inside. Potato, chickpeas, tamarind chutney, mint chutney and then a full spoon of cold yoghurt as the finish. The contrast is the point: the heat of the spices against the coolness of the dahi, the crunch of the puri against the softness of the filling. Finished with chaat masala and red chilli powder. This is chaat you feel as much as taste. Dahi puri is fully <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal certified</Link>, like every dish at Chopras.</p>
                 </div>
 
                 <div>
-                  <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">Pani Puri</h3>
+                  <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">Pani Puri</h3>
                   <p>Pani puri is the most direct chaat experience. A hollow, crispy shell. A hole punched in the top. Filled with spiced potato, chickpeas and a spoon of pani: the special tamarind and mint water that goes down in one gulp. One bite. It bursts in your mouth: sweet, sour, spicy, everything at once. You cannot eat it slowly. That is precisely the point. See our dedicated <Link href={`${base}/pani-puri-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">pani puri page</Link> for more on this iconic dish.</p>
                 </div>
               </>
@@ -229,7 +229,7 @@ export default function ChaatPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl
               ? 'Waar Vind Je Authentieke Chaat en Indiaas Straatvoedsel in Den Haag?'
               : 'Where Can You Find Authentic Chaat and Indian Street Food in Den Haag?'}
@@ -247,7 +247,7 @@ export default function ChaatPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Veelgestelde Vragen Over Chaat' : 'Frequently Asked Questions About Chaat'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
@@ -257,10 +257,10 @@ export default function ChaatPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Proef de Chaat-Selectie bij Chopras in Den Haag' : 'Taste the Chaat Selection at Chopras in Den Haag'}
           </h2>
-          <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8">
+          <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed mb-8">
             {isNl ? (
               <>
                 Chaat is voedsel dat je deelt. Bestel een selectie voor de tafel en laat iedereen proeven. Bezoek Chopras Indian Restaurant op Leyweg 986, open van dinsdag tot zondag van 16:30 tot 22:30. Bekijk het{' '}
@@ -305,7 +305,7 @@ export default function ChaatPage({ params }: Props) {
       {/* INTERNAL LINKS */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

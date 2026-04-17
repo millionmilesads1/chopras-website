@@ -624,13 +624,13 @@ export default function LocaleCateringPage({ params }: Props) {
       {/* GEO BLOCK — bg-white */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Verzorgt Chopras Indian Restaurant Catering in Den Haag?'
               : 'Does Chopras Indian Restaurant Do Catering in Den Haag?'}
           </h2>
           {isNl ? (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed mb-8">
               Ja. Chopras Indian Restaurant verzorgt volledige Indiase catering in Den Haag en omgeving, waaronder Rijswijk, Delft, Zoetermeer, Voorburg en Leidschendam. Vanuit Leyweg 986, Den Haag, verzorgen wij{' '}
               <Link href={`${base}/bruiloft-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">bruiloften</Link>
               , nikah-recepties,{' '}
@@ -646,7 +646,7 @@ export default function LocaleCateringPage({ params }: Props) {
               . Open dinsdag tot en met zondag, 16:30 tot 22:30.
             </p>
           ) : (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed mb-8">
               Yes. Chopras Indian Restaurant provides full Indian catering in Den Haag and surrounding areas, including Rijswijk, Delft, Zoetermeer, Voorburg, and Leidschendam. Based at Leyweg 986, Den Haag, Chopras caters{' '}
               <Link href={`${base}/indian-wedding-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">weddings</Link>
               , nikah receptions,{' '}

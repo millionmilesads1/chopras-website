@@ -133,12 +133,12 @@ export default function NaanPage({ params }: Props) {
       {/* THE 400-DEGREE DIFFERENCE */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'De 400 Graden Kleioven Die Alles Verandert'
               : 'The 400-Degree Clay Oven That Changes Everything'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>De meeste naan die u in Den Haag hebt gegeten, is gebakken in een gewone oven op ongeveer 250 graden. Dat proeft u. Het komt zacht, bleek en deegachtig naar buiten. Geen verkoling aan de randen. Geen treksterkte. Geen rook. Dat is geen naan brood. Dat is een plat brood dat naast warmte heeft gelegen.</p>
@@ -159,12 +159,12 @@ export default function NaanPage({ params }: Props) {
       {/* SIX TYPES OF NAAN */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Zes Soorten Naan op het Menu van Chopras'
               : 'Six Types of Naan on the Chopras Menu'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>De tandoor maakt variaties mogelijk. Zodra u de hitte en de techniek in huis heeft, kunt u op de basis verder bouwen. Bij Chopras zijn er zes soorten naan beschikbaar elke avond van dinsdag tot zondag. Elke variant begint met hetzelfde deeg. Het verschil zit in de vulling, de afwerking, en de bestemming op het bord.</p>
@@ -193,10 +193,10 @@ export default function NaanPage({ params }: Props) {
       {/* HOW IT IS MADE */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Hoe Naan Wordt Gemaakt bij Chopras' : 'How Naan Is Made at Chopras'}
           </h2>
-          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-5">
+          <div className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed space-y-5">
             {isNl ? (
               <>
                 <p>Het deeg komt eerst. Bloem, yoghurt, zout, een kleine hoeveelheid olie. Gemengd en minimaal drie tot vier uur gerust. Te kort rusten geeft taaie naan. Dit is de stap die de meeste shortcuts overslaan, en de reden waarom naan van minder zorgvuldige keukens nooit goed aanvoelt in de mond.</p>
@@ -217,7 +217,7 @@ export default function NaanPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl
               ? 'Waar Kunt U Vers Naan Brood Krijgen in Den Haag?'
               : 'Where Can You Get Fresh Naan Bread in Den Haag?'}
@@ -235,7 +235,7 @@ export default function NaanPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Veelgestelde Vragen Over Naan' : 'Frequently Asked Questions About Naan'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
@@ -245,12 +245,12 @@ export default function NaanPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Naan Bestellen bij Chopras Indian Restaurant Den Haag'
               : 'Order Naan at Chopras Indian Restaurant Den Haag'}
           </h2>
-          <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8">
+          <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed mb-8">
             {isNl
               ? 'Naan is het brood dat u deelt. Het is het brood dat naast een curry hoort. Het is het brood dat naar India ruikt. Bezoek Chopras op Leyweg 986 in Den Haag, open dinsdag tot en met zondag vanaf 16:30. Bestel vers naan direct uit onze 400 graden tandoor.'
               : 'Naan is the bread you share. It is the bread that belongs beside a curry. It is the bread that smells like India. Visit Chopras at Leyweg 986 in Den Haag, open Tuesday to Sunday from 16:30. Order fresh naan directly from our 400-degree tandoor.'}
@@ -275,7 +275,7 @@ export default function NaanPage({ params }: Props) {
       {/* INTERNAL LINKS */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

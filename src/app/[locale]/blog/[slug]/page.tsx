@@ -160,7 +160,7 @@ export default function LocaleBlogPostPage({ params }: Props) {
       {relatedPosts.length > 0 && (
         <section className="bg-[#F7F8FC] py-16">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="font-heading text-2xl text-[#1B2B5E] mb-8">{tr.blog.relatedH2}</h2>
+            <h2 className="font-vibes text-3xl text-[#C7A348] mb-8">{tr.blog.relatedH2}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {relatedPosts.map((related) => (
                 <Link

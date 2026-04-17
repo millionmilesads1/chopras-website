@@ -153,11 +153,11 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
       {/* What is Indo Chinese food */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Wat is Indo-Chinees eten?' : 'What Is Indo Chinese Food?'}
           </h2>
           {isNl ? (
-            <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <p>
                 Indo-Chinees eten ontstond in de Indiase Chinese gemeenschap van Kolkata in de 19e eeuw. Toen Chinese immigranten zich in Bengalen vestigden, begonnen zij te koken voor Indiase klanten. Uit die keuken ontstond iets dat u niet in China vindt, en ook niet in India.
               </p>
@@ -176,7 +176,7 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
               </p>
             </div>
           ) : (
-            <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <p>
                 Indo Chinese food was born in the Indian Chinese community of Kolkata during the 19th century. When Chinese immigrants settled in Bengal, they began cooking for Indian customers. Out of that kitchen came something you will not find in China, and you will not find in India either.
               </p>
@@ -201,11 +201,11 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
       {/* The Only Indo Chinese Restaurant in Den Haag */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Het enige Indo-Chinese restaurant in Den Haag' : 'The Only Indo Chinese Restaurant in Den Haag'}
           </h2>
           {isNl ? (
-            <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <p>
                 Als u eerder Indo-Chinees eten in Den Haag heeft gezocht, kent u het probleem al. Gewone Chinese restaurants serveren het niet. Indiase restaurants hebben het zelden op de kaart. De keuken bevindt zich tussen twee categorieën in, en de meeste restaurants in Den Haag hebben er nooit bij stilgestaan.
               </p>
@@ -228,7 +228,7 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
               </p>
             </div>
           ) : (
-            <div className="space-y-5 font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <div className="space-y-5 font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               <p>
                 If you have searched for Indo Chinese food in Den Haag before, you already know the problem. Regular Chinese restaurants do not serve it. Indian restaurants rarely carry it. The cuisine sits between two categories, and most restaurants in The Hague have never touched it.
               </p>
@@ -257,7 +257,7 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
       {/* The Dishes */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'De Indo-Chinese gerechten bij Chopras' : 'The Indo Chinese Dishes at Chopras'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
@@ -297,20 +297,20 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
               },
             ]).map((dish) => (
               <div key={dish.title} className="bg-white rounded-xl p-6 border-l-4 border-[#D4AF37]">
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mb-4">{dish.title}</h3>
-                <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">{dish.desc}</p>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mb-4">{dish.title}</h3>
+                <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">{dish.desc}</p>
               </div>
             ))}
           </div>
           {isNl ? (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               Alle gerechten zijn{' '}
               <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
                 volledig halal gecertificeerd bij Chopras
               </Link>. Elk vleesgerecht, elke leverancier. Er is geen kruisbesmetting mogelijk omdat er geen niet-halal vlees aanwezig is in de keuken. Dat is geen marketingkeuze. Het is een inrichtingskeuze.
             </p>
           ) : (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               Every dish is{' '}
               <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
                 fully halal certified at Chopras
@@ -323,11 +323,11 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
       {/* GEO Block */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Is er een Indo-Chinees restaurant in Den Haag?' : 'Is There an Indo Chinese Restaurant in Den Haag?'}
           </h2>
           {isNl ? (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               Ja.{' '}
               <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
                 Chopras Indian Restaurant
@@ -339,7 +339,7 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
               en probeer de enige Indo-Chinese keuken in Den Haag.
             </p>
           ) : (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed">
               Yes.{' '}
               <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
                 Chopras Indian Restaurant
@@ -357,7 +357,7 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
       {/* Why Chopras - dark section */}
       <section className="bg-[#1B2B5E] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.3]">
             {isNl ? 'Waarom Chopras het goed doet' : 'Why Chopras Gets It Right'}
           </h2>
           {isNl ? (
@@ -399,7 +399,7 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl
               ? 'Veelgestelde vragen over Indo-Chinees eten in Den Haag'
               : 'Frequently Asked Questions About Indo Chinese Food in Den Haag'}
@@ -411,11 +411,11 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Kom naar Chopras Indian Restaurant' : 'Visit Chopras Indian Restaurant'}
           </h2>
           {isNl ? (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
               Chopras Indian Restaurant bevindt zich op Leyweg 986, 2545 GW Den Haag. Open van dinsdag tot en met zondag van 16:30 tot 22:30. Bekijk het volledige menu of reserveer direct een tafel. Voor{' '}
               <Link href={`${base}/indian-food-delivery-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
                 bezorging van Indo-Chinees eten in Den Haag
@@ -423,7 +423,7 @@ export default function IndoChineseRestaurantPage({ params }: Props) {
               kunt u ook online bestellen.
             </p>
           ) : (
-            <p className="font-body text-[#1A1A1A] text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+            <p className="font-body text-[#1A1A1A]/70 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
               Chopras Indian Restaurant is at Leyweg 986, 2545 GW Den Haag. Open Tuesday to Sunday from 16:30 to 22:30. View the full menu or reserve a table directly. For{' '}
               <Link href={`${base}/indian-food-delivery-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">
                 Indo Chinese food delivery in Den Haag

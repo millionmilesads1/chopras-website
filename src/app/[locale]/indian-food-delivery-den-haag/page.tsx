@@ -138,24 +138,24 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Currys</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Currys</h3>
                 <p>Kip tikka masala. Dal makhani. Mutton rogan josh. Soya chaap. Aloo gobi. Paneer dishes. Al onze currys worden van scratch gemaakt met verse ginger-garlic paste, hele kruiden, en geen pakjes of bakjes. Ze zijn warm, vol smaak, en ze wachten niet op jou.</p>
 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Biryani</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Biryani</h3>
                 <p>Kip biryani. Lamsvlees biryani. Groente biryani. Dit is gefijnde basmati rijst, langzaam gekookt met gemarineerd vlees en geurige kruiden. Als je nog nooit echte biryani hebt gegeten, of je hebt het alleen uit een restaurant gekend waar het voelt als natte rijst met vlees, je bent niet klaar voor wat wij doen.</p>
 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Breads</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Breads</h3>
                 <p>Naan. Roti. Paratha. Alles uit onze tandoor. Niets uit een pan met boter. Niet voorgebakken. Ze worden op je bestelling gemaakt en bezorgd terwijl ze nog warm zijn. Dit maakt het verschil.</p>
               </>
             ) : (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Curries</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Curries</h3>
                 <p>Chicken tikka masala. Dal makhani. Mutton rogan josh. Soya chaap. Aloo gobi. Paneer dishes. All our curries are made from scratch with fresh ginger - garlic paste, whole spices, and no packets or jars. They are warm, full of flavour, and they do not wait for you.</p>
 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Biryani</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Biryani</h3>
                 <p>Chicken biryani. Lamb biryani. Vegetable biryani. This is refined basmati rice, slowly cooked with marinated meat and fragrant spices. If you have never eaten real biryani, or you have only known it from a restaurant where it feels like wet rice with meat, you are not ready for what we do.</p>
 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Breads</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Breads</h3>
                 <p>Naan. Roti. Paratha. All from our tandoor. Nothing from a pan with butter. Not pre-baked. They are made on your order and delivered while they are still warm. This makes the difference.</p>
               </>
             )}
@@ -165,7 +165,7 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
 
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Veelgestelde Vragen over Bezorging' : 'Delivery Questions'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />

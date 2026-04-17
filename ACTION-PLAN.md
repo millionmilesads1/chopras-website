@@ -1,334 +1,257 @@
 # SEO Action Plan - Chopras Indian Restaurant
-**Generated:** 2026-04-05 | **Overall Score:** 73/100  (prior: 68/100, +5)
+**Generated:** 2026-04-17 | **Overall Score:** 73/100
 **Full findings:** FULL-AUDIT-REPORT.md
 
 ---
 
-## Critical - Fix Immediately (blocks rankings or causes active harm)
+## Critical — Fix Before Next Deploy
 
-### C1 - Replace the 240-frame canvas hero
-**File:** `src/components/sections/HeroSection.tsx`
-**Impact:** LCP, INP, network - the single biggest ranking risk on the site. Unchanged from prior audit.
-**What to do:** Replace the scroll-scrubbed canvas animation (240 JPEGs, 14 MB) with either:
-- A single `<Image priority sizes="100vw" />` for the hero image, or
-- A `<video autoPlay muted loop playsInline poster="/images/hero-poster.jpg">` (2-4 MB equivalent)
-If the scroll animation effect must be kept, at minimum: load frames 2-240 only after the `load` event and use a static `<Image priority>` as the visible placeholder during the load window. The canvas element is not a valid LCP candidate and 240 simultaneous network requests saturate bandwidth from byte zero. Also remove the inline `style` prop on the gradient overlay (CLAUDE.md rule violation) and replace with a Tailwind gradient class.
+### 1. Remove all "lunch" references from evenementenruimte-den-haag
+**File:** `src/app/[locale]/evenementenruimte-den-haag/page.tsx` lines 87, 101-107
+**Why:** Chopras has no lunch service (opens 16:30). These lines say "Lunches" and "Luncheons" in both EN and NL. An absolute CLAUDE.md rule violation. A visitor reading this may arrive expecting a lunch and find the restaurant closed.
+**Fix:** Replace with references to corporate dinners, evening receptions, and private evening events.
 
-### C2 - Fix `RESTAURANT.logo` URL in constants.ts
-**File:** `src/lib/constants.ts:31`
-**Impact:** Resolves broken schema logo on all Restaurant entities across the site; single-line change; propagates everywhere
-**What to do:** Change:
-```typescript
-logo: 'https://chopras.nl/wp-content/uploads/2025/11/Chopras-logo-main-500-x-300-px7.png',
+### 2. Fix About page Dutch branch — translate English copy to Dutch
+**File:** `src/app/[locale]/about/page.tsx` lines 144-148
+**Why:** The `isNl ? (` branch for "Het Begrip van Authenticiteit" renders identical English paragraphs in both locales. Dutch visitors at `/nl/about` get English body text. Bilingual architecture failure.
+**Fix:** Write Dutch translations for the three paragraphs (spice grinding, halal sourcing, daily vegetables).
+
+### 3. Fix `getCateringServiceSchema` invalid type
+**File:** `src/lib/schema.ts` line 319
+**Why:** `@type: 'FoodService'` does not exist in Schema.org. Google silently ignores this entire schema block. One-line fix with zero risk.
+**Fix:** Change `'FoodService'` to `'Service'`.
+
+### 4. Fix blog hreflang — single-language only
+**File:** `src/app/[locale]/blog/[slug]/page.tsx` lines 28-32
+**Why:** Dutch blog posts set `x-default: https://chopras.nl/blog` (the blog index page), not the post itself. This tells Google the default for a Dutch post is the blog index — semantically incorrect.
+**Fix:** For posts with no translated counterpart, set `x-default` to the post's own URL:
+```ts
+languages: {
+  [post.language]: getLocalizedUrl(post.language, `blog/${post.slug}`),
+  'x-default': getLocalizedUrl(post.language, `blog/${post.slug}`),
+},
 ```
-to:
-```typescript
-logo: 'https://chopras.nl/logo.png',
-```
-Then update `src/app/[locale]/page.tsx` lines 59 and 99 to use `RESTAURANT.logo` instead of the hardcoded WordPress URL. Once `schema.ts` factory is implemented (C5), all pages will pull from this constant automatically.
 
-### C3 - Create the missing OG image file
-**File:** `public/og/home-og.jpg` (does not exist)
-**Impact:** Every page and blog post currently serves a 404 to AI crawlers, social scrapers, and Google Rich Results validator
-**What to do:**
-1. Create the `public/og/` directory
-2. Add a 1200x630 px `home-og.jpg` (restaurant photo or branded image)
-3. Verify `src/app/[locale]/page.tsx` OG metadata references `/og/home-og.jpg` correctly
-4. As a follow-up, add per-post OG images to `blog-data.ts` and update `blog/[slug]/page.tsx:67`
+### 5. Fix 2-hop redirect chain for `/en/party-venue-den-haag`
+**File:** `next.config.mjs` line 20
+**Why:** Two 301 hops (config → middleware) waste crawl budget and dilute link equity.
+**Fix:** Change destination from `/en/feestzaal-den-haag` to `/feestzaal-den-haag` directly.
 
-### C4 - Fix Thuisbezorgd and Uber Eats business name (operator action required)
-**File:** `src/app/[locale]/indian-takeaway-den-haag/page.tsx:92-95`, `src/app/[locale]/menu/page.tsx:143`
-**Impact:** Local pack rankings - NAP mismatch is an active ranking suppressor; live conversion leak
-**What to do:**
-1. Operator must log into both Thuisbezorgd and Uber Eats dashboards and update business name to "Chopras Indian Restaurant"
-2. Obtain the new correct URLs from both platforms
-3. Update the hrefs in `indian-takeaway-den-haag/page.tsx:92-95` and `menu/page.tsx:143`
+### 6. Resolve party-venue-den-haag canonical conflict
+**Files:** `src/app/[locale]/party-venue-den-haag/page.tsx`, `src/app/sitemap.ts`, `next.config.mjs`
+**Why:** The page is indexable (no noindex), canonical points to itself, but it is not in the sitemap. The NL version redirects to feestzaal-den-haag but the EN root version does not.
+**Decision required:** Either add to sitemap (if the "party venue Den Haag" keyword is worth targeting as a separate page) OR add `robots: { index: false }` + add `/party-venue-den-haag` → `/feestzaal-den-haag` redirect to `next.config.mjs`.
 
-### C5 - Implement schema.ts factory (violates CLAUDE.md architecture)
-**File:** `src/lib/schema.ts` (currently `// placeholder`)
-**Impact:** Centralises all schema; eliminates 15+ hardcoded `aggregateRating` blocks; enables single-source updates
-**What to do:** Implement a central schema factory with at minimum:
-- `restaurantSchema(locale, overrides?)` - includes consistent `@id`, `url` using locale, all required fields from `RESTAURANT` constant including `aggregateRating` from a central config value
-- `breadcrumbSchema(items)` - BreadcrumbList
-- `faqPageSchema(faqs)` - FAQPage
-- `blogPostingSchema(post, locale)` - BlogPosting with correct logo URL, per-post OG image
-- `websiteSchema(locale)` - WebSite with `@id`, `inLanguage`, no SearchAction
-- `personSchema(options)` - Person with `@id: 'https://chopras.nl/#arun-chopra'`
-Then replace inline schema objects across all 15+ page files with imports from `schema.ts`. The `aggregateRating` should be a single config value in `constants.ts` updated in one place.
+### 7. Remove or correct generated-schema.json
+**File:** `generated-schema.json` (project root)
+**Why:** Contains broken `/en/` URLs, wrong geo coordinates, wrong rating (4.7/83 instead of 4.9/800), and "Founder and Head Chef" which CLAUDE.md explicitly prohibits. This file is a source of confusion and error.
+**Fix:** Delete the file, or update every field to match current `constants.ts` and `schema.ts` values.
+
+### 8. Fix layout-level hreflang
+**File:** `src/app/[locale]/layout.tsx` lines 67-72
+**Why:** Layout always emits `https://chopras.nl` and `https://chopras.nl/nl` as hreflang regardless of page. Any new page without its own `alternates` silently inherits homepage hreflang.
+**Fix:** Remove the `alternates` block from layout `generateMetadata` entirely.
+
+### 9. Add FAQAccordion to About page (minimum 4 questions)
+**File:** `src/app/[locale]/about/page.tsx`
+**Why:** Zero FAQs — violates CLAUDE.md minimum. Also missing `getFaqPageSchema()` in JSON-LD.
+**Suggested questions:** Who founded Chopras Indian Restaurant? What are the opening hours? Is Chopras fully halal certified? Where is Chopras Indian Restaurant located?
+
+### 10. Fix evenementenruimte English meta description
+**File:** `src/app/[locale]/evenementenruimte-den-haag/page.tsx` lines 21-24
+**Why:** `descriptions.en` is set to Dutch text. English visitors receive a Dutch meta description.
+**Fix:** Set English description (154 chars): "Event venue Den Haag at Chopras Indian Restaurant. Private space for corporate events, celebrations and team dinners. Indian catering included. Get a quote."
+
+### 11. Reduce Catering page FAQ to maximum 6
+**File:** `src/app/[locale]/catering/page.tsx` lines 17-18
+**Why:** 17 FAQs in English (7 in NL). CLAUDE.md maximum is 6. Padded FAQ content is a September 2025 QRG red flag.
+**Fix:** Keep the 2 `cateringFaqs` + pick the 4 strongest `eventFaqs`. Trim NL to 6 as well.
+
+### 12. Fix all 9 meta descriptions outside 140-155 character range
+**File:** `src/lib/blog-data.ts` (7 posts), `src/app/[locale]/page.tsx` NL, `src/app/[locale]/diwali-dinner-den-haag/page.tsx` NL
+**Why:** Over-length descriptions get truncated or rewritten by Google. Under-length descriptions (diwali NL at 113 chars) leave SERP real estate unused.
+**Note:** The CLAUDE.md approved blog descriptions are also over the limit — the approved list needs updating alongside the code.
 
 ---
 
-## High - Fix Within One Week
+## High Priority — Fix Within 1 Week
 
-### H1 - Add `'Westland'` to homepage `areaServed` schema
-**File:** `src/app/[locale]/page.tsx:83`
-**Effort:** 1 minute
-Add `'Westland'` to the `areaServed` array. Westland is listed in `constants.ts:44` serviceAreas but absent from the schema array. Once `schema.ts` factory is implemented, this is resolved automatically via `RESTAURANT.serviceAreas.map(...)`.
+### 13. Add GEO blocks to the 30 pages that are missing them
+**Files:** See list of 30 pages in FULL-AUDIT-REPORT.md (GEO section)
+**Why:** 30 of 45 pages cannot be cited by ChatGPT, Perplexity, or Google AIO. This is the single largest AI citation gap on the site. High-value targets first: halal-food-den-haag, indian-wedding-catering-den-haag, all 6 location pages, vegan-menu, indo-chinese-restaurant-den-haag.
+**Template:** Use `butter-chicken-den-haag/page.tsx` GEO block as the reference implementation. Each block: full brand name, Leyweg 986, primary service, one verifiable fact, hours (Tuesday to Sunday 16:30 to 22:30), 2+ inline links, bilingual, 60-130 words, question-format H2.
 
-### H2 - Fix logo URL in homepage schema to use `public/logo.png`
-**Files:** `src/app/[locale]/page.tsx:59,99`
-**Effort:** 2 minutes
-Change both `image` and `logo` references from the WordPress CDN URL to `RESTAURANT.logo` (after C2 is done) or directly to `'https://chopras.nl/logo.png'`. The `public/logo.png` file already exists.
-
-### H3 - Make `hasMenu` URL locale-aware
-**File:** `src/app/[locale]/page.tsx`
-**Effort:** 5 minutes
-The `restaurantSchema` object is declared at module level and cannot access `locale`. Move the schema object inside the `LocaleHomePage` component function and change:
-```typescript
-hasMenu: 'https://chopras.nl/menu'
-```
-to:
-```typescript
-hasMenu: `${SITE_URL}/${locale}/menu`
-```
-Apply the same fix to `src/app/[locale]/butter-chicken-den-haag/page.tsx:43` and any other landing pages with a `hasMenu` property.
-
-### H4 - Add Monday-closed `OpeningHoursSpecification` to all schemas
-**Files:** `src/app/[locale]/page.tsx`, `contact/page.tsx`, `indian-restaurant-rijswijk/page.tsx`, `...delft...`, `...zoetermeer...`
-**Effort:** 10 minutes
-Add to the `openingHoursSpecification` array in every Restaurant schema:
-```typescript
-{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday'], opens: '00:00', closes: '00:00' }
-```
-Note: `contact/page.tsx` currently has no `openingHoursSpecification` at all - add the full spec there too.
-
-### H5 - Add `@id` to contact and catering page Restaurant schemas
-**Files:** `src/app/[locale]/contact/page.tsx:40`, `src/app/[locale]/catering/page.tsx:44`
-**Effort:** 5 minutes
-Add `'@id': 'https://chopras.nl/#restaurant'` to both blocks. This enables Google to treat all three Restaurant schema blocks as the same entity.
-
-### H6 - Change FoodEstablishment to Restaurant on catering page
-**File:** `src/app/[locale]/catering/page.tsx:46`
-**Effort:** 1 minute
-Change `'@type': 'FoodEstablishment'` to `'@type': 'Restaurant'`.
-
-### H7 - Add `@id` and `sameAs` to Arun Chopra Person schema
-**File:** `src/app/[locale]/page.tsx:124-132`, `src/app/[locale]/blog/[slug]/page.tsx:58`
-**Effort:** 10 minutes
-In the standalone Person block on the homepage, add:
-```typescript
-'@id': 'https://chopras.nl/#arun-chopra',
-sameAs: ['https://www.linkedin.com/in/arun-chopra'], // obtain real URL from operator
-```
-Apply the same `@id` to the author object in the BlogPosting schema. This allows Google to consolidate all Person references into one Knowledge Graph node.
-
-### H8 - Add CSP header to `next.config.mjs`
-**File:** `next.config.mjs`
-**Effort:** 10 minutes
-Start with a report-only policy to identify violations before enforcing:
-```javascript
-{ key: 'Content-Security-Policy-Report-Only', value: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; frame-src https://www.google.com https://maps.google.com;" }
-```
-Once violations are resolved, change to `Content-Security-Policy`.
-
-### H9 - Add visible author byline to blog posts
+### 14. Add GEO block to blog post template
 **File:** `src/app/[locale]/blog/[slug]/page.tsx`
-**Effort:** 10 minutes
-Add a visible byline in the article header section. Example:
-```tsx
-<p className="text-white/60 text-sm">By Arun Chopra, Founder</p>
-```
-Ideally wire this to a `post.author` field once `blog-data.ts` is updated (see H10).
+**Why:** All 5 blog posts are prime AI citation targets but have no self-contained restaurant data passage. The most efficient fix is a standardised GEO block in the shared template, below the article body.
 
-### H10 - Add `author` field to BlogPost type and data
-**Files:** `src/lib/blog-data.ts`, `src/types/index.ts` (if exists)
-**Effort:** 15 minutes
-Add `author: string` to the `BlogPost` type. Populate all 10 posts with `'Arun Chopra'`. Wire to both the visible byline (H9) and the BlogPosting schema `author.name`.
+### 15. Add explicit noindex to order-confirmation page
+**File:** `src/app/[locale]/order-confirmation/page.tsx`
+**Why:** No metadata export — may inherit `index: true` from layout default. Transactional confirmation pages should never be indexed.
+**Fix:** Add `export const metadata = { robots: { index: false, follow: false } }`.
 
-### H11 - Fix homepage schema `url` field to use locale-specific URL
-**File:** `src/app/[locale]/page.tsx:60`
-**Effort:** 2 minutes (requires schema to be inside component - see H3)
-Change `url: 'https://chopras.nl'` to `url: \`${SITE_URL}/${locale}\`` to match the canonical declared in `generateMetadata`.
+### 16. Fix homepage NL meta description
+**File:** `src/app/[locale]/page.tsx` line 49
+**Why:** Live NL meta is 157 chars (over limit) and starts with the brand name instead of the primary keyword.
+**Fix:** Replace with CLAUDE.md approved version: "Beste Indiaas restaurant Den Haag bij Chopras Indian Restaurant. Authentieke Noord-Indiaase keuken, volledig halal. Beoordeeld 4.9 sterren. Bezoek ons." (149 chars).
 
-### H12 - Increase coordinate precision to 5 decimal places
-**File:** `src/lib/constants.ts:11`
-**Effort:** 2 minutes (verify coordinates against GBP first)
-Change `lat: 52.0583, lng: 4.2932` to 5 decimal places (approximately `lat: 52.05831, lng: 4.29320`). Verify exact values against GBP dashboard coordinates. Propagates to all location page schemas automatically since they import `RESTAURANT.address.coordinates`.
-
-### H13 - Add dedicated location pages for Voorburg, Leidschendam, and Westland
-**What to do:** Create three new pages following the pattern at `src/app/[locale]/indian-restaurant-rijswijk/page.tsx`. Each needs unique local content, the practical info cards grid, cross-links to other area pages, and a Google Maps embed. Add each new slug to `sitemap.ts`. Update `Footer.tsx` `NEAR_YOU_LINKS` array to include all three.
-
-### H14 - Add `Cache-Control` header for `/public/images/`
+### 17. Add Content-Security-Policy header
 **File:** `next.config.mjs`
-**Effort:** 5 minutes
-Add a second headers rule:
-```javascript
-{
-  source: '/images/(.*)',
-  headers: [
-    { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }
-  ],
-}
-```
-This prevents repeat visitors re-downloading the 14 MB hero frame set on every visit.
+**Why:** CSP is absent from the five security headers set. Lighthouse flags it. Protects against XSS.
+**Fix:** Add at minimum: `default-src 'self'; script-src 'self' 'unsafe-inline'; frame-src https://www.google.com/maps/;`
+
+### 18. Fix "always open at midnight" and "deliver to Leyweg" errors on proximity pages
+**Files:** `src/app/[locale]/indian-restaurant-near-peace-palace-den-haag/page.tsx`, `src/app/[locale]/indian-restaurant-near-den-haag-centraal/page.tsx`
+**Why:** "Always open" implies 24-hour service (Chopras closes at 22:30). "We deliver to Leyweg" is backwards — delivery is FROM Leyweg to customers. Both are factual errors visible to visitors and Google.
+
+### 19. Add 4th FAQ to all 8 location and proximity pages
+**Files:** Delft, Rijswijk, Zoetermeer, Voorburg, Leidschendam, Westland, near-peace-palace, near-den-haag-centraal
+**Why:** All have only 3 FAQs — one below the CLAUDE.md minimum of 4.
+**Suggestion:** Add a delivery or catering question specific to each city's distance from Leyweg 986.
+
+### 20. Add `suitableForDiet` to main Restaurant and LocalBusiness schemas
+**File:** `src/lib/schema.ts` lines 78 and 130
+**Why:** Halal is the restaurant's primary differentiator. The main entity schema and all location-page schemas currently lack this signal.
+**Fix:** Add `suitableForDiet: ['https://schema.org/HalalDiet', 'https://schema.org/VegetarianDiet', 'https://schema.org/VeganDiet']` to both `getRestaurantSchema()` and `getLocalRestaurantSchema()`.
+
+### 21. Fix party-venue-den-haag schema — replace hardcoded values with constants
+**File:** `src/app/[locale]/party-venue-den-haag/page.tsx`
+**Why:** Hardcoded Maps URL uses wrong coordinates. Hardcoded rating duplicates code from `AGGREGATE_RATING`. Hardcoded `url` bypasses `SITE_URL`.
+**Fix:** Import `RESTAURANT`, `SAME_AS`, `AGGREGATE_RATING`, `SITE_URL` from constants/schema and use them in the inline `eventVenueSchema`.
+
+### 22. Fix homepage FAQ section H2 heading class
+**File:** `src/app/[locale]/page.tsx` line 285
+**Fix:** Replace `font-semibold text-4xl mb-6 leading-[1.4] [letter-spacing:0.02em] mt-2` with `font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]`.
+
+### 23. Expand three short FAQ answers in faq-data.ts
+**File:** `src/lib/faq-data.ts`
+**Why:** Three FAQ answers are 26-38 words — below the threshold for AI citation eligibility. These appear in homepage FAQPage schema.
+- "How spicy is your food": expand to describe heat levels per dish (butter chicken mild, rogan josh medium, chilli chicken hot)
+- "Is there a dress code": mention casual welcome and festival attire for cultural events
+- "Do you accept walk-ins": specify Friday/Saturday evenings as high-demand, Diwali/Eid as requiring advance booking
 
 ---
 
-## Medium - Fix Within One Month
+## Medium Priority — Fix Within 1 Month
 
-### M1 - Add halal certification body name
-**File:** `src/app/[locale]/halal-food-den-haag/page.tsx`, `src/lib/faq-data.ts`
-Name the actual Dutch halal certifier (HFC, HQC, ISWA Netherlands, or the body actually used). Add to visible content and as `hasCredential` or `additionalProperty` in schema. This is the single most impactful trust improvement for the halal audience segment.
+### 24. Rewrite near-peace-palace and near-den-haag-centraal as substantive location pages
+**Files:** Both proximity pages
+**Why:** Both pages are thin compared to Delft/Rijswijk. They lack city-specific hooks, demographic angles, and transport specifics. Target word count per section: match Delft (237 lines, 4-5 sections).
+- Peace Palace page: reference diplomatic community, ICC/ICJ visitor patterns, international courts staff
+- Centraal page: reference commuter patterns, intercity rail passengers, Randstad worker audience
 
-### M2 - Add `Content-Security-Policy` (enforce after report-only phase)
+### 25. Convert Catering service paragraphs to inline TSX with Link components
+**File:** `src/app/[locale]/catering/page.tsx` lines 174-175
+**Why:** `{tr.catering.serviceP1}` and `{tr.catering.serviceP2}` are plain translation strings — Links cannot be injected into JSON. CLAUDE.md requires Links in all 3+ sentence paragraphs.
+**Fix:** Move these two paragraphs from `en.json`/`nl.json` into inline TSX using the `isNl` conditional pattern.
+
+### 26. Fix menu page inline link classes
+**File:** `src/app/[locale]/menu/page.tsx` lines 171-287
+**Why:** ~20 links use `hover:underline` instead of the mandatory `hover:text-[#e8c84a] font-semibold`.
+**Fix:** Global find-replace `hover:underline transition-colors duration-200` → `hover:text-[#e8c84a] font-semibold` on this page.
+
+### 27. Add explicit Monday-closed to OpeningHoursSpecification
+**File:** `src/lib/schema.ts`
+**Why:** Monday is absent from the `OPENING_HOURS` array. Some parsers infer an unconstrained Monday.
+**Fix:** Add: `{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday'], opens: '00:00', closes: '00:00' }`.
+
+### 28. Add `dateModified` tracking to blog posts
+**Files:** `src/lib/blog-data.ts`, `src/lib/schema.ts` line 284
+**Why:** `dateModified` always equals `publishedAt`. Updated posts cannot signal freshness to Google AIO or Bing Copilot.
+**Fix:** Add optional `dateModified?: string` to `BlogPost` type. In `getBlogPostingSchema()`, use `post.dateModified ?? post.publishedAt`. Update the five existing posts with today's date if any content has been revised.
+
+### 29. Fix NL diwali-dinner meta — expand to 140+ characters
+**File:** `src/app/[locale]/diwali-dinner-den-haag/page.tsx`
+**Current:** 113 chars (under minimum by 27).
+
+### 30. Fix About page meta — write query-first version
+**File:** `src/app/[locale]/about/page.tsx` line 22
+**Why:** Current EN meta opens with "Meet Arun Chopra..." (brand-first). Primary keyword should appear in first 60 characters.
+**Suggested (155 chars):** "About Chopras Indian Restaurant Den Haag. Founded 2023 by Arun Chopra. Halal certified North Indian cuisine at Leyweg 986. Open Tuesday to Sunday."
+
+### 31. Fix "not for profit" claim on About page
+**File:** `src/app/[locale]/about/page.tsx` line 177
+**Why:** "not for profit" has legal meaning (non-profit entity). Misleading for a commercial restaurant.
+**Fix:** "A restaurant built on a single purpose: to bring authentic North Indian food to the Netherlands."
+
+### 32. Fix hover colour typo on halal-indian-restaurant-netherlands page
+**File:** `src/app/[locale]/halal-indian-restaurant-netherlands/page.tsx` line 352
+**Fix:** Change `hover:text-[#e8c48a]` to `hover:text-[#e8c84a]`.
+
+### 33. Fix Dutch FAQ possessive
+**File:** `src/lib/faq-data.ts` line 141
+**Fix:** "Den Haag's" → "een van de meest vegetarier-vriendelijke Indiaase restaurants in Den Haag."
+
+### 34. Fix English Rijswijk info card — add missing Parking entry
+**File:** `src/app/[locale]/indian-restaurant-rijswijk/page.tsx` line 159
+**Why:** English practical info array has 3 items; Dutch has 4. Parking card missing from EN.
+
+### 35. Add Google Maps embed to contact page
+**File:** `src/app/[locale]/contact/page.tsx`
+**Why:** No `<iframe>` embed found anywhere. Embedded map reinforces physical location signal and is standard GBP reinforcement for brick-and-mortar restaurants.
+
+### 36. Implement IndexNow
+**Where:** `public/` directory + deploy hook
+**Why:** New pages and content updates rely on sitemap polling (days to weeks for Bing/Yandex). IndexNow enables instant URL submission on publish.
+
+### 37. Add X-XSS-Protection header
 **File:** `next.config.mjs`
-After resolving violations from the report-only header (H8), switch to enforced CSP.
-
-### M3 - Expand biryani and tandoori pages to remove thin content
-**Files:** `src/app/[locale]/biryani-den-haag/page.tsx`, `src/app/[locale]/tandoori-den-haag/page.tsx`
-Both need 800+ words of editorial content:
-- Biryani: add visible FAQ section (FAQ schema already exists at lines 59-68 but is not rendered as HTML)
-- Tandoori: add a third editorial section on tandoor history or technique plus a rendered FAQ section
-
-### M4 - Add privacy policy and cookie policy pages
-Required under GDPR. Create `src/app/[locale]/privacy/page.tsx`. Link from footer in both `en.json` and `nl.json`. The site collects personal data via multiple GHL forms.
-
-### M5 - Fix blog hreflang `x-default` for Dutch-only posts
-**File:** `src/app/[locale]/blog/[slug]/page.tsx:29`
-When `post.language === 'nl'`, change `x-default` from `/en/blog` (listing) to the NL post URL.
-
-### M6 - Add `updatedAt` field to BlogPost type and surface in schema
-**Files:** `src/lib/blog-data.ts`, `src/app/[locale]/blog/[slug]/page.tsx:57`
-Add optional `updatedAt?: string` to BlogPost. Use it as `dateModified` when present. Without this, any content update is invisible to crawlers.
-
-### M7 - Centralise `aggregateRating` in `constants.ts`
-**File:** `src/lib/constants.ts`
-Add `rating: { value: '4.7', count: 83 }` and import into all schema blocks. Updates propagate from one file. Resolved automatically once schema.ts factory is implemented (C5).
-
-### M8 - Complete contact page schema
-**File:** `src/app/[locale]/contact/page.tsx:40-63`
-Add `openingHoursSpecification` (both open days and Monday-closed), `areaServed`, `servesCuisine`, and `suitableForDiet`. The contact page is typically the highest-traffic local landing page and deserves complete schema.
-
-### M9 - Fix allergen string localisation on menu page
-**File:** `src/app/[locale]/menu/page.tsx:110`
-Move the hardcoded "Allergen information available on request" string into `en.json` and `nl.json` and use `tr.menu.allergenRequest` (or equivalent key).
-
-### M10 - Remove `blur-sm` from scroll animations
-**Files:** `src/components/sections/WhySection.tsx:65`, `StorySection.tsx:21,60`, `FeaturedDishes.tsx`, and all other animated sections
-Replace `opacity-0 translate-y-8 blur-sm` / `opacity-100 translate-y-0 blur-none` with `opacity-0 translate-y-8` / `opacity-100 translate-y-0`. `filter: blur()` forces repaint on every animation frame.
-
-### M11 - Add `priority` prop to StorySection above-fold image
-**File:** `src/components/sections/StorySection.tsx:27-33`
-Add `priority` to the `<Image>` component to suppress `loading="lazy"` and inject a preload hint.
-
-### M12 - Audit and rewrite homeFaqs content
-**File:** `src/lib/faq-data.ts:3-128`
-- Fix American English spellings ("flavors" to "flavours", "cozy", "recognized")
-- Remove or verify: "Kids Menu with surprise toys" (line 18-19), loyalty programme claims (lines 86-91), Bingo/Tambola claims
-- Add gluten-free cross-contamination caveat (line 38)
-
-### M13 - Add `WebSite` schema `@id` and `inLanguage`
-**File:** `src/app/[locale]/layout.tsx:55-60`
-```typescript
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  '@id': 'https://chopras.nl/#website',
-  name: 'Chopras Indian Restaurant',
-  url: 'https://chopras.nl',
-  inLanguage: params.locale,
-}
-```
-Move inside the layout component to access `params.locale`.
-
-### M14 - Remove deprecated fields from sitemap
-**File:** `src/app/sitemap.ts`
-Remove `priority` and `changeFrequency` from all entries. Google ignores both. Simplify the staticPages type.
-
-### M15 - Set individual `lastmod` dates on static sitemap entries
-**File:** `src/app/sitemap.ts`
-Replace the single hardcoded `'2026-04-03'` with per-page dates reflecting actual last-edit dates.
-
-### M16 - Normalise `servesCuisine` across all schemas
-**File:** `src/app/[locale]/indian-buffet-den-haag/page.tsx`
-Change `servesCuisine: 'Indian'` (string) to `servesCuisine: ['North Indian', 'Indian Street Food']` (array) to match all other pages.
-
-### M17 - Optimise `/public/images/` raw asset sizes
-**Directory:** `public/images/` (361 MB on disk)
-Files in `/public` bypass Next.js image optimisation. Run all restaurant PNGs and catering images through ImageMagick or Squoosh to reduce file sizes. Consider moving images used only via `<Image>` component to a separate directory where the optimisation pipeline applies automatically.
-
-### M18 - Use Next.js automatic icon detection
-**File:** `src/app/[locale]/layout.tsx:44-48`
-Replace the hardcoded `icons: { icon: '/logo.png', apple: '/logo.png', shortcut: '/logo.png' }` with Next.js's automatic detection. Move `src/app/icon.png` (already in repo) and `src/app/apple-icon.png` (already in repo) to `src/app/[locale]/` or `src/app/` and remove the manual `icons` metadata entirely.
+**Fix:** Add `{ key: 'X-XSS-Protection', value: '1; mode=block' }` to the headers array.
 
 ---
 
-## Low - Backlog
+## Low Priority — Backlog
 
-### L1 - Add `rootMargin` to `useInView` hook
-**File:** `src/hooks/useInView.ts:4`
-Add `rootMargin: '0px 0px -50px 0px'` to the IntersectionObserver options to pre-trigger animations before elements fully enter the viewport.
+### 38. Create LinkedIn presence and add to sameAs arrays
+**File:** `src/lib/schema.ts` line 30 (SAME_AS array)
+**Why:** LinkedIn is absent from all sameAs arrays. It provides entity disambiguation for AI systems. Create a LinkedIn company page for Chopras Indian Restaurant + an Arun Chopra personal profile, then add the company URL to `SAME_AS`.
 
-### L2 - Create dedicated /about page for Arun Chopra entity
-**What to do:** Create `src/app/[locale]/about/page.tsx` with a founder bio, photo, the Person schema with `@id: 'https://chopras.nl/#arun-chopra'`, and links to press coverage. Gives AI systems a stable URL for the entity.
+### 39. Add `hasMenu` to `getLocalRestaurantSchema()`
+**File:** `src/lib/schema.ts` line 130
+**Fix:** Add `hasMenu: locale === 'nl' ? \`${SITE_URL}/nl/menu\` : \`${SITE_URL}/menu\`` to match the main `getRestaurantSchema()`.
 
-### L3 - Add Wikidata entry for Chopras Indian Restaurant
-Create a Wikidata item and add the Wikidata URI to the `sameAs` array in the Restaurant schema. Wikidata is a primary entity resolution source for ChatGPT and Google Knowledge Graph.
+### 40. Investigate `SearchAction` for WebSite schema
+**File:** `src/lib/schema.ts` line 63
+**Why:** A Sitelinks Search Box is achievable if `/menu?search=query` renders actual search results. Verify the URL param works in the `MenuPageClient` component before implementing.
 
-### L4 - Add "Write a Google Review" CTA
-**File:** `src/components/sections/ReviewsSection.tsx`
-Replace the generic Maps place link with the write-a-review deeplink: `https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID`. Obtain Place ID from GBP dashboard.
+### 41. Add `ReservationAction` to Restaurant schema
+**File:** `src/lib/schema.ts`
+**Fix:** Add `potentialAction: { '@type': 'ReserveAction', target: { '@type': 'EntryPoint', urlTemplate: \`${SITE_URL}/contact\` } }`.
 
-### L5 - Add Dutch local directory citations
-Create verified listings on Yelp.nl, Nationale Bedrijvengids, ANWB, and Goudengids.nl. Once claimed, add the profile URLs to the `sameAs` array in `constants.ts` (and from there to `schema.ts` once the factory is implemented).
+### 42. Fix blog internal links — convert to locale-aware relative paths
+**File:** `src/lib/blog-data.ts` (throughout)
+**Why:** All `<a href="https://chopras.nl/...">` bypass Next.js `<Link>` and serve EN URLs to all locales. Dutch blog visitors follow links to EN pages.
+**Fix:** Either move blog content to TSX components, or build a post-render link rewriter that converts absolute EN URLs to locale-relative paths.
 
-### L6 - Centralise social links in `constants.ts`
-**File:** `src/lib/constants.ts`
-Add Facebook, Instagram, and YouTube to `RESTAURANT.social`. Currently scattered across `sameAs` arrays in 14+ page files.
+### 43. Raise Image minimumCacheTTL to 1 year
+**File:** `next.config.mjs` line 6
+**Fix:** Change `minimumCacheTTL: 2592000` to `minimumCacheTTL: 31536000`. Safe for a restaurant site where images change infrequently. Resolves inconsistency with static image 1-year cache.
 
-### L7 - Implement IndexNow
-Create an `indexnow.txt` key file in `/public/` and add an API call to the IndexNow endpoint on content publish events. Supported by Bing and Yandex for near-instant re-crawl.
+### 44. Add `size-adjust` CSS for Cormorant Garamond fallback
+**File:** `src/app/globals.css` (or equivalent)
+**Why:** Display serif has high metric difference from system fallback, risking CLS at font swap. Low impact but easy fix.
 
-### L8 - Add LinkedIn URL to Person schema and llms.txt
-Obtain Arun Chopra's LinkedIn URL. Add to Person `sameAs` array (H7) and to `public/llms.txt` Social section.
-
-### L9 - Block CCBot (training crawler) in robots.txt
-Add `User-agent: CCBot` / `Disallow: /` to `public/robots.txt` if the intent is to permit AI search but restrict training dataset collection.
-
-### L10 - Add trailing slashes to robots.txt disallow paths
-**File:** `public/robots.txt:5-8`
-Change `/en/checkout` to `/en/checkout/` for all four disallow lines. Defence in depth alongside the existing noindex metadata.
-
-### L11 - Verify geo coordinates to 5 decimal places
-**File:** `src/lib/constants.ts:11`
-Verify exact coordinates against GBP listing and update to 5 decimal places (see H12).
-
-### L12 - Fix H2/H3 heading hierarchy on location pages
-**File:** `src/app/[locale]/indian-restaurant-rijswijk/page.tsx:174` (and equivalent on delft/zoetermeer)
-"Also Near Den Haag" section should be H3 not H2.
-
-### L13 - Add `rootMargin` to Maps embed on contact page for mobile
-**File:** `src/app/[locale]/contact/page.tsx:196`
-Change `hidden lg:block` to a mobile-visible layout (e.g. smaller height on mobile). Google crawls mobile-first.
-
-### L14 - Add per-post OG images to blog posts
-**File:** `src/app/[locale]/blog/[slug]/page.tsx:67`, `src/lib/blog-data.ts`
-Add an optional `ogImage` field to the `BlogPost` type. Populate per post, or use the `opengraph-image.tsx` dynamic generation pattern.
-
-### L15 - Add internal cross-links between dish pages and blog posts
-- Halal page -> wedding catering page (mentions Nikah/Walima in FAQ)
-- Wedding catering page -> party venue page (mentions Sangeet nights)
-- Blog post `best-indian-restaurant-den-haag` -> `butter-chicken-den-haag` landing page
-- Blog post `halal-indian-restaurant-den-haag` -> `halal-food-den-haag` landing page
+### 45. Add `blog/` `lastModified` tracking to sitemap
+**File:** `src/app/sitemap.ts` line 103
+**Fix:** Use `post.dateModified ?? post.publishedAt` once the `dateModified` field exists (see item 28).
 
 ---
 
-## Already Fixed in This Audit Cycle
+## Summary Counts
 
-| Fix | File | Details |
-|---|---|---|
-| SearchAction removed | `src/app/[locale]/layout.tsx` | `potentialAction` block fully removed from WebSite schema |
-| Both fonts `display: swap` | `src/app/[locale]/layout.tsx` | Cormorant and DM Sans both confirmed `display: 'swap'` |
-| `adjustFontFallback` removed | `src/app/[locale]/layout.tsx` | Restores automatic size-adjusted fallback, reduces CLS |
-| HSTS + 4 security headers | `next.config.mjs` | HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy |
-| Checkout noindex | `src/app/[locale]/checkout/layout.tsx` | `robots: { index: false, follow: false }` |
-| Order-confirmation noindex | `src/app/[locale]/order-confirmation/layout.tsx` | `robots: { index: false, follow: false }` |
-| robots.txt disallow rules | `public/robots.txt` | All 4 checkout/order-confirmation paths disallowed |
-| OAI-SearchBot added | `public/robots.txt` | Explicitly allowed |
-| Ghost sitemap entry removed | `src/app/sitemap.ts` | `sitemap-page` slug removed |
-| Em dash violations | `src/components/home/MeetTheFounder.tsx` | All `&mdash;` removed per CLAUDE.md rule |
-| Blog locale filtering | `src/app/[locale]/blog/[slug]/page.tsx` | Related posts now filtered by `p.language === locale` |
-| Blog author attribution | `src/app/[locale]/blog/[slug]/page.tsx` | Arun Chopra added to BlogPosting author |
-| Tandoor temperature | `src/i18n/en.json`, `nl.json` | storyP4 now says "around 400 degrees C" consistently |
-| RSL 1.0 license | `public/llms.txt` | `> License: RSL 1.0` line added |
-| Logo file | `public/logo.png` | File now exists; referenced in layout icons |
+| Priority | Count |
+|---|---|
+| Critical (fix before next deploy) | 12 |
+| High (fix within 1 week) | 11 |
+| Medium (fix within 1 month) | 13 |
+| Low (backlog) | 8 |
+| **Total** | **44** |
+
+---
+
+## Score Projection
+
+Completing all Critical + High items will raise the overall score from 73 to approximately **84/100**.
+Completing all items will raise it to approximately **91/100**.
+
+The biggest single score improvement comes from adding GEO blocks to the 30 missing pages (item 13 + 14) — this alone is worth approximately +4 points on the overall score.

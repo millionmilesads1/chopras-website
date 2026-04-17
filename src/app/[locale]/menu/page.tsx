@@ -162,7 +162,7 @@ export default function LocaleMenuPage({ params }: Props) {
           <div className="space-y-10">
 
             <div>
-              <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">
+              <h3 className="font-vibes text-3xl text-[#C7A348] mb-3">
                 {isNl ? "Noord-Indiase curry's en hoofdgerechten" : 'North Indian Curries and Mains'}
               </h3>
               {isNl ? (
@@ -185,7 +185,7 @@ export default function LocaleMenuPage({ params }: Props) {
             </div>
 
             <div>
-              <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">
+              <h3 className="font-vibes text-3xl text-[#C7A348] mb-3">
                 {isNl ? 'Tandoorigerechten uit een kleoven van 400 graden' : 'Tandoori Dishes from a 400-Degree Clay Oven'}
               </h3>
               {isNl ? (
@@ -208,7 +208,7 @@ export default function LocaleMenuPage({ params }: Props) {
             </div>
 
             <div>
-              <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">
+              <h3 className="font-vibes text-3xl text-[#C7A348] mb-3">
                 {isNl ? 'Biryani bereid op de traditionele dum-manier' : 'Biryani Prepared the Proper Dum Way'}
               </h3>
               {isNl ? (
@@ -227,7 +227,7 @@ export default function LocaleMenuPage({ params }: Props) {
             </div>
 
             <div>
-              <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">
+              <h3 className="font-vibes text-3xl text-[#C7A348] mb-3">
                 {isNl ? 'Indiaas street food en chaat' : 'Indian Street Food and Chaat'}
               </h3>
               {isNl ? (
@@ -246,7 +246,7 @@ export default function LocaleMenuPage({ params }: Props) {
             </div>
 
             <div>
-              <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">
+              <h3 className="font-vibes text-3xl text-[#C7A348] mb-3">
                 {isNl ? 'Indo-Chinees - exclusief in Den Haag' : 'Indo Chinese - Exclusive to Den Haag'}
               </h3>
               {isNl ? (
@@ -265,7 +265,7 @@ export default function LocaleMenuPage({ params }: Props) {
             </div>
 
             <div>
-              <h3 className="font-heading text-2xl text-[#1B2B5E] mb-3">
+              <h3 className="font-vibes text-3xl text-[#C7A348] mb-3">
                 {isNl ? 'Vegetarische en veganistische opties' : 'Vegetarian and Vegan Options'}
               </h3>
               {isNl ? (
@@ -332,7 +332,7 @@ export default function LocaleMenuPage({ params }: Props) {
       {/* FAQ SECTION */}
       <section className="bg-[#F7F8FC] py-16 md:py-24 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4] text-center">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3] text-center">
             {isNl
               ? 'Veelgestelde vragen over het Chopras-menu'
               : 'Frequently Asked Questions About the Chopras Menu'}

@@ -120,30 +120,30 @@ export default function BesteIndiaasPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Vers Voedsel</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Vers Voedsel</h3>
                 <p>Alles wordt gemaakt op moment. Je hoeft niet te wachten op voorgekookt voedsel dat heeft gestaan. Je eet wat net uit onze keuken is gekomen.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Authentieke Smaken</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Authentieke Smaken</h3>
                 <p>We maken eten zoals het in India wordt gemaakt. Niet aangepast voor Nederlandse tong. Niet verdund. Niet gewijzigd. Dit is Indiaas eten, echt en vol.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Dagelijks Vers</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Dagelijks Vers</h3>
                 <p>Onze kruiden worden elke ochtend gemalen. Onze ginger en garlic worden elke ochtend gesneden. Dit is hoe je eten smakelijk en geurig houdt.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Halal Gecertificeerd</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Halal Gecertificeerd</h3>
                 <p>Al ons vlees is halal. We respecteren tradities en voorkeur. Dit is hoe je gasten zich welkom voelen.</p>
               </>
             ) : (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Fresh Food</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Fresh Food</h3>
                 <p>Everything is made at the moment. You do not have to wait for pre-cooked food that has been sitting. You eat what just came out of our kitchen.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Authentic Flavours</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Authentic Flavours</h3>
                 <p>We make food the way it is made in India. Not adapted for Dutch taste. Not watered down. Not changed. This is Indian food, genuine and full.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Daily Fresh</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Daily Fresh</h3>
                 <p>Our spices are ground every morning. Our ginger and garlic are cut every morning. This is how you keep food delicious and fragrant.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Halal Certified</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Halal Certified</h3>
                 <p>All our meat is halal. We respect traditions and preferences. This is how your guests feel welcome.</p>
               </>
             )}
@@ -153,7 +153,7 @@ export default function BesteIndiaasPage({ params }: Props) {
 
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Wat Mensen Zeggen' : 'What People Say'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />

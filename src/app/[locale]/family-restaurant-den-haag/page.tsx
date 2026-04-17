@@ -120,30 +120,30 @@ export default function FamilyRestaurantPage({ params }: Props) {
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
             {isNl ? (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Mild Opties</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Mild Opties</h3>
                 <p>We hebben veel opties die niet spicy zijn. Zachtere curries. Tandoori kip zonder sterke saus. Vegetarische gerechtjes. Naan met boter. Dit is voedsel dat kinderen graag eten.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Kleine Porties</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Kleine Porties</h3>
                 <p>We kunnen kleine porties maken. Je hoeft niet een volledige schotel voor je kind te bestellen. We begrijpen dat kinderen minder eten dan volwassenen.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Desserts</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Desserts</h3>
                 <p>Kheer. Gulab jamun. Ras malai. Zoete dingen die kinderen leuk vinden. Dit is hoe je het diner afsluit - met glimlach.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Ruimte</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Ruimte</h3>
                 <p>We hebben veel ruimte. Je kinderen kunnen een beetje bewegen. Je hoeft ze niet de hele tijd strak vast te houden. Ze kunnen rustig zijn en tegelijk voelen zich niet ingesloten.</p>
               </>
             ) : (
               <>
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Mild Options</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Mild Options</h3>
                 <p>We have many options that are not spicy. Softer curries. Tandoori chicken without strong sauce. Vegetarian dishes. Naan with butter. This is food that children like to eat.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Small Portions</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Small Portions</h3>
                 <p>We can make small portions. You do not have to order a full plate for your child. We understand that children eat less than adults.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Desserts</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Desserts</h3>
                 <p>Kheer. Gulab jamun. Ras malai. Sweet things that children like. This is how you finish the dinner - with a smile.</p>
                 
-                <h3 className="font-heading text-2xl text-[#1B2B5E] mt-8 mb-4">Space</h3>
+                <h3 className="font-vibes text-3xl text-[#C7A348] mt-8 mb-4">Space</h3>
                 <p>We have plenty of space. Your children can move around a little. You do not have to keep them rigid the whole time. They can be calm and at the same time do not feel confined.</p>
               </>
             )}
@@ -153,7 +153,7 @@ export default function FamilyRestaurantPage({ params }: Props) {
 
       <section className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.3]">
             {isNl ? 'Familie FAQ' : 'Family FAQ'}
           </h2>
           <FaqAccordion faqs={isNl ? faqsNl : faqsEn} locale={locale} />
