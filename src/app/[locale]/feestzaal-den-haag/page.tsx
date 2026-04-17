@@ -54,54 +54,54 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const faqsEn: Array<{ question: string; answer: string }> = [
   {
     question: 'Can I hire a party hall at Chopras Indian Restaurant in Den Haag?',
-    answer: 'Yes. Chopras Indian Restaurant offers a private event hall for hire in Den Haag, accommodating 25 to 80 guests. It is ideal for birthdays, weddings, nikah receptions, corporate events, Diwali dinners, and all other private occasions. Contact us for a free quote.',
+    answer: 'Yes. Chopras Indian Restaurant offers a private event hall for hire at Leyweg 986 in Den Haag, accommodating 25 to 80 guests. The hall is available for birthdays, weddings, nikah receptions, corporate events, Diwali dinners, and private parties. Full authentic Indian catering from the Chopras kitchen is included. Contact us for a free no-obligation quote.',
   },
   {
-    question: 'Is catering included when hiring the event hall?',
-    answer: 'Yes. Full authentic Indian catering is included with your event hall hire at Chopras Indian Restaurant Den Haag. From a lavish buffet to a multi-course plated dinner, everything is freshly prepared by the same kitchen that earns 4.9 stars on Google. The menu is customized to your occasion at no extra charge.',
+    question: 'Is catering included when hiring the feestzaal?',
+    answer: 'Yes. Full authentic Indian catering from the Chopras kitchen is included with your feestzaal hire. The menu is customized to your occasion, with buffet or plated dinner service available. Everything is prepared fresh on the day of your event by the same team that earns 4.9 stars on Google from 800+ reviews. No outside caterer and no reheated trays.',
   },
   {
-    question: 'What occasions is the event hall suitable for?',
-    answer: 'The private hall at Chopras Indian Restaurant Den Haag is suitable for birthday parties, weddings, nikah receptions, stag parties, corporate events, team dinners, staff parties, Diwali celebrations, Eid gatherings, baby showers, drinks receptions, and meetings with catering.',
+    question: 'What occasions is the feestzaal suitable for?',
+    answer: 'The private hall at Chopras Indian Restaurant Den Haag is suitable for birthday parties, weddings, nikah receptions, corporate events, team dinners, staff parties, Diwali celebrations, Eid gatherings, baby showers, and drinks receptions. Every occasion gets a fully customized menu built in consultation with the Chopras team.',
   },
   {
-    question: 'How many people can the event hall at Chopras Indian Restaurant accommodate?',
-    answer: 'The private event hall at Chopras Indian Restaurant Den Haag accommodates between 25 and 80 guests. This range covers intimate family dinners and large corporate or wedding receptions. Contact us with your guest count and we will confirm availability and the best setup for your event.',
+    question: 'How many guests does the event hall at Chopras accommodate?',
+    answer: 'The private event hall at Chopras Indian Restaurant Den Haag accommodates between 25 and 80 guests. This covers intimate family dinners and large wedding or corporate receptions. Contact us with your guest count and we confirm availability and the best room setup for your event.',
   },
   {
-    question: 'How do I book the event hall at Chopras Indian Restaurant Den Haag?',
-    answer: 'Contact us via the contact page or call us directly on +31 6 30645930. Tell us your date, guest count, and type of event. We discuss menu options and availability and send you a free, no-obligation quote within 24 hours.',
+    question: 'How do I book the feestzaal at Chopras Indian Restaurant Den Haag?',
+    answer: 'Contact us via the contact page or call +31 6 30645930. Tell us your date, guest count, and occasion type. We discuss menu options and send a free quote within 24 hours. For groups of 25 to 40 guests, contact us at least 2 to 3 weeks ahead. For larger events of 50 to 80 guests, plan 6 to 8 weeks in advance.',
   },
   {
-    question: 'Is the catering at Chopras Indian Restaurant fully halal certified?',
-    answer: 'Yes. Every dish at Chopras Indian Restaurant is fully halal certified. Every meat supplier is halal certified. There is no non-halal meat anywhere on the premises, so there is no cross-contamination risk. Families planning a nikah reception or any halal event can book with complete confidence.',
+    question: 'Is the food at Chopras Indian Restaurant fully halal certified?',
+    answer: 'Yes. Every dish at Chopras Indian Restaurant is fully halal certified. Every meat supplier holds halal certification. There is no non-halal meat anywhere on the premises, which means no cross-contamination risk. Muslim families planning a nikah reception, Eid celebration, or any halal event can book with complete confidence.',
   },
 ]
 
 const faqsNl: Array<{ question: string; answer: string }> = [
   {
     question: 'Kan ik een feestzaal huren bij Chopras Indian Restaurant in Den Haag?',
-    answer: 'Ja. Chopras Indian Restaurant biedt een privé feestzaal te huur in Den Haag voor 25 tot 80 gasten. Ideaal voor verjaardagen, bruiloften, nikah-recepties, bedrijfsfeesten, Diwali-diners en alle andere privégelegenheden. Neem contact op voor een vrijblijvende offerte.',
+    answer: 'Ja. Chopras Indian Restaurant biedt een privé feestzaal te huur op Leyweg 986 in Den Haag voor 25 tot 80 gasten. De zaal is beschikbaar voor verjaardagen, bruiloften, nikah-recepties, bedrijfsfeesten, Diwali-diners en privéfeesten. Authentiek Indiaas catering vanuit de Chopras-keuken is inbegrepen. Neem contact op voor een vrijblijvende offerte.',
   },
   {
     question: 'Is er catering inbegrepen bij het huren van de feestzaal?',
-    answer: 'Ja. Volledige authentieke Indiaas catering is inbegrepen bij uw feestzaal huur bij Chopras Indian Restaurant Den Haag. Van een uitgebreid buffet tot een meergangendiner, alles wordt vers bereid door dezelfde keuken die 4,9 sterren scoort op Google. Het menu wordt op maat gemaakt voor uw gelegenheid, zonder meerkosten.',
+    answer: 'Ja. Volledig authentiek Indiaas catering uit de Chopras-keuken is inbegrepen bij uw feestzaal huur. Het menu wordt op maat gemaakt voor uw gelegenheid, met buffet- of bordbediening naar keuze. Alles wordt op de dag zelf vers bereid door hetzelfde team dat 4,9 sterren scoort op Google van 800+ beoordelaars. Geen externe cateraar en geen opgewarmde bakken.',
   },
   {
     question: 'Voor welke gelegenheden is de feestzaal geschikt?',
-    answer: 'De privé feestzaal van Chopras Indian Restaurant Den Haag is geschikt voor verjaardagsfeesten, bruiloften, nikah-recepties, vrijgezellenfeesten, bedrijfsfeesten, teamdiners, personeelsfeesten, Diwali-vieringen, Eid-bijeenkomsten, babyshowers, borrels en vergaderingen met catering.',
+    answer: 'De privé feestzaal van Chopras Indian Restaurant Den Haag is geschikt voor verjaardagsfeesten, bruiloften, nikah-recepties, bedrijfsfeesten, teamdiners, personeelsfeesten, Diwali-vieringen, Eid-bijeenkomsten, babyshowers en borrels. Elke gelegenheid krijgt een volledig op maat gemaakt menu, samengesteld in overleg met het Chopras-team.',
   },
   {
     question: 'Hoeveel personen passen er in de feestzaal van Chopras Indian Restaurant?',
-    answer: 'De privé feestzaal van Chopras Indian Restaurant Den Haag heeft een capaciteit van 25 tot 80 gasten. Dit bereik dekt zowel intieme familiedinertjes als grote bruiloften of bedrijfsrecepties. Neem contact op met uw aantal gasten en wij bevestigen de beschikbaarheid en de beste zaalopstelling.',
+    answer: 'De privé feestzaal van Chopras Indian Restaurant Den Haag heeft een capaciteit van 25 tot 80 gasten. Dit dekt zowel intieme familiebijeenkomsten als grote bruiloften of bedrijfsrecepties. Neem contact op met uw aantal gasten en wij bevestigen de beschikbaarheid en de beste zaalopstelling voor uw evenement.',
   },
   {
     question: 'Hoe boek ik een feestzaal bij Chopras Indian Restaurant Den Haag?',
-    answer: 'Neem contact op via de contactpagina of bel ons op +31 6 30645930. Vertel ons uw datum, aantal gasten en type evenement. Wij bespreken menu-opties en beschikbaarheid en sturen u binnen 24 uur een vrijblijvende offerte.',
+    answer: 'Neem contact op via de contactpagina of bel +31 6 30645930. Vertel ons uw datum, aantal gasten en type gelegenheid. Wij bespreken menu-opties en sturen u binnen 24 uur een vrijblijvende offerte. Voor groepen van 25 tot 40 gasten neemt u minimaal 2 tot 3 weken van tevoren contact op. Voor grotere evenementen van 50 tot 80 gasten boekt u 6 tot 8 weken vooruit.',
   },
   {
-    question: 'Is de catering bij Chopras Indian Restaurant volledig halal gecertificeerd?',
-    answer: 'Ja. Elk gerecht bij Chopras Indian Restaurant is volledig halal gecertificeerd. Elke vleesleverancier is halal gecertificeerd. Er is geen niet-halal vlees aanwezig in de keuken, dus er is geen risico op kruiscontaminatie. Families die een nikah-receptie of een ander halal evenement plannen kunnen met volledig vertrouwen boeken.',
+    question: 'Is het eten bij Chopras Indian Restaurant volledig halal gecertificeerd?',
+    answer: 'Ja. Elk gerecht bij Chopras Indian Restaurant is volledig halal gecertificeerd. Elke vleesleverancier heeft een halal-certificering. Er is nergens in de keuken niet-halal vlees aanwezig, wat betekent dat er geen risico op kruiscontaminatie bestaat. Moslimfamilies die een nikah-receptie, Eid-viering of ander halal evenement plannen kunnen met volledig vertrouwen boeken.',
   },
 ]
 
@@ -145,8 +145,8 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
           </h1>
           <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
             {isNl
-              ? 'Privé feestzaal voor 25 tot 80 gasten. Authentiek Indiaas catering inbegrepen. Dezelfde keuken die 4,9 sterren scoort op Google.'
-              : 'Private event hall for 25 to 80 guests. Authentic Indian catering included. The same kitchen rated 4.9 stars on Google.'}
+              ? 'Privé feestzaal voor 25 tot 80 gasten. Authentiek Indiaas catering inbegrepen. Dezelfde keuken die 4,9 sterren scoort op Google van 800+ beoordelaars.'
+              : 'Private event hall for 25 to 80 guests. Authentic Indian catering included. The same kitchen rated 4.9 stars on Google from 800+ reviewers.'}
           </p>
           <Link
             href={`${base}/contact`}
@@ -158,7 +158,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       </section>
 
       {/* INTRO */}
-      <section className="bg-[#FFFAF5] py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
@@ -168,45 +168,45 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
           <div className="space-y-6 font-body text-[#1A1A1A] text-lg leading-relaxed">
             {isNl ? (
               <p>
-                De meeste zaalverhuurders geven u de sleutels en sturen u een lijst van goedgekeurde cateraars. U coördineert twee bedrijven, beheert twee contracten en hoopt dat het eten past bij de ruimte. Bij{' '}
+                De meeste mensen die een feestzaal zoeken in Den Haag lopen tegen hetzelfde probleem op. Ze vinden een geschikte ruimte. Dan beginnen ze aan een tweede zoektocht naar een cateraar. Ze onderhandelen twee contracten, stemmen twee planningen op elkaar af, en steken de week voor het feest door met logistiek in plaats van ernaar uit te kijken. Bij{' '}
                 <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant</Link>{' '}
-                zijn de feestzaal en de keuken dezelfde operatie. U maakt één telefoontje. Alles wordt geregeld.
+                op Leyweg 986 in Den Haag zijn de feestzaal en de keuken één operatie. U belt eenmaal. Alles wordt geregeld.
               </p>
             ) : (
               <p>
-                Most venues hand you the keys and send you a list of approved caterers. You coordinate two companies, manage two contracts, and hope the food matches the room. At{' '}
+                Most people searching for a feestzaal in Den Haag run into the same problem. They find a room they like. Then they begin a second search for a caterer. They negotiate two contracts, coordinate two schedules, and spend the week before the event managing logistics instead of looking forward to it. At{' '}
                 <Link href={`${base}/`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Chopras Indian Restaurant</Link>{' '}
-                in Den Haag, the feestzaal and the kitchen are the same operation. You make one call. Everything is handled.
+                at Leyweg 986 in Den Haag, the event hall and the kitchen are a single operation. You make one call. Everything is handled.
               </p>
             )}
             {isNl ? (
               <p>
-                De privé feestzaal op <strong>Leyweg 986</strong> biedt ruimte voor <strong>25 tot 80 gasten</strong>. Dat bereik dekt alles, van een intieme{' '}
+                De privé feestzaal biedt ruimte voor <strong>25 tot 80 gasten</strong>. Van een intieme{' '}
                 <Link href={`${base}/indian-wedding-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">nikah-receptie</Link>{' '}
-                tot een volledig bedrijfsdiner. Het eten komt uit dezelfde keuken die 4,9 sterren verdient van 800+ Google-beoordelaars elke week. Uw evenementgasten krijgen exact dezelfde standaard. Geen aparte cateraar. Geen coördinatieproblemen.
+                voor de naaste familie tot een groot bedrijfsdiner voor tachtig medewerkers: het bereik dekt het allemaal. Het eten komt uit dezelfde keuken die 4,9 sterren verdient van 800+ Google-beoordelaars elke week. Uw gasten bij een privé-evenement krijgen exact dezelfde standaard. Geen aparte cateraar. Geen coördinatieproblemen.
               </p>
             ) : (
               <p>
-                The private hall at <strong>Leyweg 986</strong> accommodates <strong>25 to 80 guests</strong>. That range covers everything from an intimate{' '}
+                The private hall seats between <strong>25 and 80 guests</strong>. From an intimate{' '}
                 <Link href={`${base}/indian-wedding-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">nikah reception</Link>{' '}
-                to a full corporate dinner for 80. The food comes from the same kitchen that earns 4.9 stars from 800+ Google reviewers every week. Your event guests get the same standard. No separate caterer. No coordination headache.
+                for close family to a corporate dinner for eighty, that range covers everything. The food comes from the same kitchen that earns 4.9 stars on Google from 800+ reviewers every week. Your private event guests receive exactly the same standard. No separate caterer. No coordination gap.
               </p>
             )}
             {isNl ? (
               <p>
-                Of u nu een verjaardagsfeest, een bruiloft, een{' '}
+                Of u nu een verjaardagsfeest, een{' '}
                 <Link href={`${base}/diwali-dinner-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Diwali-viering</Link>{' '}
                 of een{' '}
                 <Link href={`${base}/corporate-events-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">bedrijfsevenement</Link>{' '}
-                plant, het proces begint hetzelfde. Vertel ons uw datum, uw aantal gasten en uw gelegenheid. Wij regelen de rest. Van biryani tot tandoori tot een meergangendiner, het menu is gebouwd rondom uw evenement, niet rondom een vast pakket.
+                organiseert, het beginpunt is hetzelfde: vertel ons uw datum, aantal gasten en gelegenheid. Wij regelen het menu, de opstelling en de service.
               </p>
             ) : (
               <p>
-                Whether you are planning a birthday party, a wedding reception, a{' '}
+                Whether you are planning a birthday party, a{' '}
                 <Link href={`${base}/diwali-dinner-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Diwali celebration</Link>
                 , or a{' '}
                 <Link href={`${base}/corporate-events-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">corporate event</Link>
-                , the process starts the same way. You tell us your date, your guest count, and your occasion. We handle the rest. From biryani to tandoori to a multi-course dinner, the menu is built around your event.
+                , the starting point is the same: tell us your date, your guest count, and your occasion. We handle the menu, the setup, and the service.
               </p>
             )}
           </div>
@@ -218,41 +218,55 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
-              ? 'De Privé Feestzaal op Leyweg 986 - Wat Is Inbegrepen'
-              : 'The Private Hall at Leyweg 986 - What Is Included'}
+              ? 'De Privé Feestzaal op Leyweg 986 - Capaciteit, Catering en Standaard'
+              : 'The Private Hall at Leyweg 986 - Capacity, Catering, and Standard'}
           </h2>
           <div className="space-y-6 font-body text-[#1A1A1A] text-lg leading-relaxed">
             {isNl ? (
               <p>
-                De feestzaal van Chopras Indian Restaurant Den Haag biedt ruimte aan <strong>25 tot 80 gasten</strong>. De ruimte is volledig privé: uw gasten delen de zaal niet met andere diners tijdens uw evenement. Volledige catering is inbegrepen, een op maat gemaakt menu dat in overleg met ons team wordt samengesteld, met buffet- of bordservice en alle bereiding en bediening verzorgd door het Chopras-team.
+                De feestzaal van Chopras Indian Restaurant Den Haag heeft een capaciteit van <strong>25 tot 80 gasten</strong>. De ruimte is volledig privé tijdens uw evenement: uw gasten delen de zaal niet met andere diners. De opstelling wordt aangepast aan uw gelegenheid, van een formele tafelindeling voor een meergangendiner tot een ruimere opstelling voor een buffetreceptie met meerdere stations.
               </p>
             ) : (
               <p>
-                The feestzaal at Chopras Indian Restaurant Den Haag seats between <strong>25 and 80 guests</strong>. The space is fully private. Your guests will not share the room with other diners during your event. Full catering is included: a customized menu designed in consultation with our team, buffet or plated service, and all preparation and serving handled by the Chopras team.
+                The feestzaal at Chopras Indian Restaurant Den Haag holds between <strong>25 and 80 guests</strong>. The space is entirely private during your event. Your guests do not share the hall with other diners. The layout is configured for your occasion, from formal seated tables for a plated dinner to a wider arrangement for a standing buffet reception.
               </p>
             )}
             {isNl ? (
               <p>
-                Elk gerecht wordt vers bereid op de dag van uw evenement. De specerijen worden die ochtend gemalen van hele specerijen die rechtstreeks uit India worden geïmporteerd. De tandoor wordt gestookt tot <strong>400 graden Celsius</strong>. Uw gasten bij een privé-evenement krijgen exact dezelfde keukenstandaard die Chopras Indian Restaurant tot het{' '}
+                Volledige catering is inbegrepen bij elke boeking. Het menu wordt samengesteld in overleg met ons team en kan alles bevatten van het{' '}
+                <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige restaurantmenu</Link>
+                :{' '}
+                <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">butter chicken</Link>
+                ,{' '}
+                <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani</Link>
+                , tandoorige gerechten, vegetarische en veganistische opties en Indo Chinese specialiteiten. Elk vleesgerecht is{' '}
+                <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal gecertificeerd</Link>
+                . Elke leverancier is gecertificeerd. Er is geen risico op kruiscontaminatie omdat er nergens in de keuken niet-halal vlees aanwezig is.
+              </p>
+            ) : (
+              <p>
+                Full catering is included with every booking. The menu is built in consultation with our team and can draw from the{' '}
+                <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">full restaurant menu</Link>
+                :{' '}
+                <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">butter chicken</Link>
+                ,{' '}
+                <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani</Link>
+                , tandoori dishes, vegetarian and vegan options, and Indo Chinese specialties. Every meat dish is{' '}
+                <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal certified</Link>
+                . Every supplier holds certification. No cross-contamination risk exists because there is no non-halal meat anywhere on the premises.
+              </p>
+            )}
+            {isNl ? (
+              <p>
+                De keukenstandaard op uw evenement is gelijk aan die van het restaurant. Specerijen worden rechtstreeks uit India betrokken en elke ochtend vers gemalen vóór de service. De tandoor brandt op <strong>400 graden Celsius</strong>. De gerechten die op uw tafels komen zijn bereid door dezelfde chefs die van Chopras Indian Restaurant het{' '}
                 <Link href={`${base}/beste-indiaas-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">best beoordeelde Indiaas restaurant in Den Haag</Link>{' '}
-                heeft gemaakt. Die standaard zakt niet voor evenementen.
+                hebben gemaakt. Die standaard daalt niet voor evenementen.
               </p>
             ) : (
               <p>
-                Every dish is prepared fresh on the day of your event. The spices are ground that morning from whole spices sourced directly from India. The tandoor fires to <strong>400 degrees Celsius</strong>. Your private event guests receive the exact same kitchen standard that has made Chopras Indian Restaurant the{' '}
-                <Link href={`${base}/beste-indiaas-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">highest-rated Indian restaurant in Den Haag</Link>.
-                {' '}That standard does not drop for events.
-              </p>
-            )}
-            {isNl ? (
-              <p>
-                Halal-certificering geldt voor elk gerecht op het menu. Elke leverancier is gecertificeerd halal. Er is geen aparte halal-sectie en geen risico op kruiscontaminatie omdat er nergens in de keuken niet-halal vlees aanwezig is. Voor Moslim-families die een nikah-receptie of Eid-bijeenkomst plannen, is dit de zekerheid die ze nodig hebben voordat alles begint. Meer over onze{' '}
-                <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal certificering in Den Haag</Link>.
-              </p>
-            ) : (
-              <p>
-                Halal certification covers every dish on the menu. Every supplier is certified. There is no separate halal section and no cross-contamination risk because there is no non-halal meat anywhere in the kitchen. For Muslim families planning a nikah reception or Eid gathering, this is the confirmation they need before everything else. Read more about our{' '}
-                <Link href={`${base}/halal-food-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal food in Den Haag</Link>.
+                The kitchen standard at your event matches the restaurant. Spices are sourced directly from India and ground fresh every morning before service. The tandoor fires to <strong>400 degrees Celsius</strong>. The dishes at your tables are prepared by the same chefs who made Chopras Indian Restaurant the{' '}
+                <Link href={`${base}/beste-indiaas-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">highest-rated Indian restaurant in Den Haag</Link>
+                . That standard does not drop for events.
               </p>
             )}
           </div>
@@ -260,48 +274,56 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       </section>
 
       {/* OCCASIONS */}
-      <section className="bg-[#FFFAF5] py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
-              ? 'Verjaardag, Bruiloft, Diwali en Meer - Privé Dineren in Den Haag'
-              : 'Birthday, Wedding, Diwali and More - Private Dining in Den Haag'}
+              ? 'Verjaardag, Bruiloft, Bedrijfsdiner en Meer in Den Haag'
+              : 'Birthday, Wedding, Corporate Dinner and More in Den Haag'}
           </h2>
           <div className="space-y-6 font-body text-[#1A1A1A] text-lg leading-relaxed">
             {isNl ? (
               <p>
-                Een verjaardagsdiner voor 30 personen. Een nikah-receptie voor 80 gasten. Een Diwali-viering voor een gemengde groep families. Een bedrijfsteamdiner na een lang kwartaal. Elke gelegenheid vraagt om een andere energie, een ander menu, een andere zaalopstelling. Het Chopras-team heeft ze allemaal verzorgd op Leyweg 986 in Den Haag.
+                Stel u voor: een verjaardagsdiner voor dertig personen op Leyweg 986. De gasten arriveren, de zaal is gereed, het eten staat klaar. De gastheer heeft de week ervoor niet besteed aan het afstemmen van twee aparte bedrijven. Dat is wat het huren van de feestzaal bij Chopras Indian Restaurant in de praktijk inhoudt.
               </p>
             ) : (
               <p>
-                A birthday dinner for 30 people. A nikah reception for 80 guests. A Diwali celebration for a mixed group of families. A corporate team dinner after a long quarter. Each occasion requires a different energy, a different menu, a different room setup. The Chopras team has run all of them at Leyweg 986 in Den Haag.
+                Picture a birthday dinner for thirty guests at Leyweg 986 in Den Haag. Guests arrive, the hall is set, the food is ready. The host did not spend the week before coordinating two separate companies. That is what hiring the feestzaal at Chopras Indian Restaurant actually looks like.
               </p>
             )}
             {isNl ? (
               <p>
                 Voor{' '}
                 <Link href={`${base}/bruiloft-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">bruiloft catering in Den Haag</Link>{' '}
-                kan het menu worden opgezet als een formeel meergangendiner of als een weelderig buffet met meerdere stations. Voor verjaardagsfeesten kan het eten informeel en overvloedig zijn. Voor Diwali-diners staan traditionele gerechten zoals{' '}
-                <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani</Link>
-                , dal makhani en paneer tikka centraal, de smaken die uw gasten verbinden met de gelegenheid.
+                wordt het menu het middelpunt. Een nikah-receptie voor zeventig gasten kan worden opgezet als een overvloedig buffet met meerdere stations:{' '}
+                <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani</Link>{' '}
+                in grote karahi potten, tandoori platters en een volledig vegetarisch aanbod zodat elke gast gedekt is. Een walimahdiner kan worden gestructureerd als een formele bordbediening. Het format past bij de formaliteit van de gelegenheid.
               </p>
             ) : (
               <p>
                 For{' '}
                 <Link href={`${base}/indian-wedding-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian wedding catering in Den Haag</Link>
-                , the menu can be structured as a formal multi-course dinner or as a lavish buffet with multiple stations. For birthday parties, the food can be casual and abundant. For Diwali dinners, traditional dishes like{' '}
-                <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani</Link>
-                , dal makhani, and paneer tikka take center stage, the flavors that connect your guests to the occasion.
+                , the menu becomes the centrepiece. A nikah reception for seventy guests can run as a generous buffet with multiple stations:{' '}
+                <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani</Link>{' '}
+                in large karahi pots, tandoori platters, and a full vegetarian spread so every guest is covered. A walima dinner can be structured as formal plated service. The format matches the formality of the occasion.
               </p>
             )}
             {isNl ? (
               <p>
-                Bedrijfsevenementen hebben iets anders nodig. Een teamdiner bij Chopras Indian Restaurant Den Haag is gedenkwaardiger dan een standaard vergaderkamer met cateringboxen. De privézaal laat uw team ontspannen. Het eten, vers gemaakt, diep smaakvol en halal gecertificeerd, geeft mensen iets om over te praten. Meer weten over ons{' '}
-                <Link href={`${base}/corporate-events-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">bedrijfsevenementen aanbod in Den Haag</Link>.
+                Bedrijfsevenementen vragen om iets anders. Een teamdiner bij Chopras Indian Restaurant Den Haag is gedenkwaardiger dan een vergaderkamer met cateringboxen. De privézaal laat uw team ontspannen weg van een drukke eetzaal. Voor{' '}
+                <Link href={`${base}/diwali-dinner-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Diwali-diners in Den Haag</Link>{' '}
+                staan traditionele gerechten centraal:{' '}
+                <Link href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">dal makhani</Link>
+                , paneer tikka en de biryani die de gelegenheid verdient. Bekijk ons volledige aanbod voor{' '}
+                <Link href={`${base}/corporate-events-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">bedrijfsevenementen in Den Haag</Link>.
               </p>
             ) : (
               <p>
-                Corporate events need something different. A team dinner at Chopras Indian Restaurant Den Haag is more memorable than a standard catered meeting room. The private space lets your team relax. The food, freshly made, deeply flavorful, and halal certified, gives people something to talk about. Discover our full{' '}
+                Corporate events need something different. A team dinner at Chopras Indian Restaurant Den Haag is more memorable than a standard catered meeting room. The private hall lets your group relax away from a public dining room. For{' '}
+                <Link href={`${base}/diwali-dinner-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Diwali dinners in Den Haag</Link>
+                , traditional dishes take centre stage:{' '}
+                <Link href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">dal makhani</Link>
+                , paneer tikka, and the biryani the occasion deserves. Explore our full{' '}
                 <Link href={`${base}/corporate-events-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">corporate events offering in Den Haag</Link>.
               </p>
             )}
@@ -314,60 +336,52 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
-              ? 'Authentiek Indiaas Catering uit Dezelfde Keuken'
-              : 'Authentic Indian Catering from the Same Kitchen'}
+              ? 'Authentiek Indiaas Catering: Dezelfde Keuken, Dezelfde Standaard'
+              : 'Authentic Indian Catering: The Same Kitchen, the Same Standard'}
           </h2>
           <div className="space-y-6 font-body text-[#1A1A1A] text-lg leading-relaxed">
             {isNl ? (
               <p>
-                Het eten bij uw evenement komt uit dezelfde keuken als het restaurant. Geen externe cateraar. Geen opgewarmde bakken. Alles wordt die dag vers bereid. Het menu voor uw evenement wordt samen met het Chopras-team samengesteld en kan alles van het{' '}
-                <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige restaurantmenu</Link>{' '}
-                bevatten, van{' '}
-                <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">butter chicken</Link>{' '}
-                en biryani tot soya chaap en Indo Chinese gerechten.
+                Het eten bij uw evenement is niet afkomstig van een externe cateraar en niet samengesteld uit een vast pakket. Het komt rechtstreeks uit de Chopras-keuken en wordt op de dag zelf vers bereid. Dit onderscheid klinkt eenvoudig. Het maakt het verschil.
               </p>
             ) : (
               <p>
-                The food at your event comes from the same kitchen as the restaurant. No outside caterer. No reheated trays. Everything is prepared fresh that day. The menu is built together with the Chopras team and can include anything from the{' '}
-                <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">full restaurant menu</Link>
-                , from{' '}
-                <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">butter chicken</Link>{' '}
-                and biryani to soya chaap and Indo Chinese dishes.
+                The food at your event does not come from an outside caterer or a fixed package. It comes directly from the Chopras kitchen and is prepared fresh on the day. That distinction sounds simple. It makes all the difference.
               </p>
             )}
             {isNl ? (
               <p>
-                Elk vleesgerecht is halal gecertificeerd. Vegetarische en veganistische opties zijn uitgebreid beschikbaar:{' '}
-                <Link href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">dal makhani</Link>
-                ,{' '}
-                <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">chaat</Link>
-                ,{' '}
-                <Link href={`${base}/pani-puri-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">pani puri</Link>{' '}
+                De meeste eventcateraars werken met kant-en-klare kruidenmengsels van een leverancier. Bij Chopras Indian Restaurant worden hele specerijen rechtstreeks uit India ingevoerd en elke ochtend vers gemalen vóór de service. De vluchtige aromatische verbindingen in komijn, kardemom en koriander bereiken hun hoogtepunt binnen uren na het malen. Uw evenementgasten eten het eten op het absolute hoogtepunt van zijn smaak. Dat is het verschil tussen Indiaas eten dat leeft en Indiaas eten dat uit een pot komt.
+              </p>
+            ) : (
+              <p>
+                Most event caterers work from pre-mixed spice blends bought from a supplier. At Chopras Indian Restaurant, whole spices are sourced directly from India and ground fresh every morning before service. The volatile aromatic compounds in cumin, cardamom, and coriander peak within hours of grinding. Your event guests eat the food at its absolute best. That is the difference between Indian food that tastes alive and Indian food that tastes like it came from a jar.
+              </p>
+            )}
+            {isNl ? (
+              <p>
+                Het menu voor uw evenement wordt samengesteld in overleg met ons team. Van{' '}
+                <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">butter chicken</Link>{' '}
                 en{' '}
-                <Link href={`${base}/soya-chaap-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">soya chaap</Link>.
-                {' '}Zo kan elke gast aan uw tafel genieten. Het buffetformaat werkt goed voor grotere groepen; een meergangendiner met bordservice geeft formele gelegenheden meer cachet.
-              </p>
-            ) : (
-              <p>
-                Every meat dish is halal certified. Vegetarian and vegan options are extensive:{' '}
-                <Link href={`${base}/dal-makhani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">dal makhani</Link>
-                ,{' '}
+                <Link href={`${base}/mutton-rogan-josh-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">mutton rogan josh</Link>{' '}
+                tot{' '}
+                <Link href={`${base}/soya-chaap-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">soya chaap</Link>{' '}
+                en{' '}
                 <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">chaat</Link>
-                ,{' '}
-                <Link href={`${base}/pani-puri-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">pani puri</Link>
-                , and{' '}
-                <Link href={`${base}/soya-chaap-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">soya chaap</Link>.
-                {' '}Every guest at your table is covered. The buffet format works well for larger groups; a plated multi-course dinner brings more formality to weddings and corporate dinners.
-              </p>
-            )}
-            {isNl ? (
-              <p>
-                De specerijen vertellen het verschil. Concurrenten gebruiken kant-en-klare kruidenmengsels van leveranciers. Bij Chopras Indian Restaurant worden hele specerijen rechtstreeks uit India betrokken en elke ochtend vers gemalen voor de service. De vluchtige aromatische stoffen in komijn, kardemom en koriander bereiken hun hoogtepunt binnen uren na het malen. Uw evenementgasten eten voedsel op het absolute hoogtepunt van zijn smaak. Meer over onze{' '}
+                , alles van het restaurantmenu is beschikbaar. Vegetarische en veganistische gasten zijn volledig gedekt. Een buffet werkt goed voor grotere groepen; een meergangendiner met bordbediening geeft formele gelegenheden meer gewicht. Meer over onze volledige{' '}
                 <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indiaas catering diensten in Den Haag</Link>.
               </p>
             ) : (
               <p>
-                The spices tell the difference. Competitors use pre-mixed blends from suppliers. At Chopras Indian Restaurant, whole spices are sourced directly from India and ground fresh every morning before service. The volatile aromatic compounds in cumin, cardamom, and coriander peak within hours of grinding. Your event guests eat food at the absolute peak of its flavor. Explore our full{' '}
+                The menu for your event is built in consultation with our team. From{' '}
+                <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">butter chicken</Link>{' '}
+                and{' '}
+                <Link href={`${base}/mutton-rogan-josh-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">mutton rogan josh</Link>{' '}
+                to{' '}
+                <Link href={`${base}/soya-chaap-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">soya chaap</Link>{' '}
+                and{' '}
+                <Link href={`${base}/chaat-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">chaat</Link>
+                , everything from the restaurant menu is available. Vegetarian and vegan guests are fully covered. A buffet works well for larger groups; a plated multi-course dinner adds formality to wedding receptions and corporate dinners. Explore our full{' '}
                 <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian catering services in Den Haag</Link>.
               </p>
             )}
@@ -376,7 +390,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       </section>
 
       {/* GEO BLOCK */}
-      <section className="bg-[#FFFAF5] py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
@@ -390,15 +404,15 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
                 <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Leyweg 986 in Den Haag</Link>{' '}
                 biedt een privé feestzaal te huur voor <strong>25 tot 80 gasten</strong>. De zaal is beschikbaar voor verjaardagen, bruiloften, nikah-recepties, bedrijfsfeesten, Diwali-diners en privéfeesten. Authentiek{' '}
                 <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indiaas catering</Link>{' '}
-                is inbegrepen, bereid door dezelfde keuken die 4,9 sterren scoort op Google. Open dinsdag tot en met zondag. Neem contact op voor een vrijblijvende offerte.
+                is inbegrepen, bereid door dezelfde keuken die 4,9 sterren scoort op Google van 800+ beoordelaars. Open dinsdag tot en met zondag. Neem contact op voor een vrijblijvende offerte.
               </p>
             ) : (
               <p>
                 Yes. Chopras Indian Restaurant at{' '}
                 <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Leyweg 986, Den Haag</Link>{' '}
-                offers a private event hall for hire accommodating <strong>25 to 80 guests</strong>. The hall is available for birthdays, weddings, nikah receptions, corporate events, Diwali dinners, and private parties. Full authentic{' '}
+                operates a private event hall for hire accommodating <strong>25 to 80 guests</strong>. The hall is available for birthdays, weddings, nikah receptions, corporate events, Diwali dinners, and private parties. Full authentic{' '}
                 <Link href={`${base}/catering`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian catering</Link>{' '}
-                is included, from the same kitchen rated 4.9 stars on Google. Open Tuesday to Sunday. Contact us to request a free quote for your event.
+                is included, from the same kitchen rated 4.9 stars on Google from 800+ reviews. Open Tuesday to Sunday. Contact us to request a free quote for your event.
               </p>
             )}
           </div>
@@ -416,24 +430,24 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
           <div className="space-y-6 font-body text-[#1A1A1A] text-lg leading-relaxed">
             {isNl ? (
               <p>
-                Het boeken van de feestzaal in Den Haag is eenvoudig. Neem contact op via de{' '}
+                Het boekingsproces is eenvoudig. Neem contact op via de{' '}
                 <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">contactpagina</Link>{' '}
-                of bel ons direct op <strong>+31 6 30645930</strong>. Vertel ons uw datum, uw aantal gasten en het type evenement. Wij bespreken menu-opties, beschikbaarheid en prijzen en sturen u binnen 24 uur een vrijblijvende offerte.
+                of bel ons direct op <strong>+31 6 30645930</strong>. Vertel ons drie dingen: de datum die u in gedachten heeft, uw verwachte aantal gasten en het type gelegenheid. Dat is genoeg om het gesprek te starten.
               </p>
             ) : (
               <p>
-                Booking the event hall in Den Haag is straightforward. Contact us via the{' '}
+                The booking process is straightforward. Contact us via the{' '}
                 <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">contact page</Link>{' '}
-                or call us directly on <strong>+31 6 30645930</strong>. Tell us your date, your guest count, and the type of event. We discuss menu options, availability, and pricing, and send you a free quote within 24 hours.
+                or call us directly on <strong>+31 6 30645930</strong>. Tell us three things: the date you have in mind, your expected guest count, and the type of occasion. That is enough to start the conversation.
               </p>
             )}
             {isNl ? (
               <p>
-                Voor kleine evenementen van 25 tot 40 personen raden we aan om minimaal <strong>2 tot 3 weken van tevoren</strong> contact op te nemen. Voor grotere bruiloften en bedrijfsfeesten van 50 tot 80 gasten, plan dan <strong>6 tot 8 weken vooruit</strong>. Dit geeft ons voldoende tijd om uw menu perfect in te richten en de zaalopstelling af te stemmen op uw gelegenheid.
+                Wij bespreken de beschikbaarheid, lopen met u door de menu-opties voor uw gelegenheid, en sturen u binnen <strong>24 uur</strong> een vrijblijvende offerte. Voor evenementen van 25 tot 40 gasten raden wij aan minimaal <strong>2 tot 3 weken van tevoren</strong> contact op te nemen. Voor grotere bruiloften en bedrijfsfeesten van 50 tot 80 gasten is <strong>6 tot 8 weken vooruit</strong> het juiste moment. Zo hebben wij voldoende tijd om het menu en de zaalopstelling volledig af te stemmen op uw gelegenheid.
               </p>
             ) : (
               <p>
-                For smaller events of 25 to 40 guests, we recommend contacting us at least <strong>2 to 3 weeks in advance</strong>. For larger weddings and corporate events of 50 to 80 guests, plan <strong>6 to 8 weeks ahead</strong>. This gives us enough time to build your menu and set up the hall exactly as your occasion requires.
+                We discuss availability, walk you through menu options for your occasion, and send a free no-obligation quote within <strong>24 hours</strong>. For events of 25 to 40 guests, reaching out at least <strong>2 to 3 weeks in advance</strong> gives us the preparation time your event deserves. For larger weddings and corporate dinners of 50 to 80 guests, <strong>6 to 8 weeks ahead</strong> is the right window. That gives us enough time to build the menu and configure the hall exactly as your occasion requires.
               </p>
             )}
           </div>
@@ -441,7 +455,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       </section>
 
       {/* BENEFITS */}
-      <section className="bg-[#FFFAF5] py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-12 leading-[1.4]">
             {isNl
@@ -453,26 +467,26 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
               {
                 title: isNl ? 'Restaurant Kwaliteit Eten' : 'Restaurant Quality Food',
                 desc: isNl
-                  ? 'Dezelfde chefs, recepten en specerijen als in het restaurant. 4,9 sterren op Google van 800+ beoordelaars. Geen aparte evenementenkeuken.'
-                  : 'The same chefs, recipes, and spices as in the restaurant. 4.9 stars on Google from 800+ reviewers. No separate event kitchen.',
+                  ? 'Dezelfde chefs, recepten en specerijen als in het restaurant. Vers gemalen specerijen rechtstreeks uit India. 4,9 sterren op Google van 800+ beoordelaars. Geen aparte evenementenkeuken.'
+                  : 'The same chefs, recipes, and spices as the restaurant. Freshly ground spices sourced directly from India. 4.9 stars on Google from 800+ reviewers. No separate event kitchen.',
               },
               {
                 title: isNl ? 'Alles Onder Een Dak' : 'Everything Under One Roof',
                 desc: isNl
-                  ? 'Ruimte, catering en service in één. Geen aparte cateraar. Geen dubbele contracten. Één punt van contact voor het hele evenement.'
-                  : 'Venue, catering, and service in one. No separate caterer. No double contracts. One point of contact for the entire event.',
+                  ? 'Ruimte, catering en service in één boeking. Geen aparte cateraar. Geen dubbele contracten. Één aanspreekpunt voor het hele evenement.'
+                  : 'Venue, catering, and service in one booking. No separate caterer. No double contracts. One point of contact for the entire event.',
               },
               {
                 title: isNl ? 'Volledig Halal Gecertificeerd' : 'Fully Halal Certified',
                 desc: isNl
-                  ? 'Elk gerecht, elke leverancier, elke bereiding is halal gecertificeerd. Geen uitzonderingen. Geen risico op kruiscontaminatie.'
-                  : 'Every dish, every supplier, every preparation is halal certified. No exceptions. No cross-contamination risk.',
+                  ? 'Elk gerecht, elke leverancier, elke bereiding is halal gecertificeerd. Geen uitzonderingen. Geen risico op kruiscontaminatie. Boek met volledige zekerheid.'
+                  : 'Every dish, every supplier, every preparation is halal certified. No exceptions. No cross-contamination risk. Book with complete confidence.',
               },
               {
                 title: isNl ? '25 tot 80 Gasten' : '25 to 80 Guests',
                 desc: isNl
-                  ? 'De privézaal past zich aan uw groep aan. Intiem diner of grote receptie, de ruimte werkt voor uw gelegenheid zonder vaste pakketten.'
-                  : 'The private hall adapts to your group. Intimate dinner or large reception, the space works for your occasion without fixed packages.',
+                  ? 'De privézaal past zich aan uw groep aan. Intiem familiediner of grote receptie, de ruimte werkt voor uw gelegenheid zonder verplichte vaste pakketten.'
+                  : 'The private hall adapts to your group size. Intimate family dinner or large reception, the space works for your occasion without mandatory fixed packages.',
               },
             ].map((item) => (
               <div key={item.title} className="p-6 border border-gray-200 rounded-lg bg-white">
@@ -494,47 +508,47 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
             {isNl ? 'Meer Over Onze Diensten' : 'Learn More About Our Services'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Link href={`${base}/`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Restaurant' : 'Restaurant'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Chopras Indian Restaurant - beste Indiaas restaurant in Den Haag' : 'Chopras Indian Restaurant - best Indian restaurant in Den Haag'}</p>
             </Link>
-            <Link href={`${base}/menu`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/menu`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Menu' : 'Menu'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Bekijk ons volledige menu voor uw evenement' : 'View our full menu for your event'}</p>
             </Link>
-            <Link href={`${base}/catering`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/catering`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Catering' : 'Catering'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiaas catering Den Haag' : 'Indian catering Den Haag'}</p>
             </Link>
-            <Link href={`${base}/contact`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/contact`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Contact' : 'Contact'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Vraag een vrijblijvende offerte aan' : 'Request a no-obligation quote'}</p>
             </Link>
-            <Link href={`${base}/indian-wedding-catering-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/indian-wedding-catering-den-haag`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Bruiloft' : 'Wedding'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiaas bruiloft catering Den Haag' : 'Indian wedding catering Den Haag'}</p>
             </Link>
-            <Link href={`${base}/indian-birthday-catering-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/indian-birthday-catering-den-haag`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Verjaardag' : 'Birthday'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Verjaardag catering Den Haag' : 'Birthday catering Den Haag'}</p>
             </Link>
-            <Link href={`${base}/corporate-events-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/corporate-events-den-haag`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Bedrijf' : 'Corporate'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Bedrijfsfeest Den Haag' : 'Corporate events Den Haag'}</p>
             </Link>
-            <Link href={`${base}/diwali-dinner-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/diwali-dinner-den-haag`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Diwali' : 'Diwali'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Diwali dinner Den Haag' : 'Diwali dinner Den Haag'}</p>
             </Link>
-            <Link href={`${base}/bruiloft-catering-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/bruiloft-catering-den-haag`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Trouwlocatie' : 'Wedding'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Bruiloft catering Den Haag' : 'Wedding catering Den Haag'}</p>
             </Link>
-            <Link href={`${base}/zaal-huren-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/zaal-huren-den-haag`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Zaal' : 'Venue'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Zaal huren Den Haag' : 'Hall for hire Den Haag'}</p>
             </Link>
-            <Link href={`${base}/evenementenruimte-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/evenementenruimte-den-haag`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Evenement' : 'Event'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Evenementenruimte Den Haag' : 'Event venue Den Haag'}</p>
             </Link>
@@ -543,7 +557,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
