@@ -4,7 +4,8 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { Leaf } from 'lucide-react'
 import { menuCategories, menuItems } from '@/lib/menu-data'
-import type { DietaryTag } from '@/types'
+import type { MenuCategoryEntry } from '@/lib/menu-data'
+import type { DietaryTag, MenuItem } from '@/types'
 import AddToCartButton from '@/components/cart/AddToCartButton'
 import { useInView } from '@/hooks/useInView'
 
@@ -71,7 +72,7 @@ function DietBadgeComponent({ type }: { type: 'vegan' | 'vegetarian' }) {
   }
 }
 
-function DishGrid({ dishes }: { dishes: typeof menuItems }) {
+function DishGrid({ dishes }: { dishes: MenuItem[] }) {
   const { ref, inView } = useInView()
   return (
     <div
@@ -156,8 +157,15 @@ function DishGrid({ dishes }: { dishes: typeof menuItems }) {
   )
 }
 
-export default function MenuPageClient() {
-  const [activeCategory, setActiveCategory] = useState<string>(menuCategories[0].id)
+interface MenuPageClientProps {
+  categories?: MenuCategoryEntry[]
+  items?: MenuItem[]
+}
+
+export default function MenuPageClient({ categories, items }: MenuPageClientProps) {
+  const activeCategories = categories ?? menuCategories
+  const activeItems = items ?? menuItems
+  const [activeCategory, setActiveCategory] = useState<string>(activeCategories[0].id)
   const navRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -169,14 +177,14 @@ export default function MenuPageClient() {
   useEffect(() => {
     const handleScroll = () => {
       const headerOffset = 140
-      const categories = menuCategories.map((cat) => ({
+      const sections = activeCategories.map((cat) => ({
         id: cat.id,
         element: document.getElementById(cat.id),
       }))
 
-      let currentCategory: string | undefined = categories[0]?.id
+      let currentCategory: string | undefined = sections[0]?.id
 
-      for (const cat of categories) {
+      for (const cat of sections) {
         if (!cat.element) continue
         const rect = cat.element.getBoundingClientRect()
         if (rect.top <= headerOffset + 20) {
@@ -191,7 +199,7 @@ export default function MenuPageClient() {
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [activeCategories])
 
   const handleCategoryClick = (categoryId: string) => {
     setActiveCategory(categoryId)
@@ -229,7 +237,7 @@ export default function MenuPageClient() {
         aria-label="Menu categories"
       >
         <div className="flex items-center justify-center gap-1 px-6 py-3">
-          {menuCategories.map((category) => (
+          {activeCategories.map((category) => (
             <a
               key={category.id}
               href={`#${category.id}`}
@@ -257,11 +265,11 @@ export default function MenuPageClient() {
 
       {/* Category sections */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 pb-16">
-        {menuCategories.map((category) => {
+        {activeCategories.map((category) => {
           const dishes =
             category.id === 'vegan'
-              ? menuItems.filter((item) => item.dietary.includes('vegan'))
-              : menuItems.filter((item) => item.category === category.id)
+              ? activeItems.filter((item) => item.dietary.includes('vegan'))
+              : activeItems.filter((item) => item.category === category.id)
 
           return (
             <section
