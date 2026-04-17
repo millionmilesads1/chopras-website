@@ -5,8 +5,14 @@ import { getLocalizedUrl } from '@/lib/utils'
 import { getLocalRestaurantSchema, getBreadcrumbSchema, getFaqPageSchema, getDietFoodEstablishmentSchema } from '@/lib/schema'
 import { getTranslations, type Locale } from '@/lib/useTranslations'
 import FaqAccordion from '@/components/sections/FaqAccordion'
+import MenuPageClient from '@/components/sections/MenuPageClient'
+import { menuCategories, menuItems } from '@/lib/menu-data'
 
 type Props = { params: { locale: Locale } }
+
+const halalItems = menuItems.filter(item => item.dietary.includes('halal') || item.dietary.includes('veg') || item.dietary.includes('vegan'))
+const halalCategoryIds = Array.from(new Set(halalItems.map(item => item.category)))
+const halalCategories = menuCategories.filter(cat => halalCategoryIds.includes(cat.id))
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'nl' }]
@@ -194,6 +200,11 @@ export default function HalalMenuPage({ params }: Props) {
             </p>
           )}
         </div>
+      </section>
+
+      {/* HALAL DISH GRID */}
+      <section className="bg-[#F7F8FC]">
+        <MenuPageClient categories={halalCategories} items={halalItems} />
       </section>
 
       {/* WHY HALAL CERTIFICATION IS DIFFERENT */}
