@@ -157,7 +157,7 @@ export default function LocaleVacancyPage({ params }: Props) {
       </section>
 
       {/* Culture */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
             <p>{tr.vacancy.cultureP1}</p>
@@ -175,7 +175,7 @@ export default function LocaleVacancyPage({ params }: Props) {
           </h2>
           <div className="space-y-8">
             {vacancies.map((v) => (
-              <div key={v.title} className="bg-[#FFFAF5] rounded-2xl p-8 border border-gray-100 shadow-sm">
+              <div key={v.title} className="bg-[#F7F8FC] rounded-2xl p-8 border border-gray-100 shadow-sm">
                 <div className="flex flex-wrap items-start gap-4 mb-4">
                   <span className={`${v.badgeColor} text-xs px-3 py-1 rounded-full font-medium`}>
                     {v.badge}

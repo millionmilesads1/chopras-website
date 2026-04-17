@@ -8,7 +8,7 @@ export default function MeetTheFounder() {
   const { ref: textRef, inView: textInView } = useInView()
 
   return (
-    <section className="bg-[#FFFAF5] py-24 px-6 md:px-16">
+    <section className="bg-[#F7F8FC] py-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT  -  Photo */}

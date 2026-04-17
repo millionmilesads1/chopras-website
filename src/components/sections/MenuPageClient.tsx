@@ -221,7 +221,7 @@ export default function MenuPageClient() {
   }, [activeCategory])
 
   return (
-    <div className="bg-[#FFFAF5]">
+    <div className="bg-[#F7F8FC]">
       {/* Sticky category navigation */}
       <nav
         ref={navRef}

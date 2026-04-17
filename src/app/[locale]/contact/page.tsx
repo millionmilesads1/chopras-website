@@ -193,7 +193,7 @@ export default function LocaleContactPage({ params }: Props) {
       </section>
 
       {/* SECTION 2  -  QUICK ACTION CARDS */}
-      <section className="bg-[#FFFAF5] py-16 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-16 px-6 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
           {quickCards.map(({ Icon, title, body, cta, href }) => (
             <div

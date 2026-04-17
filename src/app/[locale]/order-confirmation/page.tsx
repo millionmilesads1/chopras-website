@@ -88,7 +88,7 @@ function OrderConfirmationContent({ locale }: { locale: Locale }) {
 
         {/* Order items breakdown */}
         {lastOrder && lastOrder.items && lastOrder.items.length > 0 && (
-          <div className="mt-6 bg-[#FFFAF5] rounded-2xl p-5 text-left">
+          <div className="mt-6 bg-[#F7F8FC] rounded-2xl p-5 text-left">
             <p className="text-xs uppercase tracking-widest text-[#1A1A1A]/40 mb-3 font-medium">
               Your Order
             </p>
@@ -116,19 +116,19 @@ function OrderConfirmationContent({ locale }: { locale: Locale }) {
 
         {/* Info pills */}
         <div className="mt-6 space-y-3">
-          <div className="flex items-center gap-3 bg-[#FFFAF5] rounded-xl px-5 py-4 text-left">
+          <div className="flex items-center gap-3 bg-[#F7F8FC] rounded-xl px-5 py-4 text-left">
             <MapPin className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
             <p className="text-sm text-[#1A1A1A]/70">
               {lastOrder?.restaurantAddress ?? 'Leyweg 986, 2545 GW Den Haag'}
             </p>
           </div>
-          <div className="flex items-center gap-3 bg-[#FFFAF5] rounded-xl px-5 py-4 text-left">
+          <div className="flex items-center gap-3 bg-[#F7F8FC] rounded-xl px-5 py-4 text-left">
             <Clock className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
             <p className="text-sm text-[#1A1A1A]/70">
               Ready in {lastOrder?.estimatedPickup ?? '30 to 45 minutes'}
             </p>
           </div>
-          <div className="flex items-center gap-3 bg-[#FFFAF5] rounded-xl px-5 py-4 text-left">
+          <div className="flex items-center gap-3 bg-[#F7F8FC] rounded-xl px-5 py-4 text-left">
             <Banknote className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
             <p className="text-sm text-[#1A1A1A]/70">
               Payment: {lastOrder?.paymentMethod ?? 'Cash on Pickup'}

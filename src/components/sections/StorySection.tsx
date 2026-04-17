@@ -12,7 +12,7 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
   const { ref: textRef, inView: textInView } = useInView()
 
   return (
-    <section className="bg-[#FFFAF5] py-28 md:py-36 px-5 md:px-12">
+    <section className="bg-[#F7F8FC] py-28 md:py-36 px-5 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
         {/* LEFT: Double-bezel image */}
@@ -36,7 +36,7 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
           </div>
 
           {/* Floating dish  -  double-bezel */}
-          <div className="absolute -bottom-5 -right-3 rounded-[1.25rem] bg-[#FFFAF5]/80 p-1.5 ring-1 ring-[#1B2B5E]/10 shadow-lg backdrop-blur-sm">
+          <div className="absolute -bottom-5 -right-3 rounded-[1.25rem] bg-[#F7F8FC]/80 p-1.5 ring-1 ring-[#1B2B5E]/10 shadow-lg backdrop-blur-sm">
             <div className="relative w-28 h-28 rounded-[calc(1.25rem-0.375rem)] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.5)]">
               <Image
                 src="/images/dishes/butter-chicken.webp"
@@ -84,12 +84,12 @@ export default function StorySection({ locale = 'en' }: { locale?: Locale }) {
               </span>
             </div>
             <div className="rounded-full bg-[#D4AF37]/[0.08] p-1 ring-1 ring-[#D4AF37]/20">
-              <span className="block rounded-full bg-[#FFFAF5] text-[#1B2B5E] px-5 py-2 font-body text-xs uppercase tracking-wider shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
+              <span className="block rounded-full bg-[#F7F8FC] text-[#1B2B5E] px-5 py-2 font-body text-xs uppercase tracking-wider shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
                 143 Dishes · 12 Categories
               </span>
             </div>
             <div className="rounded-full bg-[#D4AF37]/[0.08] p-1 ring-1 ring-[#D4AF37]/20">
-              <span className="block rounded-full bg-[#FFFAF5] text-[#1B2B5E] px-5 py-2 font-body text-xs uppercase tracking-wider shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
+              <span className="block rounded-full bg-[#F7F8FC] text-[#1B2B5E] px-5 py-2 font-body text-xs uppercase tracking-wider shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
                 Indian Street Food Den Haag
               </span>
             </div>

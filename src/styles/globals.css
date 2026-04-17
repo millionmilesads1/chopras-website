@@ -6,7 +6,7 @@
   --color-primary: #1B2B5E;
   --color-accent: #D4AF37;
   --color-navy: #0F1F4B;
-  --color-bg: #FFFAF5;
+  --color-bg: #F7F8FC;
   --color-text: #1A1A1A;
 }
 
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background-color: #FFFAF5;
+  background-color: #F7F8FC;
   color: #1A1A1A;
   font-family: var(--font-dm-sans), system-ui, sans-serif;
 }

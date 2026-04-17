@@ -131,7 +131,7 @@ export default function NaanPage({ params }: Props) {
       </section>
 
       {/* THE 400-DEGREE DIFFERENCE */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
@@ -191,7 +191,7 @@ export default function NaanPage({ params }: Props) {
       </section>
 
       {/* HOW IT IS MADE */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Hoe Naan Wordt Gemaakt bij Chopras' : 'How Naan Is Made at Chopras'}
@@ -233,7 +233,7 @@ export default function NaanPage({ params }: Props) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen Over Naan' : 'Frequently Asked Questions About Naan'}
@@ -273,7 +273,7 @@ export default function NaanPage({ params }: Props) {
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}

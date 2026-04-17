@@ -17,7 +17,7 @@ export default function ReviewsSection({ locale = 'en' }: { locale?: Locale }) {
   ]
 
   return (
-    <section className="bg-[#FFFAF5] py-24 px-6 md:px-16">
+    <section className="bg-[#F7F8FC] py-24 px-6 md:px-16">
       {/* Header */}
       <div
         ref={headerRef}

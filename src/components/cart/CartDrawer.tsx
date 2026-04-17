@@ -85,7 +85,7 @@ export default function CartDrawer({ locale }: { locale: Locale }) {
             items.map((item) => (
               <div
                 key={item.id}
-                className="flex items-start gap-4 p-4 bg-[#FFFAF5] rounded-2xl border border-gray-100 relative"
+                className="flex items-start gap-4 p-4 bg-[#F7F8FC] rounded-2xl border border-gray-100 relative"
               >
                 {/* Image */}
                 <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">

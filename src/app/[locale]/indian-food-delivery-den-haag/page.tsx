@@ -107,7 +107,7 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Hoe Indiaas Eten Bezorgen Werkt bij Chopras' : 'How Indian Food Delivery Works at Chopras'}
@@ -172,7 +172,7 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Begin nu met Bestellen' : 'Order Now'}
@@ -192,7 +192,7 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
       </section>
 
       {/* INTERNAL LINKS SECTION */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10">
             {isNl ? 'Populaire Bezorggerechten' : 'Popular Delivery Dishes'}

@@ -105,7 +105,7 @@ export default function LocaleBlogPage({ params }: Props) {
       </section>
 
       {/* Article Grid */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="font-heading text-3xl text-[#1B2B5E] text-center mb-12">
             {tr.blog.latestH2}

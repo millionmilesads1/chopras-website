@@ -127,7 +127,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
       </section>
 
       {/* WHAT IS MUTTON ROGAN JOSH */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Wat is mutton rogan josh?' : 'What is Mutton Rogan Josh?'}
@@ -217,7 +217,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
       </section>
 
       {/* ROGAN JOSH AT CHOPRAS */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Mutton rogan josh bij Chopras Indian Restaurant Den Haag' : 'Mutton Rogan Josh at Chopras Indian Restaurant Den Haag'}
@@ -285,7 +285,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
       </section>
 
       {/* ORDER */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Rogan josh bestellen bij Chopras' : 'Order Rogan Josh at Chopras'}
@@ -344,19 +344,19 @@ export default function MuttonRoganJoshPage({ params }: Props) {
             {isNl ? 'Meer gerechten ontdekken' : 'Explore More Dishes'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <Link href={`${base}/biryani-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/biryani-den-haag`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Signature Gerecht' : 'Signature Dish'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Biryani in Den Haag' : 'Biryani in Den Haag'}</p>
             </Link>
-            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/dal-makhani-den-haag`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Vegetarisch' : 'Vegetarian'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Dal Makhani in Den Haag' : 'Dal Makhani in Den Haag'}</p>
             </Link>
-            <Link href={`${base}/tandoori-den-haag`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/tandoori-den-haag`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Tandoor' : 'Tandoor'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Tandoori specialiteiten Den Haag' : 'Tandoori specialities Den Haag'}</p>
             </Link>
-            <Link href={`${base}/catering`} className="block p-6 bg-[#FFFAF5] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
+            <Link href={`${base}/catering`} className="block p-6 bg-[#F7F8FC] rounded-lg border border-gray-200 hover:border-[#D4AF37] hover:shadow-lg transition-all">
               <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-widest mb-2">{isNl ? 'Evenementen' : 'Events'}</p>
               <p className="text-[#1B2B5E] font-semibold">{isNl ? 'Indiaas catering voor uw feest' : 'Indian catering for your event'}</p>
             </Link>

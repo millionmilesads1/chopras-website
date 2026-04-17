@@ -141,7 +141,7 @@ export default function LocaleMenuPage({ params }: Props) {
       <MenuPageClient />
 
       {/* SEO COPY — MENU OVERVIEW */}
-      <section className="bg-[#FFFAF5] py-16 md:py-24 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-16 md:py-24 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
 
           {/* GEO BLOCK — self-contained paragraph for AI citation */}
@@ -330,7 +330,7 @@ export default function LocaleMenuPage({ params }: Props) {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="bg-[#FFFAF5] py-16 md:py-24 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-16 md:py-24 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4] text-center">
             {isNl
@@ -342,7 +342,7 @@ export default function LocaleMenuPage({ params }: Props) {
       </section>
 
       {/* INTERNAL LINKS SECTION */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-12 text-center">
             Explore Our Specialities
@@ -423,7 +423,7 @@ export default function LocaleMenuPage({ params }: Props) {
       </section>
 
       {/* ALLERGEN NOTICE */}
-      <div className="bg-[#FFFAF5] py-12 px-6 md:px-16">
+      <div className="bg-[#F7F8FC] py-12 px-6 md:px-16">
         <div className="max-w-3xl mx-auto">
           <div className="bg-[#D4AF37]/10 border-l-4 border-[#D4AF37] rounded-r-xl p-6 flex gap-4 items-start">
             <Info className="text-[#D4AF37] w-5 h-5 flex-shrink-0 mt-0.5" />

@@ -38,7 +38,7 @@ export default function MenuHeroSection({ locale = 'en' }: { locale?: Locale }) 
         </div>
 
         <h1
-          className="font-heading font-bold text-[#FFFAF5] leading-none"
+          className="font-heading font-bold text-[#F7F8FC] leading-none"
           style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
         >
           <span className="block text-5xl md:text-6xl lg:text-8xl">{tr.menu.heroH1}</span>

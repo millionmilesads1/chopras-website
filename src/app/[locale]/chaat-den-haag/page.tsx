@@ -145,7 +145,7 @@ export default function ChaatPage({ params }: Props) {
       </section>
 
       {/* WHAT IS CHAAT */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Wat Is Chaat? Mumbais Straatvoedsel in Jouw Handen' : 'What Is Chaat? Mumbai Street Food in Your Hands'}
@@ -245,7 +245,7 @@ export default function ChaatPage({ params }: Props) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen Over Chaat' : 'Frequently Asked Questions About Chaat'}
@@ -303,7 +303,7 @@ export default function ChaatPage({ params }: Props) {
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Meer Gerechten Ontdekken' : 'Explore More Dishes'}

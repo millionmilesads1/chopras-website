@@ -166,7 +166,7 @@ export default function IndianFoodNetherlandsPage({ params }: Props) {
       </section>
 
       {topics.map((topic) => (
-        <section key={topic.h2} className="bg-[#FFFAF5] odd:bg-white py-16">
+        <section key={topic.h2} className="bg-[#F7F8FC] odd:bg-white py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">{topic.h2}</h2>
             <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">

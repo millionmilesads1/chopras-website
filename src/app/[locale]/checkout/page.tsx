@@ -83,7 +83,7 @@ export default function CheckoutPage({ params }: { params: { locale: Locale } })
   }
 
   return (
-    <div className="min-h-screen bg-[#FFFAF5]">
+    <div className="min-h-screen bg-[#F7F8FC]">
       {/* Hero */}
       <section
         className="py-16 px-6 text-center"

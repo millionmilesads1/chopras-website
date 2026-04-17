@@ -79,7 +79,7 @@ export default function PrivacyPolicyPage({ params }: Props) {
       </section>
 
       {/* CONTENT */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto space-y-12">
 
           {/* SECTION 1: What Data We Collect */}

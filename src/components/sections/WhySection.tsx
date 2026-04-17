@@ -56,7 +56,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
   const { ref: stripRef, inView: stripInView } = useInView()
 
   return (
-    <section className="bg-[#FFFAF5] py-28 md:py-36 px-5 md:px-12 overflow-hidden">
+    <section className="bg-[#F7F8FC] py-28 md:py-36 px-5 md:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         {/* Section header */}
@@ -103,7 +103,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
 
           {/* Card 2  -  col-span-5 upper right */}
           <div className="md:col-span-5 rounded-[2rem] bg-[#D4AF37]/[0.06] p-2 ring-1 ring-[#D4AF37]/[0.12]">
-            <div className="h-full min-h-[220px] rounded-[calc(2rem-0.5rem)] bg-[#FFFAF5] shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] p-8 md:p-10 flex flex-col justify-between">
+            <div className="h-full min-h-[220px] rounded-[calc(2rem-0.5rem)] bg-[#F7F8FC] shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] p-8 md:p-10 flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 ring-1 ring-[#D4AF37]/15">
                   <IconUsers className="w-6 h-6 text-[#D4AF37]" />

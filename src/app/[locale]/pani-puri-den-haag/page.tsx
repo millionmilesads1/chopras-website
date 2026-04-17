@@ -131,7 +131,7 @@ export default function PaniPuriPage({ params }: Props) {
       </section>
 
       {/* THE MOMENT */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
@@ -185,7 +185,7 @@ export default function PaniPuriPage({ params }: Props) {
       </section>
 
       {/* HOW IT IS MADE */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Hoe Pani Puri Wordt Gemaakt bij Chopras' : 'How Pani Puri Is Made at Chopras'}
@@ -263,7 +263,7 @@ export default function PaniPuriPage({ params }: Props) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl
@@ -319,7 +319,7 @@ export default function PaniPuriPage({ params }: Props) {
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Meer Gerechten bij Chopras Indian Restaurant Den Haag' : 'Explore More Dishes at Chopras Indian Restaurant Den Haag'}

@@ -137,7 +137,7 @@ export default function TandooriPage({ params }: Props) {
       </section>
 
       {/* SECTION 1: What 400 Degrees Actually Means */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Wat 400 Graden Echt Betekent voor Tandoori Kip' : 'What 400 Degrees Actually Means for Tandoori Chicken'}
@@ -208,7 +208,7 @@ export default function TandooriPage({ params }: Props) {
                 href: '/naan-den-haag',
               },
             ].map((item) => (
-              <div key={item.name} className="bg-[#FFFAF5] rounded-xl p-5 border-l-4 border-[#D4AF37]">
+              <div key={item.name} className="bg-[#F7F8FC] rounded-xl p-5 border-l-4 border-[#D4AF37]">
                 <h3 className="font-heading text-lg text-[#1B2B5E] mb-1">
                   <Link href={`${base}${item.href}`} className="text-[#D4AF37] hover:underline">{item.name}</Link> - {item.price}
                 </h3>
@@ -234,7 +234,7 @@ export default function TandooriPage({ params }: Props) {
       </section>
 
       {/* SECTION 3: Why the Marinade Starts the Night Before */}
-      <section className="bg-[#FFFAF5] py-16">
+      <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
             {isNl ? 'Waarom de Marinade de Avond Ervoor Begint' : 'Why the Marinade Starts the Night Before'}
@@ -276,7 +276,7 @@ export default function TandooriPage({ params }: Props) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {isNl ? 'Veelgestelde Vragen over Tandoori' : 'Frequently Asked Questions About Tandoori'}

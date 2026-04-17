@@ -295,3 +295,49 @@ export const allFaqs: FaqItem[] = [
   ...cateringFaqs,
   ...eventFaqs,
 ]
+
+export const cateringPageFaqs: FaqItem[] = [
+  {
+    question: "How much does Indian catering cost in Den Haag?",
+    answer: "Catering pricing at Chopras Indian Restaurant depends on your guest count, menu selection, and service format. There is no fixed price per head because every event is custom-built from scratch. Contact us at info@chopras.nl or call +31 6 30645930 and we will respond with a clear written proposal within 24 hours.",
+  },
+  {
+    question: "Is the catering halal certified?",
+    answer: "Yes. Every meat dish at every Chopras Indian Restaurant catering event is sourced from halal-certified suppliers. Halal is not an option or an upgrade at Chopras. It is the standard for every event, every time, with no exceptions and no additional cost.",
+  },
+  {
+    question: "How many guests can you cater for in Den Haag?",
+    answer: "Chopras Indian Restaurant caters for groups of 25 to 80 guests in its private event hall at Leyweg 986, Den Haag. For off-site catering at your own venue, we have served larger groups. Contact us with your guest count and we will confirm availability and logistics.",
+  },
+  {
+    question: "How far in advance do I need to book catering?",
+    answer: "Chopras Indian Restaurant recommends booking at least one to two weeks in advance for weekend events and cultural occasions such as Diwali and Eid. For larger events with custom menus, booking further ahead is advisable. Contact us as soon as your date is confirmed to secure your slot.",
+  },
+  {
+    question: "Do you provide staff and equipment at catering events?",
+    answer: "Yes. All Chopras Indian Restaurant catering events include professional staff who handle setup, food service, and clearing throughout the evening. You do not need to source separate servers or coordinators. Guests are welcome to bring their own A/V equipment and birthday cakes.",
+  },
+]
+
+export const cateringPageFaqsNl: FaqItem[] = [
+  {
+    question: "Wat kost Indiaas catering in Den Haag?",
+    answer: "De prijs van catering bij Chopras Indian Restaurant hangt af van het aantal gasten, de menukeuze en het serviceformaat. Er is geen vaste prijs per persoon omdat elk evenement van scratch op maat wordt samengesteld. Neem contact op via info@chopras.nl of bel +31 6 30645930 en wij reageren binnen 24 uur met een duidelijk schriftelijk voorstel.",
+  },
+  {
+    question: "Is de catering halal gecertificeerd?",
+    answer: "Ja. Elk vleesgerecht bij elk Chopras Indian Restaurant-cateringevenement is afkomstig van halal-gecertificeerde leveranciers. Halal is geen optie of toeslag bij Chopras. Het is de standaard voor elk evenement, altijd, zonder uitzonderingen en zonder meerkosten.",
+  },
+  {
+    question: "Voor hoeveel gasten kan Chopras cateren in Den Haag?",
+    answer: "Chopras Indian Restaurant verzorgt catering voor groepen van 25 tot 80 gasten in de eigen evenementenruimte op Leyweg 986, Den Haag. Voor externe catering op uw locatie hebben wij ook grotere evenementen verzorgd. Neem contact met ons op met uw aantal gasten en wij bevestigen beschikbaarheid en logistiek.",
+  },
+  {
+    question: "Hoe ver van tevoren moet ik catering boeken?",
+    answer: "Chopras Indian Restaurant raadt aan om minimaal een tot twee weken van tevoren te boeken voor weekendevenementen en culturele gelegenheden zoals Diwali en Eid. Voor grotere evenementen met aangepaste menus is eerder boeken verstandiger. Neem contact met ons op zodra uw datum vaststaat om uw plek te reserveren.",
+  },
+  {
+    question: "Leveren jullie personeel en apparatuur bij cateringevenementen?",
+    answer: "Ja. Bij alle Chopras Indian Restaurant-cateringevenementen is professioneel personeel inbegrepen dat opbouw, bediening en opruiming de hele avond beheert. U hoeft geen aparte bediening of coördinatoren in te huren. Gasten zijn welkom om eigen AV-apparatuur en verjaardagstaarten mee te nemen.",
+  },
+]
