@@ -47,7 +47,7 @@ export default function CartDrawer({ locale }: { locale: Locale }) {
           <div className="px-6 py-5 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <ShoppingBag className="w-5 h-5 text-white" />
-              <span className="font-heading text-xl text-white">Your Order</span>
+              <span className="font-vibes text-xl text-white">Your Order</span>
             </div>
             <button
               onClick={closeCart}
@@ -67,7 +67,7 @@ export default function CartDrawer({ locale }: { locale: Locale }) {
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full py-16">
               <ShoppingBag className="w-16 h-16 text-[#1A1A1A]/20" />
-              <p className="font-heading text-lg text-[#1A1A1A]/50 mt-4">Your cart is empty</p>
+              <p className="font-vibes text-lg text-[#1A1A1A]/50 mt-4">Your cart is empty</p>
               <p className="text-[#1A1A1A]/40 text-sm mt-2 text-center max-w-[200px]">
                 Browse our menu and add your favourite dishes
               </p>
@@ -99,7 +99,7 @@ export default function CartDrawer({ locale }: { locale: Locale }) {
                     />
                   ) : (
                     <div
-                      className="w-full h-full flex items-center justify-center text-white font-heading text-lg"
+                      className="w-full h-full flex items-center justify-center text-white font-vibes text-lg"
                       style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
                     >
                       {item.name.charAt(0)}
@@ -109,7 +109,7 @@ export default function CartDrawer({ locale }: { locale: Locale }) {
 
                 {/* Info */}
                 <div className="flex-1 min-w-0">
-                  <p className="font-heading text-base font-semibold text-[#1A1A1A] leading-tight truncate">
+                  <p className="font-vibes text-base text-[#1A1A1A] leading-tight truncate">
                     {item.name}
                   </p>
                   <p className="text-[#1A1A1A]/40 text-xs capitalize mt-0.5">{item.category}</p>
@@ -168,7 +168,7 @@ export default function CartDrawer({ locale }: { locale: Locale }) {
                 <span>Pickup</span>
                 <span>Free</span>
               </div>
-              <div className="flex justify-between font-heading text-xl text-[#1A1A1A] pt-2 border-t border-gray-100">
+              <div className="flex justify-between font-vibes text-xl text-[#1A1A1A] pt-2 border-t border-gray-100">
                 <span>Total</span>
                 <span className="text-[#D4AF37]">{formatPrice(totalPrice)}</span>
               </div>

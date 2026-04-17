@@ -142,7 +142,7 @@ export default function LocaleVacancyPage({ params }: Props) {
             </span>
           </div>
           <h1
-            className="font-heading text-4xl md:text-6xl text-white font-bold"
+            className="font-vibes text-4xl md:text-6xl text-white font-bold"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
           >
             {tr.vacancy.heroH1}
@@ -170,7 +170,7 @@ export default function LocaleVacancyPage({ params }: Props) {
       {/* Vacancies */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl text-[#1B2B5E] font-bold text-center mb-12">
+          <h2 className="font-vibes text-3xl text-[#C7A348] font-bold text-center mb-12">
             {tr.vacancy.vacanciesH2}
           </h2>
           <div className="space-y-8">
@@ -221,7 +221,7 @@ export default function LocaleVacancyPage({ params }: Props) {
       {/* Application Form */}
       <section className="bg-[#1B2B5E] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl text-white text-center font-bold mb-10">
+          <h2 className="font-vibes text-3xl text-white text-center font-bold mb-10">
             {tr.vacancy.applyH2}
           </h2>
           <VacancyForm />

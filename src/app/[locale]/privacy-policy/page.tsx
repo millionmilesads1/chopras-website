@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage({ params }: Props) {
 
           {/* SECTION 1: What Data We Collect */}
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+            <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
               {isNl ? '1. Welke Gegevens Verzamelen Wij?' : '1. What Data Do We Collect?'}
             </h2>
             <div className="space-y-4 text-[#1A1A1A] leading-relaxed">
@@ -130,7 +130,7 @@ export default function PrivacyPolicyPage({ params }: Props) {
 
           {/* SECTION 2: Why We Collect Your Data */}
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+            <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
               {isNl ? '2. Waarom Verzamelen Wij Uw Gegevens?' : '2. Why Do We Collect Your Data?'}
             </h2>
             <div className="space-y-4 text-[#1A1A1A] leading-relaxed">
@@ -164,7 +164,7 @@ export default function PrivacyPolicyPage({ params }: Props) {
 
           {/* SECTION 3: How Long We Store Your Data */}
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+            <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
               {isNl ? '3. Hoe Lang Slaan Wij Uw Gegevens Op?' : '3. How Long Do We Store Your Data?'}
             </h2>
             <div className="space-y-4 text-[#1A1A1A] leading-relaxed">
@@ -178,7 +178,7 @@ export default function PrivacyPolicyPage({ params }: Props) {
 
           {/* SECTION 4: Your Rights */}
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+            <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
               {isNl ? '4. Uw Rechten onder de AVG' : '4. Your Rights Under GDPR'}
             </h2>
             <div className="space-y-4 text-[#1A1A1A] leading-relaxed">
@@ -212,7 +212,7 @@ export default function PrivacyPolicyPage({ params }: Props) {
 
           {/* SECTION 5: Data Security */}
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+            <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
               {isNl ? '5. Veiligheid van Uw Gegevens' : '5. Security of Your Data'}
             </h2>
             <div className="space-y-4 text-[#1A1A1A] leading-relaxed">
@@ -226,7 +226,7 @@ export default function PrivacyPolicyPage({ params }: Props) {
 
           {/* SECTION 6: Cookies */}
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+            <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
               {isNl ? '6. Cookies' : '6. Cookies'}
             </h2>
             <div className="space-y-4 text-[#1A1A1A] leading-relaxed">
@@ -240,7 +240,7 @@ export default function PrivacyPolicyPage({ params }: Props) {
 
           {/* SECTION 7: Third Parties */}
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+            <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
               {isNl ? '7. Derden' : '7. Third Parties'}
             </h2>
             <div className="space-y-4 text-[#1A1A1A] leading-relaxed">
@@ -254,7 +254,7 @@ export default function PrivacyPolicyPage({ params }: Props) {
 
           {/* SECTION 8: Changes to This Policy */}
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+            <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
               {isNl ? '8. Wijzigingen van Dit Beleid' : '8. Changes to This Policy'}
             </h2>
             <div className="space-y-4 text-[#1A1A1A] leading-relaxed">
@@ -268,7 +268,7 @@ export default function PrivacyPolicyPage({ params }: Props) {
 
           {/* SECTION 9: Contact */}
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+            <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
               {isNl ? '9. Contact' : '9. Contact'}
             </h2>
             <div className="space-y-4 text-[#1A1A1A] leading-relaxed">

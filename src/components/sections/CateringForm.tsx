@@ -45,7 +45,7 @@ export default function CateringForm() {
   if (status === 'success') {
     return (
       <div className="text-center py-12 max-w-2xl mx-auto">
-        <p className="text-white text-xl font-heading font-semibold">
+        <p className="text-white text-xl font-vibes">
           Thank you! We will be in touch within 24 hours.
         </p>
       </div>

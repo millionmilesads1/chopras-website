@@ -107,7 +107,7 @@ export default function LocaleContactPage({ params }: Props) {
                   • VISIT US · CHOPRAS INDIAN RESTAURANT · DEN HAAG •
                 </span>
               </div>
-              <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] font-semibold mt-2">
+              <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mt-2">
                 Reserve Your Table at Chopras
               </h2>
               <p className="text-[#1A1A1A]/60 text-sm mt-2 mb-6">
@@ -224,7 +224,7 @@ export default function LocaleContactPage({ params }: Props) {
           <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">
             SEND A MESSAGE
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348]">
             {tr.contact.formH2}
           </h2>
         </div>

@@ -87,7 +87,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
                   <IconFlame className="w-7 h-7 text-[#1B2B5E]" />
                 </div>
                 <div className="w-10 h-px bg-[#D4AF37] mb-6" />
-                <h3 className="font-heading text-3xl md:text-4xl font-semibold text-[#1B2B5E] leading-tight max-w-sm">
+                <h3 className="font-vibes text-3xl md:text-4xl text-[#C7A348] leading-tight max-w-sm">
                   {t.home.why1H3}
                 </h3>
                 <p className="text-[#1A1A1A]/55 text-base leading-relaxed mt-5 max-w-sm">
@@ -95,7 +95,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
                 </p>
               </div>
               <div className="flex items-center gap-3 mt-10">
-                <span className="text-5xl font-heading font-semibold text-[#1B2B5E]">143</span>
+                <span className="text-5xl font-vibes text-[#C7A348]">143</span>
                 <span className="text-sm text-[#1A1A1A]/40 leading-tight font-body">Dishes crafted<br />fresh daily</span>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
                   <IconUsers className="w-6 h-6 text-[#D4AF37]" />
                 </div>
                 <div className="w-8 h-px bg-[#D4AF37] mb-4" />
-                <h3 className="font-heading text-2xl font-semibold text-[#1B2B5E] leading-tight">
+                <h3 className="font-vibes text-2xl text-[#C7A348] leading-tight">
                   {t.home.why2H3}
                 </h3>
                 <p className="text-[#1A1A1A]/55 text-sm leading-relaxed mt-3">
@@ -127,7 +127,7 @@ export default function WhySection({ locale = 'en' }: { locale?: Locale }) {
                   <IconCalendar className="w-6 h-6 text-[#1B2B5E]" />
                 </div>
                 <div className="w-8 h-px bg-[#D4AF37] mb-4" />
-                <h3 className="font-heading text-2xl font-semibold text-[#1B2B5E] leading-tight">
+                <h3 className="font-vibes text-2xl text-[#C7A348] leading-tight">
                   {t.home.why3H3}
                 </h3>
                 <p className="text-[#1A1A1A]/55 text-sm leading-relaxed mt-3">

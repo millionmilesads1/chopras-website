@@ -142,7 +142,7 @@ export default function PartyVenuePage({ params }: Props) {
             </span>
           </div>
           <h1
-            className="font-heading text-4xl md:text-6xl text-white leading-tight"
+            className="font-vibes text-4xl md:text-6xl text-white leading-tight"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
           >
             {isNl ? 'Feestlocatie in Den Haag  -  Huur een Evenementenruimte met Ziel' : 'Party Venue in Den Haag  -  Hire an Event Space That Actually Has Soul'}
@@ -158,7 +158,7 @@ export default function PartyVenuePage({ params }: Props) {
 
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Meer Dan Vier Muren en een Luidspreker' : 'More Than Four Walls and a Speaker'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -181,7 +181,7 @@ export default function PartyVenuePage({ params }: Props) {
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10 text-center">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-10 text-center">
             {isNl ? 'De Chopras Evenementenhal  -  Wat U Krijgt' : 'The Chopras Event Hall  -  What You Get'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -200,13 +200,13 @@ export default function PartyVenuePage({ params }: Props) {
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10 text-center">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-10 text-center">
             {isNl ? 'Soorten Evenementen die Wij Organiseren' : 'Types of Events We Host'}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {eventTypes.map((card) => (
               <div key={card.title} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm text-center">
-                <h3 className="font-heading font-bold text-[#1B2B5E] text-base mb-2">{card.title}</h3>
+                <h3 className="font-vibes font-bold text-[#C7A348] text-base mb-2">{card.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{card.desc}</p>
               </div>
             ))}
@@ -225,7 +225,7 @@ export default function PartyVenuePage({ params }: Props) {
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
             {isNl ? 'Boek Uw Feestlocatie in Den Haag' : 'Book Your Party Venue in Den Haag'}
           </h2>
           <p className="text-gray-700 leading-relaxed text-lg mb-8 max-w-2xl mx-auto">
@@ -245,7 +245,7 @@ export default function PartyVenuePage({ params }: Props) {
       {/* INTERNAL LINKS SECTION */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10 text-center">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-10 text-center">
             {isNl ? 'Andere Cateringmogelijkheden' : 'Other Catering Options'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

@@ -312,7 +312,7 @@ export default function MuttonRoganJoshPage({ params }: Props) {
               },
             ].map((item) => (
               <div key={item.name} className="bg-white rounded-xl p-6 border-l-4 border-[#D4AF37]">
-                <h3 className="font-heading text-xl text-[#1B2B5E] mb-1">{item.name} - {item.price}</h3>
+                <h3 className="font-vibes text-xl text-[#C7A348] mb-1">{item.name} - {item.price}</h3>
                 <p className="font-body text-[#1A1A1A] text-sm">
                   {item.href ? (
                     <>{item.descBefore}<Link href={`${base}${item.href}`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">{item.descWord}</Link>{item.descAfter}</>

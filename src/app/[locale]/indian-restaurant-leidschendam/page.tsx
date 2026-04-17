@@ -100,7 +100,7 @@ export default function IndianRestaurantLeidschendam({ params }: Props) {
 
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Van Leidschendam naar Leyweg' : 'From Leidschendam to Leyweg'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -125,7 +125,7 @@ export default function IndianRestaurantLeidschendam({ params }: Props) {
 
       <section className="bg-white py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Waarom Leidschendam-bezoekers Chopras Kiezen' : 'Why Leidschendam Residents Choose Chopras'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -148,7 +148,7 @@ export default function IndianRestaurantLeidschendam({ params }: Props) {
 
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Praktische Informatie voor Bezoekers uit Leidschendam' : 'Practical Information for Leidschendam Visitors'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -163,7 +163,7 @@ export default function IndianRestaurantLeidschendam({ params }: Props) {
               { title: 'Opening Hours', desc: 'Tuesday to Sunday: 16:30–22:30. Closed Monday.' },
             ]).map((item) => (
               <div key={item.title} className="bg-white rounded-xl p-5 border-l-4 border-[#D4AF37]">
-                <h3 className="font-heading text-lg text-[#1B2B5E] mb-1">{item.title}</h3>
+                <h3 className="font-vibes text-lg text-[#C7A348] mb-1">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             ))}
@@ -186,11 +186,11 @@ export default function IndianRestaurantLeidschendam({ params }: Props) {
           </h3>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href={`${base}/indian-restaurant-rijswijk`} className="flex-1 bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-[#D4AF37] transition-colors">
-              <p className="font-heading text-[#1B2B5E] font-bold">{isNl ? 'Indiaas Restaurant bij Rijswijk' : 'Indian Restaurant Near Rijswijk'}</p>
+              <p className="font-vibes text-[#C7A348] font-bold">{isNl ? 'Indiaas Restaurant bij Rijswijk' : 'Indian Restaurant Near Rijswijk'}</p>
               <p className="text-gray-600 text-sm mt-1">{isNl ? 'Chopras bedient ook Rijswijk' : 'Chopras also serves Rijswijk'}</p>
             </Link>
             <Link href={`${base}/indian-restaurant-zoetermeer`} className="flex-1 bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-[#D4AF37] transition-colors">
-              <p className="font-heading text-[#1B2B5E] font-bold">{isNl ? 'Indiaas Restaurant bij Zoetermeer' : 'Indian Restaurant Near Zoetermeer'}</p>
+              <p className="font-vibes text-[#C7A348] font-bold">{isNl ? 'Indiaas Restaurant bij Zoetermeer' : 'Indian Restaurant Near Zoetermeer'}</p>
               <p className="text-gray-600 text-sm mt-1">{isNl ? 'Chopras bedient ook Zoetermeer' : 'Chopras also serves Zoetermeer'}</p>
             </Link>
           </div>
@@ -200,7 +200,7 @@ export default function IndianRestaurantLeidschendam({ params }: Props) {
       {/* INTERNAL LINKS SECTION */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-10">
             {isNl ? 'Ontdek Populaire Gerechten' : 'Explore Popular Dishes'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

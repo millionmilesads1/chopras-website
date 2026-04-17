@@ -67,14 +67,14 @@ function OrderConfirmationContent({ locale }: { locale: Locale }) {
           </div>
         </div>
 
-        <h1 className="font-heading text-4xl text-[#1B2B5E] mt-6 font-semibold">
+        <h1 className="font-vibes text-4xl text-[#C7A348] mt-6 leading-[1.3]">
           Order Confirmed!
         </h1>
 
         {/* Order number pill */}
         <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-6 py-3 mt-4">
           <Hash className="text-[#D4AF37] w-4 h-4" />
-          <span className="font-semibold text-[#1A1A1A] text-lg font-heading">
+          <span className=" text-[#1A1A1A] text-lg font-vibes">
             Order {orderNumber}
           </span>
         </div>
@@ -106,8 +106,8 @@ function OrderConfirmationContent({ locale }: { locale: Locale }) {
               ))}
             </div>
             <div className="border-t border-gray-200 mt-3 pt-3 flex justify-between">
-              <span className="font-heading text-base text-[#1A1A1A]">Total</span>
-              <span className="font-heading text-base text-[#1A1A1A]">
+              <span className="font-vibes text-base text-[#1A1A1A]">Total</span>
+              <span className="font-vibes text-base text-[#1A1A1A]">
                 {formatPrice(lastOrder.totalAmount)}
               </span>
             </div>
@@ -168,7 +168,7 @@ export default function OrderConfirmationPage({ params }: { params: { locale: Lo
           className="min-h-screen flex items-center justify-center"
           style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
         >
-          <div className="text-white font-heading text-2xl">Loading...</div>
+          <div className="text-white font-vibes text-2xl">Loading...</div>
         </div>
       }
     >

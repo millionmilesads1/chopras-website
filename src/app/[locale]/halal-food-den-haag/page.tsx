@@ -277,7 +277,7 @@ export default function HalalFoodPage({ params }: Props) {
               { title: 'Catering certified too', body: 'The same certified standard applies to event catering and delivery orders' },
             ]).map((item) => (
               <div key={item.title} className="bg-[#F7F8FC] rounded-xl p-6 border-l-4 border-[#D4AF37]">
-                <h3 className="font-heading text-xl text-[#1B2B5E] mb-2">{item.title}</h3>
+                <h3 className="font-vibes text-xl text-[#C7A348] mb-2">{item.title}</h3>
                 <p className="font-body text-[#1A1A1A] text-base leading-relaxed">{item.body}</p>
               </div>
             ))}
@@ -390,7 +390,7 @@ export default function HalalFoodPage({ params }: Props) {
               { cat: 'Vegetarian and Vegan', items: 'Dal makhani, chana masala, palak paneer, aloo gobi, vegetable biryani, paneer tikka - completely free of meat products' },
             ]).map((item) => (
               <div key={item.cat} className="bg-white rounded-xl p-6 border-l-4 border-[#D4AF37]">
-                <h3 className="font-heading text-xl text-[#1B2B5E] mb-2">{item.cat}</h3>
+                <h3 className="font-vibes text-xl text-[#C7A348] mb-2">{item.cat}</h3>
                 <p className="font-body text-[#1A1A1A] text-sm leading-relaxed">{item.items}</p>
               </div>
             ))}

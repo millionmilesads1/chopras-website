@@ -91,7 +91,7 @@ export default function BruiloftCateringPage({ params }: Props) {
 
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Indiaas Bruiloft Catering bij Chopras' : 'Indian Wedding Catering at Chopras'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -114,7 +114,7 @@ export default function BruiloftCateringPage({ params }: Props) {
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Bruiloft Catering Opties' : 'Wedding Catering Options'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -162,7 +162,7 @@ export default function BruiloftCateringPage({ params }: Props) {
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Plan je Bruiloft' : 'Plan Your Wedding'}
           </h2>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -182,7 +182,7 @@ export default function BruiloftCateringPage({ params }: Props) {
       {/* INTERNAL LINKS SECTION */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-10">
             {isNl ? 'Populaire Catering Gerechten' : 'Popular Catering Dishes'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

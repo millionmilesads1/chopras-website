@@ -148,7 +148,7 @@ export default function CorporateEventsPage({ params }: Props) {
             </span>
           </div>
           <h1
-            className="font-heading text-4xl md:text-6xl text-white leading-tight"
+            className="font-vibes text-4xl md:text-6xl text-white leading-tight"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
           >
             {isNl
@@ -235,7 +235,7 @@ export default function CorporateEventsPage({ params }: Props) {
             {eventCards.map((card) => (
               <div key={card.title} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm text-center">
                 <div className="text-3xl mb-3">{card.emoji}</div>
-                <h3 className="font-heading font-bold text-[#1B2B5E] text-base mb-2">{card.title}</h3>
+                <h3 className="font-vibes font-bold text-[#C7A348] text-base mb-2">{card.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{card.desc}</p>
               </div>
             ))}
@@ -276,7 +276,7 @@ export default function CorporateEventsPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-[#1B2B5E] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-6">
+          <h2 className="font-vibes text-3xl md:text-4xl text-white mb-6">
             {isNl ? 'Zakelijke Cateringofferte Aanvragen' : 'Get a Corporate Catering Quote'}
           </h2>
           <p className="text-white/75 leading-relaxed text-lg mb-8 max-w-2xl mx-auto">
@@ -303,7 +303,7 @@ export default function CorporateEventsPage({ params }: Props) {
       {/* INTERNAL LINKS */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10 text-center">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-10 text-center">
             {isNl ? 'Andere Cateringmogelijkheden' : 'Other Catering Options'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

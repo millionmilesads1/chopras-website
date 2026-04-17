@@ -41,7 +41,7 @@ export default function VacancyForm() {
   if (status === 'success') {
     return (
       <div className="text-center py-12 max-w-2xl mx-auto">
-        <p className="text-white text-xl font-heading font-semibold">
+        <p className="text-white text-xl font-vibes">
           Thank you for your application! We will be in touch soon.
         </p>
       </div>

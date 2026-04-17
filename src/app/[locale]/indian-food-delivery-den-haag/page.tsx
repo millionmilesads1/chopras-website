@@ -109,7 +109,7 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
 
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Hoe Indiaas Eten Bezorgen Werkt bij Chopras' : 'How Indian Food Delivery Works at Chopras'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -132,7 +132,7 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Wat Je Kunt Bestellen bij Chopras' : 'What You Can Order at Chopras'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -174,7 +174,7 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
 
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Begin nu met Bestellen' : 'Order Now'}
           </h2>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -194,7 +194,7 @@ export default function IndianFoodDeliveryPage({ params }: Props) {
       {/* INTERNAL LINKS SECTION */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-10">
             {isNl ? 'Populaire Bezorggerechten' : 'Popular Delivery Dishes'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

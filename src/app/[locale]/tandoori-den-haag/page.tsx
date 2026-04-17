@@ -139,7 +139,7 @@ export default function TandooriPage({ params }: Props) {
       {/* SECTION 1: What 400 Degrees Actually Means */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Wat 400 Graden Echt Betekent voor Tandoori Kip' : 'What 400 Degrees Actually Means for Tandoori Chicken'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -163,7 +163,7 @@ export default function TandooriPage({ params }: Props) {
       {/* SECTION 2: Tandoori Dishes on Our Menu */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
             {isNl ? 'Tandoori Gerechten op Ons Menu' : 'Tandoori Dishes on Our Menu'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-4 mb-8">
@@ -209,7 +209,7 @@ export default function TandooriPage({ params }: Props) {
               },
             ].map((item) => (
               <div key={item.name} className="bg-[#F7F8FC] rounded-xl p-5 border-l-4 border-[#D4AF37]">
-                <h3 className="font-heading text-lg text-[#1B2B5E] mb-1">
+                <h3 className="font-vibes text-lg text-[#C7A348] mb-1">
                   <Link href={`${base}${item.href}`} className="text-[#D4AF37] hover:underline">{item.name}</Link> - {item.price}
                 </h3>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
@@ -236,7 +236,7 @@ export default function TandooriPage({ params }: Props) {
       {/* SECTION 3: Why the Marinade Starts the Night Before */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Waarom de Marinade de Avond Ervoor Begint' : 'Why the Marinade Starts the Night Before'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -260,7 +260,7 @@ export default function TandooriPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#1B2B5E] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-white mb-8">
             {isNl
               ? 'Waar Vind Ik Authentieke Tandoori Gerechten in Den Haag?'
               : 'Where Can I Find Authentic Tandoori Dishes in Den Haag?'}
@@ -288,7 +288,7 @@ export default function TandooriPage({ params }: Props) {
       {/* CTA / Visit */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl
               ? 'Bezoek Chopras voor Tandoori in Den Haag'
               : 'Visit Chopras for Tandoori in Den Haag'}

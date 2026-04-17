@@ -322,7 +322,7 @@ export default function CheckoutPage({ params }: { params: { locale: Locale } })
                   className="px-6 py-5"
                   style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
                 >
-                  <p className="font-heading text-xl text-white">Order Summary</p>
+                  <p className="font-vibes text-xl text-white">Order Summary</p>
                   <p className="text-white/60 text-sm">
                     {items.reduce((s, i) => s + i.quantity, 0)} items
                   </p>
@@ -343,7 +343,7 @@ export default function CheckoutPage({ params }: { params: { locale: Locale } })
                           />
                         ) : (
                           <div
-                            className="w-full h-full flex items-center justify-center text-white font-heading"
+                            className="w-full h-full flex items-center justify-center text-white font-vibes"
                             style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
                           >
                             {item.name.charAt(0)}
@@ -373,7 +373,7 @@ export default function CheckoutPage({ params }: { params: { locale: Locale } })
                     <span>Pickup fee</span>
                     <span>Free</span>
                   </div>
-                  <div className="border-t border-gray-100 pt-3 flex justify-between font-heading text-2xl text-[#1A1A1A]">
+                  <div className="border-t border-gray-100 pt-3 flex justify-between font-vibes text-2xl text-[#1A1A1A]">
                     <span>Total</span>
                     <span>{formatPrice(totalPrice)}</span>
                   </div>

@@ -146,7 +146,7 @@ export default function LocaleMenuPage({ params }: Props) {
 
           {/* GEO BLOCK — self-contained paragraph for AI citation */}
           <div className="mb-14">
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-6">
+            <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-6">
               {isNl
                 ? 'Wat staat er op het menu van Chopras Indian Restaurant Den Haag?'
                 : 'What Is on the Menu at Chopras Indian Restaurant Den Haag?'}
@@ -299,7 +299,7 @@ export default function LocaleMenuPage({ params }: Props) {
         style={{ background: 'linear-gradient(135deg, #000066 0%, #0000FF 100%)' }}
       >
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-6">
+          <h2 className="font-vibes text-3xl md:text-4xl text-white mb-6">
             {isNl ? 'Elke specerij vers gemalen. Elk gerecht halal gecertificeerd.' : 'Every Spice Ground Fresh. Every Dish Halal Certified.'}
           </h2>
           <p className="text-white/80 text-base leading-relaxed mb-6">
@@ -344,7 +344,7 @@ export default function LocaleMenuPage({ params }: Props) {
       {/* INTERNAL LINKS SECTION */}
       <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-12 text-center">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-12 text-center">
             Explore Our Specialities
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -397,7 +397,7 @@ export default function LocaleMenuPage({ params }: Props) {
           <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-6">
             READY TO ORDER?
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-semibold text-white mb-4">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-4">
             Reserve Your Table at Chopras
           </h2>
           <p className="text-white/60 text-base md:text-lg leading-relaxed mb-10">

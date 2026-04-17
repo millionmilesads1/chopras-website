@@ -94,7 +94,7 @@ export default function AboutPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#1B2B5E] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-white mb-8">
             {isNl
               ? 'Wie is de Oprichter van Chopras Indian Restaurant Den Haag?'
               : 'Who Is the Founder of Chopras Indian Restaurant Den Haag?'}

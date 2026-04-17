@@ -40,7 +40,7 @@ export default function ContactForm() {
   if (status === 'success') {
     return (
       <div className="text-center py-12 max-w-2xl mx-auto">
-        <p className="text-[#1B2B5E] text-xl font-heading font-semibold">
+        <p className="text-[#C7A348] text-xl font-vibes">
           Thank you for your message. We will be in touch shortly.
         </p>
       </div>

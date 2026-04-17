@@ -107,7 +107,7 @@ export default function LocaleBlogPage({ params }: Props) {
       {/* Article Grid */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="font-heading text-3xl text-[#1B2B5E] text-center mb-12">
+          <h2 className="font-vibes text-3xl text-[#C7A348] text-center mb-12">
             {tr.blog.latestH2}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -122,7 +122,7 @@ export default function LocaleBlogPage({ params }: Props) {
                 </span>
                 <div className="p-6">
                   <p className="text-gray-400 text-xs mb-2">{formatDate(post.publishedAt, locale)}</p>
-                  <h3 className="font-heading text-xl text-[#1A1A1A] leading-tight mb-3">{post.title}</h3>
+                  <h3 className="font-vibes text-xl text-[#1A1A1A] leading-tight mb-3">{post.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">{post.excerpt}</p>
                   <span className="inline-block bg-[#1B2B5E]/10 text-[#1B2B5E] text-xs px-3 py-1 rounded-full">
                     {post.primaryKeyword}

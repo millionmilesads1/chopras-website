@@ -94,7 +94,7 @@ function DishGrid({ dishes }: { dishes: MenuItem[] }) {
             {/* Image */}
             <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-[#1B2B5E]/5 to-[#D4AF37]/10">
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-heading text-4xl text-[#1B2B5E]/20">
+                <span className="font-vibes text-4xl text-[#C7A348]/20">
                   {item.name.charAt(0)}
                 </span>
               </div>
@@ -119,7 +119,7 @@ function DishGrid({ dishes }: { dishes: MenuItem[] }) {
             <div className="p-5">
               <h3
                 itemProp="name"
-                className="font-heading text-xl text-[#1A1A1A] font-semibold leading-tight whitespace-nowrap"
+                className="font-vibes text-xl text-[#1A1A1A] leading-tight whitespace-nowrap"
               >
                 {renderDishTitle(item.name)}
               </h3>
@@ -133,7 +133,7 @@ function DishGrid({ dishes }: { dishes: MenuItem[] }) {
                 <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
                   <meta itemProp="priceCurrency" content="EUR" />
                   <meta itemProp="price" content={item.price.toString()} />
-                  <p className="text-[#D4AF37] font-semibold text-lg font-heading">
+                  <p className="text-[#D4AF37] text-lg font-vibes">
                     {formatPrice(item.price)}
                   </p>
                 </div>
@@ -287,7 +287,7 @@ export default function MenuPageClient({ categories, items }: MenuPageClientProp
                 </p>
                 <h2
                   itemProp="name"
-                  className="font-heading text-4xl md:text-5xl font-semibold text-[#C7A348]"
+                  className="font-vibes text-4xl md:text-5xl text-[#C7A348]"
                 >
                   {category.label}
                 </h2>

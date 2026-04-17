@@ -134,7 +134,7 @@ export default function LocaleBlogPostPage({ params }: Props) {
 
             <aside className="hidden lg:block w-full lg:w-80">
               <div className="sticky top-24 bg-[#1B2B5E] rounded-2xl p-6 text-white overflow-visible">
-                <p className="font-heading text-xl mb-4 leading-snug">{tr.blog.enjoySidebar}</p>
+                <p className="font-vibes text-xl mb-4 leading-snug">{tr.blog.enjoySidebar}</p>
                 <p className="text-white/70 text-sm mb-1">Leyweg 986</p>
                 <p className="text-white/70 text-sm mb-1">2545 GW Den Haag</p>
                 <p className="text-white/70 text-sm mb-6">+31 6 30645930</p>
@@ -169,7 +169,7 @@ export default function LocaleBlogPostPage({ params }: Props) {
                   className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow block"
                 >
                   <p className="text-gray-400 text-xs mb-2">{formatDate(related.publishedAt, locale)}</p>
-                  <h3 className="font-heading text-lg text-[#1A1A1A] leading-tight mb-2">{related.title}</h3>
+                  <h3 className="font-vibes text-lg text-[#1A1A1A] leading-tight mb-2">{related.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">{related.excerpt}</p>
                   <span className="inline-block mt-3 text-[#1B2B5E] font-semibold text-sm">
                     {tr.blog.readArticle}

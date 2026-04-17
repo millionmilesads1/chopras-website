@@ -141,7 +141,7 @@ export default function BiryaniPage({ params }: Props) {
       {/* SECTION 1: What Dum Biryani Actually Is */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Wat Echte Dum Biryani Is' : 'What Real Dum Biryani Actually Is'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -167,7 +167,7 @@ export default function BiryaniPage({ params }: Props) {
       {/* SECTION 2: How Chopras Makes Biryani */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl
               ? 'Hoe Chopras Indian Restaurant Biryani Maakt in Den Haag'
               : 'How Chopras Indian Restaurant Makes Biryani in Den Haag'}
@@ -195,7 +195,7 @@ export default function BiryaniPage({ params }: Props) {
       {/* SECTION 3: Biryani Options */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl
               ? 'Biryani Bestellen bij Chopras Indian Restaurant'
               : 'Order Biryani at Chopras Indian Restaurant'}
@@ -225,7 +225,7 @@ export default function BiryaniPage({ params }: Props) {
               },
             ].map((item) => (
               <div key={item.name} className="bg-white rounded-xl p-6 border-l-4 border-[#D4AF37]">
-                <h3 className="font-heading text-xl text-[#1B2B5E] mb-1">{item.name} - {item.price}</h3>
+                <h3 className="font-vibes text-xl text-[#C7A348] mb-1">{item.name} - {item.price}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -250,7 +250,7 @@ export default function BiryaniPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#1B2B5E] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-white mb-8">
             {isNl
               ? 'Waar Vind Ik Authentieke Biryani in Den Haag?'
               : 'Where Can I Find Authentic Biryani in Den Haag?'}
@@ -280,7 +280,7 @@ export default function BiryaniPage({ params }: Props) {
       {/* CTA + Related Dishes */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl
               ? 'Meer Gerechten bij Chopras Indian Restaurant Den Haag'
               : 'More Dishes at Chopras Indian Restaurant Den Haag'}

@@ -120,7 +120,7 @@ export default function LocaleCateringPage({ params }: Props) {
             </span>
           </div>
           <h1
-            className="font-heading text-5xl md:text-7xl font-semibold text-white mb-6"
+            className="font-vibes text-5xl md:text-7xl text-white mb-6"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
           >
             {tr.catering.heroH1}
@@ -161,7 +161,7 @@ export default function LocaleCateringPage({ params }: Props) {
               <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">
                 {isNl ? 'WAT WIJ DOEN' : 'WHAT WE DO'}
               </p>
-              <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E] mb-6">
+              <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6">
                 {tr.catering.serviceH2}
               </h2>
               <div className="space-y-4 text-[#1A1A1A] text-base md:text-lg leading-relaxed">
@@ -248,7 +248,7 @@ export default function LocaleCateringPage({ params }: Props) {
             <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">
               {isNl ? 'VOOR WIE WE CATEREN' : 'WHO WE CATER FOR'}
             </p>
-            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-white">
+            <h2 className="font-vibes text-4xl md:text-5xl text-white">
               {tr.catering.eventsH2}
             </h2>
           </div>
@@ -272,7 +272,7 @@ export default function LocaleCateringPage({ params }: Props) {
           <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">
             {isNl ? 'DE STANDAARD' : 'THE DIFFERENCE'}
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.4]">
             {isNl
               ? 'Het Eten op Uw Evenement Is Hetzelfde als in Ons Restaurant'
               : 'The Food at Your Event Is the Same Food We Serve in Our Restaurant'}
@@ -348,7 +348,7 @@ export default function LocaleCateringPage({ params }: Props) {
               <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">
                 {isNl ? 'ONZE EVENEMENTENRUIMTE' : 'OUR EVENT HALL'}
               </p>
-              <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E] mb-6">
+              <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6">
                 {isNl ? 'Privé Evenementenruimte in Den Haag' : 'Private Event Hall in Den Haag'}
               </h2>
               <div className="space-y-4 text-[#1A1A1A] text-base leading-relaxed">
@@ -359,7 +359,7 @@ export default function LocaleCateringPage({ params }: Props) {
               <div className="flex gap-8 mt-8 mb-8">
                 {capacityStats.map(({ number, label }) => (
                   <div key={label} className="text-center">
-                    <p className="font-heading text-4xl text-[#D4AF37] font-semibold">{number}</p>
+                    <p className="font-vibes text-4xl text-[#D4AF37]">{number}</p>
                     <p className="text-[#1A1A1A]/60 text-sm mt-1">{label}</p>
                   </div>
                 ))}
@@ -385,7 +385,7 @@ export default function LocaleCateringPage({ params }: Props) {
             <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">
               {isNl ? 'WAAROM CHOPRAS' : 'WHY CHOOSE US'}
             </p>
-            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-white">
+            <h2 className="font-vibes text-4xl md:text-5xl text-white">
               {tr.catering.whyH2}
             </h2>
           </div>
@@ -396,7 +396,7 @@ export default function LocaleCateringPage({ params }: Props) {
                 className="bg-white/10 border border-white/20 rounded-3xl p-8"
               >
                 <Icon className="text-[#D4AF37] w-8 h-8 mb-4" />
-                <h3 className="font-heading text-xl font-semibold text-white mb-3">{title}</h3>
+                <h3 className="font-vibes text-xl text-white mb-3">{title}</h3>
                 <p className="text-white/70 text-base leading-relaxed">{body}</p>
               </div>
             ))}
@@ -410,7 +410,7 @@ export default function LocaleCateringPage({ params }: Props) {
           <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">
             {isNl ? 'WAT IS INBEGREPEN' : 'WHAT IS INCLUDED'}
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E] mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-6 leading-[1.4]">
             {isNl
               ? 'Alles Geregeld in Één Boeking'
               : 'Everything Handled in One Booking'}
@@ -478,7 +478,7 @@ export default function LocaleCateringPage({ params }: Props) {
       {/* POPULAR DISHES — bg-white */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E] mb-12 text-center">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-12 text-center">
             {isNl ? 'Populaire Gerechten voor Catering' : 'Popular Dishes for Catering'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -524,7 +524,7 @@ export default function LocaleCateringPage({ params }: Props) {
       {/* CATERING OCCASIONS — bg-[#F7F8FC] */}
       <section className="bg-[#F7F8FC] py-20 md:py-28 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E] mb-12 text-center">
+          <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348] mb-12 text-center">
             {isNl ? 'Catering voor Elke Gelegenheid' : 'Catering Options for Every Occasion'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
@@ -676,7 +676,7 @@ export default function LocaleCateringPage({ params }: Props) {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">FAQ</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1B2B5E]">
+            <h2 className="font-vibes text-4xl md:text-5xl text-[#C7A348]">
               {tr.catering.faqH2}
             </h2>
           </div>
@@ -694,7 +694,7 @@ export default function LocaleCateringPage({ params }: Props) {
           <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium mb-4">
             {isNl ? 'OFFERTE AANVRAGEN' : 'GET A QUOTE'}
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-semibold text-white mb-3">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-3">
             {tr.catering.formH2}
           </h2>
           <p className="text-white/60 text-base md:text-lg leading-relaxed mb-10 max-w-2xl mx-auto">

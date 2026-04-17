@@ -571,7 +571,7 @@ export default function FeestzaalDenHaagPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-[#1B2B5E] py-20 md:py-28 px-6 md:px-16 text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl font-semibold text-white mb-6 leading-[1.4]">
+          <h2 className="font-vibes text-4xl md:text-5xl text-white mb-6 leading-[1.4]">
             {isNl
               ? 'Klaar om uw feestzaal te boeken in Den Haag?'
               : 'Ready to Book Your Event Hall in Den Haag?'}

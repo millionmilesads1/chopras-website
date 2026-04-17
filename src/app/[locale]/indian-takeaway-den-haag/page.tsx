@@ -86,7 +86,7 @@ export default function IndianTakeawayPage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100">
               <div className="text-4xl mb-4">🏠</div>
-              <h3 className="font-heading text-xl text-[#1B2B5E] mb-2">{isNl ? 'Bezorging' : 'Delivery'}</h3>
+              <h3 className="font-vibes text-xl text-[#C7A348] mb-2">{isNl ? 'Bezorging' : 'Delivery'}</h3>
               <p className="text-gray-600 text-sm mb-4">{isNl ? 'Via Thuisbezorgd of Uber Eats, binnen 5 km van Leyweg' : 'Via Thuisbezorgd or Uber Eats, within 5km of Leyweg'}</p>
               <a href="https://www.thuisbezorgd.nl/menu/chopras-indian-street-food" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px] mb-2 w-full">
                 {tr.menu.thuisbezorgd}
@@ -97,7 +97,7 @@ export default function IndianTakeawayPage({ params }: Props) {
             </div>
             <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100">
               <div className="text-4xl mb-4">🏪</div>
-              <h3 className="font-heading text-xl text-[#1B2B5E] mb-2">{isNl ? 'Afhalen' : 'Collect'}</h3>
+              <h3 className="font-vibes text-xl text-[#C7A348] mb-2">{isNl ? 'Afhalen' : 'Collect'}</h3>
               <p className="text-gray-600 text-sm mb-4">{isNl ? 'Bestel telefonisch en haal af bij Leyweg 986' : 'Call ahead and collect from Leyweg 986'}</p>
               <a href={`tel:${RESTAURANT.contact.phone}`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px] w-full">
                 {RESTAURANT.contact.phoneDisplay}
@@ -105,7 +105,7 @@ export default function IndianTakeawayPage({ params }: Props) {
             </div>
             <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100">
               <div className="text-4xl mb-4">🍽️</div>
-              <h3 className="font-heading text-xl text-[#1B2B5E] mb-2">{isNl ? 'Ter Plekke Eten' : 'Dine In'}</h3>
+              <h3 className="font-vibes text-xl text-[#C7A348] mb-2">{isNl ? 'Ter Plekke Eten' : 'Dine In'}</h3>
               <p className="text-gray-600 text-sm mb-4">{isNl ? 'Reserveer een tafel bij ons restaurant' : 'Reserve a table at our restaurant'}</p>
               <Link href={`${base}/contact`} className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#C7A348] bg-[rgba(199,163,72,0.1)] px-6 py-3 text-[#C7A348] text-sm font-medium uppercase tracking-wide transition-all duration-200 ease-out hover:bg-[#C7A348] hover:text-white active:scale-[0.98] min-h-[48px] w-full">
                 {tr.common.reserve}
@@ -114,7 +114,7 @@ export default function IndianTakeawayPage({ params }: Props) {
           </div>
 
           <div className="bg-[#1B2B5E]/5 rounded-2xl p-6">
-            <h3 className="font-heading text-xl text-[#1B2B5E] mb-3">
+            <h3 className="font-vibes text-xl text-[#C7A348] mb-3">
               {isNl ? 'Openingstijden voor Afhalen en Bezorging' : 'Takeaway and Delivery Hours'}
             </h3>
             <ul className="text-gray-700 space-y-1">
@@ -128,7 +128,7 @@ export default function IndianTakeawayPage({ params }: Props) {
       {/* INTERNAL LINKS SECTION */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-10">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-10">
             {isNl ? 'Ontdek Populaire Gerechten' : 'Explore Popular Dishes'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

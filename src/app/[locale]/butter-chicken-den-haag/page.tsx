@@ -141,7 +141,7 @@ export default function ButterChickenPage({ params }: Props) {
       {/* SECTION 1: What Real Butter Chicken Tastes Like */}
       <section className="bg-[#F7F8FC] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Hoe Echte Butter Chicken Smaakt' : 'What Real Butter Chicken Tastes Like'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -167,7 +167,7 @@ export default function ButterChickenPage({ params }: Props) {
       {/* SECTION 2: How We Make Ours */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl ? 'Hoe Wij Het Maken bij Chopras Den Haag' : 'How We Make Ours at Chopras Den Haag'}
           </h2>
           <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-5">
@@ -193,7 +193,7 @@ export default function ButterChickenPage({ params }: Props) {
       {/* GEO BLOCK */}
       <section className="bg-[#1B2B5E] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-white mb-8">
             {isNl
               ? 'Waar Vind Ik de Beste Butter Chicken in Den Haag?'
               : 'Where Can I Find the Best Butter Chicken in Den Haag?'}
@@ -221,7 +221,7 @@ export default function ButterChickenPage({ params }: Props) {
       {/* CTA / Visit */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-[#1B2B5E] mb-8">
+          <h2 className="font-vibes text-3xl md:text-4xl text-[#C7A348] mb-8">
             {isNl
               ? 'Bezoek Chopras voor Butter Chicken in Den Haag'
               : 'Visit Chopras for Butter Chicken in Den Haag'}
