@@ -34,7 +34,7 @@ Package manager: pnpm. Node: 20.x.
 ## Brand Colors
 - Primary: #1B2B5E (deep navy blue)
 - Accent: #D4AF37 (saffron gold)
-- Background: #FFFAF5 (warm white)
+- Background: #F7F8FC (cool off-white, premium)
 - Text: #1A1A1A
 - Secondary: #0F1F4B (darker navy, used for dark sections)
 
@@ -294,6 +294,7 @@ Meta: Indian street food Den Haag at Chopras Indian Restaurant. Pani puri, chaat
 - Double-check every fact, every claim, every recommendation before stating it
 - Call out codebase errors even when not asked
 - Goal: Hitesh wants to be the best in the world at SEO and local SEO - every decision must serve that goal
+- After every task or suggestion, ALWAYS provide a ready-to-paste Claude Code prompt that Hitesh can run directly in his terminal. Format it clearly under a "CLAUDE CODE PROMPT" heading. Include any context Claude Code will need since it has no memory of this conversation.
 
 ## BRAND STYLING STANDARDS - MANDATORY ON ALL PAGES
 
