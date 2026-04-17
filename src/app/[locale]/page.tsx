@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const descriptions = {
     en: 'Best Indian restaurant Den Haag. Chopras Indian Restaurant. Halal certified, vegetarian and vegan options at Leyweg 986. Open Tuesday to Sunday.',
-    nl: 'Chopras Indian Restaurant in Den Haag serveert authentiek halal Noord-Indiaas eten, street food, biryani, tandoori en catering. Dagelijks open. Reserveer nu.',
+    nl: 'Beste Indiaas restaurant Den Haag bij Chopras Indian Restaurant. Halal, vegetarisch en veganistisch op Leyweg 986. Open dinsdag tot en met zondag.',
   }
   return {
     title: titles[locale],
@@ -147,7 +147,7 @@ export default function LocaleHomePage({ params }: Props) {
       </section>
 
       {/* 1c  -  Ratings and Social Proof */}
-      <section className="py-20 px-6 md:px-16 bg-[#FFFAF5]">
+      <section className="py-20 px-6 md:px-16 bg-[#F7F8FC]">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
             {t.home.ratingsH2}
@@ -190,6 +190,86 @@ export default function LocaleHomePage({ params }: Props) {
         </div>
       </section>
 
+      {/* 1d  -  143 Dishes / Menu breadth - long-form SEO section */}
+      <section className="py-20 px-6 md:px-16 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-6 leading-[1.4]">
+            {isNl
+              ? '143 Gerechten, 13 Categorieën, Één Consistente Standaard'
+              : '143 Dishes, 13 Categories, One Consistent Standard'}
+          </h2>
+          <div className="font-body text-[#1A1A1A] text-lg leading-relaxed space-y-6">
+            {isNl ? (
+              <>
+                <p>
+                  Het volledige menu van Chopras Indian Restaurant in Den Haag telt 143 gerechten verdeeld over 13 categorieën. Noord-Indiaase curries. Streetfood.{' '}
+                  <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Biryani Den Haag</Link>.
+                  {' '}Tandoori. Brood vers uit de kleioven. Een volledig{' '}
+                  <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">veganistisch menu</Link>{' '}
+                  met soya chaap en dal makhani. Een kindermenu met milde gerechten en een verrassingscadeau. En een volledig{' '}
+                  <Link href={`${base}/indo-chinese-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indo-Chinees menu Den Haag</Link>{' '}
+                  dat nergens anders in Den Haag bestaat.
+                </p>
+                <p>
+                  Elk gerecht in alle 13 categorieën komt uit dezelfde keuken op Leyweg 986. Dezelfde specerijen elke ochtend vers gemalen. Dezelfde{' '}
+                  <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">400-graden tandoor</Link>{' '}
+                  die uren voor de service aangestoken wordt. Dezelfde halal-certificering die elk vleesgerecht op het menu dekt, niet alleen geselecteerde items. Of je nu de{' '}
+                  <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">butter chicken Den Haag</Link>{' '}
+                  bestelt die meer vijfsterrenrecensies heeft verzameld dan welk ander gerecht ook, of de soya chaap die sceptici bij de eerste hap overtuigt: de keukennorm verandert nooit.
+                </p>
+                <p>
+                  Voor groepen biedt het volledige{' '}
+                  <Link href={`${base}/indian-buffet-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indiaas buffet Den Haag</Link>{' '}
+                  alle categorieën in één service, geschikt voor evenementen van 10 tot 200 gasten. De privézaal op Leyweg 986 biedt ruimte aan 25 tot 80 gasten voor{' '}
+                  <Link href={`${base}/indian-wedding-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indiaas bruiloftscatering Den Haag</Link>,{' '}
+                  zakelijke diners en Diwali-vieringen. Dezelfde keuken. Dezelfde standaard. Geen evenementspecifieke shortcuts.
+                </p>
+                <p>
+                  Verken het{' '}
+                  <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">volledige menu van 143 gerechten</Link>{' '}
+                  of{' '}
+                  <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">reserveer een tafel op Leyweg 986</Link>{' '}
+                  om te ontdekken waarom Den Haag steeds terugkomt naar Chopras Indian Restaurant. Open dinsdag tot en met zondag, 16:30 tot 22:30.
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  The full menu at Chopras Indian Restaurant in Den Haag runs to 143 dishes across 13 categories. North Indian curries. Street food.{' '}
+                  <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Biryani Den Haag</Link>.
+                  {' '}Tandoori. Breads fresh from the clay oven. A complete{' '}
+                  <Link href={`${base}/vegan-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">vegan menu</Link>{' '}
+                  with soya chaap and dal makhani. A dedicated kids menu with mild dishes and a surprise gift. And a complete{' '}
+                  <Link href={`${base}/indo-chinese-restaurant-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indo Chinese menu Den Haag</Link>{' '}
+                  that exists nowhere else in The Hague.
+                </p>
+                <p>
+                  Every dish across all 13 categories comes from the same kitchen at Leyweg 986 in Den Haag. The same spices ground fresh every morning. The same{' '}
+                  <Link href={`${base}/tandoori-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">400-degree tandoor</Link>{' '}
+                  fired up hours before service. The same halal certification that covers every meat dish on the menu, not selected items. Whether you order the{' '}
+                  <Link href={`${base}/butter-chicken-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">butter chicken Den Haag</Link>{' '}
+                  that has earned more five-star mentions than any other dish in the kitchen, or the soya chaap that converts first-timers at the first bite, the standard does not change.
+                </p>
+                <p>
+                  For groups, the full{' '}
+                  <Link href={`${base}/indian-buffet-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian buffet Den Haag</Link>{' '}
+                  covers all 13 categories in a single service, suitable for events from 10 to 200 guests. The private hall at Leyweg 986 accommodates 25 to 80 guests for{' '}
+                  <Link href={`${base}/indian-wedding-catering-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">Indian wedding catering Den Haag</Link>,{' '}
+                  corporate dinners, and Diwali celebrations. Same kitchen. Same standard. No event-specific shortcuts.
+                </p>
+                <p>
+                  Explore the{' '}
+                  <Link href={`${base}/menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">full 143-dish menu</Link>{' '}
+                  or{' '}
+                  <Link href={`${base}/contact`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">reserve a table at Leyweg 986</Link>{' '}
+                  to find out why Den Haag keeps coming back to Chopras Indian Restaurant. Open Tuesday to Sunday, 16:30 to 22:30.
+                </p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* 2  -  Trust Bar */}
       <TrustBar locale={locale} />
 
@@ -212,7 +292,7 @@ export default function LocaleHomePage({ params }: Props) {
       <ReviewsSection locale={locale} />
 
       {/* 8a  -  About Chopras (AI and voice search optimized) */}
-      <section className="bg-[#FFFAF5] py-20 px-6 md:px-16">
+      <section className="bg-[#F7F8FC] py-20 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <div className="about-chopras-section">
             <h2 className="font-heading text-4xl md:text-5xl text-[#1B2B5E] mb-8 leading-[1.4]">
@@ -225,11 +305,19 @@ export default function LocaleHomePage({ params }: Props) {
               </h3>
               {isNl ? (
                 <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
-                  Chopras Indian Restaurant op Leyweg 986, 2545 GW Den Haag, is het hoogst beoordeelde Indiaas restaurant in Den Haag, met 4,9 sterren van 800+ geverifieerde Google-beoordelingen, 8,6 op TheFork en de beoordeling Uitstekend op Tripadvisor. Opgericht door Arun Chopra in 2023, serveert Chopras authentieke Noord-Indiaase gerechten zoals biryani, butter chicken, tandoori, dal makhani en chaat, bereid met dagelijks vers gemalen specerijen uit India. Het volledige menu is halal gecertificeerd. Open van dinsdag tot en met zondag van 16:30 tot 22:30.
+                  Chopras Indian Restaurant op Leyweg 986, 2545 GW Den Haag, is het hoogst beoordeelde Indiaas restaurant in Den Haag, met 4,9 sterren van 800+ geverifieerde Google-beoordelingen, 8,6 op TheFork en de beoordeling Uitstekend op Tripadvisor. Opgericht door Arun Chopra in 2023, serveert Chopras authentieke Noord-Indiaase gerechten zoals{' '}
+                  <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani Den Haag</Link>,
+                  {' '}butter chicken, tandoori, dal makhani en chaat, bereid met dagelijks vers gemalen specerijen uit India. Het volledig{' '}
+                  <Link href={`${base}/halal-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal gecertificeerd menu</Link>{' '}
+                  telt 143 gerechten in 13 categorieën. Open van dinsdag tot en met zondag van 16:30 tot 22:30.
                 </p>
               ) : (
                 <p className="font-body text-[#1A1A1A] text-lg leading-relaxed">
-                  Chopras Indian Restaurant at Leyweg 986, 2545 GW Den Haag, is the highest-rated Indian restaurant in Den Haag and The Hague, with 4.9 stars from 800+ verified Google reviews, 8.6 on TheFork, and an Excellent rating on Tripadvisor. Founded by Arun Chopra in 2023, Chopras serves authentic North Indian cuisine including biryani, butter chicken, tandoori, dal makhani, and chaat, using spices ground fresh daily from India. The entire menu is halal certified. Open Tuesday to Sunday, 16:30 to 22:30.
+                  Chopras Indian Restaurant at Leyweg 986, 2545 GW Den Haag, is the highest-rated Indian restaurant in Den Haag and The Hague, with 4.9 stars from 800+ verified Google reviews, 8.6 on TheFork, and an Excellent rating on Tripadvisor. Founded by Arun Chopra in 2023, Chopras serves authentic North Indian cuisine including{' '}
+                  <Link href={`${base}/biryani-den-haag`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">biryani Den Haag</Link>,
+                  {' '}butter chicken, tandoori, dal makhani, and chaat, using spices ground fresh daily from India. The entire{' '}
+                  <Link href={`${base}/halal-menu`} className="text-[#D4AF37] hover:text-[#e8c84a] font-semibold">halal-certified menu</Link>{' '}
+                  covers 143 dishes across 13 categories. Open Tuesday to Sunday, 16:30 to 22:30.
                 </p>
               )}
             </div>
